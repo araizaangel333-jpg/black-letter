@@ -1,0 +1,177 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const exercises = await getCollection('exercises');
+  return exercises.map(e => ({ params: { id: e.id }, props: { exercise: e } }));
+}
+const { exercise } = Astro.props;
+const d = exercise.data;
+const { Content } = await render(exercise);
+const courses = await getCollection('courses');
+const course = courses.find(c => c.id === d.course)?.data;
+const briefs = await getCollection('briefs');
+const briefById = Object.fromEntries(briefs.map(b => [b.id, b.data]));
+const glossary = await getCollection('glossary');
+const termById = Object.fromEntries(glossary.map(g => [g.id, g.data]));
+const total = d.checklist.reduce((n, c) => n + c.points, 0);
+---
+<Base title={d.title.en}>
+  <article class="exercise" data-exercise={exercise.id} data-limit={d.timeLimit} data-total={total}>
+    <header class="sec">
+      <div class="kicker" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        {course && <a class="code" data-size="sm" href={`/courses/${d.course}/`} style={`--cc: var(--${course.color}); --cc-ink: var(--${course.color}-ink); text-decoration:none`}>{course.code}</a>}
+        <span class="tag"><T k={`exercise.kind.${d.kind}`} /></span>
+        <span class="tag">{d.framework}</span>
+        <span class="small muted num"><T k="exercise.minutes" vars={{ n: d.timeLimit }} />{d.targetWords ? ` · ~${d.targetWords} ${ui['exercise.words'].en}` : ''}</span>
+      </div>
+      <h1><Bi v={d.title} /></h1>
+      <p class="small muted" id="ex-last"></p>
+    </header>
+
+    <div class="prose exercise-body" data-body>
+      <Content />
+    </div>
+
+    <section class="sec writing" data-writing>
+      <div class="writing-top">
+        <button type="button" class="btn primary" id="ex-start"><T k="exercise.start" /></button>
+        <span class="num writing-timer" id="ex-timer" hidden>0:00</span>
+        <span class="small muted num" id="ex-words" hidden></span>
+      </div>
+      <label class="prep" id="ex-editor" hidden>
+        <span class="plabel"><T k="exercise.answerLabel" /></span>
+        <textarea rows="14" id="ex-text" spellcheck="true"></textarea>
+      </label>
+      <div class="rate-buttons" id="ex-actions" hidden>
+        <button type="button" class="btn primary" id="ex-submit"><T k="exercise.submit" /></button>
+      </div>
+    </section>
+
+    <section class="sec" id="ex-check" hidden>
+      <div class="sec-head"><h2><T k="exercise.selfCheck" /></h2><span class="meta num" id="ex-score"></span></div>
+      <p class="small muted"><T k="exercise.selfCheckHelp" /></p>
+      <ul class="checklist">
+        {d.checklist.map(c => (
+          <li data-check={c.id} data-points={c.points}>
+            <div class="cl-label"><Bi v={c.label} />{c.authority && <span class="small muted"> ({c.authority})</span>}<span class="small muted num"> · {c.points}</span></div>
+            <div class="seg cl-seg" role="group">
+              <button type="button" data-mark="0"><T k="drill.missed" /></button>
+              <button type="button" data-mark="1"><T k="drill.partial" /></button>
+              <button type="button" data-mark="2"><T k="drill.solid" /></button>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div class="rate-buttons">
+        <button type="button" class="btn primary" id="ex-finish"><T k="exercise.finish" /></button>
+      </div>
+    </section>
+
+    <section class="sec" id="ex-done" hidden>
+      <h2 id="ex-result"></h2>
+      <div class="rate-buttons">
+        <button type="button" class="btn" id="ex-export"><T k="exercise.export" /></button>
+        <button type="button" class="btn" id="ex-copy"><T k="exercise.copy" /></button>
+        <button type="button" class="btn" id="ex-again"><T k="drill.again" /></button>
+      </div>
+      <p class="small muted" id="ex-copied" hidden><T k="exercise.copied" /></p>
+      <p class="small muted"><T k="exercise.feedbackHint" /></p>
+    </section>
+
+    <div class="prose exercise-model" id="ex-model" hidden></div>
+
+    <section class="sec brief-meta small">
+      {d.related.briefs.length > 0 && <p><strong class="ui"><T k="course.briefs" />:</strong> {d.related.briefs.map((b, i) => briefById[b] && (<span>{i > 0 ? ', ' : ''}<a href={`/briefs/${b}/`}>{briefById[b].title}</a></span>))}</p>}
+      {d.related.terms.length > 0 && <div class="chips">{d.related.terms.map(tid => termById[tid] && <a class="chip ghost" href={`/glossary/${tid}/`}>{termById[tid].term}</a>)}</div>}
+      <p class="muted">{d.source}{!d.verified && <> · <T k="brief.unverified" /></>}</p>
+    </section>
+  </article>
+
+  <script>
+    import { t, lang } from '../../lib/i18n.js';
+    import { get, update } from '../../lib/store.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const art = document.querySelector('[data-exercise]');
+    const id = art.dataset.exercise, limit = Number(art.dataset.limit), total = Number(art.dataset.total);
+    const body = document.querySelector('[data-body]');
+    const model = document.getElementById('ex-model');
+    // mueve "Model answer" y "Common mistakes" a un contenedor oculto hasta entregar
+    (function hideModel() {
+      let moving = false;
+      [...body.children].forEach(el => {
+        if (el.tagName === 'H2' && /^(Model answer|Common mistakes)/i.test(el.textContent.trim())) moving = true;
+        if (moving) model.appendChild(el);
+      });
+    })();
+    const text = document.getElementById('ex-text'), timer = document.getElementById('ex-timer'), words = document.getElementById('ex-words');
+    const editor = document.getElementById('ex-editor'), actions = document.getElementById('ex-actions');
+    const check = document.getElementById('ex-check'), done = document.getElementById('ex-done');
+    const marks = {};
+    let t0 = 0, tick = null, minutes = 0;
+
+    const ex = () => (get('exercises', {}) || {});
+    const last = ex()[id]?.attempts?.slice(-1)[0];
+    if (last) document.getElementById('ex-last').textContent = t('exercise.last', { when: last.date, score: last.score, total });
+    const draft = ex().drafts?.[id]; if (draft) text.value = draft;
+
+    const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    function countWords() { const n = text.value.trim().split(/\s+/).filter(Boolean).length; words.textContent = `${n} ${t('exercise.words')}`; }
+    text.addEventListener('input', () => { countWords(); update('exercises', e => ({ ...(e || {}), drafts: { ...((e || {}).drafts || {}), [id]: text.value } }), {}); });
+
+    document.getElementById('ex-start').addEventListener('click', () => {
+      document.getElementById('ex-start').hidden = true; editor.hidden = false; actions.hidden = false; timer.hidden = false; words.hidden = false;
+      t0 = Date.now(); countWords(); text.focus();
+      tick = setInterval(() => { const s = Math.round((Date.now() - t0) / 1000); timer.textContent = fmt(s); timer.classList.toggle('over', s > limit * 60); }, 1000);
+    });
+    document.getElementById('ex-submit').addEventListener('click', () => {
+      clearInterval(tick); minutes = Math.round((Date.now() - t0) / 60000);
+      text.readOnly = true; actions.hidden = true;
+      model.hidden = false; check.hidden = false;
+      check.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+    function score() {
+      let s = 0;
+      document.querySelectorAll('[data-check]').forEach(li => { const m = marks[li.dataset.check]; if (m != null) s += Number(li.dataset.points) * (m / 2); });
+      document.getElementById('ex-score').textContent = `${s} / ${total}`;
+      return s;
+    }
+    document.querySelectorAll('[data-check]').forEach(li => li.querySelectorAll('[data-mark]').forEach(b => b.addEventListener('click', () => {
+      marks[li.dataset.check] = Number(b.dataset.mark);
+      li.querySelectorAll('[data-mark]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      score();
+    })));
+    function attemptMarkdown(s) {
+      const title = document.querySelector('h1').textContent.trim();
+      const lines = [`# ${title}`, ``, `- Exercise: ${id}`, `- Date: ${todayISO()}`, `- Minutes: ${minutes} (limit ${limit})`, `- Self-score: ${s} / ${total}`, ``, `## My answer`, ``, text.value.trim(), ``, `## Self-check`, ``];
+      document.querySelectorAll('[data-check]').forEach(li => { const m = marks[li.dataset.check]; lines.push(`- [${m === 2 ? 'x' : m === 1 ? '~' : ' '}] ${li.querySelector('.cl-label').textContent.trim()}`); });
+      lines.push('', `## Feedback`, '', '(run /feedback on this file)', '');
+      return lines.join('\n');
+    }
+    document.getElementById('ex-finish').addEventListener('click', () => {
+      const s = score();
+      const attempt = { date: todayISO(), minutes, score: s, total, text: text.value.trim(), marks: { ...marks } };
+      update('exercises', e => { const n = { ...(e || {}) }; const cur = n[id] || { attempts: [] }; cur.attempts = [...(cur.attempts || []), attempt].slice(-3); n[id] = cur; n.drafts = { ...(n.drafts || {}) }; delete n.drafts[id]; return n; }, {});
+      update('activity', a => { const n = { ...(a || {}) }; const k = todayISO(); n[k] = { ...(n[k] || {}), exercises: ((n[k] || {}).exercises || 0) + 1, games: ((n[k] || {}).games || 0) + 1 }; return n; }, {});
+      done.hidden = false; check.querySelector('#ex-finish').hidden = true;
+      document.getElementById('ex-result').textContent = t('exercise.result', { score: s, total });
+      done.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+    document.getElementById('ex-export').addEventListener('click', () => {
+      const md = attemptMarkdown(score());
+      const blob = new Blob([md], { type: 'text/markdown' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${id.replace(/\//g, '-')}-${todayISO()}.md`; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    });
+    document.getElementById('ex-copy').addEventListener('click', async () => {
+      const md = attemptMarkdown(score());
+      try { await navigator.clipboard.writeText(md); document.getElementById('ex-copied').hidden = false; } catch { text.readOnly = false; text.select(); }
+    });
+    document.getElementById('ex-again').addEventListener('click', () => location.reload());
+  </script>
+</Base>

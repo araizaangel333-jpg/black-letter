@@ -11,6 +11,7 @@ import { briefSchema, REQUIRED_HEADINGS } from '../src/schemas/brief.js';
 import { noteSchema } from '../src/schemas/note.js';
 import { glossaryItemSchema } from '../src/schemas/glossary.js';
 import { quizSetSchema } from '../src/schemas/quiz.js';
+import { exerciseSchema, REQUIRED_SECTIONS } from '../src/schemas/exercise.js';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const errors = [];
@@ -190,6 +191,25 @@ for (const file of walk(join(ROOT, 'src/content/quizzes'), ['.yaml', '.yml'])) {
   });
 }
 
+
+// --- ejercicios ---
+const exercises = {};
+for (const file of walk(join(ROOT, 'src/content/exercises'), ['.md'])) {
+  const fm = splitFrontmatter(file); if (!fm) continue;
+  const id = rel(file).replace(/^src\/content\/exercises\//, '').replace(/\.md$/, '');
+  const data = validate(file, fm.data, exerciseSchema(z), fm.doc); if (!data) continue;
+  exercises[id] = data;
+  if (!courses[data.course]) err(file, lineOfPath(fm.doc, ['course']), `curso "${data.course}" no existe`);
+  else for (const tp of data.topics) if (!topicOf(data.course, tp)) err(file, lineOfPath(fm.doc, ['topics']), `tema "${tp}" no existe en ${data.course}`);
+  const heads = [...fm.body.matchAll(/^## (.+)$/gm)].map(m => m[1].trim());
+  for (const h of REQUIRED_SECTIONS[data.kind] || []) if (!heads.some(x => x.toLowerCase().startsWith(h.toLowerCase()))) err(file, undefined, `ejercicio ${data.kind} sin la sección "## ${h}"`);
+  for (const b of data.related.briefs) if (!briefs[b]) err(file, undefined, `brief relacionado inexistente: ${b}`);
+  for (const t of data.related.terms) if (!glossary[t]) warn(file, `término relacionado inexistente: ${t}`);
+  const ids = new Set();
+  data.checklist.forEach(c => { if (ids.has(c.id)) err(file, undefined, `checklist con id duplicado: ${c.id}`); ids.add(c.id); });
+  if (!data.verified) warn(file, 'ejercicio sin verificar');
+}
+
 // --- textos de interfaz ---
 const uiFile = join(ROOT, 'src/i18n/ui.json');
 const ui = JSON.parse(readFileSync(uiFile, 'utf8'));
@@ -206,7 +226,7 @@ for (const file of walk(join(ROOT, 'src'), ['.astro', '.js', '.ts'])) {
 for (const [k, file] of used) if (!ui[k]) err(file, undefined, `clave de ui.json inexistente: ${k}`);
 
 // --- resultado ---
-console.log(`terms ${Object.keys(terms).length} · courses ${Object.keys(courses).length} · syllabus ${syllabusIds.size} · briefs ${Object.keys(briefs).length} · notes ${Object.keys(notes).length} · glossary ${Object.keys(glossary).length} · quizzes ${quizIds.size} · ui ${Object.keys(ui).length}`);
+console.log(`terms ${Object.keys(terms).length} · courses ${Object.keys(courses).length} · syllabus ${syllabusIds.size} · briefs ${Object.keys(briefs).length} · notes ${Object.keys(notes).length} · glossary ${Object.keys(glossary).length} · quizzes ${quizIds.size} · exercises ${Object.keys(exercises).length} · ui ${Object.keys(ui).length}`);
 for (const w of warnings) console.log(`⚠ ${w}`);
 if (errors.length) {
   for (const e of errors) console.error(`✖ ${e}`);

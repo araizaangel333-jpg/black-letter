@@ -938,5 +938,125 @@
   "games.quizDesc": {
     "en": "Exam-style questions by topic, with explanations. Contracts and the IIED memo first.",
     "es": "Preguntas tipo examen por tema, con explicaciones. Primero Contracts y el memo de IIED."
+  },
+  "writing.title": {
+    "en": "Writing lab",
+    "es": "Laboratorio de escritura"
+  },
+  "writing.intro": {
+    "en": "Timed hypos, memo drills and scenarios. Write first, then grade yourself against the checklist and read the model answer. Export your attempt and run /feedback for a review.",
+    "es": "Hipótesis cronometradas, drills de memo y escenarios. Escribe primero, luego califícate con la checklist y lee la respuesta modelo. Exporta tu intento y corre /feedback para una revisión."
+  },
+  "writing.howTitle": {
+    "en": "How to structure an answer",
+    "es": "Cómo estructurar una respuesta"
+  },
+  "writing.creac": {
+    "en": "Conclusion first, in one sentence. Rule: the governing rule with a citation. Explanation: show how a court applied the rule, with one case illustration (hook, trigger facts, holding, reasoning). Application: your facts against the rule, analogizing or distinguishing the case. Counter-analysis: the other side's best argument, answered. Conclusion again. One CREAC per issue or element.",
+    "es": "Conclusión primero, en una frase. Regla: la regla aplicable con cita. Explicación: cómo la aplicó un tribunal, con una ilustración (gancho, hechos detonantes, holding, razonamiento). Aplicación: tus hechos frente a la regla, por analogía o distinción. Contraanálisis: el mejor argumento contrario, respondido. Conclusión otra vez. Un CREAC por cuestión o elemento."
+  },
+  "writing.irac": {
+    "en": "Issue (whether …), Rule, Application, Conclusion. The exam version of CREAC: shorter, the conclusion can come last, but the application is where the points are. Spot every issue; a missed issue scores zero even if the rest is perfect.",
+    "es": "Issue (si …), Regla, Aplicación, Conclusión. La versión de examen del CREAC: más corta, la conclusión puede ir al final, pero los puntos están en la aplicación. Detecta todas las cuestiones; una omitida vale cero aunque el resto sea perfecto."
+  },
+  "writing.bluf": {
+    "en": "Bottom line up front: the answer in the first line, then the reasons, then the risks and what you need from the reader. The in-house style. If you cannot write the first sentence, your analysis is not finished.",
+    "es": "La conclusión primero: la respuesta en la primera línea, luego las razones, luego los riesgos y lo que necesitas del lector. El estilo del abogado interno. Si no puedes escribir la primera frase, tu análisis no está terminado."
+  },
+  "writing.loopTitle": {
+    "en": "The practice loop",
+    "es": "El ciclo de práctica"
+  },
+  "writing.loop": {
+    "en": "Start the timer and write without looking anything up. Submit, grade each checklist item honestly, then read the model answer and the common mistakes. Export the attempt and run /feedback in Claude Code to get structure, accuracy and English corrections. Rewrite once. Two attempts a week beat ten readings.",
+    "es": "Arranca el cronómetro y escribe sin consultar nada. Entrega, califica cada punto con honestidad, luego lee la respuesta modelo y los errores comunes. Exporta el intento y corre /feedback en Claude Code para correcciones de estructura, exactitud e inglés. Reescribe una vez. Dos intentos por semana valen más que diez lecturas."
+  },
+  "exercise.kind.hypo": {
+    "en": "Hypo",
+    "es": "Hipótesis"
+  },
+  "exercise.kind.ethics-scenario": {
+    "en": "Scenario",
+    "es": "Escenario"
+  },
+  "exercise.kind.memo": {
+    "en": "Memo",
+    "es": "Memo"
+  },
+  "exercise.kind.email": {
+    "en": "Email",
+    "es": "Correo"
+  },
+  "exercise.kind.definition": {
+    "en": "Definition",
+    "es": "Definición"
+  },
+  "exercise.minutes": {
+    "en": "{n} min",
+    "es": "{n} min"
+  },
+  "exercise.words": {
+    "en": "words",
+    "es": "palabras"
+  },
+  "exercise.start": {
+    "en": "Start the timer and write",
+    "es": "Arrancar el cronómetro y escribir"
+  },
+  "exercise.answerLabel": {
+    "en": "Your answer (saved on this device as you type)",
+    "es": "Tu respuesta (se guarda en este dispositivo mientras escribes)"
+  },
+  "exercise.submit": {
+    "en": "Submit and self-check",
+    "es": "Entregar y autoevaluar"
+  },
+  "exercise.selfCheck": {
+    "en": "Self-check",
+    "es": "Autoevaluación"
+  },
+  "exercise.selfCheckHelp": {
+    "en": "Read the model answer below, then mark each item: did your answer do this?",
+    "es": "Lee la respuesta modelo abajo y marca cada punto: ¿tu respuesta lo hizo?"
+  },
+  "exercise.finish": {
+    "en": "Save the attempt",
+    "es": "Guardar el intento"
+  },
+  "exercise.export": {
+    "en": "Download as Markdown",
+    "es": "Descargar en Markdown"
+  },
+  "exercise.copy": {
+    "en": "Copy for /feedback",
+    "es": "Copiar para /feedback"
+  },
+  "exercise.copied": {
+    "en": "Copied. Paste it into a file in inbox/ and run /feedback on it.",
+    "es": "Copiado. Pégalo en un archivo en inbox/ y corre /feedback sobre él."
+  },
+  "exercise.feedbackHint": {
+    "en": "Drop the file in inbox/ and run /feedback in Claude Code for a structured review.",
+    "es": "Deja el archivo en inbox/ y corre /feedback en Claude Code para una revisión estructurada."
+  },
+  "exercise.result": {
+    "en": "Attempt saved: {score} of {total}",
+    "es": "Intento guardado: {score} de {total}"
+  },
+  "exercise.last": {
+    "en": "Last attempt {when}: {score}/{total}",
+    "es": "Último intento {when}: {score}/{total}"
+  },
+  "games.writing": {
+    "en": "Writing lab",
+    "es": "Laboratorio de escritura"
+  },
+  "games.writingDesc": {
+    "en": "Timed hypos and memo drills with a checklist and a model answer.",
+    "es": "Hipótesis y drills de memo cronometrados, con checklist y respuesta modelo."
+  },
+  "more.writing": {
+    "en": "Writing lab",
+    "es": "Laboratorio de escritura"
   }
 }

@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+const exercises = await getCollection('exercises');
+const courses = await getCollection('courses');
+const order = ['lrw', 'contracts', 'business-associations', 'perspectives', 'externship'];
+const groups = order.map(id => ({ course: courses.find(c => c.id === id), list: exercises.filter(e => e.data.course === id) })).filter(g => g.course && g.list.length);
+---
+<Base title={ui['writing.title'].en}>
+  <header class="sec">
+    <h1><T k="writing.title" /></h1>
+    <p class="prose muted"><T k="writing.intro" /></p>
+  </header>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="writing.howTitle" /></h2></div>
+    <div class="cases">
+      <details><summary>CREAC</summary><div class="answer"><T k="writing.creac" /></div></details>
+      <details><summary>IRAC</summary><div class="answer"><T k="writing.irac" /></div></details>
+      <details><summary>BLUF</summary><div class="answer"><T k="writing.bluf" /></div></details>
+      <details><summary><T k="writing.loopTitle" /></summary><div class="answer"><T k="writing.loop" /></div></details>
+    </div>
+  </section>
+
+  {groups.map(({ course, list }) => (
+    <section class="sec">
+      <div class="sec-head"><h2 style="display:flex; align-items:center; gap:8px;"><span class="code" data-size="sm" style={`--cc: var(--${course.data.color}); --cc-ink: var(--${course.data.color}-ink)`} aria-hidden="true">{course.data.code}</span><Bi v={course.data.title} /></h2></div>
+      <div class="modes">
+        {list.map(e => (
+          <a class="card mode" href={`/exercises/${e.id}/`}>
+            <span class="kicker"><T k={`exercise.kind.${e.data.kind}`} /> · {e.data.framework} · <T k="exercise.minutes" vars={{ n: e.data.timeLimit }} /></span>
+            <h3><Bi v={e.data.title} /></h3>
+            <p class="small muted" data-ex-last={e.id}></p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+  <script>
+    import { get } from '../../lib/store.js';
+    import { t } from '../../lib/i18n.js';
+    const ex = get('exercises', {}) || {};
+    document.querySelectorAll('[data-ex-last]').forEach(el => { const a = ex[el.dataset.exLast]?.attempts?.slice(-1)[0]; if (a) el.textContent = t('exercise.last', { when: a.date, score: a.score, total: a.total }); });
+  </script>
+</Base>

@@ -9,6 +9,7 @@ import { briefSchema } from './schemas/brief.js';
 import { noteSchema } from './schemas/note.js';
 import { glossaryItemSchema } from './schemas/glossary.js';
 import { quizSetSchema } from './schemas/quiz.js';
+import { exerciseSchema } from './schemas/exercise.js';
 
 // El id de cada entrada es su ruta sin extensión (contracts, contracts/hurst-v-lake, ...).
 const generateId = ({ entry }: { entry: string }) => entry.replace(/\.(ya?ml|md|json)$/, '');
@@ -51,4 +52,9 @@ const quizzes = defineCollection({
   schema: quizSetSchema(z),
 });
 
-export const collections = { terms, courses, syllabus, briefs, notes, glossary, quizzes };
+const exercises = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/exercises', generateId }),
+  schema: exerciseSchema(z),
+});
+
+export const collections = { terms, courses, syllabus, briefs, notes, glossary, quizzes, exercises };

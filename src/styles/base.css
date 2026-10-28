@@ -281,3 +281,16 @@ select { font: inherit; font-size: 15px; padding: 8px 10px; border-radius: var(-
 .blank.is-wrong, .cite-input.is-wrong { border-color: var(--accent); }
 .q-nav { display: grid; }
 .btn.check { justify-self: start; }
+
+/* ---- laboratorio de escritura ---- */
+.exercise { display: grid; gap: 22px; }
+.exercise-body h2, .exercise-model h2 { font-size: 17px; margin: 18px 0 6px; padding-top: 10px; border-top: 1px solid var(--rule-2); }
+.exercise-model { border: 1px solid var(--rule); border-radius: var(--radius); padding: 4px 16px 16px; background: var(--paper-2); }
+.writing-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.writing-timer { font-family: var(--font-ui); font-weight: 700; font-size: 18px; }
+.writing-timer.over { color: var(--accent); }
+#ex-text { min-height: 280px; font-family: var(--font-text); font-size: 16px; line-height: 1.55; }
+.checklist { list-style: none; display: grid; gap: 10px; }
+.checklist li { display: grid; gap: 6px; padding: 10px 12px; border: 1px solid var(--rule-2); border-radius: var(--radius-sm); background: var(--paper-2); font-size: 15px; }
+.cl-seg { justify-self: start; }
+.cl-seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
