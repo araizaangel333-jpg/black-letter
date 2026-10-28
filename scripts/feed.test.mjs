@@ -1,10 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildTrueFalse, buildElement, nextFeedItem } from '../src/islands/games/feed.js';
+import { buildTrueFalse, buildElement, buildEsEn, nextFeedItem } from '../src/islands/games/feed.js';
 
 const items = [
-  { id: 'term:a', type: 'term', subject: 'contracts', topic: 'formation', front: 'offer', back: 'def a' },
-  { id: 'term:b', type: 'term', subject: 'contracts', topic: 'formation', front: 'acceptance', back: 'def b' },
+  { id: 'term:a', type: 'term', subject: 'contracts', topic: 'formation', front: 'offer', back: 'def a', esTerm: 'oferta', falseFriend: 'ff note' },
+  { id: 'term:b', type: 'term', subject: 'contracts', topic: 'formation', front: 'acceptance', back: 'def b', esTerm: 'aceptación' },
   { id: 'term:c', type: 'term', subject: 'contracts', topic: 'formation', front: 'consideration', back: 'def c' },
   { id: 'term:d', type: 'term', subject: 'contracts', topic: 'formation', front: 'reliance', back: 'def d' },
   { id: 'term:e', type: 'term', subject: 'lrw', topic: 'memo', front: 'creac', back: 'def e' },
@@ -30,6 +30,15 @@ test('a false element comes from another doctrine of the same subject', () => {
   assert.equal(q.answer, false); assert.equal(q.from.id, 'contracts/two'); assert.equal(q.element.id, 'f1');
   const t = buildElement(doctrines, doctrines[0], true);
   assert.equal(t.answer, true); assert.ok(['e1', 'e2'].includes(t.element.id));
+});
+
+test('Spanish-English pairs are true with the own term and false with a neighbour, and carry the false friend', () => {
+  const yes = buildEsEn(items, items[0], true);
+  assert.equal(yes.answer, true); assert.equal(yes.term, 'offer'); assert.ok(yes.explain.includes('ff note'));
+  const no = buildEsEn(items, items[0], false);
+  assert.equal(no.answer, false); assert.equal(no.es, 'oferta'); assert.equal(no.term, 'acceptance');
+  assert.equal(buildEsEn(items, items[2]), null);
+  assert.equal(nextFeedItem(items, doctrines, 'contracts', 0.35).kind, 'es');
 });
 
 test('nextFeedItem respects the scope and the kind bands', () => {

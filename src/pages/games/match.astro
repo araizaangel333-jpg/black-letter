@@ -19,7 +19,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     <label class="setting"><span class="label"><T k="games.scope" /></span>
       <select id="m-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
     <label class="setting"><span class="label"><T k="match.kind" /></span>
-      <select id="m-kind"><Opt value="term" k="match.terms" /><Opt value="case" k="match.cases" /></select></label>
+      <select id="m-kind"><Opt value="term" k="match.terms" /><Opt value="es" k="match.es" /><Opt value="case" k="match.cases" /></select></label>
     <p class="small muted num" id="m-best"></p>
     <button type="button" class="btn primary" id="m-start"><T k="games.start" /></button>
     <p class="muted" id="m-empty" hidden><T k="match.notEnough" /></p>
@@ -31,7 +31,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     <div class="rate-buttons"><button type="button" class="btn primary" id="m-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="games.finish" /></a></div>
   </section>
   <script>
-    import { loadItems, inScope, pick, best, setBest, logActivity, fmtSecs } from '../../islands/games/engine.js';
+    import { loadItems, inScope, pick, best, setBest, logActivity, fmtSecs, hasSpanish } from '../../islands/games/engine.js';
     import { runMatch, pairsFrom } from '../../islands/games/match.js';
     import { t } from '../../lib/i18n.js';
     import { prefs, setPref } from '../../lib/store.js';
@@ -45,10 +45,10 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     scope.addEventListener('change', () => { setPref('fcScope', scope.value); paintBest(); });
     kind.addEventListener('change', paintBest);
     async function start() {
-      const pool = inScope(items, scope.value).filter(i => i.type === kind.value);
+      const pool = inScope(items, scope.value).filter(i => kind.value === 'es' ? hasSpanish(i) : i.type === kind.value);
       if (pool.length < 6) { document.getElementById('m-empty').hidden = false; return; }
       setup.hidden = true; done.hidden = true; board.hidden = false;
-      const res = await runMatch(board, pairsFrom(pick(pool, 6)));
+      const res = await runMatch(board, pairsFrom(pick(pool, 6), kind.value));
       logActivity({ games: 1 });
       const prev = best(key()); setBest(key(), res.seconds);
       board.hidden = true; done.hidden = false;

@@ -126,6 +126,11 @@ export function hint(answer) {
   return answer.split(' ').map(w => (/^[a-z]/i.test(w) && w.length > 1 && !/^(v\.?|vs\.?|of|the|and|de|la|del|in|re)$/i.test(w)) ? w[0] + '_'.repeat(Math.min(w.length - 1, 8)) : w).join(' ');
 }
 
+// Un término tiene glosa útil en español si la glosa no es el mismo término en inglés ("consideration (sin equivalente)").
+export function hasSpanish(item) {
+  return item.type === 'term' && Boolean(item.esTerm) && !norm(item.esTerm).includes(norm(item.front));
+}
+
 // Materia con más tarjetas flojas (en aprendizaje o con lapsos); null si no hay señal.
 export function weakestSubject(items, srs) {
   const score = {};

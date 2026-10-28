@@ -376,3 +376,33 @@ select { font: inherit; max-width: 100%; min-width: 0; font-size: 15px; padding:
 .feed-stop { display: flex; justify-content: center; margin-top: 8px; }
 .feed-stop .btn { min-height: 40px; font-size: 14px; }
 .rbriefs li.is-done .text a:first-child, .rtasks li.is-done .text, .rnotes li.is-done .text { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rule); }
+
+/* ---- outline maestro ---- */
+.outline { display: grid; gap: 28px; }
+.outline[data-mode="short"] .detail { display: none; }
+.ol-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; }
+.ol-toc { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--rule-2); border-radius: var(--radius); background: var(--paper-2); font-family: var(--font-ui); }
+.ol-toc a { text-decoration: none; }
+.ol-topic .sec-head h2 { font-size: 19px; color: var(--ink); }
+.ol-note { display: grid; gap: 8px; }
+.ol-note h3 { font-size: 16px; }
+.ol-note h3 a { text-decoration: none; }
+.ol-elements { padding-left: 22px; display: grid; gap: 8px; font-size: 15px; }
+.ol-elements li { display: grid; gap: 2px; }
+.ol-label .tag { margin-left: 6px; }
+.ol-test { color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+.ol-pit { font-size: 14px; background: var(--accent-soft); padding: 4px 8px; border-radius: var(--radius-sm); justify-self: start; }
+.ol-cases { list-style: none; display: grid; gap: 8px; font-size: 15px; }
+.ol-cases li { display: grid; gap: 2px; }
+.ol-cases li > span:first-child a { font-family: var(--font-ui); font-weight: 600; text-decoration: none; }
+.ol-hook { font-style: italic; color: var(--ink-2); font-size: 14.5px; }
+.ol-rule { color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+.ol-terms a { text-decoration: none; }
+@media print {
+  .topbar, .tabbar, .no-print { display: none !important; }
+  body { padding: 0; background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; gap: 14px; }
+  .ol-topic { break-inside: avoid; }
+  .ol-pit { background: none; padding: 0; }
+  a { text-decoration: none; color: inherit; }
+}

@@ -3,8 +3,8 @@ import { esc, fmtSecs, short } from './engine.js';
 import { t } from '../../lib/i18n.js';
 import { shuffle } from '../../lib/srs.js';
 
-export function pairsFrom(items) {
-  return items.map(i => ({ id: i.id, left: i.front, right: i.type === 'case' ? short(i.hook || i.back, 90) : short(i.back, 110), href: i.href }));
+export function pairsFrom(items, kind = 'default') {
+  return items.map(i => ({ id: i.id, left: i.front, right: kind === 'es' ? i.esTerm : i.type === 'case' ? short(i.hook || i.back, 90) : short(i.back, 110), href: i.href }));
 }
 
 export function runMatch(container, pairs, { penalty = 2 } = {}) {

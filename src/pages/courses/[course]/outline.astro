@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import T from '../../../components/T.astro';
+import Bi from '../../../components/Bi.astro';
+import ui from '../../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  return courses.map(c => ({ params: { course: c.id }, props: { course: c } }));
+}
+const { course } = Astro.props;
+const d = course.data;
+const topics = [...d.topics].sort((a, b) => a.order - b.order);
+const notes = (await getCollection('notes')).filter(n => n.data.course === course.id);
+const briefs = (await getCollection('briefs')).filter(b => b.data.course === course.id);
+const glossary = (await getCollection('glossary')).filter(g => g.data.subject === course.id);
+const method = notes.find(n => n.data.kind === 'method');
+const known = new Set(topics.map(t => t.id));
+// el outline se arma en el orden del programa: checklists (regla y elementos), casos (la prueba de la regla), términos
+const sections = topics.map(t => ({
+  topic: t,
+  checklists: notes.filter(n => n.data.topic === t.id && n.data.kind === 'checklist').sort((a, b) => a.data.title.en.localeCompare(b.data.title.en)),
+  others: notes.filter(n => n.data.topic === t.id && n.data.kind !== 'checklist' && n.data.kind !== 'method'),
+  cases: briefs.filter(b => b.data.topic === t.id).sort((a, b) => a.data.year - b.data.year || a.data.title.localeCompare(b.data.title)),
+  terms: glossary.filter(g => g.data.topic === t.id).sort((a, b) => a.data.term.localeCompare(b.data.term)),
+}));
+const loose = {
+  notes: notes.filter(n => n.data.kind !== 'method' && !known.has(n.data.topic)),
+  cases: briefs.filter(b => !known.has(b.data.topic)),
+};
+const counts = { elements: notes.reduce((n, x) => n + x.data.elements.length, 0), cases: briefs.length, terms: glossary.length };
+---
+<Base title={`${ui['course.outline'].en} · ${d.title.en}`}>
+  <article class="outline" id="outline" data-mode="full">
+    <header class="course-head">
+      <div class="kicker" style="display:flex; align-items:center; gap:10px;">
+        <a class="code" data-size="sm" href={`/courses/${course.id}/`} style={`--cc: var(--${d.color}); --cc-ink: var(--${d.color}-ink); text-decoration:none`}>{d.code}</a>
+        <span><Bi v={d.title} /></span>
+      </div>
+      <h1><T k="course.outline" /></h1>
+      <p class="prose muted small"><T k="outline.intro" /></p>
+      <p class="small muted num">{counts.elements} <T k="outline.elements" /> · {counts.cases} <T k="outline.cases" /> · {counts.terms} <T k="outline.terms" /></p>
+      <div class="ol-controls no-print">
+        <div class="seg" role="group" aria-label={ui['outline.mode'].en}>
+          <button type="button" data-mode="full" aria-pressed="true"><T k="outline.full" /></button>
+          <button type="button" data-mode="short" aria-pressed="false"><T k="outline.short" /></button>
+        </div>
+        <button type="button" class="btn" id="ol-print"><T k="outline.print" /></button>
+      </div>
+      {method && <p class="small no-print"><a href={`/notes/${method.id}/`}><T k="outline.method" /></a></p>}
+    </header>
+
+    <nav class="ol-toc no-print small">
+      {sections.map(({ topic }) => <a href={`#${topic.id}`}><span class="num">{topic.order}.</span> <Bi v={topic.title} /></a>)}
+    </nav>
+
+    {sections.map(({ topic, checklists, others, cases, terms }) => (
+      <section class="sec ol-topic" id={topic.id}>
+        <div class="sec-head"><h2><span class="num">{topic.order}.</span> <Bi v={topic.title} /></h2></div>
+        {checklists.map(n => (
+          <div class="ol-note">
+            <h3><a href={`/notes/${n.id}/`}><Bi v={n.data.title} /></a></h3>
+            {n.data.summary && <p class="small muted detail"><Bi v={n.data.summary} /></p>}
+            <ol class="ol-elements">
+              {n.data.elements.map(e => (
+                <li>
+                  <span class="ol-label"><b><Bi v={e.label} /></b>{e.authority && <span class="tag">{e.authority}</span>}</span>
+                  {e.test && <span class="detail ol-test">{e.test}</span>}
+                  {e.pitfall && <span class="detail ol-pit"><b><T k="outline.trap" />:</b> {e.pitfall}</span>}
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+        {others.length > 0 && <p class="small"><b class="ui"><T k="outline.alsoNotes" /></b> {others.map((n, i) => <span>{i > 0 ? ' · ' : ''}<a href={`/notes/${n.id}/`}><Bi v={n.data.title} /></a></span>)}</p>}
+        {cases.length > 0 && (
+          <div class="ol-note">
+            <h3><T k="outline.cases" /></h3>
+            <ul class="ol-cases">
+              {cases.map(b => (
+                <li>
+                  <span><a href={`/briefs/${b.id}/`}>{b.data.title}</a> <span class="muted num small">({b.data.year})</span></span>
+                  <span class="ol-hook">{b.data.hook}</span>
+                  <span class="detail ol-rule">{b.data.rule}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {terms.length > 0 && <p class="small detail ol-terms"><b class="ui"><T k="outline.terms" />:</b> {terms.map((g, i) => <span>{i > 0 ? ' · ' : ''}<a href={`/glossary/${g.id}/`}>{g.data.term}</a></span>)}</p>}
+        {checklists.length === 0 && cases.length === 0 && others.length === 0 && <p class="muted small"><T k="outline.empty" /></p>}
+      </section>
+    ))}
+
+    {(loose.notes.length > 0 || loose.cases.length > 0) && (
+      <section class="sec ol-topic">
+        <div class="sec-head"><h2><T k="outline.unfiled" /></h2></div>
+        <ul class="list">
+          {loose.notes.map(n => <li><a href={`/notes/${n.id}/`}><Bi v={n.data.title} /></a></li>)}
+          {loose.cases.map(b => <li><a href={`/briefs/${b.id}/`}>{b.data.title}</a></li>)}
+        </ul>
+      </section>
+    )}
+    <p class="muted small"><T k="outline.footer" /></p>
+  </article>
+
+  <script>
+    import { prefs, setPref } from '../../../lib/store.js';
+    const art = document.getElementById('outline');
+    const buttons = document.querySelectorAll('[data-mode]');
+    function apply(mode) { art.dataset.mode = mode; buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode))); }
+    apply(prefs().outlineMode === 'short' ? 'short' : 'full');
+    buttons.forEach(b => b.addEventListener('click', () => { setPref('outlineMode', b.dataset.mode); apply(b.dataset.mode); }));
+    document.getElementById('ol-print').addEventListener('click', () => window.print());
+  </script>
+</Base>

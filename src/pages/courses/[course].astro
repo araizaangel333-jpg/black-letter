@@ -30,6 +30,7 @@ const bookShort = (bookId) => d.books.find(b => b.id === bookId)?.short || bookI
     </div>
     <h1><Bi v={d.title} /></h1>
     {d.about && <p class="prose"><Bi v={d.about} /></p>}
+    <p><a class="btn" href={`/courses/${course.id}/outline/`}><T k="course.outline" /></a></p>
   </header>
 
   <section class="sec">

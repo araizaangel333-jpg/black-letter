@@ -70,6 +70,9 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
       if (q.kind === 'tf') {
         card.innerHTML = `<div class="feed-card"><span class="tag">${esc(subj)}</span><h2 class="feed-term">${esc(q.term)}</h2><p class="feed-text">${esc(q.text)}</p><p class="small muted">${esc(t('feed.isRight'))}</p></div>
           <div class="feed-answers two"><button type="button" class="btn" data-a="1">${esc(t('feed.true'))}</button><button type="button" class="btn" data-a="0">${esc(t('feed.false'))}</button></div>`;
+      } else if (q.kind === 'es') {
+        card.innerHTML = `<div class="feed-card"><span class="tag">${esc(subj)}</span><p class="feed-doc">${esc(q.es)}</p><h2 class="feed-term">${esc(q.term)}</h2><p class="small muted">${esc(t('feed.isEs'))}</p></div>
+          <div class="feed-answers two"><button type="button" class="btn" data-a="1">${esc(t('feed.true'))}</button><button type="button" class="btn" data-a="0">${esc(t('feed.false'))}</button></div>`;
       } else if (q.kind === 'el') {
         card.innerHTML = `<div class="feed-card"><span class="tag">${esc(subj)}</span><p class="feed-doc">${esc(title(q.doc))}</p><h2 class="feed-term">${esc(label(q.element))}</h2><p class="small muted">${esc(t('feed.belongs'))}</p></div>
           <div class="feed-answers two"><button type="button" class="btn" data-a="1">${esc(t('feed.yes'))}</button><button type="button" class="btn" data-a="0">${esc(t('feed.no'))}</button></div>`;
@@ -92,6 +95,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
         card.querySelectorAll('[data-a]').forEach(b => { b.disabled = true; if ((b.dataset.a === '1') === q.answer) b.classList.add('is-correct'); });
         if (!ok) btn.classList.add('is-wrong');
         if (q.kind === 'tf') { explain = q.answer ? q.explain : `${t('feed.belongsTo', { term: q.other.front })} ${q.own}`; href = q.item.href; missId = q.item.id; }
+        else if (q.kind === 'es') { explain = q.explain; href = q.item.href; missId = q.item.id; }
         else { explain = q.answer ? `${label(q.element)}: ${short(q.explain, 220)}` : `${t('feed.fromDoctrine', { doc: title(q.from) })} ${short(q.explain, 200)}`; href = q.doc.href; missId = `checklist:${q.doc.id}`; }
       }
       answered++;

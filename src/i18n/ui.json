@@ -1434,5 +1434,73 @@
   "today.reviewNote": {
     "en": "Review:",
     "es": "Repasar:"
+  },
+  "course.outline": {
+    "en": "Master outline",
+    "es": "Outline maestro"
+  },
+  "outline.intro": {
+    "en": "The whole course in the order of the syllabus: each rule, its elements, the case that proves it, the terms. Own words throughout; the book is cited by chapter and page. Short mode keeps only the skeleton to memorize.",
+    "es": "Todo el curso en el orden del programa: cada regla, sus elementos, el caso que la prueba, los términos. Todo en palabras propias; el libro se cita por capítulo y página. El modo corto deja solo el esqueleto para memorizar."
+  },
+  "outline.elements": {
+    "en": "elements",
+    "es": "elementos"
+  },
+  "outline.cases": {
+    "en": "Cases",
+    "es": "Casos"
+  },
+  "outline.terms": {
+    "en": "Terms",
+    "es": "Términos"
+  },
+  "outline.mode": {
+    "en": "Outline mode",
+    "es": "Modo del outline"
+  },
+  "outline.full": {
+    "en": "Full",
+    "es": "Completo"
+  },
+  "outline.short": {
+    "en": "Short",
+    "es": "Corto"
+  },
+  "outline.print": {
+    "en": "Print or save as PDF",
+    "es": "Imprimir o guardar en PDF"
+  },
+  "outline.method": {
+    "en": "How to study this course",
+    "es": "Cómo estudiar este curso"
+  },
+  "outline.trap": {
+    "en": "Trap",
+    "es": "Trampa"
+  },
+  "outline.alsoNotes": {
+    "en": "Also:",
+    "es": "También:"
+  },
+  "outline.empty": {
+    "en": "Nothing filed under this topic yet.",
+    "es": "Aún no hay nada bajo este tema."
+  },
+  "outline.unfiled": {
+    "en": "Not yet filed under a topic",
+    "es": "Sin tema asignado todavía"
+  },
+  "outline.footer": {
+    "en": "Student study notes in the student's own words, not legal advice. Add or fix anything through the notes, briefs and glossary; the outline rebuilds itself.",
+    "es": "Apuntes de estudio en palabras propias, no asesoría legal. Corrige o agrega desde las notas, los briefs y el glosario; el outline se arma solo."
+  },
+  "match.es": {
+    "en": "English and Spanish",
+    "es": "Inglés y español"
+  },
+  "feed.isEs": {
+    "en": "Is this its English term?",
+    "es": "¿Es su término en inglés?"
   }
 }

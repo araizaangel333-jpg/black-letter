@@ -1,6 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fuzzy, hint, typeable, levenshtein, pickLearn, weakestSubject } from '../src/islands/games/engine.js';
+import { fuzzy, hint, typeable, levenshtein, pickLearn, weakestSubject, hasSpanish } from '../src/islands/games/engine.js';
+
+test('hasSpanish rejects glosses that merely repeat the English term', () => {
+  assert.ok(hasSpanish({ type: 'term', front: 'offer', esTerm: 'oferta' }));
+  assert.ok(!hasSpanish({ type: 'term', front: 'consideration', esTerm: 'consideration (sin equivalente)' }));
+  assert.ok(!hasSpanish({ type: 'term', front: 'offer' }));
+  assert.ok(!hasSpanish({ type: 'case', front: 'A v. B', esTerm: 'x' }));
+});
 
 const hamer = { type: 'case', front: 'Hamer v. Sidway (1891)' };
 const disney = { type: 'case', front: 'In re The Walt Disney Co. Derivative Litigation (2006)' };
