@@ -6,3 +6,4 @@ inbox/*
 !inbox/.gitkeep
 .DS_Store
 npm-debug.log*
+Cursos/
