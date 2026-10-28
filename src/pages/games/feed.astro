@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
+import ui from '../../i18n/ui.json';
+const glossary = await getCollection('glossary');
+const briefs = await getCollection('briefs');
+const subjects = [...new Set([...glossary.map(g => g.data.subject), ...briefs.map(b => b.data.course)])];
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'classroom', 'general'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.feed'].en}>
+  <header class="sec">
+    <h1><T k="games.feed" /></h1>
+    <p class="prose muted small"><T k="games.feedDesc" /></p>
+  </header>
+  <section class="sec" id="f-setup">
+    <label class="setting"><span class="label"><T k="games.scope" /></span>
+      <select id="f-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+    <p class="small muted num" id="f-best"></p>
+    <button type="button" class="btn primary" id="f-start"><T k="games.start" /></button>
+  </section>
+  <section class="sec" id="f-play" hidden>
+    <div class="feed-top"><span class="num" id="f-run"></span><span class="num muted" id="f-count"></span></div>
+    <div id="f-card"></div>
+    <div class="feedback" id="f-fb" hidden><p class="verdict-line" id="f-verdict"></p><p id="f-explain"></p><a class="small" id="f-link" href="#"><T k="common.open" /></a></div>
+    <div class="q-nav"><button type="button" class="btn primary" id="f-next" hidden><T k="quiz.next" /></button></div>
+    <p class="feed-stop"><button type="button" class="btn" id="f-stop"><T k="feed.stop" /></button></p>
+  </section>
+  <section class="sec" id="f-done" hidden>
+    <h2 id="f-score"></h2>
+    <p class="muted" id="f-sent"></p>
+    <div class="rate-buttons"><button type="button" class="btn primary" id="f-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="games.finish" /></a></div>
+  </section>
+
+  <script>
+    import { loadItems, best, setBest, logActivity, esc, short } from '../../islands/games/engine.js';
+    import { nextFeedItem } from '../../islands/games/feed.js';
+    import { t, lang } from '../../lib/i18n.js';
+    import { get, set, prefs, setPref } from '../../lib/store.js';
+    import { schedule, newCard } from '../../lib/srs.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const scope = document.getElementById('f-scope');
+    const setup = document.getElementById('f-setup'), play = document.getElementById('f-play'), done = document.getElementById('f-done');
+    const card = document.getElementById('f-card'), fb = document.getElementById('f-fb'), nextBtn = document.getElementById('f-next');
+    scope.value = new URLSearchParams(location.search).get('scope') ?? (prefs().fcScope || '');
+    let items = [], doctrines = [], q = null, answered = 0, correct = 0, run = 0, bestRun = 0, timer = null;
+    const missed = new Set();
+    loadItems().then(x => { items = x; paintBest(); });
+    fetch('/data/doctrines.json').then(r => r.json()).then(j => { doctrines = j.doctrines; }).catch(() => {});
+    const key = () => `feed:${scope.value || 'all'}`;
+    function paintBest() { const b = best(key()); document.getElementById('f-best').textContent = b == null ? '' : `${t('test.best')}: ${t('feed.streak', { n: b })}`; }
+    scope.addEventListener('change', () => { setPref('fcScope', scope.value); paintBest(); });
+    const L = () => lang();
+    const label = (e) => (L() === 'es' && e.es) ? e.es : e.label;
+    const title = (d) => (L() === 'es' && d.es) ? d.es : d.title;
+
+    function paintTop() {
+      document.getElementById('f-run').textContent = t('feed.streak', { n: run });
+      document.getElementById('f-count').textContent = t('feed.answered', { n: answered });
+    }
+    function show() {
+      q = null;
+      for (let k = 0; k < 6 && !q; k++) q = nextFeedItem(items, doctrines, scope.value);
+      if (!q) { stop(); return; }
+      paintTop(); fb.hidden = true; nextBtn.hidden = true;
+      const subj = t(`subject.${q.kind === 'el' ? q.doc.subject : q.item.subject}`);
+      if (q.kind === 'tf') {
+        card.innerHTML = `<div class="feed-card"><span class="tag">${esc(subj)}</span><h2 class="feed-term">${esc(q.term)}</h2><p class="feed-text">${esc(q.text)}</p><p class="small muted">${esc(t('feed.isRight'))}</p></div>
+          <div class="feed-answers two"><button type="button" class="btn" data-a="1">${esc(t('feed.true'))}</button><button type="button" class="btn" data-a="0">${esc(t('feed.false'))}</button></div>`;
+      } else if (q.kind === 'el') {
+        card.innerHTML = `<div class="feed-card"><span class="tag">${esc(subj)}</span><p class="feed-doc">${esc(title(q.doc))}</p><h2 class="feed-term">${esc(label(q.element))}</h2><p class="small muted">${esc(t('feed.belongs'))}</p></div>
+          <div class="feed-answers two"><button type="button" class="btn" data-a="1">${esc(t('feed.yes'))}</button><button type="button" class="btn" data-a="0">${esc(t('feed.no'))}</button></div>`;
+      } else {
+        card.innerHTML = `<div class="feed-card mcq"><span class="tag">${esc(subj)}</span><p class="feed-text stem">${esc(q.stem)}</p></div>
+          <div class="choices">${q.options.map((o, k) => `<button type="button" class="choice" data-k="${k}"><span class="cid">${'ABCD'[k]}</span><span>${esc(o.text)}</span></button>`).join('')}</div>`;
+      }
+      card.querySelectorAll('[data-a]').forEach(b => b.addEventListener('click', () => answer(b.dataset.a === '1' ? true : false, b)));
+      card.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => answer(Number(b.dataset.k), b)));
+    }
+    function answer(given, btn) {
+      let ok, missId = null, explain = '', href = '';
+      if (q.kind === 'mcq') {
+        ok = q.options[given].correct;
+        card.querySelectorAll('.choice').forEach((b, j) => { b.disabled = true; if (q.options[j].correct) b.classList.add('is-correct'); });
+        if (!ok) btn.classList.add('is-wrong');
+        explain = q.explain; href = q.item.href; missId = q.item.id;
+      } else {
+        ok = given === q.answer;
+        card.querySelectorAll('[data-a]').forEach(b => { b.disabled = true; if ((b.dataset.a === '1') === q.answer) b.classList.add('is-correct'); });
+        if (!ok) btn.classList.add('is-wrong');
+        if (q.kind === 'tf') { explain = q.answer ? q.explain : `${t('feed.belongsTo', { term: q.other.front })} ${q.own}`; href = q.item.href; missId = q.item.id; }
+        else { explain = q.answer ? `${label(q.element)}: ${short(q.explain, 220)}` : `${t('feed.fromDoctrine', { doc: title(q.from) })} ${short(q.explain, 200)}`; href = q.doc.href; missId = `checklist:${q.doc.id}`; }
+      }
+      answered++;
+      if (ok) { correct++; run++; bestRun = Math.max(bestRun, run); } else { run = 0; if (missId) missed.add(missId); }
+      paintTop();
+      document.getElementById('f-verdict').textContent = ok ? t('quiz.correct') : t('quiz.incorrect');
+      document.getElementById('f-verdict').className = 'verdict-line ' + (ok ? 'ok' : 'ko');
+      document.getElementById('f-explain').textContent = explain;
+      document.getElementById('f-link').href = href;
+      fb.hidden = false;
+      if (ok) timer = setTimeout(show, 900); else { nextBtn.hidden = false; nextBtn.focus(); }
+    }
+    function start() { answered = 0; correct = 0; run = 0; bestRun = 0; missed.clear(); setup.hidden = true; done.hidden = true; play.hidden = false; show(); }
+    function stop() {
+      clearTimeout(timer); play.hidden = true; done.hidden = false;
+      document.getElementById('f-score').textContent = t('feed.summary', { c: correct, n: answered, b: bestRun });
+      const srs = get('srs', {}) || {}; const today = todayISO(); let n = 0;
+      for (const id of missed) if (items.some(i => i.id === id)) { srs[id] = schedule(srs[id] || newCard(), 'again', today); n++; }
+      if (n) set('srs', srs);
+      document.getElementById('f-sent').textContent = n ? t('feed.sent', { n }) : '';
+      if (answered >= 5) logActivity({ games: 1 });
+      if (bestRun) setBest(key(), bestRun, false);
+      paintBest();
+    }
+    nextBtn.addEventListener('click', () => { clearTimeout(timer); show(); });
+    document.getElementById('f-start').addEventListener('click', start);
+    document.getElementById('f-again').addEventListener('click', start);
+    document.getElementById('f-stop').addEventListener('click', stop);
+    document.addEventListener('keydown', e => {
+      if (play.hidden || !q) return;
+      if (!fb.hidden) { if (e.key === 'Enter' && !nextBtn.hidden) { e.preventDefault(); nextBtn.click(); } return; }
+      const k = e.key.toLowerCase();
+      if (q.kind === 'mcq') { const i = 'abcd1234'.indexOf(k); if (i >= 0) card.querySelector(`[data-k="${i % 4}"]`)?.click(); }
+      else if (k === 't' || k === 'y' || k === '1' || k === 's') card.querySelector('[data-a="1"]')?.click();
+      else if (k === 'f' || k === 'n' || k === '2') card.querySelector('[data-a="0"]')?.click();
+    });
+  </script>
+</Base>

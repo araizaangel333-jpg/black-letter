@@ -40,6 +40,7 @@ const total = d.checklist.reduce((n, c) => n + c.points, 0);
     <section class="sec writing" data-writing>
       <div class="writing-top">
         <button type="button" class="btn primary" id="ex-start"><T k="exercise.start" /></button>
+        <button type="button" class="btn" id="ex-read"><T k="exercise.readOnly" /></button>
         <span class="num writing-timer" id="ex-timer" hidden>0:00</span>
         <span class="small muted num" id="ex-words" hidden></span>
       </div>
@@ -125,9 +126,15 @@ const total = d.checklist.reduce((n, c) => n + c.points, 0);
     text.addEventListener('input', () => { countWords(); update('exercises', e => ({ ...(e || {}), drafts: { ...((e || {}).drafts || {}), [id]: text.value } }), {}); });
 
     document.getElementById('ex-start').addEventListener('click', () => {
-      document.getElementById('ex-start').hidden = true; editor.hidden = false; actions.hidden = false; timer.hidden = false; words.hidden = false;
+      document.getElementById('ex-start').hidden = true; document.getElementById('ex-read').hidden = true; editor.hidden = false; actions.hidden = false; timer.hidden = false; words.hidden = false;
       t0 = Date.now(); countWords(); text.focus();
       tick = setInterval(() => { const s = Math.round((Date.now() - t0) / 1000); timer.textContent = fmt(s); timer.classList.toggle('over', s > limit * 60); }, 1000);
+    });
+    // solo leer: sin cronómetro ni texto; revela la respuesta modelo y la autoevaluación
+    document.getElementById('ex-read').addEventListener('click', () => {
+      document.getElementById('ex-start').hidden = true; document.getElementById('ex-read').hidden = true;
+      model.hidden = false; check.hidden = false;
+      model.scrollIntoView({ block: 'start', behavior: 'smooth' });
     });
     document.getElementById('ex-submit').addEventListener('click', () => {
       clearInterval(tick); minutes = Math.round((Date.now() - t0) / 60000);

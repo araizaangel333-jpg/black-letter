@@ -352,3 +352,19 @@ select { font: inherit; max-width: 100%; min-width: 0; font-size: 15px; padding:
 .meter i.learning { background: var(--accent); }
 .msub { grid-column: 1 / -1; }
 @media (max-width: 400px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- feed sin fin ---- */
+.feed-top { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-ui); font-size: 14px; }
+.feed-card { min-height: 34vh; display: grid; align-content: center; gap: 10px; padding: 22px 20px; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper-2); box-shadow: var(--shadow); }
+.feed-card.mcq { min-height: 0; }
+.feed-card .tag { justify-self: start; }
+.feed-term { font-size: 24px; line-height: 1.2; }
+.feed-doc { font-family: var(--font-ui); font-size: 14px; color: var(--ink-2); }
+.feed-text { font-size: 17px; line-height: 1.5; }
+.feed-answers.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.feed-answers .btn { min-height: 56px; font-size: 17px; }
+.btn.is-correct { border-color: #2e802a; background: rgba(46, 128, 42, 0.12); color: var(--ink); }
+.btn.is-wrong { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.feed-answers .btn:disabled { cursor: default; }
+.feed-stop { display: flex; justify-content: center; margin-top: 8px; }
+.feed-stop .btn { min-height: 40px; font-size: 14px; }

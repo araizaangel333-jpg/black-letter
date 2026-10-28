@@ -1362,5 +1362,69 @@
   "today.streakDay1": {
     "en": "1 day",
     "es": "1 día"
+  },
+  "games.feed": {
+    "en": "Endless feed",
+    "es": "Sin fin"
+  },
+  "games.feedDesc": {
+    "en": "One quick question after another, no setup and no end: true or false, four options, does this element belong. Stop whenever you like; misses go to flashcards.",
+    "es": "Una pregunta rápida tras otra, sin configurar y sin final: verdadero o falso, cuatro opciones, pertenece o no. Para cuando quieras; los fallos van a flashcards."
+  },
+  "feed.isRight": {
+    "en": "Is this the right definition?",
+    "es": "¿Es la definición correcta?"
+  },
+  "feed.belongs": {
+    "en": "Does this element belong to this doctrine?",
+    "es": "¿Este elemento pertenece a esta doctrina?"
+  },
+  "feed.true": {
+    "en": "True",
+    "es": "Verdadero"
+  },
+  "feed.false": {
+    "en": "False",
+    "es": "Falso"
+  },
+  "feed.yes": {
+    "en": "Yes",
+    "es": "Sí"
+  },
+  "feed.no": {
+    "en": "No",
+    "es": "No"
+  },
+  "feed.streak": {
+    "en": "{n} in a row",
+    "es": "{n} seguidas"
+  },
+  "feed.answered": {
+    "en": "{n} answered",
+    "es": "{n} respondidas"
+  },
+  "feed.stop": {
+    "en": "Stop",
+    "es": "Parar"
+  },
+  "feed.summary": {
+    "en": "{c} of {n} right · best run {b}",
+    "es": "{c} de {n} correctas · mejor racha {b}"
+  },
+  "feed.sent": {
+    "en": "{n} misses sent to flashcards, due today",
+    "es": "{n} fallos enviados a flashcards, para hoy"
+  },
+  "feed.belongsTo": {
+    "en": "That definition belongs to {term}.",
+    "es": "Esa definición es de {term}."
+  },
+  "feed.fromDoctrine": {
+    "en": "That element comes from {doc}.",
+    "es": "Ese elemento viene de {doc}."
+  },
+  "exercise.readOnly": {
+    "en": "Just read it: think it through, then reveal the model answer",
+    "es": "Solo leer: piénsalo y revela la respuesta modelo"
   }
 }
