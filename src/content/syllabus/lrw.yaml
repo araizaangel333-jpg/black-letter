@@ -1,28 +1,235 @@
-# Legal Research & Writing (Fadel). Fuente: consignas de Canvas y correos; solo fechas y títulos.
+# Legal Research & Writing (Fadel). Fuente: páginas "Week N Readings and Assignments" y anuncios de Canvas (leídos 2026-10-28). Solo temas, capítulos y fechas.
 course: lrw
 items:
+  - id: lrw-w01-aug24
+    type: reading
+    date: "2026-08-24"
+    week: 1
+    topic: reading-cases
+    title: { en: "Introduction: how attorneys communicate (emails and memos); sources of U.S. law I", es: "Introducción: cómo se comunican los abogados (correos y memos); fuentes del derecho I" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 1; ch. 2 §§ I–II" }]
+    tasks: [{ en: "Register with Westlaw, Lexis and the Lexis Interactive Citation Workbook (ICW).", es: "Regístrate en Westlaw, Lexis y el Interactive Citation Workbook (ICW) de Lexis." }]
+  - id: lrw-w01-aug26
+    type: reading
+    date: "2026-08-26"
+    week: 1
+    topic: reading-cases
+    title: { en: "Sources of U.S. law II: the court system, stare decisis, weight of authority, the Bluebook", es: "Fuentes del derecho II: sistema judicial, stare decisis, peso de las autoridades, el Bluebook" }
+    pages: [{ book: a-lawyer-writes, sections: "finish ch. 2" }]
+  - id: lrw-w02-aug31
+    type: reading
+    date: "2026-08-31"
+    week: 2
+    topic: reading-cases
+    title: { en: "Reading federal statutes: structure, interpretation, how to cite a statute", es: "Leer leyes federales: estructura, interpretación, cómo citar una ley" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 3 and § 3.1 (reading statutes)" }
+      - { book: icw, sections: "ch. 6" }
+      - { book: bluebook-22, pages: "3–4 (before B1.2); 18–20 (before B12.1.4)" }
+  - id: lrw-w02-sep02
+    type: reading
+    date: "2026-09-02"
+    week: 2
+    topic: reading-cases
+    title: { en: "Reading state statutes: comprehension, Bluebook, locating a statute", es: "Leer leyes estatales: comprensión, Bluebook, localizar una ley" }
+    pages:
+      - { book: a-lawyer-writes, sections: "review § 3.1" }
+      - { book: icw, sections: "review ch. 6; ch. 7" }
+      - { book: bluebook-22, pages: "3–4; 18–20; 119–125 (before rule 12.4)" }
+    tasks:
+      - { en: "ICW exercise 6 (skip questions 9 and 10).", es: "Ejercicio 6 del ICW (omite las preguntas 9 y 10)." }
+      - { en: "ICW exercise 7, questions 1–8.", es: "Ejercicio 7 del ICW, preguntas 1–8." }
+  - id: lrw-w03-sep07
+    type: event
+    date: "2026-09-07"
+    week: 3
+    title: { en: "Labor Day: no class", es: "Labor Day: sin clase" }
+  - id: lrw-w03-sep09
+    type: reading
+    date: "2026-09-09"
+    week: 3
+    topic: reading-cases
+    title: { en: "Reading cases I and online legal research I", es: "Leer casos I e investigación en línea I" }
+    pages:
+      - { book: a-lawyer-writes, sections: "§ 3.2 (reading judicial opinions)" }
+      - { book: bluebook-22, pages: "11–14 (before parallel citations in state court documents); 95–103 (before 10.3); 105–107" }
+      - { book: icw, sections: "ch. 1" }
+    tasks: [{ en: "ICW exercise 1 (skip questions 4, 6, 11 and 12).", es: "Ejercicio 1 del ICW (omite 4, 6, 11 y 12)." }]
+  - id: lrw-w04-sep14
+    type: reading
+    date: "2026-09-14"
+    week: 4
+    topic: reading-cases
+    title: { en: "Reading cases II and online legal research II", es: "Leer casos II e investigación en línea II" }
+    pages:
+      - { book: a-lawyer-writes, sections: "§ 3.2" }
+      - { book: icw, sections: "ch. 2" }
+    tasks: [{ en: "ICW exercise 2 (skip questions 9 and 10).", es: "Ejercicio 2 del ICW (omite 9 y 10)." }]
+  - id: lrw-w04-sep16
+    type: reading
+    date: "2026-09-16"
+    week: 4
+    topic: rules
+    title: { en: "Research organization and issue spotting", es: "Organizar la investigación y detectar issues" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 4 and ch. 5" }
+      - { book: icw, sections: "ch. 3" }
+    tasks: [{ en: "ICW exercise 3 (skip questions 2, 9 and 11–13).", es: "Ejercicio 3 del ICW (omite 2, 9 y 11–13)." }]
+  - id: lrw-w05-sep21
+    type: event
+    date: "2026-09-21"
+    week: 5
+    title: { en: "No class (made up on Friday, Oct. 2, 2:00 pm, Florence 201)", es: "Sin clase (se repuso el viernes 2 de oct., 2:00 pm, Florence 201)" }
+  - id: lrw-w05-sep23
+    type: reading
+    date: "2026-09-23"
+    week: 5
+    topic: rules
+    title: { en: "The legal argument (IRAC in class, negligence scenario)", es: "El argumento jurídico (IRAC en clase, escenario de negligencia)" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 6 and ch. 7" }
+      - { book: bluebook-22, sections: "B10.2; rule 10.9" }
+      - { book: icw, sections: "ch. 5 (online)" }
+    tasks: [{ en: "IRAC scenario (two cases provided in class): draft Issue, Rule, Application and Conclusion; email by 8:00 am Monday, Sept. 28.", es: "Escenario IRAC (dos casos dados en clase): redacta Issue, Rule, Application y Conclusion; correo antes de las 8:00 am del lunes 28 de sept." }]
+  - id: lrw-w06-sep28
+    type: reading
+    date: "2026-09-28"
+    week: 6
+    topic: rules
+    title: { en: "Explaining the law", es: "Explicar la regla" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 7" }
+      - { book: bluebook-22, sections: "B10.1.3; rule 10.3.1; T1" }
+      - { book: icw, sections: "ch. 4 (questions 1–7)" }
+  - id: lrw-w06-sep30
+    type: reading
+    date: "2026-09-30"
+    week: 6
+    topic: application
+    title: { en: "Explaining and applying the law", es: "Explicar y aplicar la regla" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 7; ch. 8 introduction, §§ 8.1–8.3" }
+      - { book: bluebook-22, sections: "B10.1.3; rule 10.3.1; T1" }
+      - { book: icw, sections: "ch. 4 (questions 8–14)" }
+  - id: lrw-w06-oct02
+    type: class
+    date: "2026-10-02"
+    time: { start: "14:00", end: "15:25" }
+    week: 6
+    topic: application
+    title: { en: "Make-up class (Florence 201): applying the law; I/CREAC assignment on People v. Joesel", es: "Clase de reposición (Florence 201): aplicar la regla; tarea I/CREAC sobre People v. Joesel" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 8 introduction, §§ 8.4–8.5" }]
+    tasks: [{ en: "I/CREAC assignment in paragraph form, 1.5 pages max, using the handout, the rubric and People v. Joesel; email to your partner and the professor by midnight Sunday, Oct. 4.", es: "Tarea I/CREAC en párrafos, máximo 1.5 páginas, con el handout, la rúbrica y People v. Joesel; correo a tu pareja y a la profesora antes de la medianoche del domingo 4 de oct." }]
+  - id: lrw-w07-oct05
+    type: reading
+    date: "2026-10-05"
+    week: 7
+    topic: application
+    title: { en: "Applying the law; peer review of the I/CREAC assignment with the rubric; counter-analysis (§ 8.4)", es: "Aplicar la regla; revisión entre pares de la tarea I/CREAC con la rúbrica; counter-analysis (§ 8.4)" }
+    pages: [{ book: a-lawyer-writes, sections: "§§ 8.3–8.5" }]
+    tasks: [{ en: "Work on the research assignment.", es: "Avanza en la tarea de investigación." }]
+  - id: lrw-w07-oct07
+    type: reading
+    date: "2026-10-07"
+    week: 7
+    topic: memo
+    title: { en: "Beginning and ending the legal argument; the Discussion section", es: "Abrir y cerrar el argumento; la sección Discussion" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 9 and ch. 12" }]
   - id: lrw-iied-case-chart
     type: assignment
-    date: "2026-10-08"
-    due: "2026-10-09"
-    topic: memo
-    title: { en: "IIED memo: case chart of 6 to 10 Texas cases (submitted)", es: "Memo de IIED: cuadro de 6 a 10 casos de Texas (entregado)" }
-    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber]
-    source: "IIED Memo Assignment and Case Chart templates (Canvas)"
-  - id: lrw-counter-analysis
-    type: assignment
     date: "2026-10-09"
-    topic: application
-    title: { en: "Counter-analysis exercise (A Lawyer Writes § 8.4)", es: "Ejercicio de counter-analysis (A Lawyer Writes § 8.4)" }
-    pages: [{ book: a-lawyer-writes, pages: "182–188 (§ 8.4)" }]
-    verified: false
+    time: { start: "14:00", end: "15:25" }
+    week: 7
+    topic: memo
+    title: { en: "Make-up class (Florence 201): Question Presented and Brief Answer; IIED research assignment due at midnight (case chart of 6 to 10 Texas cases)", es: "Clase de reposición (Florence 201): Question Presented y Brief Answer; entrega a medianoche de la investigación de IIED (cuadro de 6 a 10 casos de Texas)" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 13" }]
+    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber]
+    notes: [lrw/memo-anatomy]
+    source: "IIED Memo Assignment and case chart templates (Canvas, Sept. 28)"
+  - id: lrw-w08-oct12
+    type: reading
+    date: "2026-10-12"
+    week: 8
+    topic: memo
+    title: { en: "Preparing for the memo: sample memo; the eight cases for the Discussion section announced", es: "Preparar el memo: memo de muestra; se anuncian los ocho casos para la sección Discussion" }
+    briefs: [lrw/twyman-v-twyman, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/warner-bros-v-jones, lrw/weber-v-fernandez, lrw/gonzales-v-gonzales]
+    notes: [lrw/memo-anatomy, lrw/explaining-the-law]
+    note: { en: "Oct. 12 announcement: use correct citation form; not every case must be cited.", es: "Anuncio del 12 de oct.: usa la forma de cita correcta; no hay que citar todos los casos." }
+  - id: lrw-w08-oct14
+    type: reading
+    date: "2026-10-14"
+    week: 8
+    topic: memo
+    title: { en: "Question Presented and Brief Answer (continued); keep working on the Discussion section", es: "Question Presented y Brief Answer (continuación); seguir con la sección Discussion" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 13" }]
+    notes: [lrw/memo-anatomy]
+  - id: lrw-w09-oct19
+    type: reading
+    date: "2026-10-19"
+    week: 9
+    topic: memo
+    title: { en: "Statement of Facts", es: "Statement of Facts" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 14" }]
+    notes: [lrw/memo-anatomy]
+  - id: lrw-w09-oct21
+    type: event
+    date: "2026-10-21"
+    week: 9
+    title: { en: "No class", es: "Sin clase" }
   - id: lrw-iied-discussion
     type: assignment
     date: "2026-10-26"
+    dueTime: "23:59"
+    week: 10
     topic: memo
-    title: { en: "IIED memo: Discussion section (Marcus Carter v. Luther Reynolds, Texas law)", es: "Memo de IIED: sección Discussion (Marcus Carter v. Luther Reynolds, derecho de Texas)" }
-    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber]
+    title: { en: "Class cancelled; IIED memo Discussion section due at midnight (2–3 pages)", es: "Clase cancelada; entrega a medianoche de la sección Discussion del memo de IIED (2–3 páginas)" }
+    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber, lrw/warner-bros-v-jones, lrw/weber-v-fernandez, lrw/gonzales-v-gonzales]
+    notes: [lrw/creac-paragraph, lrw/applying-the-law]
     tasks:
-      - { en: "Confirm the due date in Canvas.", es: "Confirma la fecha de entrega en Canvas." }
       - { en: "Structure: gap-filler threshold first, then the four Twyman elements, CREAC each.", es: "Estructura: primero el umbral de gap-filler, luego los cuatro elementos de Twyman, cada uno en CREAC." }
-    verified: false
+    source: "Oct. 12 and Oct. 26 announcements"
+  - id: lrw-w10-oct28
+    type: reading
+    date: "2026-10-28"
+    week: 10
+    topic: memo
+    title: { en: "Conclusion and editing your memo", es: "Conclusion y edición del memo" }
+    pages: [{ book: a-lawyer-writes, sections: "ch. 15 and ch. 16" }]
+    notes: [lrw/editing-checklist, lrw/memo-anatomy]
+  - id: lrw-memo-due
+    type: assignment
+    date: "2026-11-02"
+    dueTime: "23:59"
+    week: 11
+    topic: memo
+    title: { en: "Full IIED memo due (5 pages): heading, Question Presented, Brief Answer, Facts, Discussion, Conclusion; class on professional emails", es: "Entrega del memo completo de IIED (5 páginas): encabezado, Question Presented, Brief Answer, Facts, Discussion, Conclusion; clase sobre correos profesionales" }
+    pages:
+      - { book: a-lawyer-writes, sections: "ch. 18 (professional emails)" }
+      - { book: icw, sections: "ch. 8" }
+    briefs: [lrw/twyman-v-twyman, lrw/hoffmann-la-roche-v-zeltwanger, lrw/gte-southwest-v-bruce, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber, lrw/warner-bros-v-jones]
+    notes: [lrw/memo-anatomy, lrw/editing-checklist, lrw/texas-citation-essentials]
+    tasks:
+      - { en: "Run the editing checklist and the citation checklist before submitting; the professor gives individual feedback on this memo.", es: "Pasa la checklist de edición y la de citas antes de entregar; la profesora da retroalimentación individual sobre este memo." }
+    source: "Oct. 12 and Oct. 26 announcements; Week 11 page"
+  - id: lrw-w11-nov04
+    type: event
+    date: "2026-11-04"
+    week: 11
+    topic: citation
+    title: { en: "No class; ICW chapters 10 and 12", es: "Sin clase; capítulos 10 y 12 del ICW" }
+    pages: [{ book: icw, sections: "ch. 10 and ch. 12" }]
+    notes: [lrw/texas-citation-essentials]
+  - id: lrw-w12-nov09
+    type: reading
+    date: "2026-11-09"
+    week: 12
+    topic: citation
+    title: { en: "Common mistakes and citation review", es: "Errores comunes y repaso de citas" }
+    pages: [{ book: icw, sections: "ch. 13 and ch. 15" }]
+    notes: [lrw/texas-citation-essentials, lrw/editing-checklist]
+  - id: lrw-w12-nov11
+    type: event
+    date: "2026-11-11"
+    week: 12
+    title: { en: "No class; one-on-one sessions begin (book an appointment)", es: "Sin clase; empiezan las sesiones individuales (agenda una cita)" }
+    notes: [lrw/how-to-study-lrw]

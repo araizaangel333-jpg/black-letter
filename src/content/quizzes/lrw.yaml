@@ -52,3 +52,207 @@ items:
         stem: "State the four IIED elements in Texas and name the case that announces them."
         answer: "(1) Intentional or reckless conduct, (2) extreme and outrageous, (3) that caused emotional distress, (4) that was severe. Twyman v. Twyman, 855 S.W.2d 619 (Tex. 1993)."
         keyPoints: ["intentional or reckless", "extreme and outrageous", "caused distress", "severe", "Twyman"]
+  - id: lrw-citation-01
+    topic: citation
+    title: { en: "Texas citation drills (type the citation)", es: "Drills de citas de Texas (escribe la cita)" }
+    difficulty: 2
+    shuffle: false
+    questions:
+      - id: c1
+        type: citation
+        prompt: "Full citation, first reference: the Supreme Court of Texas case Twyman v. Twyman, volume 855 of the South Western Reporter, second series, page 619, decided 1993."
+        answer: "Twyman v. Twyman, 855 S.W.2d 619 (Tex. 1993)"
+        accept: ["Twyman v. Twyman, 855 S.W.2d 619 (Tex. 1993)."]
+        rule: "B10.1; T1 (Texas)"
+        explanation: { en: "Name, volume, reporter, first page, court and year in parentheses. The Supreme Court of Texas is simply Tex.", es: "Nombre, volumen, reporter, primera página, tribunal y año entre paréntesis. La Suprema Corte de Texas es simplemente Tex." }
+      - id: c2
+        type: citation
+        prompt: "Full citation: Draker v. Schreiber, 271 S.W.3d 318, decided in 2008 by the court of appeals in San Antonio; no petition for review was filed."
+        answer: "Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.—San Antonio 2008, no pet.)"
+        accept: ["Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.—San Antonio 2008, no pet.).", "Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.--San Antonio 2008, no pet.)", "Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.-San Antonio 2008, no pet.)"]
+        rule: "B10.1.3; T1 (Texas); R. 10.4(b)"
+        explanation: { en: "Texas courts of appeals are cited by district city with an em dash, and the petition history goes inside the parenthetical after a comma.", es: "Los tribunales de apelación de Texas se citan por la ciudad del distrito con raya, y la historia de la petición va dentro del paréntesis después de una coma." }
+      - id: c3
+        type: citation
+        prompt: "Pinpoint citation, first reference: Hoffmann-La Roche Inc. v. Zeltwanger, 144 S.W.3d 438 (Tex. 2004), citing page 447."
+        answer: "Hoffmann-La Roche Inc. v. Zeltwanger, 144 S.W.3d 438, 447 (Tex. 2004)"
+        accept: ["Hoffmann-La Roche Inc. v. Zeltwanger, 144 S.W.3d 438, 447 (Tex. 2004)."]
+        rule: "B10.1.2; R. 3.2(a)"
+        explanation: { en: "The pinpoint follows the first page after a comma. Inc. stays because no Co. precedes it.", es: "La página precisa sigue a la primera página tras una coma. Inc. se conserva porque no hay Co. antes." }
+      - id: c4
+        type: citation
+        prompt: "Short form for Zeltwanger (already cited in full, but not the immediately preceding citation), pointing to pages 447 to 448."
+        answer: "Zeltwanger, 144 S.W.3d at 447–48"
+        accept: ["Zeltwanger, 144 S.W.3d at 447–48.", "Zeltwanger, 144 S.W.3d at 447-48", "Zeltwanger, 144 S.W.3d at 447-48."]
+        rule: "B10.2; R. 10.9"
+        explanation: { en: "One party's name (not the first party if it is a common name like a government), volume, reporter, at, pincite. Supra is not used for cases.", es: "El nombre de una parte, volumen, reporter, at, página. Supra no se usa para casos." }
+      - id: c5
+        type: citation
+        prompt: "Short form when the immediately preceding citation is Zeltwanger and you now cite page 448."
+        answer: "Id. at 448"
+        accept: ["Id. at 448."]
+        rule: "B10.2; R. 4.1"
+        explanation: { en: "Id. replaces the whole citation when the authority is the one cited immediately before; add at and the new page.", es: "Id. sustituye toda la cita cuando la autoridad es la citada inmediatamente antes; añade at y la nueva página." }
+      - id: c6
+        type: citation
+        prompt: "Full citation with subsequent history: Warner Bros. Entertainment, Inc. v. Jones, 538 S.W.3d 781, Austin court of appeals 2017, affirmed by the Supreme Court of Texas at 611 S.W.3d 1 (2020). Abbreviate Entertainment per T6."
+        answer: "Warner Bros. Entm't, Inc. v. Jones, 538 S.W.3d 781 (Tex. App.—Austin 2017), aff'd, 611 S.W.3d 1 (Tex. 2020)"
+        accept: ["Warner Bros. Entm't, Inc. v. Jones, 538 S.W.3d 781 (Tex. App.—Austin 2017), aff'd, 611 S.W.3d 1 (Tex. 2020).", "Warner Bros. Entm't, Inc. v. Jones, 538 S.W.3d 781 (Tex. App.--Austin 2017), aff'd, 611 S.W.3d 1 (Tex. 2020)"]
+        rule: "R. 10.7; T6; T1"
+        explanation: { en: "When the Supreme Court acted, the petition history parenthetical is replaced by the subsequent history after a comma: aff'd, then the higher court's citation.", es: "Cuando actuó la Suprema Corte, el paréntesis de petición se sustituye por la historia posterior tras una coma: aff'd y la cita del tribunal superior." }
+      - id: c7
+        type: citation
+        prompt: "Unpublished opinion: Weber v. Fernandez, docket No. 02-18-00275-CV, Westlaw 2019 WL 1395796, Fort Worth court of appeals, March 28, 2019, no petition."
+        answer: "Weber v. Fernandez, No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.—Fort Worth Mar. 28, 2019, no pet.)"
+        accept: ["Weber v. Fernandez, No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.—Fort Worth Mar. 28, 2019, no pet.).", "Weber v. Fernandez, No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.--Fort Worth Mar. 28, 2019, no pet.)"]
+        rule: "R. 10.8.1; B10.1.4; T1"
+        explanation: { en: "Database citations need the docket number, the database identifier and the exact date; the Texas petition history still goes in the parenthetical.", es: "Las citas de bases de datos necesitan número de expediente, identificador de la base y fecha exacta; la historia de la petición sigue en el paréntesis." }
+      - id: c8
+        type: citation
+        prompt: "Correct this case name for a citation sentence: Standard Fruit & Vegetable Co., Inc. v. Johnson, 985 S.W.2d 62 (Tex. 1998)."
+        answer: "Standard Fruit & Vegetable Co. v. Johnson, 985 S.W.2d 62 (Tex. 1998)"
+        accept: ["Standard Fruit & Vegetable Co. v. Johnson, 985 S.W.2d 62 (Tex. 1998)."]
+        rule: "R. 10.2.1(h)"
+        explanation: { en: "Omit Inc. (and Ltd., L.L.C.) when the name already contains Co., Corp., Bros. or a similar word showing the party is a business.", es: "Se omite Inc. (y Ltd., L.L.C.) cuando el nombre ya contiene Co., Corp., Bros. u otra palabra que muestra que la parte es una empresa." }
+      - id: c9
+        type: citation
+        prompt: "Full citation: GTE Southwest, Inc. v. Bruce, 998 S.W.2d 605, Supreme Court of Texas, 1999. Abbreviate per T6."
+        answer: "GTE Sw., Inc. v. Bruce, 998 S.W.2d 605 (Tex. 1999)"
+        accept: ["GTE Sw., Inc. v. Bruce, 998 S.W.2d 605 (Tex. 1999)."]
+        rule: "R. 10.2.2; T6"
+        explanation: { en: "Southwest becomes Sw. in a citation; Inc. stays because there is no Co. before it.", es: "Southwest se abrevia Sw. en la cita; Inc. se conserva porque no hay Co. antes." }
+      - id: c10
+        type: citation
+        prompt: "Cite the Texas statute of limitations provision: section 16.003 of the Civil Practice and Remedies Code (annotated)."
+        answer: "Tex. Civ. Prac. & Rem. Code Ann. § 16.003"
+        accept: ["Tex. Civ. Prac. & Rem. Code Ann. § 16.003.", "Tex. Civ. Prac. & Rem. Code Ann. § 16.003 (West 2025)", "Tex. Civ. Prac. & Rem. Code Ann. § 16.003 (West 2026)", "Tex. Civ. Prac. & Rem. Code § 16.003"]
+        rule: "R. 12.3; B12.1; T1 (Texas)"
+        explanation: { en: "Texas statutes are cited to the subject-matter code with Ann.; the section symbol is followed by a space.", es: "Las leyes de Texas se citan al código temático con Ann.; el símbolo de sección lleva un espacio después." }
+      - id: c11
+        type: citation
+        prompt: "Cite the federal civil rights statute: title 42 of the United States Code, section 1983."
+        answer: "42 U.S.C. § 1983"
+        accept: ["42 U.S.C. § 1983.", "42 U.S.C. § 1983 (2018)", "42 U.S.C. § 1983 (2018)."]
+        rule: "R. 12.3; B12.1.1"
+        explanation: { en: "Title, U.S.C., section; the year is no longer required for the current code.", es: "Título, U.S.C., sección; el año ya no se exige para el código vigente." }
+      - id: c12
+        type: citation
+        prompt: "Pinpoint citation to the U.S. Supreme Court: Loving v. Virginia, volume 388 U.S. page 1, decided 1967, citing page 12."
+        answer: "Loving v. Virginia, 388 U.S. 1, 12 (1967)"
+        accept: ["Loving v. Virginia, 388 U.S. 1, 12 (1967)."]
+        rule: "B10.1; R. 10.4(a)"
+        explanation: { en: "For the U.S. Supreme Court the parenthetical has only the year; U.S. is the official reporter.", es: "Para la Corte Suprema federal el paréntesis solo lleva el año; U.S. es el reporter oficial." }
+      - id: c13
+        type: citation
+        prompt: "A Dallas court of appeals case where the Supreme Court of Texas denied the petition for review: Gomez v. Rivera, 300 S.W.3d 100, decided 2009. (Invented case, real format.)"
+        answer: "Gomez v. Rivera, 300 S.W.3d 100 (Tex. App.—Dallas 2009, pet. denied)"
+        accept: ["Gomez v. Rivera, 300 S.W.3d 100 (Tex. App.—Dallas 2009, pet. denied).", "Gomez v. Rivera, 300 S.W.3d 100 (Tex. App.--Dallas 2009, pet. denied)"]
+        rule: "B10.1.3; T1 (Texas)"
+        explanation: { en: "pet. denied means the Supreme Court of Texas declined review; no pet. means nobody asked. Both are part of the Texas citation.", es: "pet. denied significa que la Suprema Corte de Texas negó la revisión; no pet. que nadie la pidió. Ambas son parte de la cita texana." }
+      - id: c14
+        type: citation
+        prompt: "A criminal case from the Texas Court of Criminal Appeals: Lopez v. State, 123 S.W.3d 456, decided 2003. (Invented case, real format.)"
+        answer: "Lopez v. State, 123 S.W.3d 456 (Tex. Crim. App. 2003)"
+        accept: ["Lopez v. State, 123 S.W.3d 456 (Tex. Crim. App. 2003)."]
+        rule: "T1 (Texas)"
+        explanation: { en: "Texas has two high courts: Tex. for civil cases and Tex. Crim. App. for criminal cases; no petition history for either.", es: "Texas tiene dos tribunales supremos: Tex. para lo civil y Tex. Crim. App. para lo penal; ninguno lleva historia de petición." }
+  - id: lrw-memo-01
+    topic: memo
+    title: { en: "The memo and its mechanics", es: "El memo y su mecánica" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Which Question Presented is best for an objective memo?"
+        choices:
+          - { id: a, text: "Does our client have a valid IIED claim against her former employee?", why: "No law, no decisive facts; it could be asked about any case." }
+          - { id: b, text: "Under Texas law, can a salon owner recover for intentional infliction of emotional distress when a former employee posted twenty-two false reviews and made eight late-night hang-up calls over two weeks?", correct: true }
+          - { id: c, text: "Isn't it obvious that twenty-two false reviews and harassing calls are outrageous enough for IIED under Texas law?", why: "Argumentative; the memo predicts, it does not persuade." }
+          - { id: d, text: "What does Texas law say about intentional infliction of emotional distress?", why: "A research question, not the client's question." }
+        explanation: { en: "Under–does–when: the governing law, the legal question, the three or four facts that decide it, stated neutrally.", es: "Under–does–when: la ley aplicable, la pregunta jurídica, los tres o cuatro hechos decisivos, en tono neutral." }
+        source: "A Lawyer Writes ch. 13"
+      - id: q2
+        type: mcq
+        stem: "A Brief Answer should begin with:"
+        choices:
+          - { id: a, text: "A full citation to the leading case.", why: "Citations are optional in the Brief Answer and never come first." }
+          - { id: b, text: "A direct answer such as probably not, followed by the rule and the key reason.", correct: true }
+          - { id: c, text: "A summary of the facts.", why: "The facts have their own section." }
+          - { id: d, text: "The procedural posture.", why: "That belongs at the end of the Statement of Facts." }
+        explanation: { en: "Answer first, then why, in under a hundred words.", es: "Primero la respuesta, luego el porqué, en menos de cien palabras." }
+        source: "A Lawyer Writes ch. 13"
+      - id: q3
+        type: mcq
+        stem: "Which sentence belongs in a Statement of Facts?"
+        choices:
+          - { id: a, text: "Kyle's outrageous campaign of harassment devastated Renata.", why: "Characterization and conclusions (outrageous, devastated) are argument." }
+          - { id: b, text: "Between March 1 and March 14, Kyle called Renata's personal phone eight times between midnight and 2 a.m. and hung up each time.", correct: true }
+          - { id: c, text: "Under Twyman, the conduct must be extreme and outrageous.", why: "Law belongs in the Discussion." }
+          - { id: d, text: "Renata clearly has a strong claim.", why: "Prediction belongs in the Brief Answer and Conclusion." }
+        explanation: { en: "Facts are specific, dated, sourced and neutral; the legal significance is shown by selection, not adjectives.", es: "Los hechos son específicos, fechados, con fuente y neutrales; su importancia jurídica se muestra por la selección, no por los adjetivos." }
+        source: "A Lawyer Writes ch. 14"
+      - id: q4
+        type: mcq
+        stem: "In a CREAC argument, where does a case that the writer uses for an analogy first appear?"
+        choices:
+          - { id: a, text: "In the application, when the analogy is drawn.", why: "A case first mentioned in the application has not been explained; the reader cannot evaluate the analogy." }
+          - { id: b, text: "In the rule explanation, as a case illustration, before the application uses it.", correct: true }
+          - { id: c, text: "In the conclusion.", why: "The conclusion adds no authority." }
+          - { id: d, text: "In a footnote.", why: "Memos rarely use footnotes; the illustration belongs in the text." }
+        explanation: { en: "Explain first, apply second: the application may rely only on rules and cases the explanation already presented.", es: "Primero explicar, luego aplicar: la aplicación solo puede apoyarse en reglas y casos que la explicación ya presentó." }
+        source: "A Lawyer Writes chs. 7–8"
+      - id: q5
+        type: mcq
+        stem: "The professor's rubric rewards counter-analysis. What is the best counter-analysis?"
+        choices:
+          - { id: a, text: "A weak argument the other side would never make, easily refuted.", why: "Straw men earn nothing." }
+          - { id: b, text: "The strongest argument a competent opposing lawyer would make, with its best case, followed by an honest assessment of its force.", correct: true }
+          - { id: c, text: "A list of every possible objection.", why: "Lists dilute; pick the real one." }
+          - { id: d, text: "A statement that the law is unsettled.", why: "That avoids the analysis instead of doing it." }
+        explanation: { en: "Predictive writing weighs the real counterargument and concedes when it has force.", es: "La redacción predictiva pondera el contraargumento real y concede cuando tiene fuerza." }
+        source: "A Lawyer Writes § 8.4"
+      - id: q6
+        type: mcq
+        stem: "Which signal introduces a case that supports the proposition only by inference, so that the reader must take a small step from the case to the point?"
+        choices:
+          - { id: a, text: "No signal.", why: "No signal means the authority states the proposition directly." }
+          - { id: b, text: "See", correct: true }
+          - { id: c, text: "But see", why: "But see introduces contrary authority." }
+          - { id: d, text: "See generally", why: "See generally introduces background material." }
+        explanation: { en: "See is the inferential-support signal; add a parenthetical explaining the step.", es: "See es la señal de apoyo por inferencia; añade un paréntesis que explique el paso." }
+        source: "Bluebook R. 1.2"
+      - id: q7
+        type: mcq
+        stem: "Which sentence is edited best for plain language?"
+        choices:
+          - { id: a, text: "Pursuant to the aforementioned authority, a determination was made by the court that the conduct was not actionable.", why: "Legalese, nominalization and passive voice all at once." }
+          - { id: b, text: "Under Draker, the court held that the conduct was not actionable.", correct: true }
+          - { id: c, text: "It is the case that the court, in accordance with Draker, did find the conduct to be non-actionable.", why: "Throat-clearing opener and inflated verbs." }
+          - { id: d, text: "The conduct's non-actionability was determined by the court per Draker.", why: "Nominalization and passive voice." }
+        explanation: { en: "Actor, verb, object; the rule's words; nothing else.", es: "Actor, verbo, objeto; las palabras de la regla; nada más." }
+        source: "A Lawyer Writes ch. 16"
+      - id: q8
+        type: mcq
+        stem: "When may you use Id.?"
+        choices:
+          - { id: a, text: "Whenever the case was cited anywhere earlier in the memo.", why: "That is the ordinary short form, not Id." }
+          - { id: b, text: "Only when the authority is the one cited immediately before, with no intervening citation.", correct: true }
+          - { id: c, text: "Only for statutes.", why: "Id. works for cases, statutes and most sources." }
+          - { id: d, text: "Never in a memo.", why: "Id. is standard in memos." }
+        explanation: { en: "Id. points to the immediately preceding authority; one intervening cite breaks the chain.", es: "Id. apunta a la autoridad inmediatamente anterior; una cita intermedia rompe la cadena." }
+        source: "Bluebook R. 4.1; B10.2"
+      - id: q9
+        type: mcq
+        stem: "A Texas court of appeals opinion is marked memorandum opinion and is available only on Westlaw. For the memo, you should:"
+        choices:
+          - { id: a, text: "Not cite it; unpublished opinions have no value.", why: "In Texas civil cases, memorandum opinions have precedential value." }
+          - { id: b, text: "Cite it with the docket number, the WL identifier, the court, the full date and the petition history.", correct: true }
+          - { id: c, text: "Cite it as if it were in S.W.3d.", why: "No reporter page exists." }
+          - { id: d, text: "Cite only the headnote.", why: "Never cite headnotes." }
+        explanation: { en: "Weber v. Fernandez on the professor's list is exactly this kind of citation.", es: "Weber v. Fernandez, en la lista de la profesora, es exactamente este tipo de cita." }
+        source: "Bluebook R. 10.8.1; Tex. R. App. P. 47.7"
+      - id: q10
+        type: short
+        stem: "Explain in three sentences the difference between predictive and persuasive writing and why mixing them hurts a memo."
+        answer: "Predictive writing tells a colleague or client what a court will probably do, giving equal weight to the facts and authorities that cut against the client; persuasive writing argues to a court for one result and frames everything toward it. A memo is predictive: its value is that the reader can rely on it to make a decision. A memo that hides weaknesses or uses advocacy language misleads the supervising attorney and reads as untrustworthy to the professor."
+        keyPoints: ["predictive = objective prediction incl. weaknesses", "persuasive = argument to a court", "memo must be reliable; advocacy language misleads"]

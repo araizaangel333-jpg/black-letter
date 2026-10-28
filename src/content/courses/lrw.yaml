@@ -26,11 +26,12 @@ topics:
   - { id: memo, order: 4, title: { en: "The office memo", es: "El memorándum" } }
   - { id: citation, order: 5, title: { en: "Bluebook citation", es: "Citas con el Bluebook" } }
 assessment:
-  - { kind: memo, format: { en: "Office memo on an IIED claim under Texas law (case chart, then discussion section), plus shorter IRAC/CREAC and counter-analysis exercises", es: "Memo sobre un reclamo de IIED bajo derecho de Texas (cuadro de casos y luego la sección Discussion), más ejercicios cortos de IRAC/CREAC y counter-analysis" } }
-  - { kind: citation-exercises, format: { en: "ICW citation exercises (Lexis)", es: "Ejercicios de citas en ICW (Lexis)" } }
+  - { kind: memo, format: { en: "Office memo on an IIED claim under Texas law, built in stages: research case chart (Oct. 9), Discussion section of 2–3 pages (Oct. 26), full 5-page memo (Nov. 2) with individual feedback; the professor grades mechanics and substance", es: "Memo sobre un reclamo de IIED bajo derecho de Texas, por etapas: cuadro de casos (9 oct.), sección Discussion de 2–3 páginas (26 oct.), memo completo de 5 páginas (2 nov.) con retroalimentación individual; se califican la mecánica y el fondo" } }
+  - { kind: other, format: { en: "Short in-class writing: IRAC scenario on negligence (Sept.), I/CREAC assignment on People v. Joesel with rubric and peer review (Oct. 4–5); one-on-one sessions from Nov. 11", es: "Escritos cortos en clase: escenario IRAC de negligencia (sept.), tarea I/CREAC sobre People v. Joesel con rúbrica y revisión entre pares (4–5 oct.); sesiones individuales desde el 11 de nov." } }
+  - { kind: citation-exercises, format: { en: "ICW citation exercises (Lexis) assigned by chapter each week; grading weights are in the Simple Syllabus (confirm)", es: "Ejercicios de citas del ICW (Lexis) asignados por capítulo cada semana; los pesos de calificación están en el Simple Syllabus (confirmar)" }, verified: false }
 materials:
   canvas: true
-  note: { en: "Weekly readings appear in Canvas under \"Week N Readings and Assignments\".", es: "Las lecturas semanales están en Canvas bajo \"Week N Readings and Assignments\"." }
+  note: { en: "Canvas: weekly pages “Week N Readings and Assignments”, class slides (weeks 1–6), and a Materials folder (I/CREAC assignment and rubric, People v. Joesel, case chart templates, IIED memo assignment). Make-up classes meet Fridays at 2:00 pm in Florence 201. Appointments through the professor's booking link.", es: "Canvas: páginas semanales “Week N Readings and Assignments”, diapositivas (semanas 1–6) y carpeta Materials (tarea I/CREAC y rúbrica, People v. Joesel, plantillas de cuadro de casos, consigna del memo de IIED). Las clases de reposición son los viernes a las 2:00 pm en Florence 201. Citas por la liga de agenda de la profesora." }
 color: c3
 about:
   en: "The skills course: research, case analysis, memos, rule explanation and application, counterarguments and citations. The one that teaches you to write like a U.S. lawyer."

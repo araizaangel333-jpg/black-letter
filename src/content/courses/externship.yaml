@@ -4,7 +4,7 @@ title: { en: "Corporate Counsel Externship", es: "Externship de abogado corporat
 term: fall-2026
 professor: { name: "Stephen Yeager", title: "Dean" }
 meetings:
-  - { day: wed, start: "17:30", end: "19:30" }
+  - { day: wed, start: "17:30", end: "19:30", room: "Walsh (lecture 5:30–6:20; breakout labs 6:30–7:30)" }
 books:
   - id: inside-counsel-3
     cite: "Steinberg & Yeager, Inside Counsel: Practices, Strategies, and Insights (3rd ed., West Academic 2024). Listed in the assignments as \"Inside Counsel Resource Guide\"."
@@ -16,13 +16,20 @@ topics:
   - { id: privilege, order: 3, title: { en: "Privilege, work product and confidentiality", es: "Privilegio, work product y confidencialidad" } }
   - { id: outside-counsel, order: 4, title: { en: "Working with outside counsel", es: "Trabajar con abogados externos" } }
   - { id: risk, order: 5, title: { en: "Risk, compliance and investigations", es: "Riesgo, cumplimiento e investigaciones" } }
+  - { id: governance, order: 6, title: { en: "Governance and the boardroom (ch. 4)", es: "Gobierno corporativo y la sala del consejo (cap. 4)" } }
+  - { id: contracts, order: 7, title: { en: "Deals, due diligence and contracts", es: "Deals, due diligence y contratos" } }
+  - { id: employment, order: 8, title: { en: "Employment law for the business lawyer", es: "Derecho laboral para el abogado de negocios" } }
+  - { id: technology, order: 9, title: { en: "AI, technology and data privacy in the legal department", es: "AI, tecnología y privacidad de datos en el departamento jurídico" } }
+  - { id: securities, order: 10, title: { en: "Securities law, insider trading, inside counsel as director (chs. 9, 10, 13)", es: "Derecho de valores, insider trading, el abogado interno como consejero (caps. 9, 10, 13)" } }
+  - { id: career, order: 11, title: { en: "Career, the research paper and the externship itself", es: "Carrera, el trabajo de investigación y el externship mismo" } }
 assessment:
-  - { kind: participation, format: { en: "Seminar discussion, breakout labs and weekly \"Rapid Fire\" engagement prompts (200–300 words on Canvas, 2 points each)", es: "Discusión en seminario, laboratorios en grupo y prompts semanales \"Rapid Fire\" (200–300 palabras en Canvas, 2 puntos cada uno)" } }
-  - { kind: paper, format: { en: "Topic proposal (done: the in-house role in U.S.–Mexico supply chains during the USMCA review), abstract and final paper; confirm the final due date", es: "Propuesta de tema (entregada: el rol del abogado interno en cadenas de suministro México–EE. UU. durante la revisión del T-MEC), abstract y trabajo final; confirmar fecha de entrega" }, verified: false }
-  - { kind: other, format: { en: "Practical assignments such as the MSA redline exercise", es: "Ejercicios prácticos como el redline del MSA" } }
+  - { kind: paper, format: { en: "Research paper in three stages: topic proposal (5 pts, Sept. 11), abstract of 250–350 words (5 pts, Oct. 16), final thesis-driven paper of 15–20 pages from an in-house perspective (50 pts, Nov. 30, 11:59 pm). Topic: the in-house role in U.S.–Mexico supply chains during the USMCA review.", es: "Trabajo de investigación en tres etapas: propuesta de tema (5 pts, 11 sept.), abstract de 250–350 palabras (5 pts, 16 oct.), trabajo final con tesis de 15–20 páginas desde la perspectiva del abogado interno (50 pts, 30 nov., 11:59 pm). Tema: el abogado interno y las cadenas de suministro México–EE. UU. durante la revisión del T-MEC." } }
+  - { kind: other, format: { en: "Three reflection papers of about two double-spaced pages, 10 points each, no AI (Aug. 28, Sept. 25, Nov. 6)", es: "Tres reflexiones de unas dos páginas a doble espacio, 10 puntos cada una, sin AI (28 ago., 25 sept., 6 nov.)" } }
+  - { kind: participation, format: { en: "Rapid Fire engagement prompts (200–300 words, 2 points each, completion-based, due the day after class at 7:30 pm); attendance by app at every session, at most two unexcused absences; breakout labs", es: "Prompts Rapid Fire (200–300 palabras, 2 puntos cada uno, por cumplimiento, se entregan el día siguiente a la clase a las 7:30 pm); asistencia por app en cada sesión, máximo dos faltas injustificadas; laboratorios en grupo" } }
+  - { kind: other, format: { en: "Externship component: weekly timesheets and time descriptions in CORE ELMS, mid-term and final evaluations, 120 hours minimum by Nov. 23; optional extra credit for international LL.M.s due Dec. 11", es: "Componente de externship: hojas de horas semanales con descripciones en CORE ELMS, evaluaciones de medio semestre y final, mínimo 120 horas al 23 de nov.; créditos extra opcionales para LL.M. internacionales hasta el 11 de dic." } }
 materials:
   canvas: true
-  note: { en: "Cases, ethics opinions and practice materials. The book is by the professor: nothing from it is reproduced on this site.", es: "Casos, opiniones éticas y materiales prácticos. El libro es del profesor: nada de su texto se reproduce en este sitio." }
+  note: { en: "Canvas: one module per class with the lecture page, the readings (chapters of the professor's book, cited by number only) and the breakout lab; pages on the extern handbook, time categories and writing good time descriptions; AI use policy (red = no AI, yellow = allowed with disclosure); device policy (no laptops in class, bring a notebook). Nothing from the professor's book is reproduced on this site.", es: "Canvas: un módulo por clase con la página de la conferencia, las lecturas (capítulos del libro del profesor, citados solo por número) y el laboratorio; páginas sobre el manual del extern, las categorías de tiempo y cómo describir las horas; política de AI (rojo = sin AI, amarillo = permitida con declaración); política de dispositivos (sin laptops en clase, lleva libreta). Nada del libro del profesor se reproduce en este sitio." }
 color: c5
 about:
   en: "What a company's own lawyers do: who the client is, what stays privileged, how to manage outside firms and how to spot risk before it becomes a lawsuit."

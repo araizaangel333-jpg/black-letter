@@ -1,0 +1,171 @@
+# Quizzes del Corporate Counsel Externship. Preguntas originales; nada del libro del profesor.
+course: externship
+items:
+  - id: ext-client-privilege-01
+    topic: privilege
+    title: { en: "Client, privilege and outside counsel", es: "Cliente, privilegio y abogados externos" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "The CFO asks the general counsel, over lunch, how much personal exposure he has if the restatement goes badly. What should the GC say first?"
+        choices:
+          - { id: a, text: "Nothing; lawyers must keep clients' questions confidential.", why: "The CFO is not her client; she must clarify that before advising." }
+          - { id: b, text: "That she represents the company, not him, that their interests may differ, and that he may want his own lawyer.", correct: true }
+          - { id: c, text: "A candid estimate of his exposure.", why: "Advising a constituent on his personal exposure invites a conflict and a later claim that she was his lawyer." }
+          - { id: d, text: "That she will keep the conversation privileged for him.", why: "Any privilege belongs to the company, which may waive it." }
+        explanation: { en: "Rule 1.13: the organization is the client; when a constituent's interests diverge, the lawyer must explain whom she represents.", es: "Regla 1.13: la organización es el cliente; cuando los intereses de un constituyente divergen, el abogado debe explicar a quién representa." }
+        source: "Model Rule 1.13(f)"
+      - id: q2
+        type: mcq
+        stem: "Before interviewing a warehouse manager in an internal investigation, counsel should:"
+        choices:
+          - { id: a, text: "Promise that nothing he says will leave the room.", why: "She cannot promise that; the company may disclose." }
+          - { id: b, text: "Give an Upjohn warning: she represents the company, the privilege is the company's, and the company may waive it and disclose his statements.", correct: true }
+          - { id: c, text: "Record the interview and post it to the shared drive.", why: "That destroys confidentiality and privilege." }
+          - { id: d, text: "Skip warnings because he is not a suspect.", why: "The warning is about whose lawyer she is, not about guilt." }
+        explanation: { en: "The Upjohn warning protects both the privilege and the employee's understanding of the situation.", es: "La advertencia Upjohn protege tanto el privilegio como la comprensión del empleado sobre la situación." }
+        source: "Upjohn Co. v. United States (1981)"
+      - id: q3
+        type: mcq
+        stem: "A product manager sends a pricing proposal to six colleagues and copies the in-house lawyer. In later litigation, the email is:"
+        choices:
+          - { id: a, text: "Privileged, because a lawyer was copied.", why: "Copying a lawyer does not make a business communication privileged." }
+          - { id: b, text: "Probably not privileged, because its primary purpose was business, not obtaining legal advice.", correct: true }
+          - { id: c, text: "Work product.", why: "No litigation was anticipated and no lawyer prepared it." }
+          - { id: d, text: "Privileged if the lawyer replied.", why: "The lawyer's reply might be privileged; the proposal itself is not." }
+        explanation: { en: "The test is purpose and participants: legal advice sought from counsel in confidence. Separate the lawyer's advice from the business thread.", es: "La prueba es el propósito y los participantes: consejo jurídico pedido al abogado en confianza. Separa el consejo del hilo de negocios." }
+        source: "Class 2; dual-purpose communications"
+      - id: q4
+        type: mcq
+        stem: "An executive under investigation pastes the company's internal investigation memo into a public AI chatbot to get advice. Under Heppner, the chatbot conversation is:"
+        choices:
+          - { id: a, text: "Privileged, because it concerns legal matters.", why: "Privilege follows the lawyer relationship, not the subject." }
+          - { id: b, text: "Not privileged and not work product, and the paste may have waived protection over the memo itself.", correct: true }
+          - { id: c, text: "Work product, because litigation is anticipated.", why: "It was not prepared by or for counsel." }
+          - { id: d, text: "Protected by the chatbot's terms of service.", why: "Terms of service create no privilege." }
+        explanation: { en: "A public AI tool is a third party; disclosure to it on the client's own initiative is outside the privilege and risks waiver.", es: "Una herramienta pública de AI es un tercero; revelarle información por iniciativa propia queda fuera del privilegio y arriesga la renuncia." }
+        source: "United States v. Heppner (S.D.N.Y. 2026)"
+      - id: q5
+        type: mcq
+        stem: "Which is the most common mistake companies make when hiring outside counsel for a major matter?"
+        choices:
+          - { id: a, text: "Choosing a firm for its brand rather than for the team that will actually do the work and its fit with the matter.", correct: true }
+          - { id: b, text: "Asking for a budget.", why: "Asking for a budget is good practice." }
+          - { id: c, text: "Sending outside counsel guidelines.", why: "Guidelines are standard and protective." }
+          - { id: d, text: "Requiring an early case assessment.", why: "An ECA is exactly what the client should demand." }
+        explanation: { en: "The selection criteria that matter are fit, responsiveness and judgment; the brand on the letterhead is not one of them.", es: "Los criterios que importan son el ajuste, la capacidad de respuesta y el criterio; la marca en el membrete no es uno de ellos." }
+        source: "Class 3; Rapid Fire on selecting outside counsel"
+      - id: q6
+        type: mcq
+        stem: "An invoice entry reads: 'Attention to matter, 6.2 hours.' The right response under typical outside counsel guidelines is:"
+        choices:
+          - { id: a, text: "Pay it; the firm is trustworthy.", why: "Vague entries are not payable under most guidelines." }
+          - { id: b, text: "Reject or hold the entry and ask for a task-level description; block billing and vague entries violate the guidelines.", correct: true }
+          - { id: c, text: "Fire the firm.", why: "Disproportionate for one entry." }
+          - { id: d, text: "Pay half.", why: "Arbitrary; ask for the description instead." }
+        explanation: { en: "Invoice review enforces the guidelines line by line; the firm learns quickly what the client will pay for.", es: "La revisión de facturas aplica los lineamientos línea por línea; el despacho aprende rápido qué pagará el cliente." }
+        source: "Class 3 lab: review the invoice"
+      - id: q7
+        type: cloze
+        text: "The ethical duty of {{confidentiality}} covers everything learned in the representation; the evidentiary {{privilege}} covers only confidential communications for legal advice."
+        explanation: { en: "Everything privileged is confidential; most confidential information is not privileged.", es: "Todo lo privilegiado es confidencial; casi nada de lo confidencial es privilegiado." }
+      - id: q8
+        type: short
+        stem: "In four sentences, explain what an early case assessment is and why inside counsel insists on one."
+        answer: "An early case assessment is a structured review in the first weeks of a dispute that estimates the exposure, the cost to defend, the key facts, documents and witnesses, and the options (settle, fight, insure, business fix). Inside counsel insists on it because the business must decide how much to invest before the outside firm's meter has run, because it forces the firm to commit to a view and a budget, and because a dispute that costs more to defend than to settle should be settled early. It also starts the litigation hold and the insurance notice on time."
+        keyPoints: ["structured early review: exposure, cost, facts, options", "business decides before fees accumulate", "commits the firm to a view and budget", "triggers hold and insurance notice"]
+  - id: ext-compliance-governance-ai-01
+    topic: risk
+    title: { en: "Compliance, boardroom, deals, employment and AI", es: "Cumplimiento, consejo, deals, laboral y AI" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A hotline report alleges that the CFO approved fake invoices. Who should run the investigation?"
+        choices:
+          - { id: a, text: "The CFO's finance team, because they know the invoices.", why: "The implicated executive's team cannot investigate him." }
+          - { id: b, text: "Outside counsel reporting to the audit committee, with the general counsel coordinating.", correct: true }
+          - { id: c, text: "The employee who reported it.", why: "Reporters are protected, not deputized." }
+          - { id: d, text: "Nobody until the next audit.", why: "Delay destroys evidence and credibility and may violate reporting duties." }
+        explanation: { en: "Independence follows seniority of the person implicated; when senior management is involved, the board's committee owns the inquiry.", es: "La independencia depende del nivel de la persona implicada; cuando la alta dirección está involucrada, el comité del consejo es dueño de la investigación." }
+        source: "Class 5; hotline triage lab"
+      - id: q2
+        type: mcq
+        stem: "Which fact most strengthens a company's position with prosecutors evaluating its compliance program after a violation?"
+        choices:
+          - { id: a, text: "A long code of conduct nobody reads.", why: "Paper programs are discounted." }
+          - { id: b, text: "Evidence that the program was resourced, employees were trained, the hotline was used, violations were disciplined consistently, and the program was improved after the incident.", correct: true }
+          - { id: c, text: "A press release promising reform.", why: "Promises are not evidence of a working program." }
+          - { id: d, text: "That the CEO was unaware.", why: "Unawareness often shows the program failed to escalate." }
+        explanation: { en: "Prosecutors ask whether the program is well designed, applied in good faith and works in practice.", es: "Los fiscales preguntan si el programa está bien diseñado, se aplica de buena fe y funciona en la práctica." }
+        source: "DOJ Evaluation of Corporate Compliance Programs; U.S.S.G. § 8B2.1"
+      - id: q3
+        type: mcq
+        stem: "The general counsel presents a $40 million litigation settlement recommendation to the board. The best format is:"
+        choices:
+          - { id: a, text: "A forty-slide chronology of the case.", why: "The board needs the decision, not the history." }
+          - { id: b, text: "One page: the decision requested, the exposure range, the recommendation with reasons, the alternatives and their costs; backup in an appendix.", correct: true }
+          - { id: c, text: "A reading of the complaint.", why: "Boards do not read pleadings." }
+          - { id: d, text: "An oral summary with no written record.", why: "The minutes must show the board was informed." }
+        explanation: { en: "BLUF for the board: the ask, the risk, the recommendation; the minutes then show an informed decision.", es: "BLUF para el consejo: la petición, el riesgo, la recomendación; las actas muestran después una decisión informada." }
+        source: "Class 6; board presentation simulations"
+      - id: q4
+        type: mcq
+        stem: "During diligence, the buyer's team finds that the target's largest customer contract terminates automatically on a change of control. This is:"
+        choices:
+          - { id: a, text: "Irrelevant; contracts transfer with the company.", why: "A change-of-control clause is precisely the exception." }
+          - { id: b, text: "A potential deal killer that must go to the business immediately for a price, structure or consent decision.", correct: true }
+          - { id: c, text: "A matter for post-closing integration.", why: "After closing it is too late to renegotiate price." }
+          - { id: d, text: "A reason to skip the rest of diligence.", why: "Keep going; find the others." }
+        explanation: { en: "The quarterback's job is to surface the findings that change the deal, not to summarize the data room.", es: "El trabajo del quarterback es sacar a la luz los hallazgos que cambian el deal, no resumir el data room." }
+        source: "Class 7; due diligence war room"
+      - id: q5
+        type: mcq
+        stem: "The vendor's draft MSA caps its liability at one month of fees and excludes all consequential damages, including for data breaches. The playbook position is a twelve-month cap with a breach carve-out. What do you send back?"
+        choices:
+          - { id: a, text: "An acceptance; the vendor is large.", why: "Size is not a reason to accept an unprotected position." }
+          - { id: b, text: "A redline raising the cap to twelve months of fees and carving out data-breach, confidentiality and indemnity obligations from the cap and the exclusion, with a short note explaining why.", correct: true }
+          - { id: c, text: "A demand for unlimited liability.", why: "Not the playbook position and not realistic." }
+          - { id: d, text: "A silent markup.", why: "Always explain the changes that matter." }
+        explanation: { en: "Negotiate from the playbook: preferred position, carve-outs, cover note; escalate only if the vendor refuses the fallback.", es: "Negocia desde el playbook: posición preferida, excepciones, nota de portada; escala solo si el proveedor rechaza la alternativa." }
+        source: "Class 8; MSA playbook exercise"
+      - id: q6
+        type: mcq
+        stem: "A manager wants to fire an at-will employee for poor performance the week after she requested medical leave. The termination checklist says:"
+        choices:
+          - { id: a, text: "Proceed; at-will employment allows termination for any reason.", why: "At-will never allows an unlawful reason, and timing is evidence of retaliation." }
+          - { id: b, text: "Pause: the timing invites a retaliation claim; document the performance history, confirm consistency with other cases, and reassess the timing and the reason before acting.", correct: true }
+          - { id: c, text: "Fire her immediately before the leave begins.", why: "That is the fact pattern plaintiffs' lawyers dream of." }
+          - { id: d, text: "Offer severance without a release.", why: "A release is the point of severance." }
+        explanation: { en: "At-will answers whether you may; the checklist answers whether a jury will believe the reason.", es: "At-will responde si puedes; la checklist responde si un jurado creerá la razón." }
+        source: "Class 9; termination checklist lab"
+      - id: q7
+        type: mcq
+        stem: "A junior lawyer uses a generative AI tool to draft a brief and files it without checking the citations; two cases do not exist. Under ABA Opinion 512 and Texas Opinion 705, the lawyer:"
+        choices:
+          - { id: a, text: "Is excused because the tool erred.", why: "The duty of competence includes verifying output." }
+          - { id: b, text: "Breached the duties of competence and candor to the court; the supervising lawyer may also have breached the duty to supervise.", correct: true }
+          - { id: c, text: "Breached only the duty of confidentiality.", why: "Confidentiality is a separate issue about inputs, not the fabricated citations." }
+          - { id: d, text: "Breached nothing if the client consented to AI use.", why: "Consent to use a tool is not consent to file fabrications." }
+        explanation: { en: "Verify every citation; the error is the lawyer's. The policy drafted in class 10 should say so in one sentence.", es: "Verifica cada cita; el error es del abogado. La política redactada en la clase 10 debe decirlo en una oración." }
+        source: "ABA Formal Op. 512; Tex. Ethics Op. 705"
+      - id: q8
+        type: mcq
+        stem: "The CEO mentions to a hedge fund manager at a dinner that the quarter will miss guidance. Under Regulation FD the company must:"
+        choices:
+          - { id: a, text: "Do nothing; dinners are private.", why: "Selective disclosure of material nonpublic information is exactly what the rule forbids." }
+          - { id: b, text: "Disclose the information publicly promptly (by the next trading day, within 24 hours) because the disclosure was unintentional.", correct: true }
+          - { id: c, text: "Ask the fund manager to keep it confidential.", why: "A promise does not cure the selective disclosure unless a confidentiality agreement existed beforehand." }
+          - { id: d, text: "Wait for the earnings release.", why: "Too late; the information must be made public promptly." }
+        explanation: { en: "Regulation FD: intentional selective disclosure must be made public simultaneously; unintentional, promptly. Inside counsel polices executives' conversations.", es: "Regulación FD: la revelación selectiva intencional debe hacerse pública al mismo tiempo; la no intencional, con prontitud. El abogado interno vigila las conversaciones de los ejecutivos." }
+        source: "17 C.F.R. § 243.100"
+      - id: q9
+        type: cloze
+        text: "Under a {{10b5-1}} plan adopted in good faith without material nonpublic information, an insider's prearranged trades carry an affirmative defense to {{insider trading}} charges."
+        explanation: { en: "Cooling-off periods and disclosure rules were tightened in 2022.", es: "Los periodos de espera y las reglas de revelación se endurecieron en 2022." }
+      - id: q10
+        type: short
+        stem: "List the elements an AI use policy for a legal department should contain, in one paragraph."
+        answer: "Approved tools by tier and data type; a prohibition on entering privileged, personal, trade-secret or material nonpublic information into tools not approved for it; mandatory human review and verification of outputs, especially citations; informed client consent where required; disclosure where a court, client or assignment requires it; vendor terms on training, retention and access; supervision of staff and tools; no billing for time saved; an owner, training, an incident path and periodic review; and a one-sentence statement of the Heppner rule that a public AI chat is a third party."
+        keyPoints: ["approved tools and data tiers", "prohibited inputs", "verification of outputs", "consent and disclosure", "vendor terms", "supervision and fees", "governance: owner, training, incidents, review", "Heppner rule"]

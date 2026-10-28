@@ -142,3 +142,295 @@ items:
     es: { term: "difamación", explanation: "Afirmación falsa de hecho sobre una persona, comunicada a terceros, que daña su reputación. Es la acción que cubre los posts sobre Marcus, y por eso desplaza al IIED (Draker).", falseFriend: "En México la difamación dejó de ser delito federal en 2007 y se litiga como daño moral (CCF art. 1916); aquí es un tort con reglas propias." }
     examples: [{ en: "Calling Marcus a fraud in the group chat is a defamation theory, not IIED.", es: "Llamar fraude a Marcus en el chat grupal es una teoría de difamación, no de IIED." }]
     related: [gap-filler-tort, gravamen]
+  # --- El memo y sus partes (A Lawyer Writes caps. 12–15, 18) ---
+  - id: office-memo
+    term: office memorandum (predictive memo)
+    pos: noun
+    topic: memo
+    en: { definition: "An internal document that predicts how a court would resolve a client's question: heading, Question Presented, Brief Answer, Statement of Facts, Discussion and Conclusion. It is objective, so it reports the weaknesses of the client's position as candidly as the strengths." }
+    es: { term: "memorándum interno (predictivo)", explanation: "Documento interno que predice cómo resolvería un tribunal la pregunta del cliente: encabezado, Question Presented, Brief Answer, Statement of Facts, Discussion y Conclusion. Es objetivo: reporta las debilidades de la posición del cliente con la misma franqueza que las fortalezas.", falseFriend: "No es el dictamen mexicano que argumenta a favor del cliente; aquí la persuasión viene después, en el brief ante el tribunal." }
+    examples: [{ en: "The partner asked for a five-page memo on whether the IIED claim survives summary judgment.", es: "La socia pidió un memo de cinco páginas sobre si el reclamo de IIED sobrevive al summary judgment." }]
+    related: [question-presented, brief-answer, statement-of-facts, discussion-section, memo-conclusion]
+  - id: question-presented
+    term: Question Presented
+    pos: noun
+    topic: memo
+    en: { definition: "The one-sentence legal question the memo answers, usually in the form under [law], does [legal consequence] when [key facts]; it names the rule and the decisive facts without arguing." }
+    es: { term: "Question Presented (planteamiento de la cuestión)", explanation: "La pregunta jurídica de una oración que el memo responde, normalmente con la forma under [ley], does [consecuencia jurídica] when [hechos clave]; nombra la regla y los hechos decisivos sin argumentar." }
+    examples: [{ en: "Under Texas law, can a salon owner recover for IIED when a former employee posted false reviews and made repeated late-night hang-up calls?", es: "Bajo el derecho de Texas, ¿puede la dueña de un salón reclamar IIED cuando un exempleado publicó reseñas falsas y la llamó de madrugada repetidamente?" }]
+    related: [brief-answer, office-memo]
+  - id: brief-answer
+    term: Brief Answer
+    pos: noun
+    topic: memo
+    en: { definition: "A short answer to the Question Presented that starts with a direct response (yes, no, probably, probably not), states the rule in a sentence, and gives the key reason in two or three sentences; no citations are needed." }
+    es: { term: "Brief Answer (respuesta breve)", explanation: "Respuesta corta a la Question Presented que empieza con una respuesta directa (sí, no, probablemente, probablemente no), enuncia la regla en una oración y da la razón clave en dos o tres; normalmente sin citas." }
+    examples: [{ en: "Probably not. IIED is a gap-filler, and the reviews are really defamation.", es: "Probablemente no. IIED es un gap-filler y las reseñas son en realidad difamación." }]
+    related: [question-presented, office-memo]
+  - id: statement-of-facts
+    term: Statement of Facts
+    pos: noun
+    topic: memo
+    en: { definition: "The memo's neutral account of the legally significant facts, the background facts needed to understand them, and the procedural context, told chronologically (or by topic) with sources; it includes unfavorable facts and omits argument." }
+    es: { term: "Statement of Facts (relación de hechos)", explanation: "Relato neutral de los hechos jurídicamente relevantes, los de contexto necesarios para entenderlos y la situación procesal, en orden cronológico (o por tema) y con fuentes; incluye los hechos desfavorables y no argumenta." }
+    examples: [{ en: "The facts section ended with the doctor's visit and the anxiety prescription, because severity is an element.", es: "La relación de hechos terminó con la visita al médico y la receta para la ansiedad, porque la gravedad es un elemento." }]
+    related: [office-memo, question-presented]
+  - id: discussion-section
+    term: Discussion section
+    pos: noun
+    topic: memo
+    en: { definition: "The body of the memo: a roadmap, then one legal argument per element or issue, each in CREAC form, each with counter-analysis where the other side has a real point; the longest and most graded part." }
+    es: { term: "sección Discussion (análisis)", explanation: "El cuerpo del memo: un roadmap y luego un argumento por elemento o cuestión, cada uno en forma CREAC y con counter-analysis donde la otra parte tenga un punto real; la parte más larga y más calificada." }
+    examples: [{ en: "The Discussion ran three pages: threshold, then the four Twyman elements.", es: "La Discussion ocupó tres páginas: el umbral y luego los cuatro elementos de Twyman." }]
+    related: [creac, roadmap-paragraph, counter-analysis, memo-conclusion]
+  - id: memo-conclusion
+    term: Conclusion (of a memo)
+    pos: noun
+    topic: memo
+    en: { definition: "A short closing that restates the prediction, summarizes the reasons in a few sentences, and may recommend next steps (more facts to gather, claims to plead); no new analysis and no citations." }
+    es: { term: "Conclusion (del memo)", explanation: "Cierre breve que repite la predicción, resume las razones en pocas oraciones y puede recomendar pasos (hechos por reunir, reclamos por plantear); sin análisis nuevo ni citas." }
+    examples: [{ en: "The conclusion recommended pleading defamation on the reviews and IIED only on the calls.", es: "La conclusión recomendó demandar difamación por las reseñas e IIED solo por las llamadas." }]
+    related: [office-memo, discussion-section]
+  - id: roadmap-paragraph
+    term: roadmap (thesis) paragraph
+    pos: noun
+    topic: memo
+    en: { definition: "The opening paragraph of a Discussion (or of a multi-element argument) that states the overall conclusion, the governing rule, and the order in which the elements will be analyzed, often noting which elements are not in dispute." }
+    es: { term: "párrafo roadmap (tesis y hoja de ruta)", explanation: "Párrafo inicial de la Discussion (o de un argumento con varios elementos) que enuncia la conclusión general, la regla aplicable y el orden en que se analizarán los elementos, señalando cuáles no están en disputa." }
+    examples: [{ en: "The roadmap said two elements were conceded and the fight was over outrageousness and severity.", es: "El roadmap dijo que dos elementos no estaban en disputa y que la pelea era por lo outrageous y la gravedad." }]
+    related: [discussion-section, thesis-sentence]
+  - id: thesis-sentence
+    term: thesis (topic) sentence
+    pos: noun
+    topic: memo
+    en: { definition: "The first sentence of a paragraph, stating the point the paragraph proves; in legal writing the point comes first and the support follows, the reverse of the Spanish habit of building up to it." }
+    es: { term: "oración tesis (oración tema)", explanation: "La primera oración del párrafo, que enuncia el punto que el párrafo demuestra; en el inglés jurídico el punto va primero y el apoyo después, al revés del hábito en español de ir construyendo hasta llegar a él." }
+    examples: [{ en: "The calls, unlike the reviews, are conduct rather than speech, so defamation does not cover them.", es: "Las llamadas, a diferencia de las reseñas, son conducta y no expresión, así que la difamación no las cubre." }]
+    related: [roadmap-paragraph, creac]
+  - id: predictive-vs-persuasive
+    term: predictive vs. persuasive writing
+    pos: phrase
+    topic: memo
+    en: { definition: "Predictive (objective) writing tells the reader what a court will probably do, including bad news; persuasive writing argues for one result to a court. The memo is predictive; the brief is persuasive; mixing them is the classic first-semester error." }
+    es: { term: "redacción predictiva frente a persuasiva", explanation: "La redacción predictiva (objetiva) dice al lector qué hará probablemente un tribunal, incluidas las malas noticias; la persuasiva argumenta un resultado ante el tribunal. El memo es predictivo; el brief es persuasivo; mezclarlos es el error clásico del primer semestre." }
+    examples: [{ en: "A memo that only lists the client's strong points is persuasive writing in disguise.", es: "Un memo que solo enumera los puntos fuertes del cliente es redacción persuasiva disfrazada." }]
+    related: [office-memo]
+  - id: professional-email
+    term: professional email
+    pos: noun
+    topic: memo
+    en: { definition: "A short message to a supervising attorney or client that leads with the answer, states the question and the reasoning briefly, flags next steps and deadlines, and uses a specific subject line; plain language, no legalese, and nothing you would not want forwarded." }
+    es: { term: "correo profesional", explanation: "Mensaje corto a un abogado supervisor o cliente que empieza por la respuesta, plantea la pregunta y el razonamiento brevemente, señala pasos y plazos y usa un asunto específico; lenguaje llano, sin jerga y nada que no quieras ver reenviado." }
+    examples: [{ en: "Subject: IIED memo. Bottom line: the reviews claim fails; the calls claim is weak but possible.", es: "Asunto: memo de IIED. Conclusión: el reclamo por las reseñas falla; el de las llamadas es débil pero posible." }]
+    related: [plain-language-writing, office-memo]
+  # --- Reglas, explicación y aplicación (caps. 6–9) ---
+  - id: irac-framework
+    term: IRAC (Issue, Rule, Application, Conclusion)
+    pos: noun
+    topic: rules
+    en: { definition: "The exam and class-exercise structure: state the issue, the rule, apply the rule to the facts, conclude. CREAC is its memo-writing cousin, with the conclusion first and an explanation of the rule before the application." }
+    es: { term: "IRAC (issue, rule, application, conclusion)", explanation: "La estructura de examen y de ejercicio en clase: plantea la cuestión, la regla, aplica la regla a los hechos, concluye. CREAC es su pariente para memos, con la conclusión primero y una explicación de la regla antes de la aplicación." }
+    examples: [{ en: "The negligence scenario in September was written in IRAC; the memo uses CREAC.", es: "El escenario de negligencia de septiembre se escribió en IRAC; el memo usa CREAC." }]
+    related: [creac]
+  - id: rule-synthesis
+    term: rule synthesis
+    pos: noun
+    topic: rules
+    en: { definition: "Building one rule statement out of several cases that each decided a piece of it, so the reader gets the law as it now stands rather than a list of holdings; the cases are then cited together as support." }
+    es: { term: "síntesis de la regla", explanation: "Construir un solo enunciado de la regla a partir de varios casos que decidieron partes de ella, para que el lector reciba el derecho como está hoy y no una lista de holdings; los casos se citan juntos como apoyo. No tiene análogo civilista: el código ya trae la regla." }
+    examples: [{ en: "Synthesized rule: IIED is a gap-filler that fails when the gravamen is another tort, even if that tort fails (Zeltwanger, Draker).", es: "Regla sintetizada: IIED es un gap-filler que falla cuando el fondo es otro tort, aunque ese tort fracase (Zeltwanger, Draker)." }]
+    related: [rule-explanation, case-illustration]
+  - id: rule-based-reasoning
+    term: rule-based reasoning
+    pos: noun
+    topic: application
+    en: { definition: "Applying the rule's words directly to the facts, element by element, when the rule is clear enough that no case comparison is needed; the application paragraph pairs each requirement with the fact that satisfies or defeats it." }
+    es: { term: "razonamiento basado en la regla", explanation: "Aplicar las palabras de la regla directamente a los hechos, elemento por elemento, cuando la regla es lo bastante clara para no necesitar comparar casos; el párrafo de aplicación empareja cada requisito con el hecho que lo cumple o lo derrota." }
+    examples: [{ en: "Eight calls over two weeks is conduct, not a statement, so defamation does not cover it.", es: "Ocho llamadas en dos semanas son conducta, no una afirmación, así que la difamación no las cubre." }]
+    related: [analogical-reasoning, creac]
+  - id: analogical-reasoning
+    term: analogical reasoning (analogize and distinguish)
+    pos: noun
+    topic: application
+    en: { definition: "Arguing that the client's facts are like a precedent's facts on the point that mattered to that court, so the result should follow (analogize), or unlike them, so it should not (distinguish); the comparison must be on the facts the court relied on, not on surface details." }
+    es: { term: "razonamiento analógico (analogizar y distinguir)", explanation: "Sostener que los hechos del cliente se parecen a los de un precedente en el punto que importó a ese tribunal, así que el resultado debe seguir (analogize), o que difieren, así que no (distinguish); la comparación es sobre los hechos en que el tribunal se apoyó, no sobre detalles superficiales." }
+    examples: [{ en: "Like the fake profile in Draker, the reviews attack reputation; unlike Draker, the calls are not speech.", es: "Como el perfil falso de Draker, las reseñas atacan la reputación; a diferencia de Draker, las llamadas no son expresión." }]
+    related: [rule-based-reasoning, case-illustration, counter-analysis]
+  - id: issue-spotting
+    term: issue spotting
+    pos: noun
+    topic: rules
+    en: { definition: "Reading a fact pattern and listing every legal question it raises, including defenses and threshold problems, before deciding which ones matter; the first step of research organization in chapters 4 and 5." }
+    es: { term: "detección de cuestiones (issue spotting)", explanation: "Leer los hechos y enumerar todas las preguntas jurídicas que plantean, incluidas defensas y problemas de umbral, antes de decidir cuáles importan; el primer paso de la organización de la investigación." }
+    examples: [{ en: "Issue spotting on the salon facts yields defamation, IIED, the gap-filler threshold and maybe harassment.", es: "Detectar cuestiones en los hechos del salón da difamación, IIED, el umbral de gap-filler y quizá acoso." }]
+    related: [case-chart, elements]
+  - id: case-chart
+    term: case chart (research chart)
+    pos: noun
+    topic: rules
+    en: { definition: "A table that records, for each researched case, the citation, court and year, the facts that mattered, the holding on the element at issue, the reasoning, and how it compares with the client's facts; the single-element version tracks one element across cases." }
+    es: { term: "cuadro de casos (cuadro de investigación)", explanation: "Tabla que registra, por cada caso investigado, la cita, el tribunal y el año, los hechos que importaron, el holding sobre el elemento en cuestión, el razonamiento y cómo se compara con los hechos del cliente; la versión de un solo elemento sigue un elemento a través de los casos." }
+    examples: [{ en: "The chart for severity listed six Texas cases and what evidence satisfied the element in each.", es: "El cuadro de gravedad enumeró seis casos de Texas y qué prueba cumplió el elemento en cada uno." }]
+    related: [issue-spotting, elements]
+  # --- Citas (Bluebook 22) ---
+  - id: citation-signal
+    term: citation signals (See, See also, Cf., But see)
+    pos: noun
+    topic: citation
+    en: { definition: "Words before a citation that tell the reader how the authority supports the sentence: no signal when it states the proposition directly; See when it supports by inference; See also for additional support; Cf. for analogous support; But see for contrary authority; See generally for background." }
+    es: { term: "señales de cita (See, See also, Cf., But see)", explanation: "Palabras antes de la cita que dicen cómo apoya la autoridad a la oración: sin señal cuando la enuncia directamente; See cuando apoya por inferencia; See also para apoyo adicional; Cf. para apoyo análogo; But see para autoridad contraria; See generally para contexto. Regla 1.2 del Bluebook." }
+    examples: [{ en: "See Draker, 271 S.W.3d at 323 (affirming summary judgment where the gravamen was defamation).", es: "See Draker, 271 S.W.3d at 323 (confirmando el summary judgment cuando el fondo era difamación)." }]
+    authority: "Bluebook R. 1.2, B1.2"
+    related: [parenthetical, pincite]
+  - id: parenthetical
+    term: explanatory parenthetical
+    pos: noun
+    topic: citation
+    en: { definition: "A short phrase in parentheses after a citation, usually beginning with a present participle (holding, affirming, rejecting), that tells the reader why the case supports the point; required after most signals." }
+    es: { term: "paréntesis explicativo", explanation: "Frase breve entre paréntesis después de la cita, normalmente con gerundio inglés (holding, affirming, rejecting), que dice por qué el caso apoya el punto; casi obligatoria después de una señal. Regla 1.5 y B1.3." }
+    examples: [{ en: "(holding that a weak defamation claim does not revive IIED)", es: "(holding that a weak defamation claim does not revive IIED)" }]
+    authority: "Bluebook R. 1.5, B1.3"
+    related: [citation-signal]
+  - id: short-form-citation
+    term: short forms (Id., short cite)
+    pos: noun
+    topic: citation
+    en: { definition: "After a full citation, later references use a short form: Id. (with at and a page) for the immediately preceding authority, or the case's short name with the volume, reporter and at page (Twyman, 855 S.W.2d at 621). Supra is not used for cases in court documents." }
+    es: { term: "formas cortas de cita (Id., cita corta)", explanation: "Después de una cita completa, las referencias posteriores usan forma corta: Id. (con at y página) para la autoridad inmediatamente anterior, o el nombre corto del caso con volumen, reporter y at página. Supra no se usa para casos en escritos ante tribunales. Reglas B10.2 y 10.9." }
+    examples: [{ en: "Id. at 447–48.", es: "Id. at 447–48." }]
+    authority: "Bluebook B10.2, R. 10.9, R. 4.1"
+    related: [pincite, citation-signal]
+  - id: subsequent-history
+    term: subsequent history (aff'd, rev'd, pet. denied)
+    pos: noun
+    topic: citation
+    en: { definition: "What happened to a decision afterward, added after the citation with a comma and an italicized abbreviation: aff'd, rev'd, cert. denied; in Texas, the petition history (no pet., pet. denied, pet. granted) is part of every court of appeals citation." }
+    es: { term: "historia posterior (aff'd, rev'd, pet. denied)", explanation: "Lo que pasó después con la decisión, añadido tras la cita con coma y abreviatura en cursiva: aff'd, rev'd, cert. denied; en Texas la historia de la petición (no pet., pet. denied, pet. granted) forma parte de toda cita de un tribunal de apelación. Regla 10.7 y tabla T1." }
+    examples: [{ en: "538 S.W.3d 781 (Tex. App.—Austin 2017), aff'd, 611 S.W.3d 1 (Tex. 2020).", es: "538 S.W.3d 781 (Tex. App.—Austin 2017), aff'd, 611 S.W.3d 1 (Tex. 2020)." }]
+    authority: "Bluebook R. 10.7; T1 (Texas)"
+    related: [no-pet, texas-court-hierarchy]
+  - id: unpublished-opinion
+    term: unpublished opinion (WL citation)
+    pos: noun
+    topic: citation
+    en: { definition: "An opinion not printed in the reporters, cited by docket number, database identifier and full date: No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.—Fort Worth Mar. 28, 2019, no pet.); in Texas civil cases unpublished memorandum opinions still have precedential value." }
+    es: { term: "sentencia no publicada (cita WL)", explanation: "Sentencia que no aparece en los reporters, citada con número de expediente, identificador de base de datos y fecha completa. En los casos civiles de Texas las memorandum opinions no publicadas sí tienen valor de precedente (Tex. R. App. P. 47.7). Regla 10.8.1 y B10.1.4." }
+    examples: [{ en: "Weber v. Fernandez, No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.—Fort Worth Mar. 28, 2019, no pet.).", es: "Weber v. Fernandez, No. 02-18-00275-CV, 2019 WL 1395796 (Tex. App.—Fort Worth Mar. 28, 2019, no pet.)." }]
+    authority: "Bluebook R. 10.8.1, B10.1.4; Tex. R. App. P. 47.7"
+    related: [subsequent-history, reporter]
+  - id: texas-court-hierarchy
+    term: Texas court hierarchy (for citation)
+    pos: noun
+    topic: citation
+    en: { definition: "Supreme Court of Texas (Tex.) for civil cases and Court of Criminal Appeals (Tex. Crim. App.) for criminal cases at the top; fifteen courts of appeals cited by district city (Tex. App.—Dallas, —Austin, —San Antonio, —Fort Worth); trial courts (district and county courts) rarely cited. Petition history goes in the parenthetical." }
+    es: { term: "jerarquía judicial de Texas (para citar)", explanation: "La Suprema Corte de Texas (Tex.) para lo civil y la Court of Criminal Appeals (Tex. Crim. App.) para lo penal en la cúspide; quince tribunales de apelación citados por la ciudad del distrito (Tex. App.—Dallas, —Austin, —San Antonio, —Fort Worth); tribunales de primera instancia rara vez citados. La historia de la petición va en el paréntesis." }
+    examples: [{ en: "(Tex. App.—San Antonio 2008, no pet.) tells you the court, the year and that nobody sought review.", es: "(Tex. App.—San Antonio 2008, no pet.) dice el tribunal, el año y que nadie pidió revisión." }]
+    authority: "Bluebook T1 (Texas); B10.1.3"
+    related: [no-pet, subsequent-history, reporter]
+  - id: reporter
+    term: reporter (S.W.3d, U.S., F.4th)
+    pos: noun
+    topic: citation
+    en: { definition: "The book series that publishes opinions: Texas appellate cases appear in the South Western Reporter (S.W.2d, S.W.3d); U.S. Supreme Court cases in U.S.; federal appeals in F.4th; the citation gives volume, reporter and first page." }
+    es: { term: "reporter (colección de sentencias: S.W.3d, U.S., F.4th)", explanation: "La colección que publica las sentencias: los casos de apelación de Texas en el South Western Reporter (S.W.2d, S.W.3d); los de la Corte Suprema federal en U.S.; los de apelación federal en F.4th; la cita da volumen, reporter y primera página. Equivale, de lejos, al Semanario Judicial de la Federación." }
+    examples: [{ en: "855 S.W.2d 619 means volume 855 of the South Western Reporter, second series, page 619.", es: "855 S.W.2d 619 significa volumen 855 del South Western Reporter, segunda serie, página 619." }]
+    related: [pincite, texas-court-hierarchy]
+  - id: case-name-abbreviation
+    term: case name abbreviations (T6)
+    pos: noun
+    topic: citation
+    en: { definition: "In citations, words in party names are abbreviated per table T6 (Co., Inc., Sw., Entm't, Ass'n) and procedural phrases are shortened; Inc. is dropped when Co. already appears; in textual sentences the names are written out except for a few standard abbreviations." }
+    es: { term: "abreviaturas de nombres de casos (tabla T6)", explanation: "En las citas, las palabras de los nombres de las partes se abrevian según la tabla T6 (Co., Inc., Sw., Entm't, Ass'n) y se acortan las frases procesales; Inc. se omite cuando ya aparece Co.; en el texto corrido los nombres se escriben completos salvo unas pocas abreviaturas estándar. Regla 10.2." }
+    examples: [{ en: "GTE Sw., Inc. v. Bruce; Standard Fruit & Vegetable Co. v. Johnson (no Inc. after Co.).", es: "GTE Sw., Inc. v. Bruce; Standard Fruit & Vegetable Co. v. Johnson (sin Inc. después de Co.)." }]
+    authority: "Bluebook R. 10.2.1, 10.2.2; T6"
+    related: [reporter, texas-court-hierarchy]
+  - id: statutory-citation
+    term: statutory citation (U.S.C., Tex. Civ. Prac. & Rem. Code)
+    pos: noun
+    topic: citation
+    en: { definition: "Federal statutes are cited by title, code and section (42 U.S.C. § 1983); Texas statutes by subject code and section (Tex. Civ. Prac. & Rem. Code Ann. § 16.003); a section symbol with a space, and a pinpoint subsection when needed." }
+    es: { term: "cita de leyes (U.S.C., códigos de Texas)", explanation: "Las leyes federales se citan por título, código y sección (42 U.S.C. § 1983); las de Texas por código temático y sección (Tex. Civ. Prac. & Rem. Code Ann. § 16.003); símbolo de sección con espacio y subsección precisa cuando haga falta. Regla 12 y tabla T1." }
+    examples: [{ en: "The two-year limitations period for IIED is in Tex. Civ. Prac. & Rem. Code Ann. § 16.003.", es: "El plazo de prescripción de dos años para IIED está en Tex. Civ. Prac. & Rem. Code Ann. § 16.003." }]
+    authority: "Bluebook R. 12; B12; T1 (Texas)"
+    related: [reporter]
+  - id: headnote
+    term: headnote and synopsis
+    pos: noun
+    topic: citation
+    en: { definition: "Editorial summaries that Westlaw and Lexis place before an opinion; useful for finding, never for citing or quoting, because they are not the court's words." }
+    es: { term: "headnote y sinopsis (sumarios editoriales)", explanation: "Resúmenes editoriales que Westlaw y Lexis ponen antes de la sentencia; sirven para buscar, nunca para citar ni para quotear, porque no son palabras del tribunal. Es el equivalente funcional de la tesis, pero sin ningún valor normativo." }
+    examples: [{ en: "She cited a headnote as the holding and lost points.", es: "Citó un headnote como si fuera el holding y perdió puntos." }]
+    related: [citator, pincite]
+  - id: citator
+    term: citator (KeyCite, Shepard's)
+    pos: noun
+    topic: citation
+    en: { definition: "A tool that reports whether a case is still good law and who has cited it: KeyCite on Westlaw, Shepard's on Lexis; checking every cited case is part of citation mechanics." }
+    es: { term: "citator (KeyCite, Shepard's)", explanation: "Herramienta que informa si un caso sigue vigente y quién lo ha citado: KeyCite en Westlaw, Shepard's en Lexis; revisar cada caso citado es parte de la mecánica de citas. En inglés el verbo es to Shepardize." }
+    examples: [{ en: "KeyCite showed a red flag: the case had been reversed.", es: "KeyCite mostró bandera roja: el caso había sido revocado." }]
+    related: [headnote, subsequent-history]
+  - id: icw
+    term: ICW (Interactive Citation Workbook)
+    pos: noun
+    topic: citation
+    en: { definition: "Lexis's online workbook of Bluebook exercises, assigned chapter by chapter in this course (cases, statutes, short forms, signals, quotations); each chapter has a set of questions and the professor sometimes skips some." }
+    es: { term: "ICW (Interactive Citation Workbook de Lexis)", explanation: "Cuaderno en línea de ejercicios de Bluebook, asignado capítulo por capítulo en este curso (casos, leyes, formas cortas, señales, citas textuales); la profesora a veces omite preguntas." }
+    examples: [{ en: "ICW chapters 8, 10, 12, 13 and 15 are due in November.", es: "Los capítulos 8, 10, 12, 13 y 15 del ICW se entregan en noviembre." }]
+    related: [citation-signal, short-form-citation]
+  - id: secondary-source
+    term: secondary source
+    pos: noun
+    topic: citation
+    en: { definition: "Treatises, Restatements, law review articles, practice guides and encyclopedias: tools for understanding and finding primary law, cited only when no primary authority exists for the point." }
+    es: { term: "fuente secundaria", explanation: "Tratados, Restatements, artículos, guías de práctica y enciclopedias: herramientas para entender y encontrar el derecho primario; se citan solo cuando no hay autoridad primaria para el punto. En México la doctrina pesa más en la argumentación; aquí casi nada." }
+    examples: [{ en: "Start with a treatise to learn the area, then cite the cases it points to.", es: "Empieza con un tratado para entender el tema y luego cita los casos a los que apunta." }]
+    related: [headnote, citator]
+  # --- Estilo y edición (cap. 16) ---
+  - id: plain-language-writing
+    term: plain language
+    pos: noun
+    topic: memo
+    en: { definition: "Writing a reader can understand on one pass: short sentences, familiar words, active verbs, the point first, no legalese; the house style of A Lawyer Writes and of in-house legal departments." }
+    es: { term: "lenguaje llano (plain language)", explanation: "Escribir de modo que el lector entienda a la primera: oraciones cortas, palabras conocidas, verbos activos, el punto primero, sin jerga; el estilo de A Lawyer Writes y de los departamentos jurídicos internos. Lo contrario del español jurídico de oraciones de diez líneas." }
+    examples: [{ en: "Rewrite: the aforementioned party did effectuate termination becomes the buyer terminated the contract.", es: "Reescribir: la parte antes mencionada procedió a efectuar la terminación se vuelve el comprador terminó el contrato." }]
+    related: [legalese, nominalization, passive-voice]
+  - id: legalese
+    term: legalese
+    pos: noun
+    topic: memo
+    en: { definition: "Archaic or inflated lawyer language (hereinafter, aforementioned, said contract, pursuant to, in the event that) that adds length without meaning; editing removes it." }
+    es: { term: "jerga jurídica (legalese)", explanation: "Lenguaje de abogado arcaico o inflado (hereinafter, aforementioned, said contract, pursuant to, in the event that) que añade longitud sin sentido; la edición lo elimina. El equivalente español es el estilo de oficio con “en virtud de lo anterior”." }
+    examples: [{ en: "Pursuant to becomes under; in the event that becomes if.", es: "Pursuant to se vuelve under; in the event that se vuelve if." }]
+    related: [plain-language-writing, nominalization]
+  - id: nominalization
+    term: nominalization
+    pos: noun
+    topic: memo
+    en: { definition: "Turning a verb into an abstract noun (make a determination, conduct an investigation, provide notification) which buries the action and adds words; the fix is to use the verb (determine, investigate, notify)." }
+    es: { term: "nominalización", explanation: "Convertir un verbo en sustantivo abstracto (make a determination, conduct an investigation) oculta la acción y añade palabras; la corrección es usar el verbo (determine, investigate). Es el vicio más común de los hispanohablantes porque el español lo tolera mejor." }
+    examples: [{ en: "The court made a finding that becomes the court found that.", es: "The court made a finding that se vuelve the court found that." }]
+    related: [plain-language-writing, passive-voice]
+  - id: passive-voice
+    term: passive voice
+    pos: noun
+    topic: memo
+    en: { definition: "A sentence whose subject receives the action (the motion was denied by the court); usually weaker and longer than the active form (the court denied the motion), except when the actor is unknown or unimportant or the writer wants to hide it." }
+    es: { term: "voz pasiva", explanation: "Oración cuyo sujeto recibe la acción (the motion was denied by the court); normalmente más débil y larga que la activa (the court denied the motion), salvo cuando el actor es desconocido, irrelevante o se quiere ocultar. El español prefiere la pasiva refleja, que no existe en inglés." }
+    examples: [{ en: "Mistakes were made says nothing about who made them.", es: "Mistakes were made no dice quién los cometió." }]
+    related: [plain-language-writing, nominalization]
+  - id: editing-vs-polishing
+    term: editing vs. polishing
+    pos: phrase
+    topic: memo
+    en: { definition: "Editing fixes substance and structure (is the rule right, is the order logical, is anything missing); polishing fixes sentences, words, citations and typos; chapter 16 has them in that order, and doing them together does neither well." }
+    es: { term: "editar frente a pulir", explanation: "Editar corrige fondo y estructura (¿la regla es correcta, el orden es lógico, falta algo?); pulir corrige oraciones, palabras, citas y erratas; el capítulo 16 las pone en ese orden, y hacerlas juntas no hace bien ninguna." }
+    examples: [{ en: "Edit on Friday, polish on Sunday, submit Monday.", es: "Edita el viernes, pule el domingo, entrega el lunes." }]
+    related: [plain-language-writing, legalese]
+  - id: rubric-peer-review
+    term: rubric and peer review
+    pos: noun
+    topic: application
+    en: { definition: "The grading rubric lists what a strong answer contains (issue, rule, explanation, application, counter-analysis, conclusion, citations, mechanics) with points for each; peer review applies it to a classmate's draft, which teaches you to see your own mistakes." }
+    es: { term: "rúbrica y revisión entre pares", explanation: "La rúbrica enumera lo que contiene una buena respuesta (issue, rule, explanation, application, counter-analysis, conclusion, citas, mecánica) con puntos por cada parte; la revisión entre pares la aplica al borrador de un compañero, lo que enseña a ver los errores propios." }
+    examples: [{ en: "The rubric gave full points only if the application tied each fact to a rule word.", es: "La rúbrica daba todos los puntos solo si la aplicación ligaba cada hecho a una palabra de la regla." }]
+    related: [creac, irac-framework]

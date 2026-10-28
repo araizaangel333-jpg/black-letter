@@ -1,0 +1,468 @@
+# Glosario del Corporate Counsel Externship. Definiciones propias; el libro del profesor no se cita ni se parafrasea.
+subject: externship
+items:
+  - id: inside-counsel
+    term: inside counsel (in-house counsel)
+    pos: noun
+    topic: role
+    en: { definition: "A lawyer employed by a company to advise it as its only client: part legal expert, part risk manager, part business colleague. The job rewards being useful and trusted more than being technically brilliant." }
+    es: { term: "abogado interno (inside counsel, in-house)", explanation: "Abogado empleado por una empresa para asesorarla como único cliente: experto jurídico, administrador de riesgos y colega de negocios a la vez. El trabajo premia ser útil y confiable más que ser brillante en lo técnico. El abogado de empresa mexicano es la figura equivalente, pero aquí el rol está mucho más profesionalizado y numeroso." }
+    examples: [{ en: "The CEO calls inside counsel at 10 p.m. because she trusts the answer will be short and usable.", es: "La CEO llama al abogado interno a las 10 p.m. porque confía en que la respuesta será corta y usable." }]
+    related: [general-counsel, trusted-advisor, outside-counsel]
+  - id: general-counsel
+    term: general counsel (GC) and chief legal officer (CLO)
+    pos: noun
+    topic: role
+    en: { definition: "The head of a company's legal department, usually an officer who reports to the CEO and advises the board; the CLO title signals a seat in the executive team with responsibility for risk, compliance and often government affairs." }
+    es: { term: "general counsel (GC) y chief legal officer (CLO)", explanation: "Jefe del departamento jurídico de una empresa, normalmente directivo que reporta al CEO y asesora al consejo; el título CLO señala un lugar en el equipo ejecutivo con responsabilidad por riesgo, cumplimiento y a menudo asuntos de gobierno. Equivale al director jurídico." }
+    examples: [{ en: "The general counsel presented the litigation risk map to the audit committee.", es: "El general counsel presentó el mapa de riesgos de litigio al comité de auditoría." }]
+    related: [inside-counsel, legal-operations]
+  - id: trusted-advisor
+    term: trusted advisor
+    pos: noun
+    topic: role
+    en: { definition: "The in-house lawyer executives bring into decisions early because she leads with the answer, understands the business, keeps confidences, and says no only with an alternative; the course's recurring standard for what to become." }
+    es: { term: "asesor de confianza (trusted advisor)", explanation: "El abogado interno al que los ejecutivos invitan temprano a las decisiones porque empieza por la respuesta, entiende el negocio, guarda confidencias y solo dice que no ofreciendo una alternativa; el estándar recurrente del curso sobre en qué convertirse." }
+    examples: [{ en: "A trusted advisor says: you can do this if we change two things, instead of: that is a legal problem.", es: "Un asesor de confianza dice: puedes hacerlo si cambiamos dos cosas, en vez de: eso es un problema legal." }]
+    related: [bluf, inside-counsel]
+  - id: bluf
+    term: BLUF (bottom line up front)
+    pos: noun
+    topic: role
+    en: { definition: "A communication format borrowed from the military: the answer or recommendation in the first sentence, then the reasons, then the details and caveats; the opposite of the law-school habit of building toward a conclusion." }
+    es: { term: "BLUF (la conclusión primero)", explanation: "Formato de comunicación tomado del ejército: la respuesta o recomendación en la primera oración, luego las razones, luego los detalles y salvedades; lo contrario del hábito académico de construir hacia la conclusión. Es la versión ejecutiva del CREAC." }
+    examples: [{ en: "BLUF: we can sign Friday if the vendor accepts a $2 million liability cap.", es: "BLUF: podemos firmar el viernes si el proveedor acepta un tope de responsabilidad de $2 millones." }]
+    related: [trusted-advisor, elevator-brief, plain-english-contract]
+  - id: elevator-brief
+    term: 90-second elevator brief
+    pos: noun
+    topic: role
+    en: { definition: "A spoken BLUF: the issue, the recommendation, the risk and the decision needed, delivered in the time it takes to ride an elevator with the executive who has to decide; practiced in the week 4 lab." }
+    es: { term: "elevator brief de 90 segundos", explanation: "Un BLUF hablado: el asunto, la recomendación, el riesgo y la decisión necesaria, dicho en el tiempo de un viaje en elevador con el ejecutivo que debe decidir; se practicó en el laboratorio de la semana 4." }
+    examples: [{ en: "Ninety seconds: what happened, what I recommend, what it costs if we are wrong, what I need from you.", es: "Noventa segundos: qué pasó, qué recomiendo, qué cuesta si nos equivocamos, qué necesito de ti." }]
+    related: [bluf, networking-pitch]
+  - id: who-is-the-client
+    term: who is the client (Rule 1.13)
+    pos: phrase
+    topic: client
+    en: { definition: "Inside counsel represents the organization itself, acting through its authorized officers, not the CEO, the board member or the employee who happens to be talking to her; when their interests diverge from the company's, the lawyer must say so and may need to report up." }
+    es: { term: "quién es el cliente (Regla 1.13)", explanation: "El abogado interno representa a la organización misma, que actúa a través de sus funcionarios autorizados, no al CEO, al consejero ni al empleado que le está hablando; cuando sus intereses se separan de los de la empresa, el abogado debe decirlo y quizá reportar hacia arriba. La persona moral es el cliente; en inglés se dice the entity, no the company's people." }
+    examples: [{ en: "When the CFO asked for advice about his own exposure, counsel explained she represented the company, not him.", es: "Cuando el CFO pidió consejo sobre su propia exposición, la abogada explicó que representaba a la empresa, no a él." }]
+    authority: "Model Rule 1.13; Tex. Disciplinary R. Prof'l Conduct 1.12"
+    related: [upjohn-warning, up-the-ladder-reporting, inside-counsel]
+  - id: upjohn-warning
+    term: Upjohn warning (corporate Miranda)
+    pos: noun
+    topic: client
+    en: { definition: "The statement company counsel gives an employee before an interview: I represent the company, not you; this conversation is privileged, but the privilege belongs to the company, which may waive it and share what you say, including with the government." }
+    es: { term: "advertencia Upjohn (Miranda corporativo)", explanation: "Lo que el abogado de la empresa dice a un empleado antes de entrevistarlo: represento a la empresa, no a ti; esta conversación es privilegiada, pero el privilegio es de la empresa, que puede renunciarlo y compartir lo que digas, incluso con el gobierno. Viene de Upjohn Co. v. United States (1981)." }
+    examples: [{ en: "She opened the interview with the Upjohn warning and documented that the employee understood it.", es: "Abrió la entrevista con la advertencia Upjohn y documentó que el empleado la entendió." }]
+    authority: "Upjohn Co. v. United States, 449 U.S. 383 (1981)"
+    related: [who-is-the-client, attorney-client-privilege-in-house, internal-investigation]
+  - id: attorney-client-privilege-in-house
+    term: attorney-client privilege (in-house)
+    pos: noun
+    topic: privilege
+    en: { definition: "Confidential communications between the company and its lawyer for the purpose of obtaining legal advice are protected from disclosure; for in-house lawyers the fight is usually over whether the advice was legal or business, who in the company may speak for the client, and whether copying the lawyer on an email makes it privileged (it does not)." }
+    es: { term: "privilegio abogado-cliente (en la empresa)", explanation: "Las comunicaciones confidenciales entre la empresa y su abogado para obtener asesoría jurídica están protegidas contra la revelación; para los abogados internos la pelea suele ser si el consejo fue jurídico o de negocios, quién habla por el cliente y si copiar al abogado en un correo lo vuelve privilegiado (no). En México el secreto profesional protege al abogado de declarar, pero no hay un privilegio probatorio tan fuerte." }
+    examples: [{ en: "Label the email privileged, keep the lawyer's advice separate from the business discussion, and limit the recipients.", es: "Marca el correo como privilegiado, separa el consejo jurídico de la discusión de negocios y limita a los destinatarios." }]
+    related: [work-product-doctrine, dual-purpose-communication, confidentiality-vs-privilege, heppner-ai-privilege]
+  - id: work-product-doctrine
+    term: work product doctrine
+    pos: noun
+    topic: privilege
+    en: { definition: "Documents and mental impressions prepared in anticipation of litigation by or for a party are protected from discovery; broader than privilege in who can create it, narrower in requiring the prospect of litigation." }
+    es: { term: "doctrina del work product", explanation: "Documentos e impresiones mentales preparados en previsión de un litigio por una parte o para ella están protegidos contra el discovery; más amplio que el privilegio en quién puede crearlo, más estrecho porque exige la perspectiva de un litigio. Nace de Hickman v. Taylor (1947)." }
+    examples: [{ en: "The investigator's interview memos were work product because litigation was expected.", es: "Los memos de entrevista del investigador eran work product porque se esperaba litigio." }]
+    authority: "Hickman v. Taylor, 329 U.S. 495 (1947); Fed. R. Civ. P. 26(b)(3)"
+    related: [attorney-client-privilege-in-house, internal-investigation]
+  - id: dual-purpose-communication
+    term: dual-purpose communication
+    pos: noun
+    topic: privilege
+    en: { definition: "An email or memo that mixes legal advice with business advice; courts protect it only if the primary (or, in some courts, a significant) purpose was legal advice, which is why in-house lawyers separate the two." }
+    es: { term: "comunicación de doble propósito", explanation: "Correo o memo que mezcla consejo jurídico con consejo de negocios; los tribunales lo protegen solo si el propósito principal (o, en algunos, uno significativo) fue el consejo jurídico, por eso los abogados internos separan ambos." }
+    examples: [{ en: "A pricing memo with one paragraph of legal risk is a dual-purpose document and may be discoverable.", es: "Un memo de precios con un párrafo de riesgo jurídico es un documento de doble propósito y puede ser revelable." }]
+    related: [attorney-client-privilege-in-house]
+    difficulty: 2
+  - id: confidentiality-vs-privilege
+    term: confidentiality (Rule 1.6) vs. privilege
+    pos: phrase
+    topic: privilege
+    en: { definition: "The ethical duty of confidentiality covers everything a lawyer learns in the representation and binds the lawyer; the evidentiary privilege covers only confidential legal communications and binds courts. Everything privileged is confidential; most confidential information is not privileged." }
+    es: { term: "confidencialidad (Regla 1.6) frente a privilegio", explanation: "El deber ético de confidencialidad cubre todo lo que el abogado sabe por la representación y obliga al abogado; el privilegio probatorio cubre solo comunicaciones jurídicas confidenciales y obliga a los tribunales. Todo lo privilegiado es confidencial; casi nada de lo confidencial es privilegiado." }
+    examples: [{ en: "The merger price is confidential; the lawyer's advice about the merger is privileged.", es: "El precio de la fusión es confidencial; el consejo del abogado sobre la fusión es privilegiado." }]
+    authority: "Model Rule 1.6"
+    related: [attorney-client-privilege-in-house]
+  - id: up-the-ladder-reporting
+    term: up-the-ladder reporting
+    pos: noun
+    topic: client
+    en: { definition: "When inside counsel learns of a violation likely to harm the organization, she must report it to higher authority inside the company, up to the board if necessary; for public companies, Sarbanes-Oxley section 307 makes this a federal obligation." }
+    es: { term: "reporte escalonado hacia arriba (up-the-ladder)", explanation: "Cuando el abogado interno conoce una violación que probablemente dañe a la organización, debe reportarla a una autoridad superior dentro de la empresa, hasta el consejo si hace falta; para empresas públicas la sección 307 de Sarbanes-Oxley lo convierte en obligación federal." }
+    examples: [{ en: "The CFO ignored the warning, so counsel took the issue to the audit committee.", es: "El CFO ignoró la advertencia, así que la abogada llevó el asunto al comité de auditoría." }]
+    authority: "Model Rule 1.13(b); SOX § 307; 17 C.F.R. pt. 205"
+    related: [who-is-the-client, whistleblower-protection, compliance-program]
+  - id: outside-counsel
+    term: outside counsel
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "Law firms the company hires for specific matters (litigation, deals, specialized regulation); inside counsel selects them, defines the scope, sets the budget, reviews the invoices and owns the relationship with the business." }
+    es: { term: "abogados externos (outside counsel)", explanation: "Despachos que la empresa contrata para asuntos específicos (litigio, transacciones, regulación especializada); el abogado interno los elige, define el alcance, fija el presupuesto, revisa las facturas y es dueño de la relación con el negocio." }
+    examples: [{ en: "Outside counsel wins the case; inside counsel decides whether to fight it.", es: "El externo gana el caso; el interno decide si se pelea." }]
+    related: [engagement-letter, outside-counsel-guidelines, legal-fees-afa, early-case-assessment]
+  - id: engagement-letter
+    term: engagement letter
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "The contract between the company and the law firm: who the client is, the scope of the matter, who will staff it, how fees and expenses work, conflicts, confidentiality, and how the engagement ends; the first document inside counsel negotiates with a firm." }
+    es: { term: "carta de contratación (engagement letter)", explanation: "El contrato entre la empresa y el despacho: quién es el cliente, el alcance del asunto, quién lo trabajará, cómo funcionan honorarios y gastos, conflictos, confidencialidad y cómo termina la contratación; el primer documento que el abogado interno negocia con un despacho. Equivale al contrato de prestación de servicios profesionales, pero mucho más detallado." }
+    examples: [{ en: "The engagement letter capped the budget at $150,000 without written approval.", es: "La carta de contratación topó el presupuesto en $150,000 sin aprobación escrita." }]
+    related: [outside-counsel, outside-counsel-guidelines]
+  - id: outside-counsel-guidelines
+    term: outside counsel guidelines
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "The company's standing rules for every firm it hires: staffing, billing increments, what expenses are allowed, budgets and budget updates, communication expectations, diversity, data security, and when to call before acting." }
+    es: { term: "lineamientos para abogados externos", explanation: "Las reglas permanentes de la empresa para todo despacho que contrata: personal asignado, incrementos de facturación, gastos permitidos, presupuestos y actualizaciones, expectativas de comunicación, diversidad, seguridad de datos y cuándo llamar antes de actuar." }
+    examples: [{ en: "The guidelines forbid billing for more than one lawyer at a routine hearing.", es: "Los lineamientos prohíben facturar más de un abogado en una audiencia de trámite." }]
+    related: [engagement-letter, legal-invoice-review]
+  - id: legal-fees-afa
+    term: hourly billing and alternative fee arrangements (AFAs)
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "Firms traditionally bill by the hour in tenths; companies push alternatives (fixed fees, capped fees, phased budgets, success fees, retainers) that align the firm's incentives with the result rather than the time spent." }
+    es: { term: "facturación por hora y esquemas alternativos de honorarios (AFA)", explanation: "Los despachos facturan por hora en décimas; las empresas impulsan alternativas (honorario fijo, tope, presupuesto por fases, honorario de éxito, iguala) que alinean los incentivos del despacho con el resultado y no con el tiempo.", falseFriend: "Retainer es un anticipo o iguala, no una retención fiscal." }
+    examples: [{ en: "A fixed fee for the first phase and hourly billing after discovery.", es: "Honorario fijo para la primera fase y por hora después del discovery." }]
+    related: [legal-invoice-review, outside-counsel]
+  - id: legal-invoice-review
+    term: invoice review (billing audit)
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "Reading the firm's bill line by line against the guidelines and the budget: block billing, overstaffing, vague entries, clerical work billed at lawyer rates, unapproved expenses; the week 3 lab had students do it." }
+    es: { term: "revisión de facturas (auditoría de facturación)", explanation: "Leer la factura del despacho línea por línea contra los lineamientos y el presupuesto: facturación en bloque, exceso de personal, entradas vagas, trabajo administrativo cobrado a tarifa de abogado, gastos no aprobados; el laboratorio de la semana 3 lo practicó." }
+    examples: [{ en: "She cut the entry 'attention to matter, 4.5 hours' for lack of description.", es: "Recortó la entrada 'atención al asunto, 4.5 horas' por falta de descripción." }]
+    related: [legal-fees-afa, outside-counsel-guidelines, timesheet-time-description]
+  - id: early-case-assessment
+    term: early case assessment (ECA)
+    pos: noun
+    topic: outside-counsel
+    en: { definition: "A structured review in the first weeks of a dispute: the facts, the claims, the likely exposure and cost, the key documents and witnesses, and the options (settle, fight, insure), so the business can decide before the lawyers' meter runs." }
+    es: { term: "evaluación temprana del caso (ECA)", explanation: "Revisión estructurada en las primeras semanas de un conflicto: hechos, reclamos, exposición y costo probables, documentos y testigos clave, y opciones (transigir, litigar, asegurar), para que el negocio decida antes de que corra el taxímetro de los abogados." }
+    examples: [{ en: "The ECA put the exposure at $400,000 and the defense cost at $600,000, so the company settled.", es: "La ECA estimó la exposición en $400,000 y la defensa en $600,000, así que la empresa transigió." }]
+    related: [outside-counsel, litigation-hold]
+  - id: litigation-hold
+    term: litigation hold
+    pos: noun
+    topic: risk
+    en: { definition: "A written instruction to preserve documents and data (including emails, chats and devices) once litigation is reasonably anticipated; failing to issue it leads to spoliation sanctions." }
+    es: { term: "orden de preservación (litigation hold)", explanation: "Instrucción escrita de conservar documentos y datos (correos, chats, dispositivos) desde que un litigio es razonablemente previsible; no emitirla lleva a sanciones por destrucción de pruebas. No existe en México porque no hay discovery." }
+    examples: [{ en: "Counsel sent the hold to twelve custodians the day the demand letter arrived.", es: "La abogada envió la orden a doce custodios el día que llegó la carta de reclamación." }]
+    related: [early-case-assessment, internal-investigation]
+  - id: compliance-program
+    term: compliance program
+    pos: noun
+    topic: risk
+    en: { definition: "The company's system for preventing, detecting and responding to violations: a code of conduct, risk assessment, policies, training, a reporting hotline, monitoring and audits, discipline and continuous improvement; prosecutors judge it by whether it works in practice, not on paper." }
+    es: { term: "programa de cumplimiento (compliance)", explanation: "El sistema de la empresa para prevenir, detectar y responder a violaciones: código de conducta, evaluación de riesgos, políticas, capacitación, línea de denuncia, monitoreo y auditorías, disciplina y mejora continua; los fiscales lo juzgan por si funciona en la práctica, no en el papel. En México: art. 25 de la Ley General de Responsabilidades y art. 11 bis del CPF." }
+    examples: [{ en: "A program nobody is trained on is a binder, not a program.", es: "Un programa en el que nadie se capacita es una carpeta, no un programa." }]
+    authority: "U.S.S.G. § 8B2.1; DOJ Evaluation of Corporate Compliance Programs"
+    related: [hotline-triage, internal-investigation, up-the-ladder-reporting]
+  - id: hotline-triage
+    term: hotline triage
+    pos: noun
+    topic: risk
+    en: { definition: "Deciding what to do with a report that comes through the ethics hotline: is it credible, how serious, who is implicated, is there a legal duty to act, who should investigate (HR, compliance, legal, outside counsel), and whether to preserve documents and notify insurers or regulators." }
+    es: { term: "triage de la línea de denuncia", explanation: "Decidir qué hacer con un reporte de la línea de ética: si es creíble, qué tan grave, a quién implica, si hay deber legal de actuar, quién debe investigar (recursos humanos, cumplimiento, jurídico, externos) y si hay que preservar documentos y avisar a aseguradoras o reguladores. Fue el laboratorio de la semana 5." }
+    examples: [{ en: "A report naming the CFO goes to the audit committee, not to the CFO's team.", es: "Un reporte que nombra al CFO va al comité de auditoría, no al equipo del CFO." }]
+    related: [compliance-program, internal-investigation]
+  - id: internal-investigation
+    term: internal investigation
+    pos: noun
+    topic: risk
+    en: { definition: "A company's own inquiry into possible wrongdoing, run by or under lawyers to keep privilege: scope and independence decided first, documents preserved and collected, witnesses interviewed with Upjohn warnings, findings reported to the right level, remediation and disclosure decisions documented." }
+    es: { term: "investigación interna", explanation: "Indagación de la propia empresa sobre una posible irregularidad, dirigida por abogados para conservar el privilegio: primero alcance e independencia, luego preservación y recolección de documentos, entrevistas con advertencia Upjohn, informe al nivel correcto, y decisiones de remediación y revelación documentadas." }
+    examples: [{ en: "The board hired outside counsel for the investigation because the CEO was implicated.", es: "El consejo contrató abogados externos para la investigación porque el CEO estaba implicado." }]
+    authority: "In re Kellogg Brown & Root, Inc., 756 F.3d 754 (D.C. Cir. 2014)"
+    related: [upjohn-warning, work-product-doctrine, hotline-triage, litigation-hold]
+  - id: whistleblower-protection
+    term: whistleblower protection
+    pos: noun
+    topic: risk
+    en: { definition: "Laws that forbid retaliation against employees who report violations (Sarbanes-Oxley, Dodd-Frank, many state statutes) and, under Dodd-Frank, pay bounties for tips to the SEC; a company that punishes a reporter has created a second, easier case against itself." }
+    es: { term: "protección al denunciante (whistleblower)", explanation: "Leyes que prohíben represalias contra empleados que reportan violaciones (Sarbanes-Oxley, Dodd-Frank, muchas leyes estatales) y, bajo Dodd-Frank, pagan recompensas por avisos a la SEC; una empresa que castiga al denunciante crea un segundo caso, más fácil, en su contra." }
+    examples: [{ en: "Firing the employee two weeks after her hotline report looked like retaliation.", es: "Despedir a la empleada dos semanas después de su denuncia pareció represalia." }]
+    authority: "SOX § 806; Dodd-Frank § 922"
+    related: [up-the-ladder-reporting, compliance-program, wrongful-termination]
+  - id: board-presentation
+    term: board presentation
+    pos: noun
+    topic: governance
+    en: { definition: "The general counsel's report to the board or a committee: one page of what matters (the decision needed, the risk, the recommendation, the alternatives), delivered BLUF-style, with the backup available but not read aloud; practiced in the week 6 simulation." }
+    es: { term: "presentación al consejo", explanation: "El informe del general counsel al consejo o a un comité: una página con lo que importa (la decisión necesaria, el riesgo, la recomendación, las alternativas), en estilo BLUF, con el soporte disponible pero sin leerlo; se practicó en la simulación de la semana 6." }
+    examples: [{ en: "Three slides: the ask, the risk, the plan. Everything else in the appendix.", es: "Tres diapositivas: la petición, el riesgo, el plan. Todo lo demás en el anexo." }]
+    related: [bluf, general-counsel]
+  - id: building-the-fortress
+    term: building the fortress (governance hygiene)
+    pos: phrase
+    topic: governance
+    en: { definition: "The in-house lawyer's job of keeping the company's governance documents, minutes, resolutions, committee charters, D&O coverage and disclosure controls in order, so that when a dispute or an investigation comes the record shows decisions made properly." }
+    es: { term: "construir la fortaleza (higiene de gobierno corporativo)", explanation: "La tarea del abogado interno de mantener en orden los documentos de gobierno, actas, resoluciones, estatutos de comités, seguro D&O y controles de revelación, para que cuando llegue un pleito o una investigación el expediente muestre decisiones tomadas correctamente." }
+    examples: [{ en: "Minutes that record the questions the board asked are the best defense to a duty-of-care claim.", es: "Las actas que registran las preguntas que hizo el consejo son la mejor defensa ante un reclamo por falta de diligencia." }]
+    related: [board-presentation, inside-counsel-as-director]
+  - id: due-diligence
+    term: due diligence (M&A)
+    pos: noun
+    topic: contracts
+    en: { definition: "The buyer's investigation of the target before signing: contracts, litigation, employment, intellectual property, compliance, data, taxes; organized in a data room, run by inside counsel as quarterback with outside specialists, looking for the problems that change price, structure or the decision to buy." }
+    es: { term: "due diligence (auditoría de compra)", explanation: "La investigación del comprador sobre la empresa objetivo antes de firmar: contratos, litigios, laboral, propiedad intelectual, cumplimiento, datos, impuestos; organizada en un data room, dirigida por el abogado interno como quarterback con especialistas externos, buscando los problemas que cambian el precio, la estructura o la decisión de comprar." }
+    examples: [{ en: "Diligence found a change-of-control clause in the target's biggest customer contract.", es: "La due diligence encontró una cláusula de cambio de control en el contrato con el mayor cliente de la empresa objetivo." }]
+    related: [data-room, deal-killer, msa]
+  - id: data-room
+    term: data room
+    pos: noun
+    topic: contracts
+    en: { definition: "The secure online folder where the seller posts the documents buyers may review during diligence, with an index, access logs and a question-and-answer process." }
+    es: { term: "data room (cuarto de datos)", explanation: "La carpeta segura en línea donde el vendedor coloca los documentos que los compradores pueden revisar durante la due diligence, con índice, registro de accesos y un proceso de preguntas y respuestas." }
+    examples: [{ en: "The data room index had 1,400 documents; counsel assigned each folder to a reviewer.", es: "El índice del data room tenía 1,400 documentos; la abogada asignó cada carpeta a un revisor." }]
+    related: [due-diligence]
+  - id: deal-killer
+    term: deal killer (red flag)
+    pos: noun
+    topic: contracts
+    en: { definition: "A diligence finding serious enough to stop the deal or change it fundamentally: an undisclosed government investigation, a key license that cannot be transferred, a lawsuit that could exceed the purchase price, sanctions exposure; the week 7 lab was about finding it in the pile." }
+    es: { term: "deal killer (hallazgo que mata el deal)", explanation: "Un hallazgo de due diligence tan grave que detiene la operación o la cambia de raíz: una investigación gubernamental no revelada, una licencia clave intransferible, un juicio que podría superar el precio, exposición a sanciones; el laboratorio de la semana 7 trató de encontrarlo entre el montón." }
+    examples: [{ en: "The deal killer was a consent decree that barred the target from selling to the government.", es: "El deal killer fue un consent decree que impedía a la empresa objetivo venderle al gobierno." }]
+    related: [due-diligence, data-room]
+  - id: msa
+    term: master services agreement (MSA)
+    pos: noun
+    topic: contracts
+    en: { definition: "A framework contract with a vendor that fixes the general terms (payment, confidentiality, data security, intellectual property, warranties, indemnities, liability caps, termination) so that individual projects can be added by short statements of work." }
+    es: { term: "contrato marco de servicios (MSA)", explanation: "Contrato marco con un proveedor que fija los términos generales (pago, confidencialidad, seguridad de datos, propiedad intelectual, garantías, indemnidades, topes de responsabilidad, terminación) para que los proyectos individuales se añadan con breves statements of work. Equivale al contrato marco mexicano." }
+    examples: [{ en: "The MSA review exercise asked for a redline against the client's playbook positions.", es: "El ejercicio del MSA pidió un redline contra las posiciones del playbook del cliente." }]
+    related: [contract-playbook, redline, indemnification-clause, limitation-of-liability, termination-for-convenience]
+  - id: contract-playbook
+    term: contract playbook
+    pos: noun
+    topic: contracts
+    en: { definition: "The company's guide for negotiating a type of contract: for each clause, the preferred position, acceptable fallbacks, walk-away points and who must approve exceptions; the input an AI tool uses to flag deviations in a draft." }
+    es: { term: "playbook de contratos", explanation: "La guía de la empresa para negociar un tipo de contrato: por cada cláusula, la posición preferida, las alternativas aceptables, los puntos de ruptura y quién aprueba excepciones; es lo que una herramienta de AI usa para marcar desviaciones en un borrador." }
+    examples: [{ en: "The playbook allowed a liability cap of twelve months' fees but required a carve-out for data breaches.", es: "El playbook permitía un tope de doce meses de honorarios pero exigía una excepción para brechas de datos." }]
+    related: [msa, redline, ai-use-policy]
+  - id: redline
+    term: redline (markup)
+    pos: noun
+    topic: contracts
+    en: { definition: "A version of a contract showing the changes one side proposes, with insertions and deletions marked; the unit of exchange in a negotiation, usually accompanied by a short note explaining each change." }
+    es: { term: "redline (versión con cambios marcados)", explanation: "Versión de un contrato que muestra los cambios que una parte propone, con inserciones y eliminaciones marcadas; la unidad de intercambio en una negociación, normalmente con una nota breve que explica cada cambio." }
+    examples: [{ en: "Send the redline with a cover email listing the three changes that matter.", es: "Envía el redline con un correo que enumere los tres cambios que importan." }]
+    related: [msa, contract-playbook]
+  - id: indemnification-clause
+    term: indemnification clause
+    pos: noun
+    topic: contracts
+    en: { definition: "A promise by one party to cover the other's losses from specified events (third-party claims, breaches, infringement); negotiated over scope, caps, procedure and exceptions, and often the most fought-over clause of a services contract." }
+    es: { term: "cláusula de indemnidad", explanation: "Promesa de una parte de cubrir las pérdidas de la otra por eventos especificados (reclamos de terceros, incumplimientos, infracción de propiedad intelectual); se negocia su alcance, topes, procedimiento y excepciones, y suele ser la cláusula más peleada de un contrato de servicios." }
+    examples: [{ en: "The vendor agreed to indemnify for IP infringement but not for the client's misuse of the software.", es: "El proveedor aceptó indemnizar por infracción de propiedad intelectual pero no por el mal uso del software por el cliente." }]
+    related: [msa, limitation-of-liability]
+  - id: limitation-of-liability
+    term: limitation of liability (cap and exclusion of consequential damages)
+    pos: noun
+    topic: contracts
+    en: { definition: "A clause capping what a party can owe (often the fees paid in twelve months) and excluding indirect, consequential or lost-profit damages, with carve-outs for things like confidentiality breaches, indemnities and gross negligence." }
+    es: { term: "limitación de responsabilidad (tope y exclusión de daños indirectos)", explanation: "Cláusula que topa lo que una parte puede deber (a menudo los honorarios de doce meses) y excluye daños indirectos, consecuenciales o lucro cesante, con excepciones para brechas de confidencialidad, indemnidades y negligencia grave. En México la renuncia anticipada al dolo es nula (CCF art. 2106)." }
+    examples: [{ en: "The cap did not apply to the data-breach indemnity.", es: "El tope no aplicaba a la indemnidad por brecha de datos." }]
+    related: [indemnification-clause, msa]
+  - id: termination-for-convenience
+    term: termination for convenience
+    pos: noun
+    topic: contracts
+    en: { definition: "A right to end a contract without cause on notice (thirty, sixty, ninety days), usually with payment for work done; the client wants it broad, the vendor wants a fee or a minimum term." }
+    es: { term: "terminación por conveniencia", explanation: "Derecho a terminar un contrato sin causa con aviso previo (treinta, sesenta, noventa días), normalmente pagando el trabajo hecho; el cliente la quiere amplia, el proveedor quiere una penalidad o un plazo mínimo." }
+    examples: [{ en: "Sixty days' notice, no termination fee, payment for accepted deliverables.", es: "Aviso de sesenta días, sin penalidad, pago por entregables aceptados." }]
+    related: [msa, at-will-employment]
+  - id: plain-english-contract
+    term: plain-language contract
+    pos: noun
+    topic: contracts
+    en: { definition: "A contract written so that the business people who must live with it can read it: short sentences, defined terms used sparingly, no archaic words, tables for numbers; argued for in the week 8 reading because unreadable contracts get breached by accident." }
+    es: { term: "contrato en lenguaje llano", explanation: "Contrato escrito para que la gente de negocios que debe cumplirlo pueda leerlo: oraciones cortas, términos definidos con moderación, sin arcaísmos, tablas para los números; la lectura de la semana 8 argumenta que los contratos ilegibles se incumplen por accidente." }
+    examples: [{ en: "The rewritten MSA went from 48 pages to 19 with the same protections.", es: "El MSA reescrito pasó de 48 páginas a 19 con las mismas protecciones." }]
+    related: [msa, bluf]
+  - id: at-will-employment
+    term: at-will employment
+    pos: noun
+    topic: employment
+    en: { definition: "The default American rule that either side may end employment at any time for any lawful reason or no reason; the exceptions (discrimination, retaliation, contracts, public policy) are what the termination checklist screens for." }
+    es: { term: "empleo a voluntad (at-will)", explanation: "La regla estadounidense por defecto: cualquiera de las partes puede terminar la relación en cualquier momento por cualquier razón lícita o sin razón; las excepciones (discriminación, represalia, contratos, orden público) son lo que la checklist de despido revisa. Lo opuesto de la estabilidad en el empleo de la LFT, donde el despido exige causa y, si no, indemnización." }
+    examples: [{ en: "At-will means no severance is owed, but it never means a discriminatory reason is lawful.", es: "At-will significa que no se debe indemnización, pero nunca que una razón discriminatoria sea lícita." }]
+    related: [wrongful-termination, termination-checklist]
+  - id: wrongful-termination
+    term: wrongful termination
+    pos: noun
+    topic: employment
+    en: { definition: "A firing that violates a statute (Title VII, ADEA, ADA, FMLA, state law), a contract, or a public policy exception (firing for refusing to break the law); the claim at-will employment does not protect against." }
+    es: { term: "despido ilícito (wrongful termination)", explanation: "Despido que viola una ley (Title VII, ADEA, ADA, FMLA, leyes estatales), un contrato o la excepción de orden público (despedir por negarse a violar la ley); el reclamo contra el que el empleo a voluntad no protege." }
+    examples: [{ en: "Firing her a week after her FMLA leave request invited a retaliation claim.", es: "Despedirla una semana después de pedir licencia FMLA invitó un reclamo por represalia." }]
+    related: [at-will-employment, termination-checklist, whistleblower-protection]
+  - id: termination-checklist
+    term: termination checklist
+    pos: noun
+    topic: employment
+    en: { definition: "The questions inside counsel asks before approving a firing: documented reason and consistency with how others were treated; protected class, recent complaint, leave or whistleblowing; contracts and policies; final pay and benefits under state law; severance and release; communications and access cutoff; the week 9 lab." }
+    es: { term: "checklist de despido", explanation: "Las preguntas que el abogado interno hace antes de aprobar un despido: razón documentada y coherencia con el trato a otros; categoría protegida, queja reciente, licencia o denuncia; contratos y políticas; finiquito y prestaciones según la ley estatal; indemnización y finiquito con renuncia a reclamos; comunicaciones y corte de accesos; el laboratorio de la semana 9." }
+    examples: [{ en: "The checklist stopped a firing scheduled for the day the employee returned from medical leave.", es: "La checklist detuvo un despido programado para el día en que la empleada volvía de licencia médica." }]
+    related: [at-will-employment, wrongful-termination]
+  - id: ai-use-policy
+    term: AI use policy (legal department)
+    pos: noun
+    topic: technology
+    en: { definition: "The company's rules for generative AI: approved tools, what data may never be entered (privileged, personal, trade secrets), human review of output, disclosure to clients or courts where required, vendor terms on training and retention, and training for users; the week 10 lab drafted one." }
+    es: { term: "política de uso de AI (departamento jurídico)", explanation: "Las reglas de la empresa para la AI generativa: herramientas aprobadas, qué datos nunca se ingresan (privilegiados, personales, secretos industriales), revisión humana de los resultados, declaración a clientes o tribunales cuando se exige, términos del proveedor sobre entrenamiento y retención, y capacitación; el laboratorio de la semana 10 redactó una." }
+    examples: [{ en: "Rule one of the policy: nothing privileged goes into a public chatbot.", es: "Regla uno de la política: nada privilegiado entra a un chatbot público." }]
+    related: [aba-formal-opinion-512, texas-ethics-opinion-705, heppner-ai-privilege, data-privacy-program]
+  - id: aba-formal-opinion-512
+    term: ABA Formal Opinion 512 (generative AI)
+    pos: noun
+    topic: technology
+    en: { definition: "The 2024 ABA ethics opinion on lawyers' use of generative AI: duties of competence (understand the tool, verify output), confidentiality (informed consent before entering client information into tools that may retain or train on it), communication, candor to courts, supervision of staff and tools, and reasonable fees (no billing for time saved)." }
+    es: { term: "Opinión Formal 512 de la ABA (AI generativa)", explanation: "Opinión de ética de 2024 sobre el uso de AI generativa por abogados: deberes de competencia (entender la herramienta, verificar resultados), confidencialidad (consentimiento informado antes de ingresar información del cliente en herramientas que la retengan o entrenen con ella), comunicación, candor ante tribunales, supervisión del personal y de las herramientas, y honorarios razonables (no cobrar el tiempo ahorrado)." }
+    examples: [{ en: "Under Opinion 512, a lawyer who cites a case the chatbot invented breached competence and candor.", es: "Bajo la Opinión 512, un abogado que cita un caso inventado por el chatbot violó competencia y candor." }]
+    authority: "ABA Formal Op. 512 (July 29, 2024)"
+    related: [ai-use-policy, texas-ethics-opinion-705]
+  - id: texas-ethics-opinion-705
+    term: Texas Ethics Opinion 705 (generative AI)
+    pos: noun
+    topic: technology
+    en: { definition: "The Texas Professional Ethics Committee's opinion applying the Texas disciplinary rules to generative AI: lawyers must understand the technology, protect confidential information, review and verify AI output, consider disclosure, and may not charge clients for time not actually spent; read it next to ABA 512 for the Texas-specific framing." }
+    es: { term: "Opinión 705 del Comité de Ética de Texas (AI generativa)", explanation: "Opinión del comité de ética de Texas que aplica las reglas disciplinarias texanas a la AI generativa: los abogados deben entender la tecnología, proteger la información confidencial, revisar y verificar los resultados, considerar la declaración y no cobrar tiempo no trabajado; se lee junto a la Opinión 512 de la ABA para el enfoque de Texas. Confirma los detalles en el texto de la opinión." }
+    examples: [{ en: "Opinion 705 is the authority to cite in a Texas AI policy.", es: "La Opinión 705 es la autoridad para citar en una política de AI en Texas." }]
+    authority: "Tex. Comm. on Prof'l Ethics, Op. 705"
+    related: [ai-use-policy, aba-formal-opinion-512]
+    difficulty: 2
+  - id: heppner-ai-privilege
+    term: United States v. Heppner (AI chats and privilege)
+    pos: noun
+    topic: technology
+    en: { definition: "A 2026 federal decision holding that a defendant's conversations with a public AI chatbot were not protected by attorney-client privilege or work product because he was not communicating with a lawyer to obtain legal advice and was not acting at counsel's direction; the court left open a different result where lawyers direct the use of the tool." }
+    es: { term: "United States v. Heppner (chats con AI y privilegio)", explanation: "Decisión federal de 2026 que resolvió que las conversaciones de un acusado con un chatbot público de AI no estaban protegidas por el privilegio abogado-cliente ni por el work product, porque no se comunicaba con un abogado para obtener consejo jurídico ni actuaba por instrucción de su abogado; el tribunal dejó abierta otra respuesta cuando los abogados dirigen el uso de la herramienta." }
+    examples: [{ en: "After Heppner, the policy tells employees: an AI chat is a third party; assume it is discoverable.", es: "Después de Heppner, la política dice a los empleados: un chat con AI es un tercero; asume que es revelable." }]
+    authority: "United States v. Heppner (S.D.N.Y. Feb. 2026)"
+    related: [attorney-client-privilege-in-house, ai-use-policy]
+    difficulty: 2
+  - id: data-privacy-program
+    term: data privacy program
+    pos: noun
+    topic: technology
+    en: { definition: "The policies, notices, contracts and controls that govern how the company collects, uses, shares and protects personal data under laws such as the Texas Data Privacy and Security Act, the GDPR for European customers, sector rules (HIPAA, GLBA) and breach-notification statutes; inside counsel owns the legal side with IT and security." }
+    es: { term: "programa de privacidad de datos", explanation: "Las políticas, avisos, contratos y controles que rigen cómo la empresa recolecta, usa, comparte y protege datos personales bajo leyes como la Texas Data Privacy and Security Act, el GDPR para clientes europeos, reglas sectoriales (HIPAA, GLBA) y leyes de notificación de brechas; el abogado interno es dueño del lado jurídico junto con TI y seguridad. En México: LFPDPPP y el INAI." }
+    examples: [{ en: "The breach-response plan names who calls the regulator within 72 hours.", es: "El plan de respuesta a brechas dice quién llama al regulador en 72 horas." }]
+    related: [ai-use-policy, compliance-program]
+  - id: securities-disclosure
+    term: securities disclosure (10-K, 10-Q, 8-K)
+    pos: noun
+    topic: securities
+    en: { definition: "Public companies must file annual (10-K), quarterly (10-Q) and current (8-K, within four business days of specified events) reports with the SEC that are accurate and complete; inside counsel runs the disclosure controls and the committee that decides what is material." }
+    es: { term: "revelación de información bursátil (10-K, 10-Q, 8-K)", explanation: "Las empresas públicas presentan ante la SEC informes anuales (10-K), trimestrales (10-Q) y de eventos (8-K, dentro de cuatro días hábiles de ciertos hechos) que deben ser exactos y completos; el abogado interno administra los controles de revelación y el comité que decide qué es relevante. Equivale a los reportes y eventos relevantes de la LMV ante la CNBV." }
+    examples: [{ en: "The CFO's resignation triggered an 8-K within four business days.", es: "La renuncia del CFO activó un 8-K dentro de cuatro días hábiles." }]
+    related: [reg-fd, trading-window, rule-10b5-1-plan]
+  - id: reg-fd
+    term: Regulation FD (fair disclosure)
+    pos: noun
+    topic: securities
+    en: { definition: "An SEC rule forbidding public companies from selectively disclosing material nonpublic information to analysts or investors; if it happens, the company must disclose publicly at once (intentional) or promptly (accidental). Inside counsel polices executives' calls and conferences." }
+    es: { term: "Regulación FD (revelación equitativa)", explanation: "Regla de la SEC que prohíbe a las empresas públicas revelar selectivamente información relevante no pública a analistas o inversionistas; si ocurre, la empresa debe revelar públicamente de inmediato (si fue intencional) o con prontitud (si fue accidental). El abogado interno vigila las llamadas y conferencias de los ejecutivos." }
+    examples: [{ en: "The CEO's hallway comment to a fund manager forced an 8-K the same day.", es: "El comentario de pasillo del CEO a un gestor de fondos obligó a un 8-K ese mismo día." }]
+    authority: "17 C.F.R. §§ 243.100–243.103"
+    related: [securities-disclosure, trading-window]
+  - id: trading-window
+    term: trading window and blackout period
+    pos: noun
+    topic: securities
+    en: { definition: "Company policy that lets insiders trade only during set windows after earnings releases and forbids trading (blackout) when they may hold material nonpublic information; preclearance by the legal department is standard." }
+    es: { term: "ventana de operación y periodo de bloqueo", explanation: "Política de la empresa que permite a los insiders operar solo en ventanas fijadas después de la publicación de resultados y lo prohíbe (blackout) cuando pueden tener información relevante no pública; la autorización previa del departamento jurídico es estándar." }
+    examples: [{ en: "No director may sell during the two weeks before the quarterly release.", es: "Ningún consejero puede vender en las dos semanas previas al reporte trimestral." }]
+    related: [rule-10b5-1-plan, securities-disclosure]
+  - id: rule-10b5-1-plan
+    term: Rule 10b5-1 trading plan
+    pos: noun
+    topic: securities
+    en: { definition: "A written plan adopted in good faith, while the insider has no material nonpublic information, that schedules future trades in advance; it gives an affirmative defense to insider trading charges, subject to cooling-off periods and disclosure rules tightened in 2022." }
+    es: { term: "plan de operaciones bajo la Regla 10b5-1", explanation: "Plan escrito adoptado de buena fe, cuando el insider no tiene información relevante no pública, que programa operaciones futuras por adelantado; da una defensa frente a cargos de insider trading, sujeta a periodos de espera y reglas de revelación endurecidas en 2022." }
+    examples: [{ en: "The CEO's plan sells 10,000 shares on the first trading day of each month.", es: "El plan del CEO vende 10,000 acciones el primer día hábil de cada mes." }]
+    authority: "17 C.F.R. § 240.10b5-1"
+    related: [trading-window, securities-disclosure]
+  - id: inside-counsel-as-director
+    term: inside counsel as director (or secretary)
+    pos: noun
+    topic: securities
+    en: { definition: "When the general counsel also sits on the board or serves as corporate secretary, she wears two hats with different duties and privileges: board communications may not be privileged, independence rules may be affected, and D&O exposure is personal; chapter 13's warning." }
+    es: { term: "el abogado interno como consejero (o secretario)", explanation: "Cuando el general counsel también se sienta en el consejo o es secretario corporativo, lleva dos sombreros con deberes y privilegios distintos: las comunicaciones del consejo pueden no ser privilegiadas, la independencia puede verse afectada y la exposición D&O es personal; la advertencia del capítulo 13." }
+    examples: [{ en: "As a director she voted; as counsel she advised; the minutes had to show which was which.", es: "Como consejera votó; como abogada asesoró; las actas tenían que mostrar cuál era cuál." }]
+    related: [general-counsel, building-the-fortress]
+    difficulty: 2
+  - id: legal-operations
+    term: legal operations (legal ops)
+    pos: noun
+    topic: career
+    en: { definition: "The business management of a legal department: budgets, outside counsel spend, technology and contract systems, metrics, process design; a growing career path next to the practicing in-house lawyer." }
+    es: { term: "operaciones jurídicas (legal ops)", explanation: "La administración del departamento jurídico como negocio: presupuestos, gasto en externos, tecnología y sistemas de contratos, métricas, diseño de procesos; una carrera en crecimiento al lado del abogado interno que litiga o negocia." }
+    examples: [{ en: "Legal ops cut outside spend 20 percent with a panel of preferred firms.", es: "Legal ops redujo el gasto externo 20 por ciento con un panel de despachos preferentes." }]
+    related: [general-counsel, outside-counsel-guidelines]
+  - id: networking-pitch
+    term: networking pitch (three sentences in person, 45 seconds on LinkedIn)
+    pos: noun
+    topic: career
+    en: { definition: "Who you are, what you are looking for, and why the listener should care, in three sentences; on LinkedIn, a headline and summary that say the same in the time a recruiter spends on a profile; the week 12 lab and the November 18 reception." }
+    es: { term: "pitch de networking (tres oraciones en persona, 45 segundos en LinkedIn)", explanation: "Quién eres, qué buscas y por qué debería importarle a quien escucha, en tres oraciones; en LinkedIn, un titular y un resumen que digan lo mismo en el tiempo que un reclutador dedica a un perfil; el laboratorio de la semana 12 y la recepción del 18 de noviembre." }
+    examples: [{ en: "Mexican lawyer, LL.M. at SMU, building a bilingual practice for companies that operate on both sides of the border.", es: "Abogado mexicano, LL.M. en SMU, construyendo una práctica bilingüe para empresas que operan en ambos lados de la frontera." }]
+    related: [elevator-brief, field-supervisor]
+  - id: field-supervisor
+    term: field supervisor (and faculty supervisor)
+    pos: noun
+    topic: career
+    en: { definition: "The lawyer at the host company who assigns and reviews the extern's work and completes the evaluations; the faculty supervisor is the professor assigned to check in and advise. Treat the first meeting with the field supervisor like a meeting with a senior partner." }
+    es: { term: "supervisor de campo (y supervisor académico)", explanation: "El abogado de la empresa anfitriona que asigna y revisa el trabajo del extern y llena las evaluaciones; el supervisor académico es el profesor asignado para dar seguimiento. La primera reunión con el supervisor de campo se trata como una reunión con un socio senior." }
+    examples: [{ en: "Ask the field supervisor for one piece of feedback every week.", es: "Pide al supervisor de campo un comentario de retroalimentación cada semana." }]
+    related: [timesheet-time-description, core-elms]
+  - id: timesheet-time-description
+    term: timesheets and time descriptions
+    pos: noun
+    topic: career
+    en: { definition: "Weekly records of externship hours by category with a short description of each task written the way a client would want to read it on an invoice: specific, active, no confidential details; due in CORE ELMS the Monday after each week; 120 hours minimum by the last day of classes." }
+    es: { term: "hojas de horas y descripciones de tiempo", explanation: "Registro semanal de las horas del externship por categoría con una descripción breve de cada tarea escrita como un cliente querría leerla en una factura: específica, activa, sin detalles confidenciales; se entrega en CORE ELMS el lunes siguiente a cada semana; mínimo 120 horas al último día de clases." }
+    examples: [{ en: "Reviewed vendor MSA against playbook and drafted redline of liability clause (2.5 hours).", es: "Revisé el MSA del proveedor contra el playbook y redacté el redline de la cláusula de responsabilidad (2.5 horas)." }]
+    related: [field-supervisor, core-elms, legal-invoice-review]
+  - id: core-elms
+    term: CORE ELMS
+    pos: noun
+    topic: career
+    en: { definition: "The externship management platform where timesheets, time descriptions and the mid-term and final evaluations are submitted; the program director reads student evaluations and does not share them with the placement." }
+    es: { term: "CORE ELMS", explanation: "La plataforma del externship donde se entregan las hojas de horas, las descripciones y las evaluaciones de medio semestre y final; el director del programa lee las evaluaciones de los estudiantes y no las comparte con la empresa." }
+    examples: [{ en: "The final evaluation in CORE ELMS is due December 4.", es: "La evaluación final en CORE ELMS se entrega el 4 de diciembre." }]
+    related: [timesheet-time-description, field-supervisor]
+  - id: rapid-fire-prompt
+    term: Rapid Fire engagement prompt
+    pos: noun
+    topic: career
+    en: { definition: "A 200–300 word reflection posted on Canvas the day after class, graded on timely, thoughtful completion (2 points each); some allow AI with disclosure (yellow), others forbid it (red). Five this semester: outside counsel, translation, one thing I would do, your AI stack, your future GC biography." }
+    es: { term: "prompt Rapid Fire", explanation: "Reflexión de 200–300 palabras publicada en Canvas el día siguiente a la clase, calificada por entrega puntual y reflexiva (2 puntos cada una); algunas permiten AI con declaración (amarillo), otras la prohíben (rojo). Cinco este semestre: abogados externos, traducción, una cosa que haría, tu AI stack, tu biografía como futuro GC." }
+    examples: [{ en: "Rapid Fires are due at 7:30 pm the day after class; set an alarm.", es: "Los Rapid Fire se entregan a las 7:30 pm del día siguiente a la clase; pon una alarma." }]
+    related: [reflection-paper, thesis-driven-paper]
+  - id: reflection-paper
+    term: reflection papers (three)
+    pos: noun
+    topic: career
+    en: { definition: "Three two-page papers, 10 points each, no AI: a company and industry overview with a question for the field supervisor (August), a mid-semester reflection on assumptions and skills (September), and a final reflection on the lawyer you want to become and a trusted-advisor moment (November 6)." }
+    es: { term: "reflexiones (tres)", explanation: "Tres trabajos de dos páginas, 10 puntos cada uno, sin AI: panorama de la empresa y la industria con una pregunta para el supervisor (agosto), reflexión de medio semestre sobre supuestos y habilidades (septiembre) y reflexión final sobre el abogado que quieres ser y un momento de asesor de confianza (6 de noviembre)." }
+    examples: [{ en: "Reflection #3 asks you to close the loop on the risk you identified in Reflection #1.", es: "La reflexión #3 pide cerrar el círculo con el riesgo que identificaste en la #1." }]
+    related: [rapid-fire-prompt, thesis-driven-paper]
+  - id: thesis-driven-paper
+    term: thesis-driven paper (proposal, abstract, final)
+    pos: noun
+    topic: career
+    en: { definition: "The program's main written work: a 15–20 page argument from the viewpoint of a practicing in-house lawyer, with a clear thesis, legal doctrine applied to real judgment calls, and a conclusion the reader could act on; built through a topic proposal and a 250–350 word abstract that compresses the argument, not the topics." }
+    es: { term: "trabajo con tesis (propuesta, abstract, final)", explanation: "El trabajo escrito principal del programa: un argumento de 15–20 páginas desde la perspectiva de un abogado interno en ejercicio, con una tesis clara, doctrina aplicada a decisiones reales y una conclusión sobre la que el lector podría actuar; se construye con una propuesta de tema y un abstract de 250–350 palabras que comprime el argumento, no los temas." }
+    examples: [{ en: "Thesis: in-house counsel for cross-border manufacturers should treat the USMCA review as a contract-remediation project, not a trade-policy watch.", es: "Tesis: el abogado interno de manufactureras transfronterizas debe tratar la revisión del T-MEC como un proyecto de remediación de contratos, no como vigilancia de política comercial." }]
+    related: [reflection-paper, rapid-fire-prompt]

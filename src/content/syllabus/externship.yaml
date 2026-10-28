@@ -1,36 +1,252 @@
-# Corporate Counsel Externship (Yeager). Fuente: Canvas; títulos y fechas únicamente.
+# Corporate Counsel Externship (Yeager). Fuente: módulos, tareas y anuncios de Canvas (leídos 2026-10-28). Títulos de clase y capítulos solamente; nada del libro ni del empleador.
 course: externship
 items:
+  - id: ext-c01-aug26
+    type: class
+    date: "2026-08-26"
+    week: 1
+    topic: role
+    title: { en: "Class 1: why the best lawyers are not always the best in-house lawyers; meet your faculty supervisor (lab)", es: "Clase 1: por qué los mejores abogados no siempre son los mejores abogados internos; conoce a tu supervisor académico (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 1; plus three short articles on lawyer competencies and emotional intelligence (Canvas)" }]
+    tasks:
+      - { en: "Introductory meeting with the field supervisor (set up by Aug. 19).", es: "Reunión inicial con el supervisor de campo (agendada desde el 19 de ago.)." }
+      - { en: "Acknowledgement of attendance, professionalism and confidentiality expectations.", es: "Acuse de las expectativas de asistencia, profesionalismo y confidencialidad." }
+  - id: ext-reflection-1
+    type: assignment
+    date: "2026-08-28"
+    dueTime: "23:59"
+    week: 1
+    topic: role
+    title: { en: "Research and Reflection #1: company and industry overview (10 points; no AI)", es: "Investigación y reflexión #1: panorama de la empresa y la industria (10 puntos; sin AI)" }
+  - id: ext-c02-sep02
+    type: class
+    date: "2026-09-02"
+    week: 2
+    topic: client
+    title: { en: "Class 2: who is your client (the organizational maze); the loyalty trap (lab)", es: "Clase 2: quién es tu cliente (el laberinto organizacional); la trampa de la lealtad (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 2 and ch. 5; plus an article on preserving the attorney-client privilege for in-house counsel (Canvas)" }]
+    notes: [externship/client-and-privilege]
+  - id: ext-c03-sep09
+    type: class
+    date: "2026-09-09"
+    week: 3
+    topic: outside-counsel
+    title: { en: "Class 3: outside counsel: hiring, firing and getting your money's worth; write the pitch, review the invoice (lab)", es: "Clase 3: abogados externos: contratar, despedir y hacer valer el dinero; escribe el pitch, revisa la factura (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 8 and ch. 12" }]
+    notes: [externship/outside-counsel]
   - id: ext-rapid-fire-outside-counsel
     type: assignment
-    date: "2026-09-09"
-    due: "2026-09-10"
+    date: "2026-09-10"
     dueTime: "19:30"
+    week: 3
     topic: outside-counsel
-    title: { en: "Rapid Fire: selecting outside counsel (submitted)", es: "Rapid Fire: elegir abogados externos (entregado)" }
+    title: { en: "Rapid Fire: selecting outside counsel (200–300 words, 2 points)", es: "Rapid Fire: elegir abogados externos (200–300 palabras, 2 puntos)" }
   - id: ext-topic-proposal
     type: assignment
     date: "2026-09-11"
+    dueTime: "23:59"
+    week: 3
+    topic: career
+    title: { en: "Paper topic proposal due (5 points; AI allowed with disclosure)", es: "Entrega de la propuesta de tema del trabajo (5 puntos; AI permitida con declaración)" }
+    notes: [externship/research-paper]
+  - id: ext-c04-sep16
+    type: class
+    date: "2026-09-16"
+    week: 4
     topic: role
-    title: { en: "Topic proposal: in-house counsel protecting U.S.–Mexico supply chains during the USMCA review (submitted, 5/5)", es: "Propuesta de tema: el abogado interno y las cadenas de suministro México–EE. UU. durante la revisión del T-MEC (entregada, 5/5)" }
+    title: { en: "Class 4: communicating like a trusted advisor: the BLUF framework; plain English memo and 90-second elevator brief (lab)", es: "Clase 4: comunicar como asesor de confianza: el marco BLUF; memo en inglés llano y elevator brief de 90 segundos (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 6, pp. 175–205 only" }]
+    notes: [externship/bluf-communication]
+  - id: ext-rapid-fire-translation
+    type: assignment
+    date: "2026-09-17"
+    dueTime: "19:30"
+    week: 4
+    topic: role
+    title: { en: "Rapid Fire: translation exercise, explain a legal issue to a board member in 200 words (no AI)", es: "Rapid Fire: ejercicio de traducción, explica un tema jurídico a un consejero en 200 palabras (sin AI)" }
+  - id: ext-c05-sep23
+    type: class
+    date: "2026-09-23"
+    week: 5
+    topic: risk
+    title: { en: "Class 5: compliance, risk and the sixth sense (guest chief legal and compliance officers); hotline triage: the call came in (lab)", es: "Clase 5: cumplimiento, riesgo y el sexto sentido (invitados: directores jurídico y de cumplimiento); triage de la línea de denuncia (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 7 and ch. 11" }]
+    notes: [externship/compliance-and-investigations]
+  - id: ext-reflection-2
+    type: assignment
+    date: "2026-09-25"
+    dueTime: "23:59"
+    week: 5
+    topic: role
+    title: { en: "Reflection #2: mid-semester reflection (10 points; no AI)", es: "Reflexión #2: reflexión de medio semestre (10 puntos; sin AI)" }
+  - id: ext-c06-sep30
+    type: class
+    date: "2026-09-30"
+    week: 6
+    topic: governance
+    title: { en: "Class 6: in the boardroom: governance, fiduciary duties and building the fortress; board presentation simulations (lab)", es: "Clase 6: en la sala del consejo: gobierno corporativo, deberes fiduciarios y construir la fortaleza; simulaciones de presentación al consejo (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 4" }]
+    notes: [externship/boardroom-and-securities]
+  - id: ext-c07-oct07
+    type: class
+    date: "2026-10-07"
+    week: 7
+    topic: contracts
+    title: { en: "Class 7: deal time: M&A, due diligence and the in-house quarterback; due diligence war room: find the deal killer (lab)", es: "Clase 7: hora del deal: M&A, due diligence y el quarterback interno; cuarto de guerra de due diligence: encuentra el deal killer (laboratorio)" }
+    notes: [externship/deals-and-contracts]
+  - id: ext-midterm-eval
+    type: assignment
+    date: "2026-10-09"
+    week: 7
+    topic: career
+    title: { en: "Mid-term student evaluation due in CORE ELMS (read only by the program director)", es: "Evaluación de medio semestre en CORE ELMS (solo la lee el director del programa)" }
+  - id: ext-c08-oct14
+    type: class
+    date: "2026-10-14"
+    week: 8
+    topic: contracts
+    title: { en: "Class 8: sports contracts and contrasts: professional vs. college; Red Ink deadline day: four deals before the window closes (lab)", es: "Clase 8: contratos deportivos y contrastes: profesional frente a universitario; Red Ink, día límite: cuatro deals antes de que cierre la ventana (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "article: the case for plain-language contracts (Canvas)" }]
+    notes: [externship/deals-and-contracts]
   - id: ext-msa-redline
     type: assignment
     date: "2026-10-14"
-    topic: outside-counsel
-    title: { en: "MSA redline exercise against the playbook (submitted)", es: "Ejercicio de redline del MSA contra el playbook (entregado)" }
+    dueTime: "17:00"
+    week: 8
+    topic: contracts
+    title: { en: "AI-assisted playbook review of a sports services MSA on Harvey (ungraded, marked complete)", es: "Revisión de un MSA de servicios deportivos contra el playbook con AI en Harvey (sin calificación, se marca como completada)" }
+    notes: [externship/deals-and-contracts]
   - id: ext-abstract
     type: assignment
     date: "2026-10-16"
-    topic: role
-    title: { en: "Abstract of the paper (submitted)", es: "Abstract del trabajo (entregado)" }
+    dueTime: "23:59"
+    week: 8
+    topic: career
+    title: { en: "Abstract of the paper due (250–350 words, 5 points)", es: "Entrega del abstract del trabajo (250–350 palabras, 5 puntos)" }
+    notes: [externship/research-paper]
+  - id: ext-c09-oct21
+    type: class
+    date: "2026-10-21"
+    week: 9
+    topic: employment
+    title: { en: "Class 9: employment law for the business lawyer: hiring, firing and everything that can go wrong; the termination checklist (lab)", es: "Clase 9: derecho laboral para el abogado de negocios: contratar, despedir y todo lo que puede salir mal; la checklist de despido (laboratorio)" }
+    notes: [externship/employment-termination]
+    note: { en: "Oct. 21 announcement: check your externship hours (about 80 by the end of week 8; 120 minimum by Nov. 23) and your attendance record.", es: "Anuncio del 21 de oct.: revisa tus horas de externship (unas 80 al final de la semana 8; mínimo 120 para el 23 de nov.) y tu registro de asistencia." }
   - id: ext-rapid-fire-one-thing
     type: assignment
     date: "2026-10-22"
-    due: "2026-10-23"
+    dueTime: "19:30"
+    week: 9
     topic: role
-    title: { en: "Rapid Fire: one thing I would actually do (BLUF) (submitted)", es: "Rapid Fire: una cosa que sí haría (BLUF) (entregado)" }
-  - id: ext-oct28-seminar
+    title: { en: "Rapid Fire: one thing I would actually do (AI allowed with disclosure)", es: "Rapid Fire: una cosa que sí haría (AI permitida con declaración)" }
+  - id: ext-c10-oct28
     type: class
     date: "2026-10-28"
-    title: { en: "Seminar (topic to confirm in Canvas); check for this week's Rapid Fire prompt", es: "Seminario (tema por confirmar en Canvas); revisa si hay Rapid Fire esta semana" }
-    verified: false
+    week: 10
+    topic: technology
+    title: { en: "Class 10: the AI-ready legal department: technology, data privacy and governing innovation; draft the AI policy, your company needs one by Friday (lab)", es: "Clase 10: el departamento jurídico listo para la AI: tecnología, privacidad de datos y gobernar la innovación; redacta la política de AI, tu empresa la necesita para el viernes (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 14; plus United States v. Heppner (S.D.N.Y. 2026), ABA Formal Opinion 512 and Texas Ethics Opinion 705 (Canvas)" }]
+    briefs: [externship/united-states-v-heppner]
+    notes: [externship/ai-in-the-legal-department]
+  - id: ext-rapid-fire-ai-stack
+    type: assignment
+    date: "2026-10-29"
+    dueTime: "19:30"
+    week: 10
+    topic: technology
+    title: { en: "Rapid Fire: your AI stack (2 points)", es: "Rapid Fire: tu AI stack (2 puntos)" }
+    notes: [externship/ai-in-the-legal-department]
+  - id: ext-timesheet-w9
+    type: assignment
+    date: "2026-11-02"
+    dueTime: "17:00"
+    week: 11
+    topic: career
+    title: { en: "Timesheet for week 9 (Oct. 26–30) in CORE ELMS", es: "Hoja de horas de la semana 9 (26–30 oct.) en CORE ELMS" }
+    optional: true
+  - id: ext-c11-nov04
+    type: class
+    date: "2026-11-04"
+    week: 11
+    topic: securities
+    title: { en: "Class 11: securities law and the in-house lawyer's minefield (full two-hour lecture)", es: "Clase 11: derecho de valores y el campo minado del abogado interno (conferencia completa de dos horas)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 9, ch. 10 and ch. 13" }]
+    notes: [externship/boardroom-and-securities]
+  - id: ext-reflection-3
+    type: assignment
+    date: "2026-11-06"
+    dueTime: "23:59"
+    week: 11
+    topic: career
+    title: { en: "Reflection #3: final reflection (10 points; no AI): the lawyer you want to become, the most underrated in-house skill, advice for the next cohort, a trusted-advisor moment, closing the loop on Reflection #1", es: "Reflexión #3: reflexión final (10 puntos; sin AI): el abogado que quieres ser, la habilidad interna más subestimada, consejo para la siguiente generación, un momento de asesor de confianza, cerrar el círculo con la reflexión #1" }
+    notes: [externship/research-paper]
+  - id: ext-timesheet-w10
+    type: assignment
+    date: "2026-11-09"
+    dueTime: "17:00"
+    week: 12
+    topic: career
+    title: { en: "Timesheet for week 10 (Nov. 2–6) in CORE ELMS", es: "Hoja de horas de la semana 10 (2–6 nov.) en CORE ELMS" }
+    optional: true
+  - id: ext-c12-nov11
+    type: class
+    date: "2026-11-11"
+    week: 12
+    topic: career
+    title: { en: "Class 12: your career as in-house counsel, from first job to CLO; 45 seconds on LinkedIn and three sentences in person (lab)", es: "Clase 12: tu carrera como abogado interno, del primer empleo a CLO; 45 segundos en LinkedIn y tres oraciones en persona (laboratorio)" }
+    pages: [{ book: inside-counsel-3, sections: "ch. 3" }]
+    notes: [externship/career-and-networking]
+  - id: ext-rapid-fire-gc-bio
+    type: assignment
+    date: "2026-11-12"
+    dueTime: "19:30"
+    week: 12
+    topic: career
+    title: { en: "Rapid Fire: your future general counsel biography (2 points)", es: "Rapid Fire: tu biografía como futuro general counsel (2 puntos)" }
+    notes: [externship/career-and-networking]
+  - id: ext-timesheet-w11
+    type: assignment
+    date: "2026-11-16"
+    dueTime: "17:00"
+    week: 13
+    topic: career
+    title: { en: "Timesheet for week 11 (Nov. 9–13) in CORE ELMS", es: "Hoja de horas de la semana 11 (9–13 nov.) en CORE ELMS" }
+    optional: true
+  - id: ext-c13-nov18
+    type: event
+    date: "2026-11-18"
+    time: { start: "17:45", end: "19:30" }
+    week: 13
+    topic: career
+    title: { en: "Class 13: the General Counsel's Desk, capstone networking reception (class photo 5:45, Armstrong Fieldhouse; reception 6:00–7:30)", es: "Clase 13: The General Counsel's Desk, recepción de networking (foto de grupo 5:45, Armstrong Fieldhouse; recepción 6:00–7:30)" }
+    notes: [externship/career-and-networking]
+  - id: ext-hours-minimum
+    type: assignment
+    date: "2026-11-23"
+    week: 14
+    topic: career
+    title: { en: "Last day of classes: 120 externship hours minimum must be complete; timesheet for week 12 (Nov. 16–20) due", es: "Último día de clases: deben estar completas las 120 horas mínimas del externship; hoja de horas de la semana 12 (16–20 nov.)" }
+  - id: ext-final-paper
+    type: assignment
+    date: "2026-11-30"
+    dueTime: "23:59"
+    week: 15
+    topic: career
+    title: { en: "Final paper due (50 points): thesis-driven analysis from an in-house perspective, 15–20 pages", es: "Entrega del trabajo final (50 puntos): análisis con tesis desde la perspectiva del abogado interno, 15–20 páginas" }
+    notes: [externship/research-paper]
+  - id: ext-final-eval
+    type: assignment
+    date: "2026-12-04"
+    dueTime: "17:00"
+    week: 15
+    topic: career
+    title: { en: "Final student evaluation in CORE ELMS", es: "Evaluación final del estudiante en CORE ELMS" }
+  - id: ext-extra-credit
+    type: assignment
+    date: "2026-12-11"
+    dueTime: "23:59"
+    week: 16
+    topic: career
+    title: { en: "Optional extra credit for international LL.M.s (due Dec. 11): AI around the world (250–400 words, 2 pts); build your U.S. in-house toolkit (1 pt); decode the American GC", es: "Créditos extra opcionales para LL.M. internacionales (hasta el 11 de dic.): AI around the world (250–400 palabras, 2 pts); tu kit de abogado interno en EE. UU. (1 pt); decodifica al GC estadounidense" }
+    optional: true
+    notes: [externship/career-and-networking]
