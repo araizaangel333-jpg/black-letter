@@ -1,83 +1,330 @@
-# Contracts (Crespi). Fuente: Reading and Review Session Assignments #9 y #10 y las
-# Class Discussion Notes enviadas por correo; aquí solo van páginas, secciones y casos.
+# Contracts (Crespi). Fuente: syllabus (borrador 11 jun 2026) y hojas de lectura #1–#10 recibidas por correo; solo fechas, páginas, secciones y nombres de casos. Las hojas futuras llegan cada semana.
 course: contracts
 items:
+  - id: contracts-aug25
+    type: reading
+    date: "2026-08-25"
+    week: 1
+    topic: introduction
+    title: { en: "Introduction: syllabus, how to do well, summary notes for the first class (handouts)", es: "Introducción: syllabus, cómo irle bien, notas resumen de la primera clase (handouts)" }
+    notes: [contracts/how-to-study-contracts]
+  - id: contracts-aug27
+    type: reading
+    date: "2026-08-27"
+    week: 1
+    topic: introduction
+    title: { en: "How to read a legal opinion; teaching contract law; topics for discussion (handouts)", es: "Cómo leer una sentencia; la enseñanza del derecho de contratos; temas de discusión (handouts)" }
+    notes: [contracts/how-to-study-contracts]
+  - id: contracts-sep01
+    type: reading
+    date: "2026-09-01"
+    week: 2
+    topic: introduction
+    title: { en: "Sources of contract law; modern and classical contract law contrasted; mandatory and persuasive authority (handouts)", es: "Fuentes del derecho de contratos; derecho clásico y moderno; autoridad vinculante y persuasiva (handouts)" }
+    notes: [contracts/analytical-framework]
+  - id: contracts-sep03
+    type: reading
+    date: "2026-09-03"
+    week: 2
+    topic: introduction
+    title: { en: "The legal realist critique; the overall analytical framework (handouts); R.2d §§ 24, 26, 30, 33, 50, 71, 73–74, 77, 79, 81", es: "La crítica realista; el marco de análisis general (handouts); R.2d §§ 24, 26, 30, 33, 50, 71, 73–74, 77, 79, 81" }
+    notes: [contracts/analytical-framework]
+  - id: contracts-sep08
+    type: reading
+    date: "2026-09-08"
+    week: 3
+    topic: formation
+    title: { en: "Offers: Owen v. Tunison, Harvey v. Facey, Fairmount Glass (with the professor's time lines and analyses)", es: "Ofertas: Owen v. Tunison, Harvey v. Facey, Fairmount Glass (con las líneas de tiempo y análisis del profesor)" }
+    pages: [{ book: farnsworth-10, pages: "191–199" }]
+    briefs: [contracts/owen-v-tunison, contracts/harvey-v-facey, contracts/fairmount-glass-v-crunden-martin]
+    notes: [contracts/formation-classical]
+  - id: contracts-sep10
+    type: reading
+    date: "2026-09-10"
+    week: 3
+    topic: formation
+    title: { en: "Advertisements and acceptance: Craft v. Elder, International Filter; R.2d §§ 50(1), 52–54, 56, 58–60, 69(1)", es: "Anuncios y aceptación: Craft v. Elder, International Filter; R.2d §§ 50(1), 52–54, 56, 58–60, 69(1)" }
+    pages: [{ book: farnsworth-10, pages: "199–203, 217–221" }]
+    briefs: [contracts/craft-v-elder-and-johnston, contracts/lefkowitz-v-great-minneapolis-surplus, contracts/international-filter-v-conroe-gin]
+    notes: [contracts/formation-classical]
+  - id: contracts-sep15
+    type: reading
+    date: "2026-09-15"
+    week: 4
+    topic: formation
+    title: { en: "Acceptance by performance, termination and revocation: White v. Corlies, Dickinson v. Dodds, Humble Oil; R.2d §§ 36, 41–43, 46, 48", es: "Aceptación por ejecución, extinción y revocación: White v. Corlies, Dickinson v. Dodds, Humble Oil; R.2d §§ 36, 41–43, 46, 48" }
+    pages: [{ book: farnsworth-10, pages: "222–227, 238–245, 259" }]
+    briefs: [contracts/white-v-corlies-and-tift, contracts/dickinson-v-dodds, contracts/humble-oil-v-westside-investment]
+    notes: [contracts/formation-classical]
+    note: { en: "Per the professor's Sept. 11 correction, the first reading on Sept. 15 is pp. 222–224 (the whole White case).", es: "Según la corrección del profesor del 11 de sept., la primera lectura del 15 de sept. es pp. 222–224 (el caso White completo)." }
+  - id: contracts-sep17
+    type: reading
+    date: "2026-09-17"
+    week: 4
+    topic: formation
+    title: { en: "Rejection and counteroffer, the mailbox rule, definiteness: Adams v. Lindsell; R.2d §§ 37–40, 63(a) (handouts on varying acceptances and the mailbox rule)", es: "Rechazo y contraoferta, mailbox rule, determinación: Adams v. Lindsell; R.2d §§ 37–40, 63(a) (handouts sobre aceptaciones que varían y mailbox rule)" }
+    pages: [{ book: farnsworth-10, pages: "261–263" }]
+    briefs: [contracts/adams-v-lindsell]
+    notes: [contracts/formation-classical]
+  - id: contracts-sep22
+    type: reading
+    date: "2026-09-22"
+    week: 5
+    topic: formation
+    title: { en: "Introduction to the UCC and to mutual assent: UCC §§ 1-103(b), 1-201(37), 1-201(43), 2-104, 2-205; Lucy v. Zehmer (handout on UCC § 2-205)", es: "Introducción al UCC y al asentimiento mutuo: UCC §§ 1-103(b), 1-201(37), 1-201(43), 2-104, 2-205; Lucy v. Zehmer (handout sobre UCC § 2-205)" }
+    pages: [{ book: farnsworth-10, pages: "169–176" }]
+    briefs: [contracts/lucy-v-zehmer]
+    notes: [contracts/formation-classical]
+  - id: contracts-sep24
+    type: reading
+    date: "2026-09-24"
+    week: 5
+    topic: formation
+    title: { en: "Mutual assent online and consideration: Hamer v. Sidway, Kirksey; R.2d §§ 51, 71, 79, 81 (handouts on current mutual assent issues and online contracts)", es: "Asentimiento mutuo en línea y consideration: Hamer v. Sidway, Kirksey; R.2d §§ 51, 71, 79, 81 (handouts sobre asentimiento mutuo y contratos en línea)" }
+    pages: [{ book: farnsworth-10, pages: "69–73, 81–84, 205" }]
+    briefs: [contracts/specht-v-netscape, contracts/hamer-v-sidway, contracts/kirksey-v-kirksey]
+    notes: [contracts/formation-classical]
+  - id: contracts-sep29
+    type: reading
+    date: "2026-09-29"
+    week: 6
+    topic: formation
+    title: { en: "Review of consideration doctrines; UCC §§ 1-201(20), 2-306; contract formation under the UCC; reliance: Ricketts, Feinberg; R.2d § 90 (handouts)", es: "Repaso de doctrinas de consideration; UCC §§ 1-201(20), 2-306; formación bajo el UCC; confianza: Ricketts, Feinberg; R.2d § 90 (handouts)" }
+    pages: [{ book: farnsworth-10, pages: "120–130" }]
+    briefs: [contracts/alaska-packers-v-domenico, contracts/ricketts-v-scothorn, contracts/feinberg-v-pfeiffer]
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-sep30-review
+    type: review
+    date: "2026-09-30"
+    time: { start: "15:15", end: "16:15" }
+    week: 6
+    topic: formation
+    title: { en: "Review session #1: two old exam problems on offer and acceptance, with the professor's issue outline", es: "Sesión de repaso #1: dos problemas de examen sobre oferta y aceptación, con el esquema de issues del profesor" }
+    notes: [contracts/formation-classical, contracts/how-to-study-contracts]
+  - id: contracts-oct01
+    type: reading
+    date: "2026-10-01"
+    week: 6
+    topic: formation
+    title: { en: "Modern formation doctrines: R.2d §§ 45, 87(2), 90; UCC §§ 1-103(b), 2-205, 2-207 (skim)", es: "Doctrinas modernas de formación: R.2d §§ 45, 87(2), 90; UCC §§ 1-103(b), 2-205, 2-207 (lectura rápida)" }
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct03-outline
+    type: assignment
+    date: "2026-10-03"
+    week: 6
+    topic: formation
+    title: { en: "Outlining weekend: the introductory materials and all of classical contract formation (offer, acceptance, mutual assent, consideration, UCC provisions)", es: "Fin de semana de outline: los materiales introductorios y toda la formación clásica (oferta, aceptación, asentimiento, consideration, UCC)" }
+    notes: [contracts/formation-classical]
+  - id: contracts-oct05
+    type: class
+    date: "2026-10-05"
+    time: { start: "08:00", end: "09:45" }
+    week: 7
+    topic: formation
+    title: { en: "Make-up class (Hillcrest classroom): reliance on offers, Drennan and its limits; Hoffman v. Red Owl; R.2d § 87(2) (handouts)", es: "Clase de reposición (aula Hillcrest): confianza en ofertas, Drennan y sus límites; Hoffman v. Red Owl; R.2d § 87(2) (handouts)" }
+    pages: [{ book: farnsworth-10, pages: "252–258, 328–331" }]
+    briefs: [contracts/drennan-v-star-paving, contracts/hoffman-v-red-owl]
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct06
+    type: reading
+    date: "2026-10-06"
+    week: 7
+    topic: formation
+    title: { en: "Moral obligation and quasi-contract: Mills v. Wyman, Webb v. McGowin, Cotnam v. Wisdom; R.2d §§ 82, 83, 86 (quasi-contract overview and sample exam problem handouts)", es: "Obligación moral y cuasicontrato: Mills v. Wyman, Webb v. McGowin, Cotnam v. Wisdom; R.2d §§ 82, 83, 86 (handouts de cuasicontrato y problema de examen)" }
+    pages: [{ book: farnsworth-10, pages: "74–75, 80, 145–149" }]
+    briefs: [contracts/mills-v-wyman, contracts/webb-v-mcgowin, contracts/cotnam-v-wisdom]
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct07-review
+    type: review
+    date: "2026-10-07"
+    time: { start: "15:15", end: "16:15" }
+    week: 7
+    topic: formation
+    title: { en: "Review session #2: old exam questions (with a page of hints)", es: "Sesión de repaso #2: preguntas de exámenes anteriores (con una página de pistas)" }
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct08
+    type: event
+    date: "2026-10-08"
+    week: 7
+    title: { en: "Class cancelled", es: "Clase cancelada" }
+  - id: contracts-oct10-outline
+    type: assignment
+    date: "2026-10-10"
+    week: 7
+    topic: formation
+    title: { en: "Outlining weekend: modern formation doctrines and quasi-contract", es: "Fin de semana de outline: doctrinas modernas de formación y cuasicontrato" }
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct13
+    type: reading
+    date: "2026-10-13"
+    week: 8
+    topic: defenses
+    title: { en: "Enforceability defenses begin: statute of frauds and statute of limitations (UCC §§ 2-201, 2-725) (assignment sheet #8 not on file; reconstructed from the Oct. 14 and Oct. 21 review materials)", es: "Empiezan las defensas: statute of frauds y prescripción (UCC §§ 2-201, 2-725) (hoja #8 no archivada; reconstruida de los materiales de repaso del 14 y 21 de oct.)" }
+    notes: [contracts/enforceability-defenses]
+    verified: false
+  - id: contracts-oct14-review
+    type: review
+    date: "2026-10-14"
+    time: { start: "15:15", end: "16:15" }
+    week: 8
+    topic: formation
+    title: { en: "Review session #3: a classical and modern contract formation problem (Drennan type); best student answer circulated afterward", es: "Sesión de repaso #3: un problema de formación clásica y moderna (tipo Drennan); después circuló la mejor respuesta de un alumno" }
+    notes: [contracts/formation-modern-and-quasi]
+  - id: contracts-oct15
+    type: reading
+    date: "2026-10-15"
+    week: 8
+    topic: defenses
+    title: { en: "Enforceability defenses (continued): capacity and the statute of frauds exceptions (assignment sheet #8 not on file)", es: "Defensas (continuación): capacidad y excepciones al statute of frauds (hoja #8 no archivada)" }
+    notes: [contracts/enforceability-defenses]
+    verified: false
   - id: contracts-oct20-reading
     type: reading
     date: "2026-10-20"
     week: 9
     topic: defenses
-    title: { en: "Misrepresentation and fraud: R.2d §§ 159–164, 169; the Laidlaw discussion", es: "Misrepresentation y fraude: R.2d §§ 159–164, 169; la discusión de Laidlaw" }
-    pages:
-      - { book: selections-2025, sections: "R.2d §§ 159, 160, 161, 162, 163, 164, 169" }
-      - { book: farnsworth-10, pages: "508 (Laidlaw, Part B only), 510–511, 513–516, 518", note: "skip the Notes on pp. 511 and 516" }
-    briefs: [contracts/laidlaw-v-organ]
-    source: "ASS#9, email of Oct 14"
+    title: { en: "Misrepresentation and fraud: R.2d §§ 159–164, 169; the Laidlaw discussion; Swinton, Vokes", es: "Misrepresentation y fraude: R.2d §§ 159–164, 169; la discusión de Laidlaw; Swinton, Vokes" }
+    pages: [{ book: farnsworth-10, pages: "508 (Laidlaw, Part B), 510–511, 513–516, 518" }]
+    briefs: [contracts/laidlaw-v-organ, contracts/swinton-v-whitinsville-savings-bank, contracts/kannavos-v-annino, contracts/vokes-v-arthur-murray]
+    notes: [contracts/enforceability-defenses]
   - id: contracts-oct21-review
     type: review
     date: "2026-10-21"
     time: { start: "15:15", end: "16:15" }
     week: 9
-    title: { en: "Review session: a Drennan-type problem and three sample exam questions (UCC statute of frauds and statute of limitations; fraud and misrepresentation short answers)", es: "Sesión de repaso: un problema tipo Drennan y tres preguntas de examen (statute of frauds y prescripción bajo el UCC; preguntas cortas de fraude y misrepresentation)" }
-    source: "ASS#9"
+    topic: defenses
+    title: { en: "Review session #4: the Drennan-type problem, then three sample exam questions (UCC statute of frauds; UCC statute of limitations; fraud and misrepresentation short answers)", es: "Sesión de repaso #4: el problema tipo Drennan y luego tres preguntas de examen (statute of frauds del UCC; prescripción del UCC; preguntas cortas de fraude y misrepresentation)" }
+    notes: [contracts/enforceability-defenses]
   - id: contracts-oct22-reading
     type: reading
     date: "2026-10-22"
     week: 9
     topic: defenses
-    title: { en: "Mistake and capacity: R.2d §§ 151–154, 157 and §§ 14–16; risk of mistake in sales of goods", es: "Error y capacidad: R.2d §§ 151–154, 157 y §§ 14–16; el riesgo del error en ventas de bienes" }
-    pages:
-      - { book: selections-2025, sections: "R.2d §§ 151, 152, 153, 154, 157; §§ 14, 15, 16" }
-      - { book: farnsworth-10, pages: "1090 (from “Sale of Goods”) to 1093 (stop at “The Risks…”)" }
-    note: { en: "Plus the “A Unilateral Mistake Case” handout (by email).", es: "Más el handout “A Unilateral Mistake Case” (por correo)." }
-    source: "ASS#9"
+    title: { en: "Mistake and capacity: R.2d §§ 151–154, 157 and §§ 14–16; sale of goods and the risk of mistake; Sherwood v. Walker, Wood v. Boynton; a unilateral mistake case (handout)", es: "Error y capacidad: R.2d §§ 151–154, 157 y §§ 14–16; compraventa y riesgo del error; Sherwood v. Walker, Wood v. Boynton; un caso de error unilateral (handout)" }
+    pages: [{ book: farnsworth-10, pages: "1090–1093" }]
+    briefs: [contracts/sherwood-v-walker, contracts/wood-v-boynton]
+    notes: [contracts/enforceability-defenses]
   - id: contracts-oct27-reading
     type: reading
     date: "2026-10-27"
     week: 10
     topic: interpretation
-    title: { en: "Interpreting contract language: methods, vagueness and ambiguity problems, R.2d §§ 201–204", es: "Interpretación del lenguaje contractual: métodos, problemas de vaguedad y ambigüedad, R.2d §§ 201–204" }
-    pages:
-      - { book: farnsworth-10, pages: "564 (start at “Methods…”, stop at the Notes), 565 Problem (1), 566 Problem (3)" }
-      - { book: selections-2025, sections: "R.2d §§ 201, 202, 203, 204" }
-      - { book: selections-2025, sections: "UCC § 2-302 and comments; R.2d §§ 208, 178, 179, 184(1)", note: "skim only; not tested" }
-    note: { en: "Plus the “Some Basic Contract Interpretation Guidance” handout. In class: the four linguistic problems (vagueness, ambiguity, grammatical ambiguity, gaps); parol evidence only as to merger clauses; illegality, public policy, sovereign immunity and bankruptcy defenses are not on the exam.", es: "Más el handout “Some Basic Contract Interpretation Guidance”. En clase: los cuatro problemas lingüísticos (vaguedad, ambigüedad, ambigüedad gramatical, lagunas); parol evidence solo en cuanto a merger clauses; las defensas de ilegalidad, orden público, inmunidad soberana y quiebra no entran al examen." }
-    source: "ASS#10 and Class Discussion Notes for Oct. 27"
+    title: { en: "Interpreting contract language: methods, vagueness and ambiguity problems, R.2d §§ 201–204; unconscionability and illegality skimmed only (UCC § 2-302; R.2d §§ 178, 179, 184(1), 208; not tested)", es: "Interpretación del lenguaje contractual: métodos, vaguedad y ambigüedad, R.2d §§ 201–204; unconscionability e ilicitud solo de pasada (UCC § 2-302; R.2d §§ 178, 179, 184(1), 208; sin examen)" }
+    pages: [{ book: farnsworth-10, pages: "564 (Methods…) to the Notes; 565 Problem 1; 566 Problem 3" }]
+    briefs: [contracts/raffles-v-wichelhaus]
+    notes: [contracts/law-of-the-contract]
+    note: { en: "Handout: Some Basic Contract Interpretive Guidance.", es: "Handout: Some Basic Contract Interpretive Guidance." }
   - id: contracts-oct28-review
     type: review
     date: "2026-10-28"
     time: { start: "15:15", end: "16:15" }
     week: 10
-    title: { en: "Review session: a fact pattern on UCC §§ 2-201 and 2-725, and short questions on mutual and unilateral mistake", es: "Sesión de repaso: un caso práctico sobre UCC §§ 2-201 y 2-725, y preguntas cortas sobre error mutuo y unilateral" }
-    tasks:
-      - { en: "Work the fact pattern before the session: are there two breaches (repudiation, then failure to pay), each with its own limitations period?", es: "Resuelve el caso antes de la sesión: ¿hay dos incumplimientos (repudiación y luego falta de pago), cada uno con su propio plazo de prescripción?" }
-      - { en: "Check divisibility, the quantity term, whether John is a merchant, and each § 2-201(3) exception.", es: "Revisa divisibilidad, el término de cantidad, si John es comerciante y cada excepción del § 2-201(3)." }
-    source: "ASS#10, hints on page 2"
+    topic: defenses
+    title: { en: "Review session #5: a fact pattern on UCC §§ 2-201 and 2-725 (with hints on repudiation, divisibility, quantity, merchant status and the § 2-201(3) exceptions), and short questions on mutual and unilateral mistake", es: "Sesión de repaso #5: un caso sobre UCC §§ 2-201 y 2-725 (con pistas sobre repudio, divisibilidad, cantidad, calidad de comerciante y las excepciones del § 2-201(3)), y preguntas cortas sobre error mutuo y unilateral" }
+    notes: [contracts/enforceability-defenses]
   - id: contracts-oct29-reading
     type: reading
     date: "2026-10-29"
     week: 10
     topic: interpretation
-    title: { en: "UCC interpretation: course of performance, course of dealing and usage of trade (§ 1-303); good faith; Hurst and Frigaliment", es: "Interpretación bajo el UCC: course of performance, course of dealing y usage of trade (§ 1-303); buena fe; Hurst y Frigaliment" }
-    pages:
-      - { book: selections-2025, sections: "UCC § 1-303 (read closely); §§ 2-306(2), 2-314, 2-315 (skim); R.2d § 205; UCC §§ 1-304, 1-201(20)" }
-      - { book: farnsworth-10, pages: "582–583 (Hurst), 575 (from Frigaliment) to 580, 581 n. 1" }
+    title: { en: "UCC interpretation: course of performance, course of dealing and usage of trade (§ 1-303); §§ 2-306(2), 2-314, 2-315 (skim); good faith (R.2d § 205; UCC §§ 1-304, 1-201(20)); Hurst and Frigaliment", es: "Interpretación bajo el UCC: course of performance, course of dealing y usage of trade (§ 1-303); §§ 2-306(2), 2-314, 2-315 (lectura rápida); buena fe (R.2d § 205; UCC §§ 1-304, 1-201(20)); Hurst y Frigaliment" }
+    pages: [{ book: farnsworth-10, pages: "582–583 (Hurst); 575–580, 581 n. 1 (Frigaliment)" }]
     briefs: [contracts/hurst-v-w-j-lake, contracts/frigaliment-v-bns]
-    note: { en: "In class: UCC §§ 1-103(a), 1-201 to 1-205; the § 1-303 hierarchy (express terms, course of performance, course of dealing, usage of trade); the plain meaning rule; why contracts have gaps and how courts fill them (implied-in-fact vs. implied-in-law terms, good faith).", es: "En clase: UCC §§ 1-103(a), 1-201 a 1-205; la jerarquía del § 1-303 (términos expresos, course of performance, course of dealing, usage of trade); la regla del significado llano; por qué los contratos tienen lagunas y cómo las llenan los tribunales (términos implícitos de hecho vs. de derecho, buena fe)." }
-    source: "ASS#10 and Class Discussion Notes for Oct. 29"
+    notes: [contracts/law-of-the-contract]
   - id: contracts-nov1-outline
     type: assignment
     date: "2026-10-30"
-    due: "2026-11-01"
     week: 10
-    title: { en: "Update your course outline through the enforceability defenses", es: "Actualiza tu outline del curso hasta las defensas contra la exigibilidad" }
-    tasks:
-      - { en: "Formation (offer, acceptance, consideration, promissory estoppel, quasi-contract, UCC basics).", es: "Formación (oferta, aceptación, consideration, promissory estoppel, cuasicontrato, UCC básico)." }
-      - { en: "Defenses: statute of frauds, statute of limitations, capacity, fraud and misrepresentation, mistake, unconscionability.", es: "Defensas: statute of frauds, prescripción, capacidad, fraude y misrepresentation, error, unconscionability." }
-    source: "ASS#10"
+    topic: defenses
+    title: { en: "Outlining weekend (Oct. 30–Nov. 1): update the course outline through the enforceability defenses", es: "Fin de semana de outline (30 oct.–1 nov.): actualiza el outline del curso hasta las defensas contra la exigibilidad" }
+    notes: [contracts/enforceability-defenses, contracts/how-to-study-contracts]
+  - id: contracts-nov03
+    type: reading
+    date: "2026-11-03"
+    week: 11
+    topic: interpretation
+    title: { en: "Next assignment sheet (#11) arrives by email; expected: parol evidence and modification (brief), then conditions", es: "La siguiente hoja de lectura (#11) llega por correo; se espera: parol evidence y modificación (breve), luego condiciones" }
+    notes: [contracts/law-of-the-contract, contracts/conditions-and-breach]
+    verified: false
+  - id: contracts-nov04-review
+    type: review
+    date: "2026-11-04"
+    time: { start: "15:15", end: "16:15" }
+    week: 11
+    title: { en: "Review session #6 (topic announced in the assignment sheet)", es: "Sesión de repaso #6 (tema anunciado en la hoja de lectura)" }
+    notes: [contracts/how-to-study-contracts]
+    verified: false
+  - id: contracts-nov05
+    type: reading
+    date: "2026-11-05"
+    week: 11
+    topic: performance
+    title: { en: "Conditions and justified nonperformance (expected): Kingston v. Preston, Jacob & Youngs v. Kent", es: "Condiciones e incumplimiento justificado (esperado): Kingston v. Preston, Jacob & Youngs v. Kent" }
+    briefs: [contracts/kingston-v-preston, contracts/jacob-and-youngs-v-kent]
+    notes: [contracts/conditions-and-breach]
+    verified: false
+  - id: contracts-nov10
+    type: reading
+    date: "2026-11-10"
+    week: 12
+    topic: performance
+    title: { en: "Substantial performance, divisibility, waiver, anticipatory repudiation and assurance (expected): Hochster v. De la Tour; UCC §§ 2-609, 2-610", es: "Cumplimiento sustancial, divisibilidad, renuncia, repudio anticipado y garantías (esperado): Hochster v. De la Tour; UCC §§ 2-609, 2-610" }
+    briefs: [contracts/hochster-v-de-la-tour]
+    notes: [contracts/conditions-and-breach]
+    verified: false
+  - id: contracts-nov11-review
+    type: review
+    date: "2026-11-11"
+    time: { start: "15:15", end: "16:15" }
+    week: 12
+    title: { en: "Review session #7 (topic announced in the assignment sheet)", es: "Sesión de repaso #7 (tema anunciado en la hoja de lectura)" }
+    notes: [contracts/how-to-study-contracts]
+    verified: false
+  - id: contracts-nov12
+    type: reading
+    date: "2026-11-12"
+    week: 12
+    topic: excuse
+    title: { en: "Excused nonperformance, brief introduction (expected): Taylor v. Caldwell, Krell v. Henry, Transatlantic; R.2d §§ 261, 265; UCC § 2-615", es: "Incumplimiento excusado, introducción breve (esperado): Taylor v. Caldwell, Krell v. Henry, Transatlantic; R.2d §§ 261, 265; UCC § 2-615" }
+    briefs: [contracts/taylor-v-caldwell, contracts/krell-v-henry, contracts/transatlantic-financing-v-united-states]
+    notes: [contracts/excuse]
+    verified: false
+  - id: contracts-nov17
+    type: reading
+    date: "2026-11-17"
+    week: 13
+    topic: remedies
+    title: { en: "Remedies I (expected): the three interests, Hawkins v. McGee, Sullivan v. O'Connor; R.2d §§ 344–349", es: "Remedios I (esperado): los tres intereses, Hawkins v. McGee, Sullivan v. O'Connor; R.2d §§ 344–349" }
+    briefs: [contracts/hawkins-v-mcgee, contracts/sullivan-v-oconnor]
+    notes: [contracts/remedies]
+    verified: false
+  - id: contracts-nov18-review
+    type: review
+    date: "2026-11-18"
+    time: { start: "15:15", end: "16:15" }
+    week: 13
+    title: { en: "Review session #8 (last; topic announced in the assignment sheet)", es: "Sesión de repaso #8 (última; tema anunciado en la hoja de lectura)" }
+    notes: [contracts/how-to-study-contracts]
+    verified: false
+  - id: contracts-nov19
+    type: reading
+    date: "2026-11-19"
+    week: 13
+    topic: remedies
+    title: { en: "Remedies II (expected, last class): limits on damages (Hadley, Luten Bridge, Parker), cost of completion (Peevyhouse), liquidated damages, specific performance", es: "Remedios II (esperado, última clase): límites a los daños (Hadley, Luten Bridge, Parker), costo de terminación (Peevyhouse), daños liquidados, cumplimiento forzoso" }
+    briefs: [contracts/hadley-v-baxendale, contracts/rockingham-county-v-luten-bridge, contracts/parker-v-twentieth-century-fox, contracts/peevyhouse-v-garland-coal]
+    notes: [contracts/remedies]
+    verified: false
+  - id: contracts-nov21-outline
+    type: assignment
+    date: "2026-11-21"
+    week: 13
+    topic: remedies
+    title: { en: "Final outlining weekend: conditions, excuse and remedies; build the UCC and Restatement section maps", es: "Último fin de semana de outline: condiciones, excusa y remedios; arma los mapas de secciones del UCC y del Restatement" }
+    notes: [contracts/how-to-study-contracts, contracts/remedies]
   - id: contracts-final-exam
     type: exam
     date: "2026-12-07"
     time: { start: "13:30", end: "17:30" }
-    title: { en: "Final exam: one four-hour essay exam, open book and open notes", es: "Examen final: un solo examen de ensayo de cuatro horas, a libro y notas abiertos" }
-    source: "Course syllabus (June 11, 2026 draft)"
+    title: { en: "Final exam: one four-hour essay exam, open book and open notes; no AI or internet", es: "Examen final: un solo examen de ensayo de cuatro horas, a libro y notas abiertos; sin AI ni internet" }
+    notes: [contracts/how-to-study-contracts, contracts/analytical-framework]

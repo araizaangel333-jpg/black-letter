@@ -7,7 +7,7 @@ meetings:
   - { day: tue, start: "08:15", end: "10:15", room: "207 Florence Hall" }
   - { day: thu, start: "08:15", end: "10:15", room: "207 Florence Hall" }
 extras:
-  - { kind: review, day: wed, start: "15:15", end: "16:15", room: "207 Florence Hall", label: { en: "Review session (old exam problems)", es: "Sesión de repaso (problemas de exámenes anteriores)" } }
+  - { kind: review, day: wed, start: "15:15", end: "16:15", room: "207 Florence Hall", label: { en: "Review session (old exam problems; since Sept. 30)", es: "Sesión de repaso (problemas de exámenes anteriores; desde el 30 de sept.)" } }
   - { kind: office-hours, day: tue, start: "10:15", end: "12:00", room: "301A Storey Hall", label: { en: "Office hours", es: "Horas de oficina" } }
   - { kind: office-hours, day: thu, start: "10:15", end: "12:00", room: "301A Storey Hall", label: { en: "Office hours", es: "Horas de oficina" } }
 books:
@@ -32,7 +32,7 @@ assessment:
   - { kind: participation, format: { en: "Only counts in borderline cases, but cold calls on the assigned cases happen every class.", es: "Solo cuenta en casos límite, pero en cada clase hay cold calls sobre los casos asignados." } }
 materials:
   canvas: false
-  note: { en: "Handouts, notes and problems arrive by email, not Canvas.", es: "Los handouts, notas y problemas llegan por correo, no por Canvas." }
+  note: { en: "No Canvas. A reading assignment sheet arrives by email each week (ten so far) with casebook pages, Restatement and UCC sections, the professor's handouts (case time lines, analyses, discussion notes, review-session questions with issue outlines, sample exam questions with hints) and outlining weekends. Nothing from the handouts or the casebook is reproduced here; the briefs, checklists, quizzes and exam-style problems are written from the public opinions and the Code.", es: "Sin Canvas. Cada semana llega por correo una hoja de lectura (diez hasta ahora) con páginas del casebook, secciones del Restatement y del UCC, los handouts del profesor (líneas de tiempo de casos, análisis, notas de discusión, preguntas de repaso con esquema de issues, preguntas de examen con pistas) y fines de semana de outline. Nada de los handouts ni del casebook se reproduce aquí; los briefs, checklists, quizzes y problemas estilo examen están escritos a partir de las opiniones públicas y del Código." }
 color: c1
 about:
   en: "In U.S. law-school slang, Contracts is simply \"K\". It is the course that builds the common-law method: offer, acceptance and consideration first, then the defenses, interpretation, performance, breach and remedies."

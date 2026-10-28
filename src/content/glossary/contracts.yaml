@@ -307,3 +307,705 @@ items:
     examples: [{ en: "Chicken is goods; a consulting contract is not.", es: "Los pollos son goods; un contrato de consultoría no." }]
     authority: "UCC §§ 2-102, 2-105"
     related: [merchant]
+  # --- Formación: oferta y aceptación (ampliado 2026-10-28) ---
+  - id: invitation-to-deal
+    term: invitation to deal (preliminary negotiation)
+    pos: noun
+    topic: formation
+    en: { definition: "A communication that invites offers rather than making one: price quotations in reply to inquiries, advertisements, catalogs, statements of the lowest price one would take. Acceptance of an invitation forms nothing (Owen, Harvey)." }
+    es: { term: "invitación a negociar", explanation: "Comunicación que invita a hacer ofertas en lugar de hacer una: cotizaciones en respuesta a consultas, anuncios, catálogos, el precio mínimo que uno aceptaría. Aceptar una invitación no forma nada (Owen, Harvey). Se parece a la distinción mexicana entre oferta y simple propuesta sin elementos esenciales." }
+    examples: [{ en: "Lowest price £900 was an invitation; I will sell for £900 would have been an offer.", es: "Precio más bajo £900 fue una invitación; vendo por £900 habría sido una oferta." }]
+    related: [offer, advertisement-offer]
+  - id: advertisement-offer
+    term: advertisement as offer
+    pos: noun
+    topic: formation
+    en: { definition: "Ads are invitations unless clear, definite and explicit, leaving nothing open (one item, stated price, first come first served); then the first person to comply accepts (Lefkowitz), and the store cannot add conditions afterward (Craft for the usual rule)." }
+    es: { term: "anuncio como oferta", explanation: "Los anuncios son invitaciones salvo que sean claros, definidos y explícitos y no dejen nada abierto (un artículo, precio fijo, al primero que llegue); entonces el primero que cumple acepta (Lefkowitz) y la tienda no puede añadir condiciones después (Craft para la regla usual). En México la Ley Federal de Protección al Consumidor obliga al precio anunciado por ley." }
+    examples: [{ en: "One stole, $1, first come first served: offer. Sewing machines $26 Thursday: invitation.", es: "Una estola, $1, al primero que llegue: oferta. Máquinas de coser a $26 el jueves: invitación." }]
+    related: [offer, invitation-to-deal]
+  - id: definiteness
+    term: definiteness (certainty of terms)
+    pos: noun
+    topic: formation
+    en: { definition: "An agreement is enforceable only if its terms are definite enough to show what was promised and to give a remedy; gaps may be filled by course of dealing, usage or the UCC's gap-fillers (price, delivery, time), but essential terms the parties left for future agreement defeat the contract (R.2d § 33; UCC § 2-204(3))." }
+    es: { term: "determinación de los términos (definiteness)", explanation: "Un acuerdo es exigible solo si sus términos son lo bastante definidos para saber qué se prometió y dar un remedio; los huecos se llenan con la práctica, los usos o las reglas supletorias del UCC (precio, entrega, tiempo), pero los términos esenciales que las partes dejaron para después derrotan el contrato (R.2d § 33; UCC § 2-204(3)). En México: objeto determinado o determinable (CCF art. 1825)." }
+    examples: [{ en: "Fairmount: choosing among listed jar sizes was definite enough; Hoffman: a franchise with no agreed terms was not.", es: "Fairmount: elegir entre tamaños de frasco enlistados fue suficientemente definido; Hoffman: una franquicia sin términos acordados no." }]
+    related: [offer, gap-filler, acceptance]
+  - id: counteroffer
+    term: counteroffer and rejection
+    pos: noun
+    topic: formation
+    en: { definition: "A rejection terminates the offeree's power of acceptance (R.2d § 38); a counteroffer, a reply proposing different terms, is both a rejection and a new offer (§ 39). A mere inquiry (would you take less?) is neither. Options are not terminated by counteroffers (§ 37; Humble Oil)." }
+    es: { term: "contraoferta y rechazo", explanation: "El rechazo extingue el poder de aceptar (R.2d § 38); la contraoferta, una respuesta que propone términos distintos, es rechazo y nueva oferta a la vez (§ 39). Una simple pregunta (¿aceptaría menos?) no es ninguna de las dos. Las opciones no se extinguen por contraofertas (§ 37; Humble Oil). Equivale al CCF art. 1810." }
+    examples: [{ en: "I accept if you include the furniture is a counteroffer; would you include the furniture? is an inquiry.", es: "Acepto si incluyes los muebles es contraoferta; ¿incluirías los muebles? es una pregunta." }]
+    related: [offer, acceptance, mirror-image-rule, option-contract]
+  - id: mirror-image-rule
+    term: mirror-image rule
+    pos: noun
+    topic: formation
+    en: { definition: "At common law an acceptance must match the offer's terms exactly; an acceptance that adds or changes terms is a counteroffer (R.2d § 59). UCC § 2-207 rejects the rule for sales of goods: a definite expression of acceptance forms a contract even with different or additional terms, which are then sorted by the section's rules." }
+    es: { term: "regla del espejo (mirror image)", explanation: "En el common law la aceptación debe coincidir exactamente con la oferta; una aceptación que añade o cambia términos es contraoferta (R.2d § 59). El UCC § 2-207 rechaza la regla para la compraventa de bienes: una expresión definida de aceptación forma contrato aunque traiga términos distintos o adicionales, que luego se ordenan según la sección. El CCF art. 1810 sigue la regla del espejo." }
+    examples: [{ en: "White case handout: an attempted acceptance that varies the offer is a counteroffer.", es: "Handout del caso White: un intento de aceptación que varía la oferta es contraoferta." }]
+    related: [counteroffer, acceptance, battle-of-the-forms]
+  - id: battle-of-the-forms
+    term: battle of the forms (UCC § 2-207)
+    pos: noun
+    topic: formation
+    en: { definition: "When merchants exchange forms with conflicting boilerplate, § 2-207 forms a contract on the agreed terms; additional terms become part of the contract between merchants unless the offer limits acceptance to its terms, they materially alter it, or objection follows; conflicting terms knock each other out and the Code's gap-fillers apply; conduct can form a contract even when the writings do not." }
+    es: { term: "batalla de formularios (UCC § 2-207)", explanation: "Cuando comerciantes intercambian formularios con cláusulas contradictorias, el § 2-207 forma contrato sobre los términos acordados; los términos adicionales entre comerciantes entran salvo que la oferta limite la aceptación a sus términos, alteren materialmente el contrato o haya objeción; los términos contradictorios se anulan mutuamente y aplican las reglas supletorias del Código; la conducta puede formar contrato aunque los escritos no. El profesor lo cubre solo como introducción." }
+    examples: [{ en: "Seller's acknowledgment adds an arbitration clause to a buyer's purchase order: a material alteration that does not become part of the contract.", es: "El acuse del vendedor añade una cláusula arbitral a la orden del comprador: alteración material que no entra en el contrato." }]
+    related: [mirror-image-rule, merchant, gap-filler]
+    difficulty: 2
+  - id: revocation
+    term: revocation of an offer
+    pos: noun
+    topic: formation
+    en: { definition: "The offeror may withdraw an ordinary offer at any time before acceptance, even if it promised to hold it open; revocation is effective when received by the offeree (R.2d § 42) or when the offeree learns from a reliable source of conduct inconsistent with the offer (§ 43; Dickinson). Exceptions: option contracts, firm offers, reliance (§ 87(2)), and beginning performance of a unilateral contract (§ 45)." }
+    es: { term: "revocación de la oferta", explanation: "El oferente puede retirar una oferta ordinaria en cualquier momento antes de la aceptación, aunque haya prometido mantenerla; la revocación surte efecto al recibirla el destinatario (R.2d § 42) o cuando este sabe por fuente confiable de una conducta incompatible con la oferta (§ 43; Dickinson). Excepciones: opción, oferta firme, confianza (§ 87(2)) e inicio de la ejecución en un contrato unilateral (§ 45). Contraste: CCF art. 1804, oferta con plazo irrevocable." }
+    examples: [{ en: "Learning that the house was sold to Allan revoked Dodds's offer without a word from Dodds.", es: "Saber que la casa se vendió a Allan revocó la oferta de Dodds sin que Dodds dijera nada." }]
+    related: [offer, option-contract, firm-offer, lapse-of-offer]
+  - id: lapse-of-offer
+    term: lapse of an offer
+    pos: noun
+    topic: formation
+    en: { definition: "An offer ends at the time it states or, if none, after a reasonable time (R.2d § 41); an offer made in conversation lapses when the conversation ends; death or incapacity of the offeror also terminates it (§ 48)." }
+    es: { term: "caducidad de la oferta", explanation: "La oferta termina en el plazo que fija o, si no lo fija, tras un tiempo razonable (R.2d § 41); una oferta hecha en conversación caduca al terminar la conversación; la muerte o incapacidad del oferente también la extingue (§ 48). CCF arts. 1805–1806 fijan plazos legales." }
+    examples: [{ en: "A bid on a volatile commodity lapses in hours; an offer to sell a house, in days or weeks.", es: "Una oferta sobre una materia prima volátil caduca en horas; una para vender una casa, en días o semanas." }]
+    related: [offer, revocation]
+  - id: firm-offer
+    term: firm offer (UCC § 2-205)
+    pos: noun
+    topic: formation
+    en: { definition: "A merchant's signed written offer to buy or sell goods that gives assurance it will be held open is irrevocable for the stated time, or a reasonable time, not exceeding three months, without consideration; an assurance on a form supplied by the offeree must be separately signed." }
+    es: { term: "oferta firme (UCC § 2-205)", explanation: "La oferta escrita y firmada de un comerciante para comprar o vender bienes que asegura que se mantendrá abierta es irrevocable por el plazo indicado, o un plazo razonable, sin exceder tres meses, sin necesidad de consideration; si la garantía está en un formulario del destinatario debe firmarse por separado. Es la versión americana de la irrevocabilidad mexicana, limitada a comerciantes y bienes." }
+    examples: [{ en: "A dealer's signed quote good for 30 days cannot be withdrawn on day 10.", es: "La cotización firmada de un distribuidor válida por 30 días no puede retirarse el día 10." }]
+    related: [option-contract, revocation, merchant]
+  - id: unilateral-contract
+    term: unilateral vs. bilateral contract
+    pos: noun
+    topic: formation
+    en: { definition: "A bilateral contract exchanges a promise for a promise; a unilateral contract exchanges a promise for performance, so acceptance is the completed act. Under R.2d § 45, beginning the invited performance creates an option that bars revocation while the offeree completes; under § 62, starting performance under an ambiguous offer is an acceptance and a promise to finish." }
+    es: { term: "contrato unilateral y bilateral", explanation: "El bilateral cambia promesa por promesa; el unilateral cambia promesa por ejecución, así que la aceptación es el acto completo. Bajo R.2d § 45, empezar la ejecución invitada crea una opción que impide revocar mientras el destinatario termina; bajo § 62, empezar a ejecutar ante una oferta ambigua es aceptar y prometer terminar.", falseFriend: "En México, contrato unilateral es el que obliga a una sola parte (CCF art. 1835), una idea distinta." }
+    examples: [{ en: "Find my dog and I will pay $500: unilateral; only finding the dog accepts.", es: "Encuentra a mi perro y te pago $500: unilateral; solo encontrarlo acepta." }]
+    related: [acceptance, revocation, offer]
+  - id: notice-of-acceptance
+    term: notice of acceptance
+    pos: noun
+    topic: formation
+    en: { definition: "Acceptance by promise must be communicated with reasonable diligence; acceptance by performance needs no notice unless the offeree has reason to know the offeror will not learn of it promptly (R.2d §§ 54, 56). The offeror may dispense with notice or prescribe its form (International Filter); an uncommunicated intention is never an acceptance (White)." }
+    es: { term: "aviso de la aceptación", explanation: "La aceptación por promesa debe comunicarse con diligencia razonable; la aceptación por ejecución no requiere aviso salvo que el aceptante tenga razones para saber que el oferente no se enterará pronto (R.2d §§ 54, 56). El oferente puede prescindir del aviso o fijar su forma (International Filter); una intención no comunicada nunca es aceptación (White)." }
+    examples: [{ en: "Buying lumber in your own shop told the offerors nothing; a note saying I accept would have.", es: "Comprar madera en tu propio taller no dijo nada a los oferentes; una nota diciendo acepto sí." }]
+    related: [acceptance, mailbox-rule, unilateral-contract]
+  - id: objective-theory
+    term: objective theory of contract
+    pos: noun
+    topic: formation
+    en: { definition: "Assent is judged by what a reasonable person would understand from the parties' words and conduct, not by their secret intentions (Lucy v. Zehmer); a joke the other party reasonably takes seriously binds, and a serious offer the other party knows is a joke does not." }
+    es: { term: "teoría objetiva del contrato", explanation: "El asentimiento se juzga por lo que una persona razonable entendería de las palabras y actos de las partes, no por sus intenciones secretas (Lucy v. Zehmer); una broma que la otra parte toma en serio razonablemente obliga, y una oferta seria que la otra parte sabe que es broma no. El CCF habla de consentimiento, pero los tribunales también miran la declaración exteriorizada." }
+    examples: [{ en: "The farm sold on a restaurant check was a contract because Lucy reasonably believed it was.", es: "La granja vendida en una nota de restaurante fue contrato porque Lucy razonablemente lo creyó." }]
+    related: [mutual-assent, offer, acceptance, misunderstanding]
+  - id: misunderstanding
+    term: misunderstanding (R.2d § 20)
+    pos: noun
+    topic: formation
+    en: { definition: "No contract exists where the parties attach materially different meanings to their words and neither knows or has reason to know the other's meaning (Raffles); if one party knows or should know the other's meaning, the innocent party's meaning governs (§§ 20(2), 201(2))." }
+    es: { term: "malentendido (R.2d § 20)", explanation: "No hay contrato cuando las partes dan significados materialmente distintos a sus palabras y ninguna sabe ni debería saber el de la otra (Raffles); si una sabe o debería saber el significado de la otra, rige el de la parte inocente (§§ 20(2), 201(2)). Se parece al error obstativo civilista." }
+    examples: [{ en: "Two ships named Peerless, two honest meanings, no contract.", es: "Dos barcos llamados Peerless, dos significados honestos, ningún contrato." }]
+    related: [objective-theory, ambiguity, mutual-assent]
+  - id: clickwrap
+    term: clickwrap, shrinkwrap and browsewrap
+    pos: noun
+    topic: formation
+    en: { definition: "Clickwrap: terms shown and accepted by clicking I agree (enforceable). Shrinkwrap: terms inside the box, accepted by keeping the product after a chance to return it (courts split). Browsewrap: terms linked somewhere on the page with no required act (unenforceable unless the user had reasonable notice; Specht)." }
+    es: { term: "clickwrap, shrinkwrap y browsewrap", explanation: "Clickwrap: términos mostrados y aceptados al hacer clic en acepto (exigible). Shrinkwrap: términos dentro de la caja, aceptados al conservar el producto tras poder devolverlo (los tribunales se dividen). Browsewrap: términos enlazados en algún lugar de la página sin acto requerido (no exigible salvo aviso razonable; Specht). Del handout Online Contracts del profesor." }
+    examples: [{ en: "A license below the download button that nobody had to see bound nobody.", es: "Una licencia debajo del botón de descarga que nadie tenía que ver no obligó a nadie." }]
+    related: [mutual-assent, objective-theory, acceptance]
+  # --- Consideration y doctrinas modernas ---
+  - id: bargain-theory
+    term: bargain theory of consideration
+    pos: noun
+    topic: formation
+    en: { definition: "Consideration is a performance or return promise that is bargained for: sought by the promisor in exchange for his promise and given by the promisee in exchange for it (R.2d § 71). Benefit to the promisor is not required (Hamer); a condition of a gift is not consideration (Kirksey)." }
+    es: { term: "teoría del intercambio (bargain) de la consideration", explanation: "La consideration es una ejecución o promesa recíproca negociada: buscada por el promitente a cambio de su promesa y dada por el promisario a cambio de ella (R.2d § 71). No se requiere beneficio para el promitente (Hamer); la condición de un regalo no es consideration (Kirksey). México no exige nada parecido: consentimiento y objeto bastan (CCF art. 1794)." }
+    examples: [{ en: "Abstaining from drink for $5,000 was bargained for; moving to collect a free house was not.", es: "Abstenerse de beber por $5,000 fue negociado; mudarse para recibir una casa gratis no." }]
+    related: [consideration, forbearance, gratuitous-promise]
+  - id: forbearance
+    term: forbearance as consideration
+    pos: noun
+    topic: formation
+    en: { definition: "Giving up a legal right (to drink, to sue, to sell to another) in exchange for a promise is consideration even if the forbearance benefits the promisee; forbearance from asserting an invalid claim counts only if the claim was doubtful or the claimant honestly believed it valid (R.2d § 74)." }
+    es: { term: "abstención como consideration", explanation: "Renunciar a un derecho (beber, demandar, vender a otro) a cambio de una promesa es consideration aunque la abstención beneficie al promisario; abstenerse de reclamar algo inválido solo cuenta si la reclamación era dudosa o el reclamante creía de buena fe que era válida (R.2d § 74)." }
+    examples: [{ en: "Not suing on a doubtful claim in exchange for a settlement payment is consideration.", es: "No demandar por un reclamo dudoso a cambio de un pago de transacción es consideration." }]
+    related: [consideration, bargain-theory]
+  - id: gratuitous-promise
+    term: gratuitous promise (nudum pactum)
+    pos: noun
+    topic: formation
+    en: { definition: "A promise to make a gift, unsupported by consideration and therefore unenforceable at common law unless reliance (promissory estoppel), a sealed or formal writing in some states, or a charitable subscription rule makes it binding." }
+    es: { term: "promesa gratuita (nudum pactum)", explanation: "Promesa de hacer un regalo, sin consideration y por tanto no exigible en el common law salvo que la confianza (promissory estoppel), un documento formal en algunos estados o la regla de las suscripciones de caridad la vuelvan obligatoria. En México la donación es un contrato exigible con la forma debida (CCF arts. 2332 ss.)." }
+    examples: [{ en: "The brother-in-law's offer of a house was a gratuity, so the widow lost in 1845.", es: "El ofrecimiento de la casa por el cuñado fue una gratuidad, así que la viuda perdió en 1845." }]
+    related: [consideration, promissory-estoppel, bargain-theory]
+  - id: pre-existing-duty-rule
+    term: pre-existing duty rule
+    pos: noun
+    topic: formation
+    en: { definition: "Performing or promising to perform what one is already legally bound to do is not consideration (R.2d § 73; Alaska Packers); a modification therefore needs new consideration unless it is fair and equitable in view of unanticipated circumstances (R.2d § 89) or, for sales of goods, made in good faith (UCC § 2-209(1))." }
+    es: { term: "regla del deber preexistente", explanation: "Cumplir o prometer cumplir lo que ya se debe legalmente no es consideration (R.2d § 73; Alaska Packers); por eso una modificación necesita nueva consideration salvo que sea justa y equitativa ante circunstancias imprevistas (R.2d § 89) o, en compraventa de bienes, se haga de buena fe (UCC § 2-209(1)). En México la modificación solo requiere consentimiento." }
+    examples: [{ en: "Doubling the fishermen's wages mid-season for the same work was unenforceable.", es: "Duplicar el salario de los pescadores a mitad de temporada por el mismo trabajo no fue exigible." }]
+    related: [consideration, modification, duress]
+  - id: illusory-promise
+    term: illusory promise
+    pos: noun
+    topic: formation
+    en: { definition: "Words that look like a promise but commit the speaker to nothing (I will buy if I feel like it) are not consideration; courts save many such deals by implying a duty of good faith or reasonable efforts (Wood v. Lucy, UCC § 2-306 for requirements and output contracts)." }
+    es: { term: "promesa ilusoria", explanation: "Palabras que parecen promesa pero no comprometen a nada (compraré si se me antoja) no son consideration; los tribunales salvan muchos de esos acuerdos implicando un deber de buena fe o de esfuerzos razonables (Wood v. Lucy; UCC § 2-306 para contratos de requerimientos y de producción)." }
+    examples: [{ en: "I will buy all the coal I need from you is enforceable because need is measured in good faith.", es: "Te compraré todo el carbón que necesite es exigible porque la necesidad se mide de buena fe." }]
+    related: [consideration, requirements-contract, good-faith]
+  - id: requirements-contract
+    term: requirements and output contracts (UCC § 2-306)
+    pos: noun
+    topic: formation
+    en: { definition: "A contract to buy all the goods the buyer requires, or to sell all the seller produces, is enforceable; the quantity is what occurs in good faith, and no amount unreasonably disproportionate to an estimate or to prior requirements may be demanded; an exclusive dealing agreement imposes best efforts on both sides." }
+    es: { term: "contratos de requerimientos y de producción (UCC § 2-306)", explanation: "El contrato para comprar todo lo que el comprador requiera, o vender todo lo que el vendedor produzca, es exigible; la cantidad es la que ocurre de buena fe, y no puede exigirse una cantidad desproporcionada frente a una estimación o a los requerimientos anteriores; un pacto de exclusividad impone a ambas partes el deber de mejores esfuerzos. Asignado el 29 de sept." }
+    examples: [{ en: "A bakery that promises to buy all its flour from one mill has a requirements contract.", es: "Una panadería que promete comprar toda su harina a un molino tiene un contrato de requerimientos." }]
+    related: [illusory-promise, good-faith, goods]
+  - id: moral-obligation
+    term: moral obligation (R.2d § 86)
+    pos: noun
+    topic: formation
+    en: { definition: "A promise made in recognition of a benefit previously received by the promisor is binding to the extent necessary to prevent injustice, unless the benefit was a gift or the promise is disproportionate (Webb); a mere moral duty to pay for a benefit conferred on someone else is not enough (Mills)." }
+    es: { term: "obligación moral (R.2d § 86)", explanation: "Una promesa hecha en reconocimiento de un beneficio recibido antes por el promitente es obligatoria en la medida necesaria para evitar una injusticia, salvo que el beneficio haya sido un regalo o la promesa sea desproporcionada (Webb); un simple deber moral de pagar por un beneficio dado a otro no basta (Mills). Pariente de la obligación natural civilista." }
+    examples: [{ en: "A promise to pay a debt barred by limitations is enforceable without new consideration.", es: "La promesa de pagar una deuda prescrita es exigible sin nueva consideration." }]
+    related: [consideration, past-consideration, material-benefit]
+  - id: past-consideration
+    term: past consideration
+    pos: noun
+    topic: formation
+    en: { definition: "Something already done before the promise was made cannot have been bargained for, so it is no consideration (Mills, Feinberg); the exceptions are the moral obligation rule and reliance." }
+    es: { term: "consideration pasada", explanation: "Lo ya hecho antes de la promesa no pudo ser negociado a cambio de ella, así que no es consideration (Mills, Feinberg); las excepciones son la regla de la obligación moral y la confianza." }
+    examples: [{ en: "Thirty-seven years of service could not be consideration for a pension promised afterward.", es: "Treinta y siete años de servicio no pudieron ser consideration de una pensión prometida después." }]
+    related: [consideration, moral-obligation]
+  - id: material-benefit
+    term: material benefit rule
+    pos: noun
+    topic: formation
+    en: { definition: "The doctrine of Webb v. McGowin: a promise to pay for a substantial benefit the promisor personally received, at the promisee's detriment, is enforceable even though the benefit preceded the promise." }
+    es: { term: "regla del beneficio material", explanation: "La doctrina de Webb v. McGowin: la promesa de pagar por un beneficio sustancial que el promitente recibió personalmente, con detrimento del promisario, es exigible aunque el beneficio haya precedido a la promesa." }
+    examples: [{ en: "A life saved at the cost of the rescuer's health is a material benefit.", es: "Una vida salvada a costa de la salud del rescatista es un beneficio material." }]
+    related: [moral-obligation, past-consideration]
+  - id: reliance
+    term: reliance (detrimental)
+    pos: noun
+    topic: formation
+    en: { definition: "A change of position induced by a promise or offer, such as quitting a job, moving, or using a subcontractor's bid; the basis of promissory estoppel (R.2d § 90), of irrevocable offers (§ 87(2)) and of the reliance measure of damages." }
+    es: { term: "confianza (detrimental reliance)", explanation: "Un cambio de posición inducido por una promesa u oferta, como renunciar a un empleo, mudarse o usar la cotización de un subcontratista; base de la promissory estoppel (R.2d § 90), de las ofertas irrevocables (§ 87(2)) y de la medida de daños por confianza. Pariente de la confianza legítima y de los actos propios." }
+    examples: [{ en: "Feinberg retired; Hoffman sold his bakery; Drennan submitted his bid: three kinds of reliance.", es: "Feinberg se retiró; Hoffman vendió su panadería; Drennan presentó su propuesta: tres clases de confianza." }]
+    related: [promissory-estoppel, reliance-damages, subcontractor-bid]
+  - id: subcontractor-bid
+    term: subcontractor bid (R.2d § 87(2))
+    pos: noun
+    topic: formation
+    en: { definition: "An offer the offeror should reasonably expect to induce substantial reliance before acceptance, and which does, is binding as an option to the extent necessary to avoid injustice; the Drennan rule, limited by bid shopping, unreasonable delay and known mistakes." }
+    es: { term: "cotización de subcontratista (R.2d § 87(2))", explanation: "Una oferta que el oferente debería esperar que induzca confianza sustancial antes de la aceptación, y que la induce, obliga como opción en la medida necesaria para evitar injusticia; la regla de Drennan, limitada por el regateo con la cotización, la demora irrazonable y los errores conocidos." }
+    examples: [{ en: "The paving bid used in the general's winning bid could not be withdrawn the next morning.", es: "La cotización de pavimentación usada en la propuesta ganadora no pudo retirarse a la mañana siguiente." }]
+    related: [promissory-estoppel, reliance, revocation, option-contract]
+  - id: preliminary-negotiations
+    term: preliminary negotiations and agreements to agree
+    pos: noun
+    topic: formation
+    en: { definition: "Talks before a contract bind no one, and an agreement to agree on essential terms later is unenforceable; but specific promises made during negotiations can ground promissory estoppel (Hoffman), and a letter of intent may create a duty to negotiate in good faith if the parties so intend." }
+    es: { term: "negociaciones preliminares y acuerdos de acordar", explanation: "Las pláticas previas al contrato no obligan, y un acuerdo de acordar después los términos esenciales no es exigible; pero promesas específicas hechas durante la negociación pueden fundar la promissory estoppel (Hoffman), y una carta de intención puede crear el deber de negociar de buena fe si así lo quieren las partes. Compárese la responsabilidad precontractual civilista." }
+    examples: [{ en: "No franchise contract existed, yet Red Owl paid for Hoffman's reliance.", es: "No existía contrato de franquicia y aun así Red Owl pagó la confianza de Hoffman." }]
+    related: [promissory-estoppel, definiteness, reliance]
+  - id: restitution
+    term: restitution (interest and remedy)
+    pos: noun
+    topic: formation
+    en: { definition: "Return of a benefit conferred to prevent unjust enrichment: the basis of quasi-contract recovery without any contract (Cotnam), of recovery by a party who partly performed a contract later avoided or breached, and of the restitution measure of damages (R.2d § 371)." }
+    es: { term: "restitución (interés y remedio)", explanation: "Devolución de un beneficio recibido para evitar el enriquecimiento injusto: base del cuasicontrato sin contrato alguno (Cotnam), de la recuperación de quien cumplió en parte un contrato luego anulado o incumplido, y de la medida de daños por restitución (R.2d § 371). Equivale al enriquecimiento ilegítimo (CCF art. 1882) y la gestión de negocios." }
+    examples: [{ en: "The surgeons recovered the reasonable value of the operation, not the patient's wealth.", es: "Los cirujanos recuperaron el valor razonable de la operación, no la riqueza del paciente." }]
+    related: [quasi-contract, unjust-enrichment, implied-in-law-contract]
+  - id: unjust-enrichment
+    term: unjust enrichment
+    pos: noun
+    topic: formation
+    en: { definition: "The principle that one who receives a benefit at another's expense in circumstances that make retention unjust must pay for it; the substantive basis of restitution and quasi-contract, defeated where the benefit was a gift, was forced on the recipient, or is governed by an express contract." }
+    es: { term: "enriquecimiento injusto", explanation: "Quien recibe un beneficio a costa de otro en circunstancias que hacen injusto conservarlo debe pagarlo; base sustantiva de la restitución y el cuasicontrato, que falla cuando el beneficio fue un regalo, se impuso al receptor o está regido por un contrato expreso. CCF art. 1882." }
+    examples: [{ en: "A neighbor who paints your house while you watch and say nothing may recover; one who paints it while you are away may not.", es: "El vecino que pinta tu casa mientras miras sin decir nada puede cobrar; el que la pinta mientras no estás, no." }]
+    related: [restitution, quasi-contract, officious-intermeddler]
+  - id: implied-in-law-contract
+    term: implied-in-law contract (quasi-contract)
+    pos: noun
+    topic: formation
+    en: { definition: "A legal fiction imposing an obligation to pay the reasonable value of a benefit regardless of agreement or intent, to prevent unjust enrichment; distinguished from an implied-in-fact contract, which is a real agreement shown by conduct." }
+    es: { term: "contrato implícito en la ley (cuasicontrato)", explanation: "Ficción legal que impone la obligación de pagar el valor razonable de un beneficio sin importar acuerdo ni intención, para evitar el enriquecimiento injusto; distinto del contrato implícito en los hechos, que es un acuerdo real mostrado por la conducta. Del handout Overview of Basic Quasi-Kx Principles (6 oct.)." }
+    examples: [{ en: "Emergency surgery on an unconscious man: implied in law. Ordering a meal by sitting down and eating: implied in fact.", es: "Cirugía de emergencia a un inconsciente: implícito en la ley. Pedir comida sentándose y comiendo: implícito en los hechos." }]
+    related: [quasi-contract, restitution, unjust-enrichment]
+  - id: officious-intermeddler
+    term: officious intermeddler (volunteer)
+    pos: noun
+    topic: formation
+    en: { definition: "A person who confers an unrequested benefit without justification cannot recover for it; the rule limits quasi-contract to cases of emergency, mistake, or benefits conferred with a reasonable expectation of payment." }
+    es: { term: "intermediario oficioso (voluntario)", explanation: "Quien confiere un beneficio no solicitado sin justificación no puede cobrarlo; la regla limita el cuasicontrato a casos de emergencia, error o beneficios conferidos con expectativa razonable de pago. Equivale al límite de la gestión de negocios (CCF arts. 1896 ss.)." }
+    examples: [{ en: "A stranger who mows your lawn uninvited gets nothing.", es: "Un desconocido que corta tu césped sin que se lo pidan no cobra nada." }]
+    related: [quasi-contract, unjust-enrichment]
+  # --- Defensas contra la exigibilidad ---
+  - id: ucc-statute-of-frauds
+    term: UCC § 2-201 (sale of goods statute of frauds)
+    pos: noun
+    topic: defenses
+    en: { definition: "A contract for the sale of goods for $500 or more is unenforceable without a writing sufficient to show a contract, signed by the party to be charged, stating a quantity; exceptions: a merchant's written confirmation not objected to within ten days (between merchants), specially manufactured goods, admission in court, and payment or receipt and acceptance of goods (§ 2-201(2)–(3))." }
+    es: { term: "UCC § 2-201 (statute of frauds para compraventa de bienes)", explanation: "Un contrato de compraventa de bienes por $500 o más no es exigible sin un escrito que muestre que hubo contrato, firmado por la parte demandada y que indique cantidad; excepciones: confirmación escrita entre comerciantes no objetada en diez días, bienes fabricados especialmente, admisión en juicio, y pago o recepción y aceptación de los bienes (§ 2-201(2)–(3)). Es el tema favorito de las preguntas de repaso del profesor." }
+    examples: [{ en: "Five suits ordered orally: the buyer's signed cancellation letter admitting the order may itself satisfy the writing requirement.", es: "Cinco trajes pedidos oralmente: la carta firmada del comprador cancelando y admitiendo el pedido puede satisfacer por sí misma el requisito del escrito." }]
+    related: [statute-of-frauds, merchant-confirmation, specially-manufactured-goods, goods]
+    difficulty: 2
+  - id: merchant-confirmation
+    term: merchant's confirmation (UCC § 2-201(2))
+    pos: noun
+    topic: defenses
+    en: { definition: "Between merchants, a written confirmation sufficient against the sender, received by the other merchant who has reason to know its contents, satisfies the statute against the recipient unless the recipient objects in writing within ten days." }
+    es: { term: "confirmación entre comerciantes (UCC § 2-201(2))", explanation: "Entre comerciantes, una confirmación escrita suficiente contra quien la envía, recibida por el otro comerciante que tiene razones para conocer su contenido, satisface el statute contra el receptor salvo que objete por escrito dentro de diez días. Requiere que ambos sean comerciantes (§ 2-104)." }
+    examples: [{ en: "A seller's confirming letter binds a merchant buyer who stays silent for ten days.", es: "La carta de confirmación del vendedor obliga al comprador comerciante que calla diez días." }]
+    related: [ucc-statute-of-frauds, merchant]
+  - id: specially-manufactured-goods
+    term: specially manufactured goods exception
+    pos: noun
+    topic: defenses
+    en: { definition: "No writing is needed where the goods are specially made for the buyer, not suitable for sale to others in the ordinary course, and the seller has substantially begun their manufacture before notice of repudiation (§ 2-201(3)(a)); the exception reaches only the goods that fit it, raising divisibility questions." }
+    es: { term: "excepción de bienes fabricados especialmente", explanation: "No se requiere escrito cuando los bienes se fabrican especialmente para el comprador, no son aptos para venderse a otros en el curso ordinario y el vendedor ha comenzado sustancialmente su fabricación antes del aviso de repudio (§ 2-201(3)(a)); la excepción alcanza solo los bienes que la cumplen, lo que plantea problemas de divisibilidad." }
+    examples: [{ en: "A multi-colored costume suit fits the exception; four standard business suits do not.", es: "Un traje de disfraz multicolor cae en la excepción; cuatro trajes de negocios estándar no." }]
+    related: [ucc-statute-of-frauds, divisibility]
+  - id: ucc-limitations
+    term: UCC § 2-725 (statute of limitations for sales)
+    pos: noun
+    topic: defenses
+    en: { definition: "An action for breach of a sales contract must be begun within four years after the cause of action accrues; the parties may reduce the period to not less than one year but may not extend it; a breach of warranty accrues on tender of delivery unless the warranty explicitly extends to future performance, in which case it accrues when the breach is or should have been discovered." }
+    es: { term: "UCC § 2-725 (prescripción en compraventa)", explanation: "La acción por incumplimiento de un contrato de compraventa debe iniciarse dentro de cuatro años desde que nace; las partes pueden reducir el plazo hasta no menos de un año pero no ampliarlo; el incumplimiento de garantía nace con la entrega salvo que la garantía se extienda explícitamente al desempeño futuro, caso en que nace cuando el incumplimiento se descubre o debió descubrirse. Otro favorito de los repasos." }
+    examples: [{ en: "A ten-year warranty with an eight-year suit clause: the clause extends the period and is void; the four-year period runs from discovery if the warranty reaches future performance.", es: "Una garantía de diez años con cláusula de ocho años para demandar: la cláusula amplía el plazo y es nula; los cuatro años corren desde el descubrimiento si la garantía cubre el desempeño futuro." }]
+    related: [statute-of-limitations, warranty, accrual]
+    difficulty: 2
+  - id: accrual
+    term: accrual of a cause of action
+    pos: noun
+    topic: defenses
+    en: { definition: "The moment the limitations clock starts: when the breach occurs, regardless of the plaintiff's knowledge (UCC § 2-725(2)), with the future-performance warranty exception; for repudiation, courts differ on whether accrual is at repudiation or at the performance date." }
+    es: { term: "nacimiento de la acción (accrual)", explanation: "El momento en que empieza a correr la prescripción: cuando ocurre el incumplimiento, sin importar si el actor lo sabe (UCC § 2-725(2)), con la excepción de la garantía sobre desempeño futuro; en caso de repudio, los tribunales difieren sobre si la acción nace con el repudio o en la fecha de cumplimiento. En México: desde que la obligación es exigible (CCF art. 1159)." }
+    examples: [{ en: "A hidden crack discovered in year seven: accrual at delivery unless the warranty explicitly covered future performance.", es: "Una grieta oculta descubierta en el año siete: la acción nació con la entrega salvo que la garantía cubriera explícitamente el desempeño futuro." }]
+    related: [ucc-limitations, statute-of-limitations, anticipatory-repudiation]
+  - id: divisibility
+    term: divisibility (divisible contract)
+    pos: noun
+    topic: defenses
+    en: { definition: "A contract is divisible when performances can be apportioned into corresponding pairs that the parties treat as equivalents; divisibility matters for the statute of frauds (which parts are enforceable), for recovery after partial performance, and for the limitations period of separate breaches." }
+    es: { term: "divisibilidad (contrato divisible)", explanation: "Un contrato es divisible cuando las prestaciones pueden repartirse en pares correspondientes que las partes tratan como equivalentes; importa para el statute of frauds (qué partes son exigibles), para cobrar tras un cumplimiento parcial y para la prescripción de incumplimientos separados. Está en el esquema del curso (Parte V.C)." }
+    examples: [{ en: "A mower and a wagon at separate prices may be two contracts for § 2-201 purposes.", es: "Una podadora y un remolque a precios separados pueden ser dos contratos para efectos del § 2-201." }]
+    related: [ucc-statute-of-frauds, substantial-performance]
+  - id: minority-capacity
+    term: minority (infancy) and mental incapacity
+    pos: noun
+    topic: defenses
+    en: { definition: "A contract made by a minor is voidable at the minor's option, subject to liability for necessaries and, in many states, restitution; a person who cannot understand the nature of the transaction, or cannot act reasonably and the other party knows it, may avoid the contract (R.2d §§ 14–16); intoxication counts only if the other party had reason to know." }
+    es: { term: "minoría de edad e incapacidad mental", explanation: "El contrato de un menor es anulable a su elección, sujeto a responsabilidad por lo necesario y, en muchos estados, a restitución; quien no puede entender la naturaleza de la operación, o no puede actuar razonablemente y la otra parte lo sabe, puede anular el contrato (R.2d §§ 14–16); la embriaguez cuenta solo si la otra parte tenía razones para saberlo. CCF arts. 450, 1798, 2230." }
+    examples: [{ en: "Zehmer's drinking did not reach incapacity; a sale by a patient with dementia known to the buyer would.", es: "La bebida de Zehmer no llegó a incapacidad; una venta por un paciente con demencia conocida por el comprador sí." }]
+    related: [capacity, void-voidable]
+  - id: fraud-vs-misrepresentation
+    term: fraud vs. misrepresentation (R.2d §§ 159–164)
+    pos: noun
+    topic: defenses
+    en: { definition: "Both require a false assertion of fact that induced justifiable reliance; fraud adds that the maker knew or believed it false and intended to induce (§ 162(1)); innocent or negligent misrepresentation suffices if the assertion was material (§ 162(2)). Either makes the contract voidable (§ 164); fraud in the execution makes it void." }
+    es: { term: "fraude frente a misrepresentation (R.2d §§ 159–164)", explanation: "Ambos exigen una afirmación falsa de hecho que indujo una confianza justificada; el fraude añade que quien la hizo la sabía falsa y quería inducir (§ 162(1)); la afirmación inocente o negligente basta si fue material (§ 162(2)). Cualquiera hace anulable el contrato (§ 164); el fraude en la ejecución (firmar algo distinto de lo que se cree) lo hace nulo. Equivale al dolo (CCF arts. 1815–1816), que exige intención." }
+    examples: [{ en: "The professor's sample question: list the elements that differ, the troublesome assertion issues (opinion, half-truth, silence), the causal link, and who bears the burden.", es: "La pregunta de muestra del profesor: enumera los elementos que difieren, los problemas de la afirmación (opinión, verdad a medias, silencio), el nexo causal y quién tiene la carga." }]
+    related: [misrepresentation, nondisclosure, justifiable-reliance, void-voidable]
+    difficulty: 2
+  - id: justifiable-reliance
+    term: justifiable reliance (inducement)
+    pos: noun
+    topic: defenses
+    en: { definition: "The misrepresentation must have induced the victim's assent (a substantial factor) and the reliance must have been justified; reliance on an obvious lie, on opinion from an equal, or on matters the victim knew to be false is not justified (R.2d §§ 167, 169)." }
+    es: { term: "confianza justificada (inducción)", explanation: "La falsedad debe haber inducido el consentimiento de la víctima (factor sustancial) y la confianza debe estar justificada; confiar en una mentira evidente, en la opinión de un igual o en algo que la víctima sabía falso no está justificado (R.2d §§ 167, 169)." }
+    examples: [{ en: "Mrs. Vokes could rely on the instructors' opinions because they knew more; a rival studio's claims would be different.", es: "La señora Vokes podía confiar en las opiniones de los instructores porque sabían más; las afirmaciones de un estudio rival serían distintas." }]
+    related: [fraud-vs-misrepresentation, opinion-vs-fact]
+  - id: opinion-vs-fact
+    term: opinion vs. assertion of fact
+    pos: noun
+    topic: defenses
+    en: { definition: "Statements of opinion, value or puffing are not actionable assertions unless the speaker has superior knowledge or a relation of trust exists, or the opinion implies facts the speaker knows are false (R.2d §§ 168–169; Vokes)." }
+    es: { term: "opinión frente a afirmación de hecho", explanation: "Las opiniones, estimaciones de valor y exageraciones de venta no son afirmaciones accionables salvo que el hablante tenga conocimiento superior o exista una relación de confianza, o la opinión implique hechos que el hablante sabe falsos (R.2d §§ 168–169; Vokes)." }
+    examples: [{ en: "This is the best car on the lot: puffing. Our expert evaluation shows you have rare talent: actionable if false.", es: "Es el mejor coche del lote: exageración. Nuestra evaluación experta muestra que tienes un talento raro: accionable si es falso." }]
+    related: [fraud-vs-misrepresentation, justifiable-reliance, misrepresentation]
+  - id: duty-to-disclose
+    term: duty to disclose (R.2d § 161)
+    pos: noun
+    topic: defenses
+    en: { definition: "Silence is an assertion only where disclosure is needed to correct a prior statement, to correct the other party's mistake about a basic assumption when silence violates good faith, to correct a mistake about the writing, or where a relation of trust exists; otherwise caveat emptor (Swinton), with half-truths treated as assertions (Kannavos)." }
+    es: { term: "deber de revelar (R.2d § 161)", explanation: "El silencio es afirmación solo cuando revelar es necesario para corregir una declaración previa, para corregir el error de la otra parte sobre una suposición básica cuando callar viola la buena fe, para corregir un error sobre el documento, o cuando hay relación de confianza; si no, caveat emptor (Swinton), con las verdades a medias tratadas como afirmaciones (Kannavos)." }
+    examples: [{ en: "Termites unmentioned: no duty in 1942; a seller's statutory disclosure form in Texas today changes the answer.", es: "Termitas no mencionadas: sin deber en 1942; el formulario de revelación obligatorio en Texas cambia hoy la respuesta." }]
+    related: [nondisclosure, caveat-emptor, fraud-vs-misrepresentation]
+  - id: mutual-mistake
+    term: mutual mistake (R.2d § 152)
+    pos: noun
+    topic: defenses
+    en: { definition: "Where both parties were mistaken at contracting about a basic assumption with a material effect on the agreed exchange, the adversely affected party may avoid the contract unless it bears the risk under § 154 (by agreement, by conscious ignorance, or by the court's allocation)." }
+    es: { term: "error mutuo (R.2d § 152)", explanation: "Cuando ambas partes se equivocaron al contratar sobre una suposición básica con efecto material en el intercambio, la parte perjudicada puede anular el contrato salvo que asuma el riesgo bajo § 154 (por pacto, por ignorancia consciente o por asignación judicial). Sherwood frente a Wood v. Boynton. CCF arts. 1813–1814." }
+    examples: [{ en: "A cow both believed barren: mistake. A stone both knew they could not identify: risk assumed.", es: "Una vaca que ambos creían estéril: error. Una piedra que ambos sabían que no podían identificar: riesgo asumido." }]
+    related: [mistake, unilateral-mistake, risk-of-mistake]
+  - id: unilateral-mistake
+    term: unilateral mistake (R.2d § 153)
+    pos: noun
+    topic: defenses
+    en: { definition: "A mistake by one party about a basic assumption allows avoidance only if, in addition to the § 152 showing, enforcement would be unconscionable or the other party had reason to know of the mistake or caused it; the classic case is a bidder's clerical error the other side should have spotted." }
+    es: { term: "error unilateral (R.2d § 153)", explanation: "El error de una sola parte sobre una suposición básica permite anular solo si, además de lo que exige § 152, la exigibilidad sería unconscionable o la otra parte tenía razones para conocer el error o lo causó; el caso clásico es el error de cálculo de un postor que la contraparte debió notar. Del handout A Unilateral Mistake Case (22 oct.)." }
+    examples: [{ en: "A $7,131 paving bid when others were around $10,000: if the general should have known, the sub may avoid.", es: "Una cotización de pavimento de $7,131 cuando las otras rondaban $10,000: si el general debió saberlo, el sub puede anular." }]
+    related: [mistake, mutual-mistake, risk-of-mistake]
+    difficulty: 2
+  - id: risk-of-mistake
+    term: risk of mistake (R.2d § 154) and fault (§ 157)
+    pos: noun
+    topic: defenses
+    en: { definition: "A party bears the risk of a mistake when the agreement allocates it, when she knew her knowledge was limited and treated it as sufficient, or when the court finds it reasonable to allocate it to her; a mistaken party's own fault bars relief only if it amounts to a failure to act in good faith and in accordance with reasonable standards of fair dealing (§ 157)." }
+    es: { term: "riesgo del error (R.2d § 154) y culpa (§ 157)", explanation: "Una parte asume el riesgo del error cuando el acuerdo se lo asigna, cuando sabía que su conocimiento era limitado y lo trató como suficiente, o cuando el tribunal considera razonable asignárselo; la culpa propia del equivocado impide la anulación solo si equivale a faltar a la buena fe y a estándares razonables de lealtad (§ 157). La pregunta de muestra del 28 de oct. pide conciliar § 154(b) con § 157." }
+    examples: [{ en: "Selling as is allocates the risk; failing to test a cow is not bad faith, so § 157 does not bar the seller.", es: "Vender tal como está asigna el riesgo; no examinar a la vaca no es mala fe, así que § 157 no impide al vendedor anular." }]
+    related: [mutual-mistake, unilateral-mistake, conscious-ignorance]
+  - id: conscious-ignorance
+    term: conscious ignorance
+    pos: noun
+    topic: defenses
+    en: { definition: "Knowing that one does not know a fact and contracting anyway; not a mistake but an assumption of risk (R.2d § 154(b); Wood v. Boynton)." }
+    es: { term: "ignorancia consciente", explanation: "Saber que no se sabe un hecho y contratar de todos modos; no es error sino asunción de riesgo (R.2d § 154(b); Wood v. Boynton)." }
+    examples: [{ en: "I do not know what this stone is, but I will give you a dollar for it.", es: "No sé qué es esta piedra, pero te doy un dólar por ella." }]
+    related: [risk-of-mistake, mutual-mistake]
+  - id: illegality
+    term: illegality and public policy
+    pos: noun
+    topic: defenses
+    en: { definition: "A promise is unenforceable if legislation so provides or if the interest in enforcement is clearly outweighed by a public policy against it (R.2d § 178); courts weigh the parties' expectations, forfeiture, and the strength and seriousness of the policy (§ 179); covered only briefly and not tested, per the Oct. 27 assignment." }
+    es: { term: "ilicitud y orden público", explanation: "Una promesa no es exigible si una ley así lo dispone o si el interés en exigirla es claramente superado por una política pública en contra (R.2d § 178); los tribunales ponderan las expectativas de las partes, la pérdida y la fuerza de la política (§ 179); cubierto solo brevemente y sin examen, según la asignación del 27 de oct. CCF arts. 1830–1831." }
+    examples: [{ en: "A non-compete that bars a hairdresser from the whole state is likely unenforceable as against policy.", es: "Un pacto de no competencia que prohíbe a una estilista trabajar en todo el estado probablemente es inexigible por orden público." }]
+    related: [unconscionability, void-voidable]
+  # --- Ley del contrato: modificación e interpretación ---
+  - id: modification
+    term: modification of a contract (R.2d § 89; UCC § 2-209)
+    pos: noun
+    topic: interpretation
+    en: { definition: "At common law a modification needs consideration unless fair and equitable in view of unanticipated circumstances or relied upon; under the UCC an agreement modifying a sales contract needs no consideration but must be in good faith, must satisfy the statute of frauds if the contract as modified is within it, and may be barred by a signed no-oral-modification clause (subject to waiver)." }
+    es: { term: "modificación del contrato (R.2d § 89; UCC § 2-209)", explanation: "En el common law la modificación requiere consideration salvo que sea justa y equitativa ante circunstancias imprevistas o se haya confiado en ella; bajo el UCC la modificación de una compraventa no necesita consideration pero debe ser de buena fe, debe cumplir el statute of frauds si el contrato modificado cae en él, y puede impedirla una cláusula firmada que prohíba modificaciones orales (sujeta a renuncia). En México basta el consentimiento." }
+    examples: [{ en: "A price increase extorted by threatening not to deliver is not in good faith and fails under § 2-209.", es: "Un aumento de precio arrancado con la amenaza de no entregar no es de buena fe y falla bajo § 2-209." }]
+    related: [pre-existing-duty-rule, good-faith, parol-evidence-rule]
+  - id: no-oral-modification-clause
+    term: no-oral-modification clause
+    pos: noun
+    topic: interpretation
+    en: { definition: "A term requiring modifications to be in a signed writing; enforceable under UCC § 2-209(2) (between merchants, on the merchant's form it must be separately signed by the other party), but an attempted oral modification can operate as a waiver, retractable with reasonable notice unless relied upon (§ 2-209(4)–(5))." }
+    es: { term: "cláusula de no modificación oral", explanation: "Término que exige que las modificaciones consten en escrito firmado; exigible bajo UCC § 2-209(2) (entre comerciantes, en el formulario del comerciante debe firmarla por separado la otra parte), pero un intento de modificación oral puede operar como renuncia, retractable con aviso razonable salvo que se haya confiado en ella (§ 2-209(4)–(5))." }
+    examples: [{ en: "The buyer accepted late deliveries for months despite the clause: a waiver the buyer may retract prospectively.", es: "El comprador aceptó entregas tardías durante meses pese a la cláusula: una renuncia que puede retractar hacia el futuro." }]
+    related: [modification, waiver]
+  - id: interpretation-standards
+    term: standards of interpretation (R.2d §§ 201–204)
+    pos: noun
+    topic: interpretation
+    en: { definition: "Interpret according to the meaning both parties attached; if they differ, the meaning of the party who did not know of the difference when the other did (§ 201); read the writing as a whole, in light of circumstances, with words given their ordinary or technical meaning (§ 202); prefer reasonable, lawful and effective meanings, specific terms over general, negotiated terms over standardized (§ 203); supply a reasonable term where the parties omitted one (§ 204)." }
+    es: { term: "criterios de interpretación (R.2d §§ 201–204)", explanation: "Interpretar según el significado que ambas partes dieron; si difieren, el de la parte que no conocía la diferencia cuando la otra sí (§ 201); leer el documento como un todo, a la luz de las circunstancias, con el sentido ordinario o técnico de las palabras (§ 202); preferir sentidos razonables, lícitos y eficaces, términos específicos sobre generales, negociados sobre estandarizados (§ 203); suplir un término razonable cuando las partes lo omitieron (§ 204). Asignado el 27 de oct.; compárese CCF arts. 1851–1857." }
+    examples: [{ en: "A handwritten price prevails over a printed one; a lawful reading prevails over one that voids the deal.", es: "Un precio manuscrito prevalece sobre uno impreso; una lectura lícita prevalece sobre una que anula el negocio." }]
+    related: [interpretation, ambiguity, vagueness, plain-meaning-rule]
+    difficulty: 2
+  - id: contra-proferentem
+    term: contra proferentem
+    pos: latin
+    topic: interpretation
+    en: { definition: "In choosing among reasonable meanings, the one that operates against the party who supplied the words is preferred (R.2d § 206); the drafter bears the cost of ambiguity, most strongly in standardized and insurance contracts." }
+    es: { term: "contra proferentem (interpretación contra el redactor)", explanation: "Entre significados razonables se prefiere el que opera contra la parte que redactó (R.2d § 206); el redactor carga con el costo de la ambigüedad, sobre todo en contratos de adhesión y seguros. CCF art. 1857 recoge la misma idea." }
+    examples: [{ en: "An ambiguous exclusion in a policy is read against the insurer.", es: "Una exclusión ambigua en una póliza se lee contra la aseguradora." }]
+    related: [interpretation-standards, ambiguity]
+  - id: warranty
+    term: warranty (express and implied, UCC §§ 2-313 to 2-315)
+    pos: noun
+    topic: interpretation
+    en: { definition: "A seller's assurance about the goods: express warranties from affirmations, descriptions and samples that become part of the basis of the bargain (§ 2-313); the implied warranty of merchantability in sales by merchants (§ 2-314); and the implied warranty of fitness for a particular purpose where the seller knows the buyer's purpose and reliance (§ 2-315); a breach runs the § 2-725 limitations clock." }
+    es: { term: "garantía (expresa e implícita, UCC §§ 2-313 a 2-315)", explanation: "La seguridad del vendedor sobre los bienes: garantías expresas por afirmaciones, descripciones y muestras que forman parte de la base del negocio (§ 2-313); la garantía implícita de comerciabilidad en ventas por comerciantes (§ 2-314); y la de idoneidad para un fin particular cuando el vendedor conoce el propósito del comprador y su confianza (§ 2-315); su incumplimiento echa a andar el plazo del § 2-725. Equivale al saneamiento por vicios ocultos (CCF arts. 2142 ss.)." }
+    examples: [{ en: "A three-year warranty against manufacturing defects on tailored suits is an express warranty.", es: "Una garantía de tres años contra defectos de fabricación en trajes a la medida es una garantía expresa." }]
+    related: [ucc-limitations, goods, merchant]
+  # --- Cumplimiento, condiciones e incumplimiento ---
+  - id: condition
+    term: condition (express and constructive)
+    pos: noun
+    topic: performance
+    en: { definition: "An event, not certain to occur, that must occur before performance under a contract becomes due (R.2d § 224); express conditions come from the parties' words and are strictly enforced; constructive conditions are supplied by courts to order the exchange of performances (Kingston) and are satisfied by substantial performance." }
+    es: { term: "condición (expresa y constructiva)", explanation: "Un evento, no seguro, que debe ocurrir antes de que la prestación sea exigible (R.2d § 224); las condiciones expresas nacen de las palabras de las partes y se aplican estrictamente; las constructivas las suple el tribunal para ordenar el intercambio de prestaciones (Kingston) y se satisfacen con el cumplimiento sustancial. CCF arts. 1938–1940 (condición suspensiva y resolutoria)." }
+    examples: [{ en: "No payment unless the architect issues a certificate: express condition. Build, then get paid: constructive condition.", es: "Sin pago a menos que el arquitecto emita un certificado: condición expresa. Construye y luego cobra: condición constructiva." }]
+    related: [condition-precedent, constructive-condition, substantial-performance, waiver]
+  - id: condition-precedent
+    term: condition precedent, concurrent and subsequent
+    pos: noun
+    topic: performance
+    en: { definition: "Precedent: must occur before a duty arises; concurrent: both performances due at the same time, so each party must tender to put the other in breach (R.2d § 234); subsequent: an event that discharges a duty already in force (the Restatement treats it as a condition that terminates a duty)." }
+    es: { term: "condición precedente, concurrente y subsecuente", explanation: "Precedente: debe ocurrir antes de que nazca la obligación; concurrente: ambas prestaciones vencen a la vez, así que cada parte debe ofrecer cumplir para poner a la otra en mora (R.2d § 234); subsecuente: evento que extingue una obligación ya vigente. Equivalen a las condiciones suspensiva y resolutoria." }
+    examples: [{ en: "Delivery of goods and payment are concurrent conditions: the seller must tender the goods to demand the price.", es: "La entrega y el pago son condiciones concurrentes: el vendedor debe ofrecer la mercancía para exigir el precio." }]
+    related: [condition, order-of-performance]
+  - id: constructive-condition
+    term: constructive conditions of exchange
+    pos: noun
+    topic: performance
+    en: { definition: "The implied rule that in a bilateral contract each party's performance is a condition of the other's: the party who must perform first must do so before demanding; where performances can be simultaneous they are due at once; a material uncured failure suspends and then discharges the other party's duty (R.2d §§ 234, 237)." }
+    es: { term: "condiciones constructivas del intercambio", explanation: "La regla implícita de que en un contrato bilateral la prestación de cada parte es condición de la otra: quien debe cumplir primero debe hacerlo antes de exigir; cuando las prestaciones pueden ser simultáneas vencen a la vez; un incumplimiento material no subsanado suspende y luego extingue la obligación de la otra parte (R.2d §§ 234, 237). Es la excepción de contrato no cumplido (CCF art. 1949)." }
+    examples: [{ en: "The apprentice had to give security before demanding the business.", es: "El aprendiz tenía que dar la garantía antes de exigir el negocio." }]
+    related: [condition, dependent-covenants, material-breach, order-of-performance]
+  - id: dependent-covenants
+    term: dependent and independent covenants
+    pos: noun
+    topic: performance
+    en: { definition: "Mansfield's categories in Kingston v. Preston: independent covenants may each be enforced without performance of the other; dependent covenants make one performance a condition of the other; concurrent covenants require mutual tender. Modern law presumes dependency in exchanges." }
+    es: { term: "covenants dependientes e independientes", explanation: "Las categorías de Mansfield en Kingston v. Preston: los covenants independientes pueden exigirse sin cumplir el propio; los dependientes hacen de una prestación condición de la otra; los concurrentes exigen oferta mutua. El derecho moderno presume la dependencia en los intercambios." }
+    examples: [{ en: "A lease's covenant to pay rent was historically independent of the landlord's covenant to repair; modern law has changed that.", es: "La obligación de pagar renta era históricamente independiente de la del arrendador de reparar; el derecho moderno lo cambió." }]
+    related: [constructive-condition, order-of-performance]
+  - id: order-of-performance
+    term: order of performance
+    pos: noun
+    topic: performance
+    en: { definition: "Who must go first: where one performance takes time and the other does not, the longer one comes first (work before payment, R.2d § 234(2)); where both can be simultaneous, they are concurrent; the parties may change the order by agreement." }
+    es: { term: "orden de las prestaciones", explanation: "Quién debe cumplir primero: cuando una prestación toma tiempo y la otra no, la larga va primero (trabajo antes que pago, R.2d § 234(2)); cuando ambas pueden ser simultáneas, son concurrentes; las partes pueden cambiar el orden por acuerdo." }
+    examples: [{ en: "A painter paints before being paid unless the contract provides progress payments.", es: "Un pintor pinta antes de cobrar salvo que el contrato prevea pagos parciales." }]
+    related: [constructive-condition, condition-precedent]
+  - id: substantial-performance
+    term: substantial performance
+    pos: noun
+    topic: performance
+    en: { definition: "Performance that falls short in minor, non-willful respects satisfies a constructive condition, so the other party must perform and may only deduct damages (Jacob & Youngs); whether a shortfall is material is judged by the R.2d § 241 factors (deprivation of expected benefit, adequacy of compensation, forfeiture, likelihood of cure, good faith)." }
+    es: { term: "cumplimiento sustancial", explanation: "La prestación que falla en aspectos menores y no deliberados satisface una condición constructiva, de modo que la otra parte debe cumplir y solo puede descontar daños (Jacob & Youngs); si la falla es material se juzga con los factores de R.2d § 241 (privación del beneficio esperado, posibilidad de compensar, pérdida para el incumplidor, probabilidad de subsanar, buena fe)." }
+    examples: [{ en: "Pipe of equal quality but the wrong brand: substantial performance. A roof that leaks: probably not.", es: "Tubería de igual calidad pero otra marca: cumplimiento sustancial. Un techo que gotea: probablemente no." }]
+    related: [material-breach, constructive-condition, cost-of-completion]
+  - id: material-breach
+    term: material breach vs. partial breach
+    pos: noun
+    topic: performance
+    en: { definition: "A material (total) breach excuses the other party from performing and allows suit for all remaining damages; a partial breach gives damages but leaves the duty to perform in place. Under the UCC's perfect tender rule a buyer may reject goods that fail in any respect (§ 2-601), subject to the seller's right to cure (§ 2-508)." }
+    es: { term: "incumplimiento material frente a parcial", explanation: "El incumplimiento material (total) excusa a la otra parte de cumplir y permite demandar todos los daños restantes; el parcial da daños pero deja en pie el deber de cumplir. Bajo la regla del UCC de la entrega perfecta el comprador puede rechazar bienes que fallen en cualquier aspecto (§ 2-601), sujeto al derecho del vendedor a subsanar (§ 2-508). Equivale a la rescisión por incumplimiento grave (CCF art. 1949)." }
+    examples: [{ en: "A one-week delay on a ten-month project is partial; refusing to deliver at all is material.", es: "Una semana de retraso en una obra de diez meses es parcial; negarse a entregar es material." }]
+    related: [substantial-performance, constructive-condition, anticipatory-repudiation]
+  - id: waiver
+    term: waiver of a condition
+    pos: noun
+    topic: performance
+    en: { definition: "A party may give up the benefit of a condition that protects it, by words or conduct, without consideration if the condition is not a material part of the exchange (R.2d § 84); a waiver may be retracted before the other party relies on it; election and estoppel are related ideas." }
+    es: { term: "renuncia a una condición (waiver)", explanation: "Una parte puede renunciar al beneficio de una condición que la protege, con palabras o conducta, sin consideration si la condición no es parte material del intercambio (R.2d § 84); la renuncia puede retractarse antes de que la otra parte confíe en ella; la elección y el estoppel son ideas relacionadas. Está en el esquema del curso (Parte V.D)." }
+    examples: [{ en: "An insurer that keeps accepting late premiums waives the timely-payment condition until it gives notice.", es: "La aseguradora que sigue aceptando primas tardías renuncia a la condición de pago puntual hasta que avisa." }]
+    related: [condition, no-oral-modification-clause, modification]
+  - id: anticipatory-repudiation
+    term: anticipatory repudiation
+    pos: noun
+    topic: performance
+    en: { definition: "A clear statement or act before performance is due that the party will not perform; the injured party may treat it as a present breach (Hochster), suspend its own performance, demand assurance, or await performance for a commercially reasonable time (R.2d §§ 250–257; UCC §§ 2-610, 2-611); a repudiation may be retracted before the other party relies on it." }
+    es: { term: "repudio anticipado", explanation: "Declaración o acto claro, antes del vencimiento, de que la parte no cumplirá; el perjudicado puede tratarlo como incumplimiento presente (Hochster), suspender su propia prestación, exigir garantías o esperar un tiempo comercialmente razonable (R.2d §§ 250–257; UCC §§ 2-610, 2-611); el repudio puede retractarse antes de que la otra parte confíe en él. CCF art. 1949 exige esperar al vencimiento, salvo pacto." }
+    examples: [{ en: "A buyer's signed letter cancelling a $2,400 suit order before delivery is a repudiation; the seller may sue at once or deliver and sue for the price.", es: "La carta firmada del comprador cancelando un pedido de trajes de $2,400 antes de la entrega es repudio; el vendedor puede demandar de inmediato o entregar y cobrar el precio." }]
+    related: [material-breach, adequate-assurance, mitigation, accrual]
+  - id: adequate-assurance
+    term: demand for adequate assurance (UCC § 2-609; R.2d § 251)
+    pos: noun
+    topic: performance
+    en: { definition: "When reasonable grounds for insecurity arise about the other party's performance, a party may demand in writing adequate assurance and suspend its own performance until it receives it; failure to provide assurance within a reasonable time (not over thirty days under the UCC) is a repudiation." }
+    es: { term: "exigencia de garantías adecuadas (UCC § 2-609; R.2d § 251)", explanation: "Cuando surgen razones fundadas de inseguridad sobre el cumplimiento de la otra parte, una parte puede exigir por escrito garantías adecuadas y suspender su propia prestación hasta recibirlas; no darlas en un plazo razonable (no mayor de treinta días bajo el UCC) equivale a repudio. Sin equivalente directo en el CCF." }
+    examples: [{ en: "A seller who hears the buyer is insolvent may demand assurance before shipping.", es: "El vendedor que se entera de que el comprador es insolvente puede exigir garantías antes de embarcar." }]
+    related: [anticipatory-repudiation, material-breach]
+  - id: prevention-doctrine
+    term: prevention (hindrance) doctrine
+    pos: noun
+    topic: performance
+    en: { definition: "A party who wrongfully prevents or hinders the occurrence of a condition cannot rely on its non-occurrence; the condition is excused and the party is in breach of the implied duty not to hinder (R.2d § 245); the professor's outline calls it hindrance of performance." }
+    es: { term: "doctrina de la prevención (obstaculización)", explanation: "Quien impide u obstaculiza indebidamente que ocurra una condición no puede invocar su falta; la condición se excusa y esa parte incumple el deber implícito de no obstaculizar (R.2d § 245); el esquema del profesor lo llama hindrance of performance. Equivale a CCF art. 1944 (la condición se tiene por cumplida si el obligado impide su cumplimiento)." }
+    examples: [{ en: "An owner who refuses to let the contractor on site cannot then say the work was not finished on time.", es: "El dueño que no deja entrar al contratista no puede decir después que la obra no se terminó a tiempo." }]
+    related: [condition, good-faith]
+  # --- Excusa ---
+  - id: impossibility
+    term: impossibility
+    pos: noun
+    topic: excuse
+    en: { definition: "Objective impossibility (the thing cannot be done by anyone, as when the subject matter is destroyed or a necessary person dies) discharges the duty if it occurs without fault and the risk was not assumed (Taylor v. Caldwell; R.2d §§ 262–263); subjective inability (I cannot pay) does not." }
+    es: { term: "imposibilidad", explanation: "La imposibilidad objetiva (nadie puede hacerlo, como cuando se destruye el objeto o muere una persona necesaria) extingue la obligación si ocurre sin culpa y el riesgo no se asumió (Taylor v. Caldwell; R.2d §§ 262–263); la incapacidad subjetiva (no puedo pagar) no. CCF art. 2111 (caso fortuito)." }
+    examples: [{ en: "The music hall burned: impossible. The promoter ran out of money: not.", es: "El salón se incendió: imposible. El promotor se quedó sin dinero: no." }]
+    related: [impracticability, frustration-of-purpose, excuse, basic-assumption]
+  - id: impracticability
+    term: impracticability (R.2d § 261; UCC § 2-615)
+    pos: noun
+    topic: excuse
+    en: { definition: "Performance is excused where, after contracting, it is made impracticable without fault by an event whose non-occurrence was a basic assumption of the contract, unless the party assumed the risk; increased cost alone is not enough (Transatlantic), and a seller excused for part of its supply must allocate fairly among customers." }
+    es: { term: "impracticabilidad (R.2d § 261; UCC § 2-615)", explanation: "La prestación se excusa cuando, después de contratar, un evento cuya no ocurrencia era suposición básica del contrato la vuelve impracticable sin culpa, salvo que la parte haya asumido el riesgo; el mero aumento de costo no basta (Transatlantic), y el vendedor excusado parcialmente debe repartir equitativamente entre sus clientes. Pariente de la teoría de la imprevisión." }
+    examples: [{ en: "A closed canal that adds 14 percent to the cost does not excuse; a government ban on the only lawful source might.", es: "Un canal cerrado que añade 14 por ciento al costo no excusa; una prohibición gubernamental de la única fuente lícita quizá sí." }]
+    related: [impossibility, frustration-of-purpose, risk-allocation, basic-assumption]
+    difficulty: 2
+  - id: frustration-of-purpose
+    term: frustration of purpose (R.2d § 265)
+    pos: noun
+    topic: excuse
+    en: { definition: "Where a party's principal purpose is substantially frustrated without fault by an event whose non-occurrence was a basic assumption of both parties, the party's remaining duties are discharged (Krell); the purpose must be shared, not one party's private motive, and the frustration must be nearly total." }
+    es: { term: "frustración del fin (R.2d § 265)", explanation: "Cuando el fin principal de una parte se frustra sustancialmente sin culpa por un evento cuya no ocurrencia era suposición básica de ambas, sus obligaciones restantes se extinguen (Krell); el fin debe ser compartido, no el motivo privado de una parte, y la frustración debe ser casi total." }
+    examples: [{ en: "Rooms let to watch a procession that was postponed: frustrated. A cab hired for a race that was cancelled: not.", es: "Habitaciones rentadas para ver un desfile que se pospuso: frustradas. Un taxi contratado para una carrera cancelada: no." }]
+    related: [impossibility, impracticability, basic-assumption]
+  - id: basic-assumption
+    term: basic assumption (of the contract)
+    pos: noun
+    topic: excuse
+    en: { definition: "A fact or state of affairs both parties took for granted when contracting, such that its failure changes the nature of the deal; the common element of mistake (§ 152), impracticability (§ 261) and frustration (§ 265). Market shifts and ordinary risks are not basic assumptions." }
+    es: { term: "suposición básica (del contrato)", explanation: "Un hecho o estado de cosas que ambas partes dieron por sentado al contratar, de modo que su falla cambia la naturaleza del negocio; el elemento común del error (§ 152), la impracticabilidad (§ 261) y la frustración (§ 265). Los cambios de mercado y los riesgos ordinarios no son suposiciones básicas." }
+    examples: [{ en: "That the hall exists, that the cow is barren, that the canal is open (the last was held not to be one).", es: "Que el salón existe, que la vaca es estéril, que el canal está abierto (lo último se resolvió que no lo era)." }]
+    related: [impossibility, impracticability, frustration-of-purpose, mutual-mistake]
+  - id: risk-allocation
+    term: risk allocation
+    pos: noun
+    topic: excuse
+    en: { definition: "The question underneath every excuse and mistake case: which party agreed, expressly or by custom, or is better placed, to bear the risk of the event; a party who could have insured, priced or contracted around the risk usually bears it (Transatlantic; R.2d § 154)." }
+    es: { term: "asignación del riesgo", explanation: "La pregunta debajo de todo caso de excusa y de error: qué parte aceptó, expresa o tácitamente, o está mejor situada para cargar con el riesgo del evento; quien pudo asegurarse, fijar el precio o contratar en torno al riesgo normalmente lo carga (Transatlantic; R.2d § 154)." }
+    examples: [{ en: "A force majeure clause is risk allocation written down; silence lets the court allocate.", es: "Una cláusula de fuerza mayor es asignación de riesgo por escrito; el silencio deja que el tribunal asigne." }]
+    related: [impracticability, risk-of-mistake, basic-assumption]
+  - id: excuse
+    term: excuse (excused nonperformance)
+    pos: noun
+    topic: excuse
+    en: { definition: "The umbrella term for impossibility, impracticability and frustration: nonperformance that is not a breach because a supervening event, outside both parties' control and risk, made performance impossible, impracticable or pointless; Part VI of the course, covered only briefly." }
+    es: { term: "excusa (incumplimiento excusado)", explanation: "El término paraguas para imposibilidad, impracticabilidad y frustración: un incumplimiento que no es incumplimiento porque un evento sobrevenido, fuera del control y del riesgo de ambas partes, hizo la prestación imposible, impracticable o inútil; Parte VI del curso, cubierta solo brevemente." }
+    examples: [{ en: "Excuse discharges both sides; reliance losses lie where they fall, subject to restitution.", es: "La excusa libera a ambas partes; las pérdidas por confianza quedan donde cayeron, sujetas a restitución." }]
+    related: [impossibility, impracticability, frustration-of-purpose]
+  # --- Remedios ---
+  - id: expectation-damages
+    term: expectation damages (R.2d § 347)
+    pos: noun
+    topic: remedies
+    en: { definition: "The default measure: the value of the promised performance to the injured party (loss in value) plus incidental and consequential loss, minus any cost or loss avoided by not having to perform; puts the plaintiff where performance would have (Hawkins). Also called benefit of the bargain." }
+    es: { term: "daños por expectativa (R.2d § 347)", explanation: "La medida por defecto: el valor de la prestación prometida para el perjudicado (pérdida de valor) más las pérdidas incidentales y consecuenciales, menos los costos o pérdidas evitados por no tener que cumplir; coloca al actor donde lo habría dejado el cumplimiento (Hawkins). También interés positivo. En México: daños (pérdida sufrida) y perjuicios (ganancia dejada de obtener), CCF arts. 2108–2109." }
+    examples: [{ en: "Promised a perfect hand, got a worse one: the difference is the expectation measure.", es: "Prometida una mano perfecta, recibió una peor: la diferencia es la medida de expectativa." }]
+    related: [reliance-damages, restitution-damages, consequential-damages, benefit-of-the-bargain]
+  - id: benefit-of-the-bargain
+    term: benefit of the bargain
+    pos: phrase
+    topic: remedies
+    en: { definition: "Another name for the expectation interest: the net gain the injured party would have realized from full performance, the profit on the contract included." }
+    es: { term: "beneficio del negocio (benefit of the bargain)", explanation: "Otro nombre del interés de expectativa: la ganancia neta que el perjudicado habría obtenido con el cumplimiento completo, incluida la utilidad del contrato." }
+    examples: [{ en: "Luten Bridge kept its profit on the whole contract even though it had to stop building.", es: "Luten Bridge conservó su utilidad sobre todo el contrato aunque tuvo que dejar de construir." }]
+    related: [expectation-damages]
+  - id: reliance-damages
+    term: reliance damages (R.2d § 349)
+    pos: noun
+    topic: remedies
+    en: { definition: "Expenditures made in preparation or performance, less any loss the breaching party proves the injured party would have suffered had the contract been performed; chosen when expectation is too uncertain (Sullivan) or when the claim rests on promissory estoppel (Hoffman); puts the plaintiff back where she started." }
+    es: { term: "daños por confianza (R.2d § 349)", explanation: "Los gastos hechos en preparación o ejecución, menos la pérdida que el incumplidor pruebe que el perjudicado habría sufrido con el cumplimiento; se elige cuando la expectativa es demasiado incierta (Sullivan) o cuando el reclamo se funda en promissory estoppel (Hoffman); devuelve al actor al punto de partida. Interés negativo." }
+    examples: [{ en: "Hoffman recovered what he lost selling his bakery and grocery, not the franchise's profits.", es: "Hoffman recuperó lo que perdió al vender su panadería y su tienda, no las ganancias de la franquicia." }]
+    related: [expectation-damages, restitution-damages, promissory-estoppel]
+  - id: restitution-damages
+    term: restitution interest (R.2d § 371)
+    pos: noun
+    topic: remedies
+    en: { definition: "The value of the benefit conferred on the other party, measured by its reasonable value or by the increase in the other party's wealth; available to an injured party who has partly performed, and even to a breaching party for benefits beyond the loss it caused (R.2d § 374)." }
+    es: { term: "interés de restitución (R.2d § 371)", explanation: "El valor del beneficio conferido a la otra parte, medido por su valor razonable o por el aumento del patrimonio ajeno; disponible para el perjudicado que cumplió en parte e incluso para el incumplidor por los beneficios que excedan la pérdida que causó (R.2d § 374)." }
+    examples: [{ en: "A builder whose owner repudiates may recover the value of the work done instead of expectation damages.", es: "El constructor cuyo dueño repudia puede recuperar el valor de la obra hecha en lugar de los daños por expectativa." }]
+    related: [restitution, expectation-damages, reliance-damages]
+  - id: consequential-damages
+    term: consequential (special) damages
+    pos: noun
+    topic: remedies
+    en: { definition: "Losses beyond the value of the performance itself, such as lost profits from a resale or a stopped mill, recoverable only if foreseeable at contracting (Hadley; R.2d § 351; UCC § 2-715(2)), proved with reasonable certainty, and not avoidable by cover or mitigation; often excluded by contract." }
+    es: { term: "daños consecuenciales (especiales)", explanation: "Pérdidas más allá del valor de la prestación misma, como ganancias perdidas por una reventa o un molino parado, recuperables solo si eran previsibles al contratar (Hadley; R.2d § 351; UCC § 2-715(2)), se prueban con certeza razonable y no eran evitables mediante cobertura o mitigación; a menudo se excluyen por contrato. Equivalen a los perjuicios (lucro cesante) con el límite del art. 2110 CCF." }
+    examples: [{ en: "The mill's lost profits failed for want of foreseeability, not for want of proof.", es: "Las ganancias perdidas del molino fallaron por falta de previsibilidad, no de prueba." }]
+    related: [foreseeability, expectation-damages, mitigation, certainty-of-damages]
+  - id: foreseeability
+    term: foreseeability (Hadley rule)
+    pos: noun
+    topic: remedies
+    en: { definition: "A limit on damages: the breaching party is liable only for losses that arise naturally from the breach or that it had reason to foresee as a probable result when the contract was made, including special circumstances communicated to it (R.2d § 351)." }
+    es: { term: "previsibilidad (regla de Hadley)", explanation: "Límite de los daños: el incumplidor responde solo por las pérdidas que surgen naturalmente del incumplimiento o que tenía razones para prever como resultado probable al contratar, incluidas las circunstancias especiales que se le comunicaron (R.2d § 351)." }
+    examples: [{ en: "Tell the carrier the mill is stopped and the lost profits become foreseeable.", es: "Dile al transportista que el molino está parado y las ganancias perdidas se vuelven previsibles." }]
+    related: [consequential-damages, limitations-on-damages]
+  - id: certainty-of-damages
+    term: certainty of damages (R.2d § 352)
+    pos: noun
+    topic: remedies
+    en: { definition: "Damages are not recoverable for loss beyond an amount the evidence permits to be established with reasonable certainty; new businesses' lost profits and speculative gains often fail this test, which pushes plaintiffs toward reliance damages." }
+    es: { term: "certeza de los daños (R.2d § 352)", explanation: "No se recuperan daños por pérdidas más allá de lo que la prueba permite establecer con certeza razonable; las ganancias perdidas de negocios nuevos y las ganancias especulativas suelen fallar esta prueba, lo que empuja a los actores hacia los daños por confianza." }
+    examples: [{ en: "A franchise that never opened cannot prove its profits; Hoffman got reliance instead.", es: "Una franquicia que nunca abrió no puede probar sus ganancias; Hoffman recibió confianza en su lugar." }]
+    related: [consequential-damages, reliance-damages, limitations-on-damages]
+  - id: mitigation
+    term: mitigation (avoidability, R.2d § 350)
+    pos: noun
+    topic: remedies
+    en: { definition: "Damages are not recoverable for loss the injured party could have avoided without undue risk, burden or humiliation: stop work after a repudiation (Luten Bridge), take comparable substitute employment (Parker), cover by buying substitute goods (UCC § 2-712); the breaching party bears the burden of proving the failure to mitigate." }
+    es: { term: "mitigación (evitabilidad, R.2d § 350)", explanation: "No se recuperan los daños que el perjudicado pudo evitar sin riesgo, carga o humillación indebidos: dejar de trabajar tras el repudio (Luten Bridge), aceptar un empleo sustituto comparable (Parker), cubrirse comprando bienes sustitutos (UCC § 2-712); el incumplidor tiene la carga de probar la falta de mitigación. Deber débil en el derecho mexicano, por eso es trampa para abogados mexicanos." }
+    examples: [{ en: "Building the bridge after the county cancelled added nothing recoverable.", es: "Construir el puente después de que el condado canceló no añadió nada recuperable." }]
+    related: [avoidability, consequential-damages, cover]
+  - id: avoidability
+    term: avoidability
+    pos: noun
+    topic: remedies
+    en: { definition: "The principle behind mitigation: a loss that could reasonably have been avoided is not caused by the breach for damages purposes; the professor's outline lists it with foreseeability and uncertainty as the three limits on damages." }
+    es: { term: "evitabilidad", explanation: "El principio detrás de la mitigación: una pérdida que razonablemente pudo evitarse no se atribuye al incumplimiento para efectos de daños; el esquema del profesor la enumera con la previsibilidad y la incertidumbre como los tres límites a los daños." }
+    examples: [{ en: "An actress need not take a worse film to avoid her loss.", es: "Una actriz no tiene que aceptar una película peor para evitar su pérdida." }]
+    related: [mitigation, foreseeability, certainty-of-damages]
+  - id: cover
+    term: cover and market damages (UCC §§ 2-712, 2-713)
+    pos: noun
+    topic: remedies
+    en: { definition: "A buyer whose seller breaches may cover by buying substitute goods in good faith without unreasonable delay and recover the difference between the cover price and the contract price plus incidental and consequential damages (§ 2-712), or recover the difference between market price when the buyer learned of the breach and the contract price (§ 2-713)." }
+    es: { term: "cobertura y daños de mercado (UCC §§ 2-712, 2-713)", explanation: "El comprador cuyo vendedor incumple puede cubrirse comprando bienes sustitutos de buena fe y sin demora irrazonable y recuperar la diferencia entre el precio de cobertura y el del contrato más daños incidentales y consecuenciales (§ 2-712), o recuperar la diferencia entre el precio de mercado cuando supo del incumplimiento y el precio del contrato (§ 2-713)." }
+    examples: [{ en: "Contract price $100 a ton, cover at $130: damages $30 a ton plus incidentals.", es: "Precio del contrato $100 por tonelada, cobertura a $130: daños de $30 por tonelada más incidentales." }]
+    related: [mitigation, seller-remedies, expectation-damages]
+  - id: seller-remedies
+    term: seller's remedies (UCC §§ 2-706, 2-708, 2-709)
+    pos: noun
+    topic: remedies
+    en: { definition: "A seller whose buyer breaches may resell in good faith and recover the difference between the contract price and the resale price (§ 2-706), recover contract-market damages or, if those are inadequate, lost profit including reasonable overhead (§ 2-708, the lost-volume seller), or sue for the price when the goods were accepted or cannot be resold (§ 2-709)." }
+    es: { term: "remedios del vendedor (UCC §§ 2-706, 2-708, 2-709)", explanation: "El vendedor cuyo comprador incumple puede revender de buena fe y recuperar la diferencia entre el precio del contrato y el de reventa (§ 2-706), recuperar la diferencia contrato-mercado o, si es insuficiente, la ganancia perdida incluidos los gastos generales razonables (§ 2-708, el vendedor de volumen perdido), o demandar el precio cuando los bienes fueron aceptados o no pueden revenderse (§ 2-709)." }
+    examples: [{ en: "A tailor stuck with a costume suit nobody else will buy may sue for the price.", es: "Un sastre que se queda con un traje de disfraz que nadie más comprará puede demandar el precio." }]
+    related: [cover, expectation-damages, specially-manufactured-goods]
+  - id: cost-of-completion
+    term: cost of completion vs. diminution in value
+    pos: phrase
+    topic: remedies
+    en: { definition: "For defective or unfinished work, damages are ordinarily the cost of completing or repairing; where that cost is clearly disproportionate to the loss in value, the measure is the diminution in value (Jacob & Youngs, Peevyhouse; R.2d § 348(2)), though a willful breach or a special personal value may tip the balance (Groves)." }
+    es: { term: "costo de terminación frente a disminución de valor", explanation: "Por obra defectuosa o inconclusa, los daños son normalmente el costo de terminar o reparar; cuando ese costo es claramente desproporcionado frente a la pérdida de valor, la medida es la disminución de valor (Jacob & Youngs, Peevyhouse; R.2d § 348(2)), aunque un incumplimiento deliberado o un valor personal especial pueden inclinar la balanza (Groves)." }
+    examples: [{ en: "$29,000 to restore a farm worth $300 more: diminution. $60,000 to grade land the lessee deliberately left rough: cost of completion.", es: "$29,000 para restaurar una granja que vale $300 más: disminución. $60,000 para nivelar un terreno que el arrendatario dejó a propósito sin nivelar: costo de terminación." }]
+    related: [diminution-in-value, expectation-damages, substantial-performance, economic-waste]
+  - id: diminution-in-value
+    term: diminution in value
+    pos: noun
+    topic: remedies
+    en: { definition: "The difference between the market value of what was promised and the market value of what was delivered; the measure used instead of cost of completion when completion would be economically wasteful." }
+    es: { term: "disminución de valor", explanation: "La diferencia entre el valor de mercado de lo prometido y el de lo entregado; la medida que se usa en lugar del costo de terminación cuando terminar sería un desperdicio económico." }
+    examples: [{ en: "Reading pipe versus Cohoes pipe: nominal.", es: "Tubería Reading contra Cohoes: nominal." }]
+    related: [cost-of-completion, economic-waste]
+  - id: economic-waste
+    term: economic waste
+    pos: noun
+    topic: remedies
+    en: { definition: "The destruction of value that would follow from tearing out finished work to achieve a trivial gain; the policy that justifies the diminution-in-value measure and the substantial performance doctrine." }
+    es: { term: "desperdicio económico", explanation: "La destrucción de valor que seguiría de demoler obra terminada para lograr una ganancia trivial; la política que justifica la medida de disminución de valor y la doctrina del cumplimiento sustancial." }
+    examples: [{ en: "Demolishing walls to swap equal pipe is economic waste.", es: "Demoler paredes para cambiar una tubería igual es desperdicio económico." }]
+    related: [cost-of-completion, diminution-in-value, substantial-performance]
+  - id: limitations-on-damages
+    term: limitations on damages (foreseeability, certainty, avoidability)
+    pos: noun
+    topic: remedies
+    en: { definition: "The three doctrines that cut expectation damages down: the loss must have been foreseeable at contracting (Hadley), provable with reasonable certainty (§ 352), and not reasonably avoidable (§ 350); the professor's course outline lists them together." }
+    es: { term: "límites a los daños (previsibilidad, certeza, evitabilidad)", explanation: "Las tres doctrinas que recortan los daños por expectativa: la pérdida debe haber sido previsible al contratar (Hadley), probable con certeza razonable (§ 352) y no razonablemente evitable (§ 350); el esquema del curso las enumera juntas." }
+    examples: [{ en: "Run the three limits on every damages number before writing it down.", es: "Pasa los tres límites por cada cifra de daños antes de escribirla." }]
+    related: [foreseeability, certainty-of-damages, mitigation]
+  - id: liquidated-damages
+    term: liquidated damages vs. penalty (R.2d § 356; UCC § 2-718)
+    pos: noun
+    topic: remedies
+    en: { definition: "A clause fixing damages in advance is enforceable if the amount is reasonable in light of the anticipated or actual loss and the difficulty of proof; a term fixing an unreasonably large amount is an unenforceable penalty. Mexico enforces penalty clauses up to the value of the principal obligation; American law voids penalties." }
+    es: { term: "daños liquidados frente a pena (R.2d § 356; UCC § 2-718)", explanation: "Una cláusula que fija los daños por anticipado es exigible si el monto es razonable a la luz de la pérdida anticipada o real y de la dificultad de prueba; un término que fija un monto irrazonablemente alto es una pena inexigible. México permite la pena convencional hasta el valor de la obligación principal (CCF art. 1843); el derecho estadounidense anula las penas." }
+    examples: [{ en: "$500 a day for late completion of a store opening is likely reasonable; $50,000 a day is a penalty.", es: "$500 diarios por retraso en la apertura de una tienda probablemente es razonable; $50,000 diarios es una pena." }]
+    related: [expectation-damages, specific-performance]
+  - id: specific-performance
+    term: specific performance
+    pos: noun
+    topic: remedies
+    en: { definition: "An equitable order to perform the contract, available only when damages are inadequate (land, unique goods, UCC § 2-716), never for personal services, and subject to the court's discretion; the exception in American law, the first option in Mexican law." }
+    es: { term: "cumplimiento forzoso (specific performance)", explanation: "Orden de equidad de cumplir el contrato, disponible solo cuando los daños son inadecuados (inmuebles, bienes únicos, UCC § 2-716), nunca para servicios personales, y sujeta a la discreción del tribunal; la excepción en el derecho estadounidense, la primera opción en el mexicano (CCF art. 1949)." }
+    examples: [{ en: "Lucy got the farm; a jilted employee gets damages, never the job.", es: "Lucy obtuvo la granja; un empleado despedido obtiene daños, nunca el puesto." }]
+    related: [expectation-damages, liquidated-damages]
+  - id: election-of-remedies
+    term: election of remedies
+    pos: noun
+    topic: remedies
+    en: { definition: "An injured party may choose among expectation, reliance and restitution measures (and between damages and rescission) but cannot combine them to recover twice for the same loss; a party who keeps the contract price cannot also claim restitution for the same performance (Transatlantic)." }
+    es: { term: "elección de remedios", explanation: "El perjudicado puede elegir entre las medidas de expectativa, confianza y restitución (y entre daños y rescisión) pero no combinarlas para cobrar dos veces la misma pérdida; quien conserva el precio del contrato no puede además reclamar restitución por la misma prestación (Transatlantic)." }
+    examples: [{ en: "Sullivan elected reliance; she could not also claim the value of a perfect nose.", es: "Sullivan eligió confianza; no podía reclamar además el valor de una nariz perfecta." }]
+    related: [expectation-damages, reliance-damages, restitution-damages]

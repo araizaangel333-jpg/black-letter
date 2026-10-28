@@ -128,3 +128,414 @@ items:
         stem: "In one sentence each, name the four situations in which R.2d § 161 treats nondisclosure as an assertion."
         answer: "Where disclosure is needed to correct a prior assertion; where the party knows the other is mistaken about a basic assumption and nondisclosure violates good faith; where the party knows the other is mistaken about the contents or effect of a writing; and where the parties stand in a relation of trust and confidence."
         keyPoints: ["correct a prior assertion", "known mistake about a basic assumption + good faith", "mistake about the writing", "relation of trust and confidence"]
+  - id: contracts-formation-01
+    topic: formation
+    title: { en: "Offer, acceptance and termination of offers", es: "Oferta, aceptación y extinción de ofertas" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Marta emails a furniture maker: would you sell the walnut table in your showroom, and what is the lowest you would take? He replies: I could not let it go for less than $4,000. Marta replies: I accept, I will pick it up Friday. Contract?"
+        choices:
+          - { id: a, text: "Yes; the price reply was an offer and Marta accepted.", why: "A statement of the lowest price one would take is not an offer (Owen, Harvey)." }
+          - { id: b, text: "No; the reply stated a minimum price and invited an offer, so Marta's email is an offer the maker may accept or ignore.", correct: true }
+          - { id: c, text: "Yes, because furniture is goods and the UCC does not require an offer.", why: "The UCC still requires agreement; § 2-204 relaxes form, not assent." }
+          - { id: d, text: "No, because there is no writing.", why: "The statute of frauds is an enforceability defense, not a formation issue, and Marta's emails might satisfy it anyway." }
+        explanation: { en: "The objective test asks whether a reasonable recipient would understand a commitment to sell; I could not let it go for less than is a floor, not a promise.", es: "La prueba objetiva pregunta si un destinatario razonable entendería un compromiso de vender; no podría dejarla ir por menos de es un piso, no una promesa." }
+        source: "Owen v. Tunison; Harvey v. Facey; R.2d § 24"
+      - id: q2
+        type: mcq
+        stem: "A hardware distributor asks a manufacturer for its lowest price on 500 units of a specified valve. The manufacturer replies with prices per unit, delivery terms and the words for immediate acceptance. The distributor orders 500 units. The manufacturer says it meant only to quote. Result?"
+        choices:
+          - { id: a, text: "No contract; quotations are never offers.", why: "Quotations can be offers when their words and context show commitment (Fairmount)." }
+          - { id: b, text: "Contract; a quotation responding to a specific quantity inquiry with full terms and for immediate acceptance is an offer, and the order accepted it.", correct: true }
+          - { id: c, text: "No contract until the manufacturer confirms in writing.", why: "The offer did not require a confirmation." }
+          - { id: d, text: "Contract only if the distributor paid in advance.", why: "Payment is not required for formation." }
+        explanation: { en: "Fairmount: the specific inquiry plus the words for immediate acceptance made the quotation an offer.", es: "Fairmount: la consulta específica más las palabras for immediate acceptance hicieron de la cotización una oferta." }
+        source: "Fairmount Glass Works v. Crunden-Martin"
+      - id: q3
+        type: mcq
+        stem: "On Monday Diego offers to sell his boat to Lía for $9,000, saying she has until Friday. On Wednesday Lía hears from Diego's brother, who saw the bill of sale, that Diego sold the boat to Omar on Tuesday. On Thursday Lía emails her acceptance. Who is right?"
+        choices:
+          - { id: a, text: "Lía; the offer was open until Friday.", why: "A promise to hold an offer open without consideration is revocable." }
+          - { id: b, text: "Diego; the offer was revoked when Lía learned from a reliable source that he had sold the boat.", correct: true }
+          - { id: c, text: "Lía, unless Diego personally told her he revoked.", why: "Indirect revocation through reliable information suffices (Dickinson; R.2d § 43)." }
+          - { id: d, text: "Diego, because the offer lapsed on Tuesday.", why: "It did not lapse; it was revoked." }
+        explanation: { en: "Dickinson v. Dodds: knowledge from a reliable source of conduct inconsistent with the offer terminates the power of acceptance.", es: "Dickinson v. Dodds: saber de fuente confiable de una conducta incompatible con la oferta extingue el poder de aceptar." }
+        source: "Dickinson v. Dodds; R.2d §§ 42–43"
+      - id: q4
+        type: mcq
+        stem: "Same facts, except Lía paid Diego $100 on Monday for the promise to hold the offer until Friday, and on Wednesday she emailed: would you take $8,500? Diego replied: no. On Thursday she wrote: I accept at $9,000. Result?"
+        choices:
+          - { id: a, text: "No contract; her $8,500 proposal was a counteroffer that rejected the offer.", why: "A counteroffer does not terminate an option supported by consideration (R.2d § 37; Humble Oil)." }
+          - { id: b, text: "Contract; the option survived her inquiry and she exercised it within the period.", correct: true }
+          - { id: c, text: "No contract; the sale to Omar revoked the offer.", why: "An option cannot be revoked during its term; the sale to Omar would be a breach." }
+          - { id: d, text: "Contract at $8,500.", why: "Diego rejected that price." }
+        explanation: { en: "An option is a contract; counteroffers and even purported revocations do not end it.", es: "La opción es un contrato; ni las contraofertas ni las supuestas revocaciones la terminan." }
+        source: "Humble Oil v. Westside Investment; R.2d § 37"
+      - id: q5
+        type: mcq
+        stem: "A homeowner leaves a note for a roofer: if you agree to replace the roof for $12,000 by June 30, you can start whenever you like. The roofer orders shingles from his supplier and says nothing to the homeowner. The homeowner hires someone else the next day. The roofer claims a contract."
+        choices:
+          - { id: a, text: "Contract; ordering shingles was acceptance by performance.", why: "An act indistinguishable from preparation for any job, uncommunicated, is not a manifestation of assent (White)." }
+          - { id: b, text: "No contract; the offer called for an agreement, and the roofer's private preparations were never manifested to the homeowner before revocation.", correct: true }
+          - { id: c, text: "Contract, because the homeowner did not specify a form of acceptance.", why: "Absence of a prescribed form still requires some manifestation to the offeror." }
+          - { id: d, text: "No contract, because roofing contracts must be in writing.", why: "A contract performable within a year needs no writing; formation is the issue." }
+        explanation: { en: "White v. Corlies & Tift: buying materials in your own shop tells the offeror nothing; acceptance must be manifested.", es: "White v. Corlies & Tift: comprar materiales en tu propio taller no le dice nada al oferente; la aceptación debe manifestarse." }
+        source: "White v. Corlies & Tift; R.2d §§ 54, 56"
+      - id: q6
+        type: mcq
+        stem: "A seller mails an offer on Monday. The buyer mails an acceptance on Wednesday at noon. The seller mails a revocation Wednesday morning, which the buyer receives Thursday; the acceptance reaches the seller Friday. Contract?"
+        choices:
+          - { id: a, text: "No; the revocation was mailed before the acceptance.", why: "Revocation is effective on receipt, not dispatch." }
+          - { id: b, text: "Yes; the acceptance was effective when mailed on Wednesday, before the revocation was received on Thursday.", correct: true }
+          - { id: c, text: "No; the acceptance arrived after the revocation.", why: "Under the mailbox rule the acceptance took effect on dispatch." }
+          - { id: d, text: "Yes, but only if the seller read the acceptance.", why: "Receipt, let alone reading, is unnecessary for an acceptance by mail." }
+        explanation: { en: "Acceptance on dispatch, revocation on receipt: the classic mailbox sequence from Adams v. Lindsell and the professor's analysis handout.", es: "Aceptación al enviar, revocación al recibir: la secuencia clásica del mailbox de Adams v. Lindsell y el handout de análisis del profesor." }
+        source: "Adams v. Lindsell; R.2d §§ 42, 63"
+      - id: q7
+        type: cloze
+        text: "A merchant's signed written offer to buy or sell goods that gives assurance it will be held open is irrevocable without consideration for the stated time, but in no event longer than {{three months}} (UCC § {{2-205}})."
+        explanation: { en: "The firm-offer rule is the UCC's answer to Dickinson v. Dodds for merchants.", es: "La regla de la oferta firme es la respuesta del UCC a Dickinson v. Dodds para comerciantes." }
+      - id: q8
+        type: short
+        stem: "A buyer's purchase order and a seller's acknowledgment differ on the warranty term. Both are merchants and the goods were shipped and paid for. Explain in four sentences how UCC § 2-207 resolves it."
+        answer: "Under § 2-207(1) the acknowledgment is an acceptance despite the different term, unless it expressly conditions acceptance on assent to its terms, so a contract exists on the matching terms. Under § 2-207(2) between merchants an additional term enters unless the offer limited acceptance, the term materially alters the contract, or objection follows; a warranty disclaimer is a material alteration and does not enter. Where the forms directly conflict, most courts knock both terms out and apply the Code's implied warranties. If the writings had not formed a contract, the parties' conduct would, with terms on which the writings agree plus the Code's gap-fillers (§ 2-207(3))."
+        keyPoints: ["acceptance despite different terms unless expressly conditional", "additional terms between merchants: three exclusions; warranty disclaimer is material", "knockout rule for conflicting terms; Code gap-fillers", "contract by conduct under § 2-207(3)"]
+  - id: contracts-consideration-01
+    topic: formation
+    title: { en: "Consideration, reliance, moral obligation and quasi-contract", es: "Consideration, confianza, obligación moral y cuasicontrato" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "An aunt promises her niece $10,000 if the niece refrains from social media until she graduates. The niece complies. The aunt's estate refuses to pay, arguing the niece benefited from the detox. Is the promise enforceable?"
+        choices:
+          - { id: a, text: "No; the niece suffered no detriment.", why: "Giving up a legal right is a detriment whether or not it benefits the promisee (Hamer)." }
+          - { id: b, text: "Yes; the niece gave up a lawful activity at the aunt's request in exchange for the promise.", correct: true }
+          - { id: c, text: "No; the aunt received no benefit.", why: "Benefit to the promisor is not required." }
+          - { id: d, text: "Yes, but only as a gift completed by delivery.", why: "No delivery occurred; the claim rests on consideration." }
+        explanation: { en: "Hamer v. Sidway on modern facts: bargained-for forbearance is consideration.", es: "Hamer v. Sidway con hechos modernos: la abstención negociada es consideration." }
+        source: "Hamer v. Sidway; R.2d § 71"
+      - id: q2
+        type: mcq
+        stem: "A retiree writes to her nephew: if you move to Dallas, I will give you my condo. He quits his job in Monterrey and moves. She changes her mind. Which theory gives him the best claim?"
+        choices:
+          - { id: a, text: "Consideration, because moving was a detriment.", why: "The move was a condition of a gift, not a bargained-for exchange (Kirksey)." }
+          - { id: b, text: "Promissory estoppel: the promise foreseeably induced substantial reliance and injustice can be avoided only by enforcement, at least to the extent of his reliance.", correct: true }
+          - { id: c, text: "Quasi-contract, for the value of the condo.", why: "He conferred no benefit on her." }
+          - { id: d, text: "No claim; promises to relatives are never enforceable.", why: "Family promises are enforceable on the same rules as any other." }
+        explanation: { en: "Kirksey loses on consideration; § 90 is the modern answer, with damages measured as justice requires.", es: "Kirksey pierde por consideration; § 90 es la respuesta moderna, con daños medidos según lo exija la justicia." }
+        source: "Kirksey v. Kirksey; R.2d § 90"
+      - id: q3
+        type: mcq
+        stem: "A neighbor pulls a stranger from a burning car and is badly burned. The stranger, grateful, promises in writing to pay the neighbor $500 a month for life and pays for two years, then stops. Enforceable?"
+        choices:
+          - { id: a, text: "No; the rescue preceded the promise, so it is past consideration.", why: "True at common law, but the material benefit rule enforces the promise (Webb; R.2d § 86)." }
+          - { id: b, text: "Yes; the promisor received a material benefit (his life) at the promisee's detriment and later promised to pay for it.", correct: true }
+          - { id: c, text: "No; moral obligation never supports a promise.", why: "It does where the promisor himself received the benefit." }
+          - { id: d, text: "Yes, because the writing itself is consideration.", why: "A writing is not consideration." }
+        explanation: { en: "Webb v. McGowin: a subsequent promise to pay for a material benefit received is enforceable to the extent not disproportionate.", es: "Webb v. McGowin: la promesa posterior de pagar por un beneficio material recibido es exigible en la medida en que no sea desproporcionada." }
+        source: "Webb v. McGowin; R.2d § 86"
+      - id: q4
+        type: mcq
+        stem: "A general contractor uses an electrical subcontractor's telephone bid of $48,000 in a winning bid for a school. The next day the sub says it misread the plans and withdraws. The general hires a replacement for $61,000. Under Drennan, the sub is liable unless:"
+        choices:
+          - { id: a, text: "The general had reason to know the bid was a mistake, shopped the bid, or delayed unreasonably in accepting after the award.", correct: true }
+          - { id: b, text: "The bid was oral.", why: "Oral bids are enforceable under § 87(2); the statute of frauds may matter for the resulting contract but did not bar Drennan." }
+          - { id: c, text: "The general had not yet signed a contract with the school.", why: "Reliance occurred when the bid was used; the award completed it." }
+          - { id: d, text: "The sub never received consideration for keeping the bid open.", why: "Reliance substitutes for consideration under § 87(2)." }
+        explanation: { en: "The Drennan limitations from the professor's handout: known mistake, bid shopping, unreasonable delay, reliance outside what the sub expected.", es: "Las limitaciones de Drennan del handout del profesor: error conocido, regateo con la cotización, demora irrazonable, confianza fuera de lo que el sub esperaba." }
+        source: "Drennan v. Star Paving; R.2d § 87(2)"
+      - id: q5
+        type: mcq
+        stem: "During two years of negotiations, a chain tells a would-be franchisee that the deal will go through if she sells her store and moves. She does. The chain then raises the required investment and the deal collapses; no terms were ever fixed. What can she recover?"
+        choices:
+          - { id: a, text: "Nothing; no contract was ever formed.", why: "Promissory estoppel does not require a contract (Hoffman)." }
+          - { id: b, text: "Her reliance losses (the loss on the store, moving costs), but not the profits of the franchise.", correct: true }
+          - { id: c, text: "The profits the franchise would have earned.", why: "Too uncertain and the terms were never agreed; reliance is the measure." }
+          - { id: d, text: "The franchise itself, by specific performance.", why: "There is nothing definite to enforce." }
+        explanation: { en: "Hoffman v. Red Owl: § 90 protects reliance in failed negotiations, with damages measured by the reliance.", es: "Hoffman v. Red Owl: § 90 protege la confianza en negociaciones fallidas, con daños medidos por la confianza." }
+        source: "Hoffman v. Red Owl Stores"
+      - id: q6
+        type: mcq
+        stem: "A plumber, driving past a house whose basement is flooding while the owners are on vacation, breaks in, shuts off the main and pumps the water out, then bills the owners $900. Recovery?"
+        choices:
+          - { id: a, text: "None; he is an officious intermeddler.", why: "Emergency intervention by a professional to prevent serious harm to property is the exception to the volunteer rule." }
+          - { id: b, text: "The reasonable value of his services in quasi-contract, because he acted in an emergency to protect property and could not obtain consent.", correct: true }
+          - { id: c, text: "The full $900 because he set the price.", why: "The measure is reasonable value, not the plaintiff's own figure." }
+          - { id: d, text: "Only if the owners later promised to pay.", why: "A later promise would add a § 86 theory, but quasi-contract does not need it." }
+        explanation: { en: "Cotnam logic applied to property: emergency, professional capacity, inability to consent, benefit conferred.", es: "La lógica de Cotnam aplicada a bienes: emergencia, capacidad profesional, imposibilidad de consentir, beneficio conferido." }
+        source: "Cotnam v. Wisdom; professor's quasi-contract overview"
+      - id: q7
+        type: mcq
+        stem: "Mid-project, a contractor refuses to continue unless the owner adds $20,000, citing no new circumstances; the owner, with no time to find another contractor, agrees in writing. After completion the owner refuses to pay the extra. Who wins?"
+        choices:
+          - { id: a, text: "The contractor; the modification was in writing.", why: "A writing does not supply consideration." }
+          - { id: b, text: "The owner; the contractor promised nothing new, so the modification fails under the pre-existing duty rule, and the threat to breach looks like duress.", correct: true }
+          - { id: c, text: "The contractor; modifications need no consideration.", why: "True only under UCC § 2-209 for goods, and even then good faith is required." }
+          - { id: d, text: "The owner, but only if he protested in writing.", why: "Protest helps on duress but is not required for the consideration defense." }
+        explanation: { en: "Alaska Packers: performance of a pre-existing duty is not consideration; § 89 would save a fair modification made because of unanticipated circumstances, absent here.", es: "Alaska Packers: cumplir un deber preexistente no es consideration; § 89 salvaría una modificación justa por circunstancias imprevistas, ausentes aquí." }
+        source: "Alaska Packers v. Domenico; R.2d §§ 73, 89"
+      - id: q8
+        type: short
+        stem: "In four sentences, distinguish the three sources of contractual obligation covered in the formation unit and the remedy typical of each."
+        answer: "Bargain: a promise supported by consideration, enforced with expectation damages that give the promisee the benefit of the bargain. Reliance: a promise (or offer) that foreseeably induced substantial reliance, enforced under § 90 or § 87(2) as justice requires, often with reliance damages. Restitution: no promise at all, but a benefit conferred that would unjustly enrich the recipient, recoverable in quasi-contract at its reasonable value. The professor's framework asks which source applies before asking what the remedy is."
+        keyPoints: ["bargain/consideration → expectation", "reliance/§ 90 → reliance damages as justice requires", "restitution/quasi-contract → reasonable value", "identify the source first"]
+  - id: contracts-ucc-sof-sol-01
+    topic: defenses
+    title: { en: "UCC statute of frauds and statute of limitations", es: "Statute of frauds y prescripción bajo el UCC" }
+    difficulty: 3
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A caterer orally agrees to buy a $2,800 commercial mixer from a restaurant-supply dealer. Two days later the dealer emails a confirmation with all terms, which the caterer reads and ignores. Three weeks later the caterer refuses delivery. Is the contract enforceable against the caterer?"
+        choices:
+          - { id: a, text: "No; the caterer signed nothing.", why: "Between merchants a confirmation satisfies the statute against the recipient who does not object within ten days." }
+          - { id: b, text: "Yes, if the caterer is a merchant: the dealer's written confirmation, unobjected to within ten days, satisfies § 2-201(2).", correct: true }
+          - { id: c, text: "Yes, because the contract is under $5,000.", why: "The threshold is $500." }
+          - { id: d, text: "No; emails are not writings.", why: "Electronic records qualify as writings and signatures under the UCC and UETA." }
+        explanation: { en: "A caterer who buys equipment for her business is a merchant as to that kind of goods or by occupation; the merchant's confirmation exception then applies.", es: "Una proveedora de banquetes que compra equipo para su negocio es comerciante respecto de esos bienes o por su ocupación; aplica entonces la excepción de confirmación entre comerciantes." }
+        source: "UCC §§ 2-104, 2-201(2)"
+      - id: q2
+        type: mcq
+        stem: "A buyer orally orders ten stock chairs and a custom conference table engraved with his company's logo, $6,000 total. The maker cuts and engraves the table top, then the buyer cancels by phone. Nothing is in writing. To what extent is the contract enforceable?"
+        choices:
+          - { id: a, text: "Not at all; no writing.", why: "The specially manufactured goods exception applies to the table." }
+          - { id: b, text: "As to the table only: it was specially manufactured, unsuitable for others, and substantially begun before repudiation; the stock chairs remain unenforceable unless another exception applies.", correct: true }
+          - { id: c, text: "As to everything, because part of the order was special.", why: "The exception reaches only the goods that meet its terms; divisibility matters." }
+          - { id: d, text: "As to the chairs only.", why: "Backwards." }
+        explanation: { en: "Section 2-201(3)(a) saves the custom item; the professor's hints on the Oct. 28 problem flagged exactly this divisibility question.", es: "La sección 2-201(3)(a) salva el artículo a la medida; las pistas del profesor para el problema del 28 de oct. señalaron justo esta cuestión de divisibilidad." }
+        source: "UCC § 2-201(3)(a)"
+      - id: q3
+        type: mcq
+        stem: "In a deposition the buyer admits he agreed orally to buy 200 units at $40 each but says the deal was never written. Effect under § 2-201?"
+        choices:
+          - { id: a, text: "No effect; admissions do not matter.", why: "An admission in pleadings, testimony or otherwise in court satisfies the statute." }
+          - { id: b, text: "The contract is enforceable up to the quantity admitted, 200 units.", correct: true }
+          - { id: c, text: "The contract is enforceable for any quantity the seller proves.", why: "Enforcement is limited to the quantity admitted." }
+          - { id: d, text: "The admission must be in writing to count.", why: "Testimony suffices." }
+        explanation: { en: "Section 2-201(3)(b): admission in court, limited to the admitted quantity.", es: "Sección 2-201(3)(b): admisión en juicio, limitada a la cantidad admitida." }
+        source: "UCC § 2-201(3)(b)"
+      - id: q4
+        type: mcq
+        stem: "A written sales contract for a boat includes a five-year warranty against hull defects and a clause requiring any warranty suit to be filed within six months of discovery. A hidden defect surfaces in year three and the buyer sues eight months after discovery. The seller pleads limitations."
+        choices:
+          - { id: a, text: "The suit is barred by the six-month clause.", why: "Parties may shorten the period to not less than one year; six months is below the floor." }
+          - { id: b, text: "The six-month clause is invalid; the buyer has four years from accrual, and because the warranty explicitly extends to future performance, accrual was at discovery, so the suit is timely.", correct: true }
+          - { id: c, text: "The suit is barred because four years from delivery have not... wait, have passed.", why: "Three years and eight months have passed since delivery; even on delivery-accrual the suit would be timely." }
+          - { id: d, text: "The warranty itself is void because it exceeds four years.", why: "Warranties may run longer than the limitations period; the future-performance rule exists for that case." }
+        explanation: { en: "Section 2-725: four years, reducible to one, never extendable; explicit future-performance warranties accrue on discovery.", es: "Sección 2-725: cuatro años, reducibles a uno, nunca ampliables; las garantías explícitas de desempeño futuro nacen con el descubrimiento." }
+        source: "UCC § 2-725"
+      - id: q5
+        type: mcq
+        stem: "A buyer repudiates an installment sales contract on March 1, 2022, before any delivery; the seller elects to await performance, and the buyer fails to pay for the first delivery on September 1, 2022. The seller sues on June 1, 2026. Timely?"
+        choices:
+          - { id: a, text: "No; four years from the repudiation expired March 1, 2026.", why: "Where the injured party awaits performance, many courts hold accrual occurs at the performance date; the question is contested and the exam rewards discussing both." }
+          - { id: b, text: "Yes, if accrual is measured from the failure to pay on September 1, 2022; the answer depends on whether the court treats the repudiation or the performance date as the breach, which must be discussed.", correct: true }
+          - { id: c, text: "Yes, because installment contracts have no limitations period.", why: "Each breach has its own period." }
+          - { id: d, text: "No, because the seller waited too long to sue after the repudiation.", why: "Awaiting performance for a commercially reasonable time is permitted by § 2-610." }
+        explanation: { en: "The professor's Oct. 28 hint: are there two breaches, a repudiation and a later failure to pay, each with its own clock? Discuss both and conclude.", es: "La pista del profesor del 28 de oct.: ¿hay dos incumplimientos, un repudio y una falta de pago posterior, cada uno con su propio plazo? Discute ambos y concluye." }
+        source: "UCC §§ 2-610, 2-725; Hochster"
+      - id: q6
+        type: cloze
+        text: "Under § 2-201(1), the writing must be signed by the party to be {{charged}} and is not enforceable beyond the {{quantity}} of goods shown in it."
+        explanation: { en: "Quantity is the one term that must appear; price and other terms may be omitted or misstated.", es: "La cantidad es el único término que debe aparecer; el precio y los demás pueden omitirse o estar mal." }
+      - id: q7
+        type: short
+        stem: "A buyer's signed letter says: I know about the suit order we made the other day, but I must cancel my $2,400 order. Explain in three or four sentences whether this letter can satisfy § 2-201(1) against the buyer."
+        answer: "The writing need only be sufficient to indicate that a contract for sale was made, be signed by the party to be charged, and state a quantity. The letter is signed by the buyer, acknowledges an existing order, and refers to the suits and a $2,400 total, which arguably indicates the contract. The weakness is quantity: the letter names a price, not a number of suits, so the seller must argue that the price plus the reference to the suits identifies the quantity, or fall back on the merchant's confirmation and the other exceptions. A court could go either way, so the exam answer should state both arguments."
+        keyPoints: ["three requirements of § 2-201(1)", "signed by buyer; admits a contract", "quantity problem: price stated, number not", "argue both sides; fall back on exceptions"]
+  - id: contracts-performance-01
+    topic: performance
+    title: { en: "Conditions, substantial performance and repudiation", es: "Condiciones, cumplimiento sustancial y repudio" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A contract to build a patio specifies Texas limestone pavers. The contractor, through a supplier's error, installs Oklahoma limestone of equal quality and appearance. The owner refuses to pay the $18,000 balance. Result?"
+        choices:
+          - { id: a, text: "The owner owes nothing until the pavers are replaced.", why: "An innocent, trivial deviation is substantial performance (Jacob & Youngs)." }
+          - { id: b, text: "The owner owes the balance less the difference in value, which is nominal.", correct: true }
+          - { id: c, text: "The owner owes the balance less the cost of tearing out and replacing the pavers.", why: "Cost of completion is grossly disproportionate to the value difference; economic waste." }
+          - { id: d, text: "The contractor forfeits the balance for breach.", why: "Forfeiture for a trivial deviation is what the doctrine prevents." }
+        explanation: { en: "Jacob & Youngs on a patio: substantial performance satisfies the constructive condition; damages are diminution in value.", es: "Jacob & Youngs en un patio: el cumplimiento sustancial satisface la condición constructiva; los daños son la disminución de valor." }
+        source: "Jacob & Youngs v. Kent; R.2d §§ 237, 241, 348"
+      - id: q2
+        type: mcq
+        stem: "Same facts, but the contract says: payment is expressly conditioned on the use of Texas limestone from the Lueders quarry; no payment shall be due otherwise. Result?"
+        choices:
+          - { id: a, text: "Substantial performance still applies.", why: "Express conditions are strictly enforced; the parties chose forfeiture." }
+          - { id: b, text: "The condition was not satisfied, so no payment is due; the contractor may seek restitution for the benefit conferred, subject to the owner's damages.", correct: true }
+          - { id: c, text: "The condition is unenforceable as a penalty.", why: "Conditions are not penalties; a court might find the clause ambiguous or excuse it to avoid disproportionate forfeiture (§ 229), but the default is enforcement." }
+          - { id: d, text: "The owner must pay because the deviation was innocent.", why: "Innocence matters for substantial performance, not for express conditions." }
+        explanation: { en: "The difference between a promise and an express condition is the difference between damages and forfeiture; § 229 is the only safety valve.", es: "La diferencia entre promesa y condición expresa es la diferencia entre daños y pérdida total; § 229 es la única válvula de escape." }
+        source: "R.2d §§ 224, 227, 229"
+      - id: q3
+        type: mcq
+        stem: "A seller agrees to deliver 1,000 units on June 1 against payment on delivery. On May 15 the buyer emails: our financing fell through; we will not be able to take the goods. What may the seller do?"
+        choices:
+          - { id: a, text: "Nothing until June 1.", why: "A clear repudiation is a present breach (Hochster; § 2-610)." }
+          - { id: b, text: "Treat the email as an anticipatory repudiation: suspend performance, resell the goods, and sue for damages now, or await performance for a commercially reasonable time.", correct: true }
+          - { id: c, text: "Deliver on June 1 and sue for the price.", why: "Delivery after repudiation is not required and may fail the avoidability limit; the price action requires accepted goods or inability to resell (§ 2-709)." }
+          - { id: d, text: "Demand assurance and wait sixty days.", why: "The email is a repudiation, not mere insecurity; assurance is for doubtful cases and the UCC's outer limit is thirty days." }
+        explanation: { en: "Section 2-610 gives the injured party the Hochster options; the measure of damages then runs through §§ 2-703 to 2-710.", es: "La sección 2-610 da al perjudicado las opciones de Hochster; la medida de daños corre luego por los §§ 2-703 a 2-710." }
+        source: "Hochster v. De la Tour; UCC § 2-610"
+      - id: q4
+        type: mcq
+        stem: "A buyer learns that its supplier has missed deliveries to two other customers and is behind on rent. Nothing has been said about the buyer's order, due in six weeks. The buyer's best move under the UCC:"
+        choices:
+          - { id: a, text: "Cancel immediately for anticipatory repudiation.", why: "No repudiation has occurred; cancelling would itself be a breach." }
+          - { id: b, text: "Make a written demand for adequate assurance of performance and suspend any performance for which it has not received the agreed return until assurance arrives.", correct: true }
+          - { id: c, text: "Do nothing; rumors are not grounds.", why: "Reasonable grounds for insecurity may rest on reliable reports of the seller's situation." }
+          - { id: d, text: "Sue for breach now.", why: "There is no breach yet." }
+        explanation: { en: "Section 2-609: reasonable grounds for insecurity, written demand, suspension, and repudiation if no assurance within a reasonable time not exceeding thirty days.", es: "Sección 2-609: razones fundadas de inseguridad, exigencia escrita, suspensión, y repudio si no hay garantías en un plazo razonable no mayor de treinta días." }
+        source: "UCC § 2-609; R.2d § 251"
+      - id: q5
+        type: cloze
+        text: "Under R.2d § 234, where performances can be exchanged simultaneously they are due {{simultaneously}}; where one performance requires time, that performance is due {{first}}."
+        explanation: { en: "Kingston v. Preston in Restatement form.", es: "Kingston v. Preston en forma de Restatement." }
+      - id: q6
+        type: short
+        stem: "List the R.2d § 241 factors for deciding whether a failure to perform is material, in one sentence each."
+        answer: "The extent to which the injured party is deprived of the benefit it reasonably expected; the extent to which it can be adequately compensated by damages; the extent to which the breaching party will suffer forfeiture; the likelihood that the breaching party will cure, considering the circumstances and any assurances; and the extent to which the breaching party's behavior comports with good faith and fair dealing."
+        keyPoints: ["benefit deprived", "adequacy of compensation", "forfeiture", "likelihood of cure", "good faith"]
+  - id: contracts-excuse-remedies-01
+    topic: remedies
+    title: { en: "Excuse and remedies", es: "Excusa y remedios" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A wedding venue burns down a month before the event through no one's fault. The couple sues for breach. The venue is:"
+        choices:
+          - { id: a, text: "Liable; it promised the venue.", why: "Destruction of the subject matter without fault excuses performance (Taylor v. Caldwell)." }
+          - { id: b, text: "Excused by impossibility; both parties are discharged, and the couple may recover any deposit as restitution.", correct: true }
+          - { id: c, text: "Excused only if the contract had a force majeure clause.", why: "The implied condition of continued existence applies without a clause." }
+          - { id: d, text: "Liable for the couple's non-refundable travel costs.", why: "Reliance losses generally lie where they fall after excuse." }
+        explanation: { en: "Taylor v. Caldwell: the thing contracted about perished; neither party promised it would survive.", es: "Taylor v. Caldwell: la cosa objeto del contrato pereció; ninguna parte prometió que sobreviviría." }
+        source: "Taylor v. Caldwell; R.2d §§ 263, 272"
+      - id: q2
+        type: mcq
+        stem: "A trucking company agrees to haul goods from Laredo to Chicago at a fixed price. Fuel prices double after contracting. The trucker claims impracticability."
+        choices:
+          - { id: a, text: "Excused; a doubling of a major cost is impracticable.", why: "Increased cost alone, even substantial, rarely excuses; price swings are a risk the trucker could have priced or hedged (Transatlantic; § 2-615 comment)." }
+          - { id: b, text: "Not excused; market cost increases are foreseeable risks allocated to the party that fixed the price.", correct: true }
+          - { id: c, text: "Excused if the trucker gives notice within thirty days.", why: "Notice is required when excuse applies; it does not create excuse." }
+          - { id: d, text: "Not excused, but the court will raise the price to a fair level.", why: "American courts excuse or enforce; they do not rewrite the price." }
+        explanation: { en: "Transatlantic: a 14 percent increase was far from impracticable; a doubling of one input usually still is not.", es: "Transatlantic: un aumento de 14 por ciento estuvo lejos de la impracticabilidad; duplicar un insumo normalmente tampoco lo es." }
+        source: "Transatlantic Financing v. United States; R.2d § 261"
+      - id: q3
+        type: mcq
+        stem: "A tour company rents a rooftop for $5,000 to watch a championship parade; the city cancels the parade. The rooftop owner sues for the rent."
+        choices:
+          - { id: a, text: "The owner wins; the rooftop was available.", why: "Frustration excuses when the shared purpose is destroyed (Krell)." }
+          - { id: b, text: "The tour company is excused by frustration of purpose if viewing the parade was the basic assumption of both parties, as the price and terms suggest.", correct: true }
+          - { id: c, text: "The tour company is excused by impossibility.", why: "Performance (paying, occupying) remained possible; the purpose failed." }
+          - { id: d, text: "The owner wins unless the contract mentioned the parade.", why: "The assumption may be shown by circumstances; a written reference helps but is not required." }
+        explanation: { en: "Krell v. Henry: the event's cancellation destroyed the foundation of the contract.", es: "Krell v. Henry: la cancelación del evento destruyó la base del contrato." }
+        source: "Krell v. Henry; R.2d § 265"
+      - id: q4
+        type: mcq
+        stem: "A contractor agrees to build a warehouse for $900,000; its expected cost was $800,000. After the contractor has spent $200,000, the owner repudiates. The contractor stops and sues. Expectation damages are:"
+        choices:
+          - { id: a, text: "$900,000.", why: "That ignores the cost the contractor saved by not finishing." }
+          - { id: b, text: "$300,000: the $100,000 lost profit plus the $200,000 spent, equivalent to the contract price less the $600,000 cost avoided.", correct: true }
+          - { id: c, text: "$200,000.", why: "That is reliance only; the contractor also lost its profit." }
+          - { id: d, text: "$100,000.", why: "That is the profit only; the costs incurred must be recovered too." }
+        explanation: { en: "Section 347: loss in value ($900,000) minus cost avoided ($600,000) equals $300,000; the same as profit plus expenses to date.", es: "Sección 347: pérdida de valor ($900,000) menos costo evitado ($600,000) igual a $300,000; lo mismo que utilidad más gastos a la fecha." }
+        source: "R.2d § 347; Rockingham County v. Luten Bridge"
+      - id: q5
+        type: mcq
+        stem: "Same facts, but the contractor kept building for another month after the repudiation, spending $150,000 more. Those costs are:"
+        choices:
+          - { id: a, text: "Recoverable as part of expectation damages.", why: "Losses that could have been avoided by stopping are not recoverable (Luten Bridge; § 350)." }
+          - { id: b, text: "Not recoverable; the contractor should have stopped.", correct: true }
+          - { id: c, text: "Recoverable only in restitution.", why: "The owner received no benefit it wanted; restitution would not help." }
+          - { id: d, text: "Recoverable if the contractor acted in good faith.", why: "Good faith does not make an avoidable loss recoverable." }
+        explanation: { en: "Avoidability: the bridge in the forest.", es: "Evitabilidad: el puente en el bosque." }
+        source: "Rockingham County v. Luten Bridge; R.2d § 350"
+      - id: q6
+        type: mcq
+        stem: "A bakery contracts to buy a custom oven for $60,000, telling the seller it needs it to fulfill a $200,000 holiday order. The seller fails to deliver; the bakery covers with a comparable oven for $70,000 but still loses the holiday order because of the delay. Damages?"
+        choices:
+          - { id: a, text: "$10,000 only.", why: "Consequential damages the seller had reason to know of are also recoverable." }
+          - { id: b, text: "$10,000 cover differential plus the lost profit on the holiday order, if proved with reasonable certainty and not reasonably avoidable.", correct: true }
+          - { id: c, text: "$200,000.", why: "The measure is lost profit, not revenue, and only to the extent not avoidable." }
+          - { id: d, text: "Nothing, because the bakery covered.", why: "Cover fixes the direct damages; it does not eliminate consequential loss the cover could not prevent." }
+        explanation: { en: "Sections 2-712 and 2-715(2): cover price minus contract price, plus consequential loss from requirements the seller had reason to know of that cover could not prevent; Hadley by statute.", es: "Secciones 2-712 y 2-715(2): precio de cobertura menos precio del contrato, más pérdida consecuencial por necesidades que el vendedor conocía y que la cobertura no pudo evitar; Hadley por ley." }
+        source: "UCC §§ 2-712, 2-715; Hadley v. Baxendale"
+      - id: q7
+        type: mcq
+        stem: "A lease requires the tenant to repaint the premises at the end of the term; the tenant does not. Repainting would cost $40,000; the landlord plans to demolish the building, so the unpainted walls reduce its value by nothing. Damages?"
+        choices:
+          - { id: a, text: "$40,000, the cost of completion.", why: "Where completion is clearly disproportionate to the loss in value and the promise is incidental, courts award diminution (Peevyhouse; § 348(2))." }
+          - { id: b, text: "The diminution in value, here nominal; a court might award cost of completion if the breach was willful and the promise central (Groves).", correct: true }
+          - { id: c, text: "Nothing, because the landlord suffered no harm.", why: "Nominal damages at least, and the choice of measure must be analyzed." }
+          - { id: d, text: "$40,000 as liquidated damages.", why: "No liquidated damages clause exists." }
+        explanation: { en: "Cost of completion versus diminution in value: economic waste, willfulness, and whether the promise was the heart of the deal.", es: "Costo de terminación frente a disminución de valor: desperdicio económico, deliberación y si la promesa era el corazón del negocio." }
+        source: "Peevyhouse v. Garland Coal; Groves v. John Wunder; R.2d § 348"
+      - id: q8
+        type: cloze
+        text: "A contract term fixing damages in advance is enforceable only if the amount is reasonable in light of the anticipated or actual loss and the difficulties of proof; otherwise it is void as a {{penalty}} (R.2d § {{356}})."
+        explanation: { en: "Mexico enforces penalties up to the value of the obligation; American law voids them.", es: "México aplica las penas hasta el valor de la obligación; el derecho estadounidense las anula." }
+      - id: q9
+        type: short
+        stem: "Explain in four sentences why Sullivan v. O'Connor let the patient recover on a reliance measure and what that measure included."
+        answer: "The court doubted that a surgeon's promise of a good result should carry full expectation damages, because such promises are often reassurance and the value of a promised result is speculative. It therefore approved a reliance measure that puts the patient where she was before the contract: the fee paid, the worsening of her condition compared with before surgery, and the pain and suffering from the third operation she would not have undergone but for the promise. Pain from the first two operations was excluded because she had bargained for them. The case shows that the choice of interest is itself a legal judgment, not only a matter of proof."
+        keyPoints: ["skepticism about expectation for medical promises", "reliance measure: fee, worsening, pain from extra operation", "bargained-for pain excluded", "choice of interest is a legal judgment"]
+  - id: contracts-exam-short-answers-01
+    title: { en: "Exam-style short answers (points and minutes)", es: "Preguntas cortas estilo examen (puntos y minutos)" }
+    difficulty: 3
+    shuffle: false
+    questions:
+      - id: s1
+        type: short
+        stem: "(2 points, 4 minutes) Distinguish the offeror's revocation from the offeree's rejection in terms of when each becomes effective."
+        answer: "Revocation is effective when received by the offeree, or when the offeree learns reliably of inconsistent conduct (R.2d §§ 42–43); rejection is effective when received by the offeror (§ 40). Neither follows the mailbox rule, which applies only to acceptances."
+        keyPoints: ["revocation on receipt or reliable knowledge", "rejection on receipt", "mailbox rule only for acceptance"]
+      - id: s2
+        type: short
+        stem: "(2 points, 4 minutes) What additional showing does a party asserting unilateral mistake need beyond the elements of mutual mistake?"
+        answer: "Under R.2d § 153, in addition to a mistake about a basic assumption with a material adverse effect and the risk not being on the mistaken party, the mistaken party must show either that enforcement would be unconscionable or that the other party had reason to know of the mistake or caused it."
+        keyPoints: ["§ 153 elements beyond § 152", "unconscionability or other party's knowledge/fault"]
+      - id: s3
+        type: short
+        stem: "(4 points, 8 minutes) What are the competing reasonable risk-allocation criteria a court might apply under R.2d § 154(c), and which do you prefer?"
+        answer: "A court may allocate the risk of a mistake to the party better able to prevent it (the superior knowledge or inspection criterion), to the party who could more cheaply insure or absorb it (the superior risk-bearer criterion), to the party whose expectations the price reflects (the bargain criterion), or by asking what the parties would have agreed had they addressed it (the hypothetical bargain). A defensible preference is the superior risk-bearer test because it tracks economic efficiency and is predictable, with the caution that it can favor sophisticated parties over consumers."
+        keyPoints: ["superior knowledge/prevention", "superior risk-bearer/insurer", "price reflects expectations", "hypothetical bargain", "state and defend a preference"]
+      - id: s4
+        type: short
+        stem: "(2 points, 4 minutes) Who bears the burden of proof when fraud is raised as a defense in a breach of contract action, and by what standard?"
+        answer: "The party asserting fraud as a defense bears the burden of proving each element, and many jurisdictions require clear and convincing evidence for fraud (though a preponderance for innocent misrepresentation); the plaintiff need not disprove fraud as part of its case."
+        keyPoints: ["defendant asserting fraud bears burden", "clear and convincing in many states", "plaintiff need not disprove"]
+      - id: s5
+        type: short
+        stem: "(2 points, 4 minutes) A party discovers after fully performing that it was fraudulently induced to contract. What should it do?"
+        answer: "It must elect promptly: either rescind by notifying the other party and offering to restore what it received, recovering what it gave in restitution; or affirm the contract, keep its benefits, and sue for damages in tort (and for breach of any warranty). Delay after discovery, or continuing to accept benefits, can be treated as affirmation that waives rescission."
+        keyPoints: ["elect promptly", "rescind and restore, or affirm and sue for damages", "delay or acceptance of benefits waives rescission"]
+      - id: s6
+        type: short
+        stem: "(2 points, 4 minutes) Briefly resolve the apparent tension between R.2d § 154(b) and § 157."
+        answer: "Section 154(b) says a party who knowingly contracts with limited knowledge bears the risk of being wrong; § 157 says a mistaken party's own fault does not bar relief unless it amounts to bad faith. They address different things: § 154(b) is about consciously assuming a known uncertainty (no mistake at all, as in Wood v. Boynton), while § 157 is about a genuine mistaken belief reached carelessly (still a mistake, relief allowed unless the carelessness was unfair dealing)."
+        keyPoints: ["§ 154(b): conscious ignorance, risk assumed", "§ 157: careless but genuine mistake, relief unless bad faith", "different situations"]
+      - id: s7
+        type: short
+        stem: "(3 points, 6 minutes) State the UCC rule for when a breach of warranty claim accrues and the one exception."
+        answer: "Under § 2-725(2) a cause of action accrues when the breach occurs regardless of the aggrieved party's lack of knowledge, and a breach of warranty occurs when tender of delivery is made. The exception is a warranty that explicitly extends to future performance of the goods, where discovery must await that performance; then the claim accrues when the breach is or should have been discovered."
+        keyPoints: ["accrual at breach regardless of knowledge", "warranty breach at tender", "explicit future-performance exception → discovery"]
+      - id: s8
+        type: short
+        stem: "(2 points, 4 minutes) Offer a brief criticism of the majority opinion in Sherwood v. Walker."
+        answer: "The parties were not mistaken about the identity of the cow but about one of its qualities, fertility, which goes to value; both knew fertility was uncertain, and the seller set a beef price that reflected its own belief, so the seller should bear the risk of being wrong (R.2d § 154(b)–(c)). The majority's substance-versus-quality line is unworkable because every quality affects what a thing is."
+        keyPoints: ["quality/value, not identity", "risk assumed by pricing", "substance/quality line unworkable"]
+      - id: s9
+        type: short
+        stem: "(2 points, 4 minutes) Explain the difference between an express condition and a constructive condition in terms of the consequence of a small failure."
+        answer: "An express condition must be strictly satisfied; a small failure means the conditioned duty never arises and the other party may withhold performance entirely, subject only to excuse for disproportionate forfeiture (§ 229). A constructive condition is satisfied by substantial performance, so a small failure gives rise to damages but does not discharge the other party's duty."
+        keyPoints: ["express: strict, forfeiture, § 229 safety valve", "constructive: substantial performance, damages only"]
+      - id: s10
+        type: short
+        stem: "(3 points, 6 minutes) Name the three limits on expectation damages and the leading case or section for each."
+        answer: "Foreseeability: losses must arise naturally or have been within the parties' contemplation at contracting (Hadley v. Baxendale; R.2d § 351). Certainty: losses must be proved with reasonable certainty (§ 352). Avoidability: losses the injured party could reasonably have avoided are not recoverable (Rockingham County v. Luten Bridge; Parker; § 350)."
+        keyPoints: ["foreseeability/Hadley/§ 351", "certainty/§ 352", "avoidability/Luten Bridge/§ 350"]
