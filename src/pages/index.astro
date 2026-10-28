@@ -120,7 +120,7 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
   </section>
 
   <section class="sec">
-    <div class="sec-head"><h2><T k="today.roundTitle" /></h2><span class="meta"><T k="today.streak" />: <span class="num" id="streak-n"></span></span></div>
+    <div class="sec-head"><h2><T k="today.roundTitle" /></h2><a class="meta" href="/progress/"><T k="today.streak" />: <span class="num" id="streak-n"></span></a></div>
     <div class="pad round-pad">
       <div class="week-dots" id="week-dots" aria-hidden="true"></div>
       <p><T k="today.roundDesc" /></p>
@@ -148,7 +148,7 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
     const data = JSON.parse(document.getElementById('calendar-data').textContent);
     function paintStreak(today) {
       const activity = get('activity', {}) || {};
-      document.getElementById('streak-n').textContent = t('today.streakDays', { n: streak(activity, today) });
+      const sn = streak(activity, today); document.getElementById('streak-n').textContent = sn === 1 ? t('today.streakDay1') : t('today.streakDays', { n: sn });
       document.getElementById('week-dots').innerHTML = week(activity, today).map(d => `<span class="dot ${d.active ? 'on' : ''} ${d.date === today ? 'today' : ''}"></span>`).join('');
       const btn = document.getElementById('round-btn');
       const done = ((activity[today] || {}).rounds || 0) >= 1;

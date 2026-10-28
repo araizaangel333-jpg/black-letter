@@ -1,0 +1,162 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+const courses = await getCollection('courses');
+const briefs = await getCollection('briefs');
+const quizzes = await getCollection('quizzes');
+const exercises = await getCollection('exercises');
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship'];
+const data = {
+  courses: order.map(id => courses.find(c => c.id === id)).filter(Boolean).map(c => ({ id: c.id, code: c.data.code, color: c.data.color, title: c.data.title, briefs: briefs.filter(b => b.data.course === c.id).map(b => b.id) })),
+  quizzes: quizzes.map(q => ({ id: q.id, title: q.data.title, course: q.data.course, n: q.data.questions.length })),
+  exercises: exercises.map(e => ({ id: e.id, title: e.data.title, course: e.data.course })),
+  subjects: ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'classroom', 'general', 'courts'],
+};
+---
+<Base title={ui['progress.title'].en}>
+  <header class="sec">
+    <h1><T k="progress.title" /></h1>
+    <p class="prose muted small"><T k="progress.intro" /></p>
+  </header>
+
+  <section class="sec" id="p-streak">
+    <div class="sec-head"><h2><T k="progress.streak" /></h2><span class="meta num" id="p-best"></span></div>
+    <div class="empty" id="p-empty" hidden>
+      <p><T k="progress.empty" /></p>
+      <p><a class="btn primary" href="/games/round/"><T k="today.roundStart" /></a></p>
+    </div>
+    <div class="hero-row">
+      <span class="hero-num" id="p-days"></span>
+      <div class="week-dots" id="p-week" aria-hidden="true"></div>
+    </div>
+    <p class="small muted"><T k="progress.thisWeek" /></p>
+    <dl class="stats">
+      <div class="stat"><dt><T k="progress.reviews" /></dt><dd id="s-reviews">0</dd></div>
+      <div class="stat"><dt><T k="progress.games" /></dt><dd id="s-games">0</dd></div>
+      <div class="stat"><dt><T k="progress.coldcalls" /></dt><dd id="s-coldcalls">0</dd></div>
+      <div class="stat"><dt><T k="progress.quizzes" /></dt><dd id="s-quiz">0</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="progress.mastery" /></h2><span class="meta legend"><i class="sw known"></i><T k="progress.known" /> <i class="sw learning"></i><T k="progress.learning" /></span></div>
+    <ul class="mastery" id="p-mastery"></ul>
+    <p class="small muted"><T k="progress.masteryHelp" /></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="progress.coldcall" /></h2><span class="meta num" id="p-cc-all"></span></div>
+    <ul class="mastery" id="p-coverage"></ul>
+    <p class="small"><a href="/games/#coldcall"><T k="games.upcomingBriefs" /></a></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="games.quiz" /></h2><span class="meta num" id="p-quiz-n"></span></div>
+    <p class="small muted" id="p-quiz-help"></p>
+    <ul class="list" id="p-quiz"></ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="more.writing" /></h2><span class="meta num" id="p-ex-n"></span></div>
+    <ul class="list" id="p-ex"></ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="progress.records" /></h2></div>
+    <ul class="list" id="p-records"></ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="more.data" /></h2></div>
+    <p class="small" id="p-export"></p>
+  </section>
+
+  <script type="application/json" id="progress-data" set:html={JSON.stringify(data)} />
+  <script>
+    import { get, prefs } from '../../lib/store.js';
+    import { t, bi, lang, onLangChange } from '../../lib/i18n.js';
+    import { todayISO, formatDate } from '../../lib/dates.js';
+    import { streak, week } from '../../lib/streak.js';
+    import { masteryBySubject, coverage, weekTotals, daysSinceExport } from '../../lib/progress.js';
+    import { esc, fmtSecs } from '../../islands/games/engine.js';
+
+    const data = JSON.parse(document.getElementById('progress-data').textContent);
+    const today = todayISO();
+    let items = [];
+    fetch('/data/items.json').then(r => r.json()).then(j => { items = j.items; paint(); }).catch(paint);
+
+    const pct = (n, t) => t ? `${(100 * n / t).toFixed(1)}%` : '0%';
+    const subjectLabel = (s) => s === 'all' ? t('games.scopeAll') : t(`subject.${s}`);
+    const KIND_KEYS = { 'def-term': 'test.defTerm', 'term-def': 'test.termDef', 'es-en': 'test.esEn', 'hook-case': 'test.hookCase', 'rule-case': 'test.ruleCase', 'case-hook': 'test.caseHook', 'mixed': 'test.mixed', 'term': 'match.terms', 'case': 'match.cases' };
+
+    function paint() {
+      const L = lang();
+      const activity = get('activity', {}) || {}, srs = get('srs', {}) || {}, cc = get('coldcall', {}) || {};
+      const quiz = get('quiz', {}) || {}, ex = get('exercises', {}) || {}, games = get('games', {}) || {};
+
+      // racha y semana
+      const s = streak(activity, today), bestStreak = Math.max(get('streakBest', 0) || 0, s);
+      document.getElementById('p-days').textContent = s === 1 ? t('today.streakDay1') : t('today.streakDays', { n: s });
+      document.getElementById('p-best').textContent = bestStreak > s ? t('progress.best', { n: bestStreak }) : '';
+      document.getElementById('p-week').innerHTML = week(activity, today).map(d => `<span class="dot ${d.active ? 'on' : ''} ${d.date === today ? 'today' : ''}"></span>`).join('');
+      const w = weekTotals(activity, today, cc);
+      document.getElementById('s-reviews').textContent = w.reviews; document.getElementById('s-games').textContent = w.games;
+      document.getElementById('s-coldcalls').textContent = w.coldcalls; document.getElementById('s-quiz').textContent = w.quiz;
+      document.getElementById('p-empty').hidden = Object.keys(activity).length > 0 || Object.keys(srs).length > 0;
+
+      // dominio por materia
+      const m = masteryBySubject(items, srs);
+      document.getElementById('p-mastery').innerHTML = data.subjects.filter(sub => m[sub]).map(sub => {
+        const x = m[sub];
+        const href = sub === 'classroom' || sub === 'general' || sub === 'courts' ? `/games/test/?scope=${sub}` : `/games/learn/?scope=${sub}`;
+        return `<li class="mrow">
+          <a class="mname" href="${href}">${esc(subjectLabel(sub))}</a><span class="mval num">${esc(t('progress.knownOf', { n: x.known, t: x.total }))}</span>
+          <div class="meter" role="img" aria-label="${esc(t('progress.knownOf', { n: x.known, t: x.total }))}"><i class="known" style="width:${pct(x.known, x.total)}"></i><i class="learning" style="width:${pct(x.learning, x.total)}"></i></div>
+          <span class="msub small muted">${esc(t('progress.restLine', { l: x.learning, n: x.fresh }))}</span>
+        </li>`;
+      }).join('');
+
+      // cobertura de cold call
+      let drilledAll = 0, totalAll = 0;
+      document.getElementById('p-coverage').innerHTML = data.courses.filter(c => c.briefs.length).map(c => {
+        const cv = coverage(c.briefs, cc); drilledAll += cv.drilled; totalAll += cv.total;
+        return `<li class="mrow">
+          <span class="mname"><span class="code" data-size="sm" style="--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)" aria-hidden="true">${esc(c.code)}</span>${esc(bi(c.title))}</span>
+          <span class="mval num">${esc(t('progress.drilled', { n: cv.drilled, t: cv.total }))}</span>
+          <div class="meter" role="img" aria-label="${esc(t('progress.drilled', { n: cv.drilled, t: cv.total }))}"><i class="known" style="width:${pct(cv.drilled, cv.total)}"></i></div>
+          <span class="msub small muted">${cv.avg == null ? '' : esc(t('progress.avg', { n: cv.avg }))}</span>
+        </li>`;
+      }).join('');
+      document.getElementById('p-cc-all').textContent = t('progress.drilled', { n: drilledAll, t: totalAll });
+
+      // quizzes: los de puntaje más bajo primero
+      const taken = data.quizzes.filter(q => quiz[q.id]).map(q => ({ ...q, r: quiz[q.id] })).sort((a, b) => (a.r.correct / a.r.total) - (b.r.correct / b.r.total));
+      document.getElementById('p-quiz-n').textContent = t('progress.quizTaken', { n: taken.length, t: data.quizzes.length });
+      document.getElementById('p-quiz-help').textContent = taken.length ? t('progress.lowest') : t('progress.noQuiz');
+      document.getElementById('p-quiz').innerHTML = taken.slice(0, 5).map(q => `<li><a href="/quiz/${esc(q.id)}/">${esc(bi(q.title))}</a> <span class="muted small num">${q.r.correct}/${q.r.total} · ${esc(formatDate(q.r.last, L))}</span></li>`).join('');
+
+      // escritura: últimos intentos
+      const attempts = data.exercises.map(e => ({ ...e, a: ex[e.id]?.attempts?.slice(-1)[0] })).filter(e => e.a).sort((a, b) => b.a.date.localeCompare(a.a.date));
+      document.getElementById('p-ex-n').textContent = t('progress.attempted', { n: attempts.length, t: data.exercises.length });
+      document.getElementById('p-ex').innerHTML = attempts.length ? attempts.slice(0, 5).map(e => `<li><a href="/exercises/${esc(e.id)}/">${esc(bi(e.title))}</a> <span class="muted small num">${e.a.score}/${e.a.total} · ${esc(formatDate(e.a.date, L))}</span></li>`).join('') : `<li class="muted">${esc(t('progress.noWriting'))}</li>`;
+
+      // récords
+      const recs = Object.entries(games.best || {}).map(([k, v]) => {
+        const [game, ...rest] = k.split(':');
+        if (game === 'match') return { label: `${t('games.match')} · ${t(KIND_KEYS[rest[0]] || rest[0])} · ${subjectLabel(rest[1])}`, value: fmtSecs(v) };
+        if (game === 'test') return { label: `${t('games.test')} · ${t(KIND_KEYS[rest[0]] || rest[0])} · ${subjectLabel(rest[1])}`, value: `${v}/${rest[2]}` };
+        if (game === 'elements') return { label: `${t('games.elements')} · ${subjectLabel(rest[0])}`, value: `${v}%` };
+        return null;
+      }).filter(Boolean);
+      document.getElementById('p-records').innerHTML = recs.length ? recs.map(r => `<li>${esc(r.label)} <span class="num"><b>${esc(r.value)}</b></span></li>`).join('') : `<li class="muted">${esc(t('progress.noRecords'))}</li>`;
+
+      // exportación
+      const last = prefs().lastExport, days = daysSinceExport(last, today);
+      const msg = days == null ? t('progress.exportNever') : t('progress.export', { when: formatDate(String(last).slice(0, 10), L) }) + (days > 14 ? ` ${t('progress.exportOld')}` : '');
+      document.getElementById('p-export').innerHTML = `${esc(msg)} <a href="/more/">${esc(t('progress.exportLink'))}</a>`;
+    }
+    onLangChange(paint);
+  </script>
+</Base>

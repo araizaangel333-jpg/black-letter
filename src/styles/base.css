@@ -332,3 +332,23 @@ select { font: inherit; max-width: 100%; min-width: 0; font-size: 15px; padding:
 .el-list .el-pit { font-size: 14px; background: var(--accent-soft); padding: 4px 8px; border-radius: var(--radius-sm); justify-self: start; }
 .q-nav:has(.small) { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 @media (min-width: 600px) { .el-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- progreso ---- */
+.hero-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.hero-num { font-family: var(--font-ui); font-size: 48px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0; }
+.stat { display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--rule-2); border-radius: var(--radius-sm); background: var(--paper-2); }
+.stat dt { font-family: var(--font-ui); font-size: 12.5px; color: var(--ink-3); }
+.stat dd { margin: 0; font-family: var(--font-ui); font-size: 22px; font-weight: 600; line-height: 1.1; }
+.legend { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; flex-shrink: 0; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--ink); }
+.sw.learning { background: var(--accent); }
+.mastery { list-style: none; display: grid; gap: 14px; }
+.mrow { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; }
+.mname { font-family: var(--font-ui); font-weight: 600; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.mval { font-family: var(--font-ui); font-size: 14px; color: var(--ink-2); white-space: nowrap; }
+.meter { grid-column: 1 / -1; display: flex; gap: 2px; height: 8px; border-radius: 4px; background: var(--paper-3); overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--ink); border-radius: 4px; }
+.meter i.learning { background: var(--accent); }
+.msub { grid-column: 1 / -1; }
+@media (max-width: 400px) { .stats { grid-template-columns: repeat(2, 1fr); } }

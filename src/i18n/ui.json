@@ -1230,5 +1230,137 @@
   "test.caseHook": {
     "en": "Case name → facts",
     "es": "Nombre del caso → hechos"
+  },
+  "more.progress": {
+    "en": "Progress",
+    "es": "Progreso"
+  },
+  "more.progressDesc": {
+    "en": "Streak, what you know by subject, cold-call coverage, quiz scores and personal bests.",
+    "es": "Racha, lo que sabes por materia, cobertura de cold call, puntajes de quizzes y récords."
+  },
+  "progress.title": {
+    "en": "Progress",
+    "es": "Progreso"
+  },
+  "progress.intro": {
+    "en": "What this browser remembers: your streak, what you know by subject, which cases you have drilled. Nothing is sent anywhere.",
+    "es": "Lo que recuerda este navegador: tu racha, lo que sabes por materia y qué casos has ensayado. Nada se envía a ningún lado."
+  },
+  "progress.streak": {
+    "en": "Streak",
+    "es": "Racha"
+  },
+  "progress.best": {
+    "en": "Best {n} days",
+    "es": "Récord {n} días"
+  },
+  "progress.thisWeek": {
+    "en": "Last seven days",
+    "es": "Últimos siete días"
+  },
+  "progress.reviews": {
+    "en": "Reviews",
+    "es": "Repasos"
+  },
+  "progress.games": {
+    "en": "Games",
+    "es": "Juegos"
+  },
+  "progress.coldcalls": {
+    "en": "Cold calls",
+    "es": "Cold calls"
+  },
+  "progress.quizzes": {
+    "en": "Quizzes",
+    "es": "Quizzes"
+  },
+  "progress.empty": {
+    "en": "Nothing recorded yet. Start with today's round.",
+    "es": "Todavía no hay nada. Empieza con la ronda de hoy."
+  },
+  "progress.mastery": {
+    "en": "What you know, by subject",
+    "es": "Lo que sabes, por materia"
+  },
+  "progress.known": {
+    "en": "Known",
+    "es": "Sabido"
+  },
+  "progress.learning": {
+    "en": "Learning",
+    "es": "En aprendizaje"
+  },
+  "progress.knownOf": {
+    "en": "{n} of {t} known",
+    "es": "{n} de {t} sabidos"
+  },
+  "progress.restLine": {
+    "en": "{l} learning · {n} not seen yet",
+    "es": "{l} en aprendizaje · {n} sin ver"
+  },
+  "progress.masteryHelp": {
+    "en": "Known: reviewed in flashcards and not missed since. Learning: missed recently. Tap a subject to practice it.",
+    "es": "Sabido: repasado en flashcards sin fallar desde entonces. En aprendizaje: fallado hace poco. Toca una materia para practicarla."
+  },
+  "progress.coldcall": {
+    "en": "Cold-call coverage",
+    "es": "Cobertura de cold call"
+  },
+  "progress.drilled": {
+    "en": "{n} of {t} cases drilled",
+    "es": "{n} de {t} casos ensayados"
+  },
+  "progress.avg": {
+    "en": "Average confidence {n} of 2",
+    "es": "Confianza media {n} de 2"
+  },
+  "progress.quizTaken": {
+    "en": "{n} of {t} sets taken",
+    "es": "{n} de {t} sets hechos"
+  },
+  "progress.lowest": {
+    "en": "Lowest scores first: retake these.",
+    "es": "Los puntajes más bajos primero: repite estos."
+  },
+  "progress.noQuiz": {
+    "en": "No quiz taken yet.",
+    "es": "Aún no has hecho ningún quiz."
+  },
+  "progress.attempted": {
+    "en": "{n} of {t} exercises attempted",
+    "es": "{n} de {t} ejercicios intentados"
+  },
+  "progress.noWriting": {
+    "en": "No exercise attempted yet.",
+    "es": "Aún no has intentado ningún ejercicio."
+  },
+  "progress.records": {
+    "en": "Personal bests",
+    "es": "Récords personales"
+  },
+  "progress.noRecords": {
+    "en": "Play a match, a quick test or the elements builder to set a record.",
+    "es": "Juega un match, un test rápido o arma los elementos para fijar un récord."
+  },
+  "progress.export": {
+    "en": "Last export: {when}.",
+    "es": "Última exportación: {when}."
+  },
+  "progress.exportNever": {
+    "en": "Never exported.",
+    "es": "Nunca exportado."
+  },
+  "progress.exportOld": {
+    "en": "More than two weeks ago.",
+    "es": "Hace más de dos semanas."
+  },
+  "progress.exportLink": {
+    "en": "Export from More",
+    "es": "Exportar desde Más"
+  },
+  "today.streakDay1": {
+    "en": "1 day",
+    "es": "1 día"
   }
 }

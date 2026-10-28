@@ -36,7 +36,7 @@ Node ≥ 22.23 (Astro 7). Nunca edites `dist/`, `.astro/` ni `public/map/data/st
 | Mapa judicial (versión actual, estática) | `public/map/` | no tocar salvo datos |
 | Quizzes (mcq, cloze, short, citation) | `src/content/quizzes/<curso>.yaml` | `/quiz` |
 | Juegos (motor, flashcards, match, test, learn, elements, ronda, cold call) | `src/islands/games/*`, `src/pages/games/*`; datos en `src/pages/data/{items,doctrines}.json.js` | — |
-| Estado en el navegador | solo `src/lib/store.js` | — |
+| Estado en el navegador | solo `src/lib/store.js`; cifras de progreso en `src/lib/progress.js`, página `/progress/` | — |
 | PWA (manifest, service worker) | `public/manifest.webmanifest`, `public/sw.js` | sube `VERSION` en `sw.js` al cambiar la estrategia de caché |
 
 ## Copyright y contenido (obligatorio)
