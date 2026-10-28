@@ -80,10 +80,10 @@ html[data-lang="es"] h1.l10n[lang="es"], html[data-lang="es"] h2.l10n[lang="es"]
 .code[data-size="sm"] { width: 30px; height: 30px; border-radius: 7px; font-size: 11px; }
 
 /* legal pad: la superficie del plan del día */
-.pad { background: var(--pad); color: var(--pad-ink); border-radius: var(--radius); padding: 16px 18px 16px 18px; position: relative; background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--pad-rule) 27px 28px); background-origin: content-box; }
+.pad { background: var(--pad); color: var(--pad-ink); border-radius: var(--radius); padding: 16px 18px 16px 56px; position: relative; background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--pad-rule) 27px 28px); background-origin: content-box; }
 .pad h2 { color: inherit; font-size: 17px; }
 .pad p { line-height: 28px; }
-.pad::before { content: ""; position: absolute; top: 0; bottom: 0; left: 44px; width: 1px; background: var(--accent); opacity: 0.55; }
+.pad::before { content: ""; position: absolute; top: 0; bottom: 0; left: 40px; width: 1px; background: var(--accent); opacity: 0.55; }
 
 /* tarjetas (solo donde una cosa es un objeto aparte: explicadores, juegos) */
 .card { display: block; background: var(--paper-2); border: 1px solid var(--rule-2); border-radius: var(--radius); padding: 16px 18px; text-decoration: none; }
@@ -126,7 +126,8 @@ html[data-lang="es"] h1.l10n[lang="es"], html[data-lang="es"] h2.l10n[lang="es"]
 
 @media (min-width: 960px) {
   body { padding-bottom: 32px; }
-  .tabbar { position: sticky; top: 52px; bottom: auto; border-top: 0; border-bottom: 1px solid var(--rule-2); }
+  .page { padding-top: 72px; }
+  .tabbar { position: fixed; top: 53px; bottom: auto; border-top: 0; border-bottom: 1px solid var(--rule-2); padding-bottom: 0; }
   .tabbar ul { height: 48px; }
   .tabbar a { flex-direction: row; gap: 8px; font-size: 14px; }
   .tabbar a svg { width: 20px; height: 20px; }
