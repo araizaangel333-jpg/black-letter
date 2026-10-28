@@ -230,3 +230,5 @@ html[data-lang="es"] h1.l10n[lang="es"], html[data-lang="es"] h2.l10n[lang="es"]
 .grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .grade .btn { min-height: 56px; font-size: 15px; }
 select { font: inherit; font-size: 15px; padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink); min-height: 44px; }
+.flash-front { display: grid; gap: 8px; }
+.flash-front .f-hook { font-family: var(--font-text); font-weight: 400; font-style: italic; font-size: 17px; color: var(--ink-2); }
