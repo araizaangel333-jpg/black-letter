@@ -18,6 +18,7 @@ items:
     topic: sources
     title: { en: "Law in the United States, chapter 1", es: "Law in the United States, capítulo 1" }
     pages: [{ book: abernathy-2, pages: "3–14" }]
+    notes: [perspectives/sources-and-method]
     tasks:
       - { en: "Prepare to discuss the legal system of your country.", es: "Prepárate para discutir el sistema jurídico de tu país." }
       - { en: "Start an outline for this class.", es: "Empieza el outline de la clase." }
@@ -29,8 +30,11 @@ items:
     title: { en: "Separation of powers: Constitution art. I §§ 1–3 and art. II; Law in the United States, chapter 6", es: "División de poderes: Constitución art. I §§ 1–3 y art. II; Law in the United States, capítulo 6" }
     pages:
       - { book: us-constitution, sections: "art. I §§ 1–3; art. II (skip § 1 cls. 2–5)" }
-      - { book: abernathy-2, pages: "219–231, 235–244" }
+      - { book: abernathy-2, pages: "219–231, 235–244; plus ch. 6 A.1–7 (2d ed. pp. 193–204) per the Sept. 10 announcement" }
+    briefs: [perspectives/youngstown-sheet-and-tube-v-sawyer]
+    notes: [perspectives/separation-of-powers]
     tasks: [{ en: "Discussion: does your home country divide powers, and how?", es: "Discusión: ¿tu país divide los poderes y cómo?" }]
+    note: { en: "Sept. 10 announcement: continue last class's discussion, then the constitutional sources of executive power; review the slides on federal assertions.", es: "Anuncio del 10 de sept.: continuar la discusión anterior y luego las fuentes constitucionales del poder ejecutivo; repasar las diapositivas sobre federal assertions." }
   - id: pals-sep18
     type: reading
     date: "2026-09-18"
@@ -38,8 +42,10 @@ items:
     topic: courts
     title: { en: "Courts: Law in the United States, chapter 3; Constitution art. III §§ 1–2", es: "Tribunales: Law in the United States, capítulo 3; Constitución art. III §§ 1–2" }
     pages:
-      - { book: abernathy-2, pages: "109–139" }
+      - { book: abernathy-2, pages: "109–139; per the Sept. 17 announcement, ch. 3 §§ A–B through Republican Party of Minnesota v. White" }
       - { book: us-constitution, sections: "art. III §§ 1–2" }
+    briefs: [perspectives/republican-party-of-minnesota-v-white]
+    notes: [perspectives/courts-and-judges]
     tasks: [{ en: "Discussion: how do people become judges in your country?", es: "Discusión: ¿cómo se llega a juez en tu país?" }]
   - id: pals-sep25
     type: reading
@@ -47,7 +53,9 @@ items:
     week: 5
     topic: courts
     title: { en: "Judges and the Supreme Court: Law in the United States, chapter 5", es: "Jueces y la Corte Suprema: Law in the United States, capítulo 5" }
-    pages: [{ book: abernathy-2, pages: "161–179, 187–191" }]
+    pages: [{ book: abernathy-2, pages: "161–179, 187–191; per the Sept. 24 announcement, ch. 5 pp. 143–155 (Marbury, through note 10)" }]
+    briefs: [perspectives/marbury-v-madison]
+    notes: [perspectives/courts-and-judges]
     tasks:
       - { en: "Research: who are the current nine Supreme Court justices and who nominated them?", es: "Investiga: ¿quiénes son los nueve justices actuales y quién los nominó?" }
       - { en: "Discussion: the Supreme Court of your country.", es: "Discusión: la Corte Suprema de tu país." }
@@ -61,6 +69,7 @@ items:
       - { book: us-constitution, sections: "art. I § 8 cl. 3 (listed as art. III in the schedule); art. VI cl. 2; amend. X" }
       - { book: abernathy-2, pages: "377–383" }
     briefs: [perspectives/heart-of-atlanta-motel-v-united-states]
+    notes: [perspectives/federalism]
     note: { en: "Heart of Atlanta Motel, Inc. v. United States came as a handout.", es: "Heart of Atlanta Motel, Inc. v. United States llegó como handout." }
   - id: pals-oct09-midterm
     type: exam
@@ -68,31 +77,41 @@ items:
     week: 7
     title: { en: "Midterm", es: "Examen parcial" }
   - id: pals-oct16
-    type: reading
+    type: event
     date: "2026-10-16"
     week: 8
-    topic: citizenship
-    title: { en: "Amending the Constitution and citizenship: art. V; amendments I, II, VI, XIII–XV; Elk v. Wilkins; Chae Chan Ping v. United States", es: "Reformar la Constitución y ciudadanía: art. V; enmiendas I, II, VI, XIII–XV; Elk v. Wilkins; Chae Chan Ping v. United States" }
-    pages: [{ book: us-constitution, sections: "art. V; amends. I, II, VI, XIII, XIV, XV" }]
-    briefs: [perspectives/elk-v-wilkins, perspectives/chae-chan-ping-v-united-states]
-    tasks: [{ en: "Brief the assigned case.", es: "Haz el brief del caso asignado." }]
+    title: { en: "No class (cancelled Oct. 15; a make-up session will be scheduled)", es: "Sin clase (cancelada el 15 de oct.; se programará una sesión de reposición)" }
+    note: { en: "The citizenship readings moved to Oct. 23.", es: "Las lecturas de ciudadanía pasaron al 23 de oct." }
   - id: pals-oct23
     type: reading
     date: "2026-10-23"
+    time: { start: "09:45", end: "12:05" }
     week: 9
-    topic: speech
-    title: { en: "Free speech: Law in the United States, chapter 12", es: "Libertad de expresión: Law in the United States, capítulo 12" }
-    pages: [{ book: abernathy-2, pages: "667–671, 680–682, 687–691" }]
-    tasks: [{ en: "Discussion: is flag burning a crime in your country?", es: "Discusión: ¿quemar la bandera es delito en tu país?" }]
+    topic: citizenship
+    title: { en: "Amendments and citizenship: art. V, amends. I, II, VI, XIII–XV; Chae Chan Ping; treaties in U.S. courts (ch. 9 C); Brown v. Board (ch. 11 A, note 2); ch. 12 introduction", es: "Enmiendas y ciudadanía: art. V, enmiendas I, II, VI, XIII–XV; Chae Chan Ping; tratados en tribunales de EE. UU. (cap. 9 C); Brown v. Board (cap. 11 A, nota 2); introducción del cap. 12" }
+    pages:
+      - { book: us-constitution, sections: "art. V; amends. I, II, VI, XIII, XIV, XV" }
+      - { book: abernathy-2, pages: "390–391 (ch. 9 C, note 1 on treaties; skip Sosa); ch. 11 A (Brown, note 2); ch. 12 introduction; speech pages 667–671, 680–682, 687–691 from the original schedule" }
+    briefs: [perspectives/chae-chan-ping-v-united-states, perspectives/elk-v-wilkins, perspectives/brown-v-board-of-education]
+    notes: [perspectives/rights-and-scrutiny, perspectives/sources-and-method]
+    tasks:
+      - { en: "Discussion: are courts in your country agents of societal change?", es: "Discusión: ¿los tribunales de tu país son agentes de cambio social?" }
+      - { en: "Discussion (original schedule): is flag burning a crime in your country?", es: "Discusión (calendario original): ¿quemar la bandera es delito en tu país?" }
+    note: { en: "Per the Oct. 19 and 22 announcements: class runs twenty minutes longer; the Lincoln film is recommended.", es: "Según los anuncios del 19 y 22 de oct.: la clase dura veinte minutos más; se recomienda la película Lincoln." }
   - id: pals-oct30
     type: reading
     date: "2026-10-30"
     week: 10
     topic: equality
-    title: { en: "Equal protection and fundamental rights: Law in the United States pp. 558–577; Loving v. Virginia", es: "Igualdad y derechos fundamentales: Law in the United States pp. 558–577; Loving v. Virginia" }
-    pages: [{ book: abernathy-2, pages: "558–577" }]
-    briefs: [perspectives/loving-v-virginia]
-    tasks: [{ en: "Discussion: LGBT rights in your country.", es: "Discusión: derechos LGBT en tu país." }]
+    title: { en: "The Loving Story (documentary) and Loving v. Virginia; due process and liberty: Lochner (ch. 10 A.1, notes 1–2); two articles on economic freedom (Canvas)", es: "The Loving Story (documental) y Loving v. Virginia; debido proceso y libertad: Lochner (cap. 10 A.1, notas 1–2); dos artículos sobre libertad económica (Canvas)" }
+    pages: [{ book: abernathy-2, pages: "558–577 (original schedule); ch. 10 A.1, Lochner with notes 1 and 2 (Oct. 26 announcement)" }]
+    briefs: [perspectives/loving-v-virginia, perspectives/lochner-v-new-york]
+    notes: [perspectives/rights-and-scrutiny]
+    tasks:
+      - { en: "Discussion: what distinguishes liberalism in the economic sense from liberalism in the civil-rights sense?", es: "Discusión: ¿qué distingue al liberalismo en sentido económico del liberalismo de derechos civiles?" }
+      - { en: "Discussion (original schedule): LGBT rights in your country.", es: "Discusión (calendario original): derechos LGBT en tu país." }
+      - { en: "Read Tom Wolfe's Pell-Mell and J.H. Cullum Clark's essay on the Constitution as a charter for economic and political freedom (Canvas files).", es: "Lee Pell-Mell de Tom Wolfe y el ensayo de J.H. Cullum Clark sobre la Constitución como carta de libertad económica y política (archivos de Canvas)." }
+    note: { en: "Loving v. Virginia is final exam material; read it before or after class.", es: "Loving v. Virginia es material del examen final; léelo antes o después de clase." }
   - id: pals-nov06
     type: reading
     date: "2026-11-06"
@@ -100,6 +119,7 @@ items:
     topic: criminal
     title: { en: "Criminal procedure: Law in the United States, chapter 11", es: "Procedimiento penal: Law in the United States, capítulo 11" }
     pages: [{ book: abernathy-2, pages: "597–606, 612–614, 619–623" }]
+    notes: [perspectives/criminal-procedure]
   - id: pals-nov13
     type: reading
     date: "2026-11-13"
@@ -107,8 +127,10 @@ items:
     topic: criminal
     title: { en: "Rights of the accused: Miranda v. Arizona, Duncan v. Louisiana, Roper v. Simmons", es: "Derechos del acusado: Miranda v. Arizona, Duncan v. Louisiana, Roper v. Simmons" }
     briefs: [perspectives/miranda-v-arizona, perspectives/duncan-v-louisiana, perspectives/roper-v-simmons]
+    notes: [perspectives/criminal-procedure]
   - id: pals-nov20-review
     type: review
     date: "2026-11-20"
     week: 13
-    title: { en: "Review session", es: "Sesión de repaso" }
+    title: { en: "Review session (the final is comprehensive and in class; date to be announced)", es: "Sesión de repaso (el final es comprensivo y en clase; fecha por anunciar)" }
+    notes: [perspectives/how-to-study-pals]

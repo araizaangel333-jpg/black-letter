@@ -4,7 +4,9 @@ title: { en: "Perspectives of the American Legal System", es: "Perspectivas del 
 term: fall-2026
 professor: { name: "Cesar Garza", title: "Professor" }
 meetings:
-  - { day: fri, start: "09:45", end: "11:45" }
+  - { day: fri, start: "09:45", end: "11:45", room: "106 Florence Hall" }
+extras:
+  - { kind: office-hours, day: thu, start: "16:00", end: "17:00", room: "Zoom (schedule by email)", label: { en: "Office hours", es: "Horas de oficina" } }
 books:
   - id: abernathy-2
     cite: "Charles F. Abernathy, Law in the United States (2nd ed., West Academic 2016)"
@@ -24,12 +26,12 @@ topics:
   - { id: equality, order: 7, title: { en: "Equal protection and fundamental rights", es: "Igualdad ante la ley y derechos fundamentales" }, barTested: true }
   - { id: criminal, order: 8, title: { en: "Criminal procedure and rights of the accused (ch. 11)", es: "Procedimiento penal y derechos del acusado (cap. 11)" }, barTested: true }
 assessment:
-  - { kind: midterm, date: "2026-10-09", format: { en: "Midterm on October 9", es: "Examen parcial el 9 de octubre" } }
-  - { kind: other, format: { en: "Final evaluation format to confirm with the syllabus; review session on November 20", es: "Formato de la evaluación final por confirmar; sesión de repaso el 20 de noviembre" }, verified: false }
-  - { kind: participation, format: { en: "Weekly discussion comparing your home country's system; brief the assigned case", es: "Discusión semanal comparando el sistema de tu país; brief del caso asignado" } }
+  - { kind: midterm, date: "2026-10-09", format: { en: "Taken from home on Examify: ten essay-form questions, ten points each, on the Abernathy readings and the amendments; notes, books and AI allowed", es: "Desde casa en Examify: diez preguntas de ensayo de diez puntos cada una sobre las lecturas de Abernathy y las enmiendas; se permiten apuntes, libros y AI" } }
+  - { kind: final-exam, format: { en: "Comprehensive in-class final; date to be announced. The professor flagged Loving v. Virginia as final exam material. Completing all assignments is required to sit for it.", es: "Final comprensivo en clase; fecha por anunciar. El profesor señaló Loving v. Virginia como material del final. Hay que completar todas las tareas para poder presentarlo." }, verified: false }
+  - { kind: participation, format: { en: "Required and graded; attendance taken each session; weekly discussion comparing your home country's system; brief the assigned case", es: "Obligatoria y calificada; se pasa lista cada sesión; discusión semanal comparando el sistema de tu país; brief del caso asignado" } }
 materials:
   canvas: true
-  note: { en: "The book plus the Constitution, judicial opinions, articles and the professor's slides. Usually meets Fridays.", es: "El libro más la Constitución, opiniones judiciales, artículos y presentaciones del profesor. Normalmente los viernes." }
+  note: { en: "Canvas: the syllabus (Aug. 24), the class schedule (Aug. 25), the professor's slides, and articles for Oct. 30 (Tom Wolfe's Pell-Mell; J.H. Cullum Clark's essay on the Constitution and economic freedom). Reading amendments arrive as announcements the week of class; check Thursday night. The use of AI is encouraged.", es: "Canvas: el syllabus (24 ago.), el calendario de clases (25 ago.), las diapositivas del profesor y los artículos para el 30 de oct. (Pell-Mell de Tom Wolfe; el ensayo de J.H. Cullum Clark sobre la Constitución y la libertad económica). Los cambios de lectura llegan como anuncios la semana de la clase; revisa el jueves por la noche. Se fomenta el uso de AI." }
 color: c4
 about:
   en: "The map of the whole system: how federal and state law fit together, what each branch can do, how courts work, and which rights limit all of it. The interactive court map lives here."

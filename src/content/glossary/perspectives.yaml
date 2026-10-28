@@ -144,3 +144,712 @@ items:
     es: { term: "soberanía", explanation: "Autoridad suprema del Estado. La Corte deriva de ella el poder de excluir extranjeros (Chae Chan Ping) y la “doble soberanía” federal y estatal." }
     examples: [{ en: "Exclusion of foreigners is an incident of sovereignty.", es: "La exclusión de extranjeros es un atributo de la soberanía." }]
     related: [plenary-power, federalism]
+  # --- Fuentes y método (cap. 1) ---
+  - id: common-law
+    term: common law
+    pos: noun
+    topic: sources
+    en: { definition: "Law made by judges deciding cases, which binds later courts through precedent; also the name of the Anglo-American legal tradition as a whole, as opposed to the civil-law tradition of codes." }
+    es: { term: "common law (derecho de creación judicial)", explanation: "Derecho hecho por los jueces al resolver casos, que obliga a los tribunales posteriores por la fuerza del precedente; también el nombre de toda la tradición angloamericana frente a la tradición civilista de códigos.", falseFriend: "No es el “derecho común” civilista (el código civil como derecho supletorio). Tampoco significa que no haya leyes: hay miles, pero los jueces las interpretan con el mismo método del precedente." }
+    examples: [{ en: "Contracts is still mostly common law; the UCC codified only sales.", es: "Contracts sigue siendo sobre todo common law; el UCC solo codificó la compraventa." }]
+    related: [stare-decisis, statute, dictum]
+  - id: stare-decisis
+    term: stare decisis (precedent)
+    pos: latin
+    topic: sources
+    en: { definition: "The rule that a court follows its own earlier decisions and those of the courts above it; one decision is enough to bind, and a later court departs only with a reasoned justification." }
+    es: { term: "stare decisis (precedente obligatorio)", explanation: "Un tribunal sigue sus propias decisiones anteriores y las de los tribunales superiores. Basta una sola decisión para obligar. En México la jurisprudencia exigía reiteración (cinco tesis) hasta la reforma de 2021, que dio fuerza obligatoria a los precedentes de la SCJN por mayoría calificada (CPEUM art. 94)." }
+    examples: [{ en: "Brown departed from Plessy only after explaining why its reasoning no longer held.", es: "Brown se apartó de Plessy solo después de explicar por qué su razonamiento ya no se sostenía." }]
+    related: [common-law, dictum, binding-vs-persuasive-authority]
+  - id: dictum
+    term: dictum (obiter dictum) vs. holding
+    pos: latin
+    topic: sources
+    en: { definition: "The holding is the rule necessary to decide the case on its facts and binds later courts; a dictum is anything else the opinion says, persuasive at most." }
+    es: { term: "obiter dictum frente a holding (ratio decidendi)", explanation: "El holding es la regla necesaria para decidir el caso con sus hechos y obliga; el dictum es todo lo demás que dice la sentencia, persuasivo a lo sumo. Equivale a la distinción ratio decidendi / obiter dictum; la tesis mexicana abstrae la regla, el holding queda atado a los hechos." }
+    examples: [{ en: "Marbury's remarks about the political question were dicta; the jurisdiction ruling was the holding.", es: "Lo que Marbury dijo sobre las cuestiones políticas fue dictum; la decisión sobre jurisdicción fue el holding." }]
+    related: [stare-decisis, binding-vs-persuasive-authority]
+  - id: binding-vs-persuasive-authority
+    term: binding (mandatory) vs. persuasive authority
+    pos: phrase
+    topic: sources
+    en: { definition: "Binding authority must be followed: the constitution, statutes and regulations in force, and decisions of higher courts in the same jurisdiction. Persuasive authority may be followed: other jurisdictions' decisions, lower courts, Restatements, treatises and law reviews." }
+    es: { term: "autoridad vinculante y autoridad persuasiva", explanation: "La vinculante se sigue: constitución, leyes y reglamentos vigentes, decisiones de tribunales superiores de la misma jurisdicción. La persuasiva puede seguirse: otras jurisdicciones, tribunales inferiores, Restatements, tratados doctrinales. Los Restatements son secundarios aunque se citen mucho." }
+    examples: [{ en: "A Fifth Circuit opinion binds Texas federal district courts; a Ninth Circuit opinion only persuades them.", es: "Una sentencia del Quinto Circuito obliga a los juzgados federales de Texas; una del Noveno solo los persuade." }]
+    related: [stare-decisis, hierarchy-of-sources]
+  - id: statute
+    term: statute
+    pos: noun
+    topic: sources
+    en: { definition: "A law enacted by a legislature, Congress or a state legislature, and collected in a code (the United States Code, the Texas codes); courts interpret statutes but cannot refuse to apply a valid one." }
+    es: { term: "ley (statute)", explanation: "Norma aprobada por una legislatura (el Congreso o la de un estado) y compilada en un código. Los tribunales la interpretan pero no pueden dejar de aplicarla si es válida.", falseFriend: "“Estatuto” en español son los bylaws de una sociedad o el reglamento de una organización; statute es ley." }
+    examples: [{ en: "The Civil Rights Act of 1964 is a federal statute codified in title 42.", es: "La Civil Rights Act de 1964 es una ley federal codificada en el título 42." }]
+    related: [regulation, ordinance, hierarchy-of-sources]
+  - id: regulation
+    term: regulation (administrative rule)
+    pos: noun
+    topic: sources
+    en: { definition: "A rule issued by an executive agency under authority delegated by a statute, collected in the Code of Federal Regulations or a state administrative code; binding like a statute if within the delegation." }
+    es: { term: "reglamento administrativo (regulation)", explanation: "Norma que dicta una agencia del ejecutivo con autoridad delegada por una ley; se compila en el Code of Federal Regulations o en el código administrativo del estado. Obliga como ley si está dentro de la delegación. Equivale al reglamento del art. 89 I CPEUM, pero aquí lo dictan agencias, no el presidente." }
+    examples: [{ en: "The SEC's Rule 10b-5 is a regulation under the Securities Exchange Act.", es: "La Regla 10b-5 de la SEC es un reglamento bajo la Securities Exchange Act." }]
+    related: [statute, hierarchy-of-sources]
+  - id: ordinance
+    term: ordinance
+    pos: noun
+    topic: sources
+    en: { definition: "A law enacted by a city or county within the powers the state gives it: zoning, noise, business licenses, local police matters." }
+    es: { term: "ordenanza municipal (bando, reglamento municipal)", explanation: "Norma de un municipio o condado dentro de las facultades que le da el estado: uso de suelo, ruido, licencias, policía local. Equivale a los bandos y reglamentos municipales del art. 115 CPEUM." }
+    examples: [{ en: "Dallas regulates short-term rentals by ordinance.", es: "Dallas regula las rentas de corto plazo por ordenanza." }]
+    related: [statute, police-power]
+  - id: hierarchy-of-sources
+    term: hierarchy of sources
+    pos: noun
+    topic: sources
+    en: { definition: "The order of authority: the U.S. Constitution; federal statutes and treaties; federal regulations; state constitutions; state statutes; state regulations and local ordinances; with judge-made common law filling the gaps and interpreting all of the above." }
+    es: { term: "jerarquía de fuentes", explanation: "Constitución federal; leyes federales y tratados; reglamentos federales; constituciones estatales; leyes estatales; reglamentos estatales y ordenanzas; y el common law judicial llenando huecos e interpretando todo. Parecido al art. 133 CPEUM, con la diferencia de que el derecho estatal tiene su propio ámbito reservado (Décima Enmienda) y no es subordinado en todo." }
+    examples: [{ en: "A Texas statute that conflicts with a valid federal statute yields under the Supremacy Clause.", es: "Una ley de Texas que choca con una ley federal válida cede por la Supremacy Clause." }]
+    related: [supremacy-clause, statute, regulation, federalism]
+  - id: restatement
+    term: Restatement of the Law
+    pos: noun
+    topic: sources
+    en: { definition: "A treatise by the American Law Institute that states the common-law rules of a field (contracts, torts, agency) in black-letter form with comments; secondary authority, but often adopted by courts." }
+    es: { term: "Restatement (compilación doctrinal del ALI)", explanation: "Tratado del American Law Institute que formula las reglas del common law de una materia en forma de artículos con comentarios. Es autoridad secundaria, pero los tribunales lo adoptan con frecuencia. Tiene derechos de autor: se cita por sección y se parafrasea." }
+    examples: [{ en: "Promissory estoppel is Restatement (Second) of Contracts § 90.", es: "La promissory estoppel es la sección 90 del Restatement (Second) of Contracts." }]
+    related: [binding-vs-persuasive-authority, common-law]
+  - id: adversarial-system
+    term: adversarial system
+    pos: noun
+    topic: sources
+    en: { definition: "A process in which the parties, through their lawyers, investigate, present evidence and argue, while a neutral judge (and often a jury) decides; the court does not investigate on its own." }
+    es: { term: "sistema adversarial (acusatorio)", explanation: "Las partes, a través de sus abogados, investigan, presentan pruebas y argumentan; un juez neutral (y a menudo un jurado) decide; el tribunal no investiga por su cuenta. México lo adoptó en materia penal con la reforma de 2008; en materia civil el juez mexicano sigue teniendo más iniciativa." }
+    examples: [{ en: "Discovery exists because the parties, not the judge, gather the facts.", es: "El discovery existe porque las partes, no el juez, reúnen los hechos." }]
+    related: [jury-trial, common-law]
+  - id: jurisprudence
+    term: jurisprudence
+    pos: noun
+    topic: sources
+    en: { definition: "The philosophy or theory of law (natural law, positivism, realism); occasionally used loosely for a body of case law on a topic." }
+    es: { term: "filosofía del derecho (jurisprudence)", explanation: "Teoría o filosofía del derecho. Solo a veces se usa para el conjunto de decisiones sobre un tema.", falseFriend: "La jurisprudencia mexicana (criterios obligatorios) se dice case law o precedent, no jurisprudence." }
+    examples: [{ en: "Holmes's The Common Law is a work of jurisprudence.", es: "The Common Law de Holmes es una obra de filosofía del derecho." }]
+    related: [common-law, doctrine]
+  - id: doctrine
+    term: doctrine
+    pos: noun
+    topic: sources
+    en: { definition: "A rule or body of rules developed by courts over many cases (the doctrine of standing, the political question doctrine, the Lochner doctrine)." }
+    es: { term: "doctrina jurisprudencial (doctrine)", explanation: "Regla o conjunto de reglas que los tribunales desarrollan a lo largo de muchos casos.", falseFriend: "La “doctrina” mexicana (la opinión de los autores) se dice scholarship, commentary o secondary authority." }
+    examples: [{ en: "The state action doctrine limits the Fourteenth Amendment to government conduct.", es: "La state action doctrine limita la Decimocuarta Enmienda a la conducta del gobierno." }]
+    related: [jurisprudence, stare-decisis]
+  # --- División de poderes (cap. 6) ---
+  - id: separation-of-powers
+    term: separation of powers
+    pos: noun
+    topic: powers
+    en: { definition: "The Constitution's allocation of legislative power to Congress (art. I), executive power to the President (art. II) and judicial power to the courts (art. III), with each branch limited to its own function and checked by the others." }
+    es: { term: "división de poderes", explanation: "La Constitución asigna el poder legislativo al Congreso (art. I), el ejecutivo al Presidente (art. II) y el judicial a los tribunales (art. III); cada poder se limita a su función y los otros lo controlan. Equivale al art. 49 CPEUM, con un presidente más fuerte frente al Congreso en lo electoral y más débil en lo legislativo." }
+    examples: [{ en: "Youngstown is the classic separation-of-powers case: the President cannot legislate.", es: "Youngstown es el caso clásico de división de poderes: el Presidente no puede legislar." }]
+    related: [checks-and-balances, executive-power, judicial-review]
+  - id: checks-and-balances
+    term: checks and balances
+    pos: noun
+    topic: powers
+    en: { definition: "The tools each branch has over the others: the veto and the override, Senate confirmation of appointments and treaties, impeachment, judicial review, the power of the purse, and the President's pardon." }
+    es: { term: "pesos y contrapesos", explanation: "Las herramientas de cada poder sobre los otros: veto y superación del veto, ratificación del Senado de nombramientos y tratados, juicio político, control judicial, el control del presupuesto y el indulto." }
+    examples: [{ en: "Congress overrode the veto with two-thirds of each house.", es: "El Congreso superó el veto con dos tercios de cada cámara." }]
+    related: [separation-of-powers, veto, impeachment, advice-and-consent]
+  - id: enumerated-powers
+    term: enumerated powers
+    pos: noun
+    topic: powers
+    en: { definition: "The principle that Congress may act only under a power the Constitution lists (mostly in art. I § 8: taxing, spending, commerce, war, naturalization), plus what is necessary and proper to carry them out; everything else stays with the states or the people." }
+    es: { term: "facultades enumeradas (expresas)", explanation: "El Congreso solo actúa con base en una facultad que la Constitución enumera (sobre todo el art. I § 8: impuestos, gasto, comercio, guerra, naturalización), más lo necesario y adecuado para ejercerlas; lo demás queda en los estados o el pueblo. Es la misma lógica del art. 124 CPEUM." }
+    examples: [{ en: "Lopez struck down the Gun-Free School Zones Act because no enumerated power supported it.", es: "Lopez anuló la Gun-Free School Zones Act porque ninguna facultad enumerada la sostenía." }]
+    related: [necessary-and-proper-clause, commerce-clause, tenth-amendment]
+  - id: necessary-and-proper-clause
+    term: Necessary and Proper Clause
+    pos: noun
+    topic: powers
+    en: { definition: "Article I § 8 cl. 18, which lets Congress choose reasonable means to carry out its enumerated powers; McCulloch v. Maryland read it broadly (a national bank is a legitimate means to fiscal ends)." }
+    es: { term: "cláusula de facultades implícitas (Necessary and Proper)", explanation: "Art. I § 8 cl. 18: el Congreso puede elegir medios razonables para ejercer sus facultades enumeradas; McCulloch v. Maryland la leyó con amplitud. Equivale a la fracción XXXI del art. 73 CPEUM." }
+    examples: [{ en: "Federal criminal law rests largely on the Necessary and Proper Clause tied to other powers.", es: "El derecho penal federal descansa en buena parte en la cláusula de facultades implícitas unida a otras facultades." }]
+    related: [enumerated-powers, commerce-clause]
+  - id: executive-power
+    term: executive power (Article II)
+    pos: noun
+    topic: powers
+    en: { definition: "The powers of the President: to execute the laws, command the armed forces, make treaties and appoint officers with Senate consent, grant pardons, veto bills, and receive ambassadors; what lies beyond the text is the subject of Youngstown and its progeny." }
+    es: { term: "poder ejecutivo (artículo II)", explanation: "Las facultades del Presidente: ejecutar las leyes, mandar las fuerzas armadas, celebrar tratados y nombrar funcionarios con ratificación del Senado, indultar, vetar y recibir embajadores. Lo que no está en el texto es el tema de Youngstown. Compárese con el art. 89 CPEUM, más detallado." }
+    examples: [{ en: "An executive order can direct agencies, but it cannot create law Congress refused to pass.", es: "Una orden ejecutiva puede dirigir a las agencias, pero no crear la ley que el Congreso se negó a aprobar." }]
+    related: [youngstown-framework, executive-order, commander-in-chief, take-care-clause]
+  - id: youngstown-framework
+    term: Youngstown framework (Jackson's three categories)
+    pos: noun
+    topic: powers
+    en: { definition: "Presidential power is at its maximum when Congress has authorized the action, in a zone of twilight when Congress is silent, and at its lowest ebb when the President acts against the express or implied will of Congress, relying only on his own powers minus those of Congress." }
+    es: { term: "marco de Youngstown (las tres categorías de Jackson)", explanation: "El poder presidencial está en su máximo cuando el Congreso autorizó la acción, en una zona de penumbra cuando el Congreso calla, y en su punto más bajo cuando el Presidente actúa contra la voluntad expresa o implícita del Congreso. Es la plantilla de todo examen sobre poder presidencial." }
+    examples: [{ en: "The steel seizure fell in the third category because Taft-Hartley had rejected seizure.", es: "La toma de las acereras cayó en la tercera categoría porque Taft-Hartley había rechazado la expropiación." }]
+    related: [executive-power, separation-of-powers]
+    difficulty: 2
+  - id: executive-order
+    term: executive order
+    pos: noun
+    topic: powers
+    en: { definition: "A written directive from the President to the executive branch, valid only to the extent the Constitution or a statute supplies the authority; it cannot bind private persons on its own." }
+    es: { term: "orden ejecutiva (≈ decreto presidencial)", explanation: "Instrucción escrita del Presidente a la administración, válida solo en la medida en que la Constitución o una ley le den fundamento; no obliga a particulares por sí sola. Se parece al decreto o acuerdo presidencial, pero sin la facultad reglamentaria general del art. 89 I CPEUM." }
+    examples: [{ en: "Truman's seizure order was an executive order with no statutory basis.", es: "La orden de Truman fue una orden ejecutiva sin base legal." }]
+    related: [executive-power, youngstown-framework]
+  - id: veto
+    term: veto and override
+    pos: noun
+    topic: powers
+    en: { definition: "The President may return a bill unsigned; Congress may still enact it with two-thirds of each house. A bill unsigned for ten days becomes law unless Congress has adjourned (the pocket veto)." }
+    es: { term: "veto y superación del veto", explanation: "El Presidente puede devolver una ley sin firmar; el Congreso puede aprobarla de todos modos con dos tercios de cada cámara. Si no firma en diez días la ley entra en vigor, salvo que el Congreso haya cerrado sesiones (pocket veto). Equivale al art. 72 CPEUM." }
+    examples: [{ en: "The Taft-Hartley Act became law over Truman's veto.", es: "La Taft-Hartley Act entró en vigor por encima del veto de Truman." }]
+    related: [checks-and-balances]
+  - id: advice-and-consent
+    term: advice and consent (Senate confirmation)
+    pos: noun
+    topic: powers
+    en: { definition: "The Senate's power to approve or reject the President's nominations of judges, ambassadors and principal officers, and to ratify treaties by a two-thirds vote." }
+    es: { term: "ratificación del Senado (advice and consent)", explanation: "Facultad del Senado de aprobar o rechazar los nombramientos presidenciales de jueces, embajadores y altos funcionarios, y de ratificar tratados por dos tercios. Equivale al art. 76 CPEUM." }
+    examples: [{ en: "Every Supreme Court justice sits because a majority of the Senate consented.", es: "Cada justice de la Corte Suprema ocupa su asiento porque una mayoría del Senado lo ratificó." }]
+    related: [checks-and-balances, article-iii-judge]
+  - id: impeachment
+    term: impeachment
+    pos: noun
+    topic: powers
+    en: { definition: "The House's accusation of the President, judges or other officers for treason, bribery or high crimes and misdemeanors by majority vote; the Senate tries the case and removes only with two-thirds. Impeachment is the charge, not the removal." }
+    es: { term: "juicio político (impeachment)", explanation: "La Cámara de Representantes acusa por mayoría al Presidente, a jueces u otros funcionarios por traición, cohecho u otros delitos graves; el Senado juzga y solo destituye con dos tercios.", falseFriend: "Impeachment es la acusación, no la destitución: tres presidentes han sido impeached y ninguno removido. Compárese con los arts. 110–111 CPEUM." }
+    examples: [{ en: "The House impeached; the Senate acquitted.", es: "La Cámara acusó; el Senado absolvió." }]
+    related: [checks-and-balances]
+  - id: commander-in-chief
+    term: Commander in Chief Clause
+    pos: noun
+    topic: powers
+    en: { definition: "Article II § 2 makes the President commander of the armed forces, which gives operational control of war but not power over the domestic economy or the power to declare war, which belongs to Congress." }
+    es: { term: "cláusula de comandante en jefe", explanation: "El art. II § 2 hace al Presidente comandante de las fuerzas armadas: control operativo de la guerra, no poder sobre la economía interna ni facultad de declarar la guerra, que es del Congreso. Compárese con el art. 89 VI–VIII CPEUM." }
+    examples: [{ en: "Youngstown held the clause did not reach steel mills in Ohio.", es: "Youngstown resolvió que la cláusula no alcanzaba a las acereras de Ohio." }]
+    related: [executive-power, youngstown-framework]
+  - id: take-care-clause
+    term: Take Care Clause
+    pos: noun
+    topic: powers
+    en: { definition: "Article II § 3: the President shall take care that the laws be faithfully executed; the source of the duty to enforce statutes and of debates about enforcement discretion." }
+    es: { term: "cláusula de ejecución fiel de las leyes (Take Care)", explanation: "Art. II § 3: el Presidente cuidará de que las leyes se ejecuten fielmente; fuente del deber de aplicar las leyes y de los debates sobre la discrecionalidad para no aplicarlas." }
+    examples: [{ en: "Refusing to spend appropriated funds raises a Take Care Clause problem.", es: "Negarse a gastar fondos aprobados plantea un problema de la cláusula Take Care." }]
+    related: [executive-power]
+  - id: pardon-power
+    term: pardon power
+    pos: noun
+    topic: powers
+    en: { definition: "The President's nearly unreviewable power to pardon federal offenses, except in cases of impeachment; it does not reach state crimes." }
+    es: { term: "facultad de indulto", explanation: "Facultad casi irrevisable del Presidente para perdonar delitos federales, salvo en casos de juicio político; no alcanza a los delitos estatales. Compárese con el art. 89 XIV CPEUM." }
+    examples: [{ en: "A presidential pardon cannot erase a Texas conviction.", es: "Un indulto presidencial no borra una condena de Texas." }]
+    related: [executive-power, checks-and-balances]
+  # --- Tribunales y jueces (caps. 3 y 5) ---
+  - id: original-jurisdiction
+    term: original jurisdiction
+    pos: noun
+    topic: courts
+    en: { definition: "A court's power to hear a case first, as a trial court; the Supreme Court has it only in cases involving ambassadors and those where a state is a party (art. III § 2), and Congress cannot enlarge it (Marbury)." }
+    es: { term: "jurisdicción originaria (competencia en primera instancia)", explanation: "Facultad de conocer un caso desde el inicio, como tribunal de primera instancia; la Corte Suprema la tiene solo en casos de embajadores y en los que un estado es parte, y el Congreso no puede ampliarla (Marbury)." }
+    examples: [{ en: "Disputes between two states over a river go to the Supreme Court's original jurisdiction.", es: "Los litigios entre dos estados por un río van a la jurisdicción originaria de la Corte Suprema." }]
+    related: [appellate-jurisdiction, judicial-review, jurisdiction]
+  - id: appellate-jurisdiction
+    term: appellate jurisdiction
+    pos: noun
+    topic: courts
+    en: { definition: "A court's power to review decisions of lower courts; the Supreme Court's appellate jurisdiction is subject to such exceptions and regulations as Congress makes." }
+    es: { term: "jurisdicción de apelación", explanation: "Facultad de revisar decisiones de tribunales inferiores; la de la Corte Suprema está sujeta a las excepciones y reglas que fije el Congreso." }
+    examples: [{ en: "Almost everything the Supreme Court decides comes through its appellate jurisdiction on certiorari.", es: "Casi todo lo que decide la Corte Suprema llega por su jurisdicción de apelación vía certiorari." }]
+    related: [original-jurisdiction, certiorari]
+  - id: mandamus
+    term: writ of mandamus
+    pos: latin
+    topic: courts
+    en: { definition: "A court order commanding a public official to perform a ministerial duty the law requires; the remedy Marbury sought and the Supreme Court could not issue in an original action." }
+    es: { term: "mandamus (orden judicial de cumplimiento)", explanation: "Orden judicial que manda a un funcionario cumplir un deber que la ley le impone y que no admite discreción. Es el remedio que pedía Marbury. Cumple una función parecida al amparo contra omisiones, pero es un remedio del common law, no constitucional." }
+    examples: [{ en: "Delivering a signed commission is ministerial, so mandamus was the right remedy.", es: "Entregar un nombramiento firmado es un acto reglado, así que el mandamus era el remedio correcto." }]
+    related: [original-jurisdiction, judicial-review]
+  - id: certiorari
+    term: certiorari (cert)
+    pos: latin
+    topic: courts
+    en: { definition: "The discretionary writ by which the Supreme Court agrees to review a case; four justices must vote to grant it, and the Court takes about sixty cases a year out of thousands of petitions." }
+    es: { term: "certiorari (admisión discrecional)", explanation: "Auto discrecional con el que la Corte Suprema acepta revisar un caso; hacen falta cuatro votos (rule of four) y la Corte admite unas sesenta causas al año de miles de peticiones. Se parece a la facultad de atracción de la SCJN, pero aquí es la vía normal, no la excepción." }
+    examples: [{ en: "Denial of certiorari is not a decision on the merits.", es: "Negar el certiorari no es una decisión de fondo." }]
+    related: [appellate-jurisdiction]
+  - id: federal-question-jurisdiction
+    term: federal question jurisdiction
+    pos: noun
+    topic: courts
+    en: { definition: "Federal courts' power to hear cases arising under the Constitution, federal statutes or treaties (28 U.S.C. § 1331); the federal issue must appear in the plaintiff's own claim." }
+    es: { term: "competencia federal por materia (federal question)", explanation: "Facultad de los tribunales federales para conocer casos que surgen de la Constitución, leyes federales o tratados (28 U.S.C. § 1331); la cuestión federal debe estar en la demanda misma. Equivale a la competencia por materia federal del art. 104 CPEUM." }
+    examples: [{ en: "A claim under the Civil Rights Act belongs in federal court under § 1331.", es: "Un reclamo bajo la Civil Rights Act va a tribunal federal por el § 1331." }]
+    related: [diversity-jurisdiction, jurisdiction]
+  - id: diversity-jurisdiction
+    term: diversity jurisdiction
+    pos: noun
+    topic: courts
+    en: { definition: "Federal courts' power to hear state-law disputes between citizens of different states (or a foreign citizen) when more than $75,000 is at stake (28 U.S.C. § 1332); meant to protect out-of-state parties from local bias." }
+    es: { term: "competencia federal por diversidad de ciudadanía", explanation: "Facultad de los tribunales federales para conocer litigios de derecho estatal entre ciudadanos de distintos estados (o un extranjero) cuando se disputan más de $75,000; busca proteger al foráneo del sesgo local. No tiene equivalente mexicano: un juez federal aplicando derecho de Texas." }
+    examples: [{ en: "A Mexican company suing a Texas supplier for $2 million may file in federal court on diversity.", es: "Una empresa mexicana que demanda a un proveedor de Texas por $2 millones puede ir a tribunal federal por diversidad." }]
+    related: [federal-question-jurisdiction, jurisdiction]
+    difficulty: 2
+  - id: article-iii-judge
+    term: Article III judge
+    pos: noun
+    topic: courts
+    en: { definition: "A federal judge nominated by the President, confirmed by the Senate, holding office during good behavior (life tenure) with a salary that cannot be reduced; district judges, circuit judges and Supreme Court justices." }
+    es: { term: "juez federal del artículo III", explanation: "Juez federal nominado por el Presidente, ratificado por el Senado, con cargo vitalicio mientras observe buena conducta y sueldo irreducible: jueces de distrito, de circuito y justices. Contraste: en México los ministros duraban 15 años y desde la reforma de 2024 los jueces federales se eligen por voto popular." }
+    examples: [{ en: "An Article III judge can be removed only by impeachment.", es: "Un juez del artículo III solo puede ser removido por juicio político." }]
+    related: [judicial-independence, advice-and-consent, judicial-elections]
+  - id: judicial-elections
+    term: judicial elections
+    pos: noun
+    topic: courts
+    en: { definition: "The method most states use to choose some or all of their judges: partisan elections (Texas), nonpartisan elections, or appointment followed by retention votes; federal judges are never elected." }
+    es: { term: "elección popular de jueces", explanation: "Método de la mayoría de los estados para elegir a algunos o a todos sus jueces: elecciones partidistas (Texas), no partidistas, o nombramiento seguido de votos de ratificación. Los jueces federales nunca se eligen. México adoptó la elección popular de jueces federales en 2024–2025, lo que hace a Republican Party v. White un caso de discusión obligada." }
+    examples: [{ en: "Texas Supreme Court justices run in partisan elections for six-year terms.", es: "Los justices de la Suprema Corte de Texas compiten en elecciones partidistas por periodos de seis años." }]
+    related: [judicial-independence, article-iii-judge, free-speech]
+  - id: judicial-independence
+    term: judicial independence
+    pos: noun
+    topic: courts
+    en: { definition: "The structural protections that let judges decide without fear of retaliation: life tenure and salary protection for federal judges, and, for elected state judges, codes of conduct that limit campaign promises." }
+    es: { term: "independencia judicial", explanation: "Protecciones estructurales para que los jueces decidan sin temor a represalias: cargo vitalicio y sueldo protegido en lo federal; en los estados con elecciones, códigos de conducta que limitan las promesas de campaña." }
+    examples: [{ en: "The announce clause in White was Minnesota's attempt to protect judicial independence; it lost to free speech.", es: "La announce clause de White fue el intento de Minnesota de proteger la independencia judicial; perdió frente a la libertad de expresión." }]
+    related: [article-iii-judge, judicial-elections]
+  - id: standing
+    term: standing
+    pos: noun
+    topic: courts
+    en: { definition: "The requirement that the plaintiff show a concrete injury, caused by the defendant, that the court can redress; without it there is no case or controversy under Article III and the federal court cannot act." }
+    es: { term: "legitimación procesal (standing; ≈ interés jurídico o legítimo)", explanation: "El actor debe mostrar un daño concreto, causado por el demandado y que el tribunal pueda remediar; sin eso no hay caso o controversia y el tribunal federal no puede actuar. Equivale al interés jurídico o legítimo del amparo, con la diferencia de que no hay acciones abstractas de inconstitucionalidad ante los tribunales federales." }
+    examples: [{ en: "A taxpayer who dislikes a federal program usually lacks standing to challenge it.", es: "Un contribuyente al que no le gusta un programa federal normalmente carece de legitimación para impugnarlo." }]
+    related: [political-question, judicial-review]
+  - id: political-question
+    term: political question doctrine
+    pos: noun
+    topic: courts
+    en: { definition: "Courts decline to decide issues the Constitution commits to another branch or that lack judicially manageable standards: impeachment procedures, partisan gerrymandering, recognition of foreign governments." }
+    es: { term: "doctrina de las cuestiones políticas", explanation: "Los tribunales se abstienen de decidir asuntos que la Constitución encarga a otro poder o que carecen de criterios judiciales manejables: procedimientos de juicio político, distritación partidista, reconocimiento de gobiernos extranjeros." }
+    examples: [{ en: "Marbury itself distinguished ministerial duties, which courts enforce, from political acts, which they do not review.", es: "El propio Marbury distinguió los deberes reglados, que los tribunales exigen, de los actos políticos, que no revisan." }]
+    related: [standing, judicial-review]
+    difficulty: 2
+  - id: circuit-court-of-appeals
+    term: circuit (court of appeals)
+    pos: noun
+    topic: courts
+    en: { definition: "One of the thirteen federal intermediate appellate courts; Texas is in the Fifth Circuit (with Louisiana and Mississippi), seated in New Orleans. Panels of three judges decide; the full court may rehear en banc." }
+    es: { term: "circuito (tribunal federal de apelación)", explanation: "Uno de los trece tribunales federales intermedios de apelación; Texas está en el Quinto Circuito (con Luisiana y Misisipi), con sede en Nueva Orleans. Deciden paneles de tres jueces; el pleno puede volver a conocer en banc. Equivale a los tribunales colegiados de circuito, de donde México tomó el nombre." }
+    examples: [{ en: "A Dallas federal case is appealed to the Fifth Circuit.", es: "Un caso federal de Dallas se apela ante el Quinto Circuito." }]
+    related: [appellate-jurisdiction, article-iii-judge]
+  - id: opinion-types
+    term: majority, concurring and dissenting opinions
+    pos: noun
+    topic: courts
+    en: { definition: "The majority opinion states the holding and binds; a concurrence agrees with the result but adds or differs in reasoning; a dissent disagrees; a plurality opinion lacks a majority for its reasoning and binds only on the narrowest common ground." }
+    es: { term: "voto mayoritario, concurrente y disidente", explanation: "La opinión mayoritaria fija el holding y obliga; el voto concurrente coincide en el resultado pero añade o difiere en razones; el disidente discrepa; una opinión de pluralidad carece de mayoría en sus razones y obliga solo en lo común más estrecho. Equivalen a los votos concurrentes y particulares de la SCJN, pero aquí se leen y citan tanto como la mayoría." }
+    examples: [{ en: "Jackson's Youngstown concurrence is cited more than Black's majority opinion.", es: "El voto concurrente de Jackson en Youngstown se cita más que la opinión mayoritaria de Black." }]
+    related: [dictum, stare-decisis]
+  - id: life-of-a-civil-case
+    term: life of a civil case
+    pos: phrase
+    topic: courts
+    en: { definition: "Complaint, service, answer or motion to dismiss, discovery (documents, depositions, interrogatories), summary judgment, pretrial, trial (often by jury), verdict and judgment, post-trial motions, appeal." }
+    es: { term: "etapas de un juicio civil", explanation: "Demanda (complaint), emplazamiento, contestación o moción de desechamiento, discovery (documentos, declaraciones, interrogatorios), summary judgment, audiencia previa, juicio (a menudo con jurado), veredicto y sentencia, mociones posteriores, apelación. La gran diferencia con México es el discovery entre las partes y el jurado civil." }
+    examples: [{ en: "Most civil cases settle during discovery and never reach trial.", es: "La mayoría de los juicios civiles se arreglan durante el discovery y nunca llegan a juicio." }]
+    related: [adversarial-system, jury-trial]
+  # --- Federalismo (cap. 8) ---
+  - id: tenth-amendment
+    term: Tenth Amendment (reserved powers)
+    pos: noun
+    topic: federalism
+    en: { definition: "Powers not delegated to the United States nor prohibited to the states are reserved to the states or the people; the textual home of the states' police power and of anti-commandeering rules." }
+    es: { term: "Décima Enmienda (facultades reservadas)", explanation: "Las facultades no delegadas a la Unión ni prohibidas a los estados quedan reservadas a los estados o al pueblo; base del poder de policía estatal y de la prohibición de que el Congreso ordene a los estados legislar. Es el art. 124 CPEUM." }
+    examples: [{ en: "Congress cannot order state legislatures to enact a federal program (New York v. United States).", es: "El Congreso no puede ordenar a las legislaturas estatales aprobar un programa federal." }]
+    related: [federalism, enumerated-powers, police-power]
+  - id: preemption
+    term: preemption
+    pos: noun
+    topic: federalism
+    en: { definition: "When valid federal law displaces state law under the Supremacy Clause: expressly, by occupying a whole field, or because compliance with both is impossible or state law obstructs federal purposes." }
+    es: { term: "preeminencia federal (preemption)", explanation: "Cuando el derecho federal válido desplaza al estatal por la Supremacy Clause: de modo expreso, por ocupar todo el campo, o porque es imposible cumplir ambos o la ley estatal obstaculiza los fines federales. México no lo necesita porque las competencias son excluyentes; aquí hay muchas concurrentes." }
+    examples: [{ en: "A Texas rule on airline prices is preempted by the federal Airline Deregulation Act.", es: "Una regla de Texas sobre tarifas aéreas queda desplazada por la ley federal de desregulación aérea." }]
+    related: [supremacy-clause, federalism]
+  - id: police-power
+    term: police power
+    pos: noun
+    topic: federalism
+    en: { definition: "The states' general power to legislate for health, safety, morals and welfare, which the federal government lacks; the usual justification for economic and social regulation reviewed under rational basis." }
+    es: { term: "poder de policía (facultad general de regulación estatal)", explanation: "La facultad general de los estados para legislar en salud, seguridad, moral y bienestar, que el gobierno federal no tiene; justificación habitual de la regulación económica y social, revisada con base racional. No tiene que ver con la policía: es el poder de reglamentar la vida social.", falseFriend: "No es “policía” ni seguridad pública; es la competencia general de legislar de los estados." }
+    examples: [{ en: "Lochner asked whether the hours law was a genuine exercise of the police power.", es: "Lochner preguntó si la ley de jornada era un ejercicio genuino del poder de policía." }]
+    related: [tenth-amendment, rational-basis, lochner-era]
+  - id: dual-sovereignty
+    term: dual sovereignty
+    pos: noun
+    topic: federalism
+    en: { definition: "The idea that the federal government and each state are separate sovereigns with their own constitutions, laws, courts and criminal justice systems; one consequence is that the same act can be prosecuted by both without double jeopardy." }
+    es: { term: "doble soberanía", explanation: "La Unión y cada estado son soberanos separados con sus propias constituciones, leyes, tribunales y sistemas penales; una consecuencia es que el mismo hecho puede perseguirse en ambos sin violar el non bis in idem. En México el fuero común y el federal coexisten, pero con una sola Constitución y una sola SCJN en la cúspide." }
+    examples: [{ en: "A bank robbery can be a Texas crime and a federal crime at the same time.", es: "Un asalto bancario puede ser delito de Texas y delito federal al mismo tiempo." }]
+    related: [federalism, sovereignty, double-jeopardy]
+  - id: substantial-effects-test
+    term: substantial effects test (Commerce Clause)
+    pos: noun
+    topic: federalism
+    en: { definition: "Congress may regulate the channels and instrumentalities of interstate commerce and activities that substantially affect it, including local economic activity in the aggregate; Lopez and Morrison refused to extend it to noneconomic activity like gun possession near schools." }
+    es: { term: "prueba de los efectos sustanciales (Commerce Clause)", explanation: "El Congreso puede regular los canales y los instrumentos del comercio interestatal y las actividades que lo afectan sustancialmente, incluida la actividad económica local vista en conjunto; Lopez y Morrison se negaron a extenderla a actividades no económicas como portar armas cerca de escuelas. Es la fuente de casi toda la legislación federal moderna." }
+    examples: [{ en: "Heart of Atlanta upheld the public accommodations title because discrimination in motels burdened interstate travel.", es: "Heart of Atlanta validó el título sobre establecimientos públicos porque la discriminación en moteles obstaculizaba los viajes interestatales." }]
+    related: [commerce-clause, enumerated-powers]
+    difficulty: 2
+  # --- Ciudadanía y enmiendas ---
+  - id: amendment-process
+    term: amending the Constitution (Article V)
+    pos: noun
+    topic: citizenship
+    en: { definition: "An amendment must be proposed by two-thirds of both houses of Congress (or a convention called by two-thirds of the states) and ratified by three-fourths of the states; only twenty-seven have passed since 1789, which is why most constitutional change comes through interpretation." }
+    es: { term: "reforma constitucional (artículo V)", explanation: "Una enmienda debe proponerse por dos tercios de ambas cámaras (o por una convención pedida por dos tercios de los estados) y ratificarse por tres cuartas partes de los estados; solo ha habido 27 desde 1789. Por eso el cambio constitucional viene sobre todo de la interpretación. México, con su art. 135 y cientos de reformas, es el caso opuesto." }
+    examples: [{ en: "The Equal Rights Amendment passed Congress but never got three-fourths of the states.", es: "La Equal Rights Amendment pasó el Congreso pero nunca alcanzó tres cuartas partes de los estados." }]
+    related: [reconstruction-amendments, bill-of-rights]
+  - id: bill-of-rights
+    term: Bill of Rights
+    pos: noun
+    topic: citizenship
+    en: { definition: "The first ten amendments (1791), originally limits on the federal government only; most now apply to the states through the Fourteenth Amendment by incorporation." }
+    es: { term: "Carta de Derechos (las diez primeras enmiendas)", explanation: "Las diez primeras enmiendas (1791), que al principio solo limitaban al gobierno federal; casi todas se aplican hoy a los estados a través de la Decimocuarta Enmienda. Equivalen al capítulo de derechos humanos de la CPEUM, pero llegaron como añadido, no como título primero." }
+    examples: [{ en: "The First Amendment binds Texas only because of incorporation.", es: "La Primera Enmienda obliga a Texas solo por la incorporación." }]
+    related: [incorporation, amendment-process]
+  - id: reconstruction-amendments
+    term: Reconstruction Amendments (XIII, XIV, XV)
+    pos: noun
+    topic: citizenship
+    en: { definition: "The three post-Civil War amendments: the Thirteenth abolished slavery (1865); the Fourteenth created birthright citizenship and the due process and equal protection guarantees against the states (1868); the Fifteenth barred denying the vote on account of race (1870)." }
+    es: { term: "Enmiendas de la Reconstrucción (XIII, XIV y XV)", explanation: "Las tres enmiendas posteriores a la Guerra Civil: la XIII abolió la esclavitud (1865); la XIV creó la ciudadanía por nacimiento y las garantías de debido proceso e igualdad frente a los estados (1868); la XV prohibió negar el voto por raza (1870). Casi todo el derecho constitucional de derechos que verás nace de la XIV." }
+    examples: [{ en: "Loving, Brown and Miranda all rest on the Fourteenth Amendment.", es: "Loving, Brown y Miranda descansan en la Decimocuarta Enmienda." }]
+    related: [citizenship-clause, equal-protection, due-process]
+  - id: birthright-citizenship
+    term: birthright citizenship (jus soli)
+    pos: noun
+    topic: citizenship
+    en: { definition: "Under the Fourteenth Amendment, all persons born in the United States and subject to its jurisdiction are citizens; United States v. Wong Kim Ark (1898) applied it to children of noncitizen parents, while Elk v. Wilkins had excluded tribal Indians born under tribal allegiance." }
+    es: { term: "ciudadanía por nacimiento (ius soli)", explanation: "Por la Decimocuarta Enmienda, toda persona nacida en Estados Unidos y sujeta a su jurisdicción es ciudadana; Wong Kim Ark (1898) lo aplicó a hijos de padres extranjeros, mientras que Elk v. Wilkins había excluido a los indígenas nacidos bajo lealtad tribal. México combina ius soli y ius sanguinis en el art. 30 CPEUM." }
+    examples: [{ en: "A child born in Dallas to Mexican parents is a U.S. citizen at birth.", es: "Un niño nacido en Dallas de padres mexicanos es ciudadano estadounidense al nacer." }]
+    related: [citizenship-clause, naturalization]
+  - id: self-executing-treaty
+    term: self-executing vs. non-self-executing treaty
+    pos: phrase
+    topic: citizenship
+    en: { definition: "A treaty is law of the land under the Supremacy Clause, but courts enforce it directly only if it is self-executing; otherwise Congress must implement it by statute (Medellín v. Texas, 2008)." }
+    es: { term: "tratado autoaplicativo y no autoaplicativo", explanation: "Un tratado es ley suprema por la Supremacy Clause, pero los tribunales lo aplican directamente solo si es autoaplicativo; si no, el Congreso debe implementarlo por ley (Medellín v. Texas, 2008, un caso con mexicanos condenados a muerte en Texas). En México los tratados se aplican directamente y están por encima de las leyes (art. 133 y art. 1)." }
+    examples: [{ en: "The ICJ's Avena judgment did not bind Texas courts without implementing legislation.", es: "La sentencia Avena de la CIJ no obligó a los tribunales de Texas sin ley de implementación." }]
+    related: [treaty, supremacy-clause]
+    difficulty: 2
+  # --- Libertad de expresión (cap. 12) ---
+  - id: free-speech
+    term: free speech (First Amendment)
+    pos: noun
+    topic: speech
+    en: { definition: "Congress, and through incorporation the states, may not abridge the freedom of speech; the protection is strongest for political speech and against content-based restrictions, which face strict scrutiny." }
+    es: { term: "libertad de expresión (Primera Enmienda)", explanation: "El Congreso, y por incorporación los estados, no pueden restringir la libertad de expresión; la protección es máxima para el discurso político y frente a restricciones por contenido, que enfrentan escrutinio estricto. Es más amplia que los arts. 6 y 7 CPEUM: protege discurso de odio y quema de banderas." }
+    examples: [{ en: "Minnesota could not stop judicial candidates from stating their views (White).", es: "Minnesota no pudo impedir que los candidatos a juez expresaran sus opiniones (White)." }]
+    related: [content-based-restriction, symbolic-speech, prior-restraint]
+  - id: content-based-restriction
+    term: content-based vs. content-neutral restriction
+    pos: phrase
+    topic: speech
+    en: { definition: "A law that regulates speech because of its message is content-based and presumptively invalid (strict scrutiny); a law that regulates time, place or manner regardless of message is content-neutral and needs only to be narrowly tailored to a significant interest with alternative channels open." }
+    es: { term: "restricción por contenido frente a restricción neutral", explanation: "Una ley que regula el discurso por su mensaje es por contenido y se presume inválida (escrutinio estricto); una que regula tiempo, lugar y modo sin atender al mensaje es neutral y solo necesita ajuste razonable a un interés importante dejando canales alternativos." }
+    examples: [{ en: "Banning all loudspeakers after 10 p.m. is content-neutral; banning political loudspeakers is not.", es: "Prohibir altavoces después de las 10 p.m. es neutral; prohibir altavoces políticos no." }]
+    related: [free-speech, strict-scrutiny]
+  - id: symbolic-speech
+    term: symbolic speech (expressive conduct)
+    pos: noun
+    topic: speech
+    en: { definition: "Conduct intended to convey a message that observers would understand, protected like speech: flag burning (Texas v. Johnson, 1989), armbands, sit-ins; the government may regulate the conduct only for reasons unrelated to the message." }
+    es: { term: "expresión simbólica (conducta expresiva)", explanation: "Conducta que busca transmitir un mensaje que los observadores entenderían, protegida como discurso: quemar la bandera (Texas v. Johnson, 1989), brazaletes, plantones; el gobierno puede regular la conducta solo por razones ajenas al mensaje. La pregunta de clase: ¿quemar la bandera es delito en tu país? En México sí (Ley sobre el Escudo, la Bandera y el Himno)." }
+    examples: [{ en: "Burning a flag in protest is protected; burning it to start a forest fire is not.", es: "Quemar una bandera en protesta está protegido; quemarla para provocar un incendio forestal no." }]
+    related: [free-speech, content-based-restriction]
+  - id: incitement
+    term: incitement (Brandenburg test)
+    pos: noun
+    topic: speech
+    en: { definition: "Advocacy of lawbreaking loses protection only if directed to inciting imminent lawless action and likely to produce it (Brandenburg v. Ohio, 1969); abstract advocacy of violence remains protected." }
+    es: { term: "incitación (prueba de Brandenburg)", explanation: "La apología del delito pierde protección solo si está dirigida a provocar una acción ilegal inminente y es probable que la produzca (Brandenburg v. Ohio, 1969); la defensa abstracta de la violencia sigue protegida. Mucho más permisivo que la apología del delito del Código Penal Federal (art. 208)." }
+    examples: [{ en: "A speech saying the government should be overthrown someday is protected; telling a mob to burn the building now is not.", es: "Decir que algún día habría que derrocar al gobierno está protegido; decirle a una turba que queme el edificio ahora no." }]
+    related: [free-speech]
+    difficulty: 2
+  - id: prior-restraint
+    term: prior restraint
+    pos: noun
+    topic: speech
+    en: { definition: "A government order stopping speech before it happens (an injunction against publication, a licensing scheme); the most disfavored form of regulation, almost never upheld (Pentagon Papers case, 1971)." }
+    es: { term: "censura previa (prior restraint)", explanation: "Orden del gobierno que impide la expresión antes de que ocurra (prohibición judicial de publicar, licencias); la forma de regulación más sospechosa, casi nunca válida (caso de los Papeles del Pentágono, 1971). Coincide con la prohibición de censura previa del art. 7 CPEUM." }
+    examples: [{ en: "A court refused to enjoin the newspaper even though the documents were classified.", es: "Un tribunal se negó a prohibir la publicación aunque los documentos eran reservados." }]
+    related: [free-speech]
+  # --- Igualdad, debido proceso y derechos fundamentales (caps. 10 y 11) ---
+  - id: substantive-due-process
+    term: substantive due process
+    pos: noun
+    topic: equality
+    en: { definition: "The reading of the Due Process Clauses that protects certain liberties from government interference regardless of the procedure used: economic liberty in the Lochner era, and today personal liberties such as marriage, family and privacy." }
+    es: { term: "debido proceso sustantivo", explanation: "Lectura de las cláusulas de debido proceso que protege ciertas libertades frente al gobierno sin importar el procedimiento: la libertad económica en la era Lochner y hoy libertades personales como el matrimonio, la familia y la privacidad.", falseFriend: "El “debido proceso” mexicano (arts. 14 y 16) es sobre todo procesal; el sustantivo estadounidense se parece más a los derechos fundamentales implícitos que la SCJN deriva del libre desarrollo de la personalidad." }
+    examples: [{ en: "Loving used substantive due process for the freedom to marry.", es: "Loving usó el debido proceso sustantivo para la libertad de casarse." }]
+    authority: "U.S. Const. amends. V, XIV"
+    related: [due-process, procedural-due-process, fundamental-right, lochner-era]
+    difficulty: 2
+  - id: procedural-due-process
+    term: procedural due process
+    pos: noun
+    topic: equality
+    en: { definition: "Before the government deprives a person of life, liberty or property it must give fair procedure: notice and an opportunity to be heard before a neutral decision-maker, with the amount of process depending on the interests at stake." }
+    es: { term: "debido proceso procesal (garantía de audiencia)", explanation: "Antes de privar a alguien de la vida, la libertad o la propiedad, el gobierno debe dar un procedimiento justo: notificación y oportunidad de ser oído ante un decisor imparcial, con más o menos formalidades según los intereses en juego. Es la garantía de audiencia del art. 14 CPEUM." }
+    examples: [{ en: "A state cannot cut off welfare benefits without a hearing (Goldberg v. Kelly).", es: "Un estado no puede suspender prestaciones sociales sin audiencia (Goldberg v. Kelly)." }]
+    related: [due-process, substantive-due-process]
+  - id: liberty-of-contract
+    term: liberty of contract
+    pos: noun
+    topic: equality
+    en: { definition: "The freedom of employers and employees (and buyers and sellers) to set their own terms, which the Lochner-era Court treated as a liberty protected by due process against most labor regulation; abandoned as a constitutional right in 1937." }
+    es: { term: "libertad contractual (como derecho constitucional)", explanation: "La libertad de patrones y trabajadores (y de compradores y vendedores) de fijar sus propios términos, que la Corte de la era Lochner trató como libertad protegida por el debido proceso frente a casi toda regulación laboral; dejó de ser derecho constitucional en 1937. La Constitución mexicana de 1917 tomó desde el inicio el camino contrario con el art. 123." }
+    examples: [{ en: "The New York bakers' hours law lost to liberty of contract in 1905.", es: "La ley de jornada de los panaderos de Nueva York perdió frente a la libertad contractual en 1905." }]
+    related: [lochner-era, substantive-due-process, police-power]
+  - id: lochner-era
+    term: Lochner era (1905–1937)
+    pos: noun
+    topic: equality
+    en: { definition: "The period when the Supreme Court struck down economic regulation (hours, wages, union protections) as violating liberty of contract; it ended with West Coast Hotel v. Parrish (1937) and the shift to rational-basis review of economic legislation." }
+    es: { term: "era Lochner (1905–1937)", explanation: "Periodo en que la Corte Suprema anuló regulación económica (jornada, salarios, protección sindical) por violar la libertad contractual; terminó con West Coast Hotel v. Parrish (1937) y el paso a la revisión de base racional para la legislación económica. Desde entonces la Corte protege con fuerza las libertades personales, no las económicas." }
+    examples: [{ en: "The New Deal survived only after the Lochner era ended.", es: "El New Deal sobrevivió solo cuando terminó la era Lochner." }]
+    related: [liberty-of-contract, rational-basis, carolene-footnote-four]
+  - id: carolene-footnote-four
+    term: Carolene Products footnote four
+    pos: noun
+    topic: equality
+    en: { definition: "The 1938 footnote that sketched modern constitutional law: economic regulation gets a presumption of constitutionality, but laws that restrict the political process, target specific prohibitions of the Bill of Rights or burden discrete and insular minorities deserve more searching judicial scrutiny." }
+    es: { term: "nota al pie cuatro de Carolene Products", explanation: "La nota de 1938 que dibujó el derecho constitucional moderno: la regulación económica se presume constitucional, pero las leyes que restringen el proceso político, tocan prohibiciones específicas de la Carta de Derechos o perjudican a minorías discretas y aisladas merecen un escrutinio más exigente. Es la respuesta corta a la pregunta de clase sobre liberalismo económico y liberalismo de derechos civiles." }
+    examples: [{ en: "Footnote four explains why Lochner is dead and Loving is alive.", es: "La nota cuatro explica por qué Lochner está muerto y Loving vive." }]
+    related: [lochner-era, strict-scrutiny, rational-basis, suspect-classification]
+    difficulty: 2
+  - id: liberalism-economic-vs-civil
+    term: liberalism (economic sense vs. civil-rights sense)
+    pos: noun
+    register: academic
+    topic: equality
+    en: { definition: "Two meanings of the word: classical or economic liberalism prizes markets, property and freedom of contract against regulation; civil-rights liberalism prizes personal autonomy, equality and protection of minorities, often through regulation. American constitutional law protected the first strongly until 1937 and the second strongly since." }
+    es: { term: "liberalismo (económico frente a de derechos civiles)", explanation: "Dos sentidos de la palabra: el liberalismo clásico o económico valora mercados, propiedad y libertad contractual frente a la regulación; el liberalismo de derechos civiles valora la autonomía personal, la igualdad y la protección de minorías, a menudo mediante regulación. El derecho constitucional estadounidense protegió con fuerza el primero hasta 1937 y el segundo desde entonces. En español “liberal” suele significar lo primero; en inglés estadounidense, lo segundo." }
+    examples: [{ en: "Lochner is economic liberalism as constitutional law; Loving is civil-rights liberalism.", es: "Lochner es liberalismo económico hecho derecho constitucional; Loving es liberalismo de derechos civiles." }]
+    related: [lochner-era, carolene-footnote-four, fundamental-right]
+  - id: intermediate-scrutiny
+    term: intermediate scrutiny
+    pos: noun
+    topic: equality
+    en: { definition: "The middle tier of equal protection review, used for classifications by sex and illegitimacy: the law must serve an important government objective and be substantially related to it (and for sex, with an exceedingly persuasive justification)." }
+    es: { term: "escrutinio intermedio", explanation: "El nivel medio de revisión de igualdad, para clasificaciones por sexo y filiación: la ley debe servir a un objetivo gubernamental importante y estar sustancialmente relacionada con él (para el sexo, con una justificación sumamente persuasiva)." }
+    examples: [{ en: "Virginia Military Institute's male-only admission failed intermediate scrutiny (1996).", es: "La admisión solo de hombres del Virginia Military Institute no superó el escrutinio intermedio (1996)." }]
+    related: [strict-scrutiny, rational-basis, equal-protection]
+  - id: suspect-classification
+    term: suspect classification
+    pos: noun
+    topic: equality
+    en: { definition: "A classification by race, national origin or (for states) alienage, which triggers strict scrutiny because it targets a group with a history of discrimination and political powerlessness defined by an immutable trait." }
+    es: { term: "categoría sospechosa", explanation: "Clasificación por raza, origen nacional o (para los estados) condición de extranjero, que activa el escrutinio estricto por tratarse de grupos con historia de discriminación y poca fuerza política, definidos por un rasgo inmutable. El último párrafo del art. 1 CPEUM enumera categorías parecidas." }
+    examples: [{ en: "Virginia's marriage law used a suspect classification and failed.", es: "La ley de matrimonio de Virginia usó una categoría sospechosa y perdió." }]
+    related: [strict-scrutiny, equal-protection, carolene-footnote-four]
+  - id: separate-but-equal
+    term: separate but equal
+    pos: phrase
+    topic: equality
+    en: { definition: "The doctrine of Plessy v. Ferguson (1896) that racial segregation satisfied equal protection if facilities were equal; rejected for public education in Brown (1954) and abandoned everywhere soon after." }
+    es: { term: "separados pero iguales", explanation: "Doctrina de Plessy v. Ferguson (1896): la segregación racial cumplía con la igualdad si las instalaciones eran iguales; rechazada para la educación pública en Brown (1954) y abandonada en todo lo demás poco después." }
+    examples: [{ en: "Separate but equal justified segregated railroad cars for fifty-eight years.", es: "Separados pero iguales justificó los vagones segregados durante cincuenta y ocho años." }]
+    related: [equal-protection, desegregation]
+  - id: desegregation
+    term: desegregation (and Brown II)
+    pos: noun
+    topic: equality
+    en: { definition: "The dismantling of state-imposed racial separation; Brown II (1955) ordered it with all deliberate speed, Cooper v. Aaron (1958) held state officials bound by the Court's reading of the Constitution, and the Civil Rights Act of 1964 made it happen." }
+    es: { term: "desegregación (y Brown II)", explanation: "El desmantelamiento de la separación racial impuesta por el estado; Brown II (1955) la ordenó “con toda la rapidez deliberada”, Cooper v. Aaron (1958) declaró que los funcionarios estatales están obligados por la interpretación de la Corte, y la Civil Rights Act de 1964 la hizo realidad. Es el material de la pregunta sobre los tribunales como agentes de cambio social." }
+    examples: [{ en: "Ten years after Brown, most Southern schools were still segregated.", es: "Diez años después de Brown, la mayoría de las escuelas del Sur seguían segregadas." }]
+    related: [separate-but-equal, judicial-review]
+  - id: state-action
+    term: state action doctrine
+    pos: noun
+    topic: equality
+    en: { definition: "The Fourteenth Amendment restrains governments, not private persons; discrimination by a private business is reached only through statutes such as the Civil Rights Act of 1964 (enacted under the Commerce Clause, as Heart of Atlanta shows)." }
+    es: { term: "doctrina de la acción estatal (state action)", explanation: "La Decimocuarta Enmienda limita a los gobiernos, no a los particulares; la discriminación de un negocio privado solo se alcanza por leyes como la Civil Rights Act de 1964 (aprobada bajo la Commerce Clause, como muestra Heart of Atlanta). Contraste: la SCJN reconoce la eficacia horizontal de los derechos entre particulares." }
+    examples: [{ en: "A private club's whites-only rule is not a Fourteenth Amendment violation; a statute may still forbid it.", es: "La regla de solo blancos de un club privado no viola la Decimocuarta Enmienda; una ley puede prohibirla de todos modos." }]
+    related: [equal-protection, commerce-clause]
+    difficulty: 2
+  - id: right-to-marry
+    term: right to marry
+    pos: noun
+    topic: equality
+    en: { definition: "A fundamental liberty under the Due Process Clause: Loving (1967) for interracial couples, Zablocki (1978) against marriage restrictions on debtors, Obergefell (2015) for same-sex couples." }
+    es: { term: "derecho a casarse", explanation: "Libertad fundamental bajo el debido proceso: Loving (1967) para parejas interraciales, Zablocki (1978) contra restricciones a deudores, Obergefell (2015) para parejas del mismo sexo. La SCJN llegó al mismo resultado para el matrimonio igualitario por la vía de la igualdad y el libre desarrollo de la personalidad (2015)." }
+    examples: [{ en: "Obergefell quoted Loving on the freedom to marry.", es: "Obergefell citó a Loving sobre la libertad de casarse." }]
+    related: [fundamental-right, substantive-due-process, equal-protection]
+  - id: right-to-privacy
+    term: right to privacy (unenumerated rights)
+    pos: noun
+    topic: equality
+    en: { definition: "A liberty the Court derived from the structure of the Bill of Rights and the Due Process Clause (Griswold, 1965) covering contraception, family decisions and intimate conduct; its scope is the most contested question in modern constitutional law (Dobbs, 2022, withdrew abortion from it)." }
+    es: { term: "derecho a la privacidad (derechos no enumerados)", explanation: "Libertad que la Corte derivó de la estructura de la Carta de Derechos y del debido proceso (Griswold, 1965): anticoncepción, decisiones familiares, conducta íntima; su alcance es la cuestión más disputada del derecho constitucional moderno (Dobbs, 2022, sacó el aborto de ella). Es el pariente del libre desarrollo de la personalidad de la SCJN." }
+    examples: [{ en: "Griswold struck down a ban on contraceptives for married couples.", es: "Griswold anuló la prohibición de anticonceptivos para parejas casadas." }]
+    related: [substantive-due-process, fundamental-right]
+    difficulty: 2
+  # --- Procedimiento penal y derechos del acusado (cap. 11) ---
+  - id: fourth-amendment
+    term: Fourth Amendment (searches and seizures)
+    pos: noun
+    topic: criminal
+    en: { definition: "No unreasonable searches and seizures; warrants require probable cause, an oath and particularity. The remedy for violations is usually the exclusionary rule." }
+    es: { term: "Cuarta Enmienda (cateos y detenciones)", explanation: "Prohíbe cateos y detenciones irrazonables; las órdenes requieren causa probable, juramento y precisión. El remedio típico es la regla de exclusión. Equivale al art. 16 CPEUM (orden de cateo, flagrancia)." }
+    examples: [{ en: "Police need a warrant to search a cell phone seized on arrest (Riley v. California).", es: "La policía necesita orden judicial para revisar un celular incautado al detener (Riley v. California)." }]
+    related: [probable-cause, exclusionary-rule]
+  - id: probable-cause
+    term: probable cause
+    pos: noun
+    topic: criminal
+    en: { definition: "The standard for arrests and search warrants: facts that would lead a reasonable person to believe a crime was committed and the person or place is connected to it; more than suspicion, less than proof." }
+    es: { term: "causa probable", explanation: "Estándar para detenciones y órdenes de cateo: hechos que llevarían a una persona razonable a creer que se cometió un delito y que la persona o el lugar están relacionados; más que sospecha, menos que prueba. Equivale a los datos de prueba del art. 16 CPEUM para la orden de aprehensión." }
+    examples: [{ en: "A tip plus corroborating surveillance gave probable cause for the warrant.", es: "Una denuncia anónima más vigilancia que la corroboró dieron causa probable para la orden." }]
+    related: [fourth-amendment]
+  - id: exclusionary-rule
+    term: exclusionary rule
+    pos: noun
+    topic: criminal
+    en: { definition: "Evidence obtained in violation of the Fourth, Fifth or Sixth Amendments is inadmissible in the prosecution's case (Mapp v. Ohio applied it to the states in 1961), with exceptions such as good faith and inevitable discovery." }
+    es: { term: "regla de exclusión (prueba ilícita)", explanation: "La prueba obtenida en violación de las Enmiendas Cuarta, Quinta o Sexta es inadmisible en el caso de la fiscalía (Mapp v. Ohio la aplicó a los estados en 1961), con excepciones como la buena fe y el descubrimiento inevitable. Equivale a la nulidad de la prueba ilícita del art. 20 A IX CPEUM." }
+    examples: [{ en: "The drugs found in an illegal search were suppressed and the case collapsed.", es: "Las drogas halladas en un cateo ilegal fueron excluidas y el caso se cayó." }]
+    related: [fourth-amendment, miranda-warnings]
+  - id: miranda-warnings
+    term: Miranda warnings
+    pos: noun
+    topic: criminal
+    en: { definition: "The advice police must give before custodial interrogation: the right to remain silent, that statements can be used in court, the right to a lawyer, and to an appointed lawyer if indigent; without them and a valid waiver, the statement is inadmissible." }
+    es: { term: "advertencias Miranda", explanation: "Lo que la policía debe decir antes de interrogar a un detenido: derecho a guardar silencio, que lo dicho puede usarse en su contra, derecho a un abogado y a uno de oficio si no puede pagarlo; sin ellas y sin renuncia válida, la declaración es inadmisible. El art. 20 B II y VIII CPEUM contiene las mismas garantías." }
+    examples: [{ en: "The confession was suppressed because the officer skipped the warnings.", es: "La confesión fue excluida porque el agente omitió las advertencias." }]
+    related: [custodial-interrogation, self-incrimination, right-to-counsel]
+  - id: custodial-interrogation
+    term: custodial interrogation
+    pos: noun
+    topic: criminal
+    en: { definition: "Questioning by police after a person has been taken into custody or deprived of freedom in a significant way; both elements, custody and interrogation, must be present for Miranda to apply." }
+    es: { term: "interrogatorio bajo custodia", explanation: "Preguntas de la policía después de que la persona fue detenida o privada de su libertad de modo significativo; deben concurrir custodia e interrogatorio para que aplique Miranda. Una declaración espontánea no es interrogatorio." }
+    examples: [{ en: "A voluntary statement at the scene before any arrest is not custodial interrogation.", es: "Una declaración voluntaria en el lugar, antes de cualquier detención, no es interrogatorio bajo custodia." }]
+    related: [miranda-warnings]
+  - id: self-incrimination
+    term: privilege against self-incrimination (Fifth Amendment)
+    pos: noun
+    topic: criminal
+    en: { definition: "No person may be compelled in a criminal case to be a witness against himself: the defendant need not testify, silence cannot be used against him at trial, and coerced confessions are excluded." }
+    es: { term: "derecho a no autoincriminarse (Quinta Enmienda)", explanation: "Nadie puede ser obligado a declarar contra sí mismo en causa penal: el acusado no tiene que testificar, su silencio no puede usarse en su contra en el juicio y las confesiones forzadas se excluyen. Equivale al art. 20 B II CPEUM." }
+    examples: [{ en: "Taking the Fifth means refusing to answer on this ground.", es: "“Tomar la Quinta” es negarse a contestar con base en este derecho." }]
+    related: [miranda-warnings, double-jeopardy]
+  - id: right-to-counsel
+    term: right to counsel (Sixth Amendment)
+    pos: noun
+    topic: criminal
+    en: { definition: "The accused has the right to a lawyer at every critical stage of a criminal prosecution, appointed at state expense if indigent (Gideon v. Wainwright, 1963); the Miranda right to counsel during interrogation comes from the Fifth Amendment instead." }
+    es: { term: "derecho a la defensa (Sexta Enmienda)", explanation: "El acusado tiene derecho a un abogado en toda etapa crítica del proceso penal, de oficio si no puede pagarlo (Gideon v. Wainwright, 1963); el derecho a abogado durante el interrogatorio viene de la Quinta Enmienda vía Miranda. Equivale al art. 20 B VIII CPEUM (defensor público)." }
+    examples: [{ en: "Gideon was retried with a lawyer and acquitted.", es: "Gideon fue juzgado de nuevo con abogado y absuelto." }]
+    related: [miranda-warnings, sixth-amendment]
+  - id: sixth-amendment
+    term: Sixth Amendment (trial rights)
+    pos: noun
+    topic: criminal
+    en: { definition: "Speedy and public trial, impartial jury of the state and district, notice of the accusation, confrontation of witnesses, compulsory process for defense witnesses, and assistance of counsel." }
+    es: { term: "Sexta Enmienda (derechos en el juicio)", explanation: "Juicio rápido y público, jurado imparcial del estado y distrito, conocer la acusación, confrontar a los testigos, obtener testigos de descargo y asistencia de abogado. Casi todo está en el art. 20 B CPEUM, salvo el jurado." }
+    examples: [{ en: "Duncan incorporated the Sixth Amendment jury right against the states.", es: "Duncan incorporó el derecho de jurado de la Sexta Enmienda frente a los estados." }]
+    related: [jury-trial, right-to-counsel, incorporation]
+  - id: jury-trial
+    term: jury trial
+    pos: noun
+    topic: criminal
+    en: { definition: "A verdict by citizens rather than a judge: twelve (or at least six) jurors, unanimous in criminal cases (Ramos, 2020), required for serious offenses punishable by more than six months, and available in federal civil cases under the Seventh Amendment." }
+    es: { term: "juicio por jurado", explanation: "Veredicto de ciudadanos en lugar de un juez: doce (o al menos seis) jurados, por unanimidad en lo penal (Ramos, 2020), obligatorio para delitos castigables con más de seis meses, y disponible en juicios civiles federales por la Séptima Enmienda. México lo abandonó en la práctica; el art. 20 habla de juicio ante juez." }
+    examples: [{ en: "Duncan was entitled to a jury because his offense carried up to two years.", es: "Duncan tenía derecho a jurado porque su delito alcanzaba hasta dos años." }]
+    related: [sixth-amendment, adversarial-system, grand-jury]
+  - id: grand-jury
+    term: grand jury
+    pos: noun
+    topic: criminal
+    en: { definition: "A body of citizens that decides whether there is enough evidence to indict for a federal felony (Fifth Amendment); it hears only the prosecutor, in secret, and is one of the few rights not incorporated against the states, so many states charge by information instead." }
+    es: { term: "gran jurado", explanation: "Cuerpo de ciudadanos que decide si hay pruebas suficientes para acusar formalmente por un delito federal grave (Quinta Enmienda); escucha solo a la fiscalía, en secreto, y es uno de los pocos derechos no incorporados frente a los estados, por lo que muchos estados acusan por “information”. En México la decisión de acusar es del Ministerio Público y el control, del juez." }
+    examples: [{ en: "Texas uses grand juries for felonies; California often does not.", es: "Texas usa gran jurado para delitos graves; California a menudo no." }]
+    related: [jury-trial, incorporation]
+  - id: double-jeopardy
+    term: double jeopardy
+    pos: noun
+    topic: criminal
+    en: { definition: "No person may be tried twice for the same offense by the same sovereign after acquittal or conviction (Fifth Amendment); under dual sovereignty, a state and the federal government may each prosecute the same act." }
+    es: { term: "non bis in idem (double jeopardy)", explanation: "Nadie puede ser juzgado dos veces por el mismo delito por el mismo soberano tras absolución o condena (Quinta Enmienda); por la doble soberanía, un estado y la federación pueden perseguir cada uno el mismo hecho. Equivale al art. 23 CPEUM, que no tiene esa excepción." }
+    examples: [{ en: "An acquittal in Texas court does not bar a federal civil-rights prosecution for the same beating.", es: "Una absolución en tribunal de Texas no impide un proceso federal por derechos civiles por la misma golpiza." }]
+    related: [dual-sovereignty, self-incrimination]
+  - id: eighth-amendment
+    term: Eighth Amendment
+    pos: noun
+    topic: criminal
+    en: { definition: "No excessive bail, no excessive fines, no cruel and unusual punishments; the clause under which the Court regulates the death penalty and grossly disproportionate sentences." }
+    es: { term: "Octava Enmienda", explanation: "Prohíbe fianzas y multas excesivas y las penas crueles e inusitadas; es la cláusula con la que la Corte regula la pena de muerte y las penas groseramente desproporcionadas. Equivale al art. 22 CPEUM, que además prohíbe la pena de muerte de plano." }
+    examples: [{ en: "Roper applied the Eighth Amendment to juvenile offenders.", es: "Roper aplicó la Octava Enmienda a los menores infractores." }]
+    related: [cruel-and-unusual-punishment, evolving-standards-of-decency]
+  - id: cruel-and-unusual-punishment
+    term: cruel and unusual punishment
+    pos: noun
+    topic: criminal
+    en: { definition: "Punishments barred by the Eighth Amendment: torture, penalties grossly disproportionate to the offense, and the death penalty for certain classes of offenders (juveniles, the intellectually disabled, non-homicide crimes against individuals)." }
+    es: { term: "penas crueles e inusitadas", explanation: "Penas prohibidas por la Octava Enmienda: tortura, castigos groseramente desproporcionados y la pena de muerte para ciertas clases de infractores (menores, personas con discapacidad intelectual, delitos sin homicidio contra individuos). El art. 22 CPEUM prohíbe la pena de muerte, la mutilación y la infamia en términos absolutos." }
+    examples: [{ en: "Executing someone for a crime committed at seventeen is cruel and unusual after Roper.", es: "Ejecutar a alguien por un delito cometido a los diecisiete es cruel e inusitado desde Roper." }]
+    related: [eighth-amendment, evolving-standards-of-decency]
+  - id: evolving-standards-of-decency
+    term: evolving standards of decency
+    pos: phrase
+    topic: criminal
+    en: { definition: "The Eighth Amendment test: the meaning of cruel and unusual changes with the progress of a maturing society, measured by objective indicia (state legislation, jury practice, the direction of change) plus the Court's own judgment about proportionality and culpability." }
+    es: { term: "estándares de decencia en evolución", explanation: "La prueba de la Octava Enmienda: el significado de cruel e inusitado cambia con el progreso de una sociedad que madura, medido por indicadores objetivos (legislación estatal, práctica de los jurados, dirección del cambio) más el juicio propio de la Corte sobre proporcionalidad y culpabilidad. Es el método de Roper." }
+    examples: [{ en: "Thirty states against the juvenile death penalty showed the standard had evolved.", es: "Treinta estados contra la pena de muerte juvenil mostraron que el estándar había evolucionado." }]
+    related: [cruel-and-unusual-punishment, eighth-amendment]
+    difficulty: 2
+  - id: beyond-a-reasonable-doubt
+    term: beyond a reasonable doubt
+    pos: phrase
+    topic: criminal
+    en: { definition: "The standard of proof in criminal cases, required by due process (In re Winship, 1970): the jury must be convinced of every element to a near certainty; civil cases need only a preponderance of the evidence." }
+    es: { term: "más allá de toda duda razonable", explanation: "El estándar de prueba penal, exigido por el debido proceso (In re Winship, 1970): el jurado debe estar convencido de cada elemento con casi certeza; en lo civil basta la preponderancia de la prueba. El art. 20 A VIII CPEUM usa la misma fórmula." }
+    examples: [{ en: "O.J. Simpson was acquitted under the criminal standard and found liable under the civil one.", es: "O.J. Simpson fue absuelto bajo el estándar penal y hallado responsable bajo el civil." }]
+    related: [jury-trial, due-process]
+  - id: plea-bargain
+    term: plea bargain
+    pos: noun
+    topic: criminal
+    en: { definition: "An agreement in which the defendant pleads guilty in exchange for a reduced charge or sentence; it resolves more than ninety percent of American criminal cases and must be knowing and voluntary." }
+    es: { term: "acuerdo de culpabilidad (plea bargain; ≈ procedimiento abreviado)", explanation: "Acuerdo por el que el acusado se declara culpable a cambio de un cargo o pena menor; resuelve más del noventa por ciento de los casos penales estadounidenses y debe ser informado y voluntario. El procedimiento abreviado del CNPP (art. 201) es su versión mexicana." }
+    examples: [{ en: "She pleaded to a misdemeanor to avoid the felony trial.", es: "Se declaró culpable de una falta para evitar el juicio por delito grave." }]
+    related: [jury-trial, felony-vs-misdemeanor]
+  - id: felony-vs-misdemeanor
+    term: felony vs. misdemeanor
+    pos: phrase
+    topic: criminal
+    en: { definition: "A felony is a crime punishable by more than a year in prison (and carries collateral consequences such as loss of the vote in many states); a misdemeanor is punishable by up to a year, usually in a county jail." }
+    es: { term: "delito grave y falta (felony / misdemeanor)", explanation: "Felony: delito castigado con más de un año de prisión (con consecuencias accesorias como perder el voto en muchos estados); misdemeanor: hasta un año, normalmente en cárcel del condado. La distinción mexicana más cercana es la de delitos graves con prisión preventiva oficiosa." }
+    examples: [{ en: "Duncan's simple battery was a misdemeanor, yet serious enough for a jury.", es: "La simple battery de Duncan era un misdemeanor, pero lo bastante grave para un jurado." }]
+    related: [jury-trial, plea-bargain]
+  - id: prosecutor-district-attorney
+    term: prosecutor (district attorney, U.S. attorney)
+    pos: noun
+    topic: criminal
+    en: { definition: "The lawyer who charges and tries crimes for the government: elected district attorneys at the county level in most states (including Texas), state attorneys general, and presidentially appointed United States attorneys for federal crimes." }
+    es: { term: "fiscal (district attorney, U.S. attorney)", explanation: "El abogado que acusa y litiga delitos por el gobierno: district attorneys electos por condado en la mayoría de los estados (incluido Texas), procuradores estatales, y U.S. attorneys nombrados por el Presidente para delitos federales. Equivale al Ministerio Público, pero electo y con enorme discrecionalidad.", falseFriend: "En inglés “fiscal” significa tributario o presupuestal; el fiscal mexicano es prosecutor." }
+    examples: [{ en: "The Dallas County district attorney decides whether to seek the death penalty.", es: "El district attorney del condado de Dallas decide si pide la pena de muerte." }]
+    related: [plea-bargain, grand-jury]
+  - id: criminal-sentence
+    term: sentence (criminal)
+    pos: noun
+    topic: criminal
+    en: { definition: "The punishment imposed after conviction; in American usage the word refers only to criminal penalties, never to a civil decision, which is a judgment." }
+    es: { term: "pena o condena (sentence)", explanation: "El castigo impuesto tras la condena.", falseFriend: "“Sentence” nunca es la sentencia civil; esa es judgment o decision. Decir “the court issued a sentence” en un caso civil es un error que delata al abogado hispanohablante." }
+    examples: [{ en: "The judge imposed a sentence of five years.", es: "El juez impuso una pena de cinco años." }]
+    related: [plea-bargain, felony-vs-misdemeanor]

@@ -1,0 +1,359 @@
+# Quizzes de Perspectives of the American Legal System. Preguntas originales; hechos inventados; en el estilo de los ensayos cortos del curso.
+course: perspectives
+items:
+  - id: pals-system-01
+    topic: sources
+    title: { en: "The system: sources, powers and courts", es: "El sistema: fuentes, poderes y tribunales" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A Texas statute and a valid federal statute regulate the same conduct and cannot both be obeyed. Which prevails, and why?"
+        choices:
+          - { id: a, text: "The Texas statute, because the police power belongs to the states.", why: "The police power is real, but it yields to valid federal law under the Supremacy Clause." }
+          - { id: b, text: "The federal statute, under the Supremacy Clause; the state law is preempted.", correct: true }
+          - { id: c, text: "Whichever was enacted later.", why: "Later-in-time applies between federal statutes and treaties, not between state and federal law." }
+          - { id: d, text: "Neither; the court must certify the question to the Texas Supreme Court.", why: "Certification concerns unsettled state law, not supremacy." }
+        explanation: { en: "Valid federal law is the supreme law of the land; conflict preemption displaces the state rule.", es: "El derecho federal válido es ley suprema; la preemption por conflicto desplaza la regla estatal." }
+        source: "U.S. Const. art. VI cl. 2"
+      - id: q2
+        type: mcq
+        stem: "A federal district judge in Dallas finds a Ninth Circuit opinion persuasive but a Fifth Circuit opinion points the other way. What must she do?"
+        choices:
+          - { id: a, text: "Follow the Fifth Circuit; it binds her, the Ninth does not.", correct: true }
+          - { id: b, text: "Follow the better-reasoned opinion.", why: "Vertical precedent is not optional." }
+          - { id: c, text: "Follow the more recent opinion.", why: "Recency does not override hierarchy." }
+          - { id: d, text: "Refer the case to the Supreme Court.", why: "District courts cannot refer cases upward." }
+        explanation: { en: "Decisions of the court of appeals for her circuit bind her; other circuits only persuade. Circuit splits are resolved by the Supreme Court on certiorari.", es: "Las decisiones del tribunal de apelación de su circuito la obligan; los demás circuitos solo persuaden. Los desacuerdos entre circuitos los resuelve la Corte Suprema por certiorari." }
+        source: "Stare decisis; class notes, ch. 1 and 3"
+      - id: q3
+        type: mcq
+        stem: "Which statement about judicial review is accurate?"
+        choices:
+          - { id: a, text: "Article III expressly grants the Supreme Court the power to strike down statutes.", why: "The text is silent; Marbury inferred the power." }
+          - { id: b, text: "Any court, state or federal, may refuse to apply a statute that conflicts with the Constitution in a case before it.", correct: true }
+          - { id: c, text: "Only the Supreme Court may declare a federal statute unconstitutional.", why: "Review is diffuse; lower courts do it subject to appeal." }
+          - { id: d, text: "A statute struck down is erased from the code by the court.", why: "Courts refuse to apply; they do not repeal." }
+        explanation: { en: "Marbury's logic applies to every court deciding a case under a written constitution; the Supreme Court's word is final because of appeal and precedent, not because review belongs to it alone.", es: "La lógica de Marbury aplica a todo tribunal que decide un caso bajo una constitución escrita; la palabra de la Corte Suprema es final por la apelación y el precedente, no porque el control sea solo suyo." }
+        source: "Marbury v. Madison (1803)"
+      - id: q4
+        type: mcq
+        stem: "During a trucking strike, the President orders the Secretary of Transportation to take over the nation's largest freight companies, citing the economic emergency. Congress had debated and rejected a seizure power in the relevant labor statute. Under Youngstown, the order is:"
+        choices:
+          - { id: a, text: "Valid, as an exercise of inherent emergency power.", why: "Youngstown rejected inherent domestic emergency power." }
+          - { id: b, text: "Valid, under the Commander in Chief Clause.", why: "The clause governs the armed forces, not freight companies." }
+          - { id: c, text: "Invalid: Congress implicitly disapproved seizure, so the President is at his lowest ebb and has no independent power over domestic industry.", correct: true }
+          - { id: d, text: "Valid if the President reports to Congress within forty-eight hours.", why: "Reporting does not create authority." }
+        explanation: { en: "Third Youngstown category: the President may rely only on his own exclusive powers, and none covers seizing private businesses.", es: "Tercera categoría de Youngstown: el Presidente solo puede apoyarse en sus facultades exclusivas, y ninguna cubre tomar empresas privadas." }
+        source: "Youngstown Sheet & Tube v. Sawyer (Jackson, J., concurring)"
+      - id: q5
+        type: mcq
+        stem: "The House of Representatives votes 230–200 to impeach a federal judge. What has happened?"
+        choices:
+          - { id: a, text: "The judge has been removed from office.", why: "Impeachment is the accusation; removal needs a Senate conviction by two-thirds." }
+          - { id: b, text: "The judge has been formally accused and will be tried by the Senate, which removes only by a two-thirds vote.", correct: true }
+          - { id: c, text: "Nothing, because judges cannot be impeached.", why: "Article III judges can be impeached; several have been removed." }
+          - { id: d, text: "The judge is suspended pending a Supreme Court review.", why: "There is no judicial review of impeachment." }
+        explanation: { en: "Impeachment is a two-step political process: House accusation by majority, Senate trial with two-thirds for conviction.", es: "El impeachment es un proceso político en dos pasos: acusación de la Cámara por mayoría, juicio en el Senado con dos tercios para condenar." }
+        source: "U.S. Const. art. I §§ 2–3; art. II § 4"
+      - id: q6
+        type: mcq
+        stem: "A Mexican company sues a Texas distributor for $500,000 for breach of a contract governed by Texas law. Can the case be filed in federal court?"
+        choices:
+          - { id: a, text: "No, because the claim arises under state law.", why: "Diversity jurisdiction exists precisely for state-law claims." }
+          - { id: b, text: "Yes, under diversity jurisdiction: a foreign citizen against a Texas citizen with more than $75,000 in controversy.", correct: true }
+          - { id: c, text: "Yes, under federal question jurisdiction, because a foreign party is involved.", why: "Foreign parties do not create a federal question." }
+          - { id: d, text: "Only if both parties consent.", why: "Jurisdiction depends on the statute, not consent." }
+        explanation: { en: "Alienage diversity under 28 U.S.C. § 1332 opens the federal courthouse; the federal judge will then apply Texas contract law.", es: "La diversidad por extranjería del 28 U.S.C. § 1332 abre el tribunal federal; el juez federal aplicará entonces el derecho contractual de Texas." }
+        source: "28 U.S.C. § 1332"
+      - id: q7
+        type: mcq
+        stem: "A candidate for the Texas Supreme Court says in a campaign speech that she believes the state's cap on medical damages is unconstitutional. Under Republican Party of Minnesota v. White, may the state discipline her?"
+        choices:
+          - { id: a, text: "Yes; judicial candidates may not discuss legal issues.", why: "That is the announce clause the Court struck down." }
+          - { id: b, text: "No; announcing views on disputed legal issues is protected speech, though a state may still forbid promises to decide particular cases a certain way.", correct: true }
+          - { id: c, text: "Yes, because judges must be impartial toward all litigants.", why: "The Court held that impartiality toward parties is not served by muzzling views on issues." }
+          - { id: d, text: "No, because judicial elections are unconstitutional.", why: "States may elect judges; the question is what they may restrict once they do." }
+        explanation: { en: "A state that elects judges must tolerate the speech that makes elections meaningful; the line runs between views on issues (protected) and pledges about cases (regulable).", es: "Un estado que elige jueces debe tolerar el discurso que da sentido a la elección; la línea va entre opiniones sobre temas (protegidas) y promesas sobre casos (regulables)." }
+        source: "Republican Party of Minnesota v. White (2002)"
+      - id: q8
+        type: cloze
+        text: "Under Jackson's Youngstown concurrence, presidential power is at its {{lowest ebb}} when the President acts against the express or implied will of {{Congress}}."
+        explanation: { en: "Memorize the three zones; every presidential power question uses them.", es: "Memoriza las tres zonas; toda pregunta sobre poder presidencial las usa." }
+      - id: q9
+        type: short
+        stem: "Explain in three sentences why Marbury v. Madison is said to have lost the battle and won the war."
+        answer: "Marshall held that Marbury had a right to his commission and that mandamus was the proper remedy, but that the Supreme Court could not issue it because the statute granting original jurisdiction to do so conflicted with Article III. Jefferson's administration therefore faced no order to defy. In refusing jurisdiction, the Court asserted the far greater power to measure acts of Congress against the Constitution and to refuse to apply those that conflict."
+        keyPoints: ["right and remedy yes, power of this court no", "no order Jefferson could defy", "establishes judicial review"]
+      - id: q10
+        type: short
+        stem: "Compare, in four or five sentences, how federal judges in the United States and federal judges in Mexico obtain and keep their offices."
+        answer: "U.S. federal judges are nominated by the President, confirmed by the Senate, and serve during good behavior with salaries that cannot be reduced; they leave only by death, resignation or impeachment. Mexican federal judges historically came through a judicial career and examinations, with Supreme Court ministros appointed by the Senate from presidential shortlists for fifteen-year terms; since the 2024 reform, federal judges and ministros are elected by popular vote for fixed terms. The American model trades accountability for independence; the Mexican reform makes the opposite trade and raises the campaign-speech problem of White."
+        keyPoints: ["nomination and Senate confirmation; life tenure; salary protection", "Mexico: career and Senate appointment before 2024; popular election after", "independence versus accountability"]
+  - id: pals-federalism-01
+    topic: federalism
+    title: { en: "Federalism and the Commerce Clause", es: "Federalismo y Commerce Clause" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Congress bans racial discrimination in restaurants that serve food shipped from other states. A Dallas diner with only local customers challenges the law. Under Heart of Atlanta and its companion cases, the law is:"
+        choices:
+          - { id: a, text: "Invalid, because the diner's customers are local.", why: "The aggregate effect on commerce, including the food supply chain, is what counts." }
+          - { id: b, text: "Valid, under the Commerce Clause: discrimination in places serving interstate goods and travelers substantially affects interstate commerce.", correct: true }
+          - { id: c, text: "Valid, under the Fourteenth Amendment.", why: "The diner is a private actor; the Fourteenth Amendment needs state action." }
+          - { id: d, text: "Invalid, because Congress's motive was moral rather than economic.", why: "Motive does not matter if the commercial link is real." }
+        explanation: { en: "The 1964 Act rests on the commerce power precisely because the state action doctrine blocked the Fourteenth Amendment route.", es: "La ley de 1964 descansa en el poder de comercio justamente porque la doctrina de la acción estatal cerraba la vía de la Decimocuarta Enmienda." }
+        source: "Heart of Atlanta Motel v. United States; Katzenbach v. McClung (1964)"
+      - id: q2
+        type: mcq
+        stem: "Congress makes it a federal crime to possess a knife within 500 feet of any school. Which argument best attacks the statute?"
+        choices:
+          - { id: a, text: "Knife possession near a school is noneconomic activity with no substantial effect on interstate commerce, so no enumerated power supports the law.", correct: true }
+          - { id: b, text: "Criminal law is reserved to the states by the Tenth Amendment.", why: "Congress can create crimes tied to its powers; the problem is the missing power, not the subject." }
+          - { id: c, text: "The statute violates the Second Amendment.", why: "Knives and the Second Amendment are a different question; the Commerce Clause argument is the one from Lopez." }
+          - { id: d, text: "Schools are state institutions and Congress cannot legislate near them.", why: "No such rule." }
+        explanation: { en: "United States v. Lopez struck down the Gun-Free School Zones Act on this reasoning; the substantial effects test does not reach noneconomic local conduct.", es: "United States v. Lopez anuló la Gun-Free School Zones Act con este razonamiento; la prueba de los efectos sustanciales no alcanza la conducta local no económica." }
+        source: "United States v. Lopez (1995)"
+      - id: q3
+        type: mcq
+        stem: "Congress orders every state legislature to enact a statute regulating the disposal of radioactive waste or else take title to the waste. This is:"
+        choices:
+          - { id: a, text: "Valid under the Commerce Clause.", why: "The commerce power lets Congress regulate waste directly, not command states to legislate." }
+          - { id: b, text: "Invalid: Congress may not commandeer state legislatures.", correct: true }
+          - { id: c, text: "Valid, because states consented by joining the Union.", why: "No such consent exists." }
+          - { id: d, text: "Valid, if the President signs it.", why: "Presentment does not cure a federalism defect." }
+        explanation: { en: "The Tenth Amendment's anti-commandeering rule: Congress regulates people, not states as states, though it may offer conditional funds or preempt.", es: "La regla anti-commandeering de la Décima Enmienda: el Congreso regula a las personas, no a los estados como tales, aunque puede ofrecer fondos condicionados o desplazar su legislación." }
+        source: "New York v. United States (1992)"
+      - id: q4
+        type: mcq
+        stem: "A man is acquitted of assault in a Texas court. Federal prosecutors then charge him under a federal civil-rights statute for the same beating. His double jeopardy claim:"
+        choices:
+          - { id: a, text: "Wins, because it is the same act.", why: "Same act, different sovereign." }
+          - { id: b, text: "Loses, because Texas and the United States are separate sovereigns, each with its own offense.", correct: true }
+          - { id: c, text: "Wins, unless the federal charge carries a longer sentence.", why: "Sentence length is irrelevant." }
+          - { id: d, text: "Loses only if the federal trial is held in another state.", why: "Venue has nothing to do with it." }
+        explanation: { en: "Dual sovereignty: an offense against each sovereign is a separate offense (Gamble v. United States, 2019). Mexico's article 23 has no such exception.", es: "Doble soberanía: una ofensa contra cada soberano es un delito distinto (Gamble v. United States, 2019). El art. 23 CPEUM no tiene esa excepción." }
+        source: "Gamble v. United States (2019)"
+      - id: q5
+        type: cloze
+        text: "Congress may regulate the channels and instrumentalities of interstate commerce and activities that {{substantially affect}} it; the states keep a general {{police power}} that the federal government lacks."
+        explanation: { en: "Two halves of federalism: enumerated federal power and residual state power.", es: "Dos mitades del federalismo: poder federal enumerado y poder estatal residual." }
+      - id: q6
+        type: short
+        stem: "Compare the U.S. Tenth Amendment with article 124 of the Mexican Constitution in three sentences, including one practical difference."
+        answer: "Both reserve to the states (or the people) the powers not granted to the federal government, so the federal government is one of enumerated powers in both constitutions. In practice, U.S. federal power expanded through judicial interpretation of the Commerce Clause and the spending power, while Mexican federal power expanded through hundreds of amendments to article 73 that moved subjects (education, health, labor, crime) to the federal list. A second difference is that Mexican competences tend to be exclusive while many American ones are concurrent, which is why the United States needs a doctrine of preemption."
+        keyPoints: ["same residual rule", "expansion by interpretation vs. by amendment", "concurrent powers and preemption"]
+  - id: pals-rights-01
+    topic: equality
+    title: { en: "Rights: citizenship, speech, equality, due process", es: "Derechos: ciudadanía, expresión, igualdad, debido proceso" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A state law bars marriages between citizens and noncitizens and is applied equally to both. The best constitutional analysis:"
+        choices:
+          - { id: a, text: "Valid, because it applies equally to everyone.", why: "Loving rejected the equal application argument for a classification aimed at a protected group." }
+          - { id: b, text: "Invalid: it burdens the fundamental right to marry and classifies by alienage, so it must survive strict scrutiny, which it cannot.", correct: true }
+          - { id: c, text: "Valid under rational basis because marriage is a state matter.", why: "Family law is a state matter, but it is still subject to the Fourteenth Amendment." }
+          - { id: d, text: "Invalid only if the couple is of different races.", why: "Loving's principle is not limited to race." }
+        explanation: { en: "Loving supplies both routes: a suspect classification under equal protection and a fundamental liberty under due process.", es: "Loving da las dos vías: una categoría sospechosa bajo igualdad y una libertad fundamental bajo el debido proceso." }
+        source: "Loving v. Virginia (1967); Graham v. Richardson (1971)"
+      - id: q2
+        type: mcq
+        stem: "A city ordinance limits bakeries to a nine-hour workday to protect workers from fatigue. A bakery owner sues, invoking liberty of contract. Today the court will:"
+        choices:
+          - { id: a, text: "Strike it down under Lochner.", why: "Lochner's approach to economic regulation was abandoned in 1937." }
+          - { id: b, text: "Uphold it under rational-basis review: hours limits are economic regulation with a conceivable legitimate purpose.", correct: true }
+          - { id: c, text: "Apply strict scrutiny because liberty is a fundamental right.", why: "Economic liberty is not treated as fundamental; personal liberties are." }
+          - { id: d, text: "Refuse to hear the case as a political question.", why: "Constitutional challenges to ordinances are justiciable." }
+        explanation: { en: "The same facts that won in 1905 lose today; that reversal is the Lochner-to-Carolene story.", es: "Los mismos hechos que ganaron en 1905 pierden hoy; ese giro es la historia de Lochner a Carolene." }
+        source: "Lochner (1905); West Coast Hotel v. Parrish (1937); Carolene Products n.4 (1938)"
+      - id: q3
+        type: mcq
+        stem: "A Texas statute makes it a crime to burn the American flag in a way that offends onlookers. Under the First Amendment:"
+        choices:
+          - { id: a, text: "Valid; conduct is not speech.", why: "Expressive conduct is protected when it conveys a message observers understand." }
+          - { id: b, text: "Invalid; punishing flag burning because of the message it sends is a content-based restriction on expressive conduct.", correct: true }
+          - { id: c, text: "Valid if a majority of Texans support it.", why: "Rights do not depend on majorities." }
+          - { id: d, text: "Invalid only on federal property.", why: "The First Amendment binds Texas through incorporation everywhere." }
+        explanation: { en: "Texas v. Johnson (1989) struck down exactly this statute; the government may not prohibit expression because society finds the idea offensive. Mexico, by contrast, criminalizes insulting the flag.", es: "Texas v. Johnson (1989) anuló exactamente esta ley; el gobierno no puede prohibir la expresión porque la sociedad encuentre ofensiva la idea. México, en cambio, tipifica el ultraje a la bandera." }
+        source: "Texas v. Johnson (1989)"
+      - id: q4
+        type: mcq
+        stem: "A child is born in Houston to parents who entered the country without authorization. Under the Fourteenth Amendment as interpreted since Wong Kim Ark, the child is:"
+        choices:
+          - { id: a, text: "A citizen at birth.", correct: true }
+          - { id: b, text: "A citizen only if one parent is a lawful resident.", why: "The clause asks about birth in the territory and subjection to U.S. jurisdiction, not parental status." }
+          - { id: c, text: "Not a citizen, under Elk v. Wilkins.", why: "Elk concerned tribal Indians born under tribal allegiance, a different question." }
+          - { id: d, text: "A citizen after naturalization at eighteen.", why: "Naturalization is for those not citizens at birth." }
+        explanation: { en: "Birthright citizenship under the Citizenship Clause; Elk is the exception that proves the rule, and recent executive attempts to narrow the clause have been litigated against this precedent.", es: "Ciudadanía por nacimiento bajo la Citizenship Clause; Elk es la excepción que confirma la regla, y los intentos recientes del ejecutivo por restringirla se han litigado contra este precedente." }
+        source: "United States v. Wong Kim Ark (1898); Elk v. Wilkins (1884)"
+      - id: q5
+        type: mcq
+        stem: "Which classification triggers intermediate rather than strict scrutiny?"
+        choices:
+          - { id: a, text: "Race.", why: "Strict." }
+          - { id: b, text: "National origin.", why: "Strict." }
+          - { id: c, text: "Sex.", correct: true }
+          - { id: d, text: "Age.", why: "Rational basis." }
+        explanation: { en: "Sex and illegitimacy get the middle tier: important interest, substantial relation.", es: "Sexo y filiación reciben el nivel intermedio: interés importante, relación sustancial." }
+        source: "Craig v. Boren (1976); United States v. Virginia (1996)"
+      - id: q6
+        type: mcq
+        stem: "A private golf club in Dallas refuses to admit Black members. A rejected applicant sues under the Equal Protection Clause. Result?"
+        choices:
+          - { id: a, text: "He wins; discrimination is unconstitutional.", why: "The Constitution restrains governments, not private clubs." }
+          - { id: b, text: "He loses on the constitutional claim because there is no state action; a statute such as the Civil Rights Act may provide a remedy instead.", correct: true }
+          - { id: c, text: "He wins if the club has a liquor license.", why: "A license alone is generally not enough entanglement to make the club a state actor." }
+          - { id: d, text: "He loses because golf is not commerce.", why: "Commerce is irrelevant to the Fourteenth Amendment question." }
+        explanation: { en: "State action is the gate to every Fourteenth Amendment claim; statutes fill the private gap.", es: "La acción estatal es la puerta de todo reclamo bajo la Decimocuarta Enmienda; las leyes llenan el hueco privado." }
+        source: "Civil Rights Cases (1883); Moose Lodge v. Irvis (1972)"
+      - id: q7
+        type: cloze
+        text: "Racial classifications must survive {{strict scrutiny}}: a compelling interest and narrow tailoring; ordinary economic regulation needs only a {{rational basis}}."
+        explanation: { en: "The tiers are the grammar of equal protection.", es: "Los niveles son la gramática de la igualdad ante la ley." }
+      - id: q8
+        type: short
+        stem: "What distinguishes liberalism in the economic sense from liberalism in the civil-rights sense, and how does American constitutional law treat each today? Answer in five or six sentences."
+        answer: "Economic liberalism treats freedom of contract, property and markets as the core liberties and sees regulation as the threat; civil-rights liberalism treats personal autonomy, equality and the protection of minorities as the core and often uses regulation to secure them. Between 1905 and 1937 the Supreme Court constitutionalized the first, striking down labor laws under liberty of contract (Lochner). After 1937 it abandoned that role and, following Carolene Products footnote four, reviews economic regulation only for a rational basis while applying strict scrutiny to laws that burden fundamental personal rights or target suspect classes. Loving is the model of the second kind: a racial classification and the liberty to marry, both strictly protected. Mexico took the opposite starting point in 1917, constitutionalizing labor and social rights while leaving economic freedom to ordinary law, and has moved toward strong protection of personal liberties through the free development of personality doctrine."
+        keyPoints: ["two meanings of liberty", "Lochner era protected economic liberty", "1937 and footnote four: rational basis for economic, strict for personal rights and suspect classes", "Loving as civil-rights model", "Mexican contrast"]
+      - id: q9
+        type: short
+        stem: "Are courts agents of societal change? Use Brown and its aftermath in your answer (four or five sentences)."
+        answer: "Brown declared school segregation unconstitutional in 1954, a step the political branches had not taken, which shows that courts can initiate and legitimize change. But Brown II's all deliberate speed formula allowed a decade of delay, Southern officials resisted until Cooper v. Aaron and federal troops, and real desegregation followed the Civil Rights Act of 1964 and the conditioning of federal funds. The honest answer is that courts can start change and give it constitutional authority, but they depend on the other branches and on public opinion to finish it. In Mexico the SCJN has played a similar role on same-sex marriage and abortion, with the same dependence on legislatures to generalize the result."
+        keyPoints: ["Brown as initiator", "Brown II delay and resistance", "Civil Rights Act did the work", "courts start, others finish", "Mexican parallel"]
+  - id: pals-criminal-01
+    topic: criminal
+    title: { en: "Criminal procedure: Miranda, Duncan, Roper", es: "Procedimiento penal: Miranda, Duncan, Roper" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Police arrest a suspect, place him in a patrol car and, without warnings, ask where he hid the money. He answers. At trial the answer is:"
+        choices:
+          - { id: a, text: "Admissible, because he answered voluntarily.", why: "Voluntariness is not enough once custody and interrogation are present." }
+          - { id: b, text: "Inadmissible in the prosecution's case: custodial interrogation without Miranda warnings.", correct: true }
+          - { id: c, text: "Admissible, because the question was about property, not the crime.", why: "Any question likely to elicit an incriminating response is interrogation." }
+          - { id: d, text: "Admissible, because he had not yet been charged.", why: "Miranda attaches at custodial interrogation, before charging." }
+        explanation: { en: "Custody plus interrogation triggers the warnings; absent a public-safety emergency, the answer is suppressed (it may still impeach him if he testifies).", es: "Custodia más interrogatorio activan las advertencias; sin una emergencia de seguridad pública, la respuesta se excluye (aunque podría usarse para impugnarlo si declara)." }
+        source: "Miranda v. Arizona (1966); New York v. Quarles (1984)"
+      - id: q2
+        type: mcq
+        stem: "A suspect, properly warned, says: 'I want a lawyer.' The officers keep asking questions and he confesses twenty minutes later. The confession is:"
+        choices:
+          - { id: a, text: "Admissible, because the warnings were given.", why: "Warnings are not enough; invocation must be honored." }
+          - { id: b, text: "Inadmissible: once he invokes the right to counsel, questioning must stop until a lawyer is present or he reinitiates.", correct: true }
+          - { id: c, text: "Admissible, if the officers believed he was lying.", why: "Officers' beliefs do not matter." }
+          - { id: d, text: "Admissible, because twenty minutes is a reasonable time.", why: "There is no waiting period; invocation ends the interrogation." }
+        explanation: { en: "Invocation of counsel is a bright line; Edwards v. Arizona adds that police may not reinitiate.", es: "Invocar el derecho a abogado es una línea clara; Edwards v. Arizona añade que la policía no puede reiniciar." }
+        source: "Miranda; Edwards v. Arizona (1981)"
+      - id: q3
+        type: mcq
+        stem: "A state tries a defendant for an offense punishable by up to eighteen months in prison and denies his request for a jury. Under Duncan and Baldwin:"
+        choices:
+          - { id: a, text: "No violation; the Sixth Amendment does not apply to the states.", why: "Duncan incorporated the jury right." }
+          - { id: b, text: "Violation: an offense punishable by more than six months is serious and carries the jury right in state court.", correct: true }
+          - { id: c, text: "No violation if the judge is elected.", why: "Judicial selection is irrelevant." }
+          - { id: d, text: "Violation only if the actual sentence exceeds six months.", why: "The test looks at the maximum authorized penalty." }
+        explanation: { en: "Duncan made the jury right binding on the states; Baldwin fixed the petty-offense line at six months of authorized imprisonment.", es: "Duncan hizo obligatorio el jurado para los estados; Baldwin fijó la línea de las faltas menores en seis meses de prisión autorizada." }
+        source: "Duncan v. Louisiana (1968); Baldwin v. New York (1970)"
+      - id: q4
+        type: mcq
+        stem: "Which right in the Bill of Rights still does not bind the states?"
+        choices:
+          - { id: a, text: "The right to counsel.", why: "Incorporated in Gideon." }
+          - { id: b, text: "The privilege against self-incrimination.", why: "Incorporated in Malloy." }
+          - { id: c, text: "The grand jury indictment requirement.", correct: true }
+          - { id: d, text: "The protection against cruel and unusual punishment.", why: "Incorporated." }
+        explanation: { en: "The grand jury and the Seventh Amendment civil jury are the notable rights never incorporated; many states charge felonies by information.", es: "El gran jurado y el jurado civil de la Séptima Enmienda son los derechos notables nunca incorporados; muchos estados acusan por information." }
+        source: "Hurtado v. California (1884); McDonald v. Chicago (2010)"
+      - id: q5
+        type: mcq
+        stem: "A state seeks the death penalty for a defendant who committed murder at seventeen years and eleven months. Under Roper:"
+        choices:
+          - { id: a, text: "Permitted, because he was nearly an adult.", why: "Roper draws a categorical line at eighteen." }
+          - { id: b, text: "Barred; the Eighth Amendment forbids executing anyone for a crime committed before eighteen.", correct: true }
+          - { id: c, text: "Permitted if the jury finds him unusually mature.", why: "The Court rejected case-by-case assessment for juveniles." }
+          - { id: d, text: "Barred only in states that have abolished the death penalty.", why: "The rule is national." }
+        explanation: { en: "The categorical rule avoids juries being swayed by brutal facts; eighteen is the line society draws for adulthood.", es: "La regla categórica evita que los jurados se dejen llevar por hechos brutales; dieciocho es la línea que la sociedad traza para la adultez." }
+        source: "Roper v. Simmons (2005)"
+      - id: q6
+        type: mcq
+        stem: "What role did foreign and international practice play in Roper?"
+        choices:
+          - { id: a, text: "It controlled the outcome because treaties bind the Court.", why: "The Court said the Constitution's meaning is its own responsibility." }
+          - { id: b, text: "None; the Court refused to consider it.", why: "The majority discussed it at length." }
+          - { id: c, text: "It confirmed a conclusion the Court had reached on domestic grounds; the dissent attacked even that use.", correct: true }
+          - { id: d, text: "It created a presumption against the death penalty generally.", why: "No such presumption exists." }
+        explanation: { en: "Confirmation, not control: the United States stood alone, which the majority found instructive and Justice Scalia found irrelevant.", es: "Confirmación, no control: Estados Unidos estaba solo, lo que la mayoría consideró ilustrativo y el juez Scalia, irrelevante." }
+        source: "Roper v. Simmons (2005)"
+      - id: q7
+        type: cloze
+        text: "Before custodial interrogation, police must warn the suspect of the right to remain {{silent}}, that statements may be used against him, and of the right to an {{attorney}}, appointed if he cannot afford one."
+        explanation: { en: "Four warnings, one waiver, and invocation stops everything.", es: "Cuatro advertencias, una renuncia, y la invocación detiene todo." }
+      - id: q8
+        type: short
+        stem: "In four sentences, explain the method the Supreme Court uses to decide whether a punishment is cruel and unusual, and apply it to a state that wants to execute offenders with severe intellectual disability."
+        answer: "The Court asks whether evolving standards of decency reject the punishment, first through objective indicia (how many states allow it, how often juries impose it, the direction of change) and then through its own judgment about proportionality and the culpability of the class of offenders; foreign practice may confirm the result. Applied to the intellectually disabled, Atkins v. Virginia (2002) found a national consensus against execution and concluded that diminished culpability makes the death penalty disproportionate, so the state's plan is unconstitutional. Roper extended the same reasoning to juveniles three years later."
+        keyPoints: ["evolving standards", "objective indicia: states, juries, trend", "independent judgment on culpability", "Atkins bars it"]
+      - id: q9
+        type: short
+        stem: "Compare the Miranda rule with the Mexican guarantees of article 20 B of the Constitution in three or four sentences."
+        answer: "Both guarantee the detainee the right to remain silent, the right to counsel from the moment of detention, and the exclusion of statements obtained in violation; article 20 B II even declares a confession without counsel worthless. The difference is origin and structure: Miranda is a judge-made rule derived from the Fifth Amendment and imposed on the states through the Fourteenth, refined case by case (waiver, invocation, public safety), while Mexico wrote the guarantees into the constitutional text in 2008 and implements them through the CNPP. In practice both systems struggle with the same problem: warnings recited mechanically to suspects who do not understand them."
+        keyPoints: ["same rights: silence, counsel, exclusion", "judge-made vs. constitutional text", "case-by-case refinement vs. code"]
+  - id: pals-essay-practice-01
+    title: { en: "Midterm-style essay prompts (ten questions)", es: "Preguntas de ensayo al estilo del parcial (diez)" }
+    difficulty: 3
+    shuffle: false
+    questions:
+      - id: e1
+        type: short
+        stem: "Describe the hierarchy of sources of law in the United States and explain how a Texas judge decides which source governs a contract dispute between two Texans."
+        answer: "Constitution, federal statutes and treaties, federal regulations, state constitution, state statutes, state regulations and ordinances, and the common law. A Texas contract dispute is governed by Texas law: first any applicable Texas statute (for sales, the Texas version of UCC article 2), then Texas common law as declared by the Texas Supreme Court and courts of appeals; federal law intrudes only if a federal statute or the Constitution is implicated; Restatements and other states' cases may persuade."
+        keyPoints: ["hierarchy in order", "state law governs contracts", "statute first, then state common law", "federal law only if implicated", "secondary authority persuades"]
+      - id: e2
+        type: short
+        stem: "Explain the common-law method of precedent and contrast it with the way your home country's courts create binding rules."
+        answer: "A decision by a higher court binds lower courts in the same jurisdiction on the holding, and later courts distinguish or follow on the facts; one decision suffices, and overruling requires justification. In Mexico, binding jurisprudencia traditionally required five consecutive consistent decisions or a contradiction ruling; since 2021 the Supreme Court's decisions taken by qualified majority bind immediately, which moves the system toward the American model while keeping abstract tesis rather than fact-bound holdings."
+        keyPoints: ["vertical binding force", "holding vs. dictum, distinguishing", "Mexico: reiteration before 2021, binding precedent after", "tesis vs. fact-bound holdings"]
+      - id: e3
+        type: short
+        stem: "The President issues an executive order requiring all private employers to adopt a four-day work week during an energy crisis. Analyze its validity."
+        answer: "Identify the source of authority: no constitutional clause gives the President power over private employment; check for a statute authorizing or forbidding such action. Under Youngstown, if Congress has not authorized, the President is in the twilight zone or, if Congress has legislated the subject differently (the Fair Labor Standards Act sets hours rules), at the lowest ebb; the Commander in Chief and Take Care clauses do not reach the domestic economy. The order is invalid unless Congress delegated emergency power covering it."
+        keyPoints: ["no constitutional source", "look for a statute", "Youngstown zones", "commander in chief and take care clauses do not apply", "invalid absent delegation"]
+      - id: e4
+        type: short
+        stem: "Explain Marbury v. Madison and why judicial review matters for the rest of the course."
+        answer: "Right, remedy, power: Marbury had a right to the commission, mandamus was a remedy, but the Court lacked original jurisdiction because the statute conflicted with Article III, and the Court applied the Constitution over the statute. That power lets courts enforce constitutional limits against Congress, the President and the states, which is the mechanism behind Brown, Loving, Miranda and every rights case."
+        keyPoints: ["three questions", "statute vs. Constitution: Constitution wins", "diffuse review, final through appeal", "foundation of rights cases"]
+      - id: e5
+        type: short
+        stem: "Describe how federal and Texas judges are selected and evaluate the strengths and weaknesses of each method."
+        answer: "Federal: presidential nomination, Senate confirmation, life tenure and salary protection, giving independence at the cost of democratic accountability and politicized confirmations. Texas: partisan elections for six-year terms, giving accountability at the cost of campaign fundraising, party labels and the impartiality problems discussed in White. A balanced answer mentions merit selection with retention elections as the compromise many states adopted."
+        keyPoints: ["federal appointment and tenure", "Texas partisan elections", "independence vs. accountability", "White and campaign speech", "merit selection as middle path"]
+      - id: e6
+        type: short
+        stem: "Explain how the Commerce Clause allowed Congress to prohibit racial discrimination in hotels and restaurants, and why the Fourteenth Amendment could not."
+        answer: "The Civil Rights Cases (1883) held that the Fourteenth Amendment reaches only state action, so Congress could not use it against private businesses. In 1964 Congress relied instead on the commerce power, and Heart of Atlanta upheld the public accommodations title because hotels serving interstate travelers, and restaurants serving interstate goods, substantially affect interstate commerce in the aggregate; Congress's moral motive was irrelevant to the existence of the power."
+        keyPoints: ["state action limits the Fourteenth Amendment", "commerce power as the alternative", "substantial effects in the aggregate", "motive irrelevant"]
+      - id: e7
+        type: short
+        stem: "Explain the three tiers of equal protection scrutiny and apply them to a state law that gives in-state tuition only to citizens, denying it to lawful permanent residents."
+        answer: "Strict scrutiny for race, national origin and state alienage classifications; intermediate for sex; rational basis for the rest. A state classification by alienage against lawful permanent residents is suspect under Graham v. Richardson and must serve a compelling interest by narrowly tailored means; saving money is not compelling, so the law likely fails, unless the state invokes the political-function exception, which covers jobs like police officers and not tuition."
+        keyPoints: ["three tiers", "state alienage classification is suspect", "compelling interest required; fiscal savings insufficient", "political function exception does not apply"]
+      - id: e8
+        type: short
+        stem: "Using Lochner and Loving, explain how the word liberty in the Due Process Clause has been read differently over time."
+        answer: "In Lochner the Court read liberty to include freedom of contract and struck down a maximum-hours law, substituting its own judgment about economic policy. After 1937 the Court withdrew from economic liberty and, through footnote four, reserved strict review for personal rights and vulnerable minorities. Loving reads liberty as the freedom to marry and protects it strictly alongside equal protection. The same clause, two eras, two ideas of what liberty deserves judicial protection: economic liberalism then, civil-rights liberalism now."
+        keyPoints: ["Lochner: economic liberty", "1937 retreat and footnote four", "Loving: personal liberty", "same clause, two liberalisms"]
+      - id: e9
+        type: short
+        stem: "Explain Miranda, Duncan and Roper as three answers to the question what the Fourteenth Amendment requires of state criminal justice."
+        answer: "Miranda applied the Fifth Amendment privilege to station-house interrogation and imposed warnings as a condition of admissibility in every state. Duncan incorporated the Sixth Amendment jury right because it is fundamental to the American scheme of justice, forcing states to provide juries for serious offenses. Roper applied the Eighth Amendment's evolving standards to bar executing juveniles in any state. Together they show selective incorporation turning the Bill of Rights into a national floor for state criminal procedure."
+        keyPoints: ["Fifth: warnings", "Sixth: jury incorporated", "Eighth: evolving standards", "incorporation as national floor"]
+      - id: e10
+        type: short
+        stem: "Are courts agents of societal change in the United States? Take a position and support it with two cases from the course and one comparison with your country."
+        answer: "Position: courts can initiate and legitimize change but cannot complete it alone. Brown declared segregation unconstitutional yet needed Brown II, Cooper v. Aaron, federal enforcement and the Civil Rights Act of 1964 to change schools. Loving ended marriage bans in sixteen states in one stroke, a case where the judicial order was self-executing. Roper shows the Court following and ratifying a trend among the states rather than leading it. In Mexico the Supreme Court led on same-sex marriage through amparo and jurisprudence from 2015, but each state's code changed only when its legislature acted, which mirrors the American pattern."
+        keyPoints: ["clear thesis", "Brown: needs other branches", "Loving: self-executing change", "Roper: court follows consensus", "Mexican parallel"]
