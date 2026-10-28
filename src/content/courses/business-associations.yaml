@@ -1,0 +1,30 @@
+id: business-associations
+code: BA
+title: { en: "Business Associations", es: "Sociedades (Business Associations)" }
+term: fall-2026
+professor: { name: "Martin Camp", title: "Professor" }
+meetings:
+  - { day: tue, start: "10:30", end: "11:55" }
+  - { day: thu, start: "10:30", end: "11:55" }
+books:
+  - id: business-law-and-policy
+    cite: "Business Organizations Law and Policy: Materials and Problems (Bauman, Stevenson & Rhee), edition to confirm from the cover"
+    short: "Business Law & Policy"
+    role: casebook
+    verified: false
+topics:
+  - { id: agency, order: 1, title: { en: "Agency: authority and liability", es: "Agency: facultades y responsabilidad" }, barTested: true }
+  - { id: partnerships, order: 2, title: { en: "Partnerships and choice of entity", es: "Partnerships y elección de forma societaria" }, barTested: true }
+  - { id: corporate-form, order: 3, title: { en: "The corporation and limited liability", es: "La corporation y la responsabilidad limitada" }, barTested: true }
+  - { id: governance, order: 4, title: { en: "Governance and fiduciary duties", es: "Gobierno corporativo y deberes fiduciarios" }, barTested: true }
+  - { id: owner-agreements, order: 5, title: { en: "Partner and shareholder agreements", es: "Acuerdos entre socios y accionistas" } }
+assessment:
+  - { kind: final-exam, format: { en: "Exam format to confirm with the syllabus", es: "Formato del examen por confirmar con el syllabus" }, verified: false }
+  - { kind: participation, format: { en: "Class discussion of cases and book scenarios", es: "Discusión en clase de casos y escenarios del libro" } }
+materials:
+  canvas: true
+  note: { en: "Professor Camp's slides, cases and the book's scenarios.", es: "Presentaciones del profesor Camp, casos y escenarios del libro." }
+color: c2
+about:
+  en: "How people organize to do business: agency first (who can bind whom), then partnerships, LLCs and corporations, and the duties owners and managers owe each other."
+  es: "Cómo se organiza la gente para hacer negocios: primero agency (quién obliga a quién), luego partnerships, LLC y corporations, y los deberes entre dueños y administradores."

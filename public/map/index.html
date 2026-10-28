@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa Judicial EE. UU.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238b2635'/%3E%3Cpath d='M16 7v17M8 24h16M8 12h16M8 12l-3 7h6zM24 12l-3 7h6z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: atlas arriba (mapa + panel lateral), explicación abajo en una columna de lectura.
+   Color: neutros fríos con sesgo pizarra; acento oxblood solo para selección e interacción;
+   los 12 circuitos llevan su propia paleta validada (OKLCH, pares vecinos ΔE ≥ 15 / CVD ≥ 8). */
+:root {
+  --bg: #f3f4f1;
+  --bg-2: #ffffff;
+  --panel: #ffffff;
+  --fg: #1b1f27;
+  --fg-2: #49505e;
+  --muted: #7a8291;
+  --line: #d6dad3;
+  --line-2: #e6e8e2;
+  --accent: #8b2635;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(139, 38, 53, 0.10);
+  --focus: #2a61b1;
+  --map-border: #ffffff;
+  --map-circuit: #1b1f27;
+  --fed-tint: rgba(32, 115, 164, 0.14);
+  --state-tint: rgba(183, 84, 0, 0.12);
+  --shadow: 0 1px 2px rgba(27, 31, 39, 0.06), 0 8px 24px rgba(27, 31, 39, 0.06);
+  /* circuitos federales: relleno y tinta de la etiqueta */
+  --c1: #e98f3b;  --ci1: #15171c;
+  --c2: #d287dd;  --ci2: #15171c;
+  --c3: #ad490e;  --ci3: #ffffff;
+  --c4: #41bacd;  --ci4: #15171c;
+  --c5: #2e802a;  --ci5: #ffffff;
+  --c6: #7a54b2;  --ci6: #ffffff;
+  --c7: #45c383;  --ci7: #15171c;
+  --c8: #89a3f6;  --ci8: #15171c;
+  --c9: #958d1c;  --ci9: #15171c;
+  --c10: #2073a4; --ci10: #ffffff;
+  --c11: #f37e97; --ci11: #15171c;
+  --cDC: #a84174; --ciDC: #ffffff;
+  --cFED: #6d7483; --ciFED: #ffffff;
+  /* estructura estatal (3 clases) */
+  --st-3: #2a78d6; --st-2: #eb6834; --st-dual: #1baf7a;
+  /* selección de jueces: dos rampas (elección / nombramiento) + legislativa */
+  --sel-partisan: #b75400; --sel-nonpartisan: #de9871;
+  --sel-retention: #2a61b1; --sel-appointment: #83adea;
+  --sel-legislative: #1baf7a;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --measure: 66ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171c; --bg-2: #1b1e25; --panel: #1d2027; --fg: #e7e5de; --fg-2: #b6bac3; --muted: #8b919d;
+    --line: #2d313a; --line-2: #242830; --accent: #d9707c; --accent-ink: #15171c; --accent-soft: rgba(217, 112, 124, 0.14);
+    --focus: #83adea; --map-border: #15171c; --map-circuit: #e7e5de;
+    --fed-tint: rgba(117, 141, 223, 0.18); --state-tint: rgba(222, 152, 113, 0.16);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+    --c1: #d1791e; --ci1: #15171c; --c2: #bb71c6; --ci2: #15171c; --c3: #a34000; --ci3: #ffffff; --c4: #20a4b7; --ci4: #15171c;
+    --c5: #247720; --ci5: #ffffff; --c6: #714ba8; --ci6: #ffffff; --c7: #25ac6e; --ci7: #15171c; --c8: #758ddf; --ci8: #15171c;
+    --c9: #867d00; --ci9: #ffffff; --c10: #126a9a; --ci10: #ffffff; --c11: #da6882; --ci11: #15171c; --cDC: #9e386b; --ciDC: #ffffff;
+    --cFED: #7f8796; --ciFED: #15171c;
+    --st-3: #3987e5; --st-2: #d95926; --st-dual: #199e70;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171c; --bg-2: #1b1e25; --panel: #1d2027; --fg: #e7e5de; --fg-2: #b6bac3; --muted: #8b919d;
+  --line: #2d313a; --line-2: #242830; --accent: #d9707c; --accent-ink: #15171c; --accent-soft: rgba(217, 112, 124, 0.14);
+  --focus: #83adea; --map-border: #15171c; --map-circuit: #e7e5de;
+  --fed-tint: rgba(117, 141, 223, 0.18); --state-tint: rgba(222, 152, 113, 0.16);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --c1: #d1791e; --ci1: #15171c; --c2: #bb71c6; --ci2: #15171c; --c3: #a34000; --ci3: #ffffff; --c4: #20a4b7; --ci4: #15171c;
+  --c5: #247720; --ci5: #ffffff; --c6: #714ba8; --ci6: #ffffff; --c7: #25ac6e; --ci7: #15171c; --c8: #758ddf; --ci8: #15171c;
+  --c9: #867d00; --ci9: #ffffff; --c10: #126a9a; --ci10: #ffffff; --c11: #da6882; --ci11: #15171c; --cDC: #9e386b; --ciDC: #ffffff;
+  --cFED: #7f8796; --ciFED: #15171c;
+  --st-3: #3987e5; --st-2: #d95926; --st-dual: #199e70;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+button { font: inherit; color: inherit; }
+button:focus-visible, select:focus-visible, [tabindex]:focus-visible, summary:focus-visible, .state:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.wrap { max-width: 1280px; margin: 0 auto; }
+
+/* ---- barra superior ---- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 1px solid var(--line-2); }
+.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding-block: 12px; }
+.brand h1 { font-size: 22px; font-weight: 700; }
+.brand .eyebrow { display: block; margin-bottom: 2px; }
+.views { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; font-family: var(--font-display); }
+.views button { border: 1px solid var(--line); background: var(--bg-2); border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; color: var(--fg-2); }
+.views button:hover { border-color: var(--fg-2); color: var(--fg); }
+.views button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* ---- atlas ---- */
+.atlas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 380px); gap: 20px; align-items: start; padding-block: 20px 8px; }
+.map-wrap { min-width: 0; }
+.map-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.map-head p { font-family: var(--font-display); font-size: 15px; color: var(--fg-2); max-width: 70ch; }
+.map-actions { display: flex; gap: 8px; align-items: center; font-family: var(--font-display); font-size: 13px; color: var(--muted); }
+.btn { border: 1px solid var(--line); background: var(--bg-2); border-radius: 8px; padding: 6px 10px; font-family: var(--font-display); font-size: 13px; font-weight: 600; cursor: pointer; color: var(--fg-2); }
+.btn:hover { color: var(--fg); border-color: var(--fg-2); }
+.map-stage { position: relative; background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+#map { display: block; width: 100%; height: auto; aspect-ratio: 975 / 610; max-width: 100%; touch-action: pan-y; cursor: grab; }
+#map:active { cursor: grabbing; }
+.state { stroke: none; cursor: pointer; transition: fill-opacity 0.15s; }
+.state:hover { fill-opacity: 0.82; }
+.district { cursor: pointer; stroke: var(--map-border); stroke-width: 0.8; vector-effect: non-scaling-stroke; }
+.district:hover { fill-opacity: 1 !important; }
+.state-borders { fill: none; stroke: var(--map-border); stroke-width: 0.9; vector-effect: non-scaling-stroke; pointer-events: none; }
+.circuit-borders { fill: none; stroke: var(--map-circuit); stroke-width: 1.6; stroke-linejoin: round; vector-effect: non-scaling-stroke; pointer-events: none; opacity: 0.9; }
+.hover-outline, .select-outline { fill: none; pointer-events: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.hover-outline { stroke: var(--fg); stroke-width: 1.4; }
+.select-outline { stroke: var(--accent); stroke-width: 2.6; }
+.circuit-label { font-family: var(--font-display); font-weight: 700; font-size: 21px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.circuit-label.dc { font-size: 13px; }
+.leader { stroke: var(--fg); stroke-width: 1; fill: none; vector-effect: non-scaling-stroke; pointer-events: none; }
+.seat { fill: var(--fg); stroke: var(--bg-2); stroke-width: 1.6; vector-effect: non-scaling-stroke; cursor: pointer; }
+.seat.scotus { fill: var(--accent); }
+.seat-label { font-family: var(--font-display); font-size: 10px; font-weight: 600; fill: var(--fg); paint-order: stroke; stroke: var(--bg-2); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.dseat { fill: var(--accent); stroke: var(--bg-2); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.dseat-label { font-family: var(--font-display); font-weight: 700; fill: var(--fg); paint-order: stroke; stroke: var(--bg-2); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.dlabel { font-family: var(--font-display); font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
+.tooltip { position: absolute; z-index: 3; pointer-events: none; background: var(--fg); color: var(--bg); font-family: var(--font-display); font-size: 13px; line-height: 1.35; padding: 7px 10px; border-radius: 8px; max-width: 260px; box-shadow: var(--shadow); }
+.tooltip strong { font-weight: 700; display: block; font-size: 14px; }
+.tooltip .tt-sub { opacity: 0.85; }
+.map-note { position: absolute; right: 12px; bottom: 10px; text-align: right; max-width: 48%; font-family: var(--font-display); font-size: 12px; color: var(--muted); pointer-events: none; }
+.map-error { padding: 40px 20px; text-align: center; color: var(--fg-2); font-family: var(--font-display); }
+
+.territories { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; margin-top: 10px; }
+.terr { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line-2); background: var(--bg-2); border-radius: 10px; padding: 6px 10px 6px 6px; cursor: pointer; font-family: var(--font-display); font-size: 13px; color: var(--fg-2); text-align: left; }
+.terr:hover { border-color: var(--fg-2); color: var(--fg); }
+.terr.selected { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.terr svg { width: 56px; height: 36px; display: block; flex: none; }
+.terr .terr-shape { stroke: var(--map-border); stroke-width: 0.6; }
+.terr b { display: block; font-weight: 600; color: var(--fg); }
+.terr small { color: var(--muted); }
+
+.legend { margin-top: 12px; font-family: var(--font-display); font-size: 13px; }
+.legend-title { color: var(--muted); font-weight: 600; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; }
+.legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 4px 14px; }
+.legend-group { grid-column: 1 / -1; margin-top: 4px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.lg { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-radius: 6px; background: none; border: 1px solid transparent; cursor: pointer; color: var(--fg-2); text-align: left; min-width: 0; }
+.lg:hover { background: var(--bg-2); border-color: var(--line-2); color: var(--fg); }
+.lg.active { border-color: var(--accent); color: var(--fg); }
+.lg[disabled] { cursor: default; }
+.lg[disabled]:hover { background: none; border-color: transparent; }
+.sw { width: 18px; height: 18px; border-radius: 4px; flex: none; display: inline-grid; place-items: center; font-size: 10px; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.08); }
+.sw.hatch { background: repeating-linear-gradient(45deg, var(--sel-partisan) 0 3px, var(--sel-retention) 3px 6px); }
+.sw.dot { border-radius: 50%; width: 12px; height: 12px; margin: 0 3px; }
+.lg .lg-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lg .lg-text small { color: var(--muted); }
+.lg .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---- panel ---- */
+.panel { background: var(--panel); border: 1px solid var(--line-2); border-radius: 12px; box-shadow: var(--shadow); min-width: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 72px); max-height: calc(100vh - 90px); overflow: auto; }
+.picker { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line-2); font-family: var(--font-display); font-size: 13px; color: var(--muted); font-weight: 600; }
+.picker select { flex: 1; min-width: 0; font-family: var(--font-display); font-size: 14px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg-2); color: var(--fg); }
+#panel-body { padding: 16px; display: grid; gap: 18px; }
+.ph { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.ph h2 { font-size: 24px; font-weight: 700; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; font-family: var(--font-display); font-size: 12px; font-weight: 700; border: none; cursor: pointer; background: var(--chip, var(--line)); color: var(--chip-ink, var(--fg)); white-space: nowrap; }
+.chip.ghost { background: var(--accent-soft); color: var(--fg); }
+.pb h3 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line-2); }
+.route { font-family: var(--font-display); font-size: 13px; color: var(--fg-2); line-height: 1.5; margin-bottom: 10px; }
+.route b { color: var(--fg); font-weight: 600; }
+.route .arrow { color: var(--muted); padding: 0 4px; }
+.districts { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.districts li { border: 1px solid var(--line-2); border-radius: 8px; padding: 8px 10px; font-size: 14px; line-height: 1.45; cursor: pointer; border-left: 4px solid var(--dcol, var(--line)); }
+.districts li:hover, .districts li.hot { background: var(--accent-soft); }
+.districts li strong { font-family: var(--font-display); font-size: 14px; }
+.districts li .dname { color: var(--fg-2); font-family: var(--font-display); font-size: 13px; }
+.districts li small { display: block; color: var(--muted); font-family: var(--font-display); font-size: 12px; margin-top: 2px; }
+.districts li p { margin-top: 4px; font-size: 14px; color: var(--fg-2); }
+.pyramid { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.tier { border-radius: 8px; padding: 9px 12px; font-size: 14px; line-height: 1.45; background: var(--state-tint); position: relative; }
+.tier.top { margin-inline: 14%; }
+.tier.mid { margin-inline: 7%; }
+.tier.none { background: none; border: 1px dashed var(--line); color: var(--muted); }
+.tier-label { display: block; font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.tier strong { font-family: var(--font-display); font-weight: 600; display: block; }
+.tier em { font-style: normal; color: var(--fg-2); font-family: var(--font-display); font-size: 13px; display: block; }
+.sel { display: grid; grid-template-columns: 14px 1fr; gap: 10px; align-items: start; font-size: 14px; margin-top: 12px; line-height: 1.45; }
+.sel .swatch { width: 14px; height: 14px; border-radius: 3px; margin-top: 4px; border: 1px solid rgba(0, 0, 0, 0.08); }
+.sel strong { font-family: var(--font-display); font-weight: 600; display: block; }
+.note, .local { font-size: 14px; line-height: 1.5; margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--bg); color: var(--fg-2); }
+.local { border-left: 4px solid var(--accent); background: var(--accent-soft); color: var(--fg); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+.kv dt { font-family: var(--font-display); color: var(--muted); font-size: 13px; }
+.kv dd { margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chips .chip { font-size: 12px; }
+.ul { margin: 6px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.5; }
+.ul li + li { margin-top: 4px; }
+
+/* ---- explicación ---- */
+.reading { max-width: 1280px; margin: 0 auto; padding-block: 40px 0; }
+.reading h2 { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+.reading h3 { font-size: 20px; margin: 22px 0 8px; }
+.lede { font-size: 20px; line-height: 1.5; color: var(--fg-2); max-width: var(--measure); margin-bottom: 20px; }
+.prose { max-width: var(--measure); display: grid; gap: 12px; }
+.prose p { max-width: var(--measure); }
+.prose strong { font-weight: 600; }
+figure { margin: 24px 0 0; }
+figure svg { max-width: 100%; height: auto; display: block; }
+figcaption { font-family: var(--font-display); font-size: 13px; color: var(--muted); margin-top: 8px; max-width: 80ch; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 16px; }
+.two-col > div { min-width: 0; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: step; }
+.steps li { position: relative; padding: 12px 14px 12px 52px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--bg-2); font-size: 15px; line-height: 1.5; counter-increment: step; }
+.steps li::before { content: counter(step); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; background: var(--fg); color: var(--bg); }
+.steps.fed li::before { background: var(--c10); color: var(--ci10); }
+.steps.sta li::before { background: var(--sel-partisan); color: #fff; }
+.steps li strong { font-family: var(--font-display); font-weight: 600; display: block; margin-bottom: 2px; }
+.col-title { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.col-title .sw { width: 14px; height: 14px; }
+.cases { display: grid; gap: 8px; margin-top: 12px; }
+details { border: 1px solid var(--line-2); border-radius: 10px; background: var(--bg-2); }
+summary { cursor: pointer; padding: 12px 14px; font-family: var(--font-display); font-weight: 600; font-size: 15px; list-style: none; display: flex; gap: 10px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+"; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-size: 15px; color: var(--muted); flex: none; }
+details[open] summary::before { content: "–"; }
+details .answer { padding: 0 14px 14px 46px; font-size: 15px; line-height: 1.5; color: var(--fg-2); }
+details .answer b { color: var(--fg); font-family: var(--font-display); font-weight: 600; }
+.verdict { display: inline-block; font-family: var(--font-display); font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-right: 6px; color: #fff; }
+.verdict.fed { background: var(--c10); color: var(--ci10); }
+.verdict.sta { background: var(--sel-partisan); }
+.verdict.both { background: var(--fg); color: var(--bg); }
+.verdict.scotus { background: var(--accent); color: var(--accent-ink); }
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line-2); line-height: 1.45; }
+th { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+td:first-child { font-family: var(--font-display); font-weight: 600; white-space: nowrap; }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px 28px; margin: 12px 0 0; }
+.glossary div { min-width: 0; }
+.glossary dt { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.glossary dd { margin: 2px 0 0; font-size: 15px; line-height: 1.5; color: var(--fg-2); }
+.sources { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line-2); font-family: var(--font-display); font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 90ch; }
+.sources ul { margin: 6px 0 0; padding-left: 18px; }
+
+@media (max-width: 960px) {
+  .atlas { grid-template-columns: 1fr; }
+  .panel { position: static; max-height: none; }
+  .two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .brand h1 { font-size: 19px; }
+  .views { margin-left: 0; }
+  .views button { padding: 6px 11px; font-size: 13px; }
+  .reading h2 { font-size: 25px; }
+  .lede { font-size: 18px; }
+  .legend-grid { grid-template-columns: 1fr 1fr; }
+  .tier.top, .tier.mid { margin-inline: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="eyebrow"><a href="/" style="color:inherit;text-decoration:none">&larr; Black Letter</a> · Sistema judicial de Estados Unidos</span>
+      <h1>Mapa Judicial de EE. UU.</h1>
+    </div>
+    <nav class="views" role="tablist" aria-label="Vista del mapa">
+      <button type="button" role="tab" data-view="circuits" aria-selected="true" id="tab-circuits">Circuitos federales</button>
+      <button type="button" role="tab" data-view="districts" aria-selected="false" id="tab-districts">Distritos federales</button>
+      <button type="button" role="tab" data-view="structure" aria-selected="false" id="tab-structure">Cortes estatales</button>
+      <button type="button" role="tab" data-view="selection" aria-selected="false" id="tab-selection">Selección de jueces</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="atlas" aria-label="Mapa interactivo">
+    <div class="map-wrap">
+      <div class="map-head">
+        <p id="view-blurb">Cada color es un circuito: la corte federal de apelaciones que revisa a los tribunales de distrito de esos estados. Pasa el cursor o haz clic en un estado.</p>
+        <div class="map-actions">
+          <span id="zoom-hint">Clic en un estado para acercar</span>
+          <button type="button" class="btn" id="reset-zoom">Ver todo el país</button>
+        </div>
+      </div>
+      <div class="map-stage">
+        <svg id="map" viewBox="0 0 975 610" role="img" aria-label="Mapa de Estados Unidos con los circuitos y distritos judiciales federales y la estructura judicial de cada estado">
+          <defs>
+            <pattern id="hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+              <rect width="7" height="7" fill="var(--sel-partisan)"></rect>
+              <rect width="3.5" height="7" fill="var(--sel-retention)"></rect>
+            </pattern>
+          </defs>
+        </svg>
+        <div id="tooltip" class="tooltip" hidden></div>
+        <div class="map-note" id="map-note"></div>
+      </div>
+      <div class="territories" id="territories" aria-label="Territorios"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite">
+      <label class="picker">Estado o territorio
+        <select id="state-select" aria-label="Elegir estado o territorio"></select>
+      </label>
+      <div id="panel-body"></div>
+    </aside>
+  </section>
+
+  <section class="reading" id="como-funciona">
+    <h2>Dos sistemas judiciales que corren en paralelo</h2>
+    <p class="lede">Estados Unidos no tiene un solo poder judicial sino 51 (más los territorios): el sistema federal y el de cada estado. Casi todos los casos empiezan y terminan en las cortes estatales. El sistema federal es más pequeño, de jurisdicción limitada, y solo se cruza con el estatal en la cúspide: la Corte Suprema.</p>
+
+    <figure>
+      <svg viewBox="0 0 920 450" role="img" aria-label="Diagrama de las dos pirámides judiciales: la federal (94 tribunales de distrito, 13 cortes de apelaciones) y la estatal (tribunales de primera instancia, cortes intermedias y cortes supremas estatales), que convergen en la Corte Suprema de Estados Unidos. Las flechas indican apelación de derecho, certiorari discrecional y el traslado (removal) de casos estatales a cortes federales." style="color: var(--fg);">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+          </marker>
+        </defs>
+        <!-- SCOTUS -->
+        <rect x="310" y="22" width="300" height="70" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
+        <text x="460" y="50" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="16" font-weight="700" fill="currentColor">Corte Suprema de EE. UU.</text>
+        <text x="460" y="72" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">9 justices · Washington, D.C. · elige sus casos (certiorari)</text>
+
+        <!-- columna federal -->
+        <text x="190" y="128" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="currentColor" opacity="0.6">SISTEMA FEDERAL</text>
+        <rect x="40" y="190" width="300" height="66" rx="10" fill="var(--fed-tint)" stroke="currentColor" stroke-width="1"></rect>
+        <text x="190" y="217" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="15" font-weight="700" fill="currentColor">13 U.S. Courts of Appeals</text>
+        <text x="190" y="238" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">12 circuitos regionales + Federal Circuit · paneles de 3 jueces</text>
+        <text x="352" y="222" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11" fill="currentColor" opacity="0.65">en banc: toda la corte</text>
+        <text x="352" y="236" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11" fill="currentColor" opacity="0.65">reconsidera (raro)</text>
+
+        <rect x="40" y="356" width="300" height="66" rx="10" fill="var(--fed-tint)" stroke="currentColor" stroke-width="1"></rect>
+        <text x="190" y="383" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="15" font-weight="700" fill="currentColor">94 U.S. District Courts</text>
+        <text x="190" y="404" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">juicios, jurados y pruebas · incluyen las Bankruptcy Courts</text>
+
+        <!-- columna estatal -->
+        <text x="730" y="128" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="currentColor" opacity="0.6">SISTEMA ESTATAL (×50)</text>
+        <rect x="580" y="140" width="300" height="56" rx="10" fill="var(--state-tint)" stroke="currentColor" stroke-width="1"></rect>
+        <text x="730" y="163" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="15" font-weight="700" fill="currentColor">Corte suprema del estado</text>
+        <text x="730" y="183" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">última palabra en derecho estatal · 52 cortes</text>
+
+        <rect x="580" y="248" width="300" height="56" rx="10" fill="var(--state-tint)" stroke="currentColor" stroke-width="1"></rect>
+        <text x="730" y="271" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="15" font-weight="700" fill="currentColor">Corte intermedia de apelaciones</text>
+        <text x="730" y="291" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">existe en 41 estados · 9 estados no la tienen</text>
+
+        <rect x="580" y="356" width="300" height="66" rx="10" fill="var(--state-tint)" stroke="currentColor" stroke-width="1"></rect>
+        <text x="730" y="383" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="15" font-weight="700" fill="currentColor">Tribunales de primera instancia</text>
+        <text x="730" y="404" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="12" fill="currentColor" opacity="0.75">jurisdicción general y limitada · más del 95% de los casos</text>
+
+        <!-- flechas federales -->
+        <path d="M190 356 V262" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arr)"></path>
+        <text x="200" y="312" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">apelación de derecho</text>
+        <path d="M190 190 V57 H304" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arr)"></path>
+        <text x="200" y="130" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">certiorari (discrecional)</text>
+        <text x="200" y="144" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11" fill="currentColor" opacity="0.7">≈1% de las peticiones</text>
+
+        <!-- flechas estatales -->
+        <path d="M730 356 V310" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arr)"></path>
+        <text x="740" y="337" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">apelación de derecho</text>
+        <path d="M730 248 V202" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arr)"></path>
+        <text x="740" y="229" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">casi siempre discrecional</text>
+        <path d="M730 140 V57 H616" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"></path>
+        <text x="720" y="100" text-anchor="end" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">certiorari, solo si hay</text>
+        <text x="720" y="114" text-anchor="end" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">una cuestión federal</text>
+
+        <!-- removal -->
+        <path d="M580 400 H346" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"></path>
+        <text x="463" y="392" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="11.5" fill="currentColor">removal (traslado)</text>
+        <text x="463" y="415" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="10.5" fill="currentColor" opacity="0.7">diversidad o cuestión federal</text>
+      </svg>
+      <figcaption>Las dos pirámides solo se tocan arriba: la Corte Suprema puede revisar a una corte suprema estatal únicamente cuando el caso plantea una cuestión de derecho federal. En derecho estatal, la corte suprema del estado tiene la última palabra. La flecha de abajo es el traslado (removal): un demandado puede mover a corte federal un caso presentado en corte estatal si el tribunal federal también tendría jurisdicción.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <h3>Quién puede oír qué: jurisdicción</h3>
+      <p>Las cortes estatales tienen <strong>jurisdicción general</strong>: pueden oír casi cualquier asunto, incluidos muchos de derecho federal. Las cortes federales tienen <strong>jurisdicción limitada</strong>: solo los casos que la Constitución y el Congreso les asignan. Las dos puertas principales son la <strong>cuestión federal</strong> (el reclamo nace de la Constitución, una ley federal o un tratado) y la <strong>diversidad</strong> (las partes son ciudadanas de estados distintos y se disputan más de $75,000). Algunas materias son exclusivamente federales: quiebras, patentes y derechos de autor, delitos federales, demandas contra Estados Unidos. Otras son exclusivamente estatales en la práctica: familia, sucesiones, la mayoría de los contratos, daños (torts), propiedad y casi todo el derecho penal.</p>
+      <p>Cuando una corte federal decide un caso de diversidad aplica el <strong>derecho sustantivo del estado</strong> (doctrina <em>Erie</em>, 1938) y las normas procesales federales. Por eso un juez federal en Dallas que resuelve un contrato texano debe seguir lo que diga la Supreme Court of Texas, no su propio criterio.</p>
+      <h3>Qué hace cada nivel</h3>
+      <p>El <strong>tribunal de primera instancia</strong> (trial court) es el único que recibe pruebas: testigos, documentos, peritos, jurado. Decide los hechos y aplica el derecho. La <strong>corte de apelaciones</strong> no repite el juicio: revisa el expediente y los escritos de las partes para decidir si hubo un error de derecho que afecte el resultado. Para los hechos, es muy deferente con el tribunal inferior. La <strong>corte de última instancia</strong> casi siempre elige qué casos oír y los usa para unificar el derecho; sus decisiones son precedente obligatorio para todas las cortes de su sistema.</p>
+      <h3>Precedente: a quién obliga cada decisión</h3>
+      <p>Una decisión del 5º Circuito obliga a todos los tribunales de distrito de Texas, Luisiana y Misisipi, pero no a los de California (9º Circuito), donde solo es persuasiva. Cuando dos circuitos resuelven distinto la misma cuestión hay un <strong>circuit split</strong>, la razón más común por la que la Corte Suprema concede un certiorari. Lo mismo pasa dentro de cada estado: las decisiones de la Supreme Court of Texas obligan a los 15 Courts of Appeals y a todas las District Courts texanas.</p>
+    </div>
+  </section>
+
+  <section class="reading" id="camino">
+    <h2>El camino de un caso</h2>
+    <p class="lede">Dos recorridos típicos, paso a paso. En ambos, el derecho a apelar existe una vez; después, seguir subiendo depende de que la corte superior acepte el caso.</p>
+    <div class="two-col">
+      <div>
+        <div class="col-title"><span class="sw" style="background: var(--c10)"></span><h3 style="margin: 0">Caso federal</h3></div>
+        <ol class="steps fed">
+          <li><strong>U.S. District Court</strong> La demanda (complaint) o la acusación (indictment) se presenta en el distrito competente. Siguen los escritos iniciales, el descubrimiento de pruebas (discovery), las mociones (por ejemplo, de desestimación o de sentencia sumaria) y, si hace falta, el juicio con o sin jurado. Más del 95% de los casos civiles termina antes del juicio, por acuerdo o por moción.</li>
+          <li><strong>U.S. Court of Appeals</strong> Quien pierde tiene derecho a apelar la sentencia final ante el circuito de su región. Un panel de tres jueces lee los escritos (briefs), a veces escucha argumentos orales y emite una opinión: confirma (affirm), revoca (reverse), anula (vacate) o devuelve (remand) el caso.</li>
+          <li><strong>Reconsideración en banc</strong> La parte perdedora puede pedir que la corte completa vuelva a oír el caso. Se concede en pocos casos al año, normalmente por su importancia o porque el panel contradijo un precedente del propio circuito.</li>
+          <li><strong>Petición de certiorari</strong> La Corte Suprema recibe miles de peticiones y acepta alrededor de 60 a 70 por término. Bastan cuatro votos (regla de los cuatro). Si niega el cert, la decisión del circuito queda firme, sin que eso signifique que la Corte esté de acuerdo.</li>
+        </ol>
+      </div>
+      <div>
+        <div class="col-title"><span class="sw" style="background: var(--sel-partisan)"></span><h3 style="margin: 0">Caso estatal (ejemplo: Texas)</h3></div>
+        <ol class="steps sta">
+          <li><strong>Tribunal de primera instancia</strong> Los asuntos menores (tránsito, reclamaciones pequeñas, faltas) van a cortes de jurisdicción limitada: Justice Courts, Municipal Courts, County Courts. Los casos mayores (felonies, demandas civiles grandes, divorcios) van a las District Courts del condado, que tienen jurisdicción general.</li>
+          <li><strong>Court of Appeals</strong> Texas tiene 14 distritos regionales de apelación más la nueva 15th Court of Appeals. Un caso de Dallas sube al 5th Court of Appeals District, con sede en Dallas. Como en el sistema federal, esta primera apelación es de derecho.</li>
+          <li><strong>Corte de última instancia</strong> En lo civil, la Supreme Court of Texas decide si acepta la petición de revisión (petition for review). En lo penal, la Court of Criminal Appeals hace lo mismo con la petition for discretionary review. Ambas sesionan en Austin y son la última palabra en derecho texano.</li>
+          <li><strong>Corte Suprema de EE. UU.</strong> Solo si el caso involucra la Constitución o una ley federal (por ejemplo, un registro policial bajo la Cuarta Enmienda) la parte perdedora puede pedir certiorari. Si la cuestión es puramente de derecho estatal, el camino termina en Austin.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="reading" id="donde">
+    <h2>¿En qué corte se presenta?</h2>
+    <p class="lede">Ocho situaciones para practicar la pregunta que todo examen de Civil Procedure hace primero: ¿tiene esta corte jurisdicción sobre la materia?</p>
+    <div class="cases">
+      <details><summary>Dos vecinos de Dallas chocan en Central Expressway; el daño es de $40,000.</summary><div class="answer"><span class="verdict sta">Estatal</span><b>District Court o County Court at Law del condado de Dallas.</b> No hay cuestión federal (es un tort de derecho texano) ni diversidad (ambos son texanos). La corte federal no tiene jurisdicción.</div></details>
+      <details><summary>Una empresa de California demanda a una de Texas por $2 millones por incumplimiento de contrato.</summary><div class="answer"><span class="verdict both">Ambas</span><b>Jurisdicción concurrente.</b> Puede presentarse en corte estatal o en el U.S. District Court por diversidad (ciudadanías distintas y más de $75,000). Si la demandante elige corte estatal, la demandada puede trasladarlo (removal) a la corte federal. En cualquier caso, el contrato se juzga con derecho estatal (Erie).</div></details>
+      <details><summary>Asaltan un banco asegurado por la FDIC en Fort Worth.</summary><div class="answer"><span class="verdict fed">Federal</span><b>U.S. District Court, Northern District of Texas.</b> El robo a un banco asegurado federalmente es delito federal (18 U.S.C. § 2113). Texas también podría acusar por robo bajo su código penal: la doctrina de doble soberanía permite ambos procesos sin violar el principio de double jeopardy.</div></details>
+      <details><summary>Una pareja con hijos se divorcia; uno vive en Texas y el otro en Oklahoma.</summary><div class="answer"><span class="verdict sta">Estatal</span><b>Tribunal estatal de familia.</b> Aunque hay diversidad de ciudadanía, las cortes federales no conocen divorcios, pensiones ni custodias (excepción de relaciones domésticas). El derecho de familia es casi por completo estatal.</div></details>
+      <details><summary>Una startup acusa a un competidor de violar su patente.</summary><div class="answer"><span class="verdict fed">Federal</span><b>Exclusivamente federal</b> (28 U.S.C. § 1338). La apelación no va al circuito regional sino al Federal Circuit, en Washington, que concentra todas las apelaciones de patentes del país.</div></details>
+      <details><summary>Texas demanda a Nuevo México por el agua del río Pecos.</summary><div class="answer"><span class="verdict scotus">Corte Suprema</span><b>Jurisdicción original de la Corte Suprema.</b> En las disputas entre estados la Corte actúa como tribunal de primera instancia: nombra un special master que recibe las pruebas y le recomienda una decisión.</div></details>
+      <details><summary>Una trabajadora alega despido discriminatorio bajo el Title VII (ley federal).</summary><div class="answer"><span class="verdict both">Ambas</span><b>Jurisdicción concurrente.</b> El Title VII crea una cuestión federal, pero el Congreso no la hizo exclusiva, así que las cortes estatales también pueden oírla. Antes de demandar hay que agotar la vía administrativa ante la EEOC.</div></details>
+      <details><summary>Una persona en Houston no puede pagar sus deudas y pide protección por quiebra.</summary><div class="answer"><span class="verdict fed">Federal</span><b>U.S. Bankruptcy Court, Southern District of Texas.</b> La quiebra es materia federal exclusiva (Constitución, art. I, § 8). Los jueces de quiebras son del Artículo I, con mandatos de 14 años, y sus decisiones se apelan ante el juez de distrito o un panel de apelación de quiebras.</div></details>
+    </div>
+  </section>
+
+  <section class="reading" id="jueces">
+    <h2>Los jueces: federales frente a estatales</h2>
+    <p class="lede">La diferencia más importante entre los dos sistemas no está en los edificios sino en quién nombra a los jueces y cuánto duran en el cargo.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Jueces federales (Artículo III)</th><th scope="col">Jueces estatales</th></tr></thead>
+        <tbody>
+          <tr><td>Quién los elige</td><td>El presidente nomina y el Senado confirma por mayoría simple. No hay requisitos constitucionales de edad, título ni experiencia.</td><td>Depende del estado: elecciones partidistas (7 estados), no partidistas (14), nombramiento con elección de retención (16), nombramiento sin elección (10), elección legislativa (2) o un sistema híbrido (1). Mira la vista «Selección de jueces» en el mapa.</td></tr>
+          <tr><td>Duración</td><td>De por vida, «mientras observen buena conducta». Pueden retirarse con salario completo (senior status) y seguir atendiendo casos.</td><td>Mandatos fijos, normalmente de 6 a 14 años, renovables por elección o reelección. Rhode Island es el único con jueces vitalicios; Massachusetts y Nuevo Hampshire fijan el retiro a los 70.</td></tr>
+          <tr><td>Remoción</td><td>Solo mediante impeachment por la Cámara y juicio en el Senado (15 jueces acusados en la historia; 8 removidos).</td><td>Perder la elección o la retención, impeachment, o remoción por comisiones de conducta judicial.</td></tr>
+          <tr><td>Salario</td><td>Protegido: la Constitución prohíbe reducirlo mientras el juez esté en funciones.</td><td>Lo fija la legislatura estatal; suele ser menor que el federal.</td></tr>
+          <tr><td>Cuántos son</td><td>9 en la Corte Suprema, 179 en las cortes de apelaciones y cerca de 680 en los tribunales de distrito, más jueces de quiebras y magistrados (Artículo I).</td><td>Más de 30,000 jueces en todo el país, incluidos los de cortes de jurisdicción limitada.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reading" id="glosario">
+    <h2>Glosario</h2>
+    <dl class="glossary">
+      <div><dt>Trial court / tribunal de primera instancia</dt><dd>Donde empieza el caso y se reciben las pruebas. En lo federal, el District Court; en los estados, District, Superior, Circuit Court o Court of Common Pleas según el estado (y «Supreme Court» en Nueva York).</dd></div>
+      <div><dt>Jurisdicción general y limitada</dt><dd>Una corte de jurisdicción general puede oír cualquier tipo de caso; una de jurisdicción limitada solo ciertos asuntos (tránsito, reclamaciones pequeñas, sucesiones) o montos.</dd></div>
+      <div><dt>Subject-matter jurisdiction</dt><dd>Competencia sobre la materia. Si falta, la corte debe desestimar aunque las partes no lo pidan; no se puede renunciar a ella.</dd></div>
+      <div><dt>Personal jurisdiction</dt><dd>Poder de la corte sobre el demandado, basado en sus contactos con el estado del foro (International Shoe). Distinta de la jurisdicción sobre la materia.</dd></div>
+      <div><dt>Venue</dt><dd>El distrito concreto, dentro de un sistema con jurisdicción, donde conviene litigar (donde vive el demandado o donde ocurrieron los hechos).</dd></div>
+      <div><dt>Federal question</dt><dd>Caso que surge de la Constitución, una ley federal o un tratado (28 U.S.C. § 1331). Puerta principal a la corte federal.</dd></div>
+      <div><dt>Diversity jurisdiction</dt><dd>Partes ciudadanas de estados distintos y más de $75,000 en disputa (28 U.S.C. § 1332). Una sociedad es ciudadana de su estado de constitución y de su sede principal.</dd></div>
+      <div><dt>Removal y remand</dt><dd>Traslado de un caso de corte estatal a federal por el demandado (removal) y su devolución a la estatal si la federal no tenía jurisdicción (remand).</dd></div>
+      <div><dt>Writ of certiorari</dt><dd>Orden con la que la Corte Suprema acepta revisar un caso. Negarlo («cert denied») no es un pronunciamiento sobre el fondo.</dd></div>
+      <div><dt>En banc</dt><dd>Audiencia ante todos los jueces activos de una corte de apelaciones, en lugar del panel habitual de tres.</dd></div>
+      <div><dt>Stare decisis / precedente</dt><dd>Obligación de seguir las decisiones anteriores. Es vinculante (binding) la de una corte superior del mismo sistema; la de otro circuito o estado es solo persuasiva.</dd></div>
+      <div><dt>Circuit split</dt><dd>Desacuerdo entre circuitos sobre la misma cuestión de derecho federal. Motivo clásico para que la Corte Suprema conceda certiorari.</dd></div>
+      <div><dt>Standard of review</dt><dd>Grado de deferencia de la corte de apelaciones: de novo para cuestiones de derecho, clearly erroneous para hechos decididos por el juez, abuse of discretion para decisiones discrecionales.</dd></div>
+      <div><dt>Affirm, reverse, vacate, remand</dt><dd>Confirmar, revocar, anular y devolver al tribunal inferior para que actúe conforme a lo decidido.</dd></div>
+      <div><dt>Opiniones</dt><dd>Majority (la decisión), concurring (de acuerdo con el resultado, con razones propias), dissenting (en desacuerdo), per curiam (de la corte, sin autor identificado).</dd></div>
+      <div><dt>Artículo III y Artículo I</dt><dd>Los jueces del Artículo III (distrito, circuitos, Corte Suprema, Court of International Trade) son vitalicios. Los del Artículo I (quiebras, magistrados, Tax Court, Court of Federal Claims, cortes territoriales) tienen mandatos fijos.</dd></div>
+      <div><dt>Magistrate judge</dt><dd>Juez auxiliar del tribunal de distrito, nombrado por los jueces de distrito por 8 años; resuelve asuntos preliminares y, con consentimiento de las partes, juicios civiles.</dd></div>
+      <div><dt>Doctrina Erie</dt><dd>En casos de diversidad la corte federal aplica el derecho sustantivo del estado y el derecho procesal federal (Erie Railroad v. Tompkins, 1938).</dd></div>
+      <div><dt>Habeas corpus</dt><dd>Vía para que una persona presa por una condena estatal pida a una corte federal que revise si su detención viola la Constitución, después de agotar los recursos estatales (28 U.S.C. § 2254).</dd></div>
+      <div><dt>Doble soberanía</dt><dd>Un mismo hecho puede ser delito federal y estatal, y ambos gobiernos pueden procesarlo sin violar la prohibición de double jeopardy (Gamble v. United States, 2019).</dd></div>
+      <div><dt>Court of last resort</dt><dd>La corte más alta de un sistema. En 48 estados es una sola; Texas y Oklahoma tienen dos, separadas por materia civil y penal.</dd></div>
+      <div><dt>Intermediate appellate court</dt><dd>Corte de apelaciones entre el tribunal de primera instancia y la corte suprema. 41 estados la tienen; en los 9 restantes se apela directamente a la corte suprema del estado.</dd></div>
+    </dl>
+    <div class="sources">
+      <p><strong>Fuentes y notas.</strong> Datos de octubre de 2026. Cifras de jueces y casos son aproximadas y cambian con cada ley de judicaturas. Material de estudio: verifica siempre en la fuente oficial antes de citar.</p>
+      <ul>
+        <li>Administrative Office of the U.S. Courts, <a href="https://www.uscourts.gov/about-federal-courts/court-role-and-structure" target="_blank" rel="noopener">Court Role and Structure</a> y <a href="https://www.uscourts.gov/federal-court-finder/find" target="_blank" rel="noopener">Federal Court Finder</a>.</li>
+        <li>28 U.S.C. §§ 41 a 49 (circuitos) y §§ 81 a 131 (composición de los distritos, condado por condado), vía <a href="https://www.law.cornell.edu/uscode/text/28/part-I" target="_blank" rel="noopener">Cornell LII</a>.</li>
+        <li>National Center for State Courts, <a href="https://www.ncsc.org/" target="_blank" rel="noopener">State Court Structure Charts</a>; Ballotpedia, <a href="https://ballotpedia.org/Judicial_selection_in_the_states" target="_blank" rel="noopener">Judicial selection in the states</a>.</li>
+        <li>Geometría: U.S. Census Bureau (cartographic boundary files, 1:10M) vía us-atlas 3.0.1; distritos federales según 28 U.S.C. cap. 5.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+(async function () {
+  'use strict';
+  document.documentElement.lang = 'es';
+  const W = 975, H = 610;
+  const svg = d3.select('#map');
+  const stage = document.querySelector('.map-stage');
+  const tooltip = document.getElementById('tooltip');
+  const panelBody = document.getElementById('panel-body');
+  const legendEl = document.getElementById('legend');
+  const territoriesEl = document.getElementById('territories');
+  const blurb = document.getElementById('view-blurb');
+  const mapNote = document.getElementById('map-note');
+  const stateSelect = document.getElementById('state-select');
+  const motion = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650;
+
+  const VIEW_TOKENS = { circuits: 'circuitos', districts: 'distritos', structure: 'estatales', selection: 'jueces' };
+  const TOKEN_VIEWS = Object.fromEntries(Object.entries(VIEW_TOKENS).map(([k, v]) => [v, k]));
+  const BLURBS = {
+    circuits: 'Cada color es un circuito: la corte federal de apelaciones que revisa a los tribunales de distrito de esos estados. Pasa el cursor o haz clic en un estado; los puntos son las sedes de cada circuito.',
+    districts: 'Los 94 U.S. District Courts, los tribunales federales de primera instancia. Cada estado tiene de 1 a 4 distritos y ninguno cruza fronteras estatales. Haz clic en un estado para ver sus distritos y sedes.',
+    structure: 'Cuántos niveles tiene el sistema judicial de cada estado: la mayoría tiene tres (primera instancia, corte intermedia y corte suprema); nueve estados pequeños no tienen corte intermedia, y Texas y Oklahoma tienen dos cortes supremas.',
+    selection: 'Cómo llegan al cargo los jueces de la corte suprema de cada estado. Naranja: los elige el voto popular. Azul: los nombra el gobernador, con o sin elección de retención después. Verde: los elige la legislatura.'
+  };
+  // posición de las etiquetas de circuito (lon, lat) y de la línea guía para D.C.
+  const CIRCUIT_LABEL = { '1': [-69.3, 45.2], '2': [-75.4, 42.9], '3': [-77.7, 40.9], '4': [-79.6, 37.4], '5': [-99.3, 31.3], '6': [-85.4, 37.6], '7': [-89.3, 40.4], '8': [-98.7, 44.1], '9': [-116.8, 40.1], '10': [-105.6, 38.3], '11': [-83.5, 32.0], 'DC': [-74.3, 37.2] };
+
+  // ---------- carga de datos ----------
+  let courts, statesTopo, distTopo = null;
+  try {
+    const [c, s] = await Promise.all([fetch('data/courts.json'), fetch('data/states-10m.json')]);
+    if (!c.ok || !s.ok) throw new Error('HTTP');
+    courts = await c.json(); statesTopo = await s.json();
+    try { const d = await fetch('data/districts.topo.json'); if (d.ok) distTopo = await d.json(); } catch (e) { distTopo = null; }
+  } catch (err) {
+    stage.innerHTML = '<div class="map-error"><p><strong>No se pudieron cargar los datos del mapa.</strong></p><p>Si abriste el archivo directamente desde el disco, sírvelo por HTTP (por ejemplo <code>python3 -m http.server -d site 8080</code>) y vuelve a cargar.</p></div>';
+    return;
+  }
+  const S = courts.states, C = courts.circuits, SEL = courts.selectionMethods, STR = courts.structureTypes;
+  const fipsToCode = {}; Object.entries(S).forEach(([code, s]) => { fipsToCode[s.fips] = code; });
+  const codeOf = f => fipsToCode[f.id];
+  const circuitOf = fips => { const code = fipsToCode[fips]; return code ? S[code].circuit : null; };
+  const districtById = {}; Object.values(S).forEach(s => s.districts.forEach(d => { districtById[d.id] = Object.assign({ stateCode: Object.keys(S).find(k => S[k] === s) }, d); }));
+  const circuitKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', 'DC'];
+  const cvar = c => `var(--c${c})`, ivar = c => `var(--ci${c})`;
+  const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+
+  // ---------- geometría ----------
+  const projection = d3.geoAlbersUsa().scale(1300).translate([W / 2, H / 2]);
+  const path = d3.geoPath(projection);
+  const allStates = topojson.feature(statesTopo, statesTopo.objects.states).features;
+  const mainStates = allStates.filter(f => codeOf(f) && !S[codeOf(f)].territory);
+  const territoryFeatures = allStates.filter(f => codeOf(f) && S[codeOf(f)].territory);
+  const stateBorders = topojson.mesh(statesTopo, statesTopo.objects.states, (a, b) => a !== b);
+  const circuitBorders = topojson.mesh(statesTopo, statesTopo.objects.states, (a, b) => a !== b && circuitOf(a.id) !== circuitOf(b.id));
+  const featureByCode = {}; mainStates.forEach(f => { featureByCode[codeOf(f)] = f; });
+  let districtFeatures = [];
+  if (distTopo && distTopo.objects && distTopo.objects.districts) {
+    districtFeatures = topojson.feature(distTopo, distTopo.objects.districts).features
+      .filter(f => f.properties && districtById[f.properties.id] && path(f));
+  }
+  const hasDistricts = districtFeatures.length > 0;
+  if (!hasDistricts) document.getElementById('tab-districts').title = 'Sin polígonos de distrito: se muestran las sedes';
+
+  // ---------- estado de la vista ----------
+  let view = 'circuits', selectedCode = null, selectedCircuit = null, k = 1;
+  const stored = (() => { try { return JSON.parse(localStorage.getItem('mapa-judicial') || '{}'); } catch (e) { return {}; } })();
+  const hashView = TOKEN_VIEWS[(location.hash || '').replace('#', '')];
+  if (hashView) view = hashView; else if (stored.view && BLURBS[stored.view]) view = stored.view;
+  const remember = () => { try { localStorage.setItem('mapa-judicial', JSON.stringify({ view, state: selectedCode })); } catch (e) { /* sin almacenamiento */ } };
+
+  // ---------- capas ----------
+  const root = svg.append('g').attr('class', 'root');
+  const gStates = root.append('g').attr('class', 'states');
+  const gDistricts = root.append('g').attr('class', 'districts-layer');
+  const gBorders = root.append('g');
+  const gOutlines = root.append('g');
+  const gLabels = root.append('g').attr('class', 'labels');
+  const gSeats = root.append('g').attr('class', 'seats');
+  const gDistSeats = root.append('g').attr('class', 'dist-seats');
+
+  const statePaths = gStates.selectAll('path').data(mainStates).join('path')
+    .attr('class', 'state').attr('d', path).attr('tabindex', 0).attr('role', 'button')
+    .attr('aria-label', f => S[codeOf(f)].name)
+    .on('pointerenter', (ev, f) => { hoverFeature(f); showTip(ev, stateTip(codeOf(f))); })
+    .on('pointermove', ev => moveTip(ev))
+    .on('pointerleave', () => { hoverFeature(null); hideTip(); })
+    .on('click', (ev, f) => { ev.stopPropagation(); selectState(codeOf(f), true); })
+    .on('keydown', (ev, f) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectState(codeOf(f), true); } });
+
+  const districtPaths = gDistricts.selectAll('path').data(districtFeatures).join('path')
+    .attr('class', 'district').attr('d', path)
+    .on('pointerenter', (ev, f) => { const d = districtById[f.properties.id]; showTip(ev, `<strong>${esc(d.name)}</strong><span class="tt-sub">${esc(d.abbr)} · sede: ${esc(d.seat)} · ${esc(C[S[d.stateCode].circuit].short)}</span>`); markDistrictCard(f.properties.id, true); })
+    .on('pointermove', ev => moveTip(ev))
+    .on('pointerleave', (ev, f) => { hideTip(); markDistrictCard(f.properties.id, false); })
+    .on('click', (ev, f) => { ev.stopPropagation(); selectState(districtById[f.properties.id].stateCode, true, f.properties.id); });
+
+  gBorders.append('path').attr('class', 'state-borders').attr('d', path(stateBorders));
+  gBorders.append('path').attr('class', 'circuit-borders').attr('d', path(circuitBorders));
+  const hoverOutline = gOutlines.append('path').attr('class', 'hover-outline');
+  const selectOutline = gOutlines.append('path').attr('class', 'select-outline');
+
+  // etiquetas de circuito
+  const dcPoint = projection([-77.03, 38.9]);
+  circuitKeys.forEach(c => {
+    const p = projection(CIRCUIT_LABEL[c]); if (!p) return;
+    if (c === 'DC') {
+      gLabels.append('path').attr('class', 'leader').attr('d', `M${p[0] - 14},${p[1] - 6} L${dcPoint[0] + 3},${dcPoint[1] + 3}`);
+      gLabels.append('text').attr('class', 'circuit-label dc').attr('x', p[0] + 4).attr('y', p[1]).style('fill', 'var(--fg)').text('D.C. Cir.');
+    } else {
+      gLabels.append('text').attr('class', 'circuit-label').attr('x', p[0]).attr('y', p[1]).style('fill', ivar(c)).text(c);
+    }
+  });
+  // sedes de circuito y Corte Suprema
+  const seatData = circuitKeys.filter(c => c !== 'DC').map(c => ({ id: c, lon: C[c].lon, lat: C[c].lat, label: C[c].seat }));
+  gSeats.selectAll('circle.seat').data(seatData).join('circle').attr('class', 'seat')
+    .attr('cx', d => projection([d.lon, d.lat])[0]).attr('cy', d => projection([d.lon, d.lat])[1]).attr('r', 4.6)
+    .on('pointerenter', (ev, d) => showTip(ev, `<strong>${esc(C[d.id].short)}</strong><span class="tt-sub">Sede: ${esc(d.label)} · ${C[d.id].judgeships} jueces</span>`))
+    .on('pointermove', ev => moveTip(ev)).on('pointerleave', hideTip)
+    .on('click', (ev, d) => { ev.stopPropagation(); selectCircuit(d.id); });
+  const sc = projection([courts.federal.supreme.lon, courts.federal.supreme.lat]);
+  gSeats.append('path').attr('class', 'seat scotus').attr('transform', `translate(${sc[0]},${sc[1]})`).attr('d', d3.symbol(d3.symbolStar, 110)())
+    .on('pointerenter', ev => showTip(ev, `<strong>Corte Suprema de EE. UU.</strong><span class="tt-sub">Washington, D.C. · también aquí: D.C. Circuit, Federal Circuit y D.D.C.</span>`))
+    .on('pointermove', ev => moveTip(ev)).on('pointerleave', hideTip)
+    .on('click', ev => { ev.stopPropagation(); selectSpecial('SCOTUS'); });
+  gSeats.selectAll('text.seat-label').data(seatData).join('text').attr('class', 'seat-label')
+    .attr('x', d => projection([d.lon, d.lat])[0] + 7).attr('y', d => projection([d.lon, d.lat])[1] + 3.5).text(d => d.label.split(',')[0]);
+
+  // ---------- zoom ----------
+  const zoom = d3.zoom().scaleExtent([1, 9])
+    .filter(ev => ev.type === 'wheel' ? (ev.ctrlKey || ev.metaKey) : !ev.button)
+    .on('zoom', ev => { root.attr('transform', ev.transform); k = ev.transform.k; updateZoomDependent(); });
+  svg.call(zoom).style('touch-action', 'pan-y');
+  svg.on('click', () => { /* clic en el océano: no hace nada */ });
+  function zoomToFeature(f) {
+    const b = path.bounds(f); if (!b || !isFinite(b[0][0])) return;
+    const dx = b[1][0] - b[0][0], dy = b[1][1] - b[0][1], x = (b[0][0] + b[1][0]) / 2, y = (b[0][1] + b[1][1]) / 2;
+    const scale = Math.max(1, Math.min(8, 0.8 / Math.max(dx / W, dy / H)));
+    svg.transition().duration(motion).call(zoom.transform, d3.zoomIdentity.translate(W / 2 - scale * x, H / 2 - scale * y).scale(scale));
+  }
+  function resetZoom() { svg.transition().duration(motion).call(zoom.transform, d3.zoomIdentity); }
+  document.getElementById('reset-zoom').addEventListener('click', resetZoom);
+  function updateZoomDependent() {
+    gLabels.style('opacity', k > 3 ? 0 : 1);
+    gSeats.selectAll('.seat-label').style('opacity', k >= 2.2 ? 1 : 0);
+    gDistSeats.selectAll('circle').attr('r', 3.8 / Math.sqrt(k));
+    gDistSeats.selectAll('text').style('font-size', (11.5 / Math.sqrt(k)) + 'px').style('opacity', k >= 1.8 ? 1 : 0);
+    gDistricts.selectAll('text.dlabel').style('font-size', (12 / Math.sqrt(k)) + 'px');
+  }
+
+  // ---------- tooltip ----------
+  const isTouch = matchMedia('(hover: none)').matches;
+  function showTip(ev, html) { if (isTouch) return; tooltip.innerHTML = html; tooltip.hidden = false; moveTip(ev); }
+  function moveTip(ev) {
+    if (tooltip.hidden) return;
+    const r = stage.getBoundingClientRect(); let x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14;
+    const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+    if (x + tw > r.width - 8) x = ev.clientX - r.left - tw - 12; if (y + th > r.height - 8) y = ev.clientY - r.top - th - 12;
+    tooltip.style.transform = `translate(${Math.max(4, x)}px, ${Math.max(4, y)}px)`;
+  }
+  function hideTip() { tooltip.hidden = true; }
+  function stateTip(code) {
+    const s = S[code]; const c = C[s.circuit];
+    const extra = view === 'structure' ? structureLabel(s) : view === 'selection' ? SEL[s.selection].label : `${s.districts.length} distrito${s.districts.length === 1 ? '' : 's'} federal${s.districts.length === 1 ? '' : 'es'}`;
+    return `<strong>${esc(s.name)}</strong><span class="tt-sub">${c ? esc(c.short) + ' (' + esc(c.seat.split(',')[0]) + ') · ' : ''}${esc(extra)}</span>`;
+  }
+  function hoverFeature(f) { hoverOutline.attr('d', f ? path(f) : null); }
+
+  // ---------- color por vista ----------
+  const structureKey = s => s.dual ? 'dual' : String(s.tiers);
+  const structureLabel = s => STR[structureKey(s)].label;
+  const STRUCT_SHORT = { '3': 'tres niveles', '2': 'dos niveles', 'dual': 'dos cortes supremas' };
+  function stateFill(code) {
+    const s = S[code];
+    if (view === 'circuits' || view === 'districts') return s.circuit ? cvar(s.circuit) : 'var(--line)';
+    if (view === 'structure') return `var(--st-${structureKey(s)})`;
+    return s.selection === 'hybrid' ? 'url(#hatch)' : `var(--sel-${s.selection})`;
+  }
+  const DIST_OPACITY = [1, 0.62, 0.82, 0.46];
+  function districtIndex(id) { const d = districtById[id]; return S[d.stateCode].districts.findIndex(x => x.id === id); }
+
+  function render() {
+    document.querySelectorAll('.views [role="tab"]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === view)));
+    blurb.textContent = BLURBS[view];
+    const showDistricts = view === 'districts' && hasDistricts;
+    statePaths.style('fill', f => stateFill(codeOf(f))).style('fill-opacity', showDistricts ? 0.25 : 1).style('pointer-events', showDistricts ? 'none' : 'all');
+    gDistricts.style('display', showDistricts ? null : 'none');
+    districtPaths.style('fill', f => cvar(districtById[f.properties.id] ? S[districtById[f.properties.id].stateCode].circuit : 'DC'))
+      .style('fill-opacity', f => DIST_OPACITY[districtIndex(f.properties.id) % 4]);
+    gBorders.select('.circuit-borders').style('display', view === 'circuits' || view === 'districts' ? null : 'none');
+    gBorders.select('.state-borders').style('stroke', view === 'circuits' || view === 'districts' ? 'var(--map-border)' : 'var(--bg-2)');
+    gLabels.style('display', view === 'circuits' || view === 'districts' ? null : 'none');
+    gSeats.style('display', view === 'circuits' ? null : 'none');
+    mapNote.textContent = view === 'districts' ? (hasDistricts ? 'Tonos distintos dentro de un estado = distritos distintos. Ctrl + rueda para zoom.' : 'Los puntos marcan la sede principal de cada distrito. Ctrl + rueda para zoom.') : 'Ctrl + rueda para zoom · arrastra para mover';
+    renderTerritories(); renderLegend(); renderDistrictSeats();
+    try { history.replaceState(null, '', '#' + VIEW_TOKENS[view]); } catch (e) { /* no importa */ }
+    remember();
+  }
+  document.querySelectorAll('.views [role="tab"]').forEach(b => b.addEventListener('click', () => { view = b.dataset.view; render(); }));
+
+  // ---------- territorios ----------
+  function renderTerritories() {
+    territoriesEl.innerHTML = '';
+    const order = ['PR', 'VI', 'GU', 'MP', 'AS'];
+    order.forEach(code => {
+      const s = S[code]; const f = territoryFeatures.find(x => codeOf(x) === code);
+      const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'terr' + (selectedCode === code ? ' selected' : '');
+      btn.setAttribute('aria-label', s.name);
+      let shape = '';
+      if (f) {
+        const proj = d3.geoMercator().fitExtent([[3, 3], [53, 33]], f); const p2 = d3.geoPath(proj);
+        shape = `<svg viewBox="0 0 56 36" aria-hidden="true"><path class="terr-shape" d="${p2(f)}" fill="${s.circuit ? stateFill(code) : 'var(--line)'}"></path></svg>`;
+      }
+      const sub = view === 'structure' ? structureLabel(s) : view === 'selection' ? SEL[s.selection].label : (s.circuit ? C[s.circuit].short : 'sin corte federal');
+      btn.innerHTML = `${shape}<span><b>${esc(s.name)}</b><small>${esc(sub)}</small></span>`;
+      btn.addEventListener('click', () => selectState(code, false));
+      territoriesEl.appendChild(btn);
+    });
+  }
+
+  // ---------- leyenda ----------
+  function legendRow(swatchStyle, text, sub, count, onClick, active, swClass) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'lg' + (active ? ' active' : '');
+    b.innerHTML = `<span class="sw ${swClass || ''}" style="${swatchStyle}"></span><span class="lg-text">${esc(text)}${sub ? ` <small>${esc(sub)}</small>` : ''}</span>${count != null ? `<span class="count">${count}</span>` : ''}`;
+    if (onClick) b.addEventListener('click', onClick); else b.disabled = true;
+    return b;
+  }
+  function renderLegend() {
+    legendEl.innerHTML = '';
+    const title = document.createElement('div'); title.className = 'legend-title';
+    const grid = document.createElement('div'); grid.className = 'legend-grid';
+    if (view === 'circuits' || view === 'districts') {
+      title.textContent = 'Cortes de apelaciones federales (13) · clic para ver cada una';
+      circuitKeys.forEach(c => grid.appendChild(legendRow(`background:${cvar(c)};color:${ivar(c)}`, C[c].short, C[c].seat.split(',')[0], C[c].states.length, () => selectCircuit(c), selectedCircuit === c)));
+      grid.appendChild(legendRow('background:var(--cFED);color:var(--ciFED)', 'Federal Circuit', 'por materia, nacional', null, () => selectCircuit('FED'), selectedCircuit === 'FED'));
+      grid.appendChild(legendRow('background:var(--accent)', 'Corte Suprema', 'Washington, D.C.', null, () => selectSpecial('SCOTUS'), selectedCircuit === 'SCOTUS', 'dot'));
+    } else if (view === 'structure') {
+      title.textContent = 'Estructura del sistema judicial estatal';
+      ['3', '2', 'dual'].forEach(key => {
+        const n = Object.keys(S).filter(c => !S[c].territory && c !== 'DC' && structureKey(S[c]) === key).length;
+        grid.appendChild(legendRow(`background:var(--st-${key})`, STR[key].label, null, n + ' estados', null, false));
+      });
+    } else {
+      title.textContent = 'Cómo se selecciona a los jueces de la corte suprema estatal';
+      const groups = [['Elección popular', ['partisan', 'nonpartisan']], ['Nombramiento', ['retention', 'appointment']], ['Otros', ['legislative', 'hybrid']]];
+      groups.forEach(([g, keys]) => {
+        const gl = document.createElement('div'); gl.className = 'legend-group'; gl.textContent = g; grid.appendChild(gl);
+        keys.forEach(key => {
+          const n = Object.keys(S).filter(c => !S[c].territory && c !== 'DC' && S[c].selection === key).length;
+          grid.appendChild(legendRow(key === 'hybrid' ? '' : `background:var(--sel-${key})`, SEL[key].label, null, n + (n === 1 ? ' estado' : ' estados'), null, false, key === 'hybrid' ? 'hatch' : ''));
+        });
+      });
+    }
+    legendEl.appendChild(title); legendEl.appendChild(grid);
+  }
+
+  // ---------- selección ----------
+  function selectState(code, doZoom, hotDistrict) {
+    selectedCode = code; selectedCircuit = null;
+    const f = featureByCode[code];
+    selectOutline.attr('d', f ? path(f) : null);
+    stateSelect.value = code;
+    renderPanelState(code, hotDistrict);
+    renderDistrictSeats(); renderTerritories(); renderLegend();
+    if (doZoom && f) zoomToFeature(f);
+    remember();
+  }
+  function selectCircuit(c) {
+    selectedCircuit = c; selectedCode = null; selectOutline.attr('d', null); gDistSeats.selectAll('*').remove(); stateSelect.value = '';
+    if (c !== 'FED' && c !== 'SCOTUS') {
+      const feats = mainStates.filter(f => circuitOf(f.id) === c);
+      if (feats.length) { selectOutline.attr('d', feats.map(f => path(f)).join('')); zoomToFeature({ type: 'FeatureCollection', features: feats }); }
+    }
+    renderPanelCircuit(c); renderLegend(); renderTerritories();
+  }
+  function selectSpecial(what) { selectedCircuit = what; selectedCode = null; selectOutline.attr('d', null); gDistSeats.selectAll('*').remove(); stateSelect.value = ''; renderPanelSupreme(); renderLegend(); }
+
+  function renderDistrictSeats() {
+    gDistSeats.selectAll('*').remove(); gDistricts.selectAll('text.dlabel').remove();
+    if (!selectedCode || (view !== 'circuits' && view !== 'districts')) return;
+    const s = S[selectedCode]; if (s.territory) return;
+    if (view === 'districts' && hasDistricts) {
+      districtFeatures.filter(f => districtById[f.properties.id].stateCode === selectedCode).forEach(f => {
+        const c = path.centroid(f); const d = districtById[f.properties.id];
+        gDistricts.append('text').attr('class', 'dlabel').attr('x', c[0]).attr('y', c[1]).style('fill', ivar(s.circuit)).style('stroke', cvar(s.circuit)).text(d.abbr);
+      });
+    } else {
+      s.districts.forEach(d => {
+        const p = projection([d.lon, d.lat]); if (!p) return;
+        gDistSeats.append('circle').attr('class', 'dseat').attr('cx', p[0]).attr('cy', p[1]);
+        gDistSeats.append('text').attr('class', 'dseat-label').attr('x', p[0] + 5).attr('y', p[1] - 4).text(d.abbr + ' · ' + d.seat);
+      });
+    }
+    updateZoomDependent();
+  }
+  function markDistrictCard(id, on) { const li = panelBody.querySelector(`[data-district="${id}"]`); if (li) li.classList.toggle('hot', on); }
+
+  // ---------- panel ----------
+  function routeHtml(s) {
+    if (!s.circuit) return `<span class="route">Sin corte federal de distrito: los asuntos federales van a D. Haw. o a D.D.C.</span>`;
+    const c = C[s.circuit];
+    return `<p class="route"><b>${s.districts.map(d => esc(d.abbr)).join(' · ')}</b><span class="arrow">→</span><b>${esc(c.short)}</b> (${esc(c.seat.split(',')[0])})<span class="arrow">→</span><b>Corte Suprema</b> (certiorari)</p>`;
+  }
+  function renderPanelState(code, hotDistrict) {
+    const s = S[code]; const c = s.circuit ? C[s.circuit] : null;
+    const chip = c ? `<button type="button" class="chip" style="--chip:${cvar(s.circuit)};--chip-ink:${ivar(s.circuit)}" data-circuit="${s.circuit}" title="Ver el circuito">${esc(c.short)}</button>` : '';
+    const districts = s.districts.length ? `<ul class="districts">${s.districts.map(d => `<li data-district="${d.id}" style="--dcol:${cvar(s.circuit)}" class="${hotDistrict === d.id ? 'hot' : ''}"><strong>${esc(d.abbr)}</strong> <span class="dname">${esc(d.name)}</span><small>Sede principal: ${esc(d.seat)}</small><p>${esc(d.covers)}</p></li>`).join('')}</ul>` : '';
+    const high = s.high.map(h => `<strong>${esc(h.name)}</strong><em>${h.justices ? h.justices + ' jueces' : ''}${h.scope ? (h.justices ? ' · ' : '') + esc(h.scope) : ''}</em>`).join('');
+    panelBody.innerHTML = `
+      <header class="ph"><div><span class="eyebrow">${s.territory ? 'Territorio' : code === 'DC' ? 'Distrito federal' : 'Estado'} · ${STRUCT_SHORT[structureKey(s)]}</span><h2>${esc(s.name)}</h2></div>${chip}</header>
+      <section class="pb"><h3>Sistema federal</h3>${routeHtml(s)}${districts}</section>
+      <section class="pb"><h3>Sistema ${s.territory ? 'local' : 'estatal'}</h3>
+        <ol class="pyramid">
+          <li class="tier top"><span class="tier-label">Última instancia</span>${high}</li>
+          <li class="tier mid ${s.tiers === 2 ? 'none' : ''}"><span class="tier-label">Apelación intermedia</span>${esc(s.iac)}</li>
+          <li class="tier base"><span class="tier-label">Primera instancia</span>${esc(s.trial)}</li>
+        </ol>
+        <p class="sel"><span class="swatch" style="background:${s.selection === 'hybrid' ? 'repeating-linear-gradient(45deg, var(--sel-partisan) 0 3px, var(--sel-retention) 3px 6px)' : 'var(--sel-' + s.selection + ')'}"></span><span><strong>${esc(SEL[s.selection].label)}</strong>${esc(s.selectionDetail)}</span></p>
+        ${s.note ? `<p class="note">${esc(s.note)}</p>` : ''}
+        ${s.local ? `<p class="local"><strong>Desde Dallas.</strong> ${esc(s.local)}</p>` : ''}
+      </section>`;
+    panelBody.querySelectorAll('[data-circuit]').forEach(b => b.addEventListener('click', () => selectCircuit(b.dataset.circuit)));
+    panelBody.querySelectorAll('[data-district]').forEach(li => {
+      li.addEventListener('pointerenter', () => highlightDistrict(li.dataset.district, true));
+      li.addEventListener('pointerleave', () => highlightDistrict(li.dataset.district, false));
+    });
+  }
+  function highlightDistrict(id, on) {
+    districtPaths.filter(f => f.properties.id === id).classed('hot', on).style('stroke', on ? 'var(--accent)' : null).style('stroke-width', on ? 2.2 : null);
+    gDistSeats.selectAll('circle').attr('r', 3.8 / Math.sqrt(k));
+  }
+  function renderPanelCircuit(c) {
+    const info = C[c];
+    const states = info.states.map(code => `<button type="button" class="chip ghost" data-state="${code}">${esc(S[code].name)}</button>`).join('');
+    const nDist = info.states.reduce((n, code) => n + S[code].districts.length, 0);
+    panelBody.innerHTML = `
+      <header class="ph"><div><span class="eyebrow">Corte federal de apelaciones</span><h2>${esc(info.short)}</h2></div><span class="chip" style="--chip:${cvar(c)};--chip-ink:${ivar(c)}">${esc(info.en)}</span></header>
+      <section class="pb"><h3>Datos</h3>
+        <dl class="kv"><dt>Sede</dt><dd>${esc(info.seat)}<br><small style="color:var(--muted)">${esc(info.court)}</small></dd>
+        <dt>Jueces</dt><dd>${info.judgeships} plazas autorizadas</dd>
+        ${info.states.length ? `<dt>Territorio</dt><dd>${info.states.length} ${info.states.length === 1 ? 'jurisdicción' : 'jurisdicciones'} · ${nDist} distrito${nDist === 1 ? '' : 's'} federal${nDist === 1 ? '' : 'es'}</dd>` : '<dt>Territorio</dt><dd>Todo el país, por materia</dd>'}</dl>
+        ${info.states.length ? `<div class="chips">${states}</div>` : ''}
+        <p class="note">${esc(info.note)}</p>
+      </section>
+      <section class="pb"><h3>Cómo funciona una corte de apelaciones</h3><ul class="ul">${courts.federal.appeals.notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul></section>`;
+    panelBody.querySelectorAll('[data-state]').forEach(b => b.addEventListener('click', () => selectState(b.dataset.state, true)));
+  }
+  function renderPanelSupreme() {
+    const sup = courts.federal.supreme;
+    panelBody.innerHTML = `
+      <header class="ph"><div><span class="eyebrow">Cúspide de ambos sistemas</span><h2>${esc(sup.es)}</h2></div><span class="chip" style="--chip:var(--accent);--chip-ink:var(--accent-ink)">${sup.justices} justices</span></header>
+      <section class="pb"><h3>Datos</h3><dl class="kv"><dt>Sede</dt><dd>${esc(sup.seat)}</dd><dt>Nombre oficial</dt><dd>${esc(sup.name)}</dd></dl>
+        <ul class="ul">${sup.notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul></section>
+      <section class="pb"><h3>Otras cortes federales especializadas</h3><ul class="ul">${courts.federal.specialized.map(x => `<li><strong>${esc(x.name)}</strong> (${esc(x.where)}, Art. ${esc(x.article)}): ${esc(x.what)}</li>`).join('')}</ul></section>`;
+  }
+
+  // ---------- selector ----------
+  const codes = Object.keys(S).sort((a, b) => S[a].name.localeCompare(S[b].name, 'es'));
+  stateSelect.innerHTML = '<option value="">Elegir…</option>' + codes.map(code => `<option value="${code}">${esc(S[code].name)}</option>`).join('');
+  stateSelect.addEventListener('change', () => { if (stateSelect.value) selectState(stateSelect.value, !S[stateSelect.value].territory); });
+
+  // ---------- arranque ----------
+  render();
+  selectState(S[stored.state] ? stored.state : 'TX', false);
+})();
+</script>
+</body>
+</html>

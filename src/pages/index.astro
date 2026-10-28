@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import Bi from '../components/Bi.astro';
+
+const terms = await getCollection('terms');
+const courses = await getCollection('courses');
+const term = terms.find(t => t.id === 'fall-2026').data;
+const calendar = {
+  term,
+  courses: courses.filter(c => c.data.term === term.id).map(c => ({ id: c.id, code: c.data.code, color: c.data.color, title: c.data.title, meetings: c.data.meetings, professorName: c.data.professor.name })),
+};
+---
+<Base>
+  <section class="sec" id="docket">
+    <div class="sec-head">
+      <h2><T k="today.nextClasses" /></h2>
+      <span class="meta num" id="today-date"></span>
+    </div>
+    <ul class="docket" id="docket-list">
+      {calendar.courses.map(c => (
+        <li data-course={c.id}>
+          <span class="when"><span class="when-main"></span><small class="when-sub"></small></span>
+          <span class="what">
+            <a href={`/courses/${c.id}/`}><Bi v={c.title} /></a>
+            <span class="sub">{c.professorName}</span>
+          </span>
+          <span class="code" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="muted" style="font-size: 14px;"><T k="today.readingsSoon" /></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="today.semester" /></h2><span class="meta"><Bi v={term.label} /></span></div>
+    <dl class="kv" id="semester">
+      <dt><T k="today.classesEnd" /></dt><dd class="num" data-countdown={term.classesEnd}></dd>
+      <dt><T k="today.finalsStart" /></dt><dd class="num" data-countdown={term.exams.start}></dd>
+      <dt><T k="today.finalsEnd" /></dt><dd class="num" data-countdown={term.exams.end}></dd>
+    </dl>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="today.roundTitle" /></h2></div>
+    <div class="pad">
+      <p><T k="today.roundSoon" /></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="today.explainer" /></h2></div>
+    <a class="card" href="/map/">
+      <span class="kicker">Perspectives of the American Legal System</span>
+      <h3><T k="today.mapTitle" /></h3>
+      <p><T k="today.mapDesc" /></p>
+    </a>
+  </section>
+
+  <script type="application/json" id="calendar-data" set:html={JSON.stringify(calendar)} />
+  <script>
+    import { todayISO, nowHM, daysBetween, formatDate, formatTime } from '../lib/dates.js';
+    import { nextMeeting } from '../lib/calendar.js';
+    import { t, lang, onLangChange } from '../lib/i18n.js';
+
+    const data = JSON.parse(document.getElementById('calendar-data').textContent);
+    const list = document.getElementById('docket-list');
+
+    function render() {
+      const today = todayISO();
+      const hm = nowHM();
+      const L = lang();
+      document.getElementById('today-date').textContent = formatDate(today, L, { weekday: 'long', month: 'long', day: 'numeric' });
+
+      const rows = data.courses.map(c => ({ c, next: nextMeeting(c, data.term, today, hm) }));
+      rows.sort((a, b) => {
+        if (!a.next) return 1; if (!b.next) return -1;
+        return a.next.daysAway - b.next.daysAway || a.next.start.localeCompare(b.next.start);
+      });
+      rows.forEach(({ c, next }, i) => {
+        const li = list.querySelector(`[data-course="${c.id}"]`);
+        li.style.order = String(i);
+        const main = li.querySelector('.when-main'), sub = li.querySelector('.when-sub');
+        li.classList.toggle('now', Boolean(next && next.inProgress));
+        if (!next) { main.textContent = ''; sub.textContent = t('today.noMore'); return; }
+        main.textContent = `${formatTime(next.start, L)}`;
+        const when = next.inProgress ? t('today.now') : next.daysAway === 0 ? t('today.today') : next.daysAway === 1 ? t('today.tomorrow') : formatDate(next.date, L);
+        sub.textContent = when;
+      });
+      list.style.display = 'grid';
+
+      document.querySelectorAll('[data-countdown]').forEach(el => {
+        const n = daysBetween(today, el.dataset.countdown);
+        el.textContent = n < 0 ? t('today.past') : n === 1 ? t('today.dayLeft') : t('today.daysLeft', { n });
+        el.title = formatDate(el.dataset.countdown, L, { weekday: 'long', month: 'long', day: 'numeric' });
+      });
+    }
+    render();
+    onLangChange(render);
+    setInterval(render, 60000);
+  </script>
+</Base>

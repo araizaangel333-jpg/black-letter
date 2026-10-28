@@ -1,0 +1,47 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/source-serif-4';
+import '@fontsource/unifrakturmaguntia';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import BottomNav from '../components/BottomNav.astro';
+import LangToggle from '../components/LangToggle.astro';
+import Wordmark from '../components/Wordmark.astro';
+const { title, description = 'A bilingual study notebook for an LL.M. at SMU Dedman School of Law.', wide = false } = Astro.props;
+const fullTitle = title ? `${title} — Black Letter` : 'Black Letter';
+---
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#f3f4f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15171c" media="(prefers-color-scheme: dark)" />
+    <script is:inline>
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem('llm.prefs') || '{}');
+          var l = p.lang === 'es' ? 'es' : 'en';
+          document.documentElement.setAttribute('data-lang', l);
+          document.documentElement.lang = l;
+          if (p.theme === 'dark' || p.theme === 'light') document.documentElement.setAttribute('data-theme', p.theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-in">
+        <Wordmark />
+        <LangToggle />
+      </div>
+    </header>
+    <main class:list={['page', { wide }]}>
+      <slot />
+    </main>
+    <BottomNav />
+  </body>
+</html>

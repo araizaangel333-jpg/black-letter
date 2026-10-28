@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+---
+<Base title={ui['glossary.title'].en}>
+  <header class="sec">
+    <h1><T k="glossary.title" /></h1>
+    <p class="prose muted"><T k="glossary.intro" /></p>
+  </header>
+  <div class="empty">
+    <h3><T k="glossary.soonTitle" /></h3>
+    <p><T k="glossary.soonBody" /></p>
+  </div>
+</Base>

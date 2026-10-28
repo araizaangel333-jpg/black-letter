@@ -1,0 +1,5 @@
+---
+// El código corto del curso en su color, como la etiqueta del lomo de un libro.
+const { course, size = 'md' } = Astro.props;
+---
+<span class="code" style={`--cc: var(--${course.color}); --cc-ink: var(--${course.color}-ink)`} data-size={size} aria-hidden="true">{course.code}</span>

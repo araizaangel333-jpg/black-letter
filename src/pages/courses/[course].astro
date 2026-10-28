@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  return courses.map(c => ({ params: { course: c.id }, props: { course: c } }));
+}
+const { course } = Astro.props;
+const d = course.data;
+const dayName = (day) => ui[`day.${day}`];
+const topics = [...d.topics].sort((a, b) => a.order - b.order);
+---
+<Base title={d.title.en}>
+  <header class="course-head">
+    <div class="kicker" style="display:flex; align-items:center; gap:10px;">
+      <span class="code" data-size="sm" style={`--cc: var(--${d.color}); --cc-ink: var(--${d.color}-ink)`} aria-hidden="true">{d.code}</span>
+      <span>{d.professor.title ? `${d.professor.title} ` : ''}{d.professor.name}</span>
+    </div>
+    <h1><Bi v={d.title} /></h1>
+    {d.about && <p class="prose"><Bi v={d.about} /></p>}
+  </header>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.meets" /></h2></div>
+    <ul class="list">
+      {d.meetings.map(m => (
+        <li><strong class="ui"><Bi v={dayName(m.day)} /></strong> <span class="num">{m.start}–{m.end}</span>{m.room ? `, ${m.room}` : ''}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.readings" /></h2></div>
+    <div class="empty">
+      <p><T k="today.readingsSoon" /></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.topics" /></h2></div>
+    <ol class="list">
+      {topics.map(tp => (
+        <li><Bi v={tp.title} />{tp.barTested && <> <span class="tag"><T k="course.barTag" /></span></>}</li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.books" /></h2></div>
+    <ul class="books">
+      {d.books.map(b => (
+        <li>
+          <div>{b.cite}{!b.verified && <> <span class="tag"><T k="course.unverified" /></span></>}</div>
+          <div class="role"><Bi v={ui[`role.${b.role}`]} /></div>
+        </li>
+      ))}
+    </ul>
+    <p class="muted" style="font-size: 14px;"><T k="course.booksNote" /></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.assessment" /></h2></div>
+    <dl class="kv">
+      {d.assessment.map(a => (
+        <>
+          <dt><Bi v={ui[`assessment.${a.kind}`]} /></dt>
+          <dd>{a.format ? <Bi v={a.format} /> : ''}{a.weight ? ` (${a.weight})` : ''}{!a.verified && <> <span class="tag"><T k="course.unverified" /></span></>}</dd>
+        </>
+      ))}
+    </dl>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.materials" /></h2></div>
+    <p>{d.materials.canvas ? <T k="course.canvas" /> : <T k="course.noCanvas" />}. {d.materials.note && <Bi v={d.materials.note} />}</p>
+  </section>
+</Base>

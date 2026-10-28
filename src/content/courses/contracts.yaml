@@ -1,0 +1,34 @@
+id: contracts
+code: K
+title: { en: "Contracts", es: "Contratos" }
+term: fall-2026
+professor: { name: "Gregory Crespi", title: "Professor" }
+meetings:
+  - { day: tue, start: "08:15", end: "10:15" }
+  - { day: thu, start: "08:15", end: "10:15" }
+books:
+  - id: farnsworth-10
+    cite: "Farnsworth, Sanger, Cohen, Brooks & Garvin, Contracts: Cases and Materials (10th ed., Foundation Press 2023)"
+    short: "Farnsworth"
+    role: casebook
+  - id: selections-2025
+    cite: "Selections for Contracts: Restatement (Second) of Contracts, Uniform Commercial Code (2025 ed., Foundation Press)"
+    short: "Selections"
+    role: statutory-supplement
+topics:
+  - { id: formation, order: 1, title: { en: "Formation: offer, acceptance, consideration", es: "Formación: oferta, aceptación, consideration" }, barTested: true }
+  - { id: defenses, order: 2, title: { en: "Defenses to enforceability", es: "Defensas contra la exigibilidad" }, barTested: true }
+  - { id: interpretation, order: 3, title: { en: "Interpretation and parol evidence", es: "Interpretación y parol evidence" }, barTested: true }
+  - { id: performance, order: 4, title: { en: "Performance and conditions", es: "Cumplimiento y condiciones" }, barTested: true }
+  - { id: breach, order: 5, title: { en: "Breach, repudiation and excuse", es: "Incumplimiento, repudiación y excusa" }, barTested: true }
+  - { id: remedies, order: 6, title: { en: "Remedies", es: "Remedios" }, barTested: true }
+assessment:
+  - { kind: final-exam, format: { en: "Issue-spotting essays (hypos)", es: "Ensayos de identificación de problemas (hipótesis)" }, verified: false }
+  - { kind: participation, format: { en: "Cold calls on the assigned cases", es: "Preguntas en clase sobre los casos asignados" } }
+materials:
+  canvas: false
+  note: { en: "Handouts, notes and problems arrive by email, not Canvas.", es: "Los handouts, notas y problemas llegan por correo, no por Canvas." }
+color: c1
+about:
+  en: "In U.S. law-school slang, Contracts is simply \"K\". It is the course that builds the common-law method: offer, acceptance and consideration first, then the defenses, interpretation, performance, breach and remedies."
+  es: "En la jerga de las law schools, Contracts se abrevia \"K\". Es el curso que enseña el método del common law: oferta, aceptación y consideration primero; luego defensas, interpretación, cumplimiento, incumplimiento y remedios."

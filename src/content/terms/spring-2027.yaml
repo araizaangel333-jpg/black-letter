@@ -1,0 +1,13 @@
+# Primavera 2027. Los cursos se cargan cuando se conozca el horario.
+id: spring-2027
+label: { en: "Spring 2027", es: "Primavera 2027" }
+start: "2027-01-11"
+end: "2027-05-05"
+classesEnd: "2027-04-20"
+exams: { start: "2027-04-23", end: "2027-05-05" }
+holidays:
+  - { date: "2027-01-18", label: { en: "MLK Day", es: "Día de Martin Luther King" } }
+  - { from: "2027-03-15", to: "2027-03-19", label: { en: "Spring break", es: "Receso de primavera" } }
+timezone: America/Chicago
+verified: false
+source: "SMU Dedman School of Law academic calendar 2026-27"

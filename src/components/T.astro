@@ -1,0 +1,9 @@
+---
+// Texto de interfaz bilingüe: emite las dos versiones; CSS muestra la activa.
+import ui from '../i18n/ui.json';
+const { k, vars = {} } = Astro.props;
+const entry = ui[k];
+if (!entry) throw new Error(`ui.json: falta la clave "${k}"`);
+const fill = (s) => Object.entries(vars).reduce((acc, [a, b]) => acc.split(`{${a}}`).join(String(b)), s);
+---
+<span class="l10n" lang="en">{fill(entry.en)}</span><span class="l10n" lang="es">{fill(entry.es)}</span>

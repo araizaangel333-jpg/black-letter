@@ -1,0 +1,16 @@
+# Otoño 2026, SMU Dedman School of Law. Fechas del calendario académico 2026-27
+# de la escuela; las marcadas con "confirmar" se revisan contra el calendario oficial.
+id: fall-2026
+label: { en: "Fall 2026", es: "Otoño 2026" }
+start: "2026-08-24"          # confirmar primer día de clases
+end: "2026-12-11"
+classesEnd: "2026-11-23"     # último día de clases (lunes)
+exams: { start: "2026-12-01", end: "2026-12-11" }
+holidays:
+  - { date: "2026-09-07", label: { en: "Labor Day", es: "Labor Day" } }
+  - { date: "2026-11-24", label: { en: "Reading day", es: "Día de lectura" } }
+  - { from: "2026-11-25", to: "2026-11-29", label: { en: "Thanksgiving break", es: "Receso de Thanksgiving" } }
+  - { date: "2026-11-30", label: { en: "Reading day", es: "Día de lectura" } }
+timezone: America/Chicago
+verified: false
+source: "SMU Dedman School of Law academic calendar 2026-27"

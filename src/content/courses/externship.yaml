@@ -1,0 +1,28 @@
+id: externship
+code: EXT
+title: { en: "Corporate Counsel Externship", es: "Externship de abogado corporativo" }
+term: fall-2026
+professor: { name: "Stephen Yeager", title: "Dean" }
+meetings:
+  - { day: wed, start: "17:30", end: "19:30" }
+books:
+  - id: inside-counsel-3
+    cite: "Steinberg & Yeager, Inside Counsel: Practices, Strategies, and Insights (3rd ed., West Academic 2024). Listed in the assignments as \"Inside Counsel Resource Guide\"."
+    short: "Inside Counsel"
+    role: textbook
+topics:
+  - { id: role, order: 1, title: { en: "The role of inside counsel", es: "El rol del abogado interno" } }
+  - { id: client, order: 2, title: { en: "Who is the client; Upjohn", es: "Quién es el cliente; Upjohn" } }
+  - { id: privilege, order: 3, title: { en: "Privilege, work product and confidentiality", es: "Privilegio, work product y confidencialidad" } }
+  - { id: outside-counsel, order: 4, title: { en: "Working with outside counsel", es: "Trabajar con abogados externos" } }
+  - { id: risk, order: 5, title: { en: "Risk, compliance and investigations", es: "Riesgo, cumplimiento e investigaciones" } }
+assessment:
+  - { kind: participation, format: { en: "Seminar discussion and externship work", es: "Discusión en seminario y trabajo del externship" } }
+  - { kind: other, format: { en: "Written assignments to confirm", es: "Entregas escritas por confirmar" }, verified: false }
+materials:
+  canvas: true
+  note: { en: "Cases, ethics opinions and practice materials. The book is by the professor: nothing from it is reproduced on this site.", es: "Casos, opiniones éticas y materiales prácticos. El libro es del profesor: nada de su texto se reproduce en este sitio." }
+color: c5
+about:
+  en: "What a company's own lawyers do: who the client is, what stays privileged, how to manage outside firms and how to spot risk before it becomes a lawsuit."
+  es: "Qué hacen los abogados internos de una empresa: quién es el cliente, qué queda protegido por el privilegio, cómo manejar despachos externos y cómo ver el riesgo antes de que sea un litigio."

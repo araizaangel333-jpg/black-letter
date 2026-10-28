@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+
+const courses = (await getCollection('courses')).filter(c => c.data.term === 'fall-2026');
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship'];
+courses.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+const dayName = (d) => ui[`day.${d}`];
+---
+<Base title={ui['courses.title'].en}>
+  <header class="sec">
+    <h1><T k="courses.title" /></h1>
+    <p class="prose muted"><T k="courses.intro" /></p>
+  </header>
+  <ul class="shelf">
+    {courses.map(c => (
+      <li>
+        <a href={`/courses/${c.id}/`} style={`--cc: var(--${c.data.color})`}>
+          <span class="spine" aria-hidden="true"></span>
+          <span>
+            <span class="title"><Bi v={c.data.title} /><span class="code">{c.data.code}</span></span>
+            <span class="sub">{c.data.professor.name}. {c.data.meetings.map((m, i) => (
+              <span>{i > 0 ? ', ' : ''}<Bi v={dayName(m.day)} /> {m.start}–{m.end}</span>
+            ))}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>

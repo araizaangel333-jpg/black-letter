@@ -1,0 +1,24 @@
+---
+import T from './T.astro';
+const path = Astro.url.pathname;
+const is = (p) => (p === '/' ? path === '/' : path.startsWith(p));
+const items = [
+  { href: '/', key: 'nav.today', icon: 'M8 3v3M16 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM9 13l2 2 4-4' },
+  { href: '/courses/', key: 'nav.courses', icon: 'M4 5a2 2 0 0 1 2-2h12a1 1 0 0 1 1 1v15H6a2 2 0 0 0-2 2zM4 19a2 2 0 0 0 2 2h13M8 7h7' },
+  { href: '/games/', key: 'nav.games', icon: 'M5 7h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zM10 4h9a2 2 0 0 1 2 2v9M7 12h5M9.5 9.5v5' },
+  { href: '/glossary/', key: 'nav.glossary', icon: 'M4 19V6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2zM8 14l2.3-6h.4L13 14M9 12h3M15.5 8.5v5.5' },
+  { href: '/more/', key: 'nav.more', icon: 'M5 12h.01M12 12h.01M19 12h.01' },
+];
+---
+<nav class="tabbar" aria-label="Main">
+  <ul>
+    {items.map(it => (
+      <li>
+        <a href={it.href} aria-current={is(it.href) ? 'page' : undefined}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={it.icon}></path></svg>
+          <T k={it.key} />
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

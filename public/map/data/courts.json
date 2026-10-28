@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "updated": "2026-10",
+    "sources": [
+      "Administrative Office of the U.S. Courts (uscourts.gov)",
+      "28 U.S.C. §§ 41-49 (circuitos) y §§ 81-131 (distritos)",
+      "National Center for State Courts, State Court Structure Charts",
+      "Ballotpedia, Judicial selection in the states"
+    ]
+  },
+  "federal": {
+    "supreme": {
+      "name": "Supreme Court of the United States",
+      "es": "Corte Suprema de los Estados Unidos",
+      "seat": "Washington, D.C. (1 First Street NE)",
+      "lat": 38.8906,
+      "lon": -77.0044,
+      "justices": 9,
+      "notes": [
+        "Nueve jueces (justices) nombrados por el presidente y confirmados por el Senado, con cargo de por vida (Artículo III).",
+        "Casi toda su jurisdicción es discrecional: elige qué casos oír mediante el writ of certiorari. Recibe miles de peticiones al año y decide con opinión alrededor de 60 a 70 casos.",
+        "Regla de los cuatro: bastan 4 de los 9 votos para conceder el certiorari.",
+        "Tiene jurisdicción original (actúa como tribunal de primera instancia) en disputas entre estados.",
+        "Revisa a las cortes federales de apelación y también a las cortes supremas estatales, pero solo cuando el caso plantea una cuestión de derecho federal.",
+        "El término judicial empieza el primer lunes de octubre."
+      ]
+    },
+    "appeals": {
+      "count": 13,
+      "judgeships": 179,
+      "notes": [
+        "12 circuitos regionales (1º a 11º y D.C.) más el Federal Circuit, que se define por materia y no por territorio.",
+        "Deciden en paneles de 3 jueces; no hay jurado ni nuevas pruebas. Revisan errores de derecho del tribunal de distrito.",
+        "En casos excepcionales la corte completa vuelve a oír el asunto (en banc). En el 9º Circuito, por su tamaño, el en banc lo forman 11 jueces.",
+        "La apelación es de derecho: quien pierde en el distrito tiene derecho a una apelación.",
+        "Su precedente obliga a todos los tribunales de distrito de su circuito; las decisiones de otros circuitos solo persuaden. Cuando los circuitos se contradicen (circuit split), suele intervenir la Corte Suprema."
+      ]
+    },
+    "district": {
+      "count": 94,
+      "notes": [
+        "Tribunales federales de primera instancia (trial courts) con jurisdicción general en materia federal: aquí se presentan las demandas, se celebran los juicios y actúan los jurados.",
+        "Cada estado tiene de 1 a 4 distritos; ningún distrito cruza fronteras estatales. 89 distritos en los 50 estados, más D.C., Puerto Rico y 3 territoriales (Guam, Islas Vírgenes, Islas Marianas del Norte).",
+        "Dentro de cada distrito funciona una Bankruptcy Court (quiebras) y hay magistrate judges que apoyan a los jueces de distrito.",
+        "Jurisdicción limitada: solo oyen casos de cuestión federal (Constitución, leyes o tratados federales), de diversidad (partes de distintos estados y más de $75,000 en disputa), casos en que EE. UU. es parte y materias exclusivas como quiebras, patentes o delitos federales."
+      ]
+    },
+    "specialized": [
+      {"name": "U.S. Court of Appeals for the Federal Circuit", "where": "Washington, D.C.", "what": "Apelaciones de todo el país por materia: patentes, reclamaciones contra el gobierno federal, comercio internacional, veteranos y empleo público federal.", "article": "III"},
+      {"name": "U.S. Court of International Trade", "where": "Nueva York", "what": "Aduanas y comercio internacional; sus fallos van al Federal Circuit.", "article": "III"},
+      {"name": "U.S. Court of Federal Claims", "where": "Washington, D.C.", "what": "Demandas de dinero contra Estados Unidos (contratos, expropiaciones, vacunas).", "article": "I"},
+      {"name": "U.S. Tax Court", "where": "Washington, D.C. (sesiona en todo el país)", "what": "Disputas con el IRS antes de pagar el impuesto.", "article": "I"},
+      {"name": "U.S. Bankruptcy Courts", "where": "Una por distrito (94)", "what": "Quiebras y reorganizaciones; unidades de cada tribunal de distrito, jueces de 14 años.", "article": "I"},
+      {"name": "U.S. Court of Appeals for Veterans Claims", "where": "Washington, D.C.", "what": "Revisa decisiones de la Junta de Apelaciones de Veteranos.", "article": "I"},
+      {"name": "U.S. Court of Appeals for the Armed Forces", "where": "Washington, D.C.", "what": "Última instancia militar (cortes marciales) antes de la Corte Suprema.", "article": "I"},
+      {"name": "Foreign Intelligence Surveillance Court (FISC)", "where": "Washington, D.C.", "what": "Autoriza vigilancia de inteligencia; sesiona en secreto.", "article": "III"}
+    ]
+  },
+  "circuits": {
+    "1":  {"short": "1er Circuito",  "en": "First Circuit",    "seat": "Boston, MA",         "lat": 42.3601, "lon": -71.0589,  "states": ["ME","NH","MA","RI","PR"],                         "judgeships": 6,  "court": "John Joseph Moakley U.S. Courthouse", "note": "El circuito más pequeño; incluye Puerto Rico, por lo que decide muchos casos con raíces en derecho civil puertorriqueño."},
+    "2":  {"short": "2º Circuito",   "en": "Second Circuit",   "seat": "Nueva York, NY",     "lat": 40.7143, "lon": -74.0030,  "states": ["VT","NY","CT"],                                   "judgeships": 13, "court": "Thurgood Marshall U.S. Courthouse", "note": "Por Wall Street, es la corte de referencia en derecho de valores, bancario y societario federal."},
+    "3":  {"short": "3er Circuito",  "en": "Third Circuit",    "seat": "Filadelfia, PA",     "lat": 39.9526, "lon": -75.1652,  "states": ["PA","NJ","DE","VI"],                              "judgeships": 14, "court": "James A. Byrne U.S. Courthouse", "note": "Incluye Delaware, por lo que ve apelaciones clave de quiebras corporativas y patentes."},
+    "4":  {"short": "4º Circuito",   "en": "Fourth Circuit",   "seat": "Richmond, VA",       "lat": 37.5407, "lon": -77.4360,  "states": ["MD","WV","VA","NC","SC"],                         "judgeships": 15, "court": "Lewis F. Powell Jr. U.S. Courthouse", "note": "Cubre el 'rocket docket' de Virginia Oriental y muchos casos de seguridad nacional por la cercanía con Washington."},
+    "5":  {"short": "5º Circuito",   "en": "Fifth Circuit",    "seat": "Nueva Orleans, LA",  "lat": 29.9511, "lon": -90.0715,  "states": ["TX","LA","MS"],                                   "judgeships": 17, "court": "John Minor Wisdom U.S. Court of Appeals Building", "note": "Es el circuito de Texas: toda apelación de los 4 distritos texanos llega aquí. Muy activo en inmigración, energía y derecho administrativo."},
+    "6":  {"short": "6º Circuito",   "en": "Sixth Circuit",    "seat": "Cincinnati, OH",     "lat": 39.1031, "lon": -84.5120,  "states": ["MI","OH","KY","TN"],                              "judgeships": 16, "court": "Potter Stewart U.S. Courthouse", "note": "Cuatro estados industriales del Medio Oeste y el Sur; de aquí salió Obergefell v. Hodges (2015)."},
+    "7":  {"short": "7º Circuito",   "en": "Seventh Circuit",  "seat": "Chicago, IL",        "lat": 41.8781, "lon": -87.6298,  "states": ["IL","IN","WI"],                                   "judgeships": 11, "court": "Everett McKinley Dirksen U.S. Courthouse", "note": "Famoso por jueces académicos (Posner, Easterbrook, Wood) y por sus opiniones de análisis económico del derecho."},
+    "8":  {"short": "8º Circuito",   "en": "Eighth Circuit",   "seat": "St. Louis, MO",      "lat": 38.6270, "lon": -90.1994,  "states": ["ND","SD","NE","MN","IA","MO","AR"],               "judgeships": 11, "court": "Thomas F. Eagleton U.S. Courthouse", "note": "Siete estados de las Grandes Llanuras; pocos jueces para un territorio enorme."},
+    "9":  {"short": "9º Circuito",   "en": "Ninth Circuit",    "seat": "San Francisco, CA",  "lat": 37.7749, "lon": -122.4194, "states": ["WA","OR","CA","NV","ID","MT","AK","HI","AZ","GU","MP"], "judgeships": 29, "court": "James R. Browning U.S. Courthouse", "note": "El más grande: 29 jueces y cerca del 20% de la población del país. Por su tamaño, el en banc lo forman 11 jueces y no la corte completa. Sesiona también en Pasadena, Portland y Seattle."},
+    "10": {"short": "10º Circuito",  "en": "Tenth Circuit",    "seat": "Denver, CO",         "lat": 39.7392, "lon": -104.9903, "states": ["CO","KS","NM","OK","UT","WY"],                    "judgeships": 12, "court": "Byron White U.S. Courthouse", "note": "Montañas Rocosas y llanuras del sur; muchos casos de tierras públicas y derecho indígena (tribal)."},
+    "11": {"short": "11º Circuito",  "en": "Eleventh Circuit", "seat": "Atlanta, GA",        "lat": 33.7490, "lon": -84.3880,  "states": ["AL","GA","FL"],                                   "judgeships": 12, "court": "Elbert P. Tuttle U.S. Court of Appeals Building", "note": "El más joven de los regionales: se creó en 1981 al dividirse el antiguo 5º Circuito."},
+    "DC": {"short": "Circuito de D.C.", "en": "D.C. Circuit",  "seat": "Washington, D.C.",   "lat": 38.8951, "lon": -77.0164,  "states": ["DC"],                                             "judgeships": 11, "court": "E. Barrett Prettyman U.S. Courthouse", "note": "Solo cubre el Distrito de Columbia, pero revisa a las agencias federales (EPA, FCC, SEC...). Se le llama 'la segunda corte más importante del país' y ha sido cantera de jueces de la Corte Suprema (Scalia, Thomas, Ginsburg, Roberts, Kavanaugh, Jackson)."},
+    "FED": {"short": "Federal Circuit", "en": "Federal Circuit", "seat": "Washington, D.C.", "lat": 38.8990, "lon": -77.0380,  "states": [],                                                 "judgeships": 12, "court": "Howard T. Markey National Courts Building", "note": "No tiene territorio: su jurisdicción es nacional y se define por materia (patentes, Court of Federal Claims, Court of International Trade, veteranos, MSPB). Creado en 1982."}
+  },
+  "selectionMethods": {
+    "partisan":    {"label": "Elección partidista",            "desc": "Los jueces compiten en elecciones con etiqueta de partido (en IL y PA la elección inicial es partidista y después hay elección de retención)."},
+    "nonpartisan": {"label": "Elección no partidista",         "desc": "Elecciones populares sin etiqueta de partido en la boleta."},
+    "retention":   {"label": "Nombramiento + retención",       "desc": "Plan Missouri: una comisión propone candidatos, el gobernador nombra y, pasado un tiempo, el electorado vota sí o no a mantener al juez (elección de retención)."},
+    "appointment": {"label": "Nombramiento sin elección",      "desc": "El gobernador (o el presidente, en D.C.) nombra con confirmación legislativa o de un consejo; el juez sigue por mandato fijo, hasta una edad límite o de por vida. El modelo más parecido al federal."},
+    "legislative": {"label": "Elección legislativa",           "desc": "La legislatura estatal elige a los jueces (solo Carolina del Sur y Virginia)."},
+    "hybrid":      {"label": "Híbrido",                        "desc": "Nuevo México combina comisión y nombramiento, después una elección partidista y luego elecciones de retención."}
+  },
+  "structureTypes": {
+    "3":    {"label": "Tres niveles",                           "desc": "Tribunales de primera instancia, corte intermedia de apelaciones y corte de última instancia. Es el modelo de 41 estados y Puerto Rico."},
+    "2":    {"label": "Dos niveles (sin corte intermedia)",     "desc": "Las apelaciones van directamente de primera instancia a la corte suprema del estado. Nueve estados poco poblados y D.C."},
+    "dual": {"label": "Tres niveles con dos cortes supremas",   "desc": "Texas y Oklahoma dividen la última instancia por materia: una Supreme Court para lo civil y una Court of Criminal Appeals para lo penal."}
+  },
+  "states": {
+    "AL": {"name": "Alabama", "fips": "01", "circuit": "11",
+      "districts": [
+        {"id": "al-n", "name": "Northern District of Alabama", "abbr": "N.D. Ala.", "seat": "Birmingham", "lat": 33.5186, "lon": -86.8104, "covers": "Birmingham, Huntsville, Tuscaloosa, Gadsden y Florence; el norte y centro-norte del estado."},
+        {"id": "al-m", "name": "Middle District of Alabama", "abbr": "M.D. Ala.", "seat": "Montgomery", "lat": 32.3668, "lon": -86.3000, "covers": "Montgomery (la capital), Dothan y Opelika-Auburn; el centro-sur."},
+        {"id": "al-s", "name": "Southern District of Alabama", "abbr": "S.D. Ala.", "seat": "Mobile", "lat": 30.6954, "lon": -88.0399, "covers": "Mobile, Selma y la costa del Golfo."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Courts, Probate Courts y Municipal Courts (limitada).",
+      "iac": "Dos cortes intermedias separadas por materia: Court of Civil Appeals (5 jueces) y Court of Criminal Appeals (5 jueces).",
+      "high": [{"name": "Supreme Court of Alabama", "justices": 9}],
+      "selection": "partisan", "selectionDetail": "Elecciones partidistas en todos los niveles; mandatos de 6 años.",
+      "tiers": 3,
+      "note": "Junto con Tennessee, divide la apelación intermedia en una corte civil y otra penal."},
+    "AK": {"name": "Alaska", "fips": "02", "circuit": "9",
+      "districts": [
+        {"id": "ak", "name": "District of Alaska", "abbr": "D. Alaska", "seat": "Anchorage", "lat": 61.2181, "lon": -149.9003, "covers": "Todo el estado; también sesiona en Fairbanks, Juneau, Nome y Ketchikan."}
+      ],
+      "trial": "Superior Court (jurisdicción general); District Court (limitada). Sistema judicial unificado y financiado por el estado.",
+      "iac": "Court of Appeals solo para casos penales; las apelaciones civiles van directo a la Supreme Court.",
+      "high": [{"name": "Alaska Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "Plan de mérito: el Alaska Judicial Council propone candidatos, el gobernador nombra y hay elección de retención cada 10 años.",
+      "tiers": 3,
+      "note": "Su corte intermedia solo conoce asuntos penales."},
+    "AZ": {"name": "Arizona", "fips": "04", "circuit": "9",
+      "districts": [
+        {"id": "az", "name": "District of Arizona", "abbr": "D. Ariz.", "seat": "Phoenix", "lat": 33.4484, "lon": -112.0740, "covers": "Todo el estado; sedes en Tucson, Flagstaff, Yuma y Prescott. Muchos casos de frontera e inmigración."}
+      ],
+      "trial": "Superior Court (uno por condado, jurisdicción general); Justice Courts y Municipal Courts (limitada).",
+      "iac": "Court of Appeals en dos divisiones: Division One (Phoenix) y Division Two (Tucson).",
+      "high": [{"name": "Arizona Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión + nombramiento del gobernador + elección de retención (6 años). En los condados pequeños los jueces de primera instancia se eligen en elecciones no partidistas.",
+      "tiers": 3,
+      "note": "La Supreme Court pasó de 5 a 7 jueces en 2016."},
+    "AR": {"name": "Arkansas", "fips": "05", "circuit": "8",
+      "districts": [
+        {"id": "ar-e", "name": "Eastern District of Arkansas", "abbr": "E.D. Ark.", "seat": "Little Rock", "lat": 34.7465, "lon": -92.2896, "covers": "Little Rock, Jonesboro, Pine Bluff y Helena; la mitad oriental."},
+        {"id": "ar-w", "name": "Western District of Arkansas", "abbr": "W.D. Ark.", "seat": "Fort Smith", "lat": 35.3859, "lon": -94.3985, "covers": "Fort Smith, Fayetteville, Texarkana, Hot Springs y El Dorado; la mitad occidental."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Courts (limitada).",
+      "iac": "Court of Appeals (12 jueces).",
+      "high": [{"name": "Arkansas Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas desde 2001; mandatos de 8 años.",
+      "tiers": 3},
+    "CA": {"name": "California", "fips": "06", "circuit": "9",
+      "districts": [
+        {"id": "ca-n", "name": "Northern District of California", "abbr": "N.D. Cal.", "seat": "San Francisco", "lat": 37.7749, "lon": -122.4194, "covers": "Área de la Bahía: San Francisco, Oakland y San José (Silicon Valley), más la costa norte hasta Eureka. Foro clave en tecnología y antimonopolio."},
+        {"id": "ca-e", "name": "Eastern District of California", "abbr": "E.D. Cal.", "seat": "Sacramento", "lat": 38.5816, "lon": -121.4944, "covers": "Sacramento, Fresno, Bakersfield, el Valle Central y la Sierra Nevada (incluido Yosemite)."},
+        {"id": "ca-c", "name": "Central District of California", "abbr": "C.D. Cal.", "seat": "Los Ángeles", "lat": 34.0522, "lon": -118.2437, "covers": "Los Ángeles, Orange County, Riverside, San Bernardino, Ventura y Santa Bárbara. El distrito más poblado del país (unos 19 millones de habitantes)."},
+        {"id": "ca-s", "name": "Southern District of California", "abbr": "S.D. Cal.", "seat": "San Diego", "lat": 32.7157, "lon": -117.1611, "covers": "San Diego e Imperial; la frontera con México."}
+      ],
+      "trial": "Superior Courts unificados, uno por condado (58). Es el sistema judicial estatal más grande del país.",
+      "iac": "Courts of Appeal en 6 distritos (San Francisco, Los Ángeles, Sacramento, San Diego, Fresno y San José), más de 100 jueces.",
+      "high": [{"name": "Supreme Court of California", "justices": 7}],
+      "selection": "retention", "selectionDetail": "El gobernador nombra, la Commission on Judicial Appointments confirma y el electorado vota la retención cada 12 años. Los jueces de primera instancia se eligen en elecciones no partidistas (la mayoría entra por vacante nombrada por el gobernador).",
+      "tiers": 3},
+    "CO": {"name": "Colorado", "fips": "08", "circuit": "10",
+      "districts": [
+        {"id": "co", "name": "District of Colorado", "abbr": "D. Colo.", "seat": "Denver", "lat": 39.7392, "lon": -104.9903, "covers": "Todo el estado; también sesiona en Colorado Springs, Grand Junction y Durango."}
+      ],
+      "trial": "District Courts (jurisdicción general); County Courts y Municipal Courts (limitada); Water Courts especializadas en derechos de agua.",
+      "iac": "Court of Appeals (22 jueces).",
+      "high": [{"name": "Colorado Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión de nominación + nombramiento del gobernador + elección de retención (10 años en la Supreme Court).",
+      "tiers": 3},
+    "CT": {"name": "Connecticut", "fips": "09", "circuit": "2",
+      "districts": [
+        {"id": "ct", "name": "District of Connecticut", "abbr": "D. Conn.", "seat": "New Haven", "lat": 41.3083, "lon": -72.9279, "covers": "Todo el estado; sedes en Hartford y Bridgeport."}
+      ],
+      "trial": "Superior Court (jurisdicción general, con divisiones civil, penal, familia y menores); Probate Courts.",
+      "iac": "Appellate Court (9 jueces).",
+      "high": [{"name": "Connecticut Supreme Court", "justices": 7}],
+      "selection": "appointment", "selectionDetail": "La Judicial Selection Commission propone, el gobernador nombra y la Asamblea General confirma; mandatos de 8 años renovables.",
+      "tiers": 3},
+    "DE": {"name": "Delaware", "fips": "10", "circuit": "3",
+      "districts": [
+        {"id": "de", "name": "District of Delaware", "abbr": "D. Del.", "seat": "Wilmington", "lat": 39.7391, "lon": -75.5398, "covers": "Todo el estado. Foro nacional de litigios de patentes y grandes quiebras corporativas, porque la mayoría de las grandes empresas están constituidas en Delaware."}
+      ],
+      "trial": "Superior Court (civil y penal); Court of Chancery (equity y derecho corporativo); Family Court; Court of Common Pleas; Justice of the Peace Courts.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Delaware Supreme Court", "justices": 5}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con confirmación del Senado; mandatos de 12 años. La constitución exige equilibrio entre partidos en cada corte.",
+      "tiers": 2,
+      "note": "La Court of Chancery es el tribunal de derecho corporativo más influyente del país: más de la mitad de las empresas del S&P 500 están constituidas en Delaware y litigan ahí sin jurado."},
+    "DC": {"name": "Distrito de Columbia", "fips": "11", "circuit": "DC",
+      "districts": [
+        {"id": "dc", "name": "District Court for the District of Columbia", "abbr": "D.D.C.", "seat": "Washington", "lat": 38.8951, "lon": -77.0164, "covers": "La capital. Por ser sede del gobierno, ve muchísimos casos contra agencias federales y de interés nacional."}
+      ],
+      "trial": "Superior Court of the District of Columbia (jurisdicción general local).",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "District of Columbia Court of Appeals", "justices": 9}],
+      "selection": "appointment", "selectionDetail": "Cortes locales creadas por el Congreso en 1970 (Artículo I): el presidente nombra desde una lista de la D.C. Judicial Nomination Commission y el Senado confirma; mandatos de 15 años.",
+      "tiers": 2,
+      "note": "No confundir: D.C. tiene un sistema judicial local (Superior Court y D.C. Court of Appeals) que funciona como el de un estado, además de las cortes federales con sede ahí (D.D.C., D.C. Circuit, Federal Circuit y la Corte Suprema)."},
+    "FL": {"name": "Florida", "fips": "12", "circuit": "11",
+      "districts": [
+        {"id": "fl-n", "name": "Northern District of Florida", "abbr": "N.D. Fla.", "seat": "Tallahassee", "lat": 30.4383, "lon": -84.2807, "covers": "Tallahassee, Pensacola, Gainesville y Panama City; el Panhandle."},
+        {"id": "fl-m", "name": "Middle District of Florida", "abbr": "M.D. Fla.", "seat": "Tampa", "lat": 27.9506, "lon": -82.4572, "covers": "Tampa, Orlando, Jacksonville, Fort Myers y Ocala; el centro del estado."},
+        {"id": "fl-s", "name": "Southern District of Florida", "abbr": "S.D. Fla.", "seat": "Miami", "lat": 25.7617, "lon": -80.1918, "covers": "Miami, Fort Lauderdale, West Palm Beach, Fort Pierce y Key West."}
+      ],
+      "trial": "Circuit Courts (20 circuitos, jurisdicción general); County Courts (limitada).",
+      "iac": "District Courts of Appeal, 6 distritos desde 2023.",
+      "high": [{"name": "Florida Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (6 años) para la Supreme Court y las DCA; elecciones no partidistas para primera instancia.",
+      "tiers": 3},
+    "GA": {"name": "Georgia", "fips": "13", "circuit": "11",
+      "districts": [
+        {"id": "ga-n", "name": "Northern District of Georgia", "abbr": "N.D. Ga.", "seat": "Atlanta", "lat": 33.7490, "lon": -84.3880, "covers": "Atlanta y el norte del estado: Rome, Gainesville y Newnan."},
+        {"id": "ga-m", "name": "Middle District of Georgia", "abbr": "M.D. Ga.", "seat": "Macon", "lat": 32.8407, "lon": -83.6324, "covers": "Macon, Columbus, Albany, Athens y Valdosta."},
+        {"id": "ga-s", "name": "Southern District of Georgia", "abbr": "S.D. Ga.", "seat": "Savannah", "lat": 32.0809, "lon": -81.0912, "covers": "Savannah, Augusta, Brunswick y Statesboro; la costa."}
+      ],
+      "trial": "Superior Courts (jurisdicción general); State Courts, Magistrate, Probate, Juvenile y Municipal Courts (limitada).",
+      "iac": "Court of Appeals (15 jueces).",
+      "high": [{"name": "Supreme Court of Georgia", "justices": 9}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 6 años.",
+      "tiers": 3,
+      "note": "La Supreme Court pasó de 7 a 9 jueces en 2017."},
+    "HI": {"name": "Hawái", "fips": "15", "circuit": "9",
+      "districts": [
+        {"id": "hi", "name": "District of Hawaii", "abbr": "D. Haw.", "seat": "Honolulu", "lat": 21.3069, "lon": -157.8583, "covers": "Todo el estado y varias islas del Pacífico (Midway, Wake, Johnston, Palmyra). También atiende asuntos federales de Samoa Americana, que no tiene corte de distrito."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Courts y Family Courts (limitada).",
+      "iac": "Intermediate Court of Appeals.",
+      "high": [{"name": "Hawaii Supreme Court", "justices": 5}],
+      "selection": "appointment", "selectionDetail": "La Judicial Selection Commission propone, el gobernador nombra y el Senado confirma; mandatos de 10 años que renueva la propia comisión.",
+      "tiers": 3},
+    "ID": {"name": "Idaho", "fips": "16", "circuit": "9",
+      "districts": [
+        {"id": "id", "name": "District of Idaho", "abbr": "D. Idaho", "seat": "Boise", "lat": 43.6150, "lon": -116.2023, "covers": "Todo el estado; sedes en Pocatello, Coeur d'Alene y Moscow."}
+      ],
+      "trial": "District Courts (jurisdicción general) con una Magistrate Division (limitada).",
+      "iac": "Court of Appeals (4 jueces).",
+      "high": [{"name": "Idaho Supreme Court", "justices": 5}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 6 años.",
+      "tiers": 3},
+    "IL": {"name": "Illinois", "fips": "17", "circuit": "7",
+      "districts": [
+        {"id": "il-n", "name": "Northern District of Illinois", "abbr": "N.D. Ill.", "seat": "Chicago", "lat": 41.8781, "lon": -87.6298, "covers": "Chicago, sus suburbios y Rockford. Uno de los distritos más activos del país."},
+        {"id": "il-c", "name": "Central District of Illinois", "abbr": "C.D. Ill.", "seat": "Springfield", "lat": 39.7817, "lon": -89.6501, "covers": "Springfield, Peoria, Urbana-Champaign y Rock Island."},
+        {"id": "il-s", "name": "Southern District of Illinois", "abbr": "S.D. Ill.", "seat": "East St. Louis", "lat": 38.6245, "lon": -90.1507, "covers": "East St. Louis, Benton y el sur del estado."}
+      ],
+      "trial": "Circuit Courts (24 circuitos, jurisdicción general unificada).",
+      "iac": "Appellate Court en 5 distritos.",
+      "high": [{"name": "Illinois Supreme Court", "justices": 7}],
+      "selection": "partisan", "selectionDetail": "Elección partidista inicial (10 años) por distritos geográficos y después elección de retención, que exige 60% de votos.",
+      "tiers": 3},
+    "IN": {"name": "Indiana", "fips": "18", "circuit": "7",
+      "districts": [
+        {"id": "in-n", "name": "Northern District of Indiana", "abbr": "N.D. Ind.", "seat": "South Bend", "lat": 41.6764, "lon": -86.2520, "covers": "South Bend, Hammond (Gary), Fort Wayne y Lafayette."},
+        {"id": "in-s", "name": "Southern District of Indiana", "abbr": "S.D. Ind.", "seat": "Indianápolis", "lat": 39.7684, "lon": -86.1581, "covers": "Indianápolis, Evansville, Terre Haute y New Albany."}
+      ],
+      "trial": "Circuit Courts y Superior Courts (jurisdicción general); City y Town Courts (limitada).",
+      "iac": "Court of Appeals (15 jueces en 5 distritos) y una Tax Court.",
+      "high": [{"name": "Indiana Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (10 años).",
+      "tiers": 3},
+    "IA": {"name": "Iowa", "fips": "19", "circuit": "8",
+      "districts": [
+        {"id": "ia-n", "name": "Northern District of Iowa", "abbr": "N.D. Iowa", "seat": "Cedar Rapids", "lat": 41.9779, "lon": -91.6656, "covers": "Cedar Rapids, Sioux City, Waterloo y Dubuque."},
+        {"id": "ia-s", "name": "Southern District of Iowa", "abbr": "S.D. Iowa", "seat": "Des Moines", "lat": 41.5868, "lon": -93.6250, "covers": "Des Moines, Davenport y Council Bluffs."}
+      ],
+      "trial": "District Courts (jurisdicción general unificada).",
+      "iac": "Court of Appeals (9 jueces).",
+      "high": [{"name": "Iowa Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (8 años).",
+      "tiers": 3},
+    "KS": {"name": "Kansas", "fips": "20", "circuit": "10",
+      "districts": [
+        {"id": "ks", "name": "District of Kansas", "abbr": "D. Kan.", "seat": "Kansas City", "lat": 39.1141, "lon": -94.6275, "covers": "Todo el estado; sedes en Kansas City, Topeka y Wichita."}
+      ],
+      "trial": "District Courts (jurisdicción general); Municipal Courts (limitada).",
+      "iac": "Court of Appeals (14 jueces).",
+      "high": [{"name": "Kansas Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Supreme Court: comisión + gobernador + elección de retención (6 años). Court of Appeals: desde 2013 el gobernador nombra con confirmación del Senado.",
+      "tiers": 3},
+    "KY": {"name": "Kentucky", "fips": "21", "circuit": "6",
+      "districts": [
+        {"id": "ky-e", "name": "Eastern District of Kentucky", "abbr": "E.D. Ky.", "seat": "Lexington", "lat": 38.0406, "lon": -84.5037, "covers": "Lexington, Covington, Frankfort, Ashland, Pikeville y London; el este montañoso."},
+        {"id": "ky-w", "name": "Western District of Kentucky", "abbr": "W.D. Ky.", "seat": "Louisville", "lat": 38.2527, "lon": -85.7585, "covers": "Louisville, Bowling Green, Owensboro y Paducah."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Courts (limitada).",
+      "iac": "Court of Appeals (14 jueces).",
+      "high": [{"name": "Kentucky Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 8 años.",
+      "tiers": 3},
+    "LA": {"name": "Luisiana", "fips": "22", "circuit": "5",
+      "districts": [
+        {"id": "la-e", "name": "Eastern District of Louisiana", "abbr": "E.D. La.", "seat": "Nueva Orleans", "lat": 29.9511, "lon": -90.0715, "covers": "Nueva Orleans, las parroquias vecinas y Houma. Aquí se litigó el derrame de BP (Deepwater Horizon)."},
+        {"id": "la-m", "name": "Middle District of Louisiana", "abbr": "M.D. La.", "seat": "Baton Rouge", "lat": 30.4515, "lon": -91.1871, "covers": "Baton Rouge (la capital) y las parroquias cercanas."},
+        {"id": "la-w", "name": "Western District of Louisiana", "abbr": "W.D. La.", "seat": "Shreveport", "lat": 32.5252, "lon": -93.7502, "covers": "Shreveport, Lafayette, Lake Charles, Alexandria y Monroe; la mitad occidental."}
+      ],
+      "trial": "District Courts (42 distritos, jurisdicción general); City Courts, Parish Courts y Justice of the Peace Courts (limitada).",
+      "iac": "Courts of Appeal en 5 circuitos.",
+      "high": [{"name": "Louisiana Supreme Court", "justices": 7}],
+      "selection": "partisan", "selectionDetail": "Elecciones partidistas; mandatos de 10 años.",
+      "tiers": 3,
+      "note": "Único estado con tradición de derecho civil (Código Civil de Luisiana, herencia francesa y española). Usa 'parroquias' en lugar de condados."},
+    "ME": {"name": "Maine", "fips": "23", "circuit": "1",
+      "districts": [
+        {"id": "me", "name": "District of Maine", "abbr": "D. Me.", "seat": "Portland", "lat": 43.6591, "lon": -70.2568, "covers": "Todo el estado; sede también en Bangor."}
+      ],
+      "trial": "Superior Court (jurisdicción general, con jurado); District Court (limitada); Probate Courts por condado.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Maine Supreme Judicial Court", "justices": 7}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra y el Senado confirma; mandatos de 7 años renovables.",
+      "tiers": 2,
+      "note": "Cuando la Supreme Judicial Court resuelve apelaciones se le llama 'Law Court'."},
+    "MD": {"name": "Maryland", "fips": "24", "circuit": "4",
+      "districts": [
+        {"id": "md", "name": "District of Maryland", "abbr": "D. Md.", "seat": "Baltimore", "lat": 39.2904, "lon": -76.6122, "covers": "Todo el estado; división norte en Baltimore y división sur en Greenbelt (suburbios de Washington)."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Court of Maryland (limitada, estatal unificada); Orphans' Courts (sucesiones).",
+      "iac": "Appellate Court of Maryland (15 jueces; hasta 2022 se llamaba Court of Special Appeals).",
+      "high": [{"name": "Supreme Court of Maryland", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + confirmación del Senado + elección de retención (10 años) para las cortes de apelación.",
+      "tiers": 3,
+      "note": "En diciembre de 2022 renombró sus cortes altas (antes 'Court of Appeals' y 'Court of Special Appeals') para que los nombres coincidieran con los del resto del país."},
+    "MA": {"name": "Massachusetts", "fips": "25", "circuit": "1",
+      "districts": [
+        {"id": "ma", "name": "District of Massachusetts", "abbr": "D. Mass.", "seat": "Boston", "lat": 42.3601, "lon": -71.0589, "covers": "Todo el estado; sedes en Worcester y Springfield."}
+      ],
+      "trial": "Trial Court con 7 departamentos: Superior Court (general), District Court, Boston Municipal Court, Housing, Juvenile, Land y Probate & Family.",
+      "iac": "Appeals Court (25 jueces).",
+      "high": [{"name": "Supreme Judicial Court", "justices": 7}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con aprobación del Governor's Council; los jueces sirven hasta los 70 años.",
+      "tiers": 3,
+      "note": "La Supreme Judicial Court (1692) es la corte de apelaciones en funcionamiento continuo más antigua del hemisferio occidental."},
+    "MI": {"name": "Míchigan", "fips": "26", "circuit": "6",
+      "districts": [
+        {"id": "mi-e", "name": "Eastern District of Michigan", "abbr": "E.D. Mich.", "seat": "Detroit", "lat": 42.3314, "lon": -83.0458, "covers": "Detroit, Ann Arbor, Flint, Bay City y Port Huron; el este de la Península Inferior."},
+        {"id": "mi-w", "name": "Western District of Michigan", "abbr": "W.D. Mich.", "seat": "Grand Rapids", "lat": 42.9634, "lon": -85.6681, "covers": "Grand Rapids, Kalamazoo, Lansing, Marquette y toda la Península Superior."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); District Courts, Probate Courts y Municipal Courts (limitada); Court of Claims (casos contra el estado).",
+      "iac": "Court of Appeals en 4 distritos.",
+      "high": [{"name": "Michigan Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones formalmente no partidistas (8 años), pero los candidatos a la Supreme Court son nominados en convenciones de partido.",
+      "tiers": 3},
+    "MN": {"name": "Minnesota", "fips": "27", "circuit": "8",
+      "districts": [
+        {"id": "mn", "name": "District of Minnesota", "abbr": "D. Minn.", "seat": "Minneapolis", "lat": 44.9778, "lon": -93.2650, "covers": "Todo el estado; sedes en St. Paul, Duluth y Fergus Falls."}
+      ],
+      "trial": "District Courts (10 distritos judiciales, jurisdicción general unificada).",
+      "iac": "Court of Appeals (19 jueces).",
+      "high": [{"name": "Minnesota Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas (6 años); en la práctica la mayoría de los jueces entra por nombramiento del gobernador para cubrir vacantes.",
+      "tiers": 3},
+    "MS": {"name": "Misisipi", "fips": "28", "circuit": "5",
+      "districts": [
+        {"id": "ms-n", "name": "Northern District of Mississippi", "abbr": "N.D. Miss.", "seat": "Oxford", "lat": 34.3665, "lon": -89.5192, "covers": "Oxford, Aberdeen y Greenville; el norte y el Delta."},
+        {"id": "ms-s", "name": "Southern District of Mississippi", "abbr": "S.D. Miss.", "seat": "Jackson", "lat": 32.2988, "lon": -90.1848, "covers": "Jackson, Gulfport, Hattiesburg y Natchez."}
+      ],
+      "trial": "Circuit Courts (civil y penal) y Chancery Courts (equity, familia y sucesiones), ambas de jurisdicción general; County, Justice y Municipal Courts (limitada).",
+      "iac": "Court of Appeals (10 jueces).",
+      "high": [{"name": "Supreme Court of Mississippi", "justices": 9}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 8 años.",
+      "tiers": 3,
+      "note": "Conserva tribunales separados de 'law' (Circuit) y 'equity' (Chancery), una distinción histórica inglesa que casi todos los estados fusionaron."},
+    "MO": {"name": "Misuri", "fips": "29", "circuit": "8",
+      "districts": [
+        {"id": "mo-e", "name": "Eastern District of Missouri", "abbr": "E.D. Mo.", "seat": "St. Louis", "lat": 38.6270, "lon": -90.1994, "covers": "St. Louis, Cape Girardeau y Hannibal."},
+        {"id": "mo-w", "name": "Western District of Missouri", "abbr": "W.D. Mo.", "seat": "Kansas City", "lat": 39.0997, "lon": -94.5786, "covers": "Kansas City, Springfield, Jefferson City, Joplin y St. Joseph."}
+      ],
+      "trial": "Circuit Courts (46 circuitos, jurisdicción general con divisiones asociadas y municipales).",
+      "iac": "Court of Appeals en 3 distritos: Eastern (St. Louis), Western (Kansas City) y Southern (Springfield).",
+      "high": [{"name": "Supreme Court of Missouri", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Cuna del 'Plan Missouri' (1940): una comisión no partidista propone tres candidatos, el gobernador nombra y después hay elección de retención (12 años).",
+      "tiers": 3,
+      "note": "El 'Missouri Plan' es el modelo que copiaron la mayoría de los estados con nombramiento + retención."},
+    "MT": {"name": "Montana", "fips": "30", "circuit": "9",
+      "districts": [
+        {"id": "mt", "name": "District of Montana", "abbr": "D. Mont.", "seat": "Billings", "lat": 45.7833, "lon": -108.5007, "covers": "Todo el estado (salvo la franja de Yellowstone, que pertenece a D. Wyo.); sedes en Missoula, Great Falls, Helena y Butte."}
+      ],
+      "trial": "District Courts (jurisdicción general); Justice, City y Municipal Courts (limitada); Water Court y Workers' Compensation Court especializadas.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Montana Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 8 años.",
+      "tiers": 2},
+    "NE": {"name": "Nebraska", "fips": "31", "circuit": "8",
+      "districts": [
+        {"id": "ne", "name": "District of Nebraska", "abbr": "D. Neb.", "seat": "Omaha", "lat": 41.2565, "lon": -95.9345, "covers": "Todo el estado; sede también en Lincoln."}
+      ],
+      "trial": "District Courts (jurisdicción general); County Courts y Separate Juvenile Courts (limitada); Workers' Compensation Court.",
+      "iac": "Court of Appeals (6 jueces).",
+      "high": [{"name": "Nebraska Supreme Court", "justices": 7}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (6 años).",
+      "tiers": 3},
+    "NV": {"name": "Nevada", "fips": "32", "circuit": "9",
+      "districts": [
+        {"id": "nv", "name": "District of Nevada", "abbr": "D. Nev.", "seat": "Las Vegas", "lat": 36.1699, "lon": -115.1398, "covers": "Todo el estado; sede también en Reno."}
+      ],
+      "trial": "District Courts (jurisdicción general); Justice Courts y Municipal Courts (limitada).",
+      "iac": "Court of Appeals (3 jueces, creada en 2015).",
+      "high": [{"name": "Supreme Court of Nevada", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 6 años.",
+      "tiers": 3,
+      "note": "Modelo 'push-down': todos los recursos se presentan ante la Supreme Court, que reasigna una parte a la Court of Appeals."},
+    "NH": {"name": "Nuevo Hampshire", "fips": "33", "circuit": "1",
+      "districts": [
+        {"id": "nh", "name": "District of New Hampshire", "abbr": "D.N.H.", "seat": "Concord", "lat": 43.2081, "lon": -71.5376, "covers": "Todo el estado."}
+      ],
+      "trial": "Superior Court (jurisdicción general, con jurado); Circuit Court (distrito, familia y sucesiones).",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "New Hampshire Supreme Court", "justices": 5}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con aprobación del Executive Council; los jueces sirven hasta los 70 años.",
+      "tiers": 2},
+    "NJ": {"name": "Nueva Jersey", "fips": "34", "circuit": "3",
+      "districts": [
+        {"id": "nj", "name": "District of New Jersey", "abbr": "D.N.J.", "seat": "Newark", "lat": 40.7357, "lon": -74.1724, "covers": "Todo el estado; sedes en Trenton y Camden. Muy activo en litigios farmacéuticos."}
+      ],
+      "trial": "Superior Court (jurisdicción general) con Law Division y Chancery Division; Tax Court; Municipal Courts (limitada).",
+      "iac": "Superior Court, Appellate Division (unos 30 jueces).",
+      "high": [{"name": "Supreme Court of New Jersey", "justices": 7}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con confirmación del Senado; 7 años iniciales y, si se renueva, permanencia hasta los 70 años.",
+      "tiers": 3},
+    "NM": {"name": "Nuevo México", "fips": "35", "circuit": "10",
+      "districts": [
+        {"id": "nm", "name": "District of New Mexico", "abbr": "D.N.M.", "seat": "Albuquerque", "lat": 35.0844, "lon": -106.6504, "covers": "Todo el estado; sedes en Santa Fe, Las Cruces y Roswell. Muchos casos de frontera y de tierras tribales."}
+      ],
+      "trial": "District Courts (jurisdicción general); Magistrate, Metropolitan (condado de Bernalillo), Probate y Municipal Courts (limitada).",
+      "iac": "Court of Appeals (10 jueces).",
+      "high": [{"name": "New Mexico Supreme Court", "justices": 5}],
+      "selection": "hybrid", "selectionDetail": "Híbrido: comisión + nombramiento del gobernador; en la siguiente elección general el juez compite en una elección partidista y después solo enfrenta elecciones de retención (8 años).",
+      "tiers": 3},
+    "NY": {"name": "Nueva York", "fips": "36", "circuit": "2",
+      "districts": [
+        {"id": "ny-n", "name": "Northern District of New York", "abbr": "N.D.N.Y.", "seat": "Syracuse", "lat": 43.0481, "lon": -76.1474, "covers": "Syracuse, Albany (la capital), Utica, Binghamton y Plattsburgh; 32 condados del norte."},
+        {"id": "ny-s", "name": "Southern District of New York", "abbr": "S.D.N.Y.", "seat": "Manhattan", "lat": 40.7143, "lon": -74.0030, "covers": "Manhattan, el Bronx, Westchester y los condados del valle del Hudson. Conocido como 'la Corte Madre' (Mother Court), el distrito más antiguo (1789); Wall Street, casos financieros, de medios y de alto perfil."},
+        {"id": "ny-e", "name": "Eastern District of New York", "abbr": "E.D.N.Y.", "seat": "Brooklyn", "lat": 40.6928, "lon": -73.9903, "covers": "Brooklyn, Queens, Staten Island y Long Island (Nassau y Suffolk); sede también en Central Islip."},
+        {"id": "ny-w", "name": "Western District of New York", "abbr": "W.D.N.Y.", "seat": "Buffalo", "lat": 42.8864, "lon": -78.8784, "covers": "Buffalo, Rochester y el oeste del estado."}
+      ],
+      "trial": "Supreme Court (sí: así se llama el tribunal de primera instancia de jurisdicción general); County Courts, Family Court, Surrogate's Court (sucesiones), Court of Claims, NYC Civil y Criminal Courts, City, Town y Village Courts.",
+      "iac": "Supreme Court, Appellate Division, en 4 Departments (Manhattan, Brooklyn, Albany y Rochester); además Appellate Terms para recursos menores.",
+      "high": [{"name": "Court of Appeals", "justices": 7}],
+      "selection": "appointment", "selectionDetail": "Court of Appeals: la Commission on Judicial Nomination propone, el gobernador nombra y el Senado confirma; 14 años. Los jueces de la 'Supreme Court' de primera instancia se eligen en elecciones partidistas (14 años).",
+      "tiers": 3,
+      "note": "Nomenclatura invertida: la 'Supreme Court' es el tribunal de primera instancia y la 'Court of Appeals' es la corte máxima. Con 11 tipos de tribunales, es uno de los sistemas más complejos del país."},
+    "NC": {"name": "Carolina del Norte", "fips": "37", "circuit": "4",
+      "districts": [
+        {"id": "nc-e", "name": "Eastern District of North Carolina", "abbr": "E.D.N.C.", "seat": "Raleigh", "lat": 35.7796, "lon": -78.6382, "covers": "Raleigh, Wilmington, Greenville, Fayetteville y Elizabeth City; la costa y la llanura."},
+        {"id": "nc-m", "name": "Middle District of North Carolina", "abbr": "M.D.N.C.", "seat": "Greensboro", "lat": 36.0726, "lon": -79.7920, "covers": "Greensboro, Winston-Salem y Durham; el Piedmont central."},
+        {"id": "nc-w", "name": "Western District of North Carolina", "abbr": "W.D.N.C.", "seat": "Charlotte", "lat": 35.2271, "lon": -80.8431, "covers": "Charlotte, Asheville y Statesville; las montañas."}
+      ],
+      "trial": "Superior Court (jurisdicción general); District Court (limitada); North Carolina Business Court (casos mercantiles complejos, dentro de la Superior Court).",
+      "iac": "Court of Appeals (15 jueces).",
+      "high": [{"name": "Supreme Court of North Carolina", "justices": 7}],
+      "selection": "partisan", "selectionDetail": "Elecciones partidistas (reintroducidas en 2018); mandatos de 8 años.",
+      "tiers": 3},
+    "ND": {"name": "Dakota del Norte", "fips": "38", "circuit": "8",
+      "districts": [
+        {"id": "nd", "name": "District of North Dakota", "abbr": "D.N.D.", "seat": "Bismarck", "lat": 46.8083, "lon": -100.7837, "covers": "Todo el estado; sedes en Fargo, Grand Forks y Minot."}
+      ],
+      "trial": "District Courts (jurisdicción general); Municipal Courts (limitada).",
+      "iac": "Solo una Court of Appeals temporal que la Supreme Court puede convocar; en la práctica casi nunca sesiona.",
+      "high": [{"name": "North Dakota Supreme Court", "justices": 5}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 10 años.",
+      "tiers": 2},
+    "OH": {"name": "Ohio", "fips": "39", "circuit": "6",
+      "districts": [
+        {"id": "oh-n", "name": "Northern District of Ohio", "abbr": "N.D. Ohio", "seat": "Cleveland", "lat": 41.4993, "lon": -81.6944, "covers": "Cleveland, Toledo, Akron y Youngstown."},
+        {"id": "oh-s", "name": "Southern District of Ohio", "abbr": "S.D. Ohio", "seat": "Columbus", "lat": 39.9612, "lon": -82.9988, "covers": "Columbus (la capital), Cincinnati y Dayton."}
+      ],
+      "trial": "Courts of Common Pleas (jurisdicción general, una por condado); Municipal y County Courts (limitada); Court of Claims (casos contra el estado).",
+      "iac": "Courts of Appeals en 12 distritos (69 jueces).",
+      "high": [{"name": "Supreme Court of Ohio", "justices": 7}],
+      "selection": "partisan", "selectionDetail": "Desde 2021 la boleta muestra la afiliación partidista de los candidatos a la Supreme Court y a las Courts of Appeals; mandatos de 6 años.",
+      "tiers": 3},
+    "OK": {"name": "Oklahoma", "fips": "40", "circuit": "10",
+      "districts": [
+        {"id": "ok-n", "name": "Northern District of Oklahoma", "abbr": "N.D. Okla.", "seat": "Tulsa", "lat": 36.1540, "lon": -95.9928, "covers": "Tulsa y el noreste del estado."},
+        {"id": "ok-e", "name": "Eastern District of Oklahoma", "abbr": "E.D. Okla.", "seat": "Muskogee", "lat": 35.7479, "lon": -95.3697, "covers": "Muskogee y el sureste; tierras de las naciones Cherokee, Choctaw y Chickasaw, lo que cobró relevancia tras McGirt v. Oklahoma (2020)."},
+        {"id": "ok-w", "name": "Western District of Oklahoma", "abbr": "W.D. Okla.", "seat": "Oklahoma City", "lat": 35.4676, "lon": -97.5164, "covers": "Oklahoma City (la capital) y toda la mitad occidental."}
+      ],
+      "trial": "District Courts (jurisdicción general); Municipal Courts (limitada).",
+      "iac": "Court of Civil Appeals (12 jueces); solo casos civiles, porque lo penal va directo a la Court of Criminal Appeals.",
+      "high": [{"name": "Supreme Court of Oklahoma", "justices": 9, "scope": "civil"}, {"name": "Oklahoma Court of Criminal Appeals", "justices": 5, "scope": "penal"}],
+      "selection": "retention", "selectionDetail": "La Judicial Nominating Commission propone, el gobernador nombra y hay elección de retención (6 años).",
+      "tiers": 3, "dual": true,
+      "note": "Con Texas, único estado con dos cortes de última instancia: la Court of Criminal Appeals es la máxima en materia penal."},
+    "OR": {"name": "Oregón", "fips": "41", "circuit": "9",
+      "districts": [
+        {"id": "or", "name": "District of Oregon", "abbr": "D. Or.", "seat": "Portland", "lat": 45.5152, "lon": -122.6784, "covers": "Todo el estado; sedes en Eugene, Medford y Pendleton."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); Tax Court; Justice y Municipal Courts (limitada).",
+      "iac": "Court of Appeals (13 jueces).",
+      "high": [{"name": "Oregon Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 6 años.",
+      "tiers": 3},
+    "PA": {"name": "Pensilvania", "fips": "42", "circuit": "3",
+      "districts": [
+        {"id": "pa-e", "name": "Eastern District of Pennsylvania", "abbr": "E.D. Pa.", "seat": "Filadelfia", "lat": 39.9526, "lon": -75.1652, "covers": "Filadelfia, Allentown, Reading y Easton."},
+        {"id": "pa-m", "name": "Middle District of Pennsylvania", "abbr": "M.D. Pa.", "seat": "Scranton", "lat": 41.4090, "lon": -75.6624, "covers": "Scranton, Harrisburg (la capital), Williamsport y Wilkes-Barre."},
+        {"id": "pa-w", "name": "Western District of Pennsylvania", "abbr": "W.D. Pa.", "seat": "Pittsburgh", "lat": 40.4406, "lon": -79.9959, "covers": "Pittsburgh, Erie y Johnstown."}
+      ],
+      "trial": "Courts of Common Pleas (60 distritos judiciales, jurisdicción general); Magisterial District Courts y Philadelphia Municipal Court (limitada).",
+      "iac": "Dos cortes intermedias: Superior Court (15 jueces, civil y penal) y Commonwealth Court (9 jueces, casos contra el gobierno estatal y local, elecciones, impuestos).",
+      "high": [{"name": "Supreme Court of Pennsylvania", "justices": 7}],
+      "selection": "partisan", "selectionDetail": "Elección partidista inicial (10 años) y después elecciones de retención.",
+      "tiers": 3,
+      "note": "Su Supreme Court (1684) es la más antigua del país. Las dos cortes intermedias se dividen por materia, no por territorio."},
+    "RI": {"name": "Rhode Island", "fips": "44", "circuit": "1",
+      "districts": [
+        {"id": "ri", "name": "District of Rhode Island", "abbr": "D.R.I.", "seat": "Providence", "lat": 41.8240, "lon": -71.4128, "covers": "Todo el estado."}
+      ],
+      "trial": "Superior Court (jurisdicción general); District Court, Family Court, Workers' Compensation Court y Traffic Tribunal (limitada).",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Rhode Island Supreme Court", "justices": 5}],
+      "selection": "appointment", "selectionDetail": "Comisión + gobernador + confirmación de ambas cámaras; los jueces sirven de por vida (el único estado con cargo vitalicio, como el sistema federal).",
+      "tiers": 2},
+    "SC": {"name": "Carolina del Sur", "fips": "45", "circuit": "4",
+      "districts": [
+        {"id": "sc", "name": "District of South Carolina", "abbr": "D.S.C.", "seat": "Columbia", "lat": 34.0007, "lon": -81.0348, "covers": "Todo el estado; sedes en Charleston, Greenville, Florence, Spartanburg y otras."}
+      ],
+      "trial": "Circuit Court (jurisdicción general): Court of Common Pleas (civil) y Court of General Sessions (penal); Family Court; Magistrate, Municipal y Probate Courts (limitada).",
+      "iac": "Court of Appeals (9 jueces).",
+      "high": [{"name": "South Carolina Supreme Court", "justices": 5}],
+      "selection": "legislative", "selectionDetail": "La Asamblea General elige a los jueces entre los candidatos aprobados por la Judicial Merit Selection Commission; mandatos de 10 años.",
+      "tiers": 3},
+    "SD": {"name": "Dakota del Sur", "fips": "46", "circuit": "8",
+      "districts": [
+        {"id": "sd", "name": "District of South Dakota", "abbr": "D.S.D.", "seat": "Sioux Falls", "lat": 43.5446, "lon": -96.7311, "covers": "Todo el estado; sedes en Pierre, Rapid City y Aberdeen. Muchos casos de reservas indígenas (jurisdicción federal sobre delitos graves)."}
+      ],
+      "trial": "Circuit Courts (7 circuitos, jurisdicción general); Magistrate Courts (limitada).",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "South Dakota Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (8 años).",
+      "tiers": 2},
+    "TN": {"name": "Tennessee", "fips": "47", "circuit": "6",
+      "districts": [
+        {"id": "tn-e", "name": "Eastern District of Tennessee", "abbr": "E.D. Tenn.", "seat": "Knoxville", "lat": 35.9606, "lon": -83.9207, "covers": "Knoxville, Chattanooga, Greeneville y Winchester; los Apalaches."},
+        {"id": "tn-m", "name": "Middle District of Tennessee", "abbr": "M.D. Tenn.", "seat": "Nashville", "lat": 36.1627, "lon": -86.7816, "covers": "Nashville (la capital), Columbia y Cookeville."},
+        {"id": "tn-w", "name": "Western District of Tennessee", "abbr": "W.D. Tenn.", "seat": "Memphis", "lat": 35.1495, "lon": -90.0490, "covers": "Memphis y Jackson; el oeste hasta el Misisipi."}
+      ],
+      "trial": "Circuit Courts, Chancery Courts y Criminal Courts (jurisdicción general); General Sessions, Juvenile y Municipal Courts (limitada).",
+      "iac": "Dos cortes intermedias: Court of Appeals (12 jueces, civil) y Court of Criminal Appeals (12 jueces, penal).",
+      "high": [{"name": "Tennessee Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "'Plan Tennessee': el gobernador nombra, la legislatura confirma (desde 2014) y hay elección de retención (8 años).",
+      "tiers": 3,
+      "note": "Como Alabama, separa la apelación intermedia en civil y penal."},
+    "TX": {"name": "Texas", "fips": "48", "circuit": "5",
+      "districts": [
+        {"id": "tx-n", "name": "Northern District of Texas", "abbr": "N.D. Tex.", "seat": "Dallas", "lat": 32.7767, "lon": -96.7970, "covers": "Dallas, Fort Worth, Lubbock, Amarillo, Abilene, Wichita Falls y San Angelo; 100 condados del norte. Sede principal: Earle Cabell Federal Building, en el centro de Dallas."},
+        {"id": "tx-s", "name": "Southern District of Texas", "abbr": "S.D. Tex.", "seat": "Houston", "lat": 29.7604, "lon": -95.3698, "covers": "Houston, Galveston, Corpus Christi, Brownsville, McAllen, Laredo y Victoria; la costa y la frontera baja. Uno de los distritos con más causas penales del país (inmigración)."},
+        {"id": "tx-e", "name": "Eastern District of Texas", "abbr": "E.D. Tex.", "seat": "Tyler", "lat": 32.3513, "lon": -95.3011, "covers": "Tyler, Beaumont, Sherman, Plano, Marshall, Texarkana y Lufkin. Marshall es famoso en todo el país por litigios de patentes."},
+        {"id": "tx-w", "name": "Western District of Texas", "abbr": "W.D. Tex.", "seat": "San Antonio", "lat": 29.4241, "lon": -98.4936, "covers": "San Antonio, Austin (la capital), El Paso, Waco, Midland-Odessa, Del Rio, Pecos y Alpine; uno de los distritos más extensos del país."}
+      ],
+      "trial": "District Courts (jurisdicción general, una por distrito judicial estatal; en Dallas County hay decenas: civiles, penales y de familia); County Courts at Law, Justice Courts y Municipal Courts (limitada); Texas Business Court (desde septiembre de 2024) para litigios mercantiles complejos.",
+      "iac": "Courts of Appeals: 14 distritos regionales (Dallas es el 5th Court of Appeals District) más la 15th Court of Appeals (2024), con jurisdicción en todo el estado para casos contra el gobierno estatal y apelaciones del Business Court.",
+      "high": [{"name": "Supreme Court of Texas", "justices": 9, "scope": "civil y menores"}, {"name": "Texas Court of Criminal Appeals", "justices": 9, "scope": "penal"}],
+      "selection": "partisan", "selectionDetail": "Elecciones partidistas en todos los niveles; mandatos de 6 años en las cortes altas y las Courts of Appeals, y de 4 años en primera instancia. El gobernador llena las vacantes.",
+      "tiers": 3, "dual": true,
+      "note": "Uno de dos estados (con Oklahoma) con dos cortes de última instancia separadas por materia; ambas sesionan en Austin.",
+      "local": "Desde Dallas: un caso estatal va de las District Courts del condado de Dallas al 5th Court of Appeals (Dallas) y de ahí a la Supreme Court of Texas (civil) o a la Court of Criminal Appeals (penal), ambas en Austin. Un caso federal va del N.D. Tex. (Dallas) al 5º Circuito (Nueva Orleans) y, con certiorari, a la Corte Suprema en Washington."},
+    "UT": {"name": "Utah", "fips": "49", "circuit": "10",
+      "districts": [
+        {"id": "ut", "name": "District of Utah", "abbr": "D. Utah", "seat": "Salt Lake City", "lat": 40.7608, "lon": -111.8910, "covers": "Todo el estado."}
+      ],
+      "trial": "District Courts (jurisdicción general); Justice Courts (limitada); Juvenile Courts.",
+      "iac": "Court of Appeals (7 jueces).",
+      "high": [{"name": "Utah Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + confirmación del Senado + elección de retención (10 años).",
+      "tiers": 3},
+    "VT": {"name": "Vermont", "fips": "50", "circuit": "2",
+      "districts": [
+        {"id": "vt", "name": "District of Vermont", "abbr": "D. Vt.", "seat": "Burlington", "lat": 44.4759, "lon": -73.2121, "covers": "Todo el estado; sede también en Rutland."}
+      ],
+      "trial": "Superior Court unificada con divisiones civil, penal, familia, sucesiones y ambiental.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Vermont Supreme Court", "justices": 5}],
+      "selection": "appointment", "selectionDetail": "La Judicial Nominating Board propone, el gobernador nombra y el Senado confirma; cada 6 años la Asamblea General vota la retención.",
+      "tiers": 2},
+    "VA": {"name": "Virginia", "fips": "51", "circuit": "4",
+      "districts": [
+        {"id": "va-e", "name": "Eastern District of Virginia", "abbr": "E.D. Va.", "seat": "Alexandria", "lat": 38.8048, "lon": -77.0469, "covers": "Alexandria, Richmond, Norfolk y Newport News. Conocido como el 'rocket docket' por la rapidez con que lleva los casos; muchos asuntos de seguridad nacional y espionaje por la cercanía con el Pentágono y la CIA."},
+        {"id": "va-w", "name": "Western District of Virginia", "abbr": "W.D. Va.", "seat": "Roanoke", "lat": 37.2710, "lon": -79.9414, "covers": "Roanoke, Charlottesville, Lynchburg, Harrisonburg y Abingdon; el valle de Shenandoah y los Apalaches."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); General District Courts y Juvenile and Domestic Relations District Courts (limitada).",
+      "iac": "Court of Appeals of Virginia (17 jueces); desde 2022 hay apelación de derecho en todos los casos civiles y penales.",
+      "high": [{"name": "Supreme Court of Virginia", "justices": 7}],
+      "selection": "legislative", "selectionDetail": "La Asamblea General elige a los jueces; mandatos de 12 años en la Supreme Court.",
+      "tiers": 3},
+    "WA": {"name": "Washington", "fips": "53", "circuit": "9",
+      "districts": [
+        {"id": "wa-e", "name": "Eastern District of Washington", "abbr": "E.D. Wash.", "seat": "Spokane", "lat": 47.6588, "lon": -117.4260, "covers": "Spokane, Yakima y Richland; todo el este de las Cascadas."},
+        {"id": "wa-w", "name": "Western District of Washington", "abbr": "W.D. Wash.", "seat": "Seattle", "lat": 47.6062, "lon": -122.3321, "covers": "Seattle y Tacoma; el corredor de Puget Sound."}
+      ],
+      "trial": "Superior Courts (jurisdicción general); District Courts y Municipal Courts (limitada).",
+      "iac": "Court of Appeals en 3 divisiones (Seattle, Tacoma y Spokane), 22 jueces.",
+      "high": [{"name": "Washington Supreme Court", "justices": 9}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 6 años.",
+      "tiers": 3},
+    "WV": {"name": "Virginia Occidental", "fips": "54", "circuit": "4",
+      "districts": [
+        {"id": "wv-n", "name": "Northern District of West Virginia", "abbr": "N.D.W. Va.", "seat": "Wheeling", "lat": 40.0640, "lon": -80.7209, "covers": "Wheeling, Clarksburg, Elkins y Martinsburg."},
+        {"id": "wv-s", "name": "Southern District of West Virginia", "abbr": "S.D.W. Va.", "seat": "Charleston", "lat": 38.3498, "lon": -81.6326, "covers": "Charleston (la capital), Huntington, Beckley, Bluefield y Parkersburg."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general, con una Business Court Division); Family Courts y Magistrate Courts (limitada).",
+      "iac": "Intermediate Court of Appeals (3 jueces), en funciones desde julio de 2022.",
+      "high": [{"name": "Supreme Court of Appeals of West Virginia", "justices": 5}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas desde 2016; mandatos de 12 años.",
+      "tiers": 3,
+      "note": "Su corte máxima se llama 'Supreme Court of Appeals'. La corte intermedia es la más nueva del país (2022)."},
+    "WI": {"name": "Wisconsin", "fips": "55", "circuit": "7",
+      "districts": [
+        {"id": "wi-e", "name": "Eastern District of Wisconsin", "abbr": "E.D. Wis.", "seat": "Milwaukee", "lat": 43.0389, "lon": -87.9065, "covers": "Milwaukee, Green Bay y Oshkosh."},
+        {"id": "wi-w", "name": "Western District of Wisconsin", "abbr": "W.D. Wis.", "seat": "Madison", "lat": 43.0731, "lon": -89.4012, "covers": "Madison (la capital), La Crosse, Eau Claire y Wausau."}
+      ],
+      "trial": "Circuit Courts (jurisdicción general); Municipal Courts (limitada).",
+      "iac": "Court of Appeals (16 jueces en 4 distritos).",
+      "high": [{"name": "Wisconsin Supreme Court", "justices": 7}],
+      "selection": "nonpartisan", "selectionDetail": "Elecciones no partidistas; mandatos de 10 años. En la práctica son de las elecciones judiciales más politizadas y costosas del país.",
+      "tiers": 3},
+    "WY": {"name": "Wyoming", "fips": "56", "circuit": "10",
+      "districts": [
+        {"id": "wy", "name": "District of Wyoming", "abbr": "D. Wyo.", "seat": "Cheyenne", "lat": 41.1400, "lon": -104.8202, "covers": "Todo el estado y todo el Parque Nacional Yellowstone, incluidas sus porciones en Montana e Idaho: el único distrito federal que cruza fronteras estatales."}
+      ],
+      "trial": "District Courts (jurisdicción general); Circuit Courts y Municipal Courts (limitada).",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Wyoming Supreme Court", "justices": 5}],
+      "selection": "retention", "selectionDetail": "Comisión + gobernador + elección de retención (8 años).",
+      "tiers": 2},
+    "PR": {"name": "Puerto Rico", "fips": "72", "circuit": "1", "territory": true,
+      "districts": [
+        {"id": "pr", "name": "District of Puerto Rico", "abbr": "D.P.R.", "seat": "San Juan", "lat": 18.4655, "lon": -66.1057, "covers": "Toda la isla. Es una corte del Artículo III (jueces vitalicios) desde 1966, a diferencia de las cortes territoriales."}
+      ],
+      "trial": "Tribunal de Primera Instancia (Tribunal Superior y Tribunal Municipal).",
+      "iac": "Tribunal de Apelaciones (39 jueces).",
+      "high": [{"name": "Tribunal Supremo de Puerto Rico", "justices": 9}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con el consejo y consentimiento del Senado; en el Tribunal Supremo los jueces sirven hasta los 70 años.",
+      "tiers": 3,
+      "note": "Sistema mixto: derecho civil (Código Civil de 2020) con procedimiento de common law, y los tribunales funcionan en español. Lo federal va al D.P.R. y de ahí al Primer Circuito, en Boston."},
+    "GU": {"name": "Guam", "fips": "66", "circuit": "9", "territory": true,
+      "districts": [
+        {"id": "gu", "name": "District Court of Guam", "abbr": "D. Guam", "seat": "Hagåtña", "lat": 13.4745, "lon": 144.7504, "covers": "Toda la isla. Corte territorial (Artículo IV): el juez tiene mandato de 10 años, no vitalicio."}
+      ],
+      "trial": "Superior Court of Guam.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Supreme Court of Guam", "justices": 3}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra y la legislatura confirma; después hay elecciones de retención.",
+      "tiers": 2},
+    "VI": {"name": "Islas Vírgenes de EE. UU.", "fips": "78", "circuit": "3", "territory": true,
+      "districts": [
+        {"id": "vi", "name": "District Court of the Virgin Islands", "abbr": "D.V.I.", "seat": "Charlotte Amalie", "lat": 18.3419, "lon": -64.9307, "covers": "Las islas; divisiones en St. Thomas-St. John y St. Croix. Corte territorial con jueces de 10 años."}
+      ],
+      "trial": "Superior Court of the Virgin Islands.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Supreme Court of the Virgin Islands", "justices": 3}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con confirmación de la legislatura; 10 años en la Supreme Court (creada en 2007).",
+      "tiers": 2},
+    "MP": {"name": "Islas Marianas del Norte", "fips": "69", "circuit": "9", "territory": true,
+      "districts": [
+        {"id": "mp", "name": "District Court for the Northern Mariana Islands", "abbr": "D.N. Mar. I.", "seat": "Saipán", "lat": 15.1850, "lon": 145.7467, "covers": "Todas las islas. Corte territorial con juez de 10 años."}
+      ],
+      "trial": "Superior Court of the Commonwealth.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "Supreme Court of the Northern Mariana Islands", "justices": 3}],
+      "selection": "appointment", "selectionDetail": "El gobernador nombra con confirmación del Senado; 8 años y después elección de retención.",
+      "tiers": 2},
+    "AS": {"name": "Samoa Americana", "fips": "60", "circuit": null, "territory": true,
+      "districts": [],
+      "trial": "District Court of American Samoa y la Trial Division de la High Court.",
+      "iac": "No tiene corte intermedia.",
+      "high": [{"name": "High Court of American Samoa (Appellate Division)", "justices": 0}],
+      "selection": "appointment", "selectionDetail": "El Secretario del Interior de EE. UU. nombra al Chief Justice y al Associate Justice; los jueces asociados samoanos los nombra el gobernador.",
+      "tiers": 2,
+      "note": "Es el único territorio habitado sin corte federal de distrito: los asuntos federales se ven en D. Haw. o en D.D.C."}
+  }
+}

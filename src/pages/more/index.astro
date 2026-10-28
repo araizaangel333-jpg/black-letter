@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+---
+<Base title={ui['more.title'].en}>
+  <header class="sec"><h1><T k="more.title" /></h1></header>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="more.explainers" /></h2></div>
+    <a class="card" href="/map/">
+      <span class="kicker">Perspectives of the American Legal System</span>
+      <h3><T k="today.mapTitle" /></h3>
+      <p><T k="today.mapDesc" /></p>
+    </a>
+  </section>
+
+  <section class="sec settings">
+    <div class="sec-head"><h2><T k="more.settings" /></h2></div>
+    <div class="setting">
+      <span class="label"><T k="more.theme" /></span>
+      <div class="seg" role="group" aria-label={ui['more.theme'].en}>
+        <button type="button" data-theme-set="system"><T k="theme.system" /></button>
+        <button type="button" data-theme-set="light"><T k="theme.light" /></button>
+        <button type="button" data-theme-set="dark"><T k="theme.dark" /></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="more.about" /></h2></div>
+    <p class="prose"><T k="more.aboutBody" /></p>
+    <p class="muted" style="font-size: 14px;"><a href="https://github.com/araizaangel333-jpg/araizaangel333-jpg.github.io"><T k="more.source" /></a></p>
+  </section>
+
+  <script>
+    import { prefs, setPref } from '../../lib/store.js';
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll('[data-theme-set]');
+    function paint() {
+      const cur = prefs().theme || 'system';
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeSet === cur)));
+    }
+    buttons.forEach(b => b.addEventListener('click', () => {
+      const v = b.dataset.themeSet;
+      setPref('theme', v);
+      if (v === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', v);
+      paint();
+    }));
+    paint();
+  </script>
+</Base>

@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+---
+<Base title={ui['games.title'].en}>
+  <header class="sec">
+    <h1><T k="games.title" /></h1>
+    <p class="prose muted"><T k="games.intro" /></p>
+  </header>
+  <div class="empty">
+    <h3><T k="games.soonTitle" /></h3>
+    <p><T k="games.soonBody" /></p>
+  </div>
+  <section class="sec">
+    <div class="sec-head"><h2><T k="games.meanwhile" /></h2></div>
+    <a class="card" href="/map/#donde">
+      <span class="kicker">Perspectives of the American Legal System</span>
+      <h3><T k="today.mapTitle" /></h3>
+      <p><T k="today.mapDesc" /></p>
+    </a>
+  </section>
+</Base>

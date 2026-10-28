@@ -1,0 +1,25 @@
+---
+import ui from '../i18n/ui.json';
+---
+<div class="seg" role="group" aria-label={ui['lang.label'].en}>
+  <button type="button" data-lang-set="en" aria-pressed="true">EN</button>
+  <button type="button" data-lang-set="es" aria-pressed="false">ES</button>
+</div>
+
+<script>
+  import { setPref } from '../lib/store.js';
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('[data-lang-set]');
+  function paint() {
+    const cur = root.dataset.lang === 'es' ? 'es' : 'en';
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.langSet === cur)));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => {
+    const l = b.dataset.langSet;
+    root.dataset.lang = l; root.lang = l;
+    setPref('lang', l);
+    paint();
+    window.dispatchEvent(new CustomEvent('langchange', { detail: { lang: l } }));
+  }));
+  paint();
+</script>

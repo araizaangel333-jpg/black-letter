@@ -1,0 +1,7 @@
+---
+// Campo bilingüe de contenido { en, es? }. Sin "es", el inglés se muestra en ambos idiomas.
+const { v, as: Tag = 'span', class: cls = '' } = Astro.props;
+---
+{v?.es
+  ? <><Tag class:list={['l10n', cls]} lang="en">{v.en}</Tag><Tag class:list={['l10n', cls]} lang="es">{v.es}</Tag></>
+  : <Tag class={cls}>{v?.en}</Tag>}

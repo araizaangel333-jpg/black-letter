@@ -1,0 +1,37 @@
+id: lrw
+code: LRW
+title: { en: "Legal Research & Writing", es: "Investigación y redacción jurídica" }
+term: fall-2026
+professor: { name: "Erika Fadel", title: "Professor" }
+meetings:
+  - { day: mon, start: "10:30", end: "11:55" }
+  - { day: wed, start: "10:30", end: "11:55" }
+books:
+  - id: a-lawyer-writes
+    cite: "Coughlin, Rocklin & Patrick, A Lawyer Writes: A Practical Guide to Legal Analysis (4th ed., Carolina Academic Press 2024)"
+    short: "A Lawyer Writes"
+    role: textbook
+  - id: bluebook-22
+    cite: "The Bluebook: A Uniform System of Citation (22nd ed. 2025)"
+    short: "Bluebook"
+    role: style-manual
+  - id: icw
+    cite: "Lexis Interactive Citation Workstation (ICW) exercises"
+    short: "ICW"
+    role: exercises
+topics:
+  - { id: reading-cases, order: 1, title: { en: "Reading statutes and cases; briefing", es: "Leer leyes y casos; hacer briefs" } }
+  - { id: rules, order: 2, title: { en: "Finding and explaining rules", es: "Encontrar y explicar reglas" } }
+  - { id: application, order: 3, title: { en: "Applying rules and counter-analysis", es: "Aplicar reglas y contraargumentar" } }
+  - { id: memo, order: 4, title: { en: "The office memo", es: "El memorándum" } }
+  - { id: citation, order: 5, title: { en: "Bluebook citation", es: "Citas con el Bluebook" } }
+assessment:
+  - { kind: memo, format: { en: "Graded memos and shorter writing assignments", es: "Memos calificados y escritos cortos" } }
+  - { kind: citation-exercises, format: { en: "ICW citation exercises", es: "Ejercicios de citas en ICW" } }
+materials:
+  canvas: true
+  note: { en: "Weekly readings appear in Canvas under \"Week N Readings and Assignments\".", es: "Las lecturas semanales están en Canvas bajo \"Week N Readings and Assignments\"." }
+color: c3
+about:
+  en: "The skills course: research, case analysis, memos, rule explanation and application, counterarguments and citations. The one that teaches you to write like a U.S. lawyer."
+  es: "El curso de habilidades: investigación, análisis de casos, memos, explicar y aplicar reglas, contraargumentos y citas. El que enseña a escribir como abogado estadounidense."
