@@ -1,0 +1,130 @@
+# Quizzes de Contracts. Preguntas originales, en el estilo de las de opción múltiple; hechos inventados.
+course: contracts
+items:
+  - id: contracts-interpretation-01
+    topic: interpretation
+    title: { en: "Interpretation: ambiguity, usage and the UCC hierarchy", es: "Interpretación: ambigüedad, usos y la jerarquía del UCC" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A written contract for “minimum 50% protein” feed is challenged after lots test at 49.6%. Both parties are long-time dealers in that feed, and dealers treat anything above 49.5% as 50%. The buyer argues the words are plain. Under Hurst and UCC § 1-303, what result?"
+        choices:
+          - { id: a, text: "The buyer wins: unambiguous words cannot be varied by extrinsic evidence.", why: "That is the strict plain meaning rule Hurst rejected; usage explains the words rather than contradicting them." }
+          - { id: b, text: "The seller may prove the trade usage, and 49.6% satisfies the contract.", correct: true }
+          - { id: c, text: "The contract fails for ambiguity because the parties attached different meanings.", why: "Both parties were in the trade, so they shared (or had reason to know) the usage; there is no misunderstanding under R.2d § 201." }
+          - { id: d, text: "The seller wins only if the usage is written into the contract.", why: "Usage of trade supplements the agreement without being written in (UCC § 1-303(d))." }
+        explanation: { en: "Words take the meaning the trade gives them when both parties deal in that trade; usage of trade is part of the agreement unless carefully negated.", es: "Las palabras tienen el significado que les da el gremio cuando ambas partes son del gremio; el uso del comercio es parte del acuerdo salvo que se excluya expresamente." }
+        source: "Hurst v. W.J. Lake & Co.; UCC § 1-303"
+      - id: q2
+        type: mcq
+        stem: "A Swiss importer orders “chicken” from a New York seller and receives stewing fowl. At trial the importer cannot show the seller knew it meant young broilers; the price was below the broiler market. Who bears the burden and who wins?"
+        choices:
+          - { id: a, text: "The seller, because it chose the shipment; buyer wins.", why: "The party asserting the narrower meaning carries the burden." }
+          - { id: b, text: "The importer, as the party asserting the narrower meaning; seller wins.", correct: true }
+          - { id: c, text: "Neither; the court picks the dictionary meaning; buyer wins.", why: "Dictionary meaning alone did not decide Frigaliment; the court weighed every source and found the seller's reading reasonable." }
+          - { id: d, text: "The importer, but it wins because it protested the first shipment.", why: "The protest did not establish that the seller knew the narrower meaning when contracting." }
+        explanation: { en: "Frigaliment: the plaintiff must prove the special meaning; where the seller's meaning matched the regulatory definition and the price, the buyer lost.", es: "Frigaliment: el demandante debe probar el significado especial; como el del vendedor coincidía con la definición reglamentaria y con el precio, el comprador perdió." }
+        source: "Frigaliment Importing Co. v. B.N.S. Int'l Sales Corp."
+      - id: q3
+        type: mcq
+        stem: "Under UCC § 1-303, when an express term, a course of performance, a course of dealing and a usage of trade cannot be reconciled, which controls?"
+        choices:
+          - { id: a, text: "Usage of trade, because it reflects the whole market.", why: "Usage is the lowest rung of the hierarchy." }
+          - { id: b, text: "Course of dealing, because it is specific to these parties.", why: "Course of dealing ranks above usage but below course of performance and express terms." }
+          - { id: c, text: "The express term, then course of performance, then course of dealing, then usage of trade.", correct: true }
+          - { id: d, text: "Whichever the court finds most reasonable.", why: "The Code fixes the order; reasonableness is not the test." }
+        explanation: { en: "Express terms prevail over course of performance, which prevails over course of dealing, which prevails over usage of trade (UCC § 1-303(e)).", es: "Los términos expresos prevalecen sobre el course of performance, este sobre el course of dealing y este sobre el usage of trade (UCC § 1-303(e))." }
+        source: "UCC § 1-303(e)"
+      - id: q4
+        type: mcq
+        stem: "A lease requires the tenant to “deliver the premises promptly.” Which interpretive problem does the word “promptly” present?"
+        choices:
+          - { id: a, text: "Ambiguity: two distinct meanings.", why: "Ambiguity is a choice between distinct meanings; “promptly” has one meaning with unclear edges." }
+          - { id: b, text: "Vagueness: unclear boundaries of a single meaning.", correct: true }
+          - { id: c, text: "Grammatical ambiguity: unclear sentence structure.", why: "The sentence structure is clear; the word's scope is not." }
+          - { id: d, text: "A gap: the contract is silent.", why: "The contract speaks to timing; it just does so vaguely." }
+        explanation: { en: "Crespi's four problems: vagueness, ambiguity, grammatical ambiguity and gaps. “Promptly” is vague.", es: "Los cuatro problemas de Crespi: vaguedad, ambigüedad, ambigüedad gramatical y lagunas. “Promptly” es vago." }
+        source: "Class discussion notes, Oct 27"
+      - id: q5
+        type: mcq
+        stem: "A contract for the sale of machinery says nothing about where delivery will occur. How is the gap filled?"
+        choices:
+          - { id: a, text: "The contract fails for indefiniteness.", why: "The UCC supplies a default term rather than voiding the contract." }
+          - { id: b, text: "The seller's place of business, as an implied-in-law term under UCC § 2-308.", correct: true }
+          - { id: c, text: "The buyer's place of business, by usage of trade.", why: "Absent a usage, the Code's default is the seller's place of business." }
+          - { id: d, text: "Wherever the buyer reasonably expected, as an implied-in-fact term.", why: "An implied-in-fact term requires evidence of actual agreement; the Code's gap-filler applies by default." }
+        explanation: { en: "The UCC fills gaps with implied-in-law terms: delivery at the seller's place of business, a reasonable price, a reasonable time.", es: "El UCC llena lagunas con términos implícitos de derecho: entrega en el domicilio del vendedor, precio razonable, plazo razonable." }
+        source: "UCC §§ 2-305, 2-308, 2-309"
+      - id: q6
+        type: mcq
+        stem: "Two parties sign a written agreement that includes the clause “this document is the entire agreement between the parties.” Before signing, the seller orally promised to repaint the house. The buyer sues on the oral promise. What is the clause's effect?"
+        choices:
+          - { id: a, text: "None; oral promises always survive a writing.", why: "A merger clause signals a complete integration." }
+          - { id: b, text: "It signals a complete integration, so the parol evidence rule bars the prior oral promise.", correct: true }
+          - { id: c, text: "It makes the oral promise fraudulent.", why: "A merger clause does not characterize the promise; it limits what evidence the court will hear." }
+          - { id: d, text: "It converts the oral promise into a condition.", why: "Conditions require their own language; a merger clause excludes, it does not convert." }
+        explanation: { en: "Of the parol evidence topic, Crespi tests only merger clauses: a complete integration excludes prior or contemporaneous agreements, even consistent additional terms.", es: "Del tema de parol evidence, Crespi solo evalúa las merger clauses: una integración completa excluye acuerdos anteriores o simultáneos, incluso términos adicionales consistentes." }
+        source: "R.2d §§ 209, 216"
+      - id: q7
+        type: cloze
+        text: "Under R.2d § 201(2), where the parties attach different meanings to a term, the contract is interpreted according to the meaning of the party who did not know of the other's meaning, if the other party {{knew|had reason to know}} of the first party's meaning."
+        explanation: { en: "The party who knew or had reason to know of the other's meaning is bound by it.", es: "Quien sabía o debía saber el significado de la otra parte queda vinculado por ese significado." }
+      - id: q8
+        type: cloze
+        text: "Course of {{performance}} is the parties' repeated conduct under the very contract in dispute; course of {{dealing}} comes from their earlier transactions."
+        explanation: { en: "Performance is this contract; dealing is prior contracts; usage is the trade.", es: "Performance es este contrato; dealing son contratos anteriores; usage es el gremio." }
+  - id: contracts-defenses-01
+    topic: defenses
+    title: { en: "Defenses: misrepresentation, nondisclosure and mistake", es: "Defensas: misrepresentation, omisión de información y error" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A buyer learns from a private source that a new highway will triple the value of a seller's farmland and buys it without saying so. The seller later sues to rescind for nondisclosure. Under Laidlaw and R.2d § 161, the most likely result is that the contract is:"
+        choices:
+          - { id: a, text: "Voidable, because the buyer knew a material fact the seller did not.", why: "Superior knowledge alone does not create a duty to disclose." }
+          - { id: b, text: "Enforceable, because there is no general duty to disclose market information the seller could have discovered.", correct: true }
+          - { id: c, text: "Void, because silence is always fraud when the gain is large.", why: "Silence is an assertion only in the § 161 situations." }
+          - { id: d, text: "Voidable, unless the buyer paid market price.", why: "Price adequacy is not the test." }
+        explanation: { en: "Laidlaw: no duty to volunteer extrinsic information equally accessible to both; the limit is active deception or a § 161 situation.", es: "Laidlaw: no hay deber de revelar información extrínseca accesible a ambos; el límite es el engaño activo o un supuesto del § 161." }
+        source: "Laidlaw v. Organ; R.2d § 161"
+      - id: q2
+        type: mcq
+        stem: "Same facts, but when the seller's agent asks, “Any news that would affect the price?” the buyer answers, “Nothing I know of.” Now the contract is:"
+        choices:
+          - { id: a, text: "Enforceable; the buyer had no duty to disclose.", why: "A false answer is an assertion, not silence." }
+          - { id: b, text: "Voidable for fraudulent misrepresentation.", correct: true }
+          - { id: c, text: "Voidable only if the seller can prove the buyer's profit.", why: "Rescission turns on the false assertion and justified reliance, not on measuring profit." }
+          - { id: d, text: "Void for mutual mistake.", why: "Only the seller was mistaken, and the buyer caused it; this is misrepresentation, not mistake." }
+        explanation: { en: "An affirmative false statement of fact, made knowingly, that induces assent makes the contract voidable (R.2d §§ 159, 162, 164).", es: "Una afirmación falsa de hecho, hecha a sabiendas, que induce el consentimiento hace anulable el contrato (R.2d §§ 159, 162, 164)." }
+        source: "R.2d §§ 159, 162, 164"
+      - id: q3
+        type: mcq
+        stem: "Both parties believe a violin is a 19th-century copy and agree on $2,000. It is in fact an original worth $200,000. The seller seeks to avoid the contract. Under R.2d §§ 152 and 154:"
+        choices:
+          - { id: a, text: "The seller may avoid it: a mutual mistake about a basic assumption with a material effect, unless the seller bore the risk.", correct: true }
+          - { id: b, text: "The seller cannot avoid it: a seller always bears the risk of undervaluing goods.", why: "Risk allocation is a question of agreement, conscious ignorance or reasonableness, not an automatic rule for sellers." }
+          - { id: c, text: "The buyer may avoid it; the seller cannot.", why: "Only the adversely affected party may avoid." }
+          - { id: d, text: "The contract is void automatically.", why: "Mistake makes a contract voidable, not void." }
+        explanation: { en: "Mutual mistake: basic assumption, material effect, and the party seeking avoidance must not bear the risk under § 154 (agreement, conscious ignorance, or reasonable allocation).", es: "Error mutuo: supuesto básico, efecto material, y quien pide la anulación no debe soportar el riesgo bajo el § 154 (pacto, ignorancia consciente o asignación razonable)." }
+        source: "R.2d §§ 152, 154"
+      - id: q4
+        type: mcq
+        stem: "A contractor's bid omits a $40,000 line item by clerical error; the owner, who received five other bids near $300,000, accepts the $255,000 bid. Which element of unilateral mistake is easiest for the contractor to prove?"
+        choices:
+          - { id: a, text: "That enforcement would be unconscionable or that the owner had reason to know of the mistake.", correct: true }
+          - { id: b, text: "That the owner caused the mistake.", why: "Nothing suggests the owner caused the error; the alternative routes are unconscionability or reason to know." }
+          - { id: c, text: "That the mistake concerned the law rather than facts.", why: "The mistake is about a fact (the bid total)." }
+          - { id: d, text: "That the contractor exercised due care.", why: "Negligence in making the mistake bars relief only if it amounts to a failure of good faith (R.2d § 157)." }
+        explanation: { en: "Unilateral mistake (§ 153) adds a fourth requirement: unconscionability, or that the other party knew, had reason to know, or caused the mistake. A bid far below the others gives reason to know.", es: "El error unilateral (§ 153) añade un cuarto requisito: resultado unconscionable, o que la otra parte conociera, debiera conocer o causara el error. Una oferta muy por debajo de las demás da razón para saber." }
+        source: "R.2d §§ 153, 157"
+      - id: q5
+        type: cloze
+        text: "A contract made by a minor is {{voidable}} at the minor's option, but the minor remains liable for the reasonable value of {{necessaries}}."
+        explanation: { en: "Capacity: minors may disaffirm; necessaries are the exception.", es: "Capacidad: los menores pueden repudiar; lo necesario es la excepción." }
+      - id: q6
+        type: short
+        stem: "In one sentence each, name the four situations in which R.2d § 161 treats nondisclosure as an assertion."
+        answer: "Where disclosure is needed to correct a prior assertion; where the party knows the other is mistaken about a basic assumption and nondisclosure violates good faith; where the party knows the other is mistaken about the contents or effect of a writing; and where the parties stand in a relation of trust and confidence."
+        keyPoints: ["correct a prior assertion", "known mistake about a basic assumption + good faith", "mistake about the writing", "relation of trust and confidence"]

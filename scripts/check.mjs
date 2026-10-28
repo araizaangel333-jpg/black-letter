@@ -10,6 +10,7 @@ import { syllabusItemSchema } from '../src/schemas/syllabus.js';
 import { briefSchema, REQUIRED_HEADINGS } from '../src/schemas/brief.js';
 import { noteSchema } from '../src/schemas/note.js';
 import { glossaryItemSchema } from '../src/schemas/glossary.js';
+import { quizSetSchema } from '../src/schemas/quiz.js';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const errors = [];
@@ -170,6 +171,25 @@ for (const file of walk(join(ROOT, 'src/content/syllabus'), ['.yaml', '.yml'])) 
   });
 }
 
+
+// --- quizzes (paquetes) ---
+const quizIds = new Set();
+for (const file of walk(join(ROOT, 'src/content/quizzes'), ['.yaml', '.yml'])) {
+  const l = loadYaml(file); if (!l) continue;
+  const course = l.data?.course;
+  if (!courses[course]) { err(file, lineOfPath(l.doc, ['course']), `curso "${course}" no existe`); continue; }
+  (l.data.items || []).forEach((raw, i) => {
+    const data = validate(file, { course, ...raw }, quizSetSchema(z), l.doc, ['items', i]);
+    if (!data) return;
+    const where = lineOfPath(l.doc, ['items', i]);
+    if (quizIds.has(data.id)) err(file, where, `set duplicado: ${data.id}`);
+    quizIds.add(data.id);
+    if (data.topic && !topicOf(course, data.topic)) err(file, where, `tema "${data.topic}" no existe en ${course}`);
+    const qids = new Set();
+    data.questions.forEach((q, j) => { if (qids.has(q.id)) err(file, lineOfPath(l.doc, ['items', i, 'questions', j]), `pregunta duplicada: ${q.id}`); qids.add(q.id); });
+  });
+}
+
 // --- textos de interfaz ---
 const uiFile = join(ROOT, 'src/i18n/ui.json');
 const ui = JSON.parse(readFileSync(uiFile, 'utf8'));
@@ -186,7 +206,7 @@ for (const file of walk(join(ROOT, 'src'), ['.astro', '.js', '.ts'])) {
 for (const [k, file] of used) if (!ui[k]) err(file, undefined, `clave de ui.json inexistente: ${k}`);
 
 // --- resultado ---
-console.log(`terms ${Object.keys(terms).length} · courses ${Object.keys(courses).length} · syllabus ${syllabusIds.size} · briefs ${Object.keys(briefs).length} · notes ${Object.keys(notes).length} · glossary ${Object.keys(glossary).length} · ui ${Object.keys(ui).length}`);
+console.log(`terms ${Object.keys(terms).length} · courses ${Object.keys(courses).length} · syllabus ${syllabusIds.size} · briefs ${Object.keys(briefs).length} · notes ${Object.keys(notes).length} · glossary ${Object.keys(glossary).length} · quizzes ${quizIds.size} · ui ${Object.keys(ui).length}`);
 for (const w of warnings) console.log(`⚠ ${w}`);
 if (errors.length) {
   for (const e of errors) console.error(`✖ ${e}`);

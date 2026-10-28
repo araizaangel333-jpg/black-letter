@@ -112,7 +112,7 @@ const steps = d.depth === 'full' ? [] : [
       <div class="drill-done" id="drill-done" hidden>
         <h2><T k="drill.done" /></h2>
         <p class="num" id="drill-score"></p>
-        <div class="rate-buttons"><button type="button" class="btn" id="drill-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="nav.games" /></a></div>
+        <div class="rate-buttons"><a class="btn primary" id="drill-next" href="/games/" hidden><T k="drill.nextCase" /></a><button type="button" class="btn" id="drill-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="nav.games" /></a></div>
       </div>
     </div>
   </article>
@@ -184,6 +184,9 @@ const steps = d.depth === 'full' ? [] : [
     document.getElementById('drill-start').addEventListener('click', start);
     document.getElementById('drill-again').addEventListener('click', start);
     document.getElementById('drill-exit').addEventListener('click', () => { clearInterval(tick); drill.hidden = true; article.classList.remove('drilling'); window.scrollTo({ top: 0 }); });
-    if (new URLSearchParams(location.search).get('drill') === '1') start();
+    const params = new URLSearchParams(location.search);
+    const q = (params.get('q') || '').split(',').filter(Boolean);
+    if (q.length) { const next = document.getElementById('drill-next'); next.hidden = false; next.href = `/briefs/${q[0]}/?drill=1&q=${encodeURIComponent(q.slice(1).join(','))}`; }
+    if (params.get('drill') === '1') start();
   </script>
 </Base>

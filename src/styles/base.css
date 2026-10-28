@@ -232,3 +232,52 @@ html[data-lang="es"] h1.l10n[lang="es"], html[data-lang="es"] h2.l10n[lang="es"]
 select { font: inherit; font-size: 15px; padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink); min-height: 44px; }
 .flash-front { display: grid; gap: 8px; }
 .flash-front .f-hook { font-family: var(--font-text); font-weight: 400; font-style: italic; font-size: 17px; color: var(--ink-2); }
+
+/* ---- match ---- */
+.match-top { display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 14px; margin-bottom: 10px; }
+.match-top .match-timer { margin-left: auto; font-weight: 600; }
+.match-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tile { min-height: 72px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: var(--radius-sm); background: var(--paper-2); font-family: var(--font-ui); font-size: 13.5px; line-height: 1.3; text-align: left; transition: transform 0.12s, opacity 0.2s; }
+.tile.l { font-weight: 700; }
+.tile.r { font-family: var(--font-text); font-size: 13.5px; }
+.tile.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.tile.bad { border-color: var(--accent); background: var(--accent-soft); transform: translateX(2px); }
+.tile.done { opacity: 0.25; pointer-events: none; }
+@media (max-width: 400px) { .match-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- ronda y racha ---- */
+.round-steps { list-style: none; display: grid; gap: 6px; font-family: var(--font-ui); font-size: 14px; counter-reset: step; }
+.round-steps li { display: flex; align-items: center; gap: 10px; color: var(--ink-2); }
+.round-steps li::before { counter-increment: step; content: counter(step); width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--rule); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--ink-3); }
+.round-steps li.is-on { color: var(--ink); }
+.round-steps li.is-on::before { border-color: var(--accent); color: var(--accent); }
+.round-steps li.is-done::before { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); content: "✓"; }
+.round-pad .btn { margin-top: 4px; }
+.week-dots { display: flex; gap: 8px; margin-bottom: 6px; }
+.week-dots .dot { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--pad-rule); background: transparent; }
+.week-dots .dot.on { background: var(--accent); border-color: var(--accent); }
+.week-dots .dot.today { box-shadow: 0 0 0 2px var(--pad), 0 0 0 3px var(--accent); }
+.card.primary-mode { border-color: var(--accent); }
+
+/* ---- quiz ---- */
+.quiz { display: grid; gap: 20px; }
+.q { display: grid; gap: 12px; }
+.stem { font-size: 17px; line-height: 1.5; }
+.choices { display: grid; gap: 8px; }
+.choice { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; text-align: left; padding: 10px 12px; border: 1px solid var(--rule); border-radius: var(--radius-sm); background: var(--paper-2); font-size: 15px; line-height: 1.4; min-height: 48px; }
+.choice .cid { font-family: var(--font-ui); font-weight: 700; color: var(--ink-3); }
+.choice:disabled { cursor: default; }
+.choice.is-correct { border-color: #2e802a; background: rgba(46, 128, 42, 0.12); }
+.choice.is-wrong { border-color: var(--accent); background: var(--accent-soft); }
+.feedback { display: grid; gap: 8px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--paper-2); border: 1px solid var(--rule-2); font-size: 15px; }
+.verdict-line { font-family: var(--font-ui); font-weight: 700; }
+.verdict-line.ok { color: #2e802a; }
+.verdict-line.ko { color: var(--accent); }
+.why { color: var(--ink-2); }
+.cloze .blank, .cite-input, .short-answer { font: inherit; font-size: 16px; padding: 6px 8px; border: 1px solid var(--rule); border-radius: var(--radius-sm); background: var(--paper-2); color: var(--ink); }
+.cloze .blank { width: 11em; max-width: 100%; margin: 0 2px; }
+.cite-input, .short-answer { width: 100%; }
+.blank.is-correct, .cite-input.is-correct { border-color: #2e802a; }
+.blank.is-wrong, .cite-input.is-wrong { border-color: var(--accent); }
+.q-nav { display: grid; }
+.btn.check { justify-self: start; }

@@ -1,205 +1,942 @@
 {
-  "site.name": { "en": "Black Letter", "es": "Black Letter" },
-  "site.tagline": { "en": "A study notebook for the LL.M.", "es": "Cuaderno de estudio para el LL.M." },
-  "nav.today": { "en": "Today", "es": "Hoy" },
-  "nav.courses": { "en": "Courses", "es": "Cursos" },
-  "nav.games": { "en": "Games", "es": "Juegos" },
-  "nav.glossary": { "en": "Glossary", "es": "Glosario" },
-  "nav.more": { "en": "More", "es": "Más" },
-  "lang.switch": { "en": "Español", "es": "English" },
-  "lang.label": { "en": "Language", "es": "Idioma" },
-
-  "today.docket": { "en": "Docket", "es": "Agenda" },
-  "today.nextClasses": { "en": "Next classes", "es": "Próximas clases" },
-  "today.now": { "en": "In session now", "es": "En clase ahora" },
-  "today.today": { "en": "Today", "es": "Hoy" },
-  "today.tomorrow": { "en": "Tomorrow", "es": "Mañana" },
-  "today.inDays": { "en": "In {n} days", "es": "En {n} días" },
-  "today.noMore": { "en": "No more sessions this term", "es": "No hay más sesiones este semestre" },
-  "today.classesEnd": { "en": "Last day of classes", "es": "Último día de clases" },
-  "today.finalsStart": { "en": "Finals begin", "es": "Empiezan los finales" },
-  "today.finalsEnd": { "en": "Finals end", "es": "Terminan los finales" },
-  "today.daysLeft": { "en": "{n} days", "es": "{n} días" },
-  "today.dayLeft": { "en": "1 day", "es": "1 día" },
-  "today.past": { "en": "done", "es": "pasó" },
-  "today.semester": { "en": "Semester", "es": "Semestre" },
-  "today.explainer": { "en": "Explainer", "es": "Explicador" },
-  "today.mapTitle": { "en": "Map of the U.S. court system", "es": "Mapa judicial de EE. UU." },
-  "today.mapDesc": { "en": "13 circuits, 94 districts and every state's court structure. Click a state.", "es": "13 circuitos, 94 distritos y la estructura judicial de cada estado. Toca un estado." },
-  "today.roundTitle": { "en": "Daily round", "es": "Ronda del día" },
-  "today.roundSoon": { "en": "The five-minute round (cards, a match and a cold call) arrives with the games. Flashcards are already open.", "es": "La ronda de cinco minutos (tarjetas, un match y un cold call) llega con los juegos. Las flashcards ya están abiertas." },
-  "today.readingsSoon": { "en": "No readings loaded for this session yet. Add them with /week.", "es": "Aún no hay lecturas cargadas para esta sesión. Agrégalas con /week." },
-  "today.forSession": { "en": "For this session", "es": "Para esta sesión" },
-  "today.dueSoon": { "en": "Due in the next 7 days", "es": "Entregas en los próximos 7 días" },
-  "today.nothingDue": { "en": "Nothing due this week.", "es": "Nada que entregar esta semana." },
-  "today.thisWeek": { "en": "This week", "es": "Esta semana" },
-  "today.prep": { "en": "If I'm called on, my first sentence is…", "es": "Si me preguntan, mi primera frase es…" },
-  "today.capture": { "en": "After class: the rule we actually used, the case we spent time on, one thing I didn't get.", "es": "Después de clase: la regla que usamos, el caso en que más tiempo pasamos, una cosa que no entendí." },
-  "today.saved": { "en": "Saved on this device", "es": "Guardado en este dispositivo" },
-  "today.drill": { "en": "Drill", "es": "Drill" },
-  "today.brief": { "en": "Brief", "es": "Brief" },
-  "today.due": { "en": "Due", "es": "Entrega" },
-  "today.flashcards": { "en": "Open flashcards", "es": "Abrir flashcards" },
-
-  "courses.title": { "en": "Courses", "es": "Cursos" },
-  "courses.intro": { "en": "Fall 2026 at SMU Dedman School of Law. Five courses, one semester, in a second language.", "es": "Otoño 2026 en SMU Dedman School of Law. Cinco cursos, un semestre, en segundo idioma." },
-  "course.professor": { "en": "Professor", "es": "Profesor" },
-  "course.meets": { "en": "Meets", "es": "Horario" },
-  "course.books": { "en": "Assigned books", "es": "Libros asignados" },
-  "course.booksNote": { "en": "Citations only. Nothing from the books is reproduced on this site.", "es": "Solo las citas. Nada del texto de los libros se reproduce en este sitio." },
-  "course.topics": { "en": "Topics", "es": "Temas" },
-  "course.assessment": { "en": "How it is graded", "es": "Cómo se califica" },
-  "course.materials": { "en": "Materials", "es": "Materiales" },
-  "course.canvas": { "en": "Uses Canvas", "es": "Usa Canvas" },
-  "course.noCanvas": { "en": "No Canvas", "es": "Sin Canvas" },
-  "course.barTag": { "en": "also on the bar", "es": "también cae en el bar" },
-  "course.unverified": { "en": "to confirm", "es": "por confirmar" },
-  "course.readings": { "en": "Readings and assignments", "es": "Lecturas y entregas" },
-  "course.briefs": { "en": "Case briefs", "es": "Briefs de casos" },
-  "course.noBriefs": { "en": "No briefs for this course yet.", "es": "Todavía no hay briefs para este curso." },
-  "course.showPast": { "en": "Show past items", "es": "Mostrar lo pasado" },
-
-  "assessment.final-exam": { "en": "Final exam", "es": "Examen final" },
-  "assessment.midterm": { "en": "Midterm", "es": "Parcial" },
-  "assessment.memo": { "en": "Memos", "es": "Memos" },
-  "assessment.citation-exercises": { "en": "Citation exercises", "es": "Ejercicios de citas" },
-  "assessment.participation": { "en": "Participation", "es": "Participación" },
-  "assessment.presentation": { "en": "Presentation", "es": "Presentación" },
-  "assessment.paper": { "en": "Paper", "es": "Trabajo escrito" },
-  "assessment.other": { "en": "Other", "es": "Otro" },
-
-  "role.casebook": { "en": "casebook", "es": "casebook" },
-  "role.statutory-supplement": { "en": "statutory supplement", "es": "suplemento normativo" },
-  "role.textbook": { "en": "textbook", "es": "libro de texto" },
-  "role.style-manual": { "en": "style manual", "es": "manual de estilo" },
-  "role.exercises": { "en": "exercises", "es": "ejercicios" },
-  "role.reference": { "en": "reference", "es": "referencia" },
-
-  "type.reading": { "en": "Reading", "es": "Lectura" },
-  "type.assignment": { "en": "Assignment", "es": "Entrega" },
-  "type.exam": { "en": "Exam", "es": "Examen" },
-  "type.class": { "en": "Class", "es": "Clase" },
-  "type.review": { "en": "Review session", "es": "Sesión de repaso" },
-  "type.event": { "en": "Event", "es": "Evento" },
-
-  "day.mon": { "en": "Mon", "es": "Lun" },
-  "day.tue": { "en": "Tue", "es": "Mar" },
-  "day.wed": { "en": "Wed", "es": "Mié" },
-  "day.thu": { "en": "Thu", "es": "Jue" },
-  "day.fri": { "en": "Fri", "es": "Vie" },
-  "day.sat": { "en": "Sat", "es": "Sáb" },
-  "day.sun": { "en": "Sun", "es": "Dom" },
-
-  "schedule.title": { "en": "Schedule", "es": "Calendario" },
-  "schedule.intro": { "en": "Every reading, assignment, review session and exam, by date.", "es": "Cada lectura, entrega, sesión de repaso y examen, por fecha." },
-  "schedule.showPast": { "en": "Show past", "es": "Mostrar lo pasado" },
-  "schedule.week": { "en": "Week {n}", "es": "Semana {n}" },
-
-  "brief.hook": { "en": "In one image", "es": "En una imagen" },
-  "brief.oneLiner": { "en": "In one line", "es": "En una línea" },
-  "brief.rule": { "en": "Rule", "es": "Regla" },
-  "brief.whyHere": { "en": "Why this case is here", "es": "Por qué está aquí este caso" },
-  "brief.posture": { "en": "Procedural posture", "es": "Postura procesal" },
-  "brief.questions": { "en": "Likely follow-ups", "es": "Repreguntas probables" },
-  "brief.terms": { "en": "Terms", "es": "Términos" },
-  "brief.related": { "en": "Compare with", "es": "Comparar con" },
-  "brief.opinion": { "en": "Read the public opinion", "es": "Leer la opinión (texto público)" },
-  "brief.source": { "en": "Source", "es": "Fuente" },
-  "brief.skim": { "en": "Skim brief", "es": "Brief rápido" },
-  "brief.status.stub": { "en": "stub", "es": "esbozo" },
-  "brief.status.draft": { "en": "draft", "es": "borrador" },
-  "brief.status.reviewed": { "en": "reviewed", "es": "revisado" },
-  "brief.unverified": { "en": "unverified", "es": "sin verificar" },
-  "brief.assigned": { "en": "Assigned", "es": "Asignado" },
-  "drill.start": { "en": "Start cold-call drill", "es": "Empezar cold-call drill" },
-  "drill.intro": { "en": "Say the answer out loud before revealing each part. Rate yourself honestly; the case comes back sooner when you miss.", "es": "Di la respuesta en voz alta antes de revelar cada parte. Califícate con honestidad; el caso vuelve antes si fallas." },
-  "drill.panic": { "en": "Panic kit: “Could you repeat the question, please?” · “Let me make sure I have the facts right: …” · “I'm not certain, but I'd argue … because …”", "es": "Kit de pánico: “Could you repeat the question, please?” · “Let me make sure I have the facts right: …” · “I'm not certain, but I'd argue … because …”" },
-  "drill.reveal": { "en": "Reveal", "es": "Revelar" },
-  "drill.next": { "en": "Next", "es": "Siguiente" },
-  "drill.rate": { "en": "How did it go?", "es": "¿Cómo te fue?" },
-  "drill.missed": { "en": "Missed", "es": "Fallé" },
-  "drill.partial": { "en": "Partial", "es": "A medias" },
-  "drill.solid": { "en": "Solid", "es": "Bien" },
-  "drill.done": { "en": "Drill complete", "es": "Drill terminado" },
-  "drill.score": { "en": "Confidence {n} of 2", "es": "Confianza {n} de 2" },
-  "drill.again": { "en": "Run it again", "es": "Repetir" },
-  "drill.exit": { "en": "Exit drill", "es": "Salir del drill" },
-  "drill.step": { "en": "Step {i} of {n}", "es": "Paso {i} de {n}" },
-  "drill.lastRun": { "en": "Last drilled {when}, confidence {n}/2", "es": "Último drill {when}, confianza {n}/2" },
-  "drill.never": { "en": "Not drilled yet", "es": "Sin drill todavía" },
-
-  "glossary.title": { "en": "Glossary", "es": "Glosario" },
-  "glossary.intro": { "en": "Legal English by course, classroom phrases, and the false friends that trip up a Mexican lawyer.", "es": "Inglés jurídico por curso, frases de clase y los falsos amigos que hacen tropezar a un abogado mexicano." },
-  "glossary.search": { "en": "Search a term, in English or Spanish", "es": "Busca un término, en inglés o español" },
-  "glossary.all": { "en": "All", "es": "Todos" },
-  "glossary.count": { "en": "{n} terms", "es": "{n} términos" },
-  "glossary.noResults": { "en": "No term matches. Try a shorter word.", "es": "Ningún término coincide. Prueba una palabra más corta." },
-  "glossary.falseFriend": { "en": "False friend", "es": "Falso amigo" },
-  "glossary.examples": { "en": "Examples", "es": "Ejemplos" },
-  "glossary.authority": { "en": "Authority", "es": "Fuente" },
-  "glossary.related": { "en": "Related", "es": "Relacionados" },
-  "glossary.usage": { "en": "Usage", "es": "Uso" },
-  "glossary.inSpanish": { "en": "In Spanish", "es": "En español" },
-  "glossary.inCards": { "en": "In your flashcards", "es": "En tus flashcards" },
-  "subject.contracts": { "en": "Contracts", "es": "Contracts" },
-  "subject.business-associations": { "en": "Business Associations", "es": "Business Associations" },
-  "subject.lrw": { "en": "Legal Writing", "es": "Legal Writing" },
-  "subject.perspectives": { "en": "Perspectives", "es": "Perspectives" },
-  "subject.externship": { "en": "Externship", "es": "Externship" },
-  "subject.courts": { "en": "Courts", "es": "Tribunales" },
-  "subject.classroom": { "en": "Classroom English", "es": "Inglés de clase" },
-  "subject.general": { "en": "Everyday English", "es": "Inglés cotidiano" },
-  "register.phrase": { "en": "phrase", "es": "frase" },
-  "register.legal": { "en": "legal", "es": "jurídico" },
-  "register.academic": { "en": "academic", "es": "académico" },
-  "register.everyday": { "en": "everyday", "es": "cotidiano" },
-
-  "games.title": { "en": "Games", "es": "Juegos" },
-  "games.intro": { "en": "Short rounds for the phone: two to five minutes, one thumb, no feed.", "es": "Rondas cortas para el celular: de dos a cinco minutos, un pulgar, sin feed." },
-  "games.flashcards": { "en": "Flashcards", "es": "Flashcards" },
-  "games.flashcardsDesc": { "en": "Spaced repetition over every glossary term and case. Grade yourself; the schedule does the rest.", "es": "Repetición espaciada sobre cada término y caso. Califícate; el calendario hace el resto." },
-  "games.coldcall": { "en": "Cold call", "es": "Cold call" },
-  "games.coldcallDesc": { "en": "Recite a case part by part against the clock, then rate yourself.", "es": "Recita un caso parte por parte contra el reloj y califícate." },
-  "games.soon": { "en": "Match, timed test, name the case and the daily round arrive next.", "es": "Match, test cronometrado, name the case y la ronda del día llegan después." },
-  "games.scope": { "en": "Scope", "es": "Alcance" },
-  "games.scopeAll": { "en": "Everything", "es": "Todo" },
-  "games.start": { "en": "Start", "es": "Empezar" },
-  "games.flip": { "en": "Tap to flip", "es": "Toca para voltear" },
-  "games.again": { "en": "Again", "es": "Otra vez" },
-  "games.hard": { "en": "Hard", "es": "Difícil" },
-  "games.good": { "en": "Good", "es": "Bien" },
-  "games.easy": { "en": "Easy", "es": "Fácil" },
-  "games.due": { "en": "due", "es": "vencidas" },
-  "games.new": { "en": "new", "es": "nuevas" },
-  "games.nothingDue": { "en": "Nothing due and no new cards in this scope. Come back tomorrow or widen the scope.", "es": "Nada vencido ni tarjetas nuevas en este alcance. Vuelve mañana o amplía el alcance." },
-  "games.summary": { "en": "{n} cards reviewed", "es": "{n} tarjetas repasadas" },
-  "games.summaryMissed": { "en": "{n} to see again", "es": "{n} por repasar de nuevo" },
-  "games.finish": { "en": "Finish", "es": "Terminar" },
-  "games.open": { "en": "Open", "es": "Abrir" },
-  "games.cards": { "en": "{n} cards", "es": "{n} tarjetas" },
-  "games.upcomingBriefs": { "en": "Cases for your next classes", "es": "Casos de tus próximas clases" },
-  "games.allBriefs": { "en": "All briefs", "es": "Todos los briefs" },
-
-  "more.title": { "en": "More", "es": "Más" },
-  "more.explainers": { "en": "Explainers", "es": "Explicadores" },
-  "more.schedule": { "en": "Full schedule", "es": "Calendario completo" },
-  "more.settings": { "en": "Settings", "es": "Ajustes" },
-  "more.theme": { "en": "Appearance", "es": "Apariencia" },
-  "theme.system": { "en": "System", "es": "Sistema" },
-  "theme.light": { "en": "Light", "es": "Claro" },
-  "theme.dark": { "en": "Dark", "es": "Oscuro" },
-  "more.about": { "en": "About this site", "es": "Sobre este sitio" },
-  "more.aboutBody": { "en": "Black Letter is a personal study notebook built by an LL.M. student at SMU Dedman School of Law. Everything here is written in the student's own words: notes, case briefs from public-domain opinions, a glossary and practice. Nothing from the assigned books or class handouts is reproduced. It is not legal advice and it is not affiliated with SMU.", "es": "Black Letter es el cuaderno de estudio personal de un alumno del LL.M. en SMU Dedman School of Law. Todo está escrito en palabras propias: apuntes, briefs de opiniones de dominio público, glosario y práctica. No se reproduce nada de los libros asignados ni de los materiales de clase. No es asesoría legal y no está afiliado a SMU." },
-  "more.source": { "en": "Source code and data", "es": "Código fuente y datos" },
-  "more.data": { "en": "Your progress", "es": "Tu progreso" },
-  "more.export": { "en": "Export progress (JSON)", "es": "Exportar progreso (JSON)" },
-  "more.import": { "en": "Import a progress file", "es": "Importar un archivo de progreso" },
-  "more.imported": { "en": "Imported {n} entries. Reload the page.", "es": "Se importaron {n} entradas. Recarga la página." },
-  "more.importError": { "en": "That file is not a Black Letter export.", "es": "Ese archivo no es una exportación de Black Letter." },
-  "more.dataNote": { "en": "Progress lives only in this browser. Export it now and then; nothing is sent anywhere.", "es": "El progreso vive solo en este navegador. Expórtalo de vez en cuando; no se envía a ningún lado." },
-
-  "common.soon": { "en": "Coming soon", "es": "Próximamente" },
-  "common.open": { "en": "Open", "es": "Abrir" },
-  "common.back": { "en": "Back", "es": "Volver" },
-  "common.pages": { "en": "pp.", "es": "pp." }
+  "site.name": {
+    "en": "Black Letter",
+    "es": "Black Letter"
+  },
+  "site.tagline": {
+    "en": "A study notebook for the LL.M.",
+    "es": "Cuaderno de estudio para el LL.M."
+  },
+  "nav.today": {
+    "en": "Today",
+    "es": "Hoy"
+  },
+  "nav.courses": {
+    "en": "Courses",
+    "es": "Cursos"
+  },
+  "nav.games": {
+    "en": "Games",
+    "es": "Juegos"
+  },
+  "nav.glossary": {
+    "en": "Glossary",
+    "es": "Glosario"
+  },
+  "nav.more": {
+    "en": "More",
+    "es": "Más"
+  },
+  "lang.switch": {
+    "en": "Español",
+    "es": "English"
+  },
+  "lang.label": {
+    "en": "Language",
+    "es": "Idioma"
+  },
+  "today.docket": {
+    "en": "Docket",
+    "es": "Agenda"
+  },
+  "today.nextClasses": {
+    "en": "Next classes",
+    "es": "Próximas clases"
+  },
+  "today.now": {
+    "en": "In session now",
+    "es": "En clase ahora"
+  },
+  "today.today": {
+    "en": "Today",
+    "es": "Hoy"
+  },
+  "today.tomorrow": {
+    "en": "Tomorrow",
+    "es": "Mañana"
+  },
+  "today.inDays": {
+    "en": "In {n} days",
+    "es": "En {n} días"
+  },
+  "today.noMore": {
+    "en": "No more sessions this term",
+    "es": "No hay más sesiones este semestre"
+  },
+  "today.classesEnd": {
+    "en": "Last day of classes",
+    "es": "Último día de clases"
+  },
+  "today.finalsStart": {
+    "en": "Finals begin",
+    "es": "Empiezan los finales"
+  },
+  "today.finalsEnd": {
+    "en": "Finals end",
+    "es": "Terminan los finales"
+  },
+  "today.daysLeft": {
+    "en": "{n} days",
+    "es": "{n} días"
+  },
+  "today.dayLeft": {
+    "en": "1 day",
+    "es": "1 día"
+  },
+  "today.past": {
+    "en": "done",
+    "es": "pasó"
+  },
+  "today.semester": {
+    "en": "Semester",
+    "es": "Semestre"
+  },
+  "today.explainer": {
+    "en": "Explainer",
+    "es": "Explicador"
+  },
+  "today.mapTitle": {
+    "en": "Map of the U.S. court system",
+    "es": "Mapa judicial de EE. UU."
+  },
+  "today.mapDesc": {
+    "en": "13 circuits, 94 districts and every state's court structure. Click a state.",
+    "es": "13 circuitos, 94 distritos y la estructura judicial de cada estado. Toca un estado."
+  },
+  "today.roundTitle": {
+    "en": "Daily round",
+    "es": "Ronda del día"
+  },
+  "today.roundSoon": {
+    "en": "The five-minute round (cards, a match and a cold call) arrives with the games. Flashcards are already open.",
+    "es": "La ronda de cinco minutos (tarjetas, un match y un cold call) llega con los juegos. Las flashcards ya están abiertas."
+  },
+  "today.readingsSoon": {
+    "en": "No readings loaded for this session yet. Add them with /week.",
+    "es": "Aún no hay lecturas cargadas para esta sesión. Agrégalas con /week."
+  },
+  "today.forSession": {
+    "en": "For this session",
+    "es": "Para esta sesión"
+  },
+  "today.dueSoon": {
+    "en": "Due in the next 7 days",
+    "es": "Entregas en los próximos 7 días"
+  },
+  "today.nothingDue": {
+    "en": "Nothing due this week.",
+    "es": "Nada que entregar esta semana."
+  },
+  "today.thisWeek": {
+    "en": "This week",
+    "es": "Esta semana"
+  },
+  "today.prep": {
+    "en": "If I'm called on, my first sentence is…",
+    "es": "Si me preguntan, mi primera frase es…"
+  },
+  "today.capture": {
+    "en": "After class: the rule we actually used, the case we spent time on, one thing I didn't get.",
+    "es": "Después de clase: la regla que usamos, el caso en que más tiempo pasamos, una cosa que no entendí."
+  },
+  "today.saved": {
+    "en": "Saved on this device",
+    "es": "Guardado en este dispositivo"
+  },
+  "today.drill": {
+    "en": "Drill",
+    "es": "Drill"
+  },
+  "today.brief": {
+    "en": "Brief",
+    "es": "Brief"
+  },
+  "today.due": {
+    "en": "Due",
+    "es": "Entrega"
+  },
+  "today.flashcards": {
+    "en": "Open flashcards",
+    "es": "Abrir flashcards"
+  },
+  "courses.title": {
+    "en": "Courses",
+    "es": "Cursos"
+  },
+  "courses.intro": {
+    "en": "Fall 2026 at SMU Dedman School of Law. Five courses, one semester, in a second language.",
+    "es": "Otoño 2026 en SMU Dedman School of Law. Cinco cursos, un semestre, en segundo idioma."
+  },
+  "course.professor": {
+    "en": "Professor",
+    "es": "Profesor"
+  },
+  "course.meets": {
+    "en": "Meets",
+    "es": "Horario"
+  },
+  "course.books": {
+    "en": "Assigned books",
+    "es": "Libros asignados"
+  },
+  "course.booksNote": {
+    "en": "Citations only. Nothing from the books is reproduced on this site.",
+    "es": "Solo las citas. Nada del texto de los libros se reproduce en este sitio."
+  },
+  "course.topics": {
+    "en": "Topics",
+    "es": "Temas"
+  },
+  "course.assessment": {
+    "en": "How it is graded",
+    "es": "Cómo se califica"
+  },
+  "course.materials": {
+    "en": "Materials",
+    "es": "Materiales"
+  },
+  "course.canvas": {
+    "en": "Uses Canvas",
+    "es": "Usa Canvas"
+  },
+  "course.noCanvas": {
+    "en": "No Canvas",
+    "es": "Sin Canvas"
+  },
+  "course.barTag": {
+    "en": "also on the bar",
+    "es": "también cae en el bar"
+  },
+  "course.unverified": {
+    "en": "to confirm",
+    "es": "por confirmar"
+  },
+  "course.readings": {
+    "en": "Readings and assignments",
+    "es": "Lecturas y entregas"
+  },
+  "course.briefs": {
+    "en": "Case briefs",
+    "es": "Briefs de casos"
+  },
+  "course.noBriefs": {
+    "en": "No briefs for this course yet.",
+    "es": "Todavía no hay briefs para este curso."
+  },
+  "course.showPast": {
+    "en": "Show past items",
+    "es": "Mostrar lo pasado"
+  },
+  "assessment.final-exam": {
+    "en": "Final exam",
+    "es": "Examen final"
+  },
+  "assessment.midterm": {
+    "en": "Midterm",
+    "es": "Parcial"
+  },
+  "assessment.memo": {
+    "en": "Memos",
+    "es": "Memos"
+  },
+  "assessment.citation-exercises": {
+    "en": "Citation exercises",
+    "es": "Ejercicios de citas"
+  },
+  "assessment.participation": {
+    "en": "Participation",
+    "es": "Participación"
+  },
+  "assessment.presentation": {
+    "en": "Presentation",
+    "es": "Presentación"
+  },
+  "assessment.paper": {
+    "en": "Paper",
+    "es": "Trabajo escrito"
+  },
+  "assessment.other": {
+    "en": "Other",
+    "es": "Otro"
+  },
+  "role.casebook": {
+    "en": "casebook",
+    "es": "casebook"
+  },
+  "role.statutory-supplement": {
+    "en": "statutory supplement",
+    "es": "suplemento normativo"
+  },
+  "role.textbook": {
+    "en": "textbook",
+    "es": "libro de texto"
+  },
+  "role.style-manual": {
+    "en": "style manual",
+    "es": "manual de estilo"
+  },
+  "role.exercises": {
+    "en": "exercises",
+    "es": "ejercicios"
+  },
+  "role.reference": {
+    "en": "reference",
+    "es": "referencia"
+  },
+  "type.reading": {
+    "en": "Reading",
+    "es": "Lectura"
+  },
+  "type.assignment": {
+    "en": "Assignment",
+    "es": "Entrega"
+  },
+  "type.exam": {
+    "en": "Exam",
+    "es": "Examen"
+  },
+  "type.class": {
+    "en": "Class",
+    "es": "Clase"
+  },
+  "type.review": {
+    "en": "Review session",
+    "es": "Sesión de repaso"
+  },
+  "type.event": {
+    "en": "Event",
+    "es": "Evento"
+  },
+  "day.mon": {
+    "en": "Mon",
+    "es": "Lun"
+  },
+  "day.tue": {
+    "en": "Tue",
+    "es": "Mar"
+  },
+  "day.wed": {
+    "en": "Wed",
+    "es": "Mié"
+  },
+  "day.thu": {
+    "en": "Thu",
+    "es": "Jue"
+  },
+  "day.fri": {
+    "en": "Fri",
+    "es": "Vie"
+  },
+  "day.sat": {
+    "en": "Sat",
+    "es": "Sáb"
+  },
+  "day.sun": {
+    "en": "Sun",
+    "es": "Dom"
+  },
+  "schedule.title": {
+    "en": "Schedule",
+    "es": "Calendario"
+  },
+  "schedule.intro": {
+    "en": "Every reading, assignment, review session and exam, by date.",
+    "es": "Cada lectura, entrega, sesión de repaso y examen, por fecha."
+  },
+  "schedule.showPast": {
+    "en": "Show past",
+    "es": "Mostrar lo pasado"
+  },
+  "schedule.week": {
+    "en": "Week {n}",
+    "es": "Semana {n}"
+  },
+  "brief.hook": {
+    "en": "In one image",
+    "es": "En una imagen"
+  },
+  "brief.oneLiner": {
+    "en": "In one line",
+    "es": "En una línea"
+  },
+  "brief.rule": {
+    "en": "Rule",
+    "es": "Regla"
+  },
+  "brief.whyHere": {
+    "en": "Why this case is here",
+    "es": "Por qué está aquí este caso"
+  },
+  "brief.posture": {
+    "en": "Procedural posture",
+    "es": "Postura procesal"
+  },
+  "brief.questions": {
+    "en": "Likely follow-ups",
+    "es": "Repreguntas probables"
+  },
+  "brief.terms": {
+    "en": "Terms",
+    "es": "Términos"
+  },
+  "brief.related": {
+    "en": "Compare with",
+    "es": "Comparar con"
+  },
+  "brief.opinion": {
+    "en": "Read the public opinion",
+    "es": "Leer la opinión (texto público)"
+  },
+  "brief.source": {
+    "en": "Source",
+    "es": "Fuente"
+  },
+  "brief.skim": {
+    "en": "Skim brief",
+    "es": "Brief rápido"
+  },
+  "brief.status.stub": {
+    "en": "stub",
+    "es": "esbozo"
+  },
+  "brief.status.draft": {
+    "en": "draft",
+    "es": "borrador"
+  },
+  "brief.status.reviewed": {
+    "en": "reviewed",
+    "es": "revisado"
+  },
+  "brief.unverified": {
+    "en": "unverified",
+    "es": "sin verificar"
+  },
+  "brief.assigned": {
+    "en": "Assigned",
+    "es": "Asignado"
+  },
+  "drill.start": {
+    "en": "Start cold-call drill",
+    "es": "Empezar cold-call drill"
+  },
+  "drill.intro": {
+    "en": "Say the answer out loud before revealing each part. Rate yourself honestly; the case comes back sooner when you miss.",
+    "es": "Di la respuesta en voz alta antes de revelar cada parte. Califícate con honestidad; el caso vuelve antes si fallas."
+  },
+  "drill.panic": {
+    "en": "Panic kit: “Could you repeat the question, please?” · “Let me make sure I have the facts right: …” · “I'm not certain, but I'd argue … because …”",
+    "es": "Kit de pánico: “Could you repeat the question, please?” · “Let me make sure I have the facts right: …” · “I'm not certain, but I'd argue … because …”"
+  },
+  "drill.reveal": {
+    "en": "Reveal",
+    "es": "Revelar"
+  },
+  "drill.next": {
+    "en": "Next",
+    "es": "Siguiente"
+  },
+  "drill.rate": {
+    "en": "How did it go?",
+    "es": "¿Cómo te fue?"
+  },
+  "drill.missed": {
+    "en": "Missed",
+    "es": "Fallé"
+  },
+  "drill.partial": {
+    "en": "Partial",
+    "es": "A medias"
+  },
+  "drill.solid": {
+    "en": "Solid",
+    "es": "Bien"
+  },
+  "drill.done": {
+    "en": "Drill complete",
+    "es": "Drill terminado"
+  },
+  "drill.score": {
+    "en": "Confidence {n} of 2",
+    "es": "Confianza {n} de 2"
+  },
+  "drill.again": {
+    "en": "Run it again",
+    "es": "Repetir"
+  },
+  "drill.exit": {
+    "en": "Exit drill",
+    "es": "Salir del drill"
+  },
+  "drill.step": {
+    "en": "Step {i} of {n}",
+    "es": "Paso {i} de {n}"
+  },
+  "drill.lastRun": {
+    "en": "Last drilled {when}, confidence {n}/2",
+    "es": "Último drill {when}, confianza {n}/2"
+  },
+  "drill.never": {
+    "en": "Not drilled yet",
+    "es": "Sin drill todavía"
+  },
+  "glossary.title": {
+    "en": "Glossary",
+    "es": "Glosario"
+  },
+  "glossary.intro": {
+    "en": "Legal English by course, classroom phrases, and the false friends that trip up a Mexican lawyer.",
+    "es": "Inglés jurídico por curso, frases de clase y los falsos amigos que hacen tropezar a un abogado mexicano."
+  },
+  "glossary.search": {
+    "en": "Search a term, in English or Spanish",
+    "es": "Busca un término, en inglés o español"
+  },
+  "glossary.all": {
+    "en": "All",
+    "es": "Todos"
+  },
+  "glossary.count": {
+    "en": "{n} terms",
+    "es": "{n} términos"
+  },
+  "glossary.noResults": {
+    "en": "No term matches. Try a shorter word.",
+    "es": "Ningún término coincide. Prueba una palabra más corta."
+  },
+  "glossary.falseFriend": {
+    "en": "False friend",
+    "es": "Falso amigo"
+  },
+  "glossary.examples": {
+    "en": "Examples",
+    "es": "Ejemplos"
+  },
+  "glossary.authority": {
+    "en": "Authority",
+    "es": "Fuente"
+  },
+  "glossary.related": {
+    "en": "Related",
+    "es": "Relacionados"
+  },
+  "glossary.usage": {
+    "en": "Usage",
+    "es": "Uso"
+  },
+  "glossary.inSpanish": {
+    "en": "In Spanish",
+    "es": "En español"
+  },
+  "glossary.inCards": {
+    "en": "In your flashcards",
+    "es": "En tus flashcards"
+  },
+  "subject.contracts": {
+    "en": "Contracts",
+    "es": "Contracts"
+  },
+  "subject.business-associations": {
+    "en": "Business Associations",
+    "es": "Business Associations"
+  },
+  "subject.lrw": {
+    "en": "Legal Writing",
+    "es": "Legal Writing"
+  },
+  "subject.perspectives": {
+    "en": "Perspectives",
+    "es": "Perspectives"
+  },
+  "subject.externship": {
+    "en": "Externship",
+    "es": "Externship"
+  },
+  "subject.courts": {
+    "en": "Courts",
+    "es": "Tribunales"
+  },
+  "subject.classroom": {
+    "en": "Classroom English",
+    "es": "Inglés de clase"
+  },
+  "subject.general": {
+    "en": "Everyday English",
+    "es": "Inglés cotidiano"
+  },
+  "register.phrase": {
+    "en": "phrase",
+    "es": "frase"
+  },
+  "register.legal": {
+    "en": "legal",
+    "es": "jurídico"
+  },
+  "register.academic": {
+    "en": "academic",
+    "es": "académico"
+  },
+  "register.everyday": {
+    "en": "everyday",
+    "es": "cotidiano"
+  },
+  "games.title": {
+    "en": "Games",
+    "es": "Juegos"
+  },
+  "games.intro": {
+    "en": "Short rounds for the phone: two to five minutes, one thumb, no feed.",
+    "es": "Rondas cortas para el celular: de dos a cinco minutos, un pulgar, sin feed."
+  },
+  "games.flashcards": {
+    "en": "Flashcards",
+    "es": "Flashcards"
+  },
+  "games.flashcardsDesc": {
+    "en": "Spaced repetition over every glossary term and case. Grade yourself; the schedule does the rest.",
+    "es": "Repetición espaciada sobre cada término y caso. Califícate; el calendario hace el resto."
+  },
+  "games.coldcall": {
+    "en": "Cold call",
+    "es": "Cold call"
+  },
+  "games.coldcallDesc": {
+    "en": "Recite a case part by part against the clock, then rate yourself.",
+    "es": "Recita un caso parte por parte contra el reloj y califícate."
+  },
+  "games.soon": {
+    "en": "Match, timed test, name the case and the daily round arrive next.",
+    "es": "Match, test cronometrado, name the case y la ronda del día llegan después."
+  },
+  "games.scope": {
+    "en": "Scope",
+    "es": "Alcance"
+  },
+  "games.scopeAll": {
+    "en": "Everything",
+    "es": "Todo"
+  },
+  "games.start": {
+    "en": "Start",
+    "es": "Empezar"
+  },
+  "games.flip": {
+    "en": "Tap to flip",
+    "es": "Toca para voltear"
+  },
+  "games.again": {
+    "en": "Again",
+    "es": "Otra vez"
+  },
+  "games.hard": {
+    "en": "Hard",
+    "es": "Difícil"
+  },
+  "games.good": {
+    "en": "Good",
+    "es": "Bien"
+  },
+  "games.easy": {
+    "en": "Easy",
+    "es": "Fácil"
+  },
+  "games.due": {
+    "en": "due",
+    "es": "vencidas"
+  },
+  "games.new": {
+    "en": "new",
+    "es": "nuevas"
+  },
+  "games.nothingDue": {
+    "en": "Nothing due and no new cards in this scope. Come back tomorrow or widen the scope.",
+    "es": "Nada vencido ni tarjetas nuevas en este alcance. Vuelve mañana o amplía el alcance."
+  },
+  "games.summary": {
+    "en": "{n} cards reviewed",
+    "es": "{n} tarjetas repasadas"
+  },
+  "games.summaryMissed": {
+    "en": "{n} to see again",
+    "es": "{n} por repasar de nuevo"
+  },
+  "games.finish": {
+    "en": "Finish",
+    "es": "Terminar"
+  },
+  "games.open": {
+    "en": "Open",
+    "es": "Abrir"
+  },
+  "games.cards": {
+    "en": "{n} cards",
+    "es": "{n} tarjetas"
+  },
+  "games.upcomingBriefs": {
+    "en": "Cases for your next classes",
+    "es": "Casos de tus próximas clases"
+  },
+  "games.allBriefs": {
+    "en": "All briefs",
+    "es": "Todos los briefs"
+  },
+  "more.title": {
+    "en": "More",
+    "es": "Más"
+  },
+  "more.explainers": {
+    "en": "Explainers",
+    "es": "Explicadores"
+  },
+  "more.schedule": {
+    "en": "Full schedule",
+    "es": "Calendario completo"
+  },
+  "more.settings": {
+    "en": "Settings",
+    "es": "Ajustes"
+  },
+  "more.theme": {
+    "en": "Appearance",
+    "es": "Apariencia"
+  },
+  "theme.system": {
+    "en": "System",
+    "es": "Sistema"
+  },
+  "theme.light": {
+    "en": "Light",
+    "es": "Claro"
+  },
+  "theme.dark": {
+    "en": "Dark",
+    "es": "Oscuro"
+  },
+  "more.about": {
+    "en": "About this site",
+    "es": "Sobre este sitio"
+  },
+  "more.aboutBody": {
+    "en": "Black Letter is a personal study notebook built by an LL.M. student at SMU Dedman School of Law. Everything here is written in the student's own words: notes, case briefs from public-domain opinions, a glossary and practice. Nothing from the assigned books or class handouts is reproduced. It is not legal advice and it is not affiliated with SMU.",
+    "es": "Black Letter es el cuaderno de estudio personal de un alumno del LL.M. en SMU Dedman School of Law. Todo está escrito en palabras propias: apuntes, briefs de opiniones de dominio público, glosario y práctica. No se reproduce nada de los libros asignados ni de los materiales de clase. No es asesoría legal y no está afiliado a SMU."
+  },
+  "more.source": {
+    "en": "Source code and data",
+    "es": "Código fuente y datos"
+  },
+  "more.data": {
+    "en": "Your progress",
+    "es": "Tu progreso"
+  },
+  "more.export": {
+    "en": "Export progress (JSON)",
+    "es": "Exportar progreso (JSON)"
+  },
+  "more.import": {
+    "en": "Import a progress file",
+    "es": "Importar un archivo de progreso"
+  },
+  "more.imported": {
+    "en": "Imported {n} entries. Reload the page.",
+    "es": "Se importaron {n} entradas. Recarga la página."
+  },
+  "more.importError": {
+    "en": "That file is not a Black Letter export.",
+    "es": "Ese archivo no es una exportación de Black Letter."
+  },
+  "more.dataNote": {
+    "en": "Progress lives only in this browser. Export it now and then; nothing is sent anywhere.",
+    "es": "El progreso vive solo en este navegador. Expórtalo de vez en cuando; no se envía a ningún lado."
+  },
+  "common.soon": {
+    "en": "Coming soon",
+    "es": "Próximamente"
+  },
+  "common.open": {
+    "en": "Open",
+    "es": "Abrir"
+  },
+  "common.back": {
+    "en": "Back",
+    "es": "Volver"
+  },
+  "common.pages": {
+    "en": "pp.",
+    "es": "pp."
+  },
+  "games.match": {
+    "en": "Match",
+    "es": "Match"
+  },
+  "games.matchDesc": {
+    "en": "Six pairs on a grid. Tap a term, then its definition; a wrong pair costs two seconds.",
+    "es": "Seis pares en una cuadrícula. Toca un término y luego su definición; un par equivocado cuesta dos segundos."
+  },
+  "games.round": {
+    "en": "Daily round",
+    "es": "Ronda del día"
+  },
+  "games.roundDesc": {
+    "en": "Ten cards, one match, one cold call. Under five minutes; counts for your streak.",
+    "es": "Diez tarjetas, un match, un cold call. Menos de cinco minutos; cuenta para tu racha."
+  },
+  "match.kind": {
+    "en": "Pairs",
+    "es": "Pares"
+  },
+  "match.terms": {
+    "en": "Term and definition",
+    "es": "Término y definición"
+  },
+  "match.cases": {
+    "en": "Case and facts",
+    "es": "Caso y hechos"
+  },
+  "match.left": {
+    "en": "pairs left",
+    "es": "pares restantes"
+  },
+  "match.best": {
+    "en": "Best time",
+    "es": "Mejor tiempo"
+  },
+  "match.newBest": {
+    "en": "New best time",
+    "es": "Nuevo mejor tiempo"
+  },
+  "match.wrong": {
+    "en": "{n} wrong taps",
+    "es": "{n} toques fallidos"
+  },
+  "match.notEnough": {
+    "en": "Not enough items in this scope yet. Widen it.",
+    "es": "Todavía no hay suficientes ítems en este alcance. Amplíalo."
+  },
+  "round.intro": {
+    "en": "One button, no choices to make. Do it in the morning or on the bus.",
+    "es": "Un botón, sin decisiones. Hazla en la mañana o en el camión."
+  },
+  "round.stepCards": {
+    "en": "Ten flashcards (due first, then new)",
+    "es": "Diez flashcards (primero las vencidas, luego nuevas)"
+  },
+  "round.stepMatch": {
+    "en": "One match of six pairs",
+    "es": "Un match de seis pares"
+  },
+  "round.stepColdCall": {
+    "en": "One cold call from your next class",
+    "es": "Un cold call de tu próxima clase"
+  },
+  "round.start": {
+    "en": "Start today's round",
+    "es": "Empezar la ronda de hoy"
+  },
+  "round.alreadyDone": {
+    "en": "You already completed a round today. Another one still counts as practice.",
+    "es": "Ya completaste una ronda hoy. Otra sigue contando como práctica."
+  },
+  "round.complete": {
+    "en": "Round complete",
+    "es": "Ronda completa"
+  },
+  "round.streak": {
+    "en": "Streak: {n} days",
+    "es": "Racha: {n} días"
+  },
+  "round.sayRule": {
+    "en": "Say the rule out loud, then reveal.",
+    "es": "Di la regla en voz alta y luego revela."
+  },
+  "round.fullDrill": {
+    "en": "Open the full drill for this case",
+    "es": "Abrir el drill completo de este caso"
+  },
+  "today.streak": {
+    "en": "Streak",
+    "es": "Racha"
+  },
+  "today.streakDays": {
+    "en": "{n} days",
+    "es": "{n} días"
+  },
+  "today.roundDone": {
+    "en": "Round done today",
+    "es": "Ronda de hoy completada"
+  },
+  "today.roundStart": {
+    "en": "Start today's round",
+    "es": "Empezar la ronda de hoy"
+  },
+  "today.roundDesc": {
+    "en": "Ten cards, one match, one cold call. Under five minutes.",
+    "es": "Diez tarjetas, un match, un cold call. Menos de cinco minutos."
+  },
+  "games.coldcallStart": {
+    "en": "Start with your next class",
+    "es": "Empezar con tu próxima clase"
+  },
+  "drill.nextCase": {
+    "en": "Next case",
+    "es": "Siguiente caso"
+  },
+  "quiz.title": {
+    "en": "Quizzes",
+    "es": "Quizzes"
+  },
+  "quiz.intro": {
+    "en": "Multiple choice, fill-in and citation drills, one question per screen, with the why after every answer.",
+    "es": "Opción múltiple, huecos y ejercicios de citas, una pregunta por pantalla, con el porqué después de cada respuesta."
+  },
+  "quiz.questions": {
+    "en": "{n} questions",
+    "es": "{n} preguntas"
+  },
+  "quiz.check": {
+    "en": "Check",
+    "es": "Comprobar"
+  },
+  "quiz.next": {
+    "en": "Next",
+    "es": "Siguiente"
+  },
+  "quiz.correct": {
+    "en": "Correct",
+    "es": "Correcto"
+  },
+  "quiz.incorrect": {
+    "en": "Not quite",
+    "es": "No del todo"
+  },
+  "quiz.answer": {
+    "en": "Answer",
+    "es": "Respuesta"
+  },
+  "quiz.rule": {
+    "en": "Bluebook rule",
+    "es": "Regla del Bluebook"
+  },
+  "quiz.score": {
+    "en": "{n} of {t} correct",
+    "es": "{n} de {t} correctas"
+  },
+  "quiz.last": {
+    "en": "Last: {n}/{t}",
+    "es": "Última vez: {n}/{t}"
+  },
+  "quiz.again": {
+    "en": "Try again",
+    "es": "Repetir"
+  },
+  "quiz.selfGrade": {
+    "en": "Compare with the model answer and grade yourself",
+    "es": "Compara con la respuesta modelo y califícate"
+  },
+  "games.quiz": {
+    "en": "Quizzes",
+    "es": "Quizzes"
+  },
+  "games.quizDesc": {
+    "en": "Exam-style questions by topic, with explanations. Contracts and the IIED memo first.",
+    "es": "Preguntas tipo examen por tema, con explicaciones. Primero Contracts y el memo de IIED."
+  }
 }

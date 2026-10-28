@@ -20,14 +20,28 @@ const byCourse = courses.map(c => ({ c, list: briefs.filter(b => b.data.course =
     <p class="prose muted"><T k="games.intro" /></p>
   </header>
   <div class="modes">
+    <a class="card mode primary-mode" href="/games/round/">
+      <h3><T k="games.round" /></h3>
+      <p><T k="games.roundDesc" /></p>
+      <span class="small muted" id="round-stat"></span>
+    </a>
     <a class="card mode" href="/games/flashcards/">
       <h3><T k="games.flashcards" /></h3>
       <p><T k="games.flashcardsDesc" /></p>
       <span class="small muted" id="fc-stats"></span>
     </a>
-    <a class="card mode" href="#coldcall">
+    <a class="card mode" href="/games/match/">
+      <h3><T k="games.match" /></h3>
+      <p><T k="games.matchDesc" /></p>
+    </a>
+    <a class="card mode" href="/quiz/">
+      <h3><T k="games.quiz" /></h3>
+      <p><T k="games.quizDesc" /></p>
+    </a>
+    <a class="card mode" href="#coldcall" id="cc-card">
       <h3><T k="games.coldcall" /></h3>
       <p><T k="games.coldcallDesc" /></p>
+      <span class="small" id="cc-start-wrap" hidden><a class="btn" id="cc-start" href="#coldcall"><T k="games.coldcallStart" /></a></span>
     </a>
   </div>
   <p class="muted small"><T k="games.soon" /></p>
@@ -71,13 +85,20 @@ const byCourse = courses.map(c => ({ c, list: briefs.filter(b => b.data.course =
     function paint() {
       const today = todayISO(); const L = lang();
       const cc = get('coldcall', {}) || {};
+      const queue = [];
       document.querySelectorAll('#upcoming > li').forEach(li => {
         const n = daysBetween(today, li.dataset.date);
         li.hidden = !(n >= 0 && n <= 10);
+        if (!li.hidden) queue.push(li.querySelector('a.rtitle').getAttribute('href').replace('/briefs/', '').replace('/?drill=1', ''));
         li.querySelector('[data-when]').textContent = n === 0 ? t('today.today') : n === 1 ? t('today.tomorrow') : formatDate(li.dataset.date, L);
       });
       document.querySelectorAll('[data-cc]').forEach(el => { const c = cc[el.dataset.cc]; el.textContent = c ? t('drill.lastRun', { when: c.last, n: c.confidence }) : ''; });
+      const wrap = document.getElementById('cc-start-wrap');
+      if (queue.length) { wrap.hidden = false; document.getElementById('cc-start').href = `/briefs/${queue[0]}/?drill=1&q=${encodeURIComponent(queue.slice(1).join(','))}`; }
+      const act = (get('activity', {}) || {})[today] || {};
+      document.getElementById('round-stat').textContent = (act.rounds || 0) >= 1 ? t('today.roundDone') : '';
     }
+    document.getElementById('cc-card').addEventListener('click', e => { if (e.target.closest('#cc-start')) { e.stopPropagation(); } });
     paint(); onLangChange(paint);
     fetch('/data/items.json').then(r => r.json()).then(({ items }) => {
       const srs = get('srs', {}) || {};

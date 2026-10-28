@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+const terms = await getCollection('terms');
+const courses = await getCollection('courses');
+const syllabus = await getCollection('syllabus');
+const term = terms.find(t => t.id === 'fall-2026').data;
+const calendar = {
+  term,
+  courses: courses.filter(c => c.data.term === term.id).map(c => ({ id: c.id, meetings: c.data.meetings })),
+  // briefs asignados por fecha y curso, para elegir el cold call de la próxima clase
+  assigned: syllabus.map(s => s.data).filter(s => s.briefs.length).map(s => ({ course: s.course, date: s.date, briefs: s.briefs })),
+};
+---
+<Base title={ui['today.roundTitle'].en}>
+  <header class="sec">
+    <h1><T k="today.roundTitle" /></h1>
+    <p class="prose muted small"><T k="round.intro" /></p>
+    <ol class="round-steps" id="r-steps">
+      <li data-step="cards"><T k="round.stepCards" /></li>
+      <li data-step="match"><T k="round.stepMatch" /></li>
+      <li data-step="coldcall"><T k="round.stepColdCall" /></li>
+    </ol>
+  </header>
+  <section class="sec" id="r-setup">
+    <button type="button" class="btn primary" id="r-start"><T k="round.start" /></button>
+    <p class="muted small" id="r-doneToday" hidden><T k="round.alreadyDone" /></p>
+  </section>
+  <section class="sec" id="r-stage" hidden></section>
+  <section class="sec" id="r-done" hidden>
+    <h2><T k="round.complete" /></h2>
+    <p id="r-summary"></p>
+    <p class="muted" id="r-streak"></p>
+    <div class="rate-buttons"><a class="btn primary" href="/"><T k="nav.today" /></a><a class="btn" href="/games/"><T k="nav.games" /></a></div>
+  </section>
+  <script type="application/json" id="round-data" set:html={JSON.stringify(calendar)} />
+  <script>
+    import { loadItems, pick, logActivity, distractors } from '../../islands/games/engine.js';
+    import { runCards } from '../../islands/games/cards.js';
+    import { runMatch, pairsFrom } from '../../islands/games/match.js';
+    import { runMiniColdCall } from '../../islands/games/mini-coldcall.js';
+    import { buildQueue } from '../../lib/srs.js';
+    import { nextMeeting } from '../../lib/calendar.js';
+    import { todayISO, nowHM } from '../../lib/dates.js';
+    import { get, update, prefs } from '../../lib/store.js';
+    import { streak } from '../../lib/streak.js';
+    import { t } from '../../lib/i18n.js';
+
+    const data = JSON.parse(document.getElementById('round-data').textContent);
+    const stage = document.getElementById('r-stage'), setup = document.getElementById('r-setup'), done = document.getElementById('r-done');
+    const steps = document.getElementById('r-steps');
+    const today = todayISO();
+    const act = (get('activity', {}) || {})[today] || {};
+    if ((act.rounds || 0) >= 1) document.getElementById('r-doneToday').hidden = false;
+
+    function mark(step, state) { const li = steps.querySelector(`[data-step="${step}"]`); li.classList.remove('is-on', 'is-done'); if (state) li.classList.add(state); }
+
+    // el caso de la próxima clase (o cualquiera si no hay asignados)
+    function nextCase(items) {
+      const hm = nowHM();
+      const upcoming = [];
+      for (const c of data.courses) { const n = nextMeeting(c, data.term, today, hm); if (n) upcoming.push({ course: c.id, date: n.date }); }
+      const cc = get('coldcall', {}) || {};
+      const candidates = [];
+      for (const u of upcoming) for (const a of data.assigned) if (a.course === u.course && a.date === u.date) candidates.push(...a.briefs);
+      const pool = candidates.map(id => items.find(i => i.id === `case:${id}`)).filter(Boolean);
+      const fallback = items.filter(i => i.type === 'case');
+      const choose = (list) => list.sort((a, b) => ((cc[a.id.slice(5)]?.confidence ?? -1) - (cc[b.id.slice(5)]?.confidence ?? -1)))[0];
+      return choose(pool.length ? pool : fallback);
+    }
+
+    async function start() {
+      const items = await loadItems();
+      const byId = Object.fromEntries(items.map(i => [i.id, i]));
+      setup.hidden = true; stage.hidden = false; done.hidden = true;
+      const summary = [];
+      // 1. tarjetas
+      mark('cards', 'is-on');
+      const p = prefs();
+      const queue = buildQueue(get('srs', {}) || {}, items.map(i => i.id), today, { newPerDay: p.newPerDay || 10, maxReviews: 10, seen: (act.newSeen || 0) }).slice(0, 10);
+      const cards = await runCards(stage, queue, byId);
+      summary.push(t('games.summary', { n: cards.reviewed }));
+      mark('cards', 'is-done');
+      // 2. match
+      mark('match', 'is-on');
+      const terms = items.filter(i => i.type === 'term');
+      if (terms.length >= 6) { const m = await runMatch(stage, pairsFrom(pick(terms, 6))); summary.push(`Match ${Math.floor(m.seconds / 60)}:${String(m.seconds % 60).padStart(2, '0')}`); }
+      mark('match', 'is-done');
+      // 3. cold call
+      mark('coldcall', 'is-on');
+      const kase = nextCase(items);
+      if (kase) { const r = await runMiniColdCall(stage, kase); summary.push(`${t('games.coldcall')}: ${t('drill.score', { n: r.confidence })}`); }
+      mark('coldcall', 'is-done');
+      logActivity({ rounds: 1, games: 1 });
+      const s = streak(get('activity', {}) || {}, today);
+      update('streakBest', b => Math.max(b || 0, s), 0);
+      stage.hidden = true; done.hidden = false;
+      document.getElementById('r-summary').textContent = summary.join(' · ');
+      document.getElementById('r-streak').textContent = t('round.streak', { n: s });
+    }
+    document.getElementById('r-start').addEventListener('click', start);
+  </script>
+</Base>

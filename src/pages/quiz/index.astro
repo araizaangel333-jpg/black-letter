@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+const quizzes = await getCollection('quizzes');
+const courses = await getCollection('courses');
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship'];
+const groups = order.map(id => ({ course: courses.find(c => c.id === id), sets: quizzes.filter(q => q.data.course === id) })).filter(g => g.course && g.sets.length);
+---
+<Base title={ui['quiz.title'].en}>
+  <header class="sec">
+    <h1><T k="quiz.title" /></h1>
+    <p class="prose muted small"><T k="quiz.intro" /></p>
+  </header>
+  {groups.map(({ course, sets }) => (
+    <section class="sec">
+      <div class="sec-head"><h2 style="display:flex; align-items:center; gap:8px;"><span class="code" data-size="sm" style={`--cc: var(--${course.data.color}); --cc-ink: var(--${course.data.color}-ink)`} aria-hidden="true">{course.data.code}</span><Bi v={course.data.title} /></h2></div>
+      <div class="modes">
+        {sets.map(s => (
+          <a class="card mode" href={`/quiz/${s.id}/`}>
+            <h3><Bi v={s.data.title} /></h3>
+            <p class="small muted"><T k="quiz.questions" vars={{ n: s.data.questions.length }} /> <span data-quiz-last={s.id}></span></p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+  <script>
+    import { get } from '../../lib/store.js';
+    import { t } from '../../lib/i18n.js';
+    const stats = get('quiz', {}) || {};
+    document.querySelectorAll('[data-quiz-last]').forEach(el => { const s = stats[el.dataset.quizLast]; if (s) el.textContent = `· ${t('quiz.last', { n: s.correct, t: s.total })}`; });
+  </script>
+</Base>

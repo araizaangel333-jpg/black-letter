@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+const glossary = await getCollection('glossary');
+const briefs = await getCollection('briefs');
+const subjects = [...new Set([...glossary.map(g => g.data.subject), ...briefs.map(b => b.data.course)])];
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'classroom', 'general'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.match'].en}>
+  <header class="sec">
+    <h1><T k="games.match" /></h1>
+    <p class="prose muted small"><T k="games.matchDesc" /></p>
+  </header>
+  <section class="sec" id="m-setup">
+    <label class="setting"><span class="label"><T k="games.scope" /></span>
+      <select id="m-scope"><option value=""><T k="games.scopeAll" /></option>{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+    <label class="setting"><span class="label"><T k="match.kind" /></span>
+      <select id="m-kind"><option value="term"><T k="match.terms" /></option><option value="case"><T k="match.cases" /></option></select></label>
+    <p class="small muted num" id="m-best"></p>
+    <button type="button" class="btn primary" id="m-start"><T k="games.start" /></button>
+    <p class="muted" id="m-empty" hidden><T k="match.notEnough" /></p>
+  </section>
+  <section class="sec" id="m-board" hidden></section>
+  <section class="sec" id="m-done" hidden>
+    <h2 id="m-result"></h2>
+    <p class="muted" id="m-pb"></p>
+    <div class="rate-buttons"><button type="button" class="btn primary" id="m-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="games.finish" /></a></div>
+  </section>
+  <script>
+    import { loadItems, inScope, pick, best, setBest, logActivity, fmtSecs } from '../../islands/games/engine.js';
+    import { runMatch, pairsFrom } from '../../islands/games/match.js';
+    import { t } from '../../lib/i18n.js';
+    import { prefs, setPref } from '../../lib/store.js';
+    const scope = document.getElementById('m-scope'), kind = document.getElementById('m-kind');
+    const setup = document.getElementById('m-setup'), board = document.getElementById('m-board'), done = document.getElementById('m-done');
+    scope.value = prefs().fcScope || '';
+    let items = [];
+    loadItems().then(x => { items = x; paintBest(); });
+    const key = () => `match:${kind.value}:${scope.value || 'all'}`;
+    function paintBest() { const b = best(key()); document.getElementById('m-best').textContent = b == null ? '' : `${t('match.best')}: ${fmtSecs(b)}`; }
+    scope.addEventListener('change', () => { setPref('fcScope', scope.value); paintBest(); });
+    kind.addEventListener('change', paintBest);
+    async function start() {
+      const pool = inScope(items, scope.value).filter(i => i.type === kind.value);
+      if (pool.length < 6) { document.getElementById('m-empty').hidden = false; return; }
+      setup.hidden = true; done.hidden = true; board.hidden = false;
+      const res = await runMatch(board, pairsFrom(pick(pool, 6)));
+      logActivity({ games: 1 });
+      const prev = best(key()); setBest(key(), res.seconds);
+      board.hidden = true; done.hidden = false;
+      document.getElementById('m-result').textContent = `${fmtSecs(res.seconds)} · ${t('match.wrong', { n: res.wrong })}`;
+      document.getElementById('m-pb').textContent = prev == null || res.seconds < prev ? t('match.newBest') : `${t('match.best')}: ${fmtSecs(prev)}`;
+    }
+    document.getElementById('m-start').addEventListener('click', start);
+    document.getElementById('m-again').addEventListener('click', start);
+  </script>
+</Base>

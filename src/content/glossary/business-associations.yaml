@@ -1,0 +1,192 @@
+# Glosario de Business Associations. Definiciones propias; artículos de la LGSM, LMV y CCF para el contraste.
+subject: business-associations
+items:
+  - id: agency
+    term: agency
+    pos: noun
+    topic: agency
+    en: { definition: "A fiduciary relationship in which one person (the agent) agrees to act on behalf of and subject to the control of another (the principal), who consents." }
+    es: { term: "agency (≈ representación / mandato)", explanation: "Relación fiduciaria en la que el agente actúa por cuenta y bajo control del principal (R.3d Agency § 1.01). Es más amplia que el mandato: incluye a los empleados y la responsabilidad del patrón por sus actos.", falseFriend: "No es solo el mandato del CCF art. 2546; también cubre la responsabilidad por hecho ajeno (CCF art. 1924)." }
+    examples: [{ en: "An employee who signs purchase orders is the company's agent.", es: "Un empleado que firma órdenes de compra es agente de la empresa." }]
+    authority: "Restatement (Third) of Agency § 1.01"
+    related: [actual-authority, apparent-authority, respondeat-superior]
+  - id: principal-agent
+    term: principal and agent
+    pos: noun
+    topic: agency
+    en: { definition: "The principal is the person for whom the agent acts; the agent is the one who acts and can bind the principal within the scope of authority." }
+    es: { term: "principal / agente (mandante / mandatario)", explanation: "En inglés jurídico “apoderado” se dice attorney-in-fact; attorney-at-law es el abogado.", falseFriend: "“Principal” también significa director de escuela y capital de un préstamo; en agency es el representado." }
+    examples: [{ en: "The agent's signature bound the principal to the lease.", es: "La firma del agente obligó al principal con el arrendamiento." }]
+    related: [agency]
+  - id: actual-authority
+    term: actual authority (express and implied)
+    pos: noun
+    topic: agency
+    en: { definition: "Authority the principal actually gave the agent, by words (express) or by what a reasonable agent would infer from the principal's conduct and the task (implied)." }
+    es: { term: "facultades expresas e implícitas", explanation: "Lo que el principal realmente otorgó, por palabras o por lo que razonablemente se deduce del encargo. En México los poderes se otorgan por categorías legales (CCF art. 2554); aquí se infieren de la conducta." }
+    examples: [{ en: "Authority to run a store implies authority to buy inventory.", es: "La facultad de administrar una tienda implica la de comprar inventario." }]
+    authority: "R.3d Agency §§ 2.01, 2.02"
+    related: [apparent-authority, inherent-authority]
+  - id: apparent-authority
+    term: apparent authority
+    pos: noun
+    topic: agency
+    en: { definition: "Power to bind the principal that exists because the principal's own manifestations lead a third party reasonably to believe the agent is authorized." }
+    es: { term: "representación aparente", explanation: "Nace de lo que el principal hace o permite ante terceros, no de lo que el agente dice de sí mismo. Doctrina débil en México, fuerte en Estados Unidos." }
+    examples: [{ en: "Letting a manager negotiate for months creates apparent authority to close the deal.", es: "Dejar que un gerente negocie durante meses crea apariencia de facultades para cerrar el trato." }]
+    authority: "R.3d Agency § 2.03"
+    related: [actual-authority, ratification]
+  - id: inherent-authority
+    term: inherent agency power
+    pos: noun
+    topic: agency
+    en: { definition: "Power of an agent, especially a general agent like a corporate president, to bind the principal in transactions usual for the position even without actual or apparent authority." }
+    es: { term: "poder inherente del agente", explanation: "Facultad derivada de la posición (un presidente de empresa vende un inmueble usual para el negocio) aunque el consejo no lo haya autorizado (Menard v. Dage-MTI). El Restatement Third la absorbió en apparent authority y estoppel." }
+    examples: [{ en: "The president's sale of company land bound the corporation despite the board's limits.", es: "La venta de terreno por el presidente obligó a la sociedad pese a los límites del consejo." }]
+    authority: "R.2d Agency § 161; Menard, Inc. v. Dage-MTI, Inc."
+    related: [actual-authority, apparent-authority]
+  - id: ratification
+    term: ratification
+    pos: noun
+    topic: agency
+    en: { definition: "A principal's later affirmance of an unauthorized act, which makes it binding as if authorized from the start." }
+    es: { term: "ratificación", explanation: "Aprobación posterior de un acto no autorizado, con efecto retroactivo (CCF art. 1802). Puede ser expresa o por conducta, como aceptar los beneficios." }
+    examples: [{ en: "Keeping the goods after learning of the unauthorized purchase ratified it.", es: "Quedarse con la mercancía tras conocer la compra no autorizada la ratificó." }]
+    authority: "R.3d Agency § 4.01"
+    related: [apparent-authority]
+  - id: respondeat-superior
+    term: respondeat superior (vicarious liability)
+    pos: latin
+    topic: agency
+    en: { definition: "An employer is liable for torts its employees commit within the scope of employment, even without fault of its own." }
+    es: { term: "responsabilidad por hecho ajeno", explanation: "El patrón responde por los daños que causan sus empleados en el ejercicio de sus funciones (≈ CCF art. 1924). La clave estadounidense es distinguir empleado de contratista independiente." }
+    examples: [{ en: "The delivery driver's crash during a route is the company's liability.", es: "El choque del repartidor durante su ruta es responsabilidad de la empresa." }]
+    authority: "R.3d Agency § 2.04"
+    related: [agency]
+  - id: fiduciary-duties
+    term: fiduciary duties (loyalty and care)
+    pos: noun
+    topic: governance
+    en: { definition: "The obligations of agents, partners and directors to act in the interest of the principal or company (loyalty) and with the care of a reasonably prudent person (care)." }
+    es: { term: "deberes fiduciarios de lealtad y diligencia", explanation: "Lealtad: sin conflictos no revelados ni apropiación de oportunidades. Diligencia: informarse y decidir con cuidado. En México están codificados para emisoras (LMV arts. 30–37) y en la LGSM art. 157; aquí son sobre todo jurisprudencia de Delaware." }
+    examples: [{ en: "A director who sells company land to himself breaches the duty of loyalty.", es: "Un consejero que se vende a sí mismo un terreno de la empresa viola el deber de lealtad." }]
+    authority: "DGCL; Meinhard v. Salmon; Smith v. Van Gorkom"
+    related: [business-judgment-rule, corporate-opportunity]
+  - id: general-partnership
+    term: general partnership
+    pos: noun
+    topic: business-forms
+    en: { definition: "An association of two or more persons to carry on as co-owners a business for profit; it forms by conduct, needs no filing, and partners are personally liable for its debts." }
+    es: { term: "sociedad general (≈ sociedad en nombre colectivo)", explanation: "Nace de la conducta, sin escritura ni registro; los socios responden ilimitada y solidariamente. Es la forma por defecto cuando dos personas hacen negocio juntas sin elegir otra.", falseFriend: "Las sociedades mexicanas requieren escritura pública e inscripción; una partnership estadounidense puede existir por accidente." }
+    examples: [{ en: "Splitting profits from a food truck without paperwork makes the two owners partners.", es: "Repartir las ganancias de un food truck sin papeles convierte a los dos dueños en partners." }]
+    authority: "RUPA §§ 202, 306"
+    related: [limited-partnership, llc, corporation]
+  - id: limited-partnership
+    term: limited partnership and LLP
+    pos: noun
+    topic: business-forms
+    en: { definition: "A limited partnership has general partners who manage and are liable, and limited partners who invest without liability beyond their contribution; an LLP is a general partnership whose partners get a liability shield by filing." }
+    es: { term: "sociedad en comandita simple / LLP", explanation: "Limited partnership ≈ comandita: comanditados responsables, comanditarios limitados. La LLP (limited liability partnership) no tiene equivalente: socios colectivos con escudo de responsabilidad, típica de despachos de abogados." }
+    examples: [{ en: "Most big law firms are LLPs.", es: "La mayoría de los grandes despachos son LLP." }]
+    related: [general-partnership, llc]
+  - id: llc
+    term: limited liability company (LLC)
+    pos: noun
+    topic: business-forms
+    en: { definition: "An entity whose members have limited liability, organize governance by contract in an operating agreement, and usually get pass-through taxation." }
+    es: { term: "LLC (≈ S. de R.L.)", explanation: "Responsabilidad limitada, gobierno pactado en el operating agreement y, por regla, transparencia fiscal. Los dueños son members, no shareholders. La libertad contractual es casi total (Elf Atochem v. Jaffari).", falseFriend: "No es idéntica a la S. de R.L.: el régimen fiscal y la libertad de pactos difieren." }
+    examples: [{ en: "A two-member LLC can be managed by one member under its operating agreement.", es: "Una LLC de dos miembros puede ser administrada por uno solo según su operating agreement." }]
+    related: [general-partnership, corporation]
+  - id: corporation
+    term: corporation
+    pos: noun
+    topic: business-forms
+    en: { definition: "A separate legal person owned by shareholders and managed by a board of directors, with limited liability, free transferability of shares and perpetual existence." }
+    es: { term: "sociedad anónima (corporation)", explanation: "Persona jurídica distinta de sus accionistas, administrada por un consejo. Las C corporations pagan impuesto propio; las S corporations son transparentes.", falseFriend: "“Corporación” en español sugiere gran tamaño; en inglés cualquier S.A. es una corporation." }
+    examples: [{ en: "Incorporating in Delaware is common even for Texas businesses.", es: "Constituirse en Delaware es común incluso para negocios de Texas." }]
+    related: [llc, limited-liability, board-of-directors]
+  - id: shareholder
+    term: shareholder, stock and share
+    pos: noun
+    topic: business-forms
+    en: { definition: "A shareholder owns stock, the equity of a corporation, divided into shares; shareholders elect directors and vote on fundamental changes but do not manage." }
+    es: { term: "accionista, capital accionario y acción", explanation: "Los accionistas eligen al consejo y votan cambios fundamentales; no administran.", falseFriend: "“Stock” aquí es capital, no inventario (existencias)." }
+    examples: [{ en: "Shareholders cannot bind the corporation by themselves.", es: "Los accionistas no pueden obligar a la sociedad por sí solos." }]
+    related: [corporation, board-of-directors]
+  - id: board-of-directors
+    term: board of directors and officers
+    pos: noun
+    topic: governance
+    en: { definition: "The board is the body that directs the corporation and appoints the officers (CEO, CFO, general counsel) who run it day to day." }
+    es: { term: "consejo de administración y directivos", explanation: "El consejo dirige y nombra a los officers, que operan.", falseFriend: "“Director” en inglés es consejero, miembro del board; en México “director” es un ejecutivo (officer)." }
+    examples: [{ en: "The CEO is an officer; the chair is a director.", es: "El CEO es un officer; el presidente del consejo es un director." }]
+    related: [corporation, fiduciary-duties]
+  - id: limited-liability
+    term: limited liability
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "The rule that owners of a corporation or LLC are not personally liable for the entity's debts beyond their investment." }
+    es: { term: "responsabilidad limitada", explanation: "Los dueños arriesgan solo su aportación. Es la razón principal para elegir una corporation o LLC y la regla que el veil piercing excepciona." }
+    examples: [{ en: "Creditors of the LLC cannot reach the members' houses.", es: "Los acreedores de la LLC no pueden ir contra las casas de los miembros." }]
+    related: [piercing-the-veil, corporation, llc]
+  - id: piercing-the-veil
+    term: piercing the corporate veil (alter ego)
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "A court's exceptional decision to disregard the entity and hold owners (or a parent company) liable, typically where the entity was a mere instrumentality used to work an injustice: undercapitalization, commingling, domination, fraud." }
+    es: { term: "levantamiento del velo corporativo", explanation: "Excepción a la responsabilidad limitada cuando la sociedad es un mero instrumento de su dueño y respetar la forma produciría un fraude o injusticia. Factores: capital insuficiente, confusión de patrimonios, dominio total, incumplimiento de formalidades (Jon-T Chemicals; Bridas). Más fácil en tort que en contrato (Brunswick v. Waxman).", falseFriend: "La desestimación de la personalidad jurídica mexicana es más reciente y excepcional; aquí hay décadas de factores jurisprudenciales." }
+    examples: [{ en: "A one-cab taxi corporation with minimum insurance may be pierced in tort (Walkovszky).", es: "Una sociedad de un solo taxi con seguro mínimo puede ser desestimada en tort (Walkovszky)." }]
+    authority: "United States v. Jon-T Chemicals; Bridas v. Turkmenistan; Minton v. Cavaney"
+    related: [limited-liability, single-business-enterprise]
+  - id: single-business-enterprise
+    term: single business enterprise doctrine
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "A theory under which affiliated corporations that operate as one integrated business may be treated as one for liability; Texas courts have been skeptical of it as a stand-alone theory." }
+    es: { term: "doctrina de la empresa única", explanation: "Tratar a varias sociedades hermanas como una sola empresa para efectos de responsabilidad. En Texas, los tribunales la han rechazado como teoría autónoma (Gardemal v. Westin; SSP Partners)." }
+    examples: [{ en: "Plaintiffs tried to reach fourteen sister parks under the single business enterprise doctrine.", es: "Los demandantes intentaron alcanzar a catorce parques hermanos con la doctrina de la empresa única." }]
+    authority: "Gardemal v. Westin Hotel Co."
+    related: [piercing-the-veil]
+  - id: business-judgment-rule
+    term: business judgment rule
+    pos: noun
+    topic: governance
+    en: { definition: "A presumption that directors acted on an informed basis, in good faith and in the honest belief that the decision was in the company's best interest; courts will not second-guess such decisions." }
+    es: { term: "regla del juicio empresarial", explanation: "Presunción de que los consejeros decidieron informados, de buena fe y en interés de la empresa; el juez no revisa el acierto de la decisión, solo el proceso (Disney/Ovitz). Sin equivalente general en México; la LMV art. 40 tiene un puerto seguro parcial." }
+    examples: [{ en: "The Disney board's approval of Ovitz's severance survived under the business judgment rule.", es: "La aprobación del consejo de Disney a la indemnización de Ovitz sobrevivió gracias a la regla del juicio empresarial." }]
+    authority: "In re Walt Disney Co. Derivative Litigation"
+    related: [fiduciary-duties]
+  - id: corporate-opportunity
+    term: corporate opportunity and self-dealing
+    pos: noun
+    topic: governance
+    en: { definition: "A director or officer may not take for himself a business opportunity that belongs to the corporation, nor transact with the corporation on unfair terms without disclosure and disinterested approval." }
+    es: { term: "oportunidad corporativa y operaciones con partes relacionadas", explanation: "Parte del deber de lealtad: no apropiarse de oportunidades de la empresa ni contratar con ella sin revelar el conflicto y obtener aprobación desinteresada (≈ LGSM art. 156; LMV art. 35)." }
+    examples: [{ en: "A CEO who buys the land the company was negotiating for usurps a corporate opportunity.", es: "Un CEO que compra el terreno que la empresa negociaba usurpa una oportunidad corporativa." }]
+    related: [fiduciary-duties]
+  - id: shareholder-agreement
+    term: shareholder (or partner) agreement
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A contract among owners on control, employment, distributions, transfer restrictions and exit (buy-sell), used to protect minority owners in closely held businesses." }
+    es: { term: "convenio de accionistas o de socios", explanation: "Pacto sobre control, empleo, dividendos, restricciones a la transmisión y salida (compraventa forzosa). Protege al minoritario de una sociedad cerrada. Reconocido en México desde la reforma de 2014 (LGSM art. 198)." }
+    examples: [{ en: "A buy-sell clause fixed the price if a partner left the restaurant.", es: "Una cláusula de compraventa fijó el precio si un socio dejaba el restaurante." }]
+    authority: "Triggs v. Triggs"
+    related: [shareholder-oppression, preemptive-rights]
+  - id: shareholder-oppression
+    term: shareholder oppression
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "Conduct by controlling owners of a closely held company that squeezes out or unfairly prejudices minority owners; remedies vary by state, and Texas rejected a common-law buyout remedy in Ritchie v. Rupe." }
+    es: { term: "opresión del accionista minoritario", explanation: "Maniobras de la mayoría para excluir o perjudicar al minoritario (sin dividendos, sin empleo, sin información). En Texas la Supreme Court negó el remedio de compra forzosa de origen judicial (Ritchie v. Rupe, 2014); queda la receivership legal, muy estrecha." }
+    examples: [{ en: "After Ritchie, a Texas minority shareholder must rely on contract or statute, not an oppression buyout.", es: "Tras Ritchie, el minoritario texano depende del contrato o la ley, no de una compra forzosa por opresión." }]
+    authority: "Ritchie v. Rupe, 443 S.W.3d 856 (Tex. 2014)"
+    related: [shareholder-agreement]
+  - id: preemptive-rights
+    term: preemptive rights
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "The right of existing shareholders to buy a proportional share of newly issued stock before outsiders, so their ownership is not diluted; in Texas it exists only if the certificate of formation grants it." }
+    es: { term: "derecho de preferencia (suscripción)", explanation: "Derecho a suscribir acciones nuevas en proporción para no diluirse. En Texas existe solo si el acta lo otorga (TBOC § 21.203); en México es la regla por defecto (LGSM art. 132).", falseFriend: "Las reglas por defecto son opuestas en Texas y en México." }
+    examples: [{ en: "Without preemptive rights, a new issuance can shrink a 40% holder to 20%.", es: "Sin derecho de preferencia, una emisión puede reducir a un accionista del 40% al 20%." }]
+    related: [shareholder-agreement]

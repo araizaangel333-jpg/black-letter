@@ -1,0 +1,54 @@
+# Quizzes de Legal Research & Writing. Preguntas originales.
+course: lrw
+items:
+  - id: lrw-iied-01
+    topic: memo
+    title: { en: "IIED in Texas: elements and the gap-filler rule", es: "IIED en Texas: elementos y la regla del gap-filler" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A plaintiff sues a coworker for IIED based on false statements posted online that she stole from clients. Her defamation claim was dismissed as time-barred. Under Zeltwanger and Draker, the IIED claim:"
+        choices:
+          - { id: a, text: "Survives, because the defamation claim failed and a gap now exists.", why: "The gap-filler rule looks at the gravamen, not whether the other claim succeeds." }
+          - { id: b, text: "Fails, because the gravamen is reputational harm covered by defamation.", correct: true }
+          - { id: c, text: "Survives if the statements were outrageous enough.", why: "Outrageousness is element two; the threshold gap-filler problem comes first." }
+          - { id: d, text: "Fails only if the statements were true.", why: "Truth is a defamation defense; it does not control the IIED threshold." }
+        explanation: { en: "IIED cannot substitute for a claim that fits the gravamen, even when that claim is barred.", es: "El IIED no puede sustituir a la acción que corresponde al núcleo de la queja, aunque esa acción esté prescrita." }
+        source: "Hoffmann-La Roche v. Zeltwanger; Draker v. Schreiber"
+      - id: q2
+        type: mcq
+        stem: "Which fact pattern most clearly satisfies the “extreme and outrageous” element under GTE Southwest?"
+        choices:
+          - { id: a, text: "A manager criticizes an employee's work harshly in front of others, twice.", why: "Ordinary employment criticism does not qualify." }
+          - { id: b, text: "A supervisor screams, curses and physically charges at employees almost daily for two years.", correct: true }
+          - { id: c, text: "A classmate calls another a fraud in a group chat.", why: "A single insult is closer to indignity than outrage." }
+          - { id: d, text: "An employer fires an employee without explanation.", why: "Termination alone is not outrageous." }
+        explanation: { en: "Outrageousness is judged on the whole course of conduct; a sustained pattern of abuse and intimidation crosses the line, isolated insults do not.", es: "La outrageousness se juzga sobre el patrón completo; un abuso sostenido con intimidación cruza la línea, los insultos aislados no." }
+        source: "GTE Southwest, Inc. v. Bruce"
+      - id: q3
+        type: mcq
+        stem: "A driver recklessly runs a red light and causes a crash; a passenger in the other car develops anxiety. Why does the passenger's IIED claim fail under Standard Fruit?"
+        choices:
+          - { id: a, text: "Because the passenger was not physically injured.", why: "Physical injury is not an IIED element." }
+          - { id: b, text: "Because the driver's conduct was aimed at nothing in particular and risked physical harm; distress was incidental, so the intent element fails.", correct: true }
+          - { id: c, text: "Because negligence claims preempt IIED.", why: "The problem is the intent element, not preemption." }
+          - { id: d, text: "Because anxiety is never severe distress.", why: "Severity is a separate element and anxiety can qualify with evidence." }
+        explanation: { en: "Element one requires intent or recklessness as to severe emotional distress itself.", es: "El primer elemento exige intención o imprudencia respecto de la angustia severa en sí." }
+        source: "Standard Fruit & Vegetable Co. v. Johnson"
+      - id: q4
+        type: cloze
+        text: "Texas adopted IIED in {{Twyman v. Twyman|Twyman}} (1993), following Restatement (Second) of Torts § {{46}}."
+        explanation: { en: "Twyman is the source of the four elements.", es: "Twyman es la fuente de los cuatro elementos." }
+      - id: q5
+        type: citation
+        prompt: "Write the full citation for the Texas Supreme Court's 1993 IIED case, reported at volume 855 of South Western Reporter 2d, page 619, with a pinpoint to page 621."
+        answer: "Twyman v. Twyman, 855 S.W.2d 619, 621 (Tex. 1993)."
+        accept: ["Twyman v. Twyman, 855 S.W.2d 619, 621 (Tex. 1993)"]
+        rule: "B10.1, R10.2.1, T1.3 (Texas)"
+        explanation: { en: "Case name in italics or underlined in a memo, reporter, first page, pincite, court and year in the parenthetical. For the Texas Supreme Court the court abbreviation is “Tex.”.", es: "Nombre del caso, reporter, primera página, pincite, tribunal y año entre paréntesis. Para la Supreme Court of Texas la abreviatura es “Tex.”." }
+      - id: q6
+        type: short
+        stem: "State the four IIED elements in Texas and name the case that announces them."
+        answer: "(1) Intentional or reckless conduct, (2) extreme and outrageous, (3) that caused emotional distress, (4) that was severe. Twyman v. Twyman, 855 S.W.2d 619 (Tex. 1993)."
+        keyPoints: ["intentional or reckless", "extreme and outrageous", "caused distress", "severe", "Twyman"]

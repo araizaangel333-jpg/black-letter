@@ -1,0 +1,176 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const quizzes = await getCollection('quizzes');
+  return quizzes.map(q => ({ params: { id: q.id }, props: { quiz: q } }));
+}
+const { quiz } = Astro.props;
+const d = quiz.data;
+const courses = await getCollection('courses');
+const course = courses.find(c => c.id === d.course)?.data;
+// cloze: partes de texto y huecos {{respuesta|alternativa}}
+const clozeParts = (text) => text.split(/(\{\{[^}]+\}\})/).map(p => (p.startsWith('{{') ? { blank: p.slice(2, -2) } : { text: p }));
+---
+<Base title={d.title.en}>
+  <article class="quiz" data-quiz={quiz.id} data-shuffle={String(d.shuffle)}>
+    <header class="sec">
+      <div class="kicker" style="display:flex; align-items:center; gap:10px;">
+        {course && <a class="code" data-size="sm" href={`/courses/${d.course}/`} style={`--cc: var(--${course.color}); --cc-ink: var(--${course.color}-ink); text-decoration:none`}>{course.code}</a>}
+        <span class="small muted"><T k="quiz.questions" vars={{ n: d.questions.length }} /></span>
+        {!d.verified && <span class="tag"><T k="brief.unverified" /></span>}
+      </div>
+      <h1><Bi v={d.title} /></h1>
+      <p class="small muted num" id="qz-progress"></p>
+    </header>
+
+    <section class="sec" id="qz-start">
+      <p class="small muted" id="qz-last"></p>
+      <button type="button" class="btn primary" id="qz-begin"><T k="games.start" /></button>
+    </section>
+
+    <div id="qz-questions" hidden>
+      {d.questions.map(q => (
+        <section class="q" data-q={q.id} data-type={q.type} hidden>
+          {q.type === 'mcq' && (
+            <>
+              <p class="stem">{q.stem}</p>
+              <div class="choices">
+                {q.choices.map(c => <button type="button" class="choice" data-choice={c.id} data-correct={String(c.correct)} data-why={c.why || ''}><span class="cid">{c.id.toUpperCase()}</span><span>{c.text}</span></button>)}
+              </div>
+              <div class="feedback" hidden><p class="verdict-line" data-verdict></p><p class="why" data-why hidden></p><p class="expl"><Bi v={q.explanation} /></p>{q.source && <p class="small muted">{q.source}</p>}</div>
+            </>
+          )}
+          {q.type === 'cloze' && (
+            <>
+              <p class="stem cloze">{clozeParts(q.text).map(p => p.blank !== undefined ? <input type="text" class="blank" data-accept={p.blank} autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="blank" /> : <span>{p.text}</span>)}</p>
+              <button type="button" class="btn check" data-check><T k="quiz.check" /></button>
+              <div class="feedback" hidden><p class="verdict-line" data-verdict></p><p class="expl"><Bi v={q.explanation} /></p></div>
+            </>
+          )}
+          {q.type === 'short' && (
+            <>
+              <p class="stem">{q.stem}</p>
+              <textarea class="short-answer" rows="3" data-short placeholder="…"></textarea>
+              <button type="button" class="btn check" data-reveal><T k="drill.reveal" /></button>
+              <div class="feedback" hidden>
+                <p><strong class="ui"><T k="quiz.answer" />:</strong> {q.answer}</p>
+                {q.keyPoints.length > 0 && <ul class="list small">{q.keyPoints.map(k => <li>{k}</li>)}</ul>}
+                <div class="rate"><span class="small"><T k="quiz.selfGrade" /></span><div class="rate-buttons"><button type="button" class="btn" data-self="0"><T k="drill.missed" /></button><button type="button" class="btn" data-self="1"><T k="drill.partial" /></button><button type="button" class="btn" data-self="2"><T k="drill.solid" /></button></div></div>
+              </div>
+            </>
+          )}
+          {q.type === 'citation' && (
+            <>
+              <p class="stem">{q.prompt}</p>
+              <input type="text" class="cite-input" data-cite data-answer={q.answer} data-accept={q.accept.join('||')} autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="citation" />
+              <button type="button" class="btn check" data-check><T k="quiz.check" /></button>
+              <div class="feedback" hidden><p class="verdict-line" data-verdict></p><p><strong class="ui"><T k="quiz.answer" />:</strong> <span class="num">{q.answer}</span></p><p class="small"><strong class="ui"><T k="quiz.rule" />:</strong> {q.rule}</p><p class="expl"><Bi v={q.explanation} /></p></div>
+            </>
+          )}
+          <div class="q-nav"><button type="button" class="btn primary" data-next hidden><T k="quiz.next" /></button></div>
+        </section>
+      ))}
+    </div>
+
+    <section class="sec" id="qz-done" hidden>
+      <h2 id="qz-score"></h2>
+      <p class="muted" id="qz-missed"></p>
+      <div class="rate-buttons"><button type="button" class="btn primary" id="qz-again"><T k="quiz.again" /></button><a class="btn" href="/quiz/"><T k="quiz.title" /></a></div>
+    </section>
+  </article>
+
+  <script>
+    import { t } from '../../lib/i18n.js';
+    import { get, update } from '../../lib/store.js';
+    import { todayISO } from '../../lib/dates.js';
+    import { shuffle } from '../../lib/srs.js';
+
+    const art = document.querySelector('[data-quiz]');
+    const setId = art.dataset.quiz;
+    const all = [...document.querySelectorAll('.q')];
+    const qwrap = document.getElementById('qz-questions'), start = document.getElementById('qz-start'), done = document.getElementById('qz-done');
+    const progress = document.getElementById('qz-progress');
+    let order = [], i = 0, results = [];
+    const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[“”"'’]/g, '').replace(/[.,;:]+$/g, '').replace(/\s+/g, ' ').trim();
+    const stats = get('quiz', {}) || {};
+    const prev = stats[setId];
+    document.getElementById('qz-last').textContent = prev ? t('quiz.last', { n: prev.correct, t: prev.total }) : '';
+
+    function show() {
+      all.forEach(s => (s.hidden = true));
+      const s = order[i]; s.hidden = false;
+      progress.textContent = `${i + 1} / ${order.length}`;
+      s.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+    function record(section, correct) {
+      results.push({ id: section.dataset.q, correct });
+      section.querySelector('[data-next]').hidden = false;
+      const fb = section.querySelector('.feedback'); fb.hidden = false;
+      const v = section.querySelector('[data-verdict]'); if (v) { v.textContent = correct ? t('quiz.correct') : t('quiz.incorrect'); v.className = 'verdict-line ' + (correct ? 'ok' : 'ko'); }
+    }
+    all.forEach(section => {
+      const type = section.dataset.type;
+      if (type === 'mcq') {
+        section.querySelectorAll('.choice').forEach(btn => btn.addEventListener('click', () => {
+          if (section.dataset.answered) return; section.dataset.answered = '1';
+          const correct = btn.dataset.correct === 'true';
+          section.querySelectorAll('.choice').forEach(b => { b.disabled = true; if (b.dataset.correct === 'true') b.classList.add('is-correct'); });
+          if (!correct) { btn.classList.add('is-wrong'); const why = section.querySelector('[data-why]'); if (btn.dataset.why) { why.textContent = btn.dataset.why; why.hidden = false; } }
+          record(section, correct);
+        }));
+      } else if (type === 'cloze') {
+        section.querySelector('[data-check]').addEventListener('click', () => {
+          if (section.dataset.answered) return; section.dataset.answered = '1';
+          let ok = true;
+          section.querySelectorAll('.blank').forEach(inp => {
+            const accepted = inp.dataset.accept.split('|').map(norm);
+            const good = accepted.includes(norm(inp.value));
+            inp.classList.add(good ? 'is-correct' : 'is-wrong'); inp.disabled = true;
+            if (!good) { ok = false; inp.value = inp.value ? `${inp.value} → ${inp.dataset.accept.split('|')[0]}` : inp.dataset.accept.split('|')[0]; }
+          });
+          record(section, ok);
+        });
+      } else if (type === 'short') {
+        section.querySelector('[data-reveal]').addEventListener('click', () => { section.querySelector('.feedback').hidden = false; section.querySelector('[data-reveal]').hidden = true; });
+        section.querySelectorAll('[data-self]').forEach(b => b.addEventListener('click', () => {
+          if (section.dataset.answered) return; section.dataset.answered = '1';
+          section.querySelectorAll('[data-self]').forEach(x => (x.disabled = true));
+          record(section, Number(b.dataset.self) === 2);
+        }));
+      } else if (type === 'citation') {
+        section.querySelector('[data-check]').addEventListener('click', () => {
+          if (section.dataset.answered) return; section.dataset.answered = '1';
+          const inp = section.querySelector('[data-cite]');
+          const accepted = [inp.dataset.answer, ...inp.dataset.accept.split('||')].filter(Boolean).map(norm);
+          const ok = accepted.includes(norm(inp.value));
+          inp.classList.add(ok ? 'is-correct' : 'is-wrong'); inp.disabled = true;
+          record(section, ok);
+        });
+      }
+      section.querySelector('[data-next]').addEventListener('click', () => { i++; if (i >= order.length) finish(); else show(); });
+    });
+    function begin() {
+      order = art.dataset.shuffle === 'true' ? shuffle(all) : all.slice();
+      i = 0; results = [];
+      all.forEach(s => { delete s.dataset.answered; s.querySelectorAll('button, input, textarea').forEach(el => { el.disabled = false; el.classList.remove('is-correct', 'is-wrong'); if (el.tagName !== 'BUTTON') el.value = ''; }); s.querySelector('.feedback').hidden = true; s.querySelector('[data-next]').hidden = true; const rv = s.querySelector('[data-reveal]'); if (rv) rv.hidden = false; const w = s.querySelector('[data-why]'); if (w) w.hidden = true; });
+      start.hidden = true; done.hidden = true; qwrap.hidden = false; show();
+    }
+    function finish() {
+      qwrap.hidden = true; done.hidden = false;
+      const correct = results.filter(r => r.correct).length;
+      document.getElementById('qz-score').textContent = t('quiz.score', { n: correct, t: results.length });
+      const missed = results.filter(r => !r.correct).map(r => r.id);
+      document.getElementById('qz-missed').textContent = missed.length ? `${t('games.summaryMissed', { n: missed.length })}: ${missed.join(', ')}` : '';
+      update('quiz', q => ({ ...(q || {}), [setId]: { correct, total: results.length, last: todayISO(), missed } }), {});
+      update('activity', a => { const n = { ...(a || {}) }; const k = todayISO(); n[k] = { ...(n[k] || {}), quiz: ((n[k] || {}).quiz || 0) + 1 }; return n; }, {});
+      progress.textContent = '';
+    }
+    document.getElementById('qz-begin').addEventListener('click', begin);
+    document.getElementById('qz-again').addEventListener('click', begin);
+  </script>
+</Base>

@@ -8,6 +8,7 @@ import { syllabusItemSchema } from './schemas/syllabus.js';
 import { briefSchema } from './schemas/brief.js';
 import { noteSchema } from './schemas/note.js';
 import { glossaryItemSchema } from './schemas/glossary.js';
+import { quizSetSchema } from './schemas/quiz.js';
 
 // El id de cada entrada es su ruta sin extensión (contracts, contracts/hurst-v-lake, ...).
 const generateId = ({ entry }: { entry: string }) => entry.replace(/\.(ya?ml|md|json)$/, '');
@@ -44,4 +45,10 @@ const glossary = defineCollection({
   schema: glossaryItemSchema(z),
 });
 
-export const collections = { terms, courses, syllabus, briefs, notes, glossary };
+// Un archivo por curso con `items` (sets de preguntas); cada set hereda `course`.
+const quizzes = defineCollection({
+  loader: bundle({ base: './src/content/quizzes', inherit: ['course'] }),
+  schema: quizSetSchema(z),
+});
+
+export const collections = { terms, courses, syllabus, briefs, notes, glossary, quizzes };

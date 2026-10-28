@@ -18,6 +18,12 @@ const fullTitle = title ? `${title} — Black Letter` : 'Black Letter';
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Black Letter" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" content="#f3f4f1" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#15171c" media="(prefers-color-scheme: dark)" />
     <script is:inline>
@@ -29,6 +35,9 @@ const fullTitle = title ? `${title} — Black Letter` : 'Black Letter';
           document.documentElement.lang = l;
           if (p.theme === 'dark' || p.theme === 'light') document.documentElement.setAttribute('data-theme', p.theme);
         } catch (e) {}
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+          addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+        }
       })();
     </script>
   </head>
