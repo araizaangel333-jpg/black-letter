@@ -157,7 +157,14 @@ html[data-lang="es"] h1.l10n[lang="es"], html[data-lang="es"] h2.l10n[lang="es"]
 .rbriefs li { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .rbriefs a { text-decoration: none; font-weight: 600; }
 .drill-link { color: var(--accent); font-weight: 700; }
-.rtasks { padding-left: 54px; font-size: 14px; color: var(--ink-2); }
+.rtasks, .rnotes { list-style: none; display: grid; gap: 4px; padding-left: 36px; font-size: 14px; }
+.rbriefs .check, .rtasks .check, .rnotes .check { min-height: 36px; align-items: center; }
+.rbriefs .check .text, .rtasks .check .text, .rnotes .check .text { font-size: 14px; }
+.rbriefs .text a:first-child { font-family: var(--font-ui); font-weight: 600; text-decoration: none; }
+.rbriefs .text .tag { margin: 0 4px; }
+.prep-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.prep-head .plabel { font-family: var(--font-ui); font-size: 13px; color: var(--ink-2); }
+.readings > li.is-done .text > .rtitle { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rule); }
 .prep { display: grid; gap: 4px; }
 .prep .plabel { font-family: var(--font-ui); font-size: 13px; color: var(--ink-2); }
 .prep textarea { width: 100%; font: inherit; font-size: 15px; padding: 8px 10px; border: 1px solid var(--rule); border-radius: var(--radius-sm); background: var(--paper-2); color: var(--ink); resize: vertical; }
@@ -368,3 +375,4 @@ select { font: inherit; max-width: 100%; min-width: 0; font-size: 15px; padding:
 .feed-answers .btn:disabled { cursor: default; }
 .feed-stop { display: flex; justify-content: center; margin-top: 8px; }
 .feed-stop .btn { min-height: 40px; font-size: 14px; }
+.rbriefs li.is-done .text a:first-child, .rtasks li.is-done .text, .rnotes li.is-done .text { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rule); }

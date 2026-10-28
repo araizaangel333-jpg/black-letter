@@ -131,10 +131,6 @@
     "en": "This week",
     "es": "Esta semana"
   },
-  "today.prep": {
-    "en": "If I'm called on, my first sentence is…",
-    "es": "Si me preguntan, mi primera frase es…"
-  },
   "today.capture": {
     "en": "After class: the rule we actually used, the case we spent time on, one thing I didn't get.",
     "es": "Después de clase: la regla que usamos, el caso en que más tiempo pasamos, una cosa que no entendí."
@@ -1426,5 +1422,17 @@
   "exercise.readOnly": {
     "en": "Just read it: think it through, then reveal the model answer",
     "es": "Solo leer: piénsalo y revela la respuesta modelo"
+  },
+  "today.prepTitle": {
+    "en": "To have ready for this class",
+    "es": "Para tener listo antes de esta clase"
+  },
+  "today.prepCount": {
+    "en": "{n} of {t} ready",
+    "es": "{n} de {t} listos"
+  },
+  "today.reviewNote": {
+    "en": "Review:",
+    "es": "Repasar:"
   }
 }

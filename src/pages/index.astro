@@ -11,7 +11,9 @@ const syllabus = await getCollection('syllabus');
 const briefs = await getCollection('briefs');
 const term = terms.find(t => t.id === 'fall-2026').data;
 const termCourses = courses.filter(c => c.data.term === term.id);
+const notes = await getCollection('notes');
 const briefById = Object.fromEntries(briefs.map(b => [b.id, b]));
+const noteById = Object.fromEntries(notes.map(n => [n.id, n]));
 const bookShort = (courseId, bookId) => termCourses.find(c => c.id === courseId)?.data.books.find(b => b.id === bookId)?.short || bookId;
 const items = syllabus.map(s => s.data).filter(s => s.date >= term.start).sort((a, b) => a.date.localeCompare(b.date));
 const calendar = {
@@ -36,6 +38,7 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
           </span>
           <span class="code" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
           <div class="session" data-session hidden>
+            <div class="prep-head"><span class="plabel"><T k="today.prepTitle" /></span><span class="small muted num" data-prep-count></span></div>
             <ul class="readings" data-readings>
               {items.filter(s => s.course === c.id && (s.type === 'reading' || s.type === 'class' || s.type === 'exam')).map(s => (
                 <li data-date={s.date} data-id={s.id} hidden>
@@ -52,22 +55,45 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
                     <ul class="rbriefs">
                       {s.briefs.map(id => briefById[id] && (
                         <li>
-                          <a href={`/briefs/${id}/`}>{briefById[id].data.title}</a>
-                          <span class="tag" data-brief-status={id}><T k={`brief.status.${briefById[id].data.status}`} /></span>
-                          <a class="drill-link" href={`/briefs/${id}/?drill=1`}><T k="today.drill" /></a>
+                          <label class="check">
+                            <input type="checkbox" data-done={`prep:${s.id}:${id}`} data-brief-check={id} />
+                            <span class="box" aria-hidden="true"></span>
+                            <span class="text"><a href={`/briefs/${id}/`}>{briefById[id].data.title}</a> <span class="tag" data-brief-status={id}><T k={`brief.status.${briefById[id].data.status}`} /></span> <a class="drill-link" href={`/briefs/${id}/?drill=1`}><T k="today.drill" /></a></span>
+                          </label>
                         </li>
                       ))}
                     </ul>
                   )}
-                  {s.tasks.length > 0 && <ul class="rtasks">{s.tasks.map(t => <li><Bi v={t} /></li>)}</ul>}
+                  {s.notes.length > 0 && (
+                    <ul class="rnotes">
+                      {s.notes.map(id => noteById[id] && (
+                        <li>
+                          <label class="check">
+                            <input type="checkbox" data-done={`prep:${s.id}:${id}`} />
+                            <span class="box" aria-hidden="true"></span>
+                            <span class="text"><T k="today.reviewNote" /> <a href={`/notes/${id}/`}><Bi v={noteById[id].data.title} /></a></span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {s.tasks.length > 0 && (
+                    <ul class="rtasks">
+                      {s.tasks.map((t, i) => (
+                        <li>
+                          <label class="check">
+                            <input type="checkbox" data-done={`prep:${s.id}:task${i}`} />
+                            <span class="box" aria-hidden="true"></span>
+                            <span class="text"><Bi v={t} /></span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
             <p class="muted small" data-empty hidden><T k="today.readingsSoon" /></p>
-            <label class="prep">
-              <span class="plabel"><T k="today.prep" /></span>
-              <textarea rows="2" data-prep></textarea>
-            </label>
             <label class="prep capture" data-capture-box hidden>
               <span class="plabel"><T k="today.capture" /></span>
               <textarea rows="3" data-capture></textarea>
@@ -160,12 +186,21 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
 
     function paintChecks() {
       const done = get('done', {}) || {};
-      document.querySelectorAll('[data-done]').forEach(cb => { cb.checked = Boolean(done[cb.dataset.done]); cb.closest('li').classList.toggle('is-done', cb.checked); });
+      document.querySelectorAll('[data-done]').forEach(cb => { cb.checked = Boolean(done[cb.dataset.done]) || cb.dataset.auto === '1'; cb.closest('li').classList.toggle('is-done', cb.checked); });
     }
     document.querySelectorAll('[data-done]').forEach(cb => cb.addEventListener('change', () => {
       update('done', d => { const n = { ...(d || {}) }; if (cb.checked) n[cb.dataset.done] = new Date().toISOString(); else delete n[cb.dataset.done]; return n; }, {});
       cb.closest('li').classList.toggle('is-done', cb.checked);
+      paintPrepCounts();
     }));
+    // "n de m listos" por clase: lecturas, casos, checklists y tareas visibles de la próxima sesión
+    function paintPrepCounts() {
+      document.querySelectorAll('[data-session]').forEach(session => {
+        const boxes = [...session.querySelectorAll('[data-readings] > li:not([hidden]) [data-done]')];
+        const el = session.querySelector('[data-prep-count]');
+        el.textContent = boxes.length ? t('today.prepCount', { n: boxes.filter(b => b.checked).length, t: boxes.length }) : '';
+      });
+    }
 
     function bindText(el, bucket, key) {
       const store = get(bucket, {}) || {};
@@ -194,8 +229,8 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
         let shown = 0;
         session.querySelectorAll('[data-readings] > li').forEach(r => { const show = r.dataset.date === next.date; r.hidden = !show; if (show) shown++; });
         session.querySelector('[data-empty]').hidden = shown > 0;
-        const prep = session.querySelector('[data-prep]');
-        if (!prep.dataset.bound) { bindText(prep, 'prep', `${c.id}:${next.date}`); prep.dataset.bound = '1'; }
+        // un caso ensayado en la semana previa a la clase cuenta como preparado
+        session.querySelectorAll('[data-brief-check]').forEach(cb => { const cc = coldcall[cb.dataset.briefCheck]; cb.dataset.auto = cc && cc.last >= addDays(next.date, -7) && cc.last <= next.date ? '1' : ''; });
         const started = todaySessions.find(m => m.start <= hm);
         const capBox = session.querySelector('[data-capture-box]');
         capBox.hidden = !started;
@@ -230,6 +265,7 @@ const dueItems = items.filter(s => s.due || s.type === 'exam');
         if (cc) el.title = t('drill.lastRun', { when: cc.last, n: cc.confidence });
       });
       paintChecks();
+      paintPrepCounts();
       paintStreak(today);
     }
     render();
