@@ -19,7 +19,7 @@ export function noteSchema(z) {
       authority: z.string().optional(),
       pitfall: z.string().optional(),
     })).default([]),
-    related: z.object({ briefs: z.array(z.string()).default([]), terms: z.array(c.slug).default([]), notes: z.array(z.string()).default([]) }).default({}),
+    related: z.object({ briefs: z.array(z.string()).default([]), terms: z.array(c.slug).default([]), notes: z.array(z.string()).default([]) }).default({ briefs: [], terms: [], notes: [] }),
     status: z.enum(['draft', 'reviewed']).default('draft'),
     verified: z.boolean().default(false),
     updated: c.isoDate.optional(),

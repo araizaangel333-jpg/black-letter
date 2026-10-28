@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
 import ui from '../../i18n/ui.json';
 const glossary = await getCollection('glossary');
 const briefs = await getCollection('briefs');
@@ -16,9 +17,9 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
   </header>
   <section class="sec" id="m-setup">
     <label class="setting"><span class="label"><T k="games.scope" /></span>
-      <select id="m-scope"><option value=""><T k="games.scopeAll" /></option>{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+      <select id="m-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
     <label class="setting"><span class="label"><T k="match.kind" /></span>
-      <select id="m-kind"><option value="term"><T k="match.terms" /></option><option value="case"><T k="match.cases" /></option></select></label>
+      <select id="m-kind"><Opt value="term" k="match.terms" /><Opt value="case" k="match.cases" /></select></label>
     <p class="small muted num" id="m-best"></p>
     <button type="button" class="btn primary" id="m-start"><T k="games.start" /></button>
     <p class="muted" id="m-empty" hidden><T k="match.notEnough" /></p>

@@ -1,0 +1,507 @@
+# Quizzes de Business Associations. Preguntas originales con hechos inventados; cubren lo que el profesor subraya en clase.
+course: business-associations
+items:
+  - id: ba-agency-01
+    topic: agency
+    title: { en: "Agency: who can bind whom", es: "Agency: quién obliga a quién" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Rosa owns a bakery. In front of a flour supplier she tells her assistant Tomás that he handles all purchasing. Later, in private, she tells Tomás never to order more than $2,000 at a time. Tomás orders $6,000 of flour from that supplier. Is Rosa bound?"
+        choices:
+          - { id: a, text: "No. The private instruction limits his authority, and the supplier bears the risk of dealing with an agent.", why: "The private limit cuts his actual authority, but apparent authority is measured by what the supplier was told." }
+          - { id: b, text: "Yes. Rosa's statement to the supplier created apparent authority that her secret limit did not undo.", correct: true }
+          - { id: c, text: "Yes, under respondeat superior.", why: "Respondeat superior is about torts within the scope of employment, not about who is bound on a contract." }
+          - { id: d, text: "Only if Rosa later accepts the flour.", why: "Acceptance would be ratification, but Rosa is already bound through apparent authority." }
+        explanation: { en: "Apparent authority comes from the principal's manifestations to the third party. Rosa manifested to the supplier; the limit she gave Tomás alone cannot be seen by the supplier.", es: "La representación aparente nace de lo que el principal manifiesta al tercero. Rosa le manifestó al proveedor; el límite que dio a Tomás a solas no lo ve el proveedor." }
+        source: "Restatement (Third) of Agency §§ 2.01, 2.03"
+      - id: q2
+        type: mcq
+        stem: "Which of these is the source of inherent agency power?"
+        choices:
+          - { id: a, text: "The principal's letter to the third party.", why: "A manifestation to the third party creates apparent authority." }
+          - { id: b, text: "The agent's status or customary role, such as being the company's president.", correct: true }
+          - { id: c, text: "The agent's own assurances that she is authorized.", why: "An agent cannot create her own authority by saying so." }
+          - { id: d, text: "The principal's silence after learning of the act.", why: "That is ratification by acquiescence, which works after the fact." }
+        explanation: { en: "Inherent power attaches to the position: people in that role customarily have that authority, so the law treats the principal as bound.", es: "El poder inherente va con el cargo: quienes ocupan ese puesto suelen tener esa facultad, así que la ley obliga al principal." }
+        source: "Class slides, ch. 1 (Aug. 2026); R.2d Agency § 8A"
+      - id: q3
+        type: mcq
+        stem: "A sales representative signs a five-year supply contract she had no authority to sign. She also signed a side letter with a penalty clause that she never showed anyone. The company's CEO reads the contract, likes the price and tells the supplier the company is on board. Two months later the side letter surfaces. Can the company disavow the deal?"
+        choices:
+          - { id: a, text: "Yes. Ratification requires knowledge of the material facts, and the CEO did not know about the penalty clause.", correct: true }
+          - { id: b, text: "No. Ratification relates back and cannot be undone.", why: "Relation back applies only to an effective ratification; one made without knowledge of a material fact is not effective." }
+          - { id: c, text: "No. The supplier relied on the CEO's statement.", why: "Reliance may support estoppel, but a concealed side letter is not something the company let the supplier believe in." }
+          - { id: d, text: "Yes, because ratification must be in writing.", why: "Ratification can be express or inferred from conduct; no writing is required." }
+        explanation: { en: "A principal ratifies only with knowledge of the material facts (unless it knowingly ratifies blind). A hidden penalty clause is material, so the ratification fails as to the deal it did not know about.", es: "El principal solo ratifica con conocimiento de los hechos materiales (salvo que acepte ratificar a ciegas). Una cláusula penal oculta es material, así que la ratificación falla." }
+        source: "Restatement (Third) of Agency §§ 4.01, 4.06"
+      - id: q4
+        type: mcq
+        stem: "A courier company pays its drivers per delivery. Drivers use their own vans, pick their own routes and hours, and may work for competitors. One driver hits a cyclist while delivering a package. Who is liable to the cyclist?"
+        choices:
+          - { id: a, text: "Only the driver, because on these facts he is an independent contractor rather than an employee.", correct: true }
+          - { id: b, text: "The company, because respondeat superior covers everyone who delivers for it.", why: "Respondeat superior needs an employee; the test is control over time, manner and method." }
+          - { id: c, text: "The company, through apparent authority.", why: "Apparent authority is about contracts with third parties, not accident liability." }
+          - { id: d, text: "Nobody; the cyclist assumed the risk of the road.", why: "The driver remains liable for his own negligence." }
+        explanation: { en: "The employer answers only for employees, and the line is control: own van, own routes, own hours and freedom to work for others point to an independent contractor.", es: "El patrón responde solo por empleados, y el criterio es el control: vehículo propio, rutas y horarios propios y libertad de trabajar para otros apuntan a contratista independiente." }
+        source: "Restatement (Third) of Agency § 7.07"
+      - id: q5
+        type: mcq
+        stem: "A hotel's night clerk is told to stay at the front desk. At 2 a.m. he drives the hotel's golf cart twenty miles to a friend's party and injures a pedestrian on the way. Best analysis of the hotel's liability?"
+        choices:
+          - { id: a, text: "Not liable: a twenty-mile trip to a party is a frolic of his own, outside the scope of employment.", correct: true }
+          - { id: b, text: "Liable: he was on the clock, so everything he did was within the scope.", why: "Being on duty is not enough; the conduct must serve the employer's business or be incidental to the job." }
+          - { id: c, text: "Liable: the hotel owns the golf cart.", why: "Ownership of the vehicle does not by itself create respondeat superior liability." }
+          - { id: d, text: "Not liable, because the clerk was an independent contractor.", why: "A night clerk told where to stand and when is an employee; the issue is scope, not status." }
+        explanation: { en: "Scope of employment covers acts the employee was hired to do, acts incidental to them and acts that further the employer's business. A substantial personal deviation (a frolic) breaks the chain; a minor detour would not.", es: "El ámbito del empleo cubre lo encomendado, lo accesorio y lo que sirve al negocio. Una desviación personal sustancial (frolic) rompe la cadena; un desvío menor no." }
+        source: "Restatement (Third) of Agency § 7.07(2)"
+      - id: q6
+        type: mcq
+        stem: "Which element does agency by estoppel require that apparent authority does not?"
+        choices:
+          - { id: a, text: "A manifestation by the principal to the third party.", why: "That is the core of apparent authority; estoppel can rest on careless failure to act." }
+          - { id: b, text: "A detrimental change of position by the third party in reliance.", correct: true }
+          - { id: c, text: "Good faith on the part of the agent.", why: "The agent's state of mind is not an element of either doctrine." }
+          - { id: d, text: "A signed writing.", why: "Neither doctrine requires a writing." }
+        explanation: { en: "Estoppel fills the gap when there is no real manifestation: the principal carelessly allowed the belief, and the third party lost something relying on it.", es: "El estoppel llena el hueco cuando no hay una manifestación real: el principal permitió por descuido la creencia y el tercero perdió algo al confiar." }
+        source: "Restatement (Third) of Agency § 2.05"
+      - id: q7
+        type: cloze
+        text: "Apparent authority is created by the principal's manifestations to the {{third party}}, while actual authority is created by the principal's manifestations to the {{agent}}."
+        explanation: { en: "Same principal, different audience. Always ask to whom the principal spoke or acted.", es: "Mismo principal, distinto público. Pregunta siempre a quién le habló o frente a quién actuó el principal." }
+      - id: q8
+        type: cloze
+        text: "Once a principal ratifies an unauthorized act, the authority {{relates back}} to the moment of the transaction, as if the agent had held actual authority all along."
+        explanation: { en: "Relation back is why ratification is dangerous for the principal and valuable for the third party.", es: "La retroactividad es lo que hace a la ratificación peligrosa para el principal y valiosa para el tercero." }
+      - id: q9
+        type: short
+        stem: "What is the first document a careful transactional lawyer reads to determine the rights and relationships of the parties?"
+        answer: "The parties' own agreement (the contract: engagement letter, employment contract, partnership agreement, board resolution). Default rules of agency law apply only where the agreement is silent."
+        keyPoints: ["the agreement or contract between the parties", "default rules come second"]
+      - id: q10
+        type: mcq
+        stem: "Which statement about laches is correct?"
+        choices:
+          - { id: a, text: "The passage of time alone establishes it.", why: "Delay without prejudice is not laches." }
+          - { id: b, text: "It requires an unreasonable delay that prejudices the other party, and the court has discretion to apply it.", correct: true }
+          - { id: c, text: "It is a statute of limitations with fixed periods.", why: "Laches is an equitable doctrine with no fixed period; limitations periods are statutory." }
+          - { id: d, text: "Only agents, never principals, are subject to it.", why: "A principal who waits too long to disavow a transaction is the classic case." }
+        explanation: { en: "Laches is a form of estoppel built on unreasonable delay plus prejudice, decided on the facts.", es: "Laches es una forma de estoppel basada en demora irrazonable más perjuicio, decidida según los hechos." }
+        source: "Class slides, ch. 1; practice quiz answer key (Sept. 2026)"
+      - id: q11
+        type: mcq
+        stem: "Who can bind a general partnership on an ordinary-course transaction with an outsider?"
+        choices:
+          - { id: a, text: "Only a partner holding written authority from the others.", why: "Partners are agents of the partnership by status; no writing is needed for ordinary business." }
+          - { id: b, text: "Any partner, if the matter is in the ordinary course and the outsider reasonably believes the partner has authority.", correct: true }
+          - { id: c, text: "Only the managing partner.", why: "Absent agreement, every partner has equal rights in management and equal power to bind." }
+          - { id: d, text: "No partner without unanimous consent.", why: "Unanimity is required only for matters outside the ordinary course or to admit a partner." }
+        explanation: { en: "Each partner is an agent of the partnership for its ordinary business; that mutual agency is why partners need to trust each other and why a written agreement matters.", es: "Cada socio es agente de la partnership para su negocio ordinario; esa agencia mutua es la razón para confiar en los socios y para tener convenio escrito." }
+        source: "RUPA § 301; class slides, ch. 2"
+  - id: ba-forms-01
+    topic: business-forms
+    title: { en: "Choosing a business form", es: "Elegir la forma societaria" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Four friends open a climbing gym in Texas. Three will work there full time; one only invests. They want limited liability for everyone, a single level of tax, and the freedom to let the three workers manage while the investor keeps veto rights over big decisions. Which form fits best?"
+        choices:
+          - { id: a, text: "A general partnership.", why: "Everyone would have unlimited liability." }
+          - { id: b, text: "A limited partnership with the investor as the limited partner.", why: "The three managers would be general partners with unlimited liability, unless they add a corporate general partner." }
+          - { id: c, text: "A limited liability company governed by an operating agreement.", correct: true }
+          - { id: d, text: "A C corporation.", why: "Limited liability yes, but profits would be taxed twice." }
+        explanation: { en: "The LLC gives limited liability to all members, pass-through tax by default, and an operating agreement that can mix active managers with a passive investor's vetoes.", es: "La LLC da responsabilidad limitada a todos, transparencia fiscal por defecto y un operating agreement que combina gerentes activos con vetos del inversionista pasivo." }
+        source: "Class slides, ch. 2; course handout on choosing an entity"
+      - id: q2
+        type: mcq
+        stem: "Which business form comes into existence with no filing at all?"
+        choices:
+          - { id: a, text: "A limited liability company.", why: "An LLC needs a certificate of formation." }
+          - { id: b, text: "A limited partnership.", why: "A limited partnership needs a filing and a written agreement; without them it is a general partnership." }
+          - { id: c, text: "A general partnership.", correct: true }
+          - { id: d, text: "An S corporation.", why: "A corporation is filed, and the S status is a separate tax election." }
+        explanation: { en: "Two or more persons carrying on a business for profit as co-owners are partners whether or not they intended it. That is why people stumble into unlimited liability.", es: "Dos o más personas que explotan un negocio con fines de lucro como codueños son socios aunque no lo pretendieran. Por eso la gente cae sin querer en la responsabilidad ilimitada." }
+        source: "RUPA § 202"
+      - id: q3
+        type: mcq
+        stem: "Two investors sign a detailed limited partnership agreement naming one of them the limited partner, but nobody files anything with the Secretary of State. A supplier sues both for an unpaid invoice. Result?"
+        choices:
+          - { id: a, text: "The limited partner is protected because the agreement says so.", why: "The agreement binds the two of them, not the outside world; limited liability needs the filing." }
+          - { id: b, text: "Both are personally liable, because without the filing the business is a general partnership.", correct: true }
+          - { id: c, text: "Neither is liable; the supplier can reach only the business assets.", why: "That is the rule for an entity with limited liability, which this one is not." }
+          - { id: d, text: "Only the general partner is liable, because the supplier knew of the agreement.", why: "Knowledge of a private agreement does not substitute for the public filing." }
+        explanation: { en: "Limited liability is a privilege the state grants on filing. Skip the filing and the default form, the general partnership, governs.", es: "La responsabilidad limitada es un privilegio que el estado otorga al registrar. Sin registro rige la forma por defecto: la general partnership." }
+        source: "Class slides, ch. 2 (limited partnerships)"
+      - id: q4
+        type: mcq
+        stem: "A limited partner serves as vice president of the corporation that acts as general partner of the limited partnership and votes on whether to sell the business. Has she lost her limited liability?"
+        choices:
+          - { id: a, text: "Yes. Any involvement in management strips limited liability.", why: "Safe harbors cover serving as an officer of a corporate general partner and voting on major matters." }
+          - { id: b, text: "No. Serving as an officer of the corporate general partner and voting on major decisions are safe harbors.", correct: true }
+          - { id: c, text: "Yes, but only toward creditors who know she is a limited partner.", why: "Backwards: liability under the control rule runs to creditors who reasonably believe she is a general partner." }
+          - { id: d, text: "No, because limited partners can never be liable.", why: "They can be, if they take part in control and a creditor reasonably believes they are general partners." }
+        explanation: { en: "The control rule punishes limited partners who run the business, not those who act through the corporate general partner or vote on fundamental matters.", es: "La regla de control castiga al comanditario que administra, no al que actúa a través del GP corporativo o vota asuntos fundamentales." }
+        source: "TBOC §§ 153.102–153.103"
+      - id: q5
+        type: mcq
+        stem: "A Mexican investor living in Monterrey wants to be a 30% shareholder of a Texas corporation that elects S status to avoid double taxation. Problem?"
+        choices:
+          - { id: a, text: "None; S corporations may have any shareholders as long as there are fewer than 100.", why: "The shareholder-count limit is only one of the eligibility rules." }
+          - { id: b, text: "The S election is unavailable because a nonresident alien cannot be an S corporation shareholder.", correct: true }
+          - { id: c, text: "The corporation must convert to an LLC first.", why: "Conversion is not required; the issue is eligibility for the election." }
+          - { id: d, text: "Only if the investor holds preferred stock.", why: "An S corporation may have only one class of stock." }
+        explanation: { en: "Subchapter S is a tax status with strict eligibility limits: at most 100 shareholders, only U.S. individuals (and some trusts), one class of stock. Foreign owners usually push the choice toward an LLC.", es: "El subcapítulo S es un estatus fiscal con límites estrictos: máximo 100 accionistas, solo personas físicas estadounidenses (y algunos fideicomisos), una sola clase de acciones. Los dueños extranjeros suelen inclinar la elección hacia la LLC." }
+        source: "I.R.C. § 1361(b)"
+      - id: q6
+        type: mcq
+        stem: "A partner in a three-person general partnership sells her entire interest to her cousin without asking the others. What does the cousin get?"
+        choices:
+          - { id: a, text: "Full partner status, including the right to manage and inspect the books.", why: "Admission as a partner requires the consent of all partners." }
+          - { id: b, text: "Only the economic rights: the share of profits and distributions.", correct: true }
+          - { id: c, text: "Nothing; the transfer is void.", why: "The transfer of the economic interest is valid; it just does not make the transferee a partner." }
+          - { id: d, text: "Partner status, but only after one year.", why: "Time does not cure the lack of consent." }
+        explanation: { en: "The transferee of a partnership interest is a money-only participant. Becoming a partner, with its unlimited liability for the others, takes everyone's consent unless the agreement says otherwise.", es: "El cesionario de una parte social solo recibe dinero. Ser socio, con responsabilidad ilimitada para los demás, exige el consentimiento de todos salvo pacto distinto." }
+        source: "RUPA §§ 401, 503"
+      - id: q7
+        type: mcq
+        stem: "A law firm is a registered LLP. Which of these claims can still reach a partner's personal assets?"
+        choices:
+          - { id: a, text: "The firm's unpaid office lease.", why: "Ordinary partnership debts are shielded in an LLP." }
+          - { id: b, text: "A malpractice claim based on work the partner personally did or directly supervised.", correct: true }
+          - { id: c, text: "A slip-and-fall claim in the lobby.", why: "A general tort of the firm is a shielded partnership obligation." }
+          - { id: d, text: "No claim; LLP partners are never personally liable.", why: "The shield has holes for the partner's own misconduct and for what she supervises." }
+        explanation: { en: "The LLP shield covers the firm's obligations, not a partner's own negligence or the misconduct of people under her supervision; many states also require insurance or an escrow for exactly these claims.", es: "El escudo de la LLP cubre las obligaciones de la firma, no la negligencia propia del socio ni la falta de quienes supervisa; muchos estados exigen además seguro o depósito para esos reclamos." }
+        source: "TBOC § 152.801"
+      - id: q8
+        type: cloze
+        text: "A C corporation's profits are taxed at the entity level and taxed again when paid to shareholders as {{dividends}}; this pattern is called {{double taxation}}."
+        explanation: { en: "Reasonable salaries, which are deductible, are the usual way owner-managers soften it.", es: "Los sueldos razonables, que son deducibles, son la forma usual de suavizarla para los dueños-administradores." }
+      - id: q9
+        type: mcq
+        stem: "Which fact most strongly pushes a startup toward a corporation rather than an LLC?"
+        choices:
+          - { id: a, text: "The founders want pass-through taxation.", why: "That favors the LLC." }
+          - { id: b, text: "The founders plan to raise venture capital and eventually go public.", correct: true }
+          - { id: c, text: "There are only two owners.", why: "Few owners favors the simpler LLC." }
+          - { id: d, text: "The founders want to avoid annual formalities.", why: "Corporations carry more formalities, not fewer." }
+        explanation: { en: "Investors and public markets expect a corporation with stock, a board and familiar governance; the LLC's flexibility is a drawback there.", es: "Los inversionistas y los mercados públicos esperan una corporation con acciones, consejo y gobierno conocido; la flexibilidad de la LLC estorba ahí." }
+        source: "Course handout on choosing an entity (long-term goals and exit)"
+      - id: q10
+        type: short
+        stem: "Name four events a buy-sell agreement should treat as triggers for a forced purchase of an owner's interest."
+        answer: "Death, disability, divorce (especially in a community-property state), retirement or withdrawal, termination of employment, bankruptcy of an owner, and deadlock."
+        keyPoints: ["death", "disability", "divorce", "withdrawal or termination of employment", "bankruptcy", "deadlock"]
+      - id: q11
+        type: mcq
+        stem: "Two developers pool money and effort to buy, renovate and resell a single building, then go their separate ways. Which rules govern their relationship?"
+        choices:
+          - { id: a, text: "LLC rules, because it is a single project.", why: "No LLC exists without a filing." }
+          - { id: b, text: "General partnership rules, because a joint venture is a partnership for one undertaking.", correct: true }
+          - { id: c, text: "Contract rules only; there is no entity.", why: "Co-owning a business for profit creates a partnership whether or not the parties call it one." }
+          - { id: d, text: "Limited partnership rules, with the money partner as limited partner.", why: "A limited partnership requires a filing." }
+        explanation: { en: "A joint venture is a partnership with a short life span; mutual agency, unlimited liability and pass-through tax all apply.", es: "Un joint venture es una partnership de vida corta; aplican la agencia mutua, la responsabilidad ilimitada y la transparencia fiscal." }
+        source: "Class slides, ch. 2"
+  - id: ba-agreements-01
+    topic: owner-agreements
+    title: { en: "Owner agreements: jobs, money, seats, votes, exits", es: "Acuerdos entre socios: empleo, dinero, asientos, votos, salidas" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "An investor puts in $60,000 for 25% of a corporation whose three other owners each put in $25,000 and work full time. She fears they will pay themselves salaries and never declare a dividend. Which protection is strongest?"
+        choices:
+          - { id: a, text: "A separate class of stock with a dividend preference, plus a charter rule requiring unanimity to amend it.", correct: true }
+          - { id: b, text: "An oral promise from the other owners to be fair.", why: "Unenforceable in practice and worthless once the relationship sours." }
+          - { id: c, text: "Reliance on the directors' fiduciary duties.", why: "Deciding not to pay dividends is normally protected business judgment." }
+          - { id: d, text: "A board resolution declaring an annual dividend.", why: "A later board can repeal a resolution; a charter provision protected by unanimity cannot be changed over her objection." }
+        explanation: { en: "The reliable tools are structural: a preferred class, a mandatory distribution formula, and a unanimity lock on changing them. Promises and duties are weak substitutes.", es: "Las herramientas confiables son estructurales: una clase preferente, una fórmula de distribución obligatoria y un candado de unanimidad para cambiarlas. Las promesas y los deberes son sustitutos débiles." }
+        source: "Class slides, ch. 3 (dividends)"
+      - id: q2
+        type: mcq
+        stem: "A corporation has 400 shares and elects four directors each year. Dana owns 100 shares. The other owners vote as a bloc against her. Under which rule can she guarantee herself a seat?"
+        choices:
+          - { id: a, text: "Straight voting, because 25% always earns one of four seats.", why: "Under straight voting the 75% bloc elects all four directors." }
+          - { id: b, text: "Cumulative voting: she casts all 400 of her votes (100 shares times 4 seats) for herself.", correct: true }
+          - { id: c, text: "A voting trust that she creates alone.", why: "A voting trust over her own shares does not add votes." }
+          - { id: d, text: "No rule; a minority can never elect a director.", why: "Cumulative voting exists precisely to give minorities a seat." }
+        explanation: { en: "Cumulative voting multiplies shares by seats and lets the holder concentrate them. In Texas it exists only if the certificate of formation grants it, so it must be negotiated at formation.", es: "El voto acumulativo multiplica acciones por asientos y permite concentrarlos. En Texas solo existe si el acta constitutiva lo otorga, así que hay que negociarlo al constituir." }
+        source: "TBOC § 21.360"
+      - id: q3
+        type: mcq
+        stem: "A founder gives an investor a proxy to vote the founder's shares, stated to be irrevocable, as part of a loan secured by those shares. A year later the founder tries to revoke it. Can he?"
+        choices:
+          - { id: a, text: "Yes; proxies are always revocable.", why: "Proxies are revocable by default, but not when coupled with an interest." }
+          - { id: b, text: "No; a proxy coupled with an interest, such as a pledge of the shares, is irrevocable if it says so.", correct: true }
+          - { id: c, text: "Yes, after eleven months.", why: "Duration limits apply to ordinary proxies, not to one coupled with an interest." }
+          - { id: d, text: "No; no proxy can ever be revoked once given.", why: "Ordinary proxies are freely revocable." }
+        explanation: { en: "The interest (the pledge) is what makes the irrevocability stick; without it the founder could revoke at will.", es: "El interés (la prenda) es lo que hace que la irrevocabilidad se sostenga; sin él, el fundador podría revocar a voluntad." }
+        source: "TBOC §§ 21.367–21.368"
+      - id: q4
+        type: mcq
+        stem: "What distinguishes a voting trust from a pooling agreement?"
+        choices:
+          - { id: a, text: "Only a voting trust is enforceable.", why: "Pooling agreements are enforceable too, and in Texas specifically enforceable." }
+          - { id: b, text: "In a voting trust, legal title to the shares passes to a trustee who votes them; in a pooling agreement the owners keep their shares and promise how to vote.", correct: true }
+          - { id: c, text: "A pooling agreement must be filed with the state.", why: "Neither needs a state filing, though a voting trust is deposited with the corporation." }
+          - { id: d, text: "A voting trust can only last one year.", why: "Duration rules vary by state; the structural difference is title." }
+        explanation: { en: "Title is the line: trustee votes versus owners' mutual promise. Lenders like trusts because they control the seats directly.", es: "La diferencia es la titularidad: vota el fiduciario frente a la promesa mutua de los dueños. A los acreedores les gustan los fideicomisos porque controlan los asientos directamente." }
+        source: "TBOC §§ 6.251–6.252"
+      - id: q5
+        type: mcq
+        stem: "A shareholders' agreement requires any seller to offer shares to the company first. A shareholder sells to an outsider who has never seen the agreement and whose stock certificate carries no legend. Can the company enforce the restriction against the buyer?"
+        choices:
+          - { id: a, text: "Yes; restrictions bind everyone once signed by the shareholders.", why: "A good-faith buyer without notice is protected." }
+          - { id: b, text: "No; against a good-faith purchaser the restriction must be noted conspicuously on the certificate or actually known to the buyer.", correct: true }
+          - { id: c, text: "Yes, but only for one year.", why: "No such rule." }
+          - { id: d, text: "No, because first-refusal rights are unenforceable restraints on alienation.", why: "Rights of first refusal are routinely upheld as reasonable." }
+        explanation: { en: "The restriction is reasonable and valid, but notice is the price of binding buyers: put the legend on the certificate.", es: "La restricción es razonable y válida, pero la publicidad es el precio para obligar a compradores: pon la leyenda en el título." }
+        source: "TBOC § 21.213"
+      - id: q6
+        type: mcq
+        stem: "Under a first-option clause (as opposed to a right of first refusal), who names the price first?"
+        choices:
+          - { id: a, text: "The outside buyer, through a bona fide offer the insiders may match.", why: "That describes a right of first refusal." }
+          - { id: b, text: "The selling owner, who must first offer the interest to the company or co-owners on the terms he wants; if they decline, he may sell outside on terms no better for the buyer.", correct: true }
+          - { id: c, text: "An independent appraiser.", why: "Appraisal may set a buy-sell price, but a first option is about who offers first." }
+          - { id: d, text: "The board of directors, by resolution.", why: "The board is not a party to the offer sequence." }
+        explanation: { en: "First refusal reacts to a real outside offer; first option (right of first offer) starts with the seller's own terms.", es: "El derecho de preferencia reacciona a una oferta externa real; la primera oferta empieza con los términos del propio vendedor." }
+        source: "Class slides, ch. 3 (stock transfer restrictions)"
+      - id: q7
+        type: mcq
+        stem: "After Ritchie v. Rupe, a minority shareholder in a Texas close corporation who is frozen out of employment and dividends may rely on which of the following?"
+        choices:
+          - { id: a, text: "A common-law claim for shareholder oppression with a court-ordered buyout.", why: "The Supreme Court of Texas refused to recognize that cause of action." }
+          - { id: b, text: "The statutory receivership remedy for oppressive conduct, plus any contract and fiduciary claims he can prove.", correct: true }
+          - { id: c, text: "The reasonable-expectations test applied by many other states.", why: "Texas rejected that test as the standard for oppression." }
+          - { id: d, text: "Nothing; minority shareholders have no remedies in Texas.", why: "Statutory, contractual and fiduciary routes remain." }
+        explanation: { en: "Ritchie narrowed oppression to the receivership statute and sent minorities back to the drafting table: the agreement is the real protection.", es: "Ritchie redujo la opresión al remedio legal del interventor y devolvió a las minorías a la mesa de redacción: el convenio es la verdadera protección." }
+        source: "Ritchie v. Rupe (Tex. 2014); TBOC § 11.404"
+      - id: q8
+        type: cloze
+        text: "A {{buy-sell}} agreement fixes when an owner's interest must be purchased, at what price, and how the purchase will be {{funded}}, for example through key person insurance or installment payments."
+        explanation: { en: "Trigger, price, funding: all three or the clause fails when it is needed.", es: "Detonante, precio y financiamiento: los tres o la cláusula falla cuando se necesita." }
+      - id: q9
+        type: short
+        stem: "Why do some courts refuse to enforce an agreement among shareholders that guarantees a particular person the job of president?"
+        answer: "Because statutes vest management in the board of directors, and an agreement that binds directors in advance can be seen as sterilizing the board's discretion. Courts are more willing to enforce such agreements in close corporations where all shareholders sign, no creditor or minority is harmed, or the provision sits in the certificate of formation; even then the remedy may be damages rather than the job."
+        keyPoints: ["board manages the corporation", "sterilizing board discretion", "enforced more readily in close corporations when all shareholders agree", "damages rather than reinstatement"]
+      - id: q10
+        type: mcq
+        stem: "Two founders own a company 50/50 and have stopped speaking. Which clause, drafted at formation, would have helped most?"
+        choices:
+          - { id: a, text: "A requirement that all decisions be unanimous.", why: "That is the cause of the deadlock, not the cure." }
+          - { id: b, text: "A tiebreaker: a casting vote, a mediation step or a shotgun buy-sell under which one names a price and the other chooses to buy or sell.", correct: true }
+          - { id: c, text: "A clause forbidding either founder from ever selling.", why: "Locking them together makes the stalemate permanent." }
+          - { id: d, text: "A promise to be reasonable.", why: "Unenforceable and useless once trust is gone." }
+        explanation: { en: "Without a drafted exit, the statutory answer to deadlock is a receiver or judicial winding up, which destroys value for both.", es: "Sin salida pactada, la respuesta legal al bloqueo es un interventor o la liquidación judicial, que destruye valor para ambos." }
+        source: "TBOC § 11.314; class slides, ch. 3"
+  - id: ba-veil-01
+    topic: veil-piercing
+    title: { en: "Piercing the veil", es: "Levantar el velo" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "A Texas supplier sues the sole shareholder of a corporation for an unpaid invoice, arguing the corporation was his alter ego. What must the supplier prove in addition to domination?"
+        choices:
+          - { id: a, text: "Nothing more; alter ego is enough.", why: "Texas law requires more for contract claims." }
+          - { id: b, text: "Actual fraud committed primarily for the shareholder's direct personal benefit.", correct: true }
+          - { id: c, text: "That the corporation failed to hold annual meetings.", why: "Formalities are excluded from the analysis in Texas." }
+          - { id: d, text: "That the shareholder is wealthy enough to pay.", why: "Solvency is irrelevant to the theory." }
+        explanation: { en: "For obligations arising from contract, the Texas statute demands actual fraud for the owner's direct benefit; constructive fraud or unfairness will not do.", es: "Para obligaciones contractuales, la ley de Texas exige fraude real en beneficio directo del dueño; no basta el fraude constructivo ni la injusticia." }
+        source: "TBOC § 21.223(b)"
+      - id: q2
+        type: mcq
+        stem: "In Texas, how does a corporation's failure to observe corporate formalities (meetings, minutes, elected officers) affect a veil-piercing claim?"
+        choices:
+          - { id: a, text: "It is the single most important factor.", why: "That might be true in some states; Texas is different." }
+          - { id: b, text: "It is irrelevant by statute.", correct: true }
+          - { id: c, text: "It shifts the burden of proof to the shareholder.", why: "No such rule." }
+          - { id: d, text: "It matters only for LLCs.", why: "The same statute applies to LLCs through the limited liability company chapter." }
+        explanation: { en: "The legislature removed formalities from the Texas analysis; the fight is about commingling, fraud and capitalization.", es: "El legislador sacó las formalidades del análisis texano; la pelea es por confusión de patrimonios, fraude y capitalización." }
+        source: "TBOC §§ 21.223(a)(3), 101.002"
+      - id: q3
+        type: mcq
+        stem: "Which fact is the strongest evidence that an entity is its owner's alter ego?"
+        choices:
+          - { id: a, text: "The corporation has only one shareholder.", why: "Single-owner entities are lawful and common." }
+          - { id: b, text: "The owner pays his home mortgage from the company account and moves money between accounts without any record.", correct: true }
+          - { id: c, text: "The corporation lost money last year.", why: "Losses are not misuse of the form." }
+          - { id: d, text: "The corporation has no website.", why: "Irrelevant." }
+        explanation: { en: "Commingling and undocumented transfers show the line between owner and entity has disappeared; that is the heart of the domination inquiry.", es: "La confusión de patrimonios y las transferencias sin documentar muestran que la línea entre dueño y entidad desapareció; ese es el núcleo del análisis de dominación." }
+        source: "Class slides, ch. 4 (domination factors)"
+      - id: q4
+        type: mcq
+        stem: "Why do courts tend to pierce the veil more readily for tort creditors than for contract creditors?"
+        choices:
+          - { id: a, text: "Tort damages are larger.", why: "Size of the claim is not the reason." }
+          - { id: b, text: "Contract creditors chose to deal with the entity and could have demanded guaranties, security or financial statements; tort victims never chose.", correct: true }
+          - { id: c, text: "Statutes forbid piercing for contract creditors everywhere.", why: "Texas restricts it to actual fraud, but no general prohibition exists." }
+          - { id: d, text: "Tort creditors are always individuals.", why: "Not true, and not the rationale." }
+        explanation: { en: "Choice is the policy: a voluntary creditor can price the risk or protect itself; an involuntary one bears a risk the owners shifted onto the public.", es: "La política es la elección: el acreedor voluntario puede valorar el riesgo o protegerse; el involuntario carga un riesgo que los dueños trasladaron al público." }
+        source: "Class slides, ch. 4"
+      - id: q5
+        type: mcq
+        stem: "Five affiliated Texas LLCs share offices, employees and a brand and pursue one business purpose. A creditor of one asks the court to hold all five liable as a single business enterprise, without proving the usual piercing factors. Result?"
+        choices:
+          - { id: a, text: "The creditor wins; integration alone makes each entity liable for the others.", why: "Texas rejects single business enterprise as an independent basis." }
+          - { id: b, text: "The creditor loses unless it proves the veil-piercing factors (and actual fraud for a contract claim) as to each entity.", correct: true }
+          - { id: c, text: "The creditor wins because the entities share a brand.", why: "A shared brand is lawful." }
+          - { id: d, text: "The court dissolves all five.", why: "Dissolution is not a creditor's remedy here." }
+        explanation: { en: "Texas treats single business enterprise as a description, not a doctrine; the plaintiff still needs the piercing analysis.", es: "Texas trata la empresa única como una descripción, no como doctrina; el actor sigue necesitando el análisis de levantamiento del velo." }
+        source: "SSP Partners v. Gladstrong Investments (Tex. 2008)"
+      - id: q6
+        type: mcq
+        stem: "A parent corporation owns 100% of a subsidiary that caused an environmental spill. Which combination best supports reaching the parent?"
+        choices:
+          - { id: a, text: "The 100% ownership by itself.", why: "Full ownership of a subsidiary is normal and insufficient." }
+          - { id: b, text: "The parent ran the subsidiary as a department: shared officers and staff, one treasury, no separate decisions, and the subsidiary kept with trivial capital and insurance against a known risk.", correct: true }
+          - { id: c, text: "The parent and subsidiary share a logo.", why: "Branding alone does not blur the entities." }
+          - { id: d, text: "The subsidiary was profitable.", why: "Profitability cuts against undercapitalization." }
+        explanation: { en: "Domination plus an equitable reason: the parent treated the subsidiary as a department and parked a known risk behind trivial coverage.", es: "Dominación más una razón de equidad: la matriz trató a la subsidiaria como un departamento y escondió un riesgo conocido detrás de una cobertura mínima." }
+        source: "United States v. Jon-T Chemicals; Minton v. Cavaney"
+      - id: q7
+        type: cloze
+        text: "Veil piercing generally requires two showings: that the owners treated the entity as their {{alter ego}}, and that an equitable ground such as fraud, misrepresentation or {{undercapitalization}} justifies disregarding the form."
+        explanation: { en: "Domination alone rarely suffices; the injustice is the second half.", es: "La dominación sola rara vez basta; la injusticia es la segunda mitad." }
+      - id: q8
+        type: short
+        stem: "List four practices that reduce the risk of veil piercing."
+        answer: "Keep separate bank accounts and never commingle; document transactions, resolutions and intercompany dealings; capitalize and insure the entity adequately for its foreseeable risks; sign only in the entity's name and never mislead creditors about who they are dealing with; observe formalities where they matter."
+        keyPoints: ["separate accounts, no commingling", "documentation of transactions and resolutions", "adequate capital and insurance", "sign in the entity's name; no misrepresentation"]
+      - id: q9
+        type: mcq
+        stem: "A shareholder, driving the company truck on company business, negligently injures a cyclist. The cyclist sues the shareholder personally. Must the cyclist pierce the veil?"
+        choices:
+          - { id: a, text: "Yes; shareholders are protected unless the veil is pierced.", why: "The shield protects owners from the entity's debts, not from their own torts." }
+          - { id: b, text: "No; a person who commits a tort is personally liable regardless of the corporate form.", correct: true }
+          - { id: c, text: "Yes, unless the truck was undercapitalized.", why: "Nonsense option: undercapitalization concerns the entity." }
+          - { id: d, text: "No, but only if the corporation is insolvent.", why: "The tortfeasor's liability does not depend on the entity's solvency." }
+        explanation: { en: "Limited liability shields owners from the entity's obligations; it never shields anyone from liability for their own wrongful act. The company may also be liable under respondeat superior.", es: "La responsabilidad limitada protege a los dueños de las obligaciones de la entidad; nunca protege a nadie de su propio acto ilícito. La empresa también puede responder por respondeat superior." }
+        source: "Class slides, ch. 4 (exceptions to limited liability)"
+      - id: q10
+        type: mcq
+        stem: "How often do courts pierce the veil to reach the dispersed public shareholders of a listed corporation?"
+        choices:
+          - { id: a, text: "Routinely, in tort cases.", why: "Veil piercing against public shareholders essentially does not happen." }
+          - { id: b, text: "Essentially never; the doctrine operates against closely held companies and corporate parents.", correct: true }
+          - { id: c, text: "Only when the SEC consents.", why: "The SEC has no role in veil piercing." }
+          - { id: d, text: "Whenever the company is undercapitalized.", why: "Even then, public shareholders are not reached." }
+        explanation: { en: "Public shareholders do not dominate anything; reporting rules and separation of ownership and control make the theory inapplicable.", es: "Los accionistas del público no dominan nada; las reglas de revelación y la separación entre propiedad y control hacen inaplicable la teoría." }
+        source: "Class slides, ch. 4"
+  - id: ba-governance-01
+    topic: governance
+    title: { en: "Corporate governance: board, duties, shareholders", es: "Gobierno corporativo: consejo, deberes, accionistas" }
+    difficulty: 2
+    questions:
+      - id: q1
+        type: mcq
+        stem: "Four of seven directors of a Texas corporation want to remove the two founders from the board. Who has the power to remove directors?"
+        choices:
+          - { id: a, text: "The board, by majority vote.", why: "A board cannot remove its own members." }
+          - { id: b, text: "The shareholders, at a meeting called for that purpose (or by written consent), with or without cause unless the certificate says otherwise.", correct: true }
+          - { id: c, text: "The chief executive officer.", why: "Officers serve at the board's pleasure, not the other way around." }
+          - { id: d, text: "A court, on petition of any director.", why: "Judicial removal is exceptional and not what the statute contemplates for ordinary disagreements." }
+        explanation: { en: "The board majority can outvote the founders on strategy and can replace officers, but only the shareholders elect and remove directors.", es: "La mayoría del consejo puede ganarles a los fundadores en estrategia y reemplazar a los officers, pero solo los accionistas eligen y remueven consejeros." }
+        source: "TBOC § 21.409"
+      - id: q2
+        type: mcq
+        stem: "The board fires the CEO, who has a three-year employment contract and is also a director. What follows?"
+        choices:
+          - { id: a, text: "The firing is void because of the contract.", why: "The board keeps the power to remove officers; the contract governs damages." }
+          - { id: b, text: "The removal as officer is effective, the CEO may sue for breach of the contract (and any severance it promises), and he remains a director until shareholders remove him.", correct: true }
+          - { id: c, text: "The CEO is automatically removed from the board as well.", why: "Losing the officer title does not vacate the board seat." }
+          - { id: d, text: "The CEO can be removed only for cause defined in the contract.", why: "The contract limits the consequences of removal, not the power to remove." }
+        explanation: { en: "Power and liability are separate questions: the board can remove, and the corporation may pay for it. Undefined words like 'cause' decide how much.", es: "Poder y responsabilidad son preguntas distintas: el consejo puede remover, y la sociedad quizá pague por ello. Palabras sin definir como 'cause' deciden cuánto." }
+        source: "TBOC § 3.104; class slides, ch. 3 (officer positions)"
+      - id: q3
+        type: mcq
+        stem: "A director's construction company received $3 million in payments from the corporation last year. Under NYSE rules, is she independent?"
+        choices:
+          - { id: a, text: "Yes, as long as she is not an employee.", why: "Payments above the threshold defeat independence even without employment." }
+          - { id: b, text: "No; a current executive or employee of a company that received payments above the greater of $1 million or 2% of its revenues within three years is not independent.", correct: true }
+          - { id: c, text: "Yes, because the contracts were competitively bid.", why: "The test looks at the relationship, not the fairness of the deals." }
+          - { id: d, text: "No, because directors can never do business with the corporation.", why: "They can, with proper approval; it just affects independence." }
+        explanation: { en: "Independence is defined by bright-line relationships: recent employment, significant payments, family ties, interlocks. Conflicted directors cannot sit on audit or compensation committees.", es: "La independencia se define con reglas claras: empleo reciente, pagos significativos, parentesco, cargos cruzados. Los consejeros con conflicto no pueden integrar los comités de auditoría o compensaciones." }
+        source: "NYSE Listed Company Manual § 303A.02"
+      - id: q4
+        type: mcq
+        stem: "A company listed on Nasdaq wants its CFO to chair the audit committee because he knows the numbers best. Permitted?"
+        choices:
+          - { id: a, text: "Yes, if the board approves.", why: "Board approval cannot override the listing requirement." }
+          - { id: b, text: "No; the audit committee must consist entirely of independent directors.", correct: true }
+          - { id: c, text: "Yes, if he does not vote.", why: "Membership itself is barred." }
+          - { id: d, text: "Only in a closely held company.", why: "Closely held companies are not listed and face no such rule, but this one is listed." }
+        explanation: { en: "Since Sarbanes-Oxley, the audit committee is the shareholders' independent check on management's numbers; management cannot sit on it.", es: "Desde Sarbanes-Oxley, el comité de auditoría es el control independiente de los accionistas sobre los números de la administración; la administración no puede integrarlo." }
+        source: "SOX § 301; Exchange Act Rule 10A-3"
+      - id: q5
+        type: mcq
+        stem: "Shareholders of a public company vote 60% against the executive pay package in the say-on-pay vote. Legal effect?"
+        choices:
+          - { id: a, text: "The pay package is void.", why: "The vote is advisory." }
+          - { id: b, text: "None in law; the vote is advisory, but the compensation committee will feel strong pressure to change the package.", correct: true }
+          - { id: c, text: "The CEO must resign.", why: "No such consequence." }
+          - { id: d, text: "The SEC must investigate.", why: "A failed vote triggers no investigation." }
+        explanation: { en: "Say on pay is Dodd-Frank's non-binding vote held at least every three years; its force is reputational.", es: "El say on pay es el voto no vinculante de Dodd-Frank, al menos cada tres años; su fuerza es reputacional." }
+        source: "Dodd-Frank § 951; Exchange Act § 14A"
+      - id: q6
+        type: mcq
+        stem: "Three outside directors who make up the audit committee never read the financial reports, skip meetings, and brush off two letters from a controller warning of fake sales; meanwhile the CEO inflates earnings and the directors sell stock at the inflated price. Best characterization?"
+        choices:
+          - { id: a, text: "Protected by the business judgment rule, because they made no decision.", why: "The rule protects informed decisions; conscious inaction in the face of red flags is the opposite." }
+          - { id: b, text: "A breach of the oversight duty and the duty of care, exposing them to SEC enforcement and to fiduciary claims; their stock sales aggravate it.", correct: true }
+          - { id: c, text: "Only the CEO is liable, because he committed the fraud.", why: "Directors who look away from obvious warning signs can be charged themselves." }
+          - { id: d, text: "No liability, because D&O insurance covers them.", why: "Insurance typically excludes fraud and does not erase liability." }
+        explanation: { en: "The oversight duty asks for a good-faith effort to monitor and to respond to red flags; ignoring warnings while profiting is the pattern the SEC pursued against the body-armor company's directors.", es: "El deber de supervisión exige un esfuerzo de buena fe por vigilar y reaccionar ante señales de alarma; ignorar avisos mientras se obtiene provecho es el patrón que la SEC persiguió contra los consejeros de la empresa de chalecos blindados." }
+        source: "In re Caremark; casebook ch. 5 (SEC body-armor case)"
+      - id: q7
+        type: mcq
+        stem: "When does the business judgment rule protect a board decision?"
+        choices:
+          - { id: a, text: "Whenever the decision turns out well.", why: "The rule judges process, not results." }
+          - { id: b, text: "When disinterested directors made an informed decision in good faith, honestly believing it served the corporation.", correct: true }
+          - { id: c, text: "Whenever the directors relied on their own instincts.", why: "An uninformed decision loses the presumption." }
+          - { id: d, text: "In self-dealing transactions, as long as a majority voted yes.", why: "Interested transactions get stricter review unless cleansed by disinterested approval." }
+        explanation: { en: "The rule is a presumption about process: informed, disinterested, good faith. The plaintiff must rebut it; otherwise courts do not second-guess.", es: "La regla es una presunción sobre el proceso: informado, desinteresado, de buena fe. El actor debe desvirtuarla; si no, los tribunales no revisan el fondo." }
+        source: "Aronson v. Lewis (Del. 1984); TBOC § 21.419 (2025)"
+      - id: q8
+        type: mcq
+        stem: "A board rejects a premium takeover bid partly because the buyer plans to close the company's plant and lay off a thousand local workers. In a state with a constituency statute, is this a breach?"
+        choices:
+          - { id: a, text: "Yes; directors may consider only shareholder value.", why: "Constituency statutes expressly allow other interests to be weighed." }
+          - { id: b, text: "Not by itself; the statute lets directors weigh employees and the community, as long as shareholders are not unduly prejudiced and the decision is informed and in good faith.", correct: true }
+          - { id: c, text: "Yes, because any rejection of a premium is a breach.", why: "Rejecting a bid is a business judgment when properly made." }
+          - { id: d, text: "No, because boards can always reject bids for any reason.", why: "Bad faith or entrenchment would still be reviewed." }
+        explanation: { en: "About thirty states authorize boards to consider other constituencies; Delaware does not, though its boards have wide discretion in weighing long-term value.", es: "Unos treinta estados autorizan al consejo a considerar a otros grupos de interés; Delaware no, aunque sus consejos tienen amplia discreción para ponderar el valor de largo plazo." }
+        source: "Class slides, ch. 5 (to whom is the duty owed)"
+      - id: q9
+        type: cloze
+        text: "The {{business judgment rule}} presumes that directors acted on an informed basis, in good faith and in the honest belief that the action was in the company's best interest."
+        explanation: { en: "Memorize the three elements; every governance essay uses them.", es: "Memoriza los tres elementos; todo ensayo de gobierno corporativo los usa." }
+      - id: q10
+        type: mcq
+        stem: "A corporation's certificate contains an exculpation clause. Which claim against a director can it defeat?"
+        choices:
+          - { id: a, text: "A claim for monetary damages for a grossly negligent but honest decision (duty of care).", correct: true }
+          - { id: b, text: "A claim that she diverted a corporate opportunity to herself (duty of loyalty).", why: "Exculpation never covers loyalty breaches or improper personal benefit." }
+          - { id: c, text: "A claim that she acted in bad faith.", why: "Bad faith is excluded from exculpation." }
+          - { id: d, text: "A request for an injunction against the transaction.", why: "Exculpation eliminates personal monetary liability, not equitable relief." }
+        explanation: { en: "Exculpation separates breach from payment: a careless director may have breached the duty of care and still owe nothing, while disloyalty remains fully exposed.", es: "La exoneración separa el incumplimiento del pago: un consejero descuidado puede haber violado el deber de diligencia y no deber nada, mientras la deslealtad sigue expuesta." }
+        source: "DGCL § 102(b)(7); TBOC § 7.001"
+      - id: q11
+        type: short
+        stem: "Shareholders claim the board wasted corporate funds by paying the CEO a bonus unrelated to performance. Direct or derivative claim, and why?"
+        answer: "Derivative. The injury (money leaving the treasury) was suffered by the corporation, and any recovery would go to the corporation; the shareholders are harmed only indirectly through the value of their shares. They must make written demand on the board (and in Texas usually wait 90 days) or plead demand futility, and may face an ownership threshold if the certificate adopts one under the 2025 reforms."
+        keyPoints: ["derivative", "injury to the corporation, recovery to the corporation", "demand on the board or futility", "Texas 90-day wait; possible ownership threshold"]
+      - id: q12
+        type: mcq
+        stem: "Under the 2025 Texas reforms, which of the following may a nationally listed Texas corporation adopt?"
+        choices:
+          - { id: a, text: "A rule that shareholders may never sue derivatively.", why: "Thresholds may be raised, not eliminated." }
+          - { id: b, text: "An ownership threshold of up to 3% of outstanding shares to bring a derivative suit, and a codified business judgment rule presumption.", correct: true }
+          - { id: c, text: "A rule that the board may remove directors.", why: "Director removal remains a shareholder power." }
+          - { id: d, text: "An exemption from fiduciary duties.", why: "Duties remain; the reforms change standards of review and procedure." }
+        explanation: { en: "SB 29 is Texas competing with Delaware: stronger presumption for boards, higher hurdles for suits, reinforced independent committees, and a specialized Business Court to hear the disputes.", es: "La SB 29 es Texas compitiendo con Delaware: presunción más fuerte para el consejo, barreras más altas para demandar, comités independientes reforzados y un Business Court especializado." }
+        source: "TBOC §§ 21.419, 21.552, 21.373 (2025); class slides, ch. 5 (Texas developments)"

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
 import ui from '../../i18n/ui.json';
 const glossary = await getCollection('glossary');
 const briefs = await getCollection('briefs');
@@ -19,7 +20,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     <label class="setting">
       <span class="label"><T k="games.scope" /></span>
       <select id="fc-scope">
-        <option value=""><T k="games.scopeAll" /></option>
+        <Opt value="" k="games.scopeAll" />
         {subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}
       </select>
     </label>

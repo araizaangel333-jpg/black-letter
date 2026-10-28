@@ -16,6 +16,10 @@ const topics = [...d.topics].sort((a, b) => a.order - b.order);
 const syllabus = (await getCollection('syllabus')).map(s => s.data).filter(s => s.course === course.id).sort((a, b) => a.date.localeCompare(b.date));
 const briefs = (await getCollection('briefs')).filter(b => b.data.course === course.id).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const briefById = Object.fromEntries(briefs.map(b => [b.id, b]));
+const notes = (await getCollection('notes')).filter(n => n.data.course === course.id);
+const noteById = Object.fromEntries(notes.map(n => [n.id, n]));
+const quizzes = (await getCollection('quizzes')).filter(q => q.data.course === course.id);
+const exercises = (await getCollection('exercises')).filter(e => e.data.course === course.id);
 const bookShort = (bookId) => d.books.find(b => b.id === bookId)?.short || bookId;
 ---
 <Base title={d.title.en}>
@@ -59,6 +63,7 @@ const bookShort = (bookId) => d.books.find(b => b.id === bookId)?.short || bookI
               <span class="rtitle"><Bi v={s.title} /></span>
               {s.pages.length > 0 && <span class="rpages">{s.pages.map((p, i) => (<span>{i > 0 ? '; ' : ''}<b>{bookShort(p.book)}</b> {p.pages ?? p.sections}{p.note ? ` (${p.note})` : ''}</span>))}</span>}
               {s.briefs.length > 0 && <span class="rpages">{s.briefs.map((id, i) => briefById[id] && (<span>{i > 0 ? ' · ' : ''}<a href={`/briefs/${id}/`}>{briefById[id].data.title}</a></span>))}</span>}
+              {s.notes.length > 0 && <span class="rpages">{s.notes.map((id, i) => noteById[id] && (<span>{i > 0 ? ' · ' : ''}<a href={`/notes/${id}/`}><Bi v={noteById[id].data.title} /></a></span>))}</span>}
               {s.note && <span class="rnote"><Bi v={s.note} /></span>}
               {!s.verified && <span class="tag"><T k="course.unverified" /></span>}
             </div>
@@ -74,6 +79,23 @@ const bookShort = (bookId) => d.books.find(b => b.id === bookId)?.short || bookI
       <ul class="list">{briefs.map(b => <li><a href={`/briefs/${b.id}/`}>{b.data.title}</a> <span class="muted small">({b.data.year})</span> <span class="tag"><T k={`brief.status.${b.data.status}`} /></span></li>)}</ul>
     )}
   </section>
+
+  {notes.length > 0 && (
+    <section class="sec">
+      <div class="sec-head"><h2><T k="course.notes" /></h2></div>
+      <ul class="list">{notes.map(n => <li><a href={`/notes/${n.id}/`}><Bi v={n.data.title} /></a> <span class="tag">{n.data.kind}</span></li>)}</ul>
+    </section>
+  )}
+
+  {(quizzes.length > 0 || exercises.length > 0) && (
+    <section class="sec">
+      <div class="sec-head"><h2><T k="course.practice" /></h2></div>
+      <ul class="list">
+        {quizzes.map(q => <li><a href={`/quiz/${q.id}/`}><Bi v={q.data.title} /></a> <span class="muted small num">{q.data.questions.length} <T k="quiz.questions" /></span></li>)}
+        {exercises.map(e => <li><a href={`/exercises/${e.id}/`}><Bi v={e.data.title} /></a> <span class="tag"><T k={`exercise.kind.${e.data.kind}`} /></span></li>)}
+      </ul>
+    </section>
+  )}
 
   <script>
     import { todayISO, formatDate } from '../../lib/dates.js';

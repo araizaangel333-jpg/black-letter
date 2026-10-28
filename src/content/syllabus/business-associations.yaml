@@ -7,7 +7,8 @@ items:
     topic: agency
     title: { en: "Chapter 1: Agency principles (Highland Capital, Menard, Disney); Home Run Cards scenario", es: "Capítulo 1: principios de agency (Highland Capital, Menard, Disney); escenario Home Run Cards" }
     pages: [{ book: business-law-and-policy, pages: "5–33 (ch. 1)" }]
-    briefs: [business-associations/highland-capital-v-schneider, business-associations/menard-v-dage-mti, business-associations/in-re-walt-disney-derivative-litigation]
+    briefs: [business-associations/ames-v-great-southern-bank, business-associations/highland-capital-v-schneider, business-associations/menard-v-dage-mti, business-associations/in-re-walt-disney-derivative-litigation]
+    notes: [business-associations/agency-analysis, business-associations/how-to-study-ba]
     verified: false
   - id: ba-ch2-forms
     type: reading
@@ -16,6 +17,7 @@ items:
     title: { en: "Chapter 2: Types of business forms (Creel, Gotham Partners, Elf Atochem, Robinson); Wines Exotics scenario", es: "Capítulo 2: formas societarias (Creel, Gotham Partners, Elf Atochem, Robinson); escenario Wines Exotics" }
     pages: [{ book: business-law-and-policy, pages: "35–65 (ch. 2)" }]
     briefs: [business-associations/creel-v-lilly, business-associations/elf-atochem-v-jaffari, business-associations/robinson-v-glynn]
+    notes: [business-associations/choosing-an-entity]
     verified: false
   - id: ba-ch3-scenario
     type: assignment
@@ -24,6 +26,7 @@ items:
     title: { en: "Chapter 3 scenario: the breakfast restaurant (partner-shareholder agreement provisions)", es: "Escenario del capítulo 3: el restaurante de desayunos (cláusulas del acuerdo de socios y accionistas)" }
     pages: [{ book: business-law-and-policy, pages: "67–110 (ch. 3)" }]
     briefs: [business-associations/triggs-v-triggs, business-associations/ritchie-v-rupe]
+    notes: [business-associations/owner-agreements]
     verified: false
   - id: ba-ch4-advocacy
     type: assignment
@@ -32,11 +35,22 @@ items:
     title: { en: "Chapter 4 scenario: advocacy and independent judgment (piercing the veil of Hyper-Thriller Titan)", es: "Escenario del capítulo 4: advocacy y criterio propio (levantar el velo de Hyper-Thriller Titan)" }
     pages: [{ book: business-law-and-policy, pages: "ch. 4 (veil piercing, single business enterprise, corporate governance)" }]
     briefs: [business-associations/bridas-v-turkmenistan, business-associations/minton-v-cavaney, business-associations/brunswick-v-waxman, business-associations/united-states-v-jon-t-chemicals, business-associations/gardemal-v-westin-hotel]
+    notes: [business-associations/veil-piercing]
   - id: ba-oct29-ch5
     type: reading
     date: "2026-10-29"
     topic: governance
-    title: { en: "Chapter 5: Corporate governance (pages to confirm)", es: "Capítulo 5: gobierno corporativo (páginas por confirmar)" }
-    pages: [{ book: business-law-and-policy, pages: "from p. 143 (ch. 5)" }]
-    briefs: [business-associations/in-re-walt-disney-derivative-litigation]
+    title: { en: "Chapter 5: Corporate governance (board, committees, ALI Principles, 2025 developments)", es: "Capítulo 5: gobierno corporativo (consejo, comités, principios del ALI, novedades de 2025)" }
+    pages: [{ book: business-law-and-policy, pages: "ch. 5, about pp. 143–182 (Business Roundtable factors ~148; audit committee ~150; Conference Board ~159; ALI §§ 2.01, 3.01 ~169–176; SEC body-armor case ~182)" }]
+    briefs: [business-associations/in-re-walt-disney-derivative-litigation, business-associations/sec-v-dhb-industries]
+    notes: [business-associations/governance-board]
+    verified: false
+  - id: ba-nov-exam-practice
+    type: assignment
+    date: "2026-11-03"
+    topic: governance
+    title: { en: "Exam question exercise: prior governance essay (1,200 words) — date to confirm", es: "Ejercicio de pregunta de examen: ensayo anterior de gobierno corporativo (1,200 palabras); fecha por confirmar" }
+    notes: [business-associations/governance-board, business-associations/how-to-study-ba]
+    tasks: [{ en: "Write the prior exam problem timed, then run the Rio Grande Solar hypo here as a second rep", es: "Escribe el problema de examen anterior con tiempo, luego haz aquí la hipótesis Rio Grande Solar como segunda repetición" }]
+    note: { en: "Canvas module “exam question exercise” (problem posted Oct. 27); the class date is a guess.", es: "Módulo de Canvas “exam question exercise” (problema publicado el 27 de oct.); la fecha de clase es una suposición." }
     verified: false

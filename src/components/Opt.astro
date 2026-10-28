@@ -1,0 +1,8 @@
+---
+// Opción de <select> bilingüe: <option> no admite spans, así que lleva data-en/data-es y src/lib/opts.js cambia el texto.
+import ui from '../i18n/ui.json';
+const { k, value } = Astro.props;
+const entry = ui[k];
+if (!entry) throw new Error(`ui.json: falta la clave "${k}"`);
+---
+<option value={value} data-en={entry.en} data-es={entry.es}>{entry.en}</option>

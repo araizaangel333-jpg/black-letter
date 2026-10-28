@@ -19,6 +19,7 @@ const sorted = [...glossary].sort((a, b) => a.data.term.localeCompare(b.data.ter
       {subjects.map(s => <button type="button" class="chip" data-subject={s} aria-pressed="false"><T k={`subject.${s}`} /></button>)}
     </div>
     <p class="muted small" id="gcount"></p>
+    <p><a class="btn" id="gtest" href="/games/test/"><T k="glossary.test" /></a></p>
   </header>
   <ul class="glist" id="glist">
     {sorted.map(g => (
@@ -49,6 +50,7 @@ const sorted = [...glossary].sort((a, b) => a.data.term.localeCompare(b.data.ter
       }
       document.getElementById('gcount').textContent = t('glossary.count', { n });
       document.getElementById('gnone').hidden = n > 0;
+      document.getElementById('gtest').href = subject ? `/games/test/?scope=${encodeURIComponent(subject)}` : '/games/test/';
     }
     input.addEventListener('input', apply);
     chips.forEach(c => c.addEventListener('click', () => { subject = c.dataset.subject; chips.forEach(x => x.setAttribute('aria-pressed', String(x === c))); apply(); }));

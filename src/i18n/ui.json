@@ -1058,5 +1058,65 @@
   "more.writing": {
     "en": "Writing lab",
     "es": "Laboratorio de escritura"
+  },
+  "games.test": {
+    "en": "Quick test (a/b/c/d)",
+    "es": "Test rápido (a/b/c/d)"
+  },
+  "games.testDesc": {
+    "en": "Four options, one right. Built on the fly from the glossary and the cases: definition to term, term to definition, Spanish to English, facts to case name.",
+    "es": "Cuatro opciones, una correcta. Se arma al vuelo con el glosario y los casos: definición a término, término a definición, español a inglés, hechos a nombre del caso."
+  },
+  "test.kind": {
+    "en": "Question type",
+    "es": "Tipo de pregunta"
+  },
+  "test.mixed": {
+    "en": "Mixed",
+    "es": "Mezclado"
+  },
+  "test.defTerm": {
+    "en": "Definition → term",
+    "es": "Definición → término"
+  },
+  "test.termDef": {
+    "en": "Term → definition",
+    "es": "Término → definición"
+  },
+  "test.esEn": {
+    "en": "Spanish → English term",
+    "es": "Español → término en inglés"
+  },
+  "test.hookCase": {
+    "en": "Facts → case name",
+    "es": "Hechos → nombre del caso"
+  },
+  "test.count": {
+    "en": "Questions",
+    "es": "Preguntas"
+  },
+  "test.best": {
+    "en": "Best",
+    "es": "Mejor"
+  },
+  "test.toCards": {
+    "en": "Send the misses to flashcards",
+    "es": "Mandar los fallos a flashcards"
+  },
+  "test.sent": {
+    "en": "Sent: due today in flashcards",
+    "es": "Enviados: vencen hoy en flashcards"
+  },
+  "glossary.test": {
+    "en": "Test yourself (a/b/c/d)",
+    "es": "Ponte a prueba (a/b/c/d)"
+  },
+  "course.notes": {
+    "en": "Notes and checklists",
+    "es": "Apuntes y checklists"
+  },
+  "course.practice": {
+    "en": "Practice for this course",
+    "es": "Práctica de este curso"
   }
 }

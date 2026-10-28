@@ -8,7 +8,7 @@ meetings:
   - { day: thu, start: "10:30", end: "11:55" }
 books:
   - id: business-law-and-policy
-    cite: "Business Law and Policy (casebook with chapter scenarios: Agency Principles, Types of Business Forms, Partner-Shareholder Agreements, Piercing the Veil and Governance); author and edition to confirm from the cover"
+    cite: "Business Law and Policy (casebook with chapter scenarios: Agency Principles, Types of Business Forms, Partner-Shareholder Agreements, Piercing the Veil, Corporate Governance); the professor's intro slides call it “Developments in Business Law and Policy”; author and edition to confirm from the cover"
     short: "Business Law and Policy"
     role: casebook
     verified: false
@@ -19,11 +19,11 @@ topics:
   - { id: veil-piercing, order: 4, title: { en: "Piercing the corporate veil and single business enterprise (ch. 4)", es: "Levantamiento del velo corporativo y single business enterprise (cap. 4)" }, barTested: true }
   - { id: governance, order: 5, title: { en: "Corporate governance and the board's duties (ch. 4–5)", es: "Gobierno corporativo y deberes del consejo (cap. 4–5)" }, barTested: true }
 assessment:
-  - { kind: final-exam, format: { en: "Exam format to confirm with the syllabus", es: "Formato del examen por confirmar con el syllabus" }, verified: false }
+  - { kind: final-exam, format: { en: "Essay problems in the style of the chapter scenarios; a prior exam problem posted in Canvas was one corporate-governance essay worth 50%, limited to 1,200 words. The Sept. 2026 practice quiz calls the final closed-book while the intro slides say open-book: confirm.", es: "Problemas de ensayo al estilo de los escenarios de cada capítulo; un problema de examen anterior publicado en Canvas fue un ensayo de gobierno corporativo que valía 50%, con límite de 1,200 palabras. El quiz de práctica de sept. 2026 dice que el final es a libro cerrado y las diapositivas de introducción dicen a libro abierto: confirmar." }, verified: false }
   - { kind: participation, format: { en: "Class discussion of cases and book scenarios", es: "Discusión en clase de casos y escenarios del libro" } }
 materials:
   canvas: true
-  note: { en: "Professor Camp's slides, cases and the book's scenarios.", es: "Presentaciones del profesor Camp, casos y escenarios del libro." }
+  note: { en: "Canvas holds the chapter decks (1–5), the intro deck on how to succeed, the agency practice quiz with its answer key, tips for scenario one, the entity-choice template, the AI handouts and a prior exam problem on governance (none reproduced here; see the notes and quizzes).", es: "Canvas tiene las presentaciones de los capítulos 1–5, la de cómo tener éxito, el quiz de práctica de agency con su clave, los tips del escenario uno, la plantilla para elegir entidad, los handouts sobre AI y un problema de examen anterior sobre gobierno corporativo (nada se reproduce aquí; ver las notas y los quizzes)." }
 color: c2
 about:
   en: "How people organize to do business: agency first (who can bind whom), then partnerships, LLCs and corporations, and the duties owners and managers owe each other."

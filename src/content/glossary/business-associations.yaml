@@ -190,3 +190,723 @@ items:
     es: { term: "derecho de preferencia (suscripción)", explanation: "Derecho a suscribir acciones nuevas en proporción para no diluirse. En Texas existe solo si el acta lo otorga (TBOC § 21.203); en México es la regla por defecto (LGSM art. 132).", falseFriend: "Las reglas por defecto son opuestas en Texas y en México." }
     examples: [{ en: "Without preemptive rights, a new issuance can shrink a 40% holder to 20%.", es: "Sin derecho de preferencia, una emisión puede reducir a un accionista del 40% al 20%." }]
     related: [shareholder-agreement]
+  # --- Capítulo 1 (agency), ampliado a partir de las clases de otoño 2026 ---
+  - id: agency-by-estoppel
+    term: agency by estoppel
+    pos: noun
+    topic: agency
+    en: { definition: "A principal who carelessly lets a third party believe someone is its agent, and does nothing to correct it, is barred from denying the agency once the third party changes position in reliance." }
+    es: { term: "representación por estoppel (≈ apariencia más actos propios)", explanation: "Si el principal permite por descuido que un tercero crea en la representación y ese tercero actúa y sufre un perjuicio, el principal ya no puede negarla. Se parece a la doctrina de los actos propios, pero exige un cambio de posición y un daño concreto del tercero." }
+    examples: [{ en: "The owner saw the ex-manager still using company letterhead and said nothing; a supplier that shipped on his order can hold the owner.", es: "El dueño vio que el exgerente seguía usando papel membretado y no dijo nada; el proveedor que surtió su pedido puede cobrarle al dueño." }]
+    authority: "Restatement (Third) of Agency § 2.05"
+    related: [apparent-authority, laches]
+    difficulty: 2
+  - id: laches
+    term: laches
+    pos: noun
+    topic: agency
+    en: { definition: "An equitable defense: a party who waits unreasonably long to assert a right, in a way that prejudices the other side, loses it. A principal who sits on an unauthorized transaction too long may be unable to disavow it." }
+    es: { term: "laches (≈ retraso desleal)", explanation: "Defensa de equidad: quien tarda sin razón en reclamar y con ello perjudica a la otra parte pierde el reclamo. Depende de los hechos y del daño causado por la demora, y queda a la discreción del juez.", falseFriend: "No es la prescripción (CCF art. 1135): no hay plazo fijo y se exige perjuicio, no solo paso del tiempo." }
+    examples: [{ en: "The principal learned of the unauthorized sale in March and objected in December, after the buyer had resold the goods; laches bars the objection.", es: "El principal supo de la venta no autorizada en marzo y objetó en diciembre, cuando el comprador ya había revendido; laches impide la objeción." }]
+    related: [ratification, agency-by-estoppel]
+    difficulty: 2
+  - id: independent-contractor
+    term: independent contractor
+    pos: noun
+    topic: agency
+    en: { definition: "Someone hired to produce a result who controls the manner and means of the work. Because the hiring party does not control how the job is done, it is generally not vicariously liable for the contractor's torts." }
+    es: { term: "contratista independiente (prestador de servicios)", explanation: "Quien se obliga a un resultado y decide cómo lograrlo. Como nadie controla su tiempo, modo y método, el que lo contrata normalmente no responde por sus torts. El criterio es el control real, no el nombre del contrato; en México el equivalente es la falta de subordinación (LFT art. 20).", falseFriend: "No es solo el contratista de obra: es cualquier persona contratada sin subordinación." }
+    examples: [{ en: "A plumber told only what to fix, not how, is an independent contractor.", es: "Un plomero al que solo le dicen qué arreglar, no cómo, es contratista independiente." }]
+    authority: "Restatement (Third) of Agency § 7.07"
+    related: [respondeat-superior, scope-of-employment]
+  - id: scope-of-employment
+    term: scope of employment
+    pos: noun
+    topic: agency
+    en: { definition: "The range of conduct an employer answers for: acts the employee was hired to do, acts incidental to them, and acts that to a meaningful degree advance the employer's business, even if done badly or against instructions." }
+    es: { term: "ámbito del empleo (dentro de sus funciones)", explanation: "Lo que el patrón cubre: lo encomendado, lo accesorio y lo que de algún modo sirve al negocio, aunque se haga mal o esté prohibido. Si el empleado se desvía a asuntos propios sale del ámbito. Base de la responsabilidad del patrón (CCF art. 1924)." }
+    examples: [{ en: "A delivery driver who speeds to finish his route acts within the scope; one who drives to another city to see a friend does not.", es: "El repartidor que corre para terminar la ruta actúa dentro del ámbito; el que se va a otra ciudad a ver a un amigo, no." }]
+    authority: "Restatement (Third) of Agency § 7.07(2)"
+    related: [respondeat-superior, independent-contractor]
+  - id: vicarious-liability
+    term: vicarious liability
+    pos: noun
+    topic: agency
+    en: { definition: "Liability imposed on one person for the wrong of another because of the relationship between them, without any fault of the person held liable; the employer's liability for employees is the main example." }
+    es: { term: "responsabilidad por hecho ajeno", explanation: "Responder por el acto de otro en razón del vínculo, sin culpa propia; el ejemplo central es el patrón por sus empleados (CCF art. 1924)." }
+    examples: [{ en: "The hospital was vicariously liable for its nurse's mistake.", es: "El hospital respondió por el error de su enfermera." }]
+    related: [respondeat-superior, scope-of-employment]
+  - id: manifestation
+    term: manifestation (of the principal)
+    pos: noun
+    topic: agency
+    en: { definition: "The principal's words or conduct that create authority: directed to the agent they create actual authority; directed to the third party they create apparent authority. The exam question is almost always: to whom did the principal manifest?" }
+    es: { term: "manifestación del principal", explanation: "Palabras o actos del principal que crean facultades. Dirigidas al agente: actual authority; dirigidas al tercero: apparent authority. En el examen la pregunta casi siempre es a quién le manifestó el principal." }
+    examples: [{ en: "Telling a customer that your assistant handles all orders is a manifestation to a third party.", es: "Decirle a un cliente que tu asistente atiende todos los pedidos es una manifestación a un tercero." }]
+    authority: "Restatement (Third) of Agency § 1.03"
+    related: [actual-authority, apparent-authority]
+  # --- Capítulo 2 (formas societarias) ---
+  - id: sole-proprietorship
+    term: sole proprietorship
+    pos: noun
+    topic: business-forms
+    en: { definition: "A business owned and run by one person with no legal separation between the business and the owner: nothing to file, profits taxed once on the owner's return, and unlimited personal liability for every debt." }
+    es: { term: "negocio en nombre propio (persona física con actividad empresarial)", explanation: "Un solo dueño y ninguna entidad separada: no se registra nada, las utilidades tributan en la persona y el dueño responde con todo su patrimonio. Solo hay que registrar el nombre comercial si se usa uno (assumed name certificate)." }
+    examples: [{ en: "Running a taco stand under your own name is a sole proprietorship.", es: "Operar un puesto de tacos a tu nombre es un sole proprietorship." }]
+    related: [general-partnership, limited-liability, assumed-name-certificate]
+  - id: joint-venture
+    term: joint venture
+    pos: noun
+    topic: business-forms
+    en: { definition: "A partnership formed for a single project or transaction rather than an ongoing business; the partnership rules apply, including unlimited liability and each venturer's power to bind the others." }
+    es: { term: "joint venture (≈ asociación en participación)", explanation: "Partnership para un solo proyecto; se rige por las mismas reglas. Se parece a la asociación en participación (LGSM art. 252), pero aquella no tiene personalidad ni hace responder al asociado frente a terceros; aquí los co-venturers responden como socios." }
+    examples: [{ en: "Two developers who pool money to flip one building are joint venturers.", es: "Dos desarrolladores que juntan dinero para revender un solo edificio son joint venturers." }]
+    related: [general-partnership]
+  - id: assignment-of-partnership-interest
+    term: assignment of a partnership interest
+    pos: noun
+    topic: business-forms
+    en: { definition: "A partner may transfer the economic rights in the partnership (profits and distributions), but the transferee does not become a partner, cannot manage or inspect the books, and is admitted only with every partner's consent unless the agreement says otherwise." }
+    es: { term: "cesión de la parte social", explanation: "El socio solo puede ceder los derechos económicos; el cesionario no es socio, no administra ni revisa libros, y solo entra como socio con el consentimiento de todos (RUPA § 401). Su riesgo se limita a lo que pagó. En México la cesión también exige consentimiento (LGSM arts. 31 y 65)." }
+    examples: [{ en: "The bank that took a partner's interest as collateral gets his distributions but no vote.", es: "El banco que recibió la parte del socio en garantía cobra sus distribuciones pero no vota." }]
+    authority: "RUPA §§ 401, 503"
+    related: [general-partnership, stock-transfer-restriction]
+    difficulty: 2
+  - id: dissolution-and-winding-up
+    term: dissolution and winding up
+    pos: noun
+    topic: business-forms
+    en: { definition: "The end of an entity in two steps: dissolution (the event that ends the business) and winding up (selling assets, paying creditors, returning contributions and splitting what is left). In an at-will partnership any partner can trigger it, which risks a fire sale." }
+    es: { term: "disolución y liquidación", explanation: "Primero la disolución (la causa que termina el negocio), luego la liquidación: vender, pagar acreedores, devolver aportaciones y repartir el resto (LGSM arts. 229 y 234 ss.). Sin convenio, cualquier socio puede provocarla en una partnership a voluntad, con el riesgo de malvender los activos." }
+    examples: [{ en: "When one partner walked out, the shop was wound up and the equipment sold at auction.", es: "Cuando un socio se fue, el taller se liquidó y el equipo se vendió en subasta." }]
+    related: [general-partnership, buy-out]
+  - id: buy-out
+    term: buyout
+    pos: noun
+    topic: business-forms
+    en: { definition: "A purchase of a departing owner's interest by the entity or the other owners, usually under an agreed trigger and price formula, so the business continues instead of being dissolved." }
+    es: { term: "compra de la participación del socio saliente", explanation: "Compra de la parte del que se va, por la entidad o por los demás, con detonantes y fórmula de precio pactados, para que el negocio siga en lugar de liquidarse." }
+    examples: [{ en: "The agreement gave the firm ninety days to buy out a retiring partner at book value.", es: "El convenio dio a la firma noventa días para comprar la parte del socio que se retira a valor contable." }]
+    related: [buy-sell-agreement, dissolution-and-winding-up]
+  - id: limited-partner-control-rule
+    term: limited partner and the control rule
+    pos: noun
+    topic: business-forms
+    en: { definition: "A limited partner keeps limited liability only while staying out of day-to-day control; one who acts like a general partner can be liable to a third party who reasonably believed, from that conduct, that she was a general partner. Voting on major matters, working as an employee or serving as an officer of a corporate general partner does not count." }
+    es: { term: "regla de control del socio comanditario", explanation: "El comanditario conserva la responsabilidad limitada mientras no administre; si actúa como gestor responde frente al tercero que razonablemente lo creyó general partner. Votar asuntos mayores, ser empleado o consejero del GP corporativo no rompe el escudo. Compárese LGSM art. 54: el comanditario que administra responde." }
+    examples: [{ en: "A limited partner who signs supplier contracts in her own name invites personal liability.", es: "La comanditaria que firma contratos con proveedores a su nombre se expone a responder." }]
+    authority: "TBOC §§ 153.102–153.103"
+    related: [limited-partnership, corporate-general-partner]
+    difficulty: 2
+  - id: corporate-general-partner
+    term: corporate general partner
+    pos: noun
+    topic: business-forms
+    en: { definition: "A corporation or LLC used as the general partner of a limited partnership so that no individual bears the general partner's unlimited liability; the owners control it through its board while remaining limited partners, and must act through it with proper formalities." }
+    es: { term: "socio general persona moral", explanation: "Una sociedad usada como general partner para que ninguna persona física cargue con la responsabilidad ilimitada; los dueños la controlan por su consejo y siguen siendo comanditarios. Deben actuar a través de ella, con resoluciones formales, y no como comanditarios." }
+    examples: [{ en: "The family set up Ranch GP, Inc. to run the limited partnership that owns the land.", es: "La familia creó Ranch GP, Inc. para administrar la limited partnership dueña de la tierra." }]
+    related: [limited-partnership, limited-partner-control-rule]
+  - id: llp
+    term: limited liability partnership (LLP)
+    pos: noun
+    topic: business-forms
+    en: { definition: "A partnership that registers with the state so that partners are not personally liable for partnership debts, except for their own misconduct, the misconduct of people they supervise, or wrongs they knew of and failed to stop; states charge a registration fee and often require insurance or an escrow." }
+    es: { term: "LLP (partnership con responsabilidad limitada)", explanation: "Partnership registrada ante el estado en la que los socios no responden por las deudas de la firma, salvo por su propia falta, por la de quien supervisan o por la que conocieron y no corrigieron. Hay cuota anual y a veces seguro o depósito obligatorio. Es la forma típica de los despachos; no tiene equivalente mexicano." }
+    examples: [{ en: "The law firm became an LLP so one partner's malpractice would not reach the others' homes.", es: "El despacho se volvió LLP para que la negligencia de un socio no alcanzara las casas de los demás." }]
+    authority: "TBOC ch. 152, subch. J"
+    related: [general-partnership, limited-liability]
+  - id: registered-agent
+    term: registered agent (service of process)
+    pos: noun
+    topic: business-forms
+    en: { definition: "The person or company an entity names in its filings to receive lawsuits and official notices on its behalf; every corporation, LLC and limited partnership must keep one in the state." }
+    es: { term: "agente registrado para emplazamientos", explanation: "Persona o empresa designada en el registro para recibir demandas y notificaciones oficiales; obligatoria para corporations, LLC y limited partnerships. Funciona como domicilio legal para emplazar." }
+    examples: [{ en: "The LLC was served through its registered agent in Austin.", es: "La LLC fue emplazada a través de su agente registrado en Austin." }]
+    related: [corporation, llc, foreign-entity]
+  - id: written-consent
+    term: action by written consent
+    pos: noun
+    topic: business-forms
+    en: { definition: "A way for shareholders, directors or members to act without a meeting by signing a written resolution; directors usually need unanimity, while shareholders in many states need only the votes that could approve the action at a meeting." }
+    es: { term: "resolución por consentimiento escrito (fuera de asamblea)", explanation: "Accionistas, consejeros o miembros deciden sin reunirse, firmando una resolución. Los consejeros suelen necesitar unanimidad; los accionistas, en muchos estados, solo los votos que bastarían en asamblea. En México requiere unanimidad y previsión estatutaria (LGSM art. 178)." }
+    examples: [{ en: "The three directors approved the lease by unanimous written consent instead of meeting.", es: "Los tres consejeros aprobaron el arrendamiento por consentimiento escrito unánime, sin reunirse." }]
+    authority: "TBOC §§ 6.201–6.202; DGCL §§ 141(f), 228"
+    related: [board-of-directors, shareholder, corporate-formalities]
+  - id: double-taxation
+    term: double taxation
+    pos: noun
+    topic: business-forms
+    en: { definition: "The tax pattern of a C corporation: the corporation pays income tax on its profits and the shareholders pay again on the dividends they receive; losses stay inside the corporation and cannot be used by the owners." }
+    es: { term: "doble tributación", explanation: "La corporation paga ISR sobre sus utilidades y los accionistas vuelven a pagar sobre el dividendo; las pérdidas no pasan a los accionistas. En México el esquema es parecido (ISR corporativo más retención del 10% al dividendo, LISR art. 140), pero aquí es la razón principal para preferir una LLC." }
+    examples: [{ en: "To soften double taxation, the owners paid themselves reasonable salaries, which are deductible.", es: "Para suavizar la doble tributación, los dueños se pagaron sueldos razonables, que son deducibles." }]
+    related: [corporation, pass-through-taxation, s-corporation]
+  - id: pass-through-taxation
+    term: pass-through taxation
+    pos: noun
+    topic: business-forms
+    en: { definition: "Tax treatment in which the entity pays no income tax; profits, losses and deductions flow to the owners' individual returns in the agreed shares (sole proprietorships, partnerships, LLCs by default, S corporations)." }
+    es: { term: "transparencia fiscal (pass-through)", explanation: "La entidad no paga ISR; utilidades, pérdidas y deducciones se atribuyen a los dueños en sus declaraciones personales. Aplica por defecto a partnerships y LLC. La partnership presenta una declaración informativa, pero el impuesto lo pagan los socios." }
+    examples: [{ en: "The partnership filed an information return, but each partner paid tax on her share.", es: "La partnership presentó una declaración informativa, pero cada socia pagó el impuesto sobre su parte." }]
+    related: [double-taxation, llc, general-partnership, check-the-box]
+  - id: s-corporation
+    term: S corporation
+    pos: noun
+    topic: business-forms
+    en: { definition: "A corporation that elects under Subchapter S of the tax code to be taxed like a partnership while keeping corporate limited liability; it may have at most 100 shareholders, all U.S. individuals or certain trusts, and a single class of stock." }
+    es: { term: "S corporation (elección fiscal del subcapítulo S)", explanation: "Corporation que elige tributar como partnership sin perder la responsabilidad limitada. Límites: máximo 100 accionistas, solo personas físicas residentes en EE. UU. o ciertos fideicomisos, y una sola clase de acciones. Un extranjero no residente no puede ser accionista, lo que la descarta para muchos inversionistas mexicanos.", falseFriend: "No es un tipo distinto de sociedad: es una corporation común con un estatus fiscal." }
+    examples: [{ en: "Two Dallas dentists chose an S corporation to avoid double taxation.", es: "Dos dentistas de Dallas eligieron una S corporation para evitar la doble tributación." }]
+    authority: "I.R.C. §§ 1361–1362"
+    related: [double-taxation, pass-through-taxation, corporation]
+  - id: close-corporation
+    term: closely held (close) corporation
+    pos: noun
+    topic: business-forms
+    en: { definition: "A corporation with few shareholders and no public market for its stock, where owners usually also manage; some states offer a statutory close corporation run under a shareholders' agreement instead of board formalities, now rarely used because LLCs are more flexible." }
+    es: { term: "sociedad cerrada (close corporation)", explanation: "Pocos accionistas, sin mercado para las acciones, dueños que también administran. Algunos estados tienen un régimen legal especial regido por un convenio de accionistas; hoy casi no se usa porque la LLC da la misma flexibilidad. Muchos tribunales tratan a sus socios casi como partners, con deberes recíprocos." }
+    examples: [{ en: "A family-owned chain of car washes is a close corporation.", es: "Una cadena familiar de autolavados es una close corporation." }]
+    authority: "TBOC ch. 21, subch. O"
+    related: [corporation, shareholder-agreement, shareholder-oppression]
+  - id: operating-agreement
+    term: operating agreement (company agreement)
+    pos: noun
+    topic: business-forms
+    en: { definition: "The contract among an LLC's members that governs management (by members or by managers), voting, distributions, transfers, admission of new members and fiduciary standards; it displaces most statutory default rules. Texas calls it the company agreement." }
+    es: { term: "operating agreement (≈ estatutos más convenio de socios de la LLC)", explanation: "Contrato entre los miembros de la LLC que fija administración (por miembros o por gerentes), votos, distribuciones, transmisiones, admisión de nuevos miembros y estándares fiduciarios. Desplaza casi todas las reglas supletorias de la ley. Equivale a los estatutos más el convenio de socios de una S. de R.L." }
+    examples: [{ en: "The operating agreement required unanimous consent to admit a new member.", es: "El operating agreement exigía unanimidad para admitir a un nuevo miembro." }]
+    authority: "TBOC § 101.052"
+    related: [llc, shareholder-agreement]
+  - id: check-the-box
+    term: check-the-box election
+    pos: noun
+    topic: business-forms
+    en: { definition: "The federal tax rule that lets an LLC choose how it is taxed: by default as a partnership (or as a disregarded entity with one owner), or, by filing an election, as a corporation; foreign owners sometimes elect corporate treatment to use tax treaties." }
+    es: { term: "elección fiscal check-the-box", explanation: "Regla federal que deja a la LLC elegir su régimen: por defecto es transparente (partnership, o entidad ignorada si tiene un solo dueño); con una elección puede tributar como corporation. Dueños extranjeros a veces eligen la corporation para aprovechar tratados." }
+    examples: [{ en: "The Mexican investors checked the box so the LLC would be taxed as a corporation.", es: "Los inversionistas mexicanos hicieron la elección para que la LLC tributara como corporation." }]
+    authority: "Treas. Reg. § 301.7701-3"
+    related: [llc, pass-through-taxation]
+    difficulty: 2
+  - id: franchise-tax
+    term: franchise tax (Texas margin tax)
+    pos: noun
+    topic: business-forms
+    en: { definition: "A state tax on entities for the privilege of doing business in Texas, computed on the entity's margin and paid with an annual report; it applies to LLCs and corporations even when they are pass-through for federal tax. Nothing to do with franchising." }
+    es: { term: "franchise tax (impuesto estatal al margen)", explanation: "Impuesto estatal de Texas por el privilegio de operar como entidad, calculado sobre el margen y declarado anualmente. Lo pagan las LLC y las corporations aunque sean transparentes para el impuesto federal.", falseFriend: "No tiene nada que ver con las franquicias comerciales." }
+    examples: [{ en: "The LLC lost its good standing for not filing its franchise tax report.", es: "La LLC perdió su buen estado por no presentar su informe de franchise tax." }]
+    authority: "Tex. Tax Code ch. 171"
+    related: [llc, corporation]
+  - id: foreign-entity
+    term: foreign entity (qualifying to do business)
+    pos: noun
+    topic: business-forms
+    en: { definition: "An entity formed under the law of another state or country; to do business in Texas it must register with the Secretary of State and keep a registered agent, or face penalties and lose the right to sue in state courts until it does." }
+    es: { term: "entidad foránea (de otro estado)", explanation: "Entidad constituida bajo las leyes de otro estado o país. Para operar en Texas debe registrarse y tener agente registrado; si no, hay multas y no puede demandar en tribunales estatales hasta regularizarse.", falseFriend: "“Foreign” aquí suele significar de otro estado de EE. UU., no extranjera." }
+    examples: [{ en: "A Delaware corporation with a Dallas store must qualify as a foreign entity in Texas.", es: "Una corporation de Delaware con una tienda en Dallas debe registrarse como entidad foránea en Texas." }]
+    authority: "TBOC ch. 9"
+    related: [corporation, registered-agent]
+  - id: assumed-name-certificate
+    term: assumed name certificate (DBA)
+    pos: noun
+    topic: business-forms
+    en: { definition: "A filing that registers the trade name a business uses when it differs from the owner's or the entity's legal name; it gives public notice but creates neither an entity nor exclusive rights to the name." }
+    es: { term: "registro de nombre comercial (DBA)", explanation: "Registro del nombre con el que opera un negocio cuando no es el nombre legal del dueño o de la entidad. Da publicidad; no crea una entidad ni un derecho exclusivo (eso es la marca)." }
+    examples: [{ en: "Maria filed an assumed name certificate to operate as Oak Cliff Cleaners.", es: "María registró el nombre comercial para operar como Oak Cliff Cleaners." }]
+    authority: "Tex. Bus. & Com. Code ch. 71"
+    related: [sole-proprietorship]
+  - id: entity-choice-factors
+    term: choosing an entity (the factors)
+    pos: phrase
+    topic: business-forms
+    en: { definition: "The checklist for picking a business form: formation cost and flexibility, tax treatment, personal liability, management and control (active vs. passive owners), capital and economics, transferability and continuity, and long-term goals or exit. A good answer explains why one factor dominates these facts." }
+    es: { term: "factores para elegir la forma societaria", explanation: "Costo y flexibilidad de constitución, régimen fiscal, responsabilidad personal, administración y control (dueños activos y pasivos), capital y economía, transmisibilidad y continuidad, y metas de largo plazo o salida. En el examen, decir “LLC por la responsabilidad limitada” es una conclusión; hay que explicar por qué ese factor pesa más con estos hechos." }
+    examples: [{ en: "With one passive investor and three working owners, control and compensation drove the entity choice.", es: "Con un inversionista pasivo y tres dueños que trabajan, el control y la compensación decidieron la forma." }]
+    related: [llc, general-partnership, limited-partnership, corporation]
+  # --- Capítulo 3 (acuerdos entre socios y accionistas) ---
+  - id: owner-employment-agreement
+    term: employment agreement (owner-employee)
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A contract giving a working owner a job with defined salary, duties, term and grounds for termination; without it the board or the majority can fire the owner-employee at will and cut off the salary that was that owner's real return." }
+    es: { term: "contrato de trabajo del socio-empleado", explanation: "Contrato que asegura al socio que trabaja un puesto con sueldo, funciones, plazo y causas de despido. Sin él, el consejo o la mayoría puede despedirlo sin causa y dejarlo sin el sueldo que era su verdadero rendimiento. Cuidado: un consejo que se ata de manos para no poder destituir a un officer puede chocar con la regla de que el consejo administra." }
+    examples: [{ en: "Her employment agreement allowed termination only for cause, defined as fraud or a felony.", es: "Su contrato solo permitía el despido con causa, definida como fraude o delito grave." }]
+    related: [for-cause, officer, shareholder-agreement]
+  - id: for-cause
+    term: termination for cause (vs. without cause)
+    pos: phrase
+    topic: owner-agreements
+    en: { definition: "Firing justified by a defined breach such as fraud, a felony or a material violation of duties; termination without cause triggers severance or buyout rights. Leaving the word cause undefined invites litigation." }
+    es: { term: "despido con causa / sin causa", explanation: "Despido justificado por una falta definida (fraude, delito, incumplimiento grave); el despido sin causa activa indemnizaciones o la compra forzosa de acciones. Si el contrato no define “cause”, habrá pleito. Compárese la rescisión sin responsabilidad para el patrón (LFT art. 47)." }
+    examples: [{ en: "Because the contract never defined cause, the fired officer claimed his full severance.", es: "Como el contrato nunca definió la causa, el officer despedido reclamó toda su indemnización." }]
+    related: [owner-employment-agreement, severance]
+  - id: severance
+    term: severance
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "Payment owed to an executive when employment ends on terms the contract specifies, typically termination without cause; often paired with a repurchase of the executive's shares at a formula price." }
+    es: { term: "indemnización por separación (severance)", explanation: "Pago pactado al terminar la relación laboral en los supuestos del contrato, normalmente despido sin causa; suele acompañarse de la recompra de las acciones del ejecutivo a un precio de fórmula. No es la indemnización legal de la LFT; es contractual y se negocia." }
+    examples: [{ en: "The severance clause promised one year of salary plus a buyback at market price.", es: "La cláusula prometía un año de sueldo más la recompra de acciones a precio de mercado." }]
+    related: [for-cause, buy-sell-agreement]
+  - id: dividend
+    term: dividend (distribution)
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A payment of profits to owners: declared at the board's discretion in a corporation (dividend) or made under the agreement in an LLC or partnership (distribution). Minority investors bargain for distribution rights because they cannot force a declaration." }
+    es: { term: "dividendo / distribución", explanation: "Reparto de utilidades a los dueños: en la corporation lo decreta el consejo a su discreción; en la LLC o partnership se llama distribución y la rige el convenio. El inversionista minoritario negocia derechos de reparto porque no puede obligar al consejo. En México el dividendo lo decreta la asamblea sobre utilidades reales (LGSM art. 19) y además existe la PTU." }
+    examples: [{ en: "The board declared no dividend for five years while paying the owner-managers large salaries.", es: "El consejo no decretó dividendos en cinco años mientras pagaba sueldos altos a los dueños-administradores." }]
+    related: [mandatory-dividend, shareholder-oppression, double-taxation]
+  - id: mandatory-dividend
+    term: mandatory dividend provision
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A clause requiring the corporation to pay dividends when profits or cash reach a set level, used to protect a passive investor; courts may hesitate to enforce it because directors, not contracts, are supposed to manage the corporation, so it is drafted carefully (often through a preferred class) and protected by a unanimity requirement." }
+    es: { term: "cláusula de dividendo obligatorio", explanation: "Obliga a repartir cuando hay utilidades o caja suficiente; protege al inversionista pasivo. Algunos tribunales dudan en aplicarla porque la ley encarga la administración al consejo, así que se redacta con cuidado (por ejemplo, en una clase de acciones preferentes) y se exige unanimidad para cambiarla." }
+    examples: [{ en: "The investor's preferred shares carried a mandatory 8% dividend whenever net income exceeded $100,000.", es: "Las acciones preferentes de la inversionista llevaban un dividendo obligatorio de 8% cuando la utilidad neta superaba $100,000." }]
+    related: [dividend, classes-of-stock, unanimity]
+    difficulty: 2
+  - id: classes-of-stock
+    term: classes of stock
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "Different series of shares with different rights (dividend preference, voting power, the right to elect a particular director); a tool to give investors priority on money and working owners control." }
+    es: { term: "clases o series de acciones", explanation: "Series de acciones con derechos distintos: preferencia en dividendos, voto, facultad de nombrar a un consejero. Sirven para dar prioridad económica al inversionista y control a los que operan. En México: acciones de voto limitado y series (LGSM arts. 112–113)." }
+    examples: [{ en: "Class A elects two directors; Class B elects one and gets its dividend first.", es: "La clase A elige dos consejeros; la clase B elige uno y cobra su dividendo primero." }]
+    related: [mandatory-dividend, cumulative-voting]
+  - id: cumulative-voting
+    term: cumulative voting
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "An election method in which each shareholder gets votes equal to shares times seats and may pile them on one candidate, so a minority can elect at least one director; in Texas it exists only if the certificate of formation grants it." }
+    es: { term: "voto acumulativo", explanation: "Cada accionista tiene tantos votos como acciones por asientos y puede concentrarlos en un candidato; así la minoría consigue al menos un consejero. En Texas solo existe si el acta constitutiva lo prevé. En México no existe: la minoría del 25% nombra un consejero (LGSM art. 144)." }
+    examples: [{ en: "With 25% of the shares and four seats, cumulative voting let Dana elect herself.", es: "Con 25% de las acciones y cuatro asientos, el voto acumulativo permitió a Dana elegirse a sí misma." }]
+    authority: "TBOC § 21.360"
+    related: [vote-pooling-agreement, classes-of-stock]
+    difficulty: 2
+  - id: vote-pooling-agreement
+    term: voting (pooling) agreement
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A contract among shareholders to vote their shares together as agreed, for example to elect each other as directors; generally enforceable if written and not secret, and in Texas specifically enforceable." }
+    es: { term: "convenio de voto (pooling agreement)", explanation: "Contrato entre accionistas para votar en bloque según lo pactado, por ejemplo elegirse mutuamente como consejeros. Vale si consta por escrito y no es secreto; Texas permite exigir su cumplimiento forzoso. En México lo autoriza la LGSM art. 198." }
+    examples: [{ en: "The three founders signed a pooling agreement to vote all shares for a four-person board.", es: "Los tres fundadores firmaron un convenio para votar todas sus acciones por un consejo de cuatro." }]
+    authority: "TBOC § 6.252"
+    related: [proxy, voting-trust, shareholder-agreement]
+  - id: proxy
+    term: proxy
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A written authorization letting someone else vote your shares at a meeting; normally revocable at will, but irrevocable when coupled with an interest, such as a pledge or a pooling agreement that says so." }
+    es: { term: "proxy (carta poder para votar)", explanation: "Autorización escrita para que otro vote tus acciones en la asamblea. Suele ser revocable; es irrevocable si está unida a un interés (prenda, convenio de voto que así lo diga). En México: carta poder simple para asambleas (LGSM art. 192).", falseFriend: "No es un apoderado general; solo vota en la asamblea." }
+    examples: [{ en: "The investor gave the founder an irrevocable proxy as part of the loan deal.", es: "La inversionista dio al fundador un proxy irrevocable como parte del préstamo." }]
+    authority: "TBOC §§ 21.367–21.368"
+    related: [vote-pooling-agreement, voting-trust]
+  - id: voting-trust
+    term: voting trust
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "An arrangement that transfers legal title of shares to a trustee who votes them for a set period, while the owners keep the economic rights through trust certificates; used, for example, to let a lender control board seats until repaid." }
+    es: { term: "fideicomiso de voto", explanation: "Se transfiere la titularidad de las acciones a un fiduciario que las vota por un plazo, y los dueños conservan los derechos económicos mediante certificados. Se usa, por ejemplo, para que un acreedor controle asientos del consejo hasta cobrar. En México se logra con un fideicomiso de control." }
+    examples: [{ en: "The bank required a voting trust over 51% of the shares for the life of the loan.", es: "El banco exigió un fideicomiso de voto sobre el 51% de las acciones mientras durara el préstamo." }]
+    authority: "TBOC § 6.251"
+    related: [proxy, vote-pooling-agreement]
+  - id: stock-transfer-restriction
+    term: stock transfer restriction
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A limit on selling shares or LLC interests (consent requirements, rights of first refusal, buy-sell triggers); valid unless an unreasonable restraint on alienation, and enforceable against a good-faith buyer only if noted on the certificate or in documents the buyer knew of." }
+    es: { term: "restricción a la transmisión de acciones", explanation: "Límites a la venta de acciones o partes sociales: consentimiento, derecho de preferencia, compraventa forzosa. Valen si no son una restricción irrazonable; frente a un comprador de buena fe solo si constan en el título o en documentos que conoció. En México: cláusula de consentimiento del consejo (LGSM art. 130)." }
+    examples: [{ en: "The certificate's legend warned that transfers required the company's first refusal.", es: "La leyenda del título advertía que toda transmisión requería el derecho de preferencia de la sociedad." }]
+    authority: "TBOC § 21.213"
+    related: [right-of-first-refusal, first-option, buy-sell-agreement]
+  - id: right-of-first-refusal
+    term: right of first refusal
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "Before selling to an outsider who has made a bona fide offer, the owner must offer the interest to the company or the other owners on the same terms; they may match or let the sale proceed." }
+    es: { term: "derecho de preferencia (del tanto) sobre una oferta", explanation: "Antes de vender a un tercero con oferta seria, hay que ofrecer la parte a la entidad o a los demás en los mismos términos; pueden igualar o dejar pasar la venta. Equivale al derecho del tanto de la S. de R.L. (LGSM art. 33)." }
+    examples: [{ en: "Luis found a buyer at $200,000; the company had thirty days to match.", es: "Luis encontró comprador a $200,000; la sociedad tuvo treinta días para igualar." }]
+    related: [first-option, stock-transfer-restriction]
+  - id: first-option
+    term: first option (right of first offer)
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "The reverse of a first refusal: the owner who wants to sell first names a price to the company or co-owners; if they decline, the owner may sell to an outsider, but only on terms no better for the buyer." }
+    es: { term: "derecho de primera oferta", explanation: "Al revés del tanto: el que quiere vender fija primero el precio a la entidad o a los socios; si no compran, puede vender a un tercero, pero en condiciones no mejores para ese comprador." }
+    examples: [{ en: "Under the first option, Sofía offered her shares to the others at $150,000 before going outside.", es: "Por la primera oferta, Sofía ofreció sus acciones a los demás en $150,000 antes de buscar fuera." }]
+    related: [right-of-first-refusal, buy-sell-agreement]
+  - id: buy-sell-agreement
+    term: buy-sell agreement
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A contract fixing when an owner's interest must or may be bought (death, disability, divorce, retirement, termination, deadlock), at what price (formula, book value, appraisal, offer price) and how it is funded (insurance, installments)." }
+    es: { term: "convenio de compraventa forzosa entre socios (buy-sell)", explanation: "Fija cuándo se compra la parte de un socio (muerte, incapacidad, divorcio, retiro, despido, bloqueo), a qué precio (fórmula, valor contable, avalúo, precio ofrecido) y cómo se paga (seguro, parcialidades). Es la cláusula que evita heredar un socio inepto o un excónyuge." }
+    examples: [{ en: "On a partner's death, the buy-sell agreement obliged the firm to buy his interest with the key person policy.", es: "Al morir un socio, el buy-sell obligaba a la firma a comprar su parte con el seguro de persona clave." }]
+    related: [key-person-insurance, book-value, buy-out, community-property]
+  - id: key-person-insurance
+    term: key person (key man) life insurance
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A life policy the company buys on an owner or essential employee so that, on death, the proceeds fund the buyout of the heirs or replace the lost contribution." }
+    es: { term: "seguro de persona clave", explanation: "Póliza de vida que la empresa contrata sobre un socio o empleado esencial; al morir, el dinero paga la compra de su parte a los herederos o cubre la pérdida." }
+    examples: [{ en: "The $1 million key person policy let the company buy the shares from the widow.", es: "La póliza de persona clave de $1 millón permitió a la empresa comprar las acciones a la viuda." }]
+    related: [buy-sell-agreement]
+  - id: book-value
+    term: book value
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A company's value on its own balance sheet (assets minus liabilities, divided by shares for a per-share figure); easy to compute but often far from market value, especially for service businesses with few hard assets. Courts generally honor the valuation formula the owners agreed on absent fraud." }
+    es: { term: "valor contable (valor en libros)", explanation: "Valor según el balance: activos menos pasivos, entre acciones para el valor unitario. Fácil de calcular pero lejos del valor de mercado, sobre todo en negocios de servicios. Los tribunales suelen respetar la fórmula de valuación que pactaron los socios salvo fraude." }
+    examples: [{ en: "Book value was $40 a share while a strategic buyer had offered $300.", es: "El valor contable era $40 por acción cuando un comprador estratégico había ofrecido $300." }]
+    related: [capitalization-of-earnings, buy-sell-agreement]
+  - id: capitalization-of-earnings
+    term: capitalization of earnings
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A valuation method that converts expected annual earnings into a price by dividing them by a capitalization rate that reflects risk; higher risk means a higher rate and a lower value." }
+    es: { term: "capitalización de utilidades", explanation: "Método de valuación que convierte la utilidad anual esperada en precio dividiéndola entre una tasa que refleja el riesgo: a más riesgo, mayor tasa y menor valor." }
+    examples: [{ en: "At a 20% capitalization rate, $200,000 of earnings implies a $1 million value.", es: "Con una tasa de 20%, $200,000 de utilidad implican un valor de $1 millón." }]
+    related: [book-value]
+    difficulty: 2
+  - id: deadlock
+    term: deadlock
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "A stalemate in which owners or directors are split evenly and cannot act; the agreement should supply a tiebreaker (casting vote, shotgun buy-sell, mediation) because the statutory alternative is often judicial dissolution or a receiver." }
+    es: { term: "bloqueo societario (deadlock)", explanation: "Empate entre dueños o consejeros que impide decidir. El convenio debe prever una salida (voto de calidad, cláusula shotgun, mediación) porque la alternativa legal suele ser la disolución judicial o un interventor." }
+    examples: [{ en: "With two 50% owners who stopped speaking, the company was deadlocked.", es: "Con dos dueños al 50% que dejaron de hablarse, la empresa quedó bloqueada." }]
+    authority: "TBOC § 11.314"
+    related: [unanimity, buy-sell-agreement]
+  - id: unanimity
+    term: unanimity vs. majority rule
+    pos: phrase
+    topic: owner-agreements
+    en: { definition: "The drafting choice of which decisions need every owner's consent (selling the business, admitting owners, changing dividends or jobs, new lines of business) and which a majority can make; too much unanimity invites deadlock, too little leaves the minority unprotected." }
+    es: { term: "unanimidad frente a mayoría", explanation: "Decidir qué asuntos exigen el consentimiento de todos (vender el negocio, admitir socios, cambiar dividendos o empleos, nuevos giros) y cuáles bastan por mayoría. Mucha unanimidad produce bloqueos; poca deja indefensa a la minoría. En México las mayorías calificadas se pactan en estatutos (LGSM arts. 182 y 190)." }
+    examples: [{ en: "The agreement listed six matters requiring unanimity, including any new line of business.", es: "El convenio enumeró seis asuntos que exigen unanimidad, incluido cualquier giro nuevo." }]
+    related: [deadlock, shareholder-agreement]
+  - id: reasonable-expectations
+    term: reasonable expectations (of a minority owner)
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "The test many courts use for oppression: whether the majority defeated what the minority reasonably expected from owning the interest (a job, a board seat, dividends, a say). Texas rejected this test in Ritchie v. Rupe and left the minority with the statutory receivership remedy." }
+    es: { term: "expectativas razonables del socio minoritario", explanation: "Criterio de muchos tribunales para la opresión: si la mayoría frustró lo que la minoría razonablemente esperaba al invertir (empleo, asiento en el consejo, dividendos, voz). Texas lo rechazó en Ritchie v. Rupe y dejó a la minoría con el remedio legal del interventor." }
+    examples: [{ en: "Being frozen out of a salaried job he had held for ten years defeated the minority owner's reasonable expectations.", es: "Quedar fuera del empleo que tuvo diez años frustró las expectativas razonables del socio minoritario." }]
+    related: [shareholder-oppression, close-corporation]
+    difficulty: 2
+  - id: community-property
+    term: community property
+    pos: noun
+    topic: owner-agreements
+    en: { definition: "The marital property system of Texas and some other states: assets acquired during marriage belong to both spouses equally, so a divorce can hand half of an owner's interest to an ex-spouse. A common trigger in buy-sell agreements." }
+    es: { term: "sociedad conyugal (community property)", explanation: "Régimen de Texas y otros estados: lo adquirido en el matrimonio es de ambos por mitad, así que un divorcio puede dar la mitad de la participación al excónyuge. Por eso el divorcio es detonante típico del buy-sell. Equivale a la sociedad conyugal mexicana." }
+    examples: [{ en: "After the divorce, Raúl's ex-wife owned half his shares and asked for a board seat.", es: "Tras el divorcio, la exesposa de Raúl era dueña de la mitad de sus acciones y pidió un asiento en el consejo." }]
+    related: [buy-sell-agreement]
+  # --- Capítulo 4 (levantamiento del velo) ---
+  - id: alter-ego
+    term: alter ego
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "The theory that a corporation or LLC has been so dominated by its owner that it has no separate identity (one bank account, one set of decisions, one pocket), so that respecting the form would be unjust; usually it must be paired with fraud, misrepresentation or undercapitalization." }
+    es: { term: "alter ego (identidad única)", explanation: "La sociedad fue tan dominada por su dueño que perdió identidad separada: una sola caja, unas mismas decisiones, un solo bolsillo; respetar la forma sería injusto. Casi siempre hace falta algo más: fraude, engaño o capital insuficiente." }
+    examples: [{ en: "He paid his mortgage with company checks and never told customers which entity they dealt with: classic alter ego.", es: "Pagaba su hipoteca con cheques de la empresa y nunca decía a los clientes con qué entidad trataban: alter ego clásico." }]
+    authority: "Castleberry v. Branscum (Tex. 1986); TBOC § 21.223"
+    related: [piercing-the-veil, commingling, undercapitalization]
+  - id: commingling
+    term: commingling
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "Mixing the entity's money and assets with the owner's or an affiliate's: paying personal bills from the company account, moving funds back and forth without documentation, using staff for personal errands. One of the strongest veil-piercing facts." }
+    es: { term: "confusión de patrimonios", explanation: "Mezclar el dinero y los bienes de la sociedad con los del dueño o de una afiliada: pagar gastos personales con la cuenta de la empresa, mover fondos sin documentar, usar empleados para asuntos propios. Es de los hechos más fuertes para levantar el velo." }
+    examples: [{ en: "The owner's lake house was paid from the LLC account; the court found commingling.", es: "La casa del lago del dueño se pagó desde la cuenta de la LLC; el tribunal encontró confusión de patrimonios." }]
+    related: [alter-ego, piercing-the-veil]
+  - id: corporate-formalities
+    term: corporate formalities
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "The housekeeping of an entity: meetings or written consents, minutes, elected officers, documented dividends and contracts, separate accounts and letterhead. Skipping them is a veil-piercing factor in most states, but Texas excludes formalities from the analysis by statute." }
+    es: { term: "formalidades societarias", explanation: "La disciplina de la entidad: asambleas o consentimientos escritos, actas, officers nombrados, dividendos y contratos documentados, cuentas separadas. Omitirlas cuenta para levantar el velo en casi todos los estados, pero Texas las excluye del análisis por ley (TBOC § 21.223(a)(3))." }
+    examples: [{ en: "No minutes in ten years hurt the owners in Delaware; in Texas it was irrelevant.", es: "Diez años sin actas perjudicaron a los dueños en Delaware; en Texas fue irrelevante." }]
+    authority: "TBOC § 21.223(a)(3)"
+    related: [piercing-the-veil, written-consent]
+  - id: undercapitalization
+    term: undercapitalization (inadequate capitalization)
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "Starting or running an entity with assets or insurance trivially small compared with the debts and injuries its business foreseeably creates; a core veil-piercing factor, strongest for tort victims who never chose to deal with the shell." }
+    es: { term: "infracapitalización", explanation: "Constituir u operar la entidad con activos o seguro insignificantes frente a las deudas y daños previsibles del negocio. Factor central para levantar el velo, sobre todo a favor de víctimas de torts que no eligieron tratar con la cascarón. Los tribunales están divididos sobre si un acreedor contractual puede invocarla." }
+    examples: [{ en: "A trucking LLC with one truck, $5,000 in the bank and minimum insurance was undercapitalized.", es: "Una LLC de transporte con un camión, $5,000 en el banco y seguro mínimo estaba infracapitalizada." }]
+    authority: "Minton v. Cavaney (Cal. 1961)"
+    related: [piercing-the-veil, tort-vs-contract-creditor]
+  - id: tort-vs-contract-creditor
+    term: tort creditor vs. contract creditor
+    pos: phrase
+    topic: veil-piercing
+    en: { definition: "Contract creditors chose to deal with the entity and could have asked for guaranties, security or financial statements; tort creditors never chose. Courts therefore pierce more readily for tort victims, and Texas requires actual fraud only for contract claims." }
+    es: { term: "acreedor extracontractual frente a acreedor contractual", explanation: "El acreedor contractual eligió tratar con la entidad y pudo pedir garantías, avales o revisar sus cuentas; la víctima de un tort no eligió nada. Por eso los tribunales levantan el velo con más facilidad para víctimas de torts, y Texas exige fraude real solo en reclamos contractuales (TBOC § 21.223(b))." }
+    examples: [{ en: "The pedestrian hit by the company van is an involuntary creditor; the lender is a voluntary one.", es: "El peatón atropellado por la camioneta de la empresa es acreedor involuntario; el banco es voluntario." }]
+    related: [undercapitalization, actual-fraud, personal-guaranty]
+  - id: actual-fraud
+    term: actual fraud (Texas veil piercing)
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "Under Texas law a contract creditor can pierce the veil only by proving actual fraud, meaning dishonesty of purpose or intent to deceive, committed primarily for the owner's direct personal benefit; constructive fraud or mere unfairness is not enough." }
+    es: { term: "fraude real (requisito texano)", explanation: "En Texas el acreedor contractual solo levanta el velo si prueba fraude real: deshonestidad o intención de engañar, cometida principalmente en beneficio personal directo del dueño. No basta el fraude constructivo ni la simple injusticia." }
+    examples: [{ en: "Promising payment from a shell the owner had already emptied for himself was actual fraud.", es: "Prometer el pago desde una cascarón que el dueño ya había vaciado en su beneficio fue fraude real." }]
+    authority: "TBOC § 21.223(b)"
+    related: [piercing-the-veil, tort-vs-contract-creditor]
+    difficulty: 2
+  - id: personal-guaranty
+    term: personal guaranty
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "A promise by an owner to pay the entity's debt if the entity does not; the way lenders contract around limited liability, and a reason sophisticated contract creditors rarely need veil piercing." }
+    es: { term: "garantía personal (aval, obligado solidario)", explanation: "Promesa del dueño de pagar la deuda de la entidad si esta no paga; así los bancos esquivan la responsabilidad limitada. Por eso los acreedores contractuales sofisticados casi nunca necesitan levantar el velo. Equivale al aval o a la fianza personal." }
+    examples: [{ en: "The bank lent to the LLC only against the founder's personal guaranty.", es: "El banco prestó a la LLC solo con la garantía personal del fundador." }]
+    related: [limited-liability, tort-vs-contract-creditor]
+  - id: parent-subsidiary
+    term: parent and subsidiary
+    pos: noun
+    topic: veil-piercing
+    en: { definition: "A parent is a company that controls another, usually by owning more than half its shares; the subsidiary is the controlled company. Creditors of a subsidiary may try to pierce the veil to reach the parent when the two are run as one." }
+    es: { term: "controladora y subsidiaria", explanation: "La controladora domina a otra sociedad (normalmente con más de la mitad de las acciones); la subsidiaria es la controlada. Los acreedores de la subsidiaria intentan levantar el velo hacia la controladora cuando ambas se operan como una sola." }
+    examples: [{ en: "The hotel chain ran its Dallas subsidiary from headquarters, with shared staff and one treasury.", es: "La cadena hotelera operaba su subsidiaria de Dallas desde la matriz, con personal compartido y una sola tesorería." }]
+    related: [piercing-the-veil, single-business-enterprise]
+  # --- Capítulo 5 (gobierno corporativo) ---
+  - id: corporate-governance
+    term: corporate governance
+    pos: noun
+    topic: governance
+    en: { definition: "The set of legal, regulatory, exchange and contractual mechanisms that protect shareholders and keep managers accountable: the board and its committees, fiduciary duties, disclosure rules, stock exchange listing standards, and statutes such as Sarbanes-Oxley and Dodd-Frank." }
+    es: { term: "gobierno corporativo", explanation: "El conjunto de mecanismos legales, regulatorios, bursátiles y contractuales que protegen a los accionistas y hacen responsables a los administradores: consejo y comités, deberes fiduciarios, obligaciones de revelación, reglas de las bolsas y leyes como Sarbanes-Oxley y Dodd-Frank. La LMV mexicana adoptó el mismo vocabulario." }
+    examples: [{ en: "Studies suggest good corporate governance tends to raise a company's stock price.", es: "Los estudios sugieren que un buen gobierno corporativo tiende a subir el precio de la acción." }]
+    related: [board-of-directors, independent-director, agency-problem]
+  - id: agency-problem
+    term: agency problem (separation of ownership and control)
+    pos: noun
+    topic: governance
+    en: { definition: "The risk that managers who run a company but do not own it will pursue their own interests at the shareholders' expense; corporate governance exists to reduce it." }
+    es: { term: "problema de agencia (separación entre propiedad y control)", explanation: "Riesgo de que los administradores, que dirigen pero no son dueños, persigan su interés a costa de los accionistas. El gobierno corporativo existe para reducirlo." }
+    examples: [{ en: "Lavish executive perks are a textbook agency problem.", es: "Los lujos de los ejecutivos son el problema de agencia de manual." }]
+    related: [corporate-governance, fiduciary-duties]
+  - id: constituency-statute
+    term: constituency statute
+    pos: noun
+    topic: governance
+    en: { definition: "A state law allowing, not requiring, directors to consider employees, customers, suppliers, communities and the public, in addition to shareholders, when making decisions, as long as shareholders are not unduly harmed. Delaware has none; about thirty states do." }
+    es: { term: "ley de grupos de interés (constituency statute)", explanation: "Ley estatal que permite, sin obligar, que el consejo considere a empleados, clientes, proveedores, comunidades y al público además de los accionistas, siempre que estos no resulten indebidamente perjudicados. Delaware no la tiene; unos treinta estados sí." }
+    examples: [{ en: "Relying on the constituency statute, the board rejected a buyer who planned to close the local plant.", es: "Con base en la ley de grupos de interés, el consejo rechazó al comprador que planeaba cerrar la planta local." }]
+    related: [board-of-directors, business-judgment-rule]
+    difficulty: 2
+  - id: independent-director
+    term: independent director
+    pos: noun
+    topic: governance
+    en: { definition: "A director with no material relationship with the company (not an employee within three years, no significant payments, no family ties to executives); listing rules require a majority of the board and the whole audit and compensation committees to be independent." }
+    es: { term: "consejero independiente", explanation: "Consejero sin relación material con la empresa: no fue empleado en los últimos tres años, no recibe pagos relevantes, sin parientes ejecutivos. Las bolsas exigen que sea independiente la mayoría del consejo y la totalidad de los comités de auditoría y compensaciones. En México la LMV exige al menos 25% de independientes (art. 24)." }
+    examples: [{ en: "A director whose firm sold $5 million of services to the company is not independent.", es: "Un consejero cuya firma vendió $5 millones en servicios a la empresa no es independiente." }]
+    authority: "NYSE Listed Company Manual § 303A.02; Nasdaq Rule 5605"
+    related: [audit-committee, compensation-committee, corporate-governance]
+  - id: audit-committee
+    term: audit committee
+    pos: noun
+    topic: governance
+    en: { definition: "A board committee made entirely of independent directors that oversees financial reporting, internal controls and the outside auditor, whom it hires and fires; required for listing since Sarbanes-Oxley." }
+    es: { term: "comité de auditoría", explanation: "Comité del consejo, íntegramente independiente, que vigila la información financiera, los controles internos y al auditor externo (lo contrata y lo despide). Obligatorio para cotizar desde Sarbanes-Oxley. En México: comité de auditoría de la LMV (arts. 25 y 42)." }
+    examples: [{ en: "The audit committee met privately with the auditors before approving the annual report.", es: "El comité de auditoría se reunió a solas con los auditores antes de aprobar el informe anual." }]
+    authority: "SOX § 301; Exchange Act Rule 10A-3"
+    related: [independent-director, sarbanes-oxley, oversight-duty]
+  - id: compensation-committee
+    term: compensation committee
+    pos: noun
+    topic: governance
+    en: { definition: "An independent board committee that sets and reviews executive pay, balancing the need to attract talent against conflicts of interest; shareholders of public companies also get a non-binding say-on-pay vote." }
+    es: { term: "comité de compensaciones", explanation: "Comité independiente que fija y revisa la remuneración de los ejecutivos, equilibrando atraer talento con el conflicto de interés. Los accionistas de empresas públicas tienen además un voto consultivo (say on pay). En México estas funciones las tiene el comité de prácticas societarias." }
+    examples: [{ en: "The compensation committee cut the CEO's bonus after the say-on-pay vote failed.", es: "El comité de compensaciones recortó el bono del CEO después de perder el voto consultivo." }]
+    authority: "Dodd-Frank § 952; Exchange Act Rule 10C-1"
+    related: [say-on-pay, independent-director]
+  - id: say-on-pay
+    term: say on pay
+    pos: noun
+    topic: governance
+    en: { definition: "The advisory, non-binding shareholder vote on executive compensation that public companies must hold at least every three years; a failed vote has no legal effect but strong practical influence." }
+    es: { term: "voto consultivo sobre remuneraciones (say on pay)", explanation: "Voto no vinculante de los accionistas sobre la remuneración de los ejecutivos, al menos cada tres años. Perderlo no obliga a nada, pero pesa mucho en la práctica." }
+    examples: [{ en: "Only 40% supported the pay package, so the board redesigned it.", es: "Solo el 40% apoyó el paquete de remuneración, así que el consejo lo rediseñó." }]
+    authority: "Dodd-Frank § 951; Exchange Act § 14A"
+    related: [compensation-committee, dodd-frank]
+  - id: nominating-committee
+    term: nominating / corporate governance committee
+    pos: noun
+    topic: governance
+    en: { definition: "The board committee that recruits and proposes director candidates, evaluates sitting directors and oversees governance policies, looking at competence, experience, integrity and independence." }
+    es: { term: "comité de nominaciones y gobierno corporativo", explanation: "Comité que recluta y propone candidatos al consejo, evalúa a los consejeros en funciones y supervisa las políticas de gobierno, atendiendo a competencia, experiencia, integridad e independencia." }
+    examples: [{ en: "The nominating committee declined to renominate a director who missed half the meetings.", es: "El comité de nominaciones no volvió a proponer a un consejero que faltó a la mitad de las sesiones." }]
+    related: [independent-director, corporate-governance]
+  - id: sarbanes-oxley
+    term: Sarbanes-Oxley Act (SOX, 2002)
+    pos: noun
+    topic: governance
+    en: { definition: "The federal law passed after Enron and WorldCom that tightened public-company governance: independent audit committees, CEO and CFO certification of financial reports, auditor independence, internal-control reports and protection for whistleblowers." }
+    es: { term: "Ley Sarbanes-Oxley (2002)", explanation: "Ley federal posterior a Enron y WorldCom que endureció el gobierno de las empresas públicas: comités de auditoría independientes, certificación de los estados financieros por el CEO y el CFO, independencia del auditor, informes de control interno y protección a denunciantes. La reforma de la LMV de 2005 siguió su huella." }
+    examples: [{ en: "Under SOX, the CFO certified the quarterly report personally.", es: "Por SOX, el CFO certificó personalmente el informe trimestral." }]
+    related: [audit-committee, dodd-frank]
+  - id: dodd-frank
+    term: Dodd-Frank Act (2010)
+    pos: noun
+    topic: governance
+    en: { definition: "The federal financial-reform law after the 2008 crisis; for governance it added say on pay, clawback rules, compensation committee independence and bounties for whistleblowers who report to the SEC." }
+    es: { term: "Ley Dodd-Frank (2010)", explanation: "Reforma financiera federal tras la crisis de 2008; en gobierno corporativo añadió el voto consultivo sobre remuneraciones, reglas de recuperación de bonos (clawback), independencia del comité de compensaciones y recompensas para denunciantes ante la SEC." }
+    examples: [{ en: "A Dodd-Frank whistleblower bounty paid an employee millions for reporting the fraud.", es: "Una recompensa de Dodd-Frank pagó millones a un empleado por denunciar el fraude." }]
+    related: [say-on-pay, sarbanes-oxley]
+  - id: related-party-transaction
+    term: related-party (interested director) transaction
+    pos: noun
+    topic: governance
+    en: { definition: "A deal between the corporation and a director, officer or controlling shareholder, or an entity they have an interest in; valid if approved by informed disinterested directors or shareholders, or if proven fair to the corporation." }
+    es: { term: "operación con partes relacionadas (consejero interesado)", explanation: "Operación entre la sociedad y un consejero, directivo o accionista de control, o una entidad en la que tengan interés. Vale si la aprueban consejeros o accionistas desinteresados e informados, o si se prueba que fue justa para la sociedad. La LMV exige opinión del comité y aprobación del consejo (art. 28)." }
+    examples: [{ en: "The lease with the chairman's son was approved only by the independent directors.", es: "El arrendamiento con el hijo del presidente del consejo lo aprobaron solo los consejeros independientes." }]
+    authority: "DGCL § 144; TBOC § 21.418"
+    related: [duty-of-loyalty, independent-director]
+  - id: duty-of-care
+    term: duty of care
+    pos: noun
+    topic: governance
+    en: { definition: "A director's duty to act with the care of a reasonably prudent person in like circumstances: be informed, attend, ask questions, read the reports. Courts review breaches through the business judgment rule and, in Delaware, a gross-negligence standard." }
+    es: { term: "deber de diligencia (duty of care)", explanation: "Deber del consejero de actuar como una persona razonablemente prudente: informarse, asistir, preguntar, leer los reportes. Los tribunales lo revisan con la business judgment rule y, en Delaware, con el estándar de negligencia grave. En México: LGSM art. 157 y LMV arts. 30–33." }
+    examples: [{ en: "Approving a merger after a two-hour meeting with no documents breached the duty of care.", es: "Aprobar una fusión tras una reunión de dos horas sin documentos violó el deber de diligencia." }]
+    authority: "Smith v. Van Gorkom (Del. 1985)"
+    related: [fiduciary-duties, business-judgment-rule, duty-of-loyalty]
+  - id: duty-of-loyalty
+    term: duty of loyalty
+    pos: noun
+    topic: governance
+    en: { definition: "A director's or officer's duty to put the corporation's interest ahead of personal gain: no self-dealing without disclosure and approval, no taking corporate opportunities, no competing, and good faith in oversight." }
+    es: { term: "deber de lealtad (duty of loyalty)", explanation: "Deber de anteponer el interés de la sociedad al propio: nada de operaciones en beneficio propio sin revelar y aprobar, ni tomar oportunidades de negocio de la empresa, ni competir; incluye la buena fe en la supervisión. En México: LMV arts. 34–37 y LGSM art. 156." }
+    examples: [{ en: "A director who steered the contract to her own company breached the duty of loyalty.", es: "Una consejera que dirigió el contrato a su propia empresa violó el deber de lealtad." }]
+    authority: "Guth v. Loft (Del. 1939)"
+    related: [fiduciary-duties, corporate-opportunity, related-party-transaction]
+  - id: oversight-duty
+    term: oversight (Caremark) duty
+    pos: noun
+    topic: governance
+    en: { definition: "The board's duty to make a good-faith effort to put reporting and compliance systems in place and to respond to red flags; liability requires showing the directors knew they were not doing their job, a very high bar." }
+    es: { term: "deber de supervisión (Caremark)", explanation: "Deber del consejo de implantar de buena fe sistemas de información y cumplimiento y de reaccionar ante señales de alarma. Solo hay responsabilidad si se prueba que los consejeros sabían que no estaban cumpliendo su función: un estándar muy alto." }
+    examples: [{ en: "Directors who ignored repeated warnings about accounting fraud faced an oversight claim.", es: "Consejeros que ignoraron avisos repetidos de fraude contable enfrentaron un reclamo por falta de supervisión." }]
+    authority: "In re Caremark (Del. Ch. 1996); Marchand v. Barnhill (Del. 2019)"
+    related: [duty-of-loyalty, audit-committee]
+    difficulty: 2
+  - id: exculpation
+    term: exculpation clause
+    pos: noun
+    topic: governance
+    en: { definition: "A charter provision, authorized by statute, that eliminates directors' (and in Delaware now officers') personal monetary liability for breaches of the duty of care, but never for loyalty breaches, bad faith or improper personal benefit. It separates breach from paying damages." }
+    es: { term: "cláusula de exoneración de responsabilidad", explanation: "Cláusula estatutaria, autorizada por ley, que elimina la responsabilidad patrimonial personal de los consejeros (y en Delaware ya también de los officers) por faltas al deber de diligencia; nunca cubre deslealtad, mala fe ni beneficio personal indebido. Distingue “hubo incumplimiento” de “pagas con tu patrimonio”." }
+    examples: [{ en: "Thanks to the exculpation clause, the careless directors owed no damages.", es: "Gracias a la cláusula de exoneración, los consejeros descuidados no debieron daños." }]
+    authority: "DGCL § 102(b)(7); TBOC § 7.001"
+    related: [duty-of-care, d-and-o-insurance]
+    difficulty: 2
+  - id: d-and-o-insurance
+    term: D&O insurance
+    pos: noun
+    topic: governance
+    en: { definition: "Directors' and officers' liability insurance bought by the company to cover defense costs and settlements of claims against its directors and officers; it typically excludes fraud and deliberate wrongdoing." }
+    es: { term: "seguro de responsabilidad de consejeros y directivos (D&O)", explanation: "Seguro que contrata la empresa para cubrir defensa e indemnizaciones de reclamos contra consejeros y directivos; normalmente excluye fraude y dolo." }
+    examples: [{ en: "The D&O policy paid the directors' lawyers, but not the penalties for fraud.", es: "La póliza D&O pagó a los abogados de los consejeros, pero no las multas por fraude." }]
+    related: [exculpation, board-of-directors]
+  - id: derivative-suit
+    term: derivative suit
+    pos: noun
+    topic: governance
+    en: { definition: "A lawsuit a shareholder brings on behalf of the corporation to enforce a claim the board will not pursue, usually against its own directors; the recovery goes to the corporation, and the plaintiff must first make demand on the board or show demand would be futile." }
+    es: { term: "acción derivada (acción social de responsabilidad)", explanation: "Demanda que un accionista presenta en nombre de la sociedad para ejercer un reclamo que el consejo no quiere ejercer, casi siempre contra sus propios consejeros; lo recuperado va a la sociedad. Antes hay que requerir al consejo o probar que sería inútil. En México la acción de responsabilidad exige 25% del capital (LGSM art. 163); Texas permite desde 2025 umbrales de hasta 3% en ciertas sociedades." }
+    examples: [{ en: "The shareholder sued derivatively to recover the money the directors overpaid themselves.", es: "El accionista demandó por vía derivada para recuperar lo que los consejeros se pagaron de más." }]
+    authority: "TBOC §§ 21.551–21.563"
+    related: [direct-suit, demand-requirement, board-of-directors]
+  - id: direct-suit
+    term: direct suit (vs. derivative)
+    pos: noun
+    topic: governance
+    en: { definition: "A shareholder's own claim for an injury to her personally (denied dividends on her class, a blocked vote, breach of a shareholders' agreement), as opposed to an injury to the corporation; the test asks who was harmed and who would receive the remedy." }
+    es: { term: "acción directa (frente a la derivada)", explanation: "Reclamo propio del accionista por un daño personal (dividendos negados a su clase, voto impedido, incumplimiento del convenio de accionistas), a diferencia del daño a la sociedad. La prueba: quién sufrió el daño y quién recibiría el remedio." }
+    examples: [{ en: "Being denied inspection of the books is a direct claim; wasting corporate assets is derivative.", es: "Que te nieguen ver los libros es reclamo directo; dilapidar activos de la sociedad es derivado." }]
+    authority: "Tooley v. Donaldson, Lufkin & Jenrette (Del. 2004)"
+    related: [derivative-suit]
+  - id: demand-requirement
+    term: demand requirement (demand futility)
+    pos: noun
+    topic: governance
+    en: { definition: "Before suing derivatively, a shareholder must ask the board in writing to bring the claim, or plead with particularity why asking would be futile because most directors are interested or dominated; Texas requires a written demand and, in most cases, a 90-day wait." }
+    es: { term: "requisito de requerimiento previo (demand)", explanation: "Antes de la acción derivada, el accionista debe pedir por escrito al consejo que demande, o explicar con detalle por qué sería inútil (mayoría de consejeros interesados o dominados). Texas exige requerimiento escrito y esperar 90 días en la mayoría de los casos." }
+    examples: [{ en: "Demand was futile because five of seven directors had approved their own bonuses.", es: "El requerimiento era inútil porque cinco de siete consejeros habían aprobado sus propios bonos." }]
+    authority: "TBOC § 21.553"
+    related: [derivative-suit]
+    difficulty: 2
+  - id: officer
+    term: officer (vs. director)
+    pos: noun
+    topic: governance
+    en: { definition: "An executive (president, CEO, CFO, secretary) appointed by the board to run day-to-day operations; the board can remove an officer at any time, subject to contract claims, whereas directors are elected and removed by shareholders." }
+    es: { term: "directivo (officer) frente a consejero (director)", explanation: "Ejecutivo (presidente, CEO, CFO, secretario) nombrado por el consejo para la operación diaria; el consejo puede removerlo en cualquier momento, sin perjuicio de lo que deba por contrato. A los consejeros los eligen y remueven los accionistas, no el consejo.", falseFriend: "“Director” en inglés es consejero, miembro del board; el director general mexicano es el CEO o president, un officer." }
+    examples: [{ en: "The board fired the CEO but could not remove him as a director; only the shareholders can.", es: "El consejo despidió al CEO, pero no pudo removerlo como consejero; solo los accionistas pueden." }]
+    authority: "TBOC §§ 3.103–3.104"
+    related: [board-of-directors, removal-of-directors]
+  - id: removal-of-directors
+    term: removal of directors
+    pos: noun
+    topic: governance
+    en: { definition: "Shareholders may remove directors, with or without cause unless the certificate limits it, at a meeting called for that purpose; the board itself cannot remove a fellow director. Vacancies are filled as the bylaws provide." }
+    es: { term: "remoción de consejeros", explanation: "Los accionistas pueden remover consejeros, con o sin causa salvo que el acta lo limite, en asamblea convocada para ello; el consejo no puede remover a uno de sus miembros. Las vacantes se cubren como digan los bylaws. En México la asamblea los revoca en cualquier momento (LGSM art. 142)." }
+    examples: [{ en: "The dissident directors could outvote the founders on strategy but not remove them from the board.", es: "Los consejeros disidentes podían ganarles a los fundadores en estrategia, pero no removerlos del consejo." }]
+    authority: "TBOC § 21.409; DGCL § 141(k)"
+    related: [officer, board-of-directors, staggered-board]
+  - id: staggered-board
+    term: staggered (classified) board
+    pos: noun
+    topic: governance
+    en: { definition: "A board divided into classes elected in different years, so only a fraction of the seats turns over at each annual meeting; it slows takeovers and insurgent slates. A board elected all at once is not staggered." }
+    es: { term: "consejo escalonado (classified board)", explanation: "Consejo dividido en clases que se eligen en años distintos, de modo que solo una parte de los asientos se renueva en cada asamblea anual; frena tomas de control y planillas disidentes. Si todos se eligen a la vez, no es escalonado." }
+    examples: [{ en: "With a staggered board, the raider needed two annual meetings to gain control.", es: "Con un consejo escalonado, el comprador hostil necesitó dos asambleas anuales para tomar el control." }]
+    authority: "DGCL § 141(d); TBOC § 21.408"
+    related: [removal-of-directors, board-of-directors]
+  - id: quorum
+    term: quorum
+    pos: noun
+    topic: governance
+    en: { definition: "The minimum share of directors or of voting shares that must be present for a meeting to act validly, by default a majority; without a quorum the votes taken are void." }
+    es: { term: "quórum", explanation: "Mínimo de consejeros o de acciones presentes para que la reunión pueda decidir, por defecto la mayoría; sin quórum, lo votado es nulo. Igual que en la LGSM (arts. 189–191)." }
+    examples: [{ en: "Four of seven directors made a quorum, so the meeting could proceed.", es: "Cuatro de siete consejeros hicieron quórum, así que la sesión pudo seguir." }]
+    related: [board-of-directors, written-consent]
+  - id: business-court
+    term: Texas Business Court
+    pos: noun
+    topic: governance
+    en: { definition: "A specialized Texas trial court, operating since September 2024 and expanded in 2025, for large commercial and governance disputes, with judges appointed by the governor; part of Texas's push to compete with Delaware as a corporate forum." }
+    es: { term: "Tribunal Mercantil de Texas (Business Court)", explanation: "Tribunal especializado de Texas, en funciones desde septiembre de 2024 y ampliado en 2025, para litigios mercantiles y de gobierno corporativo de gran cuantía, con jueces nombrados por el gobernador; parte del esfuerzo de Texas por competir con Delaware." }
+    examples: [{ en: "The derivative suit against the Houston company was filed in the Business Court.", es: "La acción derivada contra la empresa de Houston se presentó en el Business Court." }]
+    authority: "Tex. Gov't Code ch. 25A"
+    related: [derivative-suit, texas-2025-reforms]
+  - id: texas-2025-reforms
+    term: Texas 2025 governance reforms (SB 29)
+    pos: noun
+    topic: governance
+    en: { definition: "A package that codified a strong business judgment rule presumption for listed (or opting-in) Texas corporations, strengthened independent committees that review conflicted transactions, allowed ownership thresholds of up to 3% for derivative suits, and let listed companies set thresholds for shareholder proposals." }
+    es: { term: "reformas de Texas de 2025 (SB 29)", explanation: "Paquete que codificó una presunción fuerte de business judgment rule para sociedades texanas listadas (o que opten), fortaleció los comités independientes que revisan operaciones con conflicto, permitió exigir hasta 3% del capital para la acción derivada y dejó que las listadas fijen umbrales para propuestas de accionistas. Pregunta de clase: ¿mejor gobierno o blindaje de la administración?" }
+    examples: [{ en: "After SB 29, the company's certificate required 3% ownership to sue derivatively.", es: "Tras la SB 29, el acta de la empresa exigió 3% del capital para demandar por vía derivada." }]
+    authority: "TBOC §§ 21.419, 21.373 (2025)"
+    related: [business-judgment-rule, derivative-suit, business-court]
+    difficulty: 2
+  - id: insider-trading
+    term: insider trading
+    pos: noun
+    topic: governance
+    en: { definition: "Buying or selling securities while in possession of material nonpublic information in breach of a duty of trust, or tipping others to do so; prohibited by federal securities law and a core compliance topic for boards." }
+    es: { term: "uso de información privilegiada (insider trading)", explanation: "Comprar o vender valores con información relevante no pública, violando un deber de confianza, o pasarla a otros. Lo prohíbe la ley federal de valores; es tema central de cumplimiento para el consejo. En México: LMV arts. 362–364." }
+    examples: [{ en: "The director who sold before the bad earnings news faced insider trading charges.", es: "El consejero que vendió antes de la mala noticia de resultados enfrentó cargos por insider trading." }]
+    authority: "Exchange Act § 10(b); Rule 10b-5"
+    related: [material-information, corporate-governance]
+  - id: material-information
+    term: material information
+    pos: noun
+    topic: governance
+    en: { definition: "Information a reasonable investor would consider important in deciding to buy, sell or vote; public companies must disclose it accurately and on time, and insiders may not trade on it while it is nonpublic." }
+    es: { term: "información relevante (material)", explanation: "Información que un inversionista razonable consideraría importante para comprar, vender o votar. Las empresas públicas deben revelarla con exactitud y a tiempo, y los insiders no pueden operar con ella mientras no sea pública. LMV: eventos relevantes (art. 104)." }
+    examples: [{ en: "A pending merger is material information.", es: "Una fusión pendiente es información relevante." }]
+    authority: "TSC Industries v. Northway (1976); Basic v. Levinson (1988)"
+    related: [insider-trading, sarbanes-oxley]

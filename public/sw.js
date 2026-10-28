@@ -1,7 +1,7 @@
 // Service worker de Black Letter: la app y los juegos funcionan sin red después de la primera visita.
 // Páginas: red primero, caché de respaldo. Recursos con hash (/_astro/): caché primero.
 // Datos (/data/, /map/data/, fuentes): caché y actualización en segundo plano.
-const VERSION = 'bl-2026-10-27-1';
+const VERSION = 'bl-2026-10-27-2';
 const SHELL = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 const CORE = ['/', '/games/', '/games/round/', '/games/flashcards/', '/games/match/', '/glossary/', '/quiz/', '/courses/', '/schedule/', '/more/', '/data/items.json', '/data/calendar.json', '/manifest.webmanifest', '/icons/icon-192.png', '/favicon.svg'];

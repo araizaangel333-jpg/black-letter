@@ -31,7 +31,7 @@ export function exerciseSchema(z) {
       kind: z.enum(CHECK_KINDS).optional(),
       authority: z.string().optional(),
     })).min(1),
-    related: z.object({ briefs: z.array(z.string()).default([]), terms: z.array(c.slug).default([]), notes: z.array(z.string()).default([]) }).default({}),
+    related: z.object({ briefs: z.array(z.string()).default([]), terms: z.array(c.slug).default([]), notes: z.array(z.string()).default([]) }).default({ briefs: [], terms: [], notes: [] }),
     status: z.enum(['draft', 'reviewed']).default('draft'),
     source: z.string().optional(),
     verified: z.boolean().default(false),

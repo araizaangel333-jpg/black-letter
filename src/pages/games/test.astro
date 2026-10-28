@@ -1,0 +1,138 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
+import ui from '../../i18n/ui.json';
+const glossary = await getCollection('glossary');
+const briefs = await getCollection('briefs');
+const subjects = [...new Set([...glossary.map(g => g.data.subject), ...briefs.map(b => b.data.course)])];
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'classroom', 'general'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.test'].en}>
+  <header class="sec">
+    <h1><T k="games.test" /></h1>
+    <p class="prose muted small"><T k="games.testDesc" /></p>
+  </header>
+  <section class="sec" id="t-setup">
+    <label class="setting"><span class="label"><T k="games.scope" /></span>
+      <select id="t-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+    <label class="setting"><span class="label"><T k="test.kind" /></span>
+      <select id="t-kind">
+        <Opt value="mixed" k="test.mixed" />
+        <Opt value="def-term" k="test.defTerm" />
+        <Opt value="term-def" k="test.termDef" />
+        <Opt value="es-en" k="test.esEn" />
+        <Opt value="hook-case" k="test.hookCase" />
+      </select></label>
+    <label class="setting"><span class="label"><T k="test.count" /></span>
+      <select id="t-n"><option value="10">10</option><option value="20">20</option><option value="5">5</option></select></label>
+    <p class="small muted num" id="t-best"></p>
+    <button type="button" class="btn primary" id="t-start"><T k="games.start" /></button>
+    <p class="muted" id="t-empty" hidden><T k="match.notEnough" /></p>
+  </section>
+
+  <section class="sec" id="t-play" hidden>
+    <div class="flash-top"><span class="num" id="t-progress"></span><span class="num" id="t-timer">0:00</span></div>
+    <p class="stem" id="t-stem"></p>
+    <div class="choices" id="t-choices"></div>
+    <div class="feedback" id="t-feedback" hidden>
+      <p class="verdict-line" id="t-verdict"></p>
+      <p id="t-explain"></p>
+      <p class="muted small" id="t-es"></p>
+      <a class="small" id="t-link" href="#"><T k="common.open" /></a>
+    </div>
+    <div class="q-nav"><button type="button" class="btn primary" id="t-next" hidden><T k="quiz.next" /></button></div>
+  </section>
+
+  <section class="sec" id="t-done" hidden>
+    <h2 id="t-score"></h2>
+    <p class="muted" id="t-time"></p>
+    <ul class="list" id="t-missed"></ul>
+    <div class="rate-buttons">
+      <button type="button" class="btn" id="t-tocards" hidden><T k="test.toCards" /></button>
+      <button type="button" class="btn primary" id="t-again"><T k="drill.again" /></button>
+      <a class="btn" href="/games/"><T k="games.finish" /></a>
+    </div>
+  </section>
+
+  <script>
+    import { loadItems, inScope, best, setBest, logActivity, esc, fmtSecs } from '../../islands/games/engine.js';
+    import { buildTest } from '../../islands/games/test.js';
+    import { t, lang, onLangChange } from '../../lib/i18n.js';
+    import { get, set, prefs, setPref } from '../../lib/store.js';
+    import { schedule, newCard } from '../../lib/srs.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const scope = document.getElementById('t-scope'), kind = document.getElementById('t-kind'), nSel = document.getElementById('t-n');
+    const setup = document.getElementById('t-setup'), play = document.getElementById('t-play'), done = document.getElementById('t-done');
+    const stem = document.getElementById('t-stem'), choices = document.getElementById('t-choices'), fb = document.getElementById('t-feedback');
+    const nextBtn = document.getElementById('t-next'), progress = document.getElementById('t-progress'), timer = document.getElementById('t-timer');
+    scope.value = new URLSearchParams(location.search).get('scope') ?? (prefs().fcScope || '');
+    let items = [], qs = [], i = 0, correct = 0, missed = [], t0 = 0, tick = null;
+    loadItems().then(x => { items = x; paintBest(); });
+    const key = () => `test:${kind.value}:${scope.value || 'all'}:${nSel.value}`;
+    function paintBest() { const b = best(key()); document.getElementById('t-best').textContent = b == null ? '' : `${t('test.best')}: ${b}/${nSel.value}`; }
+    [scope, kind, nSel].forEach(el => el.addEventListener('change', () => { if (el === scope) setPref('fcScope', scope.value); paintBest(); }));
+
+    function show() {
+      const q = qs[i];
+      progress.textContent = `${i + 1} / ${qs.length}`;
+      stem.textContent = q.stem;
+      choices.innerHTML = q.options.map((o, k) => `<button type="button" class="choice" data-k="${k}"><span class="cid">${'abcd'[k].toUpperCase()}</span><span>${esc(o.text)}</span></button>`).join('');
+      fb.hidden = true; nextBtn.hidden = true;
+      choices.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => answer(Number(b.dataset.k))));
+    }
+    function answer(k) {
+      const q = qs[i]; if (q.answered) return; q.answered = true;
+      const ok = q.options[k].correct;
+      choices.querySelectorAll('.choice').forEach((b, j) => { b.disabled = true; if (q.options[j].correct) b.classList.add('is-correct'); if (j === k && !ok) b.classList.add('is-wrong'); });
+      if (ok) correct++; else missed.push(q.item);
+      document.getElementById('t-verdict').textContent = ok ? t('quiz.correct') : t('quiz.incorrect');
+      document.getElementById('t-verdict').className = 'verdict-line ' + (ok ? 'ok' : 'ko');
+      document.getElementById('t-explain').textContent = q.explain;
+      document.getElementById('t-es').textContent = q.es || '';
+      const link = document.getElementById('t-link'); link.href = q.item.href;
+      fb.hidden = false; nextBtn.hidden = false;
+      requestAnimationFrame(() => nextBtn.scrollIntoView({ block: 'end', behavior: 'smooth' }));
+    }
+    function start() {
+      qs = buildTest(inScope(items, scope.value), { kind: kind.value, n: Number(nSel.value) });
+      if (qs.length < 3) { document.getElementById('t-empty').hidden = false; return; }
+      i = 0; correct = 0; missed = [];
+      setup.hidden = true; done.hidden = true; play.hidden = false;
+      t0 = Date.now(); clearInterval(tick); tick = setInterval(() => { timer.textContent = fmtSecs(Math.round((Date.now() - t0) / 1000)); }, 500);
+      show();
+    }
+    function finish() {
+      clearInterval(tick);
+      play.hidden = true; done.hidden = false;
+      const secs = Math.round((Date.now() - t0) / 1000);
+      document.getElementById('t-score').textContent = t('quiz.score', { n: correct, t: qs.length });
+      document.getElementById('t-time').textContent = fmtSecs(secs);
+      const ul = document.getElementById('t-missed');
+      ul.innerHTML = missed.map(m => `<li><a href="${esc(m.href)}">${esc(m.front)}</a> <span class="muted small">${esc(m.back)}</span></li>`).join('');
+      document.getElementById('t-tocards').hidden = !missed.length;
+      setBest(key(), correct, false);
+      logActivity({ games: 1 });
+    }
+    nextBtn.addEventListener('click', () => { i++; if (i >= qs.length) finish(); else show(); });
+    document.addEventListener('keydown', e => {
+      if (play.hidden) return;
+      const k = 'abcd1234'.indexOf(e.key.toLowerCase());
+      if (k >= 0 && fb.hidden) { const b = choices.querySelector(`[data-k="${k % 4}"]`); if (b) b.click(); }
+      if ((e.key === 'Enter' || e.key === ' ') && !nextBtn.hidden) { e.preventDefault(); nextBtn.click(); }
+    });
+    document.getElementById('t-tocards').addEventListener('click', () => {
+      const srs = get('srs', {}) || {}; const today = todayISO();
+      for (const m of missed) srs[m.id] = schedule(srs[m.id] || newCard(), 'again', today);
+      set('srs', srs);
+      document.getElementById('t-tocards').textContent = t('test.sent');
+      document.getElementById('t-tocards').disabled = true;
+    });
+    document.getElementById('t-start').addEventListener('click', start);
+    document.getElementById('t-again').addEventListener('click', start);
+    onLangChange(paintBest);
+  </script>
+</Base>
