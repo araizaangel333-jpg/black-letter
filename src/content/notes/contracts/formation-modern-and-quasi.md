@@ -9,7 +9,7 @@ sources:
 elements:
   - id: pe
     label: { en: "Promissory estoppel (§ 90)", es: "Promissory estoppel (§ 90)" }
-    test: "A promise the promisor should reasonably expect to induce action or forbearance, actual reliance, and injustice avoidable only by enforcement; remedy may be limited as justice requires. Feinberg (pension), Ricketts (the note), Hoffman (negotiations, reliance damages)."
+    test: "Four questions: could the promisor foresee the reliance, did the promisee actually rely, would refusing to enforce be unjust, and how much enforcement does justice require (the remedy can be trimmed to the reliance)? Feinberg (pension), Ricketts (the note), Hoffman (negotiations, reliance damages)."
   - id: offer-reliance
     label: { en: "Reliance on an offer (§ 87(2); Drennan)", es: "Confianza en una oferta (§ 87(2); Drennan)" }
     test: "An offer the offeror should expect to induce substantial reliance before acceptance, and which does, is binding as an option to the extent necessary to avoid injustice. Limits: no bid shopping, no unreasonable delay, no snapping up a known mistake, reliance of the kind expected."

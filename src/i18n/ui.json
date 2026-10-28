@@ -603,10 +603,6 @@
     "en": "Recite a case part by part against the clock, then rate yourself.",
     "es": "Recita un caso parte por parte contra el reloj y califícate."
   },
-  "games.soon": {
-    "en": "Match, timed test, name the case and the daily round arrive next.",
-    "es": "Match, test cronometrado, name the case y la ronda del día llegan después."
-  },
   "games.scope": {
     "en": "Scope",
     "es": "Alcance"
@@ -776,8 +772,8 @@
     "es": "Ronda del día"
   },
   "games.roundDesc": {
-    "en": "Ten cards, one match, one cold call. Under five minutes; counts for your streak.",
-    "es": "Diez tarjetas, un match, un cold call. Menos de cinco minutos; cuenta para tu racha."
+    "en": "Ten cards, one match, three Learn items, one cold call. Under five minutes; counts for your streak.",
+    "es": "Diez tarjetas, un match, tres ítems de Aprender, un cold call. Menos de cinco minutos; cuenta para la racha."
   },
   "match.kind": {
     "en": "Pairs",
@@ -868,8 +864,8 @@
     "es": "Empezar la ronda de hoy"
   },
   "today.roundDesc": {
-    "en": "Ten cards, one match, one cold call. Under five minutes.",
-    "es": "Diez tarjetas, un match, un cold call. Menos de cinco minutos."
+    "en": "Ten cards, one match, three Learn items, one cold call. Under five minutes.",
+    "es": "Diez tarjetas, un match, tres ítems de Aprender, un cold call. Menos de cinco minutos."
   },
   "games.coldcallStart": {
     "en": "Start with your next class",
@@ -1064,8 +1060,8 @@
     "es": "Test rápido (a/b/c/d)"
   },
   "games.testDesc": {
-    "en": "Four options, one right. Built on the fly from the glossary and the cases: definition to term, term to definition, Spanish to English, facts to case name.",
-    "es": "Cuatro opciones, una correcta. Se arma al vuelo con el glosario y los casos: definición a término, término a definición, español a inglés, hechos a nombre del caso."
+    "en": "Four options, one right, built on the fly from the glossary and the cases: definition to term, Spanish to English, facts or rule to case name, case name to facts.",
+    "es": "Cuatro opciones, una correcta, generadas al vuelo del glosario y los casos: definición a término, español a inglés, hechos o regla a nombre del caso, nombre del caso a hechos."
   },
   "test.kind": {
     "en": "Question type",
@@ -1118,5 +1114,121 @@
   "course.practice": {
     "en": "Practice for this course",
     "es": "Práctica de este curso"
+  },
+  "games.learn": {
+    "en": "Learn",
+    "es": "Aprender"
+  },
+  "games.learnDesc": {
+    "en": "Seven items that climb: choose among four, then type with a hint, then type from memory. A miss drops the item one level; mastered items join your flashcards.",
+    "es": "Siete ítems que suben de nivel: elegir entre cuatro, luego escribir con pista, luego escribir de memoria. Un error baja un nivel; lo dominado entra a tus flashcards."
+  },
+  "games.elements": {
+    "en": "Elements builder",
+    "es": "Arma los elementos"
+  },
+  "games.elementsDesc": {
+    "en": "One doctrine, a pile of tiles, three of them smuggled in from other doctrines. Pick the elements that belong, then read the checklist with its authorities.",
+    "es": "Una doctrina, un montón de fichas y tres intrusas de otras doctrinas. Elige los elementos que le pertenecen y luego lee la checklist con sus autoridades."
+  },
+  "learn.kind": {
+    "en": "Items",
+    "es": "Ítems"
+  },
+  "learn.terms": {
+    "en": "Glossary terms",
+    "es": "Términos del glosario"
+  },
+  "learn.cases": {
+    "en": "Case names",
+    "es": "Nombres de casos"
+  },
+  "learn.count": {
+    "en": "How many",
+    "es": "Cuántos"
+  },
+  "learn.mastered": {
+    "en": "{m} of {n} mastered",
+    "es": "{m} de {n} dominados"
+  },
+  "learn.level0": {
+    "en": "Choose",
+    "es": "Elegir"
+  },
+  "learn.level1": {
+    "en": "Type with a hint",
+    "es": "Escribir con pista"
+  },
+  "learn.level2": {
+    "en": "From memory",
+    "es": "De memoria"
+  },
+  "learn.typeTerm": {
+    "en": "Type the term",
+    "es": "Escribe el término"
+  },
+  "learn.typeCase": {
+    "en": "Type the case name (one party is enough)",
+    "es": "Escribe el nombre del caso (basta una de las partes)"
+  },
+  "learn.masteredOne": {
+    "en": "Mastered",
+    "es": "Dominado"
+  },
+  "learn.accuracy": {
+    "en": "{n} of {t} answers right",
+    "es": "{n} de {t} respuestas correctas"
+  },
+  "learn.added": {
+    "en": "{n} new cards added to flashcards",
+    "es": "{n} tarjetas nuevas añadidas a flashcards"
+  },
+  "round.stepLearn": {
+    "en": "Three Learn items from your weakest subject",
+    "es": "Tres ítems de Aprender de tu materia más floja"
+  },
+  "elements.count": {
+    "en": "Doctrines",
+    "es": "Doctrinas"
+  },
+  "elements.instruction": {
+    "en": "{n} of these {m} tiles belong here. Tap them, then check.",
+    "es": "{n} de estas {m} fichas pertenecen aquí. Tócalas y comprueba."
+  },
+  "elements.progress": {
+    "en": "Doctrine {i} of {n}",
+    "es": "Doctrina {i} de {n}"
+  },
+  "elements.found": {
+    "en": "Found {n} of {t}",
+    "es": "Encontraste {n} de {t}"
+  },
+  "elements.intruders": {
+    "en": "Intruders: {n}",
+    "es": "Intrusos: {n}"
+  },
+  "elements.total": {
+    "en": "{n} of {t} elements found",
+    "es": "{n} de {t} elementos encontrados"
+  },
+  "elements.openNote": {
+    "en": "Open the checklist",
+    "es": "Abrir la checklist"
+  },
+  "elements.pitfall": {
+    "en": "Pitfall",
+    "es": "Trampa"
+  },
+  "elements.newBest": {
+    "en": "New best: {n}%",
+    "es": "Nuevo récord: {n}%"
+  },
+  "test.ruleCase": {
+    "en": "Rule → case name",
+    "es": "Regla → nombre del caso"
+  },
+  "test.caseHook": {
+    "en": "Case name → facts",
+    "es": "Nombre del caso → hechos"
   }
 }

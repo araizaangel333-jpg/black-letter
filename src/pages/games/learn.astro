@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
+import ui from '../../i18n/ui.json';
+const glossary = await getCollection('glossary');
+const briefs = await getCollection('briefs');
+const subjects = [...new Set([...glossary.map(g => g.data.subject), ...briefs.map(b => b.data.course)])].filter(s => s !== 'classroom');
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'general'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.learn'].en}>
+  <header class="sec">
+    <h1><T k="games.learn" /></h1>
+    <p class="prose muted small"><T k="games.learnDesc" /></p>
+  </header>
+  <section class="sec" id="l-setup">
+    <label class="setting"><span class="label"><T k="games.scope" /></span>
+      <select id="l-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+    <label class="setting"><span class="label"><T k="learn.kind" /></span>
+      <select id="l-kind"><Opt value="" k="test.mixed" /><Opt value="term" k="learn.terms" /><Opt value="case" k="learn.cases" /></select></label>
+    <label class="setting"><span class="label"><T k="learn.count" /></span>
+      <select id="l-n"><option value="7">7</option><option value="5">5</option><option value="10">10</option></select></label>
+    <button type="button" class="btn primary" id="l-start"><T k="games.start" /></button>
+    <p class="muted" id="l-empty" hidden><T k="match.notEnough" /></p>
+  </section>
+  <section class="sec" id="l-play" hidden></section>
+  <section class="sec" id="l-done" hidden>
+    <h2 id="l-score"></h2>
+    <p class="muted" id="l-added"></p>
+    <ul class="list" id="l-missed"></ul>
+    <div class="rate-buttons">
+      <button type="button" class="btn" id="l-tocards" hidden><T k="test.toCards" /></button>
+      <button type="button" class="btn primary" id="l-again"><T k="drill.again" /></button>
+      <a class="btn" href="/games/"><T k="games.finish" /></a>
+    </div>
+  </section>
+
+  <script>
+    import { loadItems, inScope, typeable, pickLearn, logActivity, esc, answerOf } from '../../islands/games/engine.js';
+    import { runLearn } from '../../islands/games/learn.js';
+    import { t } from '../../lib/i18n.js';
+    import { get, set, prefs, setPref } from '../../lib/store.js';
+    import { schedule, newCard } from '../../lib/srs.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const scope = document.getElementById('l-scope'), kind = document.getElementById('l-kind'), nSel = document.getElementById('l-n');
+    const setup = document.getElementById('l-setup'), play = document.getElementById('l-play'), done = document.getElementById('l-done');
+    scope.value = new URLSearchParams(location.search).get('scope') ?? (prefs().fcScope || '');
+    let items = [], byId = {}, missed = [];
+    loadItems().then(x => { items = x; byId = Object.fromEntries(items.map(i => [i.id, i])); });
+    scope.addEventListener('change', () => setPref('fcScope', scope.value));
+
+    async function start() {
+      const today = todayISO(); const srs = get('srs', {}) || {};
+      const pool = inScope(items, scope.value).filter(i => typeable(i) && (!kind.value || i.type === kind.value));
+      const chosen = pickLearn(pool, srs, Number(nSel.value), today);
+      if (chosen.length < 3) { document.getElementById('l-empty').hidden = false; return; }
+      setup.hidden = true; done.hidden = true; play.hidden = false;
+      const r = await runLearn(play, chosen, items, { top: 2 });
+      play.hidden = true; done.hidden = false;
+      // los dominados que aún no estaban en flashcards entran programados como "good"
+      const cur = get('srs', {}) || {}; let added = 0;
+      for (const id of r.mastered) if (!cur[id]) { cur[id] = schedule(newCard(), 'good', today); added++; }
+      if (added) set('srs', cur);
+      missed = r.missed.map(id => byId[id]).filter(Boolean);
+      document.getElementById('l-score').textContent = `${t('learn.mastered', { m: r.mastered.length, n: chosen.length })} · ${t('learn.accuracy', { n: r.correct, t: r.asked })}`;
+      document.getElementById('l-added').textContent = added ? t('learn.added', { n: added }) : '';
+      document.getElementById('l-missed').innerHTML = missed.map(m => `<li><a href="${esc(m.href)}">${esc(answerOf(m))}</a> <span class="muted small">${esc(m.back)}</span></li>`).join('');
+      const tc = document.getElementById('l-tocards'); tc.hidden = !missed.length; tc.disabled = false; tc.textContent = t('test.toCards');
+      logActivity({ games: 1 });
+    }
+    document.getElementById('l-tocards').addEventListener('click', () => {
+      const srs = get('srs', {}) || {}; const today = todayISO();
+      for (const m of missed) srs[m.id] = schedule(srs[m.id] || newCard(), 'again', today);
+      set('srs', srs);
+      const tc = document.getElementById('l-tocards'); tc.textContent = t('test.sent'); tc.disabled = true;
+    });
+    document.getElementById('l-start').addEventListener('click', start);
+    document.getElementById('l-again').addEventListener('click', start);
+  </script>
+</Base>

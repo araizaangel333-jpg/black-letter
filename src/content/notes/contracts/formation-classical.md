@@ -9,7 +9,7 @@ sources:
 elements:
   - id: offer
     label: { en: "Is there an offer?", es: "¿Hay oferta?" }
-    test: "A manifestation of willingness to enter a bargain that justifies the other in understanding that assent will conclude it (R.2d § 24). Price quotations, ads and statements of minimum price are invitations (Owen, Harvey, Craft) unless the words and context show commitment (Fairmount, Lefkowitz)."
+    test: "Ask whether a reasonable recipient would read the words and conduct as a commitment that a simple yes will close (R.2d § 24). Price quotations, ads and statements of minimum price are invitations (Owen, Harvey, Craft) unless the words and context show commitment (Fairmount, Lefkowitz)."
   - id: terms
     label: { en: "Who is the offeror and what does the offer require?", es: "¿Quién es el oferente y qué exige la oferta?" }
     test: "The offeror is master of the offer: manner of acceptance, who may accept, time limits, whether notice is required (International Filter). Read the document to find who proposed what."

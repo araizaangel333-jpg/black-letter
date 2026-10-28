@@ -88,7 +88,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     function show() {
       const it = byId[queue[i]];
       progress.textContent = `${i + 1} / ${queue.length}`;
-      type.textContent = it.type === 'case' ? 'case' : (it.register || 'term');
+      type.textContent = it.type === 'term' ? (it.register || 'term') : it.type;
       front.innerHTML = it.type === 'case' && it.hook ? `<span>${escapeHtml(it.front)}</span><span class="f-hook">${escapeHtml(it.hook)}</span>` : escapeHtml(it.front);
       const L = lang();
       const esLine = it.type === 'term' ? [it.esTerm, it.es].filter(Boolean).join(': ') : it.es;

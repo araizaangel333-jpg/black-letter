@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Opt from '../../components/Opt.astro';
+import ui from '../../i18n/ui.json';
+const notes = await getCollection('notes');
+const subjects = [...new Set(notes.filter(n => n.data.elements.length >= 3).map(n => n.data.course))];
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.elements'].en}>
+  <header class="sec">
+    <h1><T k="games.elements" /></h1>
+    <p class="prose muted small"><T k="games.elementsDesc" /></p>
+  </header>
+  <section class="sec" id="e-setup">
+    <label class="setting"><span class="label"><T k="games.scope" /></span>
+      <select id="e-scope"><Opt value="" k="games.scopeAll" />{subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}</select></label>
+    <label class="setting"><span class="label"><T k="elements.count" /></span>
+      <select id="e-n"><option value="5">5</option><option value="3">3</option><option value="8">8</option></select></label>
+    <p class="small muted num" id="e-best"></p>
+    <button type="button" class="btn primary" id="e-start"><T k="games.start" /></button>
+    <p class="muted" id="e-empty" hidden><T k="match.notEnough" /></p>
+  </section>
+  <section class="sec" id="e-play" hidden></section>
+  <section class="sec" id="e-done" hidden>
+    <h2 id="e-score"></h2>
+    <p class="muted" id="e-pb"></p>
+    <div class="rate-buttons">
+      <button type="button" class="btn primary" id="e-again"><T k="drill.again" /></button>
+      <a class="btn" href="/games/"><T k="games.finish" /></a>
+    </div>
+  </section>
+
+  <script>
+    import { pick, best, setBest, logActivity } from '../../islands/games/engine.js';
+    import { buildRound, runElements } from '../../islands/games/elements.js';
+    import { t, onLangChange } from '../../lib/i18n.js';
+    import { prefs, setPref } from '../../lib/store.js';
+
+    const scope = document.getElementById('e-scope'), nSel = document.getElementById('e-n');
+    const setup = document.getElementById('e-setup'), play = document.getElementById('e-play'), done = document.getElementById('e-done');
+    const saved = prefs().fcScope || '';
+    scope.value = new URLSearchParams(location.search).get('scope') ?? ([...scope.options].some(o => o.value === saved) ? saved : '');
+    let doctrines = [];
+    fetch('/data/doctrines.json').then(r => r.json()).then(j => { doctrines = j.doctrines; paintBest(); }).catch(() => {});
+    const key = () => `elements:${scope.value || 'all'}`;
+    function paintBest() { const b = best(key()); document.getElementById('e-best').textContent = b == null ? '' : `${t('test.best')}: ${b}%`; }
+    scope.addEventListener('change', () => { if ([...document.getElementById('e-scope').options].some(o => o.value === scope.value)) setPref('fcScope', scope.value); paintBest(); });
+
+    async function start() {
+      const pool = doctrines.filter(d => !scope.value || d.subject === scope.value);
+      if (pool.length < 2) { document.getElementById('e-empty').hidden = false; return; }
+      const rounds = pick(pool, Number(nSel.value)).map(d => buildRound(d, doctrines, 3));
+      setup.hidden = true; done.hidden = true; play.hidden = false;
+      const r = await runElements(play, rounds);
+      play.hidden = true; done.hidden = false;
+      const pct = r.total ? Math.round(100 * r.found / r.total) : 0;
+      const prev = best(key()); setBest(key(), pct, false);
+      document.getElementById('e-score').textContent = `${t('elements.total', { n: r.found, t: r.total })} · ${t('elements.intruders', { n: r.intruders })}`;
+      document.getElementById('e-pb').textContent = prev == null || pct > prev ? t('elements.newBest', { n: pct }) : `${t('test.best')}: ${prev}%`;
+      logActivity({ games: 1 });
+    }
+    document.getElementById('e-start').addEventListener('click', start);
+    document.getElementById('e-again').addEventListener('click', start);
+    onLangChange(paintBest);
+  </script>
+</Base>

@@ -21,6 +21,7 @@ const calendar = {
     <ol class="round-steps" id="r-steps">
       <li data-step="cards"><T k="round.stepCards" /></li>
       <li data-step="match"><T k="round.stepMatch" /></li>
+      <li data-step="learn"><T k="round.stepLearn" /></li>
       <li data-step="coldcall"><T k="round.stepColdCall" /></li>
     </ol>
   </header>
@@ -37,10 +38,11 @@ const calendar = {
   </section>
   <script type="application/json" id="round-data" set:html={JSON.stringify(calendar)} />
   <script>
-    import { loadItems, pick, logActivity, distractors } from '../../islands/games/engine.js';
+    import { loadItems, pick, logActivity, typeable, weakestSubject, pickLearn } from '../../islands/games/engine.js';
     import { runCards } from '../../islands/games/cards.js';
     import { runMatch, pairsFrom } from '../../islands/games/match.js';
     import { runMiniColdCall } from '../../islands/games/mini-coldcall.js';
+    import { runLearn } from '../../islands/games/learn.js';
     import { buildQueue } from '../../lib/srs.js';
     import { nextMeeting } from '../../lib/calendar.js';
     import { todayISO, nowHM } from '../../lib/dates.js';
@@ -88,9 +90,17 @@ const calendar = {
       const terms = items.filter(i => i.type === 'term');
       if (terms.length >= 6) { const m = await runMatch(stage, pairsFrom(pick(terms, 6))); summary.push(`Match ${Math.floor(m.seconds / 60)}:${String(m.seconds % 60).padStart(2, '0')}`); }
       mark('match', 'is-done');
-      // 3. cold call
-      mark('coldcall', 'is-on');
+      // 3. learn: tres ítems de la materia más floja (o de la próxima clase), hasta el nivel con pista
+      mark('learn', 'is-on');
+      const srs = get('srs', {}) || {};
       const kase = nextCase(items);
+      const subj = weakestSubject(items, srs) || kase?.subject || null;
+      const lpool = items.filter(i => typeable(i) && i.subject === subj);
+      const chosen = pickLearn(lpool.length >= 3 ? lpool : items.filter(typeable), srs, 3, today);
+      if (chosen.length) { const l = await runLearn(stage, chosen, items, { top: 1 }); summary.push(`${t('games.learn')} ${l.correct}/${l.asked}`); }
+      mark('learn', 'is-done');
+      // 4. cold call
+      mark('coldcall', 'is-on');
       if (kase) { const r = await runMiniColdCall(stage, kase); summary.push(`${t('games.coldcall')}: ${t('drill.score', { n: r.confidence })}`); }
       mark('coldcall', 'is-done');
       logActivity({ rounds: 1, games: 1 });

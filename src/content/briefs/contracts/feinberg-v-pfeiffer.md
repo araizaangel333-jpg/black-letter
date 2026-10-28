@@ -11,7 +11,7 @@ hook: "A pension promised for life after thirty-seven years, honored until new m
 posture: "A retired employee sued her former employer when it stopped paying a promised lifetime pension; judgment for the employee, affirmed."
 whyHere: "The promissory estoppel case assigned Sept. 29 (casebook Section 4, pp. 120–130) with R.2d § 90: past service is not consideration and retiring was not bargained for, but reliance on the promise (retiring, then becoming unemployable through illness) makes it enforceable."
 oneLiner: { en: "A pension promise lacks consideration when past service is not bargained for, but the employee's reliance by retiring makes the promise enforceable under promissory estoppel.", es: "Una promesa de pensión carece de consideration cuando el servicio pasado no fue el precio, pero la confianza de la empleada al retirarse la hace exigible por promissory estoppel." }
-rule: "A promise which the promisor should reasonably expect to induce action or forbearance of a definite and substantial character on the part of the promisee, and which does induce it, is binding if injustice can be avoided only by enforcement (R.1 § 90); past services and a retirement the promisor did not request are not consideration."
+rule: "A promise made without consideration still binds when the promisor should have foreseen that the promisee would seriously rely on it, the promisee did rely, and only enforcement avoids injustice (the court adopts the first Restatement's § 90); past services and a retirement the promisor never asked for are not consideration."
 url: "https://www.courtlistener.com/?q=%22Feinberg+v.+Pfeiffer%22"
 book: { book: farnsworth-10, pages: "120–130 (Section 4, reliance)" }
 relation:

@@ -22,7 +22,7 @@ export function runCards(container, queueIds, byId) {
     function show() {
       const it = byId[queue[i]];
       container.querySelector('[data-progress]').textContent = `${i + 1} / ${queue.length}`;
-      container.querySelector('[data-type]').textContent = it.type === 'case' ? 'case' : (it.register || 'term');
+      container.querySelector('[data-type]').textContent = it.type === 'term' ? (it.register || 'term') : it.type;
       front.innerHTML = it.type === 'case' && it.hook ? `<span>${esc(it.front)}</span><span class="f-hook">${esc(it.hook)}</span>` : esc(it.front);
       const esLine = it.type === 'term' ? [it.esTerm, it.es].filter(Boolean).join(': ') : it.es;
       back.innerHTML = `<span class="b-main">${esc(it.back)}</span>` + (it.rule && it.type === 'case' ? `<span class="b-rule">${esc(it.rule)}</span>` : '') + (esLine ? `<span class="b-es ${lang() === 'es' ? '' : 'muted'}">${esc(esLine)}</span>` : '') + (it.falseFriend ? `<span class="b-ff">${esc(it.falseFriend)}</span>` : '');

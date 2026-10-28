@@ -506,7 +506,7 @@ items:
     term: subcontractor bid (R.2d § 87(2))
     pos: noun
     topic: formation
-    en: { definition: "An offer the offeror should reasonably expect to induce substantial reliance before acceptance, and which does, is binding as an option to the extent necessary to avoid injustice; the Drennan rule, limited by bid shopping, unreasonable delay and known mistakes." }
+    en: { definition: "When the offeror should foresee that the offeree will rely substantially on the offer before accepting, and the offeree does, the offer is treated as an option for as long as fairness requires; the Drennan rule, limited by bid shopping, unreasonable delay and known mistakes." }
     es: { term: "cotización de subcontratista (R.2d § 87(2))", explanation: "Una oferta que el oferente debería esperar que induzca confianza sustancial antes de la aceptación, y que la induce, obliga como opción en la medida necesaria para evitar injusticia; la regla de Drennan, limitada por el regateo con la cotización, la demora irrazonable y los errores conocidos." }
     examples: [{ en: "The paving bid used in the general's winning bid could not be withdrawn the next morning.", es: "La cotización de pavimentación usada en la propuesta ganadora no pudo retirarse a la mañana siguiente." }]
     related: [promissory-estoppel, reliance, revocation, option-contract]

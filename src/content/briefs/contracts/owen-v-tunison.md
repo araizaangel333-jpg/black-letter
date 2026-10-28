@@ -11,7 +11,7 @@ hook: "A letter naming the only price he would take, and no contract"
 posture: "Buyer sued for breach after the owner refused to convey; the trial court reported the case to the Supreme Judicial Court, which held no contract existed and entered judgment for the defendant."
 whyHere: "The first offer case of the course (Sept. 8): a statement that one would not sell for less than a price is not an offer, so the buyer's acceptance created nothing. It sets up the objective test: would a reasonable person in the recipient's shoes understand a commitment to be bound?"
 oneLiner: { en: "A reply that it would not be possible to sell unless a price were received is a statement of terms, not an offer that acceptance can close.", es: "Una respuesta de que no sería posible vender salvo recibiendo cierto precio es una declaración de condiciones, no una oferta que la aceptación pueda cerrar." }
-rule: "An offer requires a manifestation of willingness to enter a bargain that justifies the recipient in understanding that assent will conclude it; a statement of the price at which one might sell, or a refusal to sell below a figure, invites further negotiation and is not an offer."
+rule: "Words count as an offer only if, read objectively, they would lead the recipient to believe that saying yes closes the deal (the idea behind R.2d § 24); naming the price at which one might sell, or refusing to sell below a figure, invites further negotiation and is not an offer."
 url: "https://www.courtlistener.com/?q=%22Owen+v.+Tunison%22"
 book: { book: farnsworth-10, pages: "191–194" }
 relation:

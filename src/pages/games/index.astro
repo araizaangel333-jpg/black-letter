@@ -30,9 +30,17 @@ const byCourse = courses.map(c => ({ c, list: briefs.filter(b => b.data.course =
       <p><T k="games.flashcardsDesc" /></p>
       <span class="small muted" id="fc-stats"></span>
     </a>
+    <a class="card mode" href="/games/learn/">
+      <h3><T k="games.learn" /></h3>
+      <p><T k="games.learnDesc" /></p>
+    </a>
     <a class="card mode" href="/games/test/">
       <h3><T k="games.test" /></h3>
       <p><T k="games.testDesc" /></p>
+    </a>
+    <a class="card mode" href="/games/elements/">
+      <h3><T k="games.elements" /></h3>
+      <p><T k="games.elementsDesc" /></p>
     </a>
     <a class="card mode" href="/games/match/">
       <h3><T k="games.match" /></h3>
@@ -52,7 +60,6 @@ const byCourse = courses.map(c => ({ c, list: briefs.filter(b => b.data.course =
       <span class="small" id="cc-start-wrap" hidden><a class="btn" id="cc-start" href="#coldcall"><T k="games.coldcallStart" /></a></span>
     </a>
   </div>
-  <p class="muted small"><T k="games.soon" /></p>
 
   <section class="sec" id="coldcall">
     <div class="sec-head"><h2><T k="games.upcomingBriefs" /></h2></div>

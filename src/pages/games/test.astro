@@ -25,6 +25,8 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
         <Opt value="term-def" k="test.termDef" />
         <Opt value="es-en" k="test.esEn" />
         <Opt value="hook-case" k="test.hookCase" />
+        <Opt value="rule-case" k="test.ruleCase" />
+        <Opt value="case-hook" k="test.caseHook" />
       </select></label>
     <label class="setting"><span class="label"><T k="test.count" /></span>
       <select id="t-n"><option value="10">10</option><option value="20">20</option><option value="5">5</option></select></label>
@@ -59,7 +61,7 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
 
   <script>
     import { loadItems, inScope, best, setBest, logActivity, esc, fmtSecs } from '../../islands/games/engine.js';
-    import { buildTest } from '../../islands/games/test.js';
+    import { buildTest, KINDS } from '../../islands/games/test.js';
     import { t, lang, onLangChange } from '../../lib/i18n.js';
     import { get, set, prefs, setPref } from '../../lib/store.js';
     import { schedule, newCard } from '../../lib/srs.js';
@@ -69,7 +71,9 @@ subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     const setup = document.getElementById('t-setup'), play = document.getElementById('t-play'), done = document.getElementById('t-done');
     const stem = document.getElementById('t-stem'), choices = document.getElementById('t-choices'), fb = document.getElementById('t-feedback');
     const nextBtn = document.getElementById('t-next'), progress = document.getElementById('t-progress'), timer = document.getElementById('t-timer');
-    scope.value = new URLSearchParams(location.search).get('scope') ?? (prefs().fcScope || '');
+    const qp = new URLSearchParams(location.search);
+    scope.value = qp.get('scope') ?? (prefs().fcScope || '');
+    if (KINDS.includes(qp.get('kind'))) kind.value = qp.get('kind');
     let items = [], qs = [], i = 0, correct = 0, missed = [], t0 = 0, tick = null;
     loadItems().then(x => { items = x; paintBest(); });
     const key = () => `test:${kind.value}:${scope.value || 'all'}:${nSel.value}`;
