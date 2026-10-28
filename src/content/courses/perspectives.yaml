@@ -15,13 +15,18 @@ books:
     short: "Constitution"
     role: reference
 topics:
-  - { id: sources, order: 1, title: { en: "Sources of law and the common-law method", es: "Fuentes del derecho y método del common law" } }
-  - { id: federalism, order: 2, title: { en: "Federalism", es: "Federalismo" }, barTested: true }
-  - { id: powers, order: 3, title: { en: "Powers of government", es: "Poderes del gobierno" }, barTested: true }
-  - { id: courts, order: 4, title: { en: "Courts and civil procedure", es: "Tribunales y procedimiento civil" } }
-  - { id: rights, order: 5, title: { en: "Constitutional rights", es: "Derechos constitucionales" }, barTested: true }
+  - { id: sources, order: 1, title: { en: "The legal system and its sources (ch. 1)", es: "El sistema jurídico y sus fuentes (cap. 1)" } }
+  - { id: powers, order: 2, title: { en: "Separation of powers: Congress and the President (ch. 6)", es: "División de poderes: Congreso y Presidente (cap. 6)" }, barTested: true }
+  - { id: courts, order: 3, title: { en: "Courts and judges (ch. 3, 5)", es: "Tribunales y jueces (caps. 3 y 5)" } }
+  - { id: federalism, order: 4, title: { en: "Federalism and the Commerce Clause (ch. 8)", es: "Federalismo y Commerce Clause (cap. 8)" }, barTested: true }
+  - { id: citizenship, order: 5, title: { en: "Citizenship, amendments and the Reconstruction Amendments", es: "Ciudadanía, enmiendas y las enmiendas de la Reconstrucción" } }
+  - { id: speech, order: 6, title: { en: "Free speech (ch. 12)", es: "Libertad de expresión (cap. 12)" }, barTested: true }
+  - { id: equality, order: 7, title: { en: "Equal protection and fundamental rights", es: "Igualdad ante la ley y derechos fundamentales" }, barTested: true }
+  - { id: criminal, order: 8, title: { en: "Criminal procedure and rights of the accused (ch. 11)", es: "Procedimiento penal y derechos del acusado (cap. 11)" }, barTested: true }
 assessment:
-  - { kind: other, format: { en: "Evaluation format to confirm with the syllabus", es: "Forma de evaluación por confirmar con el syllabus" }, verified: false }
+  - { kind: midterm, date: "2026-10-09", format: { en: "Midterm on October 9", es: "Examen parcial el 9 de octubre" } }
+  - { kind: other, format: { en: "Final evaluation format to confirm with the syllabus; review session on November 20", es: "Formato de la evaluación final por confirmar; sesión de repaso el 20 de noviembre" }, verified: false }
+  - { kind: participation, format: { en: "Weekly discussion comparing your home country's system; brief the assigned case", es: "Discusión semanal comparando el sistema de tu país; brief del caso asignado" } }
 materials:
   canvas: true
   note: { en: "The book plus the Constitution, judicial opinions, articles and the professor's slides. Usually meets Fridays.", es: "El libro más la Constitución, opiniones judiciales, artículos y presentaciones del profesor. Normalmente los viernes." }

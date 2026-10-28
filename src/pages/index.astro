@@ -3,14 +3,22 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
 import Bi from '../components/Bi.astro';
+import ui from '../i18n/ui.json';
 
 const terms = await getCollection('terms');
 const courses = await getCollection('courses');
+const syllabus = await getCollection('syllabus');
+const briefs = await getCollection('briefs');
 const term = terms.find(t => t.id === 'fall-2026').data;
+const termCourses = courses.filter(c => c.data.term === term.id);
+const briefById = Object.fromEntries(briefs.map(b => [b.id, b]));
+const bookShort = (courseId, bookId) => termCourses.find(c => c.id === courseId)?.data.books.find(b => b.id === bookId)?.short || bookId;
+const items = syllabus.map(s => s.data).filter(s => s.date >= term.start).sort((a, b) => a.date.localeCompare(b.date));
 const calendar = {
   term,
-  courses: courses.filter(c => c.data.term === term.id).map(c => ({ id: c.id, code: c.data.code, color: c.data.color, title: c.data.title, meetings: c.data.meetings, professorName: c.data.professor.name })),
+  courses: termCourses.map(c => ({ id: c.id, code: c.data.code, color: c.data.color, title: c.data.title, meetings: c.data.meetings, professorName: c.data.professor.name })),
 };
+const dueItems = items.filter(s => s.due || s.type === 'exam');
 ---
 <Base>
   <section class="sec" id="docket">
@@ -27,10 +35,79 @@ const calendar = {
             <span class="sub">{c.professorName}</span>
           </span>
           <span class="code" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+          <div class="session" data-session hidden>
+            <ul class="readings" data-readings>
+              {items.filter(s => s.course === c.id && (s.type === 'reading' || s.type === 'class' || s.type === 'exam')).map(s => (
+                <li data-date={s.date} data-id={s.id} hidden>
+                  <label class="check">
+                    <input type="checkbox" data-done={s.id} />
+                    <span class="box" aria-hidden="true"></span>
+                    <span class="text">
+                      <span class="rtitle"><Bi v={s.title} /></span>
+                      {s.pages.length > 0 && <span class="rpages">{s.pages.map((p, i) => (<span>{i > 0 ? '; ' : ''}<b>{bookShort(c.id, p.book)}</b> {p.pages ?? p.sections}{p.note ? ` (${p.note})` : ''}</span>))}</span>}
+                      {s.note && <span class="rnote"><Bi v={s.note} /></span>}
+                    </span>
+                  </label>
+                  {s.briefs.length > 0 && (
+                    <ul class="rbriefs">
+                      {s.briefs.map(id => briefById[id] && (
+                        <li>
+                          <a href={`/briefs/${id}/`}>{briefById[id].data.title}</a>
+                          <span class="tag" data-brief-status={id}><T k={`brief.status.${briefById[id].data.status}`} /></span>
+                          <a class="drill-link" href={`/briefs/${id}/?drill=1`}><T k="today.drill" /></a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {s.tasks.length > 0 && <ul class="rtasks">{s.tasks.map(t => <li><Bi v={t} /></li>)}</ul>}
+                </li>
+              ))}
+            </ul>
+            <p class="muted small" data-empty hidden><T k="today.readingsSoon" /></p>
+            <label class="prep">
+              <span class="plabel"><T k="today.prep" /></span>
+              <textarea rows="2" data-prep></textarea>
+            </label>
+            <label class="prep capture" data-capture-box hidden>
+              <span class="plabel"><T k="today.capture" /></span>
+              <textarea rows="3" data-capture></textarea>
+            </label>
+          </div>
         </li>
       ))}
     </ul>
-    <p class="muted" style="font-size: 14px;"><T k="today.readingsSoon" /></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="today.dueSoon" /></h2></div>
+    <ul class="duelist" id="due-list">
+      {dueItems.map(s => {
+        const c = calendar.courses.find(x => x.id === s.course);
+        return (
+          <li data-due={s.due || s.date} hidden>
+            <span class="code" data-size="sm" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+            <span class="what"><span class="rtitle"><Bi v={s.title} /></span><span class="sub num" data-due-label></span></span>
+          </li>
+        );
+      })}
+    </ul>
+    <p class="muted small" id="due-empty" hidden><T k="today.nothingDue" /></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="today.thisWeek" /></h2></div>
+    <ul class="docket" id="week-list">
+      {items.filter(s => s.type === 'review' || s.type === 'exam').map(s => {
+        const c = calendar.courses.find(x => x.id === s.course);
+        return (
+          <li data-date={s.date} hidden>
+            <span class="when"><span class="when-main num">{s.time ? s.time.start : ''}</span><small class="when-sub" data-when></small></span>
+            <span class="what"><span class="rtitle"><Bi v={s.title} /></span></span>
+            <span class="code" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+          </li>
+        );
+      })}
+    </ul>
   </section>
 
   <section class="sec">
@@ -46,6 +123,7 @@ const calendar = {
     <div class="sec-head"><h2><T k="today.roundTitle" /></h2></div>
     <div class="pad">
       <p><T k="today.roundSoon" /></p>
+      <p><a class="btn" href="/games/flashcards/"><T k="today.flashcards" /></a></p>
     </div>
   </section>
 
@@ -60,12 +138,29 @@ const calendar = {
 
   <script type="application/json" id="calendar-data" set:html={JSON.stringify(calendar)} />
   <script>
-    import { todayISO, nowHM, daysBetween, formatDate, formatTime } from '../lib/dates.js';
-    import { nextMeeting } from '../lib/calendar.js';
+    import { todayISO, nowHM, daysBetween, formatDate, formatTime, addDays } from '../lib/dates.js';
+    import { nextMeeting, meetingsOn } from '../lib/calendar.js';
     import { t, lang, onLangChange } from '../lib/i18n.js';
+    import { get, set, update } from '../lib/store.js';
 
     const data = JSON.parse(document.getElementById('calendar-data').textContent);
     const list = document.getElementById('docket-list');
+    const coldcall = get('coldcall', {}) || {};
+
+    function paintChecks() {
+      const done = get('done', {}) || {};
+      document.querySelectorAll('[data-done]').forEach(cb => { cb.checked = Boolean(done[cb.dataset.done]); cb.closest('li').classList.toggle('is-done', cb.checked); });
+    }
+    document.querySelectorAll('[data-done]').forEach(cb => cb.addEventListener('change', () => {
+      update('done', d => { const n = { ...(d || {}) }; if (cb.checked) n[cb.dataset.done] = new Date().toISOString(); else delete n[cb.dataset.done]; return n; }, {});
+      cb.closest('li').classList.toggle('is-done', cb.checked);
+    }));
+
+    function bindText(el, bucket, key) {
+      const store = get(bucket, {}) || {};
+      el.value = store[key] || '';
+      el.addEventListener('input', () => update(bucket, s => ({ ...(s || {}), [key]: el.value }), {}));
+    }
 
     function render() {
       const today = todayISO();
@@ -73,28 +168,57 @@ const calendar = {
       const L = lang();
       document.getElementById('today-date').textContent = formatDate(today, L, { weekday: 'long', month: 'long', day: 'numeric' });
 
-      const rows = data.courses.map(c => ({ c, next: nextMeeting(c, data.term, today, hm) }));
-      rows.sort((a, b) => {
-        if (!a.next) return 1; if (!b.next) return -1;
-        return a.next.daysAway - b.next.daysAway || a.next.start.localeCompare(b.next.start);
-      });
-      rows.forEach(({ c, next }, i) => {
+      const rows = data.courses.map(c => ({ c, next: nextMeeting(c, data.term, today, hm), todaySessions: meetingsOn(c, data.term, today) }));
+      rows.sort((a, b) => { if (!a.next) return 1; if (!b.next) return -1; return a.next.daysAway - b.next.daysAway || a.next.start.localeCompare(b.next.start); });
+      rows.forEach(({ c, next, todaySessions }, i) => {
         const li = list.querySelector(`[data-course="${c.id}"]`);
         li.style.order = String(i);
         const main = li.querySelector('.when-main'), sub = li.querySelector('.when-sub');
+        const session = li.querySelector('[data-session]');
         li.classList.toggle('now', Boolean(next && next.inProgress));
-        if (!next) { main.textContent = ''; sub.textContent = t('today.noMore'); return; }
-        main.textContent = `${formatTime(next.start, L)}`;
-        const when = next.inProgress ? t('today.now') : next.daysAway === 0 ? t('today.today') : next.daysAway === 1 ? t('today.tomorrow') : formatDate(next.date, L);
-        sub.textContent = when;
+        if (!next) { main.textContent = ''; sub.textContent = t('today.noMore'); session.hidden = true; return; }
+        main.textContent = formatTime(next.start, L);
+        sub.textContent = next.inProgress ? t('today.now') : next.daysAway === 0 ? t('today.today') : next.daysAway === 1 ? t('today.tomorrow') : formatDate(next.date, L);
+        session.hidden = false;
+        let shown = 0;
+        session.querySelectorAll('[data-readings] > li').forEach(r => { const show = r.dataset.date === next.date; r.hidden = !show; if (show) shown++; });
+        session.querySelector('[data-empty]').hidden = shown > 0;
+        const prep = session.querySelector('[data-prep]');
+        if (!prep.dataset.bound) { bindText(prep, 'prep', `${c.id}:${next.date}`); prep.dataset.bound = '1'; }
+        const started = todaySessions.find(m => m.start <= hm);
+        const capBox = session.querySelector('[data-capture-box]');
+        capBox.hidden = !started;
+        if (started) { const cap = session.querySelector('[data-capture]'); if (!cap.dataset.bound) { bindText(cap, 'captures', `${c.id}:${today}`); cap.dataset.bound = '1'; } }
       });
       list.style.display = 'grid';
+
+      // entregas en 7 días
+      let dueShown = 0;
+      document.querySelectorAll('#due-list > li').forEach(li => {
+        const n = daysBetween(today, li.dataset.due);
+        const show = n >= 0 && n <= 7; li.hidden = !show; if (!show) return; dueShown++;
+        li.querySelector('[data-due-label]').textContent = `${t('today.due')}: ${n === 0 ? t('today.today') : n === 1 ? t('today.tomorrow') : formatDate(li.dataset.due, L)}`;
+      });
+      document.getElementById('due-empty').hidden = dueShown > 0;
+
+      // sesiones de repaso y exámenes de la semana
+      document.querySelectorAll('#week-list > li').forEach(li => {
+        const n = daysBetween(today, li.dataset.date);
+        const show = n >= 0 && n <= 7; li.hidden = !show; if (!show) return;
+        li.querySelector('[data-when]').textContent = n === 0 ? t('today.today') : n === 1 ? t('today.tomorrow') : formatDate(li.dataset.date, L);
+      });
 
       document.querySelectorAll('[data-countdown]').forEach(el => {
         const n = daysBetween(today, el.dataset.countdown);
         el.textContent = n < 0 ? t('today.past') : n === 1 ? t('today.dayLeft') : t('today.daysLeft', { n });
         el.title = formatDate(el.dataset.countdown, L, { weekday: 'long', month: 'long', day: 'numeric' });
       });
+
+      document.querySelectorAll('[data-brief-status]').forEach(el => {
+        const cc = coldcall[el.dataset.briefStatus];
+        if (cc) el.title = t('drill.lastRun', { when: cc.last, n: cc.confidence });
+      });
+      paintChecks();
     }
     render();
     onLangChange(render);

@@ -13,6 +13,21 @@ import ui from '../../i18n/ui.json';
       <h3><T k="today.mapTitle" /></h3>
       <p><T k="today.mapDesc" /></p>
     </a>
+    <a class="card" href="/schedule/">
+      <h3><T k="more.schedule" /></h3>
+      <p><T k="schedule.intro" /></p>
+    </a>
+  </section>
+
+  <section class="sec settings">
+    <div class="sec-head"><h2><T k="more.data" /></h2></div>
+    <p class="small muted"><T k="more.dataNote" /></p>
+    <div class="rate-buttons">
+      <button type="button" class="btn" id="export-btn"><T k="more.export" /></button>
+      <label class="btn" for="import-file"><T k="more.import" /></label>
+      <input type="file" id="import-file" accept="application/json" hidden />
+    </div>
+    <p class="small" id="import-msg"></p>
   </section>
 
   <section class="sec settings">
@@ -34,8 +49,22 @@ import ui from '../../i18n/ui.json';
   </section>
 
   <script>
-    import { prefs, setPref } from '../../lib/store.js';
+    import { prefs, setPref, exportAll, importAll } from '../../lib/store.js';
+    import { t } from '../../lib/i18n.js';
     const root = document.documentElement;
+    document.getElementById('export-btn').addEventListener('click', () => {
+      const payload = exportAll();
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `black-letter-progress-${payload.exportedAt.slice(0, 10)}.json`; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      setPref('lastExport', payload.exportedAt);
+    });
+    document.getElementById('import-file').addEventListener('change', async (e) => {
+      const msg = document.getElementById('import-msg');
+      const f = e.target.files[0]; if (!f) return;
+      try { const n = importAll(JSON.parse(await f.text())); msg.textContent = t('more.imported', { n }); }
+      catch { msg.textContent = t('more.importError'); }
+    });
     const buttons = document.querySelectorAll('[data-theme-set]');
     function paint() {
       const cur = prefs().theme || 'system';

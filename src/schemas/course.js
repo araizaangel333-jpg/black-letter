@@ -14,6 +14,10 @@ export function courseSchema(z) {
     term: c.slug,
     professor: z.object({ name: z.string().min(1), title: z.string().optional() }),
     meetings: z.array(z.object({ day: z.enum(DAYS), start: c.hhmm, end: c.hhmm, room: z.string().optional() })).min(1),
+    extras: z.array(z.object({
+      kind: z.enum(['review', 'office-hours', 'lab', 'other']),
+      day: z.enum(DAYS), start: c.hhmm, end: c.hhmm, room: z.string().optional(), label: c.biBoth,
+    })).default([]),
     books: z.array(z.object({
       id: c.slug,
       cite: z.string().min(1),

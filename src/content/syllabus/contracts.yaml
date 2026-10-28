@@ -1,0 +1,83 @@
+# Contracts (Crespi). Fuente: Reading and Review Session Assignments #9 y #10 y las
+# Class Discussion Notes enviadas por correo; aquí solo van páginas, secciones y casos.
+course: contracts
+items:
+  - id: contracts-oct20-reading
+    type: reading
+    date: "2026-10-20"
+    week: 9
+    topic: defenses
+    title: { en: "Misrepresentation and fraud: R.2d §§ 159–164, 169; the Laidlaw discussion", es: "Misrepresentation y fraude: R.2d §§ 159–164, 169; la discusión de Laidlaw" }
+    pages:
+      - { book: selections-2025, sections: "R.2d §§ 159, 160, 161, 162, 163, 164, 169" }
+      - { book: farnsworth-10, pages: "508 (Laidlaw, Part B only), 510–511, 513–516, 518", note: "skip the Notes on pp. 511 and 516" }
+    briefs: [contracts/laidlaw-v-organ]
+    source: "ASS#9, email of Oct 14"
+  - id: contracts-oct21-review
+    type: review
+    date: "2026-10-21"
+    time: { start: "15:15", end: "16:15" }
+    week: 9
+    title: { en: "Review session: a Drennan-type problem and three sample exam questions (UCC statute of frauds and statute of limitations; fraud and misrepresentation short answers)", es: "Sesión de repaso: un problema tipo Drennan y tres preguntas de examen (statute of frauds y prescripción bajo el UCC; preguntas cortas de fraude y misrepresentation)" }
+    source: "ASS#9"
+  - id: contracts-oct22-reading
+    type: reading
+    date: "2026-10-22"
+    week: 9
+    topic: defenses
+    title: { en: "Mistake and capacity: R.2d §§ 151–154, 157 and §§ 14–16; risk of mistake in sales of goods", es: "Error y capacidad: R.2d §§ 151–154, 157 y §§ 14–16; el riesgo del error en ventas de bienes" }
+    pages:
+      - { book: selections-2025, sections: "R.2d §§ 151, 152, 153, 154, 157; §§ 14, 15, 16" }
+      - { book: farnsworth-10, pages: "1090 (from “Sale of Goods”) to 1093 (stop at “The Risks…”)" }
+    note: { en: "Plus the “A Unilateral Mistake Case” handout (by email).", es: "Más el handout “A Unilateral Mistake Case” (por correo)." }
+    source: "ASS#9"
+  - id: contracts-oct27-reading
+    type: reading
+    date: "2026-10-27"
+    week: 10
+    topic: interpretation
+    title: { en: "Interpreting contract language: methods, vagueness and ambiguity problems, R.2d §§ 201–204", es: "Interpretación del lenguaje contractual: métodos, problemas de vaguedad y ambigüedad, R.2d §§ 201–204" }
+    pages:
+      - { book: farnsworth-10, pages: "564 (start at “Methods…”, stop at the Notes), 565 Problem (1), 566 Problem (3)" }
+      - { book: selections-2025, sections: "R.2d §§ 201, 202, 203, 204" }
+      - { book: selections-2025, sections: "UCC § 2-302 and comments; R.2d §§ 208, 178, 179, 184(1)", note: "skim only; not tested" }
+    note: { en: "Plus the “Some Basic Contract Interpretation Guidance” handout. In class: the four linguistic problems (vagueness, ambiguity, grammatical ambiguity, gaps); parol evidence only as to merger clauses; illegality, public policy, sovereign immunity and bankruptcy defenses are not on the exam.", es: "Más el handout “Some Basic Contract Interpretation Guidance”. En clase: los cuatro problemas lingüísticos (vaguedad, ambigüedad, ambigüedad gramatical, lagunas); parol evidence solo en cuanto a merger clauses; las defensas de ilegalidad, orden público, inmunidad soberana y quiebra no entran al examen." }
+    source: "ASS#10 and Class Discussion Notes for Oct. 27"
+  - id: contracts-oct28-review
+    type: review
+    date: "2026-10-28"
+    time: { start: "15:15", end: "16:15" }
+    week: 10
+    title: { en: "Review session: a fact pattern on UCC §§ 2-201 and 2-725, and short questions on mutual and unilateral mistake", es: "Sesión de repaso: un caso práctico sobre UCC §§ 2-201 y 2-725, y preguntas cortas sobre error mutuo y unilateral" }
+    tasks:
+      - { en: "Work the fact pattern before the session: are there two breaches (repudiation, then failure to pay), each with its own limitations period?", es: "Resuelve el caso antes de la sesión: ¿hay dos incumplimientos (repudiación y luego falta de pago), cada uno con su propio plazo de prescripción?" }
+      - { en: "Check divisibility, the quantity term, whether John is a merchant, and each § 2-201(3) exception.", es: "Revisa divisibilidad, el término de cantidad, si John es comerciante y cada excepción del § 2-201(3)." }
+    source: "ASS#10, hints on page 2"
+  - id: contracts-oct29-reading
+    type: reading
+    date: "2026-10-29"
+    week: 10
+    topic: interpretation
+    title: { en: "UCC interpretation: course of performance, course of dealing and usage of trade (§ 1-303); good faith; Hurst and Frigaliment", es: "Interpretación bajo el UCC: course of performance, course of dealing y usage of trade (§ 1-303); buena fe; Hurst y Frigaliment" }
+    pages:
+      - { book: selections-2025, sections: "UCC § 1-303 (read closely); §§ 2-306(2), 2-314, 2-315 (skim); R.2d § 205; UCC §§ 1-304, 1-201(20)" }
+      - { book: farnsworth-10, pages: "582–583 (Hurst), 575 (from Frigaliment) to 580, 581 n. 1" }
+    briefs: [contracts/hurst-v-w-j-lake, contracts/frigaliment-v-bns]
+    note: { en: "In class: UCC §§ 1-103(a), 1-201 to 1-205; the § 1-303 hierarchy (express terms, course of performance, course of dealing, usage of trade); the plain meaning rule; why contracts have gaps and how courts fill them (implied-in-fact vs. implied-in-law terms, good faith).", es: "En clase: UCC §§ 1-103(a), 1-201 a 1-205; la jerarquía del § 1-303 (términos expresos, course of performance, course of dealing, usage of trade); la regla del significado llano; por qué los contratos tienen lagunas y cómo las llenan los tribunales (términos implícitos de hecho vs. de derecho, buena fe)." }
+    source: "ASS#10 and Class Discussion Notes for Oct. 29"
+  - id: contracts-nov1-outline
+    type: assignment
+    date: "2026-10-30"
+    due: "2026-11-01"
+    week: 10
+    title: { en: "Update your course outline through the enforceability defenses", es: "Actualiza tu outline del curso hasta las defensas contra la exigibilidad" }
+    tasks:
+      - { en: "Formation (offer, acceptance, consideration, promissory estoppel, quasi-contract, UCC basics).", es: "Formación (oferta, aceptación, consideration, promissory estoppel, cuasicontrato, UCC básico)." }
+      - { en: "Defenses: statute of frauds, statute of limitations, capacity, fraud and misrepresentation, mistake, unconscionability.", es: "Defensas: statute of frauds, prescripción, capacidad, fraude y misrepresentation, error, unconscionability." }
+    source: "ASS#10"
+  - id: contracts-final-exam
+    type: exam
+    date: "2026-12-07"
+    time: { start: "13:30", end: "17:30" }
+    title: { en: "Final exam: one four-hour essay exam, open book and open notes", es: "Examen final: un solo examen de ensayo de cuatro horas, a libro y notas abiertos" }
+    source: "Course syllabus (June 11, 2026 draft)"

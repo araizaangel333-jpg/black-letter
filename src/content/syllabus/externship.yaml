@@ -1,0 +1,36 @@
+# Corporate Counsel Externship (Yeager). Fuente: Canvas; títulos y fechas únicamente.
+course: externship
+items:
+  - id: ext-rapid-fire-outside-counsel
+    type: assignment
+    date: "2026-09-09"
+    due: "2026-09-10"
+    dueTime: "19:30"
+    topic: outside-counsel
+    title: { en: "Rapid Fire: selecting outside counsel (submitted)", es: "Rapid Fire: elegir abogados externos (entregado)" }
+  - id: ext-topic-proposal
+    type: assignment
+    date: "2026-09-11"
+    topic: role
+    title: { en: "Topic proposal: in-house counsel protecting U.S.–Mexico supply chains during the USMCA review (submitted, 5/5)", es: "Propuesta de tema: el abogado interno y las cadenas de suministro México–EE. UU. durante la revisión del T-MEC (entregada, 5/5)" }
+  - id: ext-msa-redline
+    type: assignment
+    date: "2026-10-14"
+    topic: outside-counsel
+    title: { en: "MSA redline exercise against the playbook (submitted)", es: "Ejercicio de redline del MSA contra el playbook (entregado)" }
+  - id: ext-abstract
+    type: assignment
+    date: "2026-10-16"
+    topic: role
+    title: { en: "Abstract of the paper (submitted)", es: "Abstract del trabajo (entregado)" }
+  - id: ext-rapid-fire-one-thing
+    type: assignment
+    date: "2026-10-22"
+    due: "2026-10-23"
+    topic: role
+    title: { en: "Rapid Fire: one thing I would actually do (BLUF) (submitted)", es: "Rapid Fire: una cosa que sí haría (BLUF) (entregado)" }
+  - id: ext-oct28-seminar
+    type: class
+    date: "2026-10-28"
+    title: { en: "Seminar (topic to confirm in Canvas); check for this week's Rapid Fire prompt", es: "Seminario (tema por confirmar en Canvas); revisa si hay Rapid Fire esta semana" }
+    verified: false

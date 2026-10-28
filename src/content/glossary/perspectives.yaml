@@ -1,0 +1,146 @@
+# Glosario de Perspectives of the American Legal System.
+subject: perspectives
+items:
+  - id: equal-protection
+    term: equal protection
+    pos: noun
+    topic: equality
+    en: { definition: "The Fourteenth Amendment guarantee that states treat similarly situated people alike; the level of scrutiny depends on the classification." }
+    es: { term: "igualdad ante la ley (equal protection)", explanation: "Garantía de la Decimocuarta Enmienda contra clasificaciones arbitrarias. El nivel de escrutinio depende de la clasificación: raza (estricto), sexo (intermedio), lo demás (base racional).", falseFriend: "El art. 1 de la CPEUM prohíbe la discriminación directamente; la SCJN usa el test de proporcionalidad en vez de los tres niveles." }
+    examples: [{ en: "Loving struck down a racial classification under equal protection.", es: "Loving anuló una clasificación racial bajo equal protection." }]
+    authority: "U.S. Const. amend. XIV, § 1"
+    related: [strict-scrutiny, rational-basis, due-process]
+  - id: strict-scrutiny
+    term: strict scrutiny
+    pos: noun
+    topic: equality
+    en: { definition: "The most demanding review: the law must serve a compelling government interest and be narrowly tailored; applies to racial classifications and burdens on fundamental rights." }
+    es: { term: "escrutinio estricto", explanation: "Nivel más exigente: interés gubernamental apremiante y medida estrictamente ajustada. Casi ninguna clasificación racial lo supera." }
+    examples: [{ en: "Virginia's marriage ban failed strict scrutiny.", es: "La prohibición matrimonial de Virginia no superó el escrutinio estricto." }]
+    related: [equal-protection, rational-basis, fundamental-right]
+  - id: rational-basis
+    term: rational basis review
+    pos: noun
+    topic: federalism
+    en: { definition: "The most deferential review: the law need only be rationally related to a legitimate government purpose; used for ordinary economic regulation and for Commerce Clause findings." }
+    es: { term: "revisión de base racional", explanation: "Nivel más deferente: basta una relación racional con un fin legítimo. Es el estándar con que la Corte revisó la conclusión del Congreso en Heart of Atlanta." }
+    examples: [{ en: "Congress had a rational basis for finding that motel discrimination burdened commerce.", es: "El Congreso tenía una base racional para concluir que la discriminación en moteles afectaba el comercio." }]
+    related: [equal-protection, commerce-clause]
+  - id: due-process
+    term: due process (procedural and substantive)
+    pos: noun
+    topic: equality
+    en: { definition: "The guarantee that government not deprive anyone of life, liberty or property without fair procedures (procedural) and without a sufficient justification for intruding on fundamental rights (substantive)." }
+    es: { term: "debido proceso", explanation: "Procesal: procedimientos justos antes de privar de libertad o propiedad (≈ CPEUM art. 14). Sustantivo: ciertos derechos fundamentales, como casarse, no pueden restringirse sin justificación suficiente." }
+    examples: [{ en: "Loving used substantive due process for the right to marry.", es: "Loving usó el debido proceso sustantivo para el derecho a casarse." }]
+    authority: "U.S. Const. amends. V, XIV"
+    related: [fundamental-right, equal-protection]
+  - id: fundamental-right
+    term: fundamental right
+    pos: noun
+    topic: equality
+    en: { definition: "A right deeply rooted in the nation's history or implicit in ordered liberty (marriage, voting, travel); laws burdening it get strict scrutiny." }
+    es: { term: "derecho fundamental", explanation: "Derecho que la Corte considera esencial (casarse, votar, circular). Las leyes que lo restringen se revisan con escrutinio estricto.", falseFriend: "En México “derechos fundamentales” abarca todo el catálogo constitucional; aquí es una categoría más estrecha." }
+    examples: [{ en: "Marriage is a fundamental right (Loving).", es: "El matrimonio es un derecho fundamental (Loving)." }]
+    related: [due-process, strict-scrutiny]
+  - id: commerce-clause
+    term: Commerce Clause
+    pos: noun
+    topic: federalism
+    en: { definition: "Article I, § 8, cl. 3: Congress may regulate commerce among the states; the main source of federal regulatory power, reaching local activity that substantially affects interstate commerce." }
+    es: { term: "cláusula de comercio", explanation: "Art. I, § 8, cl. 3. Fuente principal del poder regulador federal; alcanza actividades locales que afectan sustancialmente el comercio interestatal (Heart of Atlanta), con límites (Lopez).", falseFriend: "El art. 73 de la CPEUM enumera facultades del Congreso de la Unión; la cláusula de comercio es mucho más elástica." }
+    examples: [{ en: "Title II of the Civil Rights Act rests on the Commerce Clause.", es: "El Título II de la Ley de Derechos Civiles se apoya en la cláusula de comercio." }]
+    authority: "U.S. Const. art. I, § 8, cl. 3"
+    related: [federalism, supremacy-clause, rational-basis]
+  - id: supremacy-clause
+    term: Supremacy Clause / preemption
+    pos: noun
+    topic: federalism
+    en: { definition: "Article VI, cl. 2: the Constitution, federal laws and treaties are the supreme law of the land; conflicting state law is preempted." }
+    es: { term: "cláusula de supremacía / preeminencia federal", explanation: "Art. VI, cl. 2. El derecho federal desplaza al estatal que lo contradice (preemption). ≈ CPEUM art. 133, aunque México usa “concurrencia” en lugar de preemption." }
+    examples: [{ en: "A state law that conflicts with a federal statute is preempted.", es: "Una ley estatal que contradice una ley federal queda desplazada." }]
+    authority: "U.S. Const. art. VI, cl. 2"
+    related: [federalism, commerce-clause, treaty]
+  - id: federalism
+    term: federalism (dual sovereignty)
+    pos: noun
+    topic: federalism
+    en: { definition: "Two complete governments over the same people: a federal government of enumerated powers and states with general police powers, reserved by the Tenth Amendment." }
+    es: { term: "federalismo", explanation: "Dos soberanías sobre las mismas personas: la federal, de facultades enumeradas; las estatales, con poder de policía general (Décima Enmienda). Cada estado tiene su propio derecho de contratos, torts y penal." }
+    examples: [{ en: "Contracts is state law; that is why the Restatement and the UCC vary by state.", es: "El derecho de contratos es estatal; por eso el Restatement y el UCC varían por estado." }]
+    authority: "U.S. Const. amend. X"
+    related: [commerce-clause, supremacy-clause]
+  - id: incorporation
+    term: incorporation
+    pos: noun
+    topic: criminal
+    en: { definition: "The doctrine that applies most of the Bill of Rights to the states through the Fourteenth Amendment's Due Process Clause." }
+    es: { term: "incorporación (sin equivalente)", explanation: "Los derechos de las primeras enmiendas limitaban solo al gobierno federal; la Corte los aplicó a los estados uno por uno a través de la Decimocuarta Enmienda (Duncan: jurado).", falseFriend: "En México los derechos constitucionales obligan a todas las autoridades desde el inicio." }
+    examples: [{ en: "Duncan v. Louisiana incorporated the jury trial right.", es: "Duncan v. Louisiana incorporó el derecho al jurado." }]
+    related: [due-process]
+  - id: citizenship-clause
+    term: Citizenship Clause
+    pos: noun
+    topic: citizenship
+    en: { definition: "The first sentence of the Fourteenth Amendment: all persons born or naturalized in the United States and subject to its jurisdiction are citizens." }
+    es: { term: "cláusula de ciudadanía", explanation: "Primera frase de la Decimocuarta Enmienda. Elk v. Wilkins leyó “sujetos a su jurisdicción” de forma estrecha; Wong Kim Ark (1898) confirmó la ciudadanía por nacimiento para hijos de extranjeros." }
+    examples: [{ en: "Elk was held not to be “subject to the jurisdiction” at birth.", es: "Se resolvió que Elk no estaba “sujeto a la jurisdicción” al nacer." }]
+    authority: "U.S. Const. amend. XIV, § 1"
+    related: [naturalization, plenary-power]
+  - id: naturalization
+    term: naturalization
+    pos: noun
+    topic: citizenship
+    en: { definition: "The process by which a foreigner becomes a citizen under rules set by Congress." }
+    es: { term: "naturalización", explanation: "Adquisición de la ciudadanía por acto del Estado, regulada por el Congreso (art. I, § 8, cl. 4). Elk no podía naturalizarse a sí mismo al dejar su tribu." }
+    examples: [{ en: "The Indian Citizenship Act of 1924 naturalized Native Americans by statute.", es: "La Ley de Ciudadanía Indígena de 1924 naturalizó a los nativos americanos por ley." }]
+    related: [citizenship-clause]
+  - id: plenary-power
+    term: plenary power (immigration)
+    pos: noun
+    topic: citizenship
+    en: { definition: "The doctrine that Congress and the executive have nearly complete power over the admission and exclusion of foreigners, with minimal judicial review." }
+    es: { term: "poder plenario (inmigración)", explanation: "El Congreso y el Ejecutivo controlan la admisión de extranjeros como atributo de soberanía, con escasa revisión judicial (Chae Chan Ping). Sigue vigente, matizado por el debido proceso para quienes ya están en el país." }
+    examples: [{ en: "The Chinese Exclusion Case is the origin of the plenary power doctrine.", es: "El caso de exclusión china es el origen de la doctrina del poder plenario." }]
+    related: [treaty, citizenship-clause]
+  - id: treaty
+    term: treaty and the last-in-time rule
+    pos: noun
+    topic: citizenship
+    en: { definition: "An international agreement made by the President with Senate consent; as domestic law it ranks with statutes, so the later of a treaty and a statute controls." }
+    es: { term: "tratado y regla del último en el tiempo", explanation: "Los tratados y las leyes federales tienen el mismo rango interno; prevalece el más reciente (Chae Chan Ping).", falseFriend: "En México los tratados están por encima de las leyes federales (CPEUM art. 133, tesis P. IX/2007)." }
+    examples: [{ en: "The Scott Act of 1888 overrode the earlier treaty with China.", es: "La Ley Scott de 1888 prevaleció sobre el tratado anterior con China." }]
+    authority: "U.S. Const. art. II, § 2; art. VI, cl. 2"
+    related: [supremacy-clause, plenary-power]
+  - id: habeas-corpus
+    term: habeas corpus
+    pos: latin
+    topic: criminal
+    en: { definition: "A writ ordering whoever holds a person to justify the detention before a court; the vehicle for challenging exclusion, custody and state convictions in federal court." }
+    es: { term: "habeas corpus", explanation: "Orden judicial para que quien detiene a una persona justifique la detención. Lo usó Chae Chan Ping para impugnar su exclusión; hoy sirve para revisar condenas estatales en cortes federales.", falseFriend: "Cercano al amparo contra actos privativos de libertad, pero mucho más estrecho." }
+    examples: [{ en: "He petitioned for a writ of habeas corpus after being denied landing.", es: "Pidió un habeas corpus tras negársele el desembarco." }]
+    related: [plenary-power]
+  - id: judicial-review
+    term: judicial review
+    pos: noun
+    topic: sources
+    en: { definition: "The power of courts to refuse to apply laws that conflict with the Constitution (Marbury v. Madison)." }
+    es: { term: "control de constitucionalidad", explanation: "Los tribunales pueden inaplicar leyes contrarias a la Constitución. En EE. UU. es difuso y ocurre dentro de cualquier caso; México lo ejerce vía amparo, controversias y acciones, y de forma difusa desde 2011." }
+    examples: [{ en: "Loving is judicial review in action: a state statute struck down.", es: "Loving es control de constitucionalidad en acción: una ley estatal anulada." }]
+    related: [federalism]
+  - id: jurisdiction
+    term: jurisdiction
+    pos: noun
+    topic: courts
+    en: { definition: "A court's power to decide a case: over the subject matter (which kinds of cases) and over the person (which defendants); in the Citizenship Clause, the political authority a person is subject to." }
+    es: { term: "jurisdicción / competencia", explanation: "Poder del tribunal para decidir: sobre la materia (subject-matter) y sobre la persona (personal). En la cláusula de ciudadanía significa la autoridad política a la que alguien está sujeto (Elk).", falseFriend: "En México “jurisdicción” es la función y “competencia” el reparto; en inglés “jurisdiction” cubre ambas." }
+    examples: [{ en: "Federal courts have limited subject-matter jurisdiction.", es: "Los tribunales federales tienen competencia limitada por materia." }]
+    related: [federalism, citizenship-clause]
+  - id: sovereignty
+    term: sovereignty
+    pos: noun
+    topic: citizenship
+    en: { definition: "The supreme authority of a nation over its territory and people; the Court treats control of borders as an inherent attribute of it." }
+    es: { term: "soberanía", explanation: "Autoridad suprema del Estado. La Corte deriva de ella el poder de excluir extranjeros (Chae Chan Ping) y la “doble soberanía” federal y estatal." }
+    examples: [{ en: "Exclusion of foreigners is an incident of sovereignty.", es: "La exclusión de extranjeros es un atributo de la soberanía." }]
+    related: [plenary-power, federalism]

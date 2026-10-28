@@ -13,6 +13,10 @@ const { course } = Astro.props;
 const d = course.data;
 const dayName = (day) => ui[`day.${day}`];
 const topics = [...d.topics].sort((a, b) => a.order - b.order);
+const syllabus = (await getCollection('syllabus')).map(s => s.data).filter(s => s.course === course.id).sort((a, b) => a.date.localeCompare(b.date));
+const briefs = (await getCollection('briefs')).filter(b => b.data.course === course.id).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const briefById = Object.fromEntries(briefs.map(b => [b.id, b]));
+const bookShort = (bookId) => d.books.find(b => b.id === bookId)?.short || bookId;
 ---
 <Base title={d.title.en}>
   <header class="course-head">
@@ -33,12 +37,60 @@ const topics = [...d.topics].sort((a, b) => a.order - b.order);
     </ul>
   </section>
 
+  {d.extras.length > 0 && (
+    <section class="sec">
+      <ul class="list">
+        {d.extras.map(x => <li><strong class="ui"><Bi v={x.label} /></strong>: <Bi v={dayName(x.day)} /> <span class="num">{x.start}–{x.end}</span>{x.room ? `, ${x.room}` : ''}</li>)}
+      </ul>
+    </section>
+  )}
+
   <section class="sec">
-    <div class="sec-head"><h2><T k="course.readings" /></h2></div>
-    <div class="empty">
-      <p><T k="today.readingsSoon" /></p>
-    </div>
+    <div class="sec-head"><h2><T k="course.readings" /></h2><label class="check inline small"><input type="checkbox" id="show-past" /><span class="box" aria-hidden="true"></span><span class="text"><T k="course.showPast" /></span></label></div>
+    {syllabus.length === 0 ? (
+      <div class="empty"><p><T k="today.readingsSoon" /></p></div>
+    ) : (
+      <ul class="agenda" id="course-agenda">
+        {syllabus.map(s => (
+          <li data-date={s.date}>
+            <span class="when num" data-when={s.date}>{s.date}</span>
+            <div class="what">
+              <span class="kind"><T k={`type.${s.type}`} />{s.time ? ` · ${s.time.start}–${s.time.end}` : ''}{s.due ? <> · <T k="today.due" /> <span class="num">{s.due}</span></> : ''}</span>
+              <span class="rtitle"><Bi v={s.title} /></span>
+              {s.pages.length > 0 && <span class="rpages">{s.pages.map((p, i) => (<span>{i > 0 ? '; ' : ''}<b>{bookShort(p.book)}</b> {p.pages ?? p.sections}{p.note ? ` (${p.note})` : ''}</span>))}</span>}
+              {s.briefs.length > 0 && <span class="rpages">{s.briefs.map((id, i) => briefById[id] && (<span>{i > 0 ? ' · ' : ''}<a href={`/briefs/${id}/`}>{briefById[id].data.title}</a></span>))}</span>}
+              {s.note && <span class="rnote"><Bi v={s.note} /></span>}
+              {!s.verified && <span class="tag"><T k="course.unverified" /></span>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
   </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="course.briefs" /></h2></div>
+    {briefs.length === 0 ? <p class="muted small"><T k="course.noBriefs" /></p> : (
+      <ul class="list">{briefs.map(b => <li><a href={`/briefs/${b.id}/`}>{b.data.title}</a> <span class="muted small">({b.data.year})</span> <span class="tag"><T k={`brief.status.${b.data.status}`} /></span></li>)}</ul>
+    )}
+  </section>
+
+  <script>
+    import { todayISO, formatDate } from '../../lib/dates.js';
+    import { lang, onLangChange } from '../../lib/i18n.js';
+    import { prefs, setPref } from '../../lib/store.js';
+    const toggle = document.getElementById('show-past');
+    const rows = [...document.querySelectorAll('#course-agenda > li')];
+    if (toggle) {
+      toggle.checked = Boolean(prefs().showPast);
+      const paint = () => {
+        const today = todayISO(); const L = lang();
+        rows.forEach(li => { const past = li.dataset.date < today; li.hidden = past && !toggle.checked; li.classList.toggle('is-today', li.dataset.date === today); li.querySelector('[data-when]').textContent = formatDate(li.dataset.date, L); });
+      };
+      toggle.addEventListener('change', () => { setPref('showPast', toggle.checked); paint(); });
+      paint(); onLangChange(paint);
+    }
+  </script>
 
   <section class="sec">
     <div class="sec-head"><h2><T k="course.topics" /></h2></div>

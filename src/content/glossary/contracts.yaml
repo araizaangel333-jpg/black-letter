@@ -1,0 +1,309 @@
+# Glosario de Contracts. Definiciones propias; el artículo del código mexicano se cita para que un compañero pueda verificar el contraste.
+subject: contracts
+items:
+  - id: offer
+    term: offer
+    pos: noun
+    topic: formation
+    en: { definition: "A statement that shows willingness to make a deal on stated terms, so that the other side can close it just by saying yes.", usage: "An offer is made; it is accepted, rejected, revoked or it lapses." }
+    es: { term: "oferta", explanation: "Manifestación de voluntad que permite a la otra parte cerrar el contrato con solo aceptar. En Estados Unidos la oferta es revocable hasta que se acepta, salvo option contract, firm offer (UCC § 2-205) o reliance (R.2d §§ 45, 87(2)).", falseFriend: "En México la oferta con plazo es irrevocable (CCF art. 1804); aquí no, salvo excepción." }
+    examples: [{ en: "A price quote is usually an invitation to deal, not an offer.", es: "Una cotización suele ser una invitación a negociar, no una oferta." }]
+    authority: "R.2d § 24"
+    related: [acceptance, option-contract, mutual-assent]
+  - id: acceptance
+    term: acceptance
+    pos: noun
+    topic: formation
+    en: { definition: "The offeree's assent to the offer, given in the way the offer invites: by a promise or by performance.", usage: "Acceptance by mail is effective on dispatch (the mailbox rule)." }
+    es: { term: "aceptación", explanation: "Conformidad del destinatario en la forma que la oferta permite. La mailbox rule la hace efectiva al enviarla, no al recibirla.", falseFriend: "México sigue la teoría de la recepción: el contrato se forma cuando el oferente recibe la aceptación (CCF art. 1807)." }
+    examples: [{ en: "An acceptance that changes the terms is a counteroffer at common law.", es: "Una aceptación que cambia los términos es una contraoferta en el common law." }]
+    authority: "R.2d §§ 50, 63"
+    related: [offer, mailbox-rule, mutual-assent]
+  - id: consideration
+    term: consideration
+    pos: noun
+    topic: formation
+    en: { definition: "Something of legal value, a promise, an act or a forbearance, that is bargained for and given in exchange for a promise; without it, a promise is usually unenforceable.", usage: "Say “supported by consideration”, never “has consideration”." }
+    es: { term: "consideration (sin equivalente)", explanation: "Lo que cada parte da o promete a cambio de la promesa de la otra, dentro de un intercambio negociado. Sin consideration, una promesa gratuita no es exigible (Kirksey).", falseFriend: "No es “contraprestación” ni “causa”. En México basta consentimiento y objeto (CCF art. 1794) y la donación formalizada obliga; aquí no." }
+    examples: [{ en: "The nephew's forbearance from drinking was consideration for the uncle's promise.", es: "La abstención del sobrino fue consideration para la promesa del tío." }]
+    authority: "R.2d §§ 71, 79"
+    related: [promissory-estoppel, quasi-contract]
+    difficulty: 2
+  - id: promissory-estoppel
+    term: promissory estoppel
+    pos: noun
+    topic: formation
+    en: { definition: "A doctrine that enforces a promise without consideration when the promisor should have expected reliance, the promisee relied, and injustice can be avoided only by enforcement." }
+    es: { term: "promissory estoppel (≈ confianza legítima)", explanation: "Sustituto de la consideration basado en la confianza razonable del destinatario (R.2d § 90). El remedio puede limitarse a lo que exija la justicia, a menudo los gastos de confianza.", falseFriend: "No traducir como “estoppel” a secas; lo más cercano es la doctrina de los actos propios, pero aquí crea una acción, no solo una defensa." }
+    examples: [{ en: "Red Owl promised a franchise; Hoffman sold his bakery in reliance.", es: "Red Owl prometió una franquicia; Hoffman vendió su panadería confiando en ello." }]
+    authority: "R.2d § 90"
+    related: [consideration, reliance-damages]
+    difficulty: 2
+  - id: quasi-contract
+    term: quasi-contract (restitution)
+    pos: noun
+    topic: formation
+    en: { definition: "Recovery of the value of a benefit conferred on another to prevent unjust enrichment, even though there was no contract." }
+    es: { term: "cuasicontrato; enriquecimiento ilegítimo", explanation: "Acción para recuperar el valor de un beneficio conferido sin contrato (el médico que atiende a un inconsciente, Cotnam v. Wisdom). Cercano al enriquecimiento ilegítimo (CCF art. 1882) y la gestión de negocios (art. 1896)." }
+    examples: [{ en: "The doctor who treats an unconscious patient recovers in quasi-contract.", es: "El médico que atiende a un paciente inconsciente cobra por cuasicontrato." }]
+    authority: "R.2d § 371 (measure)"
+    related: [consideration, promissory-estoppel]
+  - id: mutual-assent
+    term: mutual assent (objective theory)
+    pos: noun
+    topic: formation
+    en: { definition: "Agreement judged by what the parties said and did, as a reasonable person would understand it, not by their secret intentions." }
+    es: { term: "consentimiento (teoría objetiva)", explanation: "El acuerdo se mide por las palabras y actos externos, no por la intención oculta (Lucy v. Zehmer: la broma que parecía en serio obliga).", falseFriend: "La doctrina mexicana es más subjetiva (vicios del consentimiento), aunque también valora la conducta." }
+    examples: [{ en: "A joke that a reasonable person would take seriously can form a contract.", es: "Una broma que una persona razonable tomaría en serio puede formar un contrato." }]
+    authority: "R.2d §§ 17–19"
+    related: [offer, acceptance]
+  - id: mailbox-rule
+    term: mailbox rule
+    pos: noun
+    topic: formation
+    en: { definition: "An acceptance sent by a reasonable medium is effective when dispatched, even if it never arrives; a revocation is effective only on receipt." }
+    es: { term: "regla del buzón", explanation: "La aceptación surte efectos al enviarse; la revocación, al recibirse. Protege al aceptante que ya se comprometió.", falseFriend: "Lo contrario de la regla mexicana de la recepción (CCF art. 1807)." }
+    examples: [{ en: "An acceptance mailed Monday beats a revocation received Tuesday.", es: "Una aceptación enviada el lunes vence a una revocación recibida el martes." }]
+    authority: "R.2d § 63"
+    related: [acceptance, offer]
+  - id: option-contract
+    term: option contract / firm offer
+    pos: noun
+    topic: formation
+    en: { definition: "A promise to keep an offer open: enforceable with consideration (option), or without it for a merchant's signed written offer for goods, up to three months (firm offer)." }
+    es: { term: "oferta irrevocable; ≈ promesa de contrato", explanation: "La option necesita consideration; la firm offer del UCC § 2-205 no, pero solo para comerciantes, por escrito firmado y hasta tres meses.", falseFriend: "La promesa de contrato mexicana (CCF art. 2243) es un contrato preliminar completo; la option es más estrecha." }
+    examples: [{ en: "A signed firm offer from a merchant cannot be revoked for the stated time.", es: "Una firm offer firmada por un comerciante no se puede revocar durante el plazo indicado." }]
+    authority: "R.2d § 87; UCC § 2-205"
+    related: [offer]
+  - id: statute-of-frauds
+    term: statute of frauds
+    pos: noun
+    topic: defenses
+    en: { definition: "A rule that certain contracts (land, contracts that cannot be performed within a year, sales of goods of $500 or more, suretyship, marriage) are unenforceable without a signed writing." }
+    es: { term: "statute of frauds (requisito de forma escrita)", explanation: "Defensa: sin escrito firmado por la parte demandada, ciertos contratos no son exigibles. Bajo el UCC § 2-201 hay excepciones (bienes especialmente fabricados, admisión en juicio, pago o entrega aceptada).", falseFriend: "“Estatuto” no es statute (= ley). Las formalidades mexicanas (escritura pública) son más estrictas en tipo y más limitadas en alcance." }
+    examples: [{ en: "An oral contract to sell land is unenforceable under the statute of frauds unless an exception applies.", es: "Un contrato verbal de venta de tierra no es exigible bajo el statute of frauds salvo que aplique una excepción." }]
+    authority: "R.2d § 110; UCC § 2-201"
+    related: [statute-of-limitations, merchant]
+  - id: statute-of-limitations
+    term: statute of limitations
+    pos: noun
+    topic: defenses
+    en: { definition: "The deadline for filing suit, counted from when the claim accrues; for sales of goods, four years from the breach." }
+    es: { term: "prescripción", explanation: "Plazo para demandar. Bajo el UCC § 2-725 son cuatro años desde el incumplimiento, con independencia de cuándo se descubrió. La repudiación y la falta de pago posterior pueden ser incumplimientos distintos con plazos distintos." }
+    examples: [{ en: "A claim filed five years after the breach is barred by the four-year limitations period.", es: "Una demanda presentada cinco años después del incumplimiento está prescrita por el plazo de cuatro años." }]
+    authority: "UCC § 2-725"
+    related: [statute-of-frauds]
+  - id: capacity
+    term: capacity (minority, mental incapacity)
+    pos: noun
+    topic: defenses
+    en: { definition: "The legal ability to make a binding contract; contracts of minors and of persons who cannot understand the transaction are voidable by them." }
+    es: { term: "capacidad", explanation: "Los contratos de menores y de personas sin capacidad mental son anulables a su instancia (R.2d §§ 14–16), con la excepción de los “necessaries”." }
+    examples: [{ en: "A minor may disaffirm a contract but may owe the reasonable value of necessaries.", es: "Un menor puede repudiar el contrato, pero debe el valor razonable de lo necesario." }]
+    authority: "R.2d §§ 14, 15, 16"
+    related: [void-voidable]
+  - id: misrepresentation
+    term: misrepresentation
+    pos: noun
+    topic: defenses
+    en: { definition: "A false assertion of fact that induces assent; if fraudulent or material, and the other party justifiably relied, the contract is voidable." }
+    es: { term: "misrepresentation (declaración falsa)", explanation: "Afirmación falsa que induce a contratar. Puede ser fraudulenta (con conocimiento) o inocente pero material; en ambos casos el contrato es anulable si hubo confianza justificada (R.2d §§ 159–164).", falseFriend: "“Fraud” ≈ dolo (CCF art. 1815); la misrepresentation inocente no tiene equivalente exacto." }
+    examples: [{ en: "A seller who says the roof is new when it is ten years old makes a misrepresentation.", es: "Un vendedor que dice que el techo es nuevo cuando tiene diez años hace una misrepresentation." }]
+    authority: "R.2d §§ 159, 162, 164"
+    related: [nondisclosure, caveat-emptor]
+  - id: nondisclosure
+    term: nondisclosure
+    pos: noun
+    topic: defenses
+    en: { definition: "Silence about a fact; treated as an assertion only in limited cases, such as a known mistake about a basic assumption, a prior statement that needs correcting, or a relationship of trust." }
+    es: { term: "omisión de información", explanation: "Callar un hecho equivale a afirmar su inexistencia solo en los supuestos del R.2d § 161: corregir una afirmación previa, un error conocido sobre un supuesto básico que la buena fe obliga a revelar, un error sobre el escrito, o una relación de confianza." }
+    examples: [{ en: "Organ did not have to volunteer the news of the peace treaty (Laidlaw).", es: "Organ no tenía que revelar la noticia del tratado de paz (Laidlaw)." }]
+    authority: "R.2d § 161"
+    related: [misrepresentation, caveat-emptor]
+    difficulty: 2
+  - id: caveat-emptor
+    term: caveat emptor
+    pos: latin
+    topic: defenses
+    en: { definition: "“Let the buyer beware”: the traditional rule that a buyer must protect himself and the seller need not volunteer information." }
+    es: { term: "caveat emptor", explanation: "Principio de que el comprador asume el riesgo de informarse; hoy limitado por las reglas de misrepresentation, nondisclosure y garantías implícitas del UCC." }
+    examples: [{ en: "Caveat emptor explains why silence about market prices is not fraud.", es: "Caveat emptor explica por qué callar sobre los precios de mercado no es fraude." }]
+    related: [nondisclosure]
+  - id: duress
+    term: duress and undue influence
+    pos: noun
+    topic: defenses
+    en: { definition: "Assent obtained by an improper threat that leaves no reasonable alternative (duress), or by unfair persuasion of someone under the persuader's domination (undue influence); the contract is voidable." }
+    es: { term: "violencia / influencia indebida", explanation: "Duress ≈ violencia (CCF art. 1819), pero incluye amenazas económicas impropias. La undue influence no tiene equivalente directo en el Código Civil." }
+    examples: [{ en: "A threat to breach a contract unless the price is raised can be economic duress.", es: "Amenazar con incumplir salvo que suba el precio puede ser duress económica." }]
+    authority: "R.2d §§ 175, 177"
+    related: [void-voidable]
+  - id: mistake
+    term: mistake (mutual and unilateral)
+    pos: noun
+    topic: defenses
+    en: { definition: "A belief not in accord with the facts at the time of contracting; a shared mistake about a basic assumption with a material effect makes the contract voidable by the adversely affected party, and a one-sided mistake does so only if enforcement would be unconscionable or the other party knew or caused it." }
+    es: { term: "error", explanation: "Mutual mistake: ambos se equivocan sobre un supuesto básico (R.2d § 152). Unilateral mistake: solo uno, y se exige además que el resultado sea unconscionable o que la otra parte supiera o causara el error (§ 153). En ambos, quien asume el riesgo no puede invocarlo (§ 154).", falseFriend: "El error mexicano (CCF art. 1813) anula si recae sobre el motivo determinante; aquí la asignación del riesgo es la clave." }
+    examples: [{ en: "Both parties think the cow is barren; it is pregnant: mutual mistake about a basic assumption.", es: "Ambos creen que la vaca es estéril; está preñada: error mutuo sobre un supuesto básico." }]
+    authority: "R.2d §§ 151–154, 157"
+    related: [void-voidable, unconscionability]
+    difficulty: 2
+  - id: unconscionability
+    term: unconscionability
+    pos: noun
+    topic: defenses
+    en: { definition: "A defense against a contract or term that was formed through an absence of meaningful choice (procedural) and is unreasonably favorable to one side (substantive); the court may refuse to enforce it." }
+    es: { term: "unconscionability (≈ lesión)", explanation: "Dos caras: procesal (sin opción real, letra pequeña, desigualdad) y sustantiva (términos abusivos). El juez puede negar la ejecución del contrato o de la cláusula (UCC § 2-302; R.2d § 208).", falseFriend: "La lesión mexicana (CCF art. 17) exige explotación y desproporción; aquí no hace falta probar explotación subjetiva." }
+    examples: [{ en: "A cross-collateral clause in a furniture contract with a low-income buyer was unconscionable (Williams v. Walker-Thomas).", es: "Una cláusula de garantía cruzada en un contrato de muebles con una compradora de bajos ingresos fue unconscionable (Williams v. Walker-Thomas)." }]
+    authority: "UCC § 2-302; R.2d § 208"
+    related: [mistake, duress]
+  - id: void-voidable
+    term: void vs. voidable
+    pos: adjective
+    topic: defenses
+    en: { definition: "A void contract has no legal effect at all; a voidable contract is valid until the protected party chooses to avoid it." }
+    es: { term: "nulo / anulable", explanation: "Nulidad absoluta frente a nulidad relativa. Las defensas de capacidad, misrepresentation, duress y mistake producen contratos anulables; la ilegalidad, nulos." }
+    examples: [{ en: "A minor's contract is voidable; a contract to commit a crime is void.", es: "El contrato de un menor es anulable; un contrato para cometer un delito es nulo." }]
+    related: [capacity, mistake, rescission]
+  - id: rescission
+    term: rescission
+    pos: noun
+    topic: defenses
+    en: { definition: "Unwinding a contract as if it never existed, by agreement or because of a defense such as mistake, misrepresentation or duress; each side returns what it received." }
+    es: { term: "rescission (≈ nulidad / rescisión por mutuo acuerdo)", explanation: "Deshacer el contrato y restituir. Se usa para los vicios del consentimiento o por acuerdo.", falseFriend: "La rescisión mexicana (CCF art. 1949) es la terminación por incumplimiento; en inglés eso se llama termination o cancellation (UCC § 2-106). No traduzcas rescisión como rescission." }
+    examples: [{ en: "The buyer sought rescission for mutual mistake and the return of the price.", es: "El comprador pidió la rescission por error mutuo y la devolución del precio." }]
+    related: [void-voidable, mistake]
+    difficulty: 2
+  - id: parol-evidence-rule
+    term: parol evidence rule
+    pos: noun
+    topic: interpretation
+    en: { definition: "A final written agreement cannot be contradicted by evidence of earlier or contemporaneous agreements; a complete integration also bars adding consistent terms." }
+    es: { term: "parol evidence rule (sin equivalente)", explanation: "Si el escrito es la versión final (integración), no se admiten acuerdos anteriores que lo contradigan; si además es completa, tampoco términos adicionales. Sí se admite evidencia para interpretar, probar una condición, fraude o error.", falseFriend: "México interpreta por la intención común (CCF art. 1851) sin esta regla de exclusión." }
+    examples: [{ en: "Crespi tests only the law of merger clauses from this topic.", es: "De este tema, Crespi solo evalúa lo relativo a las merger clauses." }]
+    authority: "R.2d §§ 209–216; UCC § 2-202"
+    related: [merger-clause, interpretation]
+    difficulty: 2
+  - id: merger-clause
+    term: merger clause (integration clause)
+    pos: noun
+    topic: interpretation
+    en: { definition: "A clause stating that the writing is the complete and final agreement, which signals a full integration and triggers the parol evidence rule." }
+    es: { term: "cláusula de acuerdo total", explanation: "Declara que el escrito contiene todo el acuerdo; refuerza que no hay términos fuera del documento. Es la única parte del parol evidence que entra al examen de Crespi." }
+    examples: [{ en: "“This agreement is the entire agreement between the parties” is a merger clause.", es: "“Este contrato constituye el acuerdo íntegro entre las partes” es una merger clause." }]
+    authority: "R.2d § 216"
+    related: [parol-evidence-rule]
+  - id: interpretation
+    term: interpretation
+    pos: noun
+    topic: interpretation
+    en: { definition: "Determining the meaning of contract language, using the words, the circumstances, the parties' negotiations, trade usage, course of dealing and course of performance." }
+    es: { term: "interpretación", explanation: "El R.2d §§ 201–204 fija el método: si las partes dieron el mismo significado, ese rige; si no, rige el significado que una parte conocía o debía conocer de la otra; si ninguna lo sabía, puede no haber acuerdo sobre ese término." }
+    examples: [{ en: "Frigaliment is an exercise in interpretation of the word “chicken”.", es: "Frigaliment es un ejercicio de interpretación de la palabra “chicken”." }]
+    authority: "R.2d §§ 201–204"
+    related: [ambiguity, vagueness, plain-meaning-rule]
+  - id: vagueness
+    term: vagueness
+    pos: noun
+    topic: interpretation
+    en: { definition: "Uncertainty about where a term's boundaries lie (is a tricycle a “vehicle”?), as opposed to ambiguity, which is a choice between distinct meanings." }
+    es: { term: "vaguedad", explanation: "El término tiene bordes difusos: “razonable”, “vehículo”, “pronto”. Se resuelve con contexto, propósito y usos." }
+    examples: [{ en: "“Deliver promptly” is vague; “deliver by June 1 or June 2” is ambiguous.", es: "“Entregar pronto” es vago; “entregar el 1 o el 2 de junio” es ambiguo." }]
+    related: [ambiguity, interpretation]
+  - id: ambiguity
+    term: ambiguity
+    pos: noun
+    topic: interpretation
+    en: { definition: "A term that can reasonably carry two or more distinct meanings (“chicken”; two ships named Peerless); grammatical ambiguity comes from sentence structure rather than a word." }
+    es: { term: "ambigüedad", explanation: "Dos o más significados razonables. Si cada parte entendió uno distinto y ninguna sabía del otro, puede no haber contrato sobre ese término (Raffles v. Wichelhaus)." }
+    examples: [{ en: "“Chicken” was ambiguous between broilers and stewing fowl.", es: "“Chicken” era ambiguo entre pollos jóvenes y gallinas de guisar." }]
+    authority: "R.2d § 201"
+    related: [vagueness, interpretation]
+  - id: plain-meaning-rule
+    term: plain meaning rule
+    pos: noun
+    topic: interpretation
+    en: { definition: "The approach that gives contract words their ordinary meaning without outside evidence when they appear clear; under the UCC and most modern cases, usage and course of dealing can still explain apparently clear words." }
+    es: { term: "regla del significado llano", explanation: "Si las palabras parecen claras, se aplican tal cual. Hurst y el UCC § 1-303 la matizan: los usos del gremio pueden explicar palabras que parecen claras." }
+    examples: [{ en: "Hurst rejected a strict plain meaning rule for “50% protein”.", es: "Hurst rechazó una regla estricta de significado llano para “50% protein”." }]
+    related: [usage-of-trade, interpretation]
+  - id: usage-of-trade
+    term: usage of trade
+    pos: noun
+    topic: interpretation
+    en: { definition: "A practice so regular in a place, vocation or trade that parties expect it to be followed; it supplies meaning and even terms to their agreement." }
+    es: { term: "uso del comercio", explanation: "Práctica regular del gremio que las partes esperan seguir (UCC § 1-303(c)). Es la fuente de menor rango en la jerarquía: término expreso, course of performance, course of dealing, usage of trade." }
+    examples: [{ en: "In the horse meat trade, “50% protein” covered 49.5% (Hurst).", es: "En el comercio de carne de caballo, “50% protein” incluía 49.5% (Hurst)." }]
+    authority: "UCC § 1-303(c); R.2d § 222"
+    related: [course-of-dealing, course-of-performance, plain-meaning-rule]
+  - id: course-of-dealing
+    term: course of dealing
+    pos: noun
+    topic: interpretation
+    en: { definition: "A pattern of conduct between the same parties in earlier transactions that sets a common basis for understanding their later contract." }
+    es: { term: "práctica previa entre las partes", explanation: "Lo que las mismas partes hicieron en contratos anteriores (UCC § 1-303(b)). Pesa más que el uso del comercio y menos que el course of performance." }
+    examples: [{ en: "Ten prior deliveries accepted late show a course of dealing on timing.", es: "Diez entregas anteriores aceptadas tarde muestran una práctica previa sobre plazos." }]
+    authority: "UCC § 1-303(b); R.2d § 223"
+    related: [usage-of-trade, course-of-performance]
+  - id: course-of-performance
+    term: course of performance
+    pos: noun
+    topic: interpretation
+    en: { definition: "The parties' repeated conduct under the very contract in dispute, accepted without objection, which is the strongest evidence of what they meant." }
+    es: { term: "conducta en la ejecución del contrato", explanation: "Cómo las partes han cumplido este mismo contrato sin objeción (UCC § 1-303(a)). Es la fuente implícita de mayor rango, solo por debajo de los términos expresos." }
+    examples: [{ en: "Frigaliment's buyer accepted a second shipment of stewing chicken: course of performance against it.", es: "El comprador de Frigaliment aceptó un segundo embarque de gallinas: course of performance en su contra." }]
+    authority: "UCC § 1-303(a); R.2d § 202(4)"
+    related: [course-of-dealing, usage-of-trade]
+  - id: gap-filler
+    term: gap-filler
+    pos: noun
+    topic: interpretation
+    en: { definition: "A default term the law supplies when the contract is silent, such as the UCC's rules on price, delivery, time and the duty of good faith." }
+    es: { term: "término supletorio", explanation: "Regla que llena lo que el contrato no dijo (precio razonable, UCC § 2-305; lugar y plazo de entrega, §§ 2-308, 2-309). Los contratos tienen lagunas por mala redacción, omisión deliberada, economía de negociación o circunstancias imprevisibles." }
+    examples: [{ en: "If no price is stated, the UCC fills the gap with a reasonable price.", es: "Si no hay precio, el UCC llena la laguna con un precio razonable." }]
+    authority: "UCC §§ 2-305, 2-308, 2-309"
+    related: [implied-in-law-term, implied-in-fact-term]
+  - id: implied-in-fact-term
+    term: implied-in-fact term
+    pos: noun
+    topic: interpretation
+    en: { definition: "A term the parties did not state but actually agreed to, inferred from their words, conduct and circumstances." }
+    es: { term: "término implícito de hecho", explanation: "Lo que las partes realmente quisieron aunque no lo escribieron, deducido de su conducta y contexto. Se distingue del término implícito de derecho, que impone la ley." }
+    examples: [{ en: "An exclusive agent impliedly promises reasonable efforts (Wood v. Lucy).", es: "Un agente exclusivo promete implícitamente esfuerzos razonables (Wood v. Lucy)." }]
+    related: [implied-in-law-term, gap-filler]
+  - id: implied-in-law-term
+    term: implied-in-law term
+    pos: noun
+    topic: interpretation
+    en: { definition: "A term the law imposes regardless of the parties' actual intent, such as the duty of good faith or the implied warranty of merchantability." }
+    es: { term: "término implícito de derecho", explanation: "Lo impone la ley aunque las partes no lo pensaran: buena fe (UCC § 1-304), garantía de comerciabilidad (§ 2-314), idoneidad para un fin (§ 2-315)." }
+    examples: [{ en: "Every UCC contract carries an implied-in-law duty of good faith.", es: "Todo contrato bajo el UCC lleva un deber implícito de derecho de buena fe." }]
+    authority: "UCC §§ 1-304, 2-314, 2-315"
+    related: [good-faith, gap-filler]
+  - id: good-faith
+    term: good faith
+    pos: noun
+    topic: interpretation
+    en: { definition: "Honesty in fact and the observance of reasonable commercial standards of fair dealing, owed in the performance and enforcement of every contract." }
+    es: { term: "buena fe", explanation: "Deber en el cumplimiento y la ejecución del contrato (UCC § 1-304; R.2d § 205). En Estados Unidos no hay un deber general de buena fe en la negociación.", falseFriend: "En México la buena fe rige también la etapa precontractual (culpa in contrahendo); aquí no." }
+    examples: [{ en: "A party may not use discretion under the contract to deprive the other of its benefit.", es: "Una parte no puede usar su discreción contractual para privar a la otra del beneficio del contrato." }]
+    authority: "UCC §§ 1-201(20), 1-304; R.2d § 205"
+    related: [implied-in-law-term]
+  - id: merchant
+    term: merchant
+    pos: noun
+    topic: formation
+    en: { definition: "Under the UCC, a person who deals in goods of the kind or holds himself out as having special knowledge or skill about the goods or the practices involved." }
+    es: { term: "comerciante", explanation: "Definición funcional del UCC § 2-104: quien trafica con ese tipo de bienes o se presenta como experto. Varias reglas solo aplican entre comerciantes (firm offer, confirmación escrita, 2-207).", falseFriend: "No depende de estar inscrito en un registro, como el comerciante del Código de Comercio." }
+    examples: [{ en: "Whether John is a merchant decides whether the written confirmation exception applies.", es: "Si John es comerciante decide si aplica la excepción de confirmación escrita." }]
+    authority: "UCC § 2-104"
+    related: [goods, statute-of-frauds]
+  - id: goods
+    term: goods (UCC Article 2)
+    pos: noun
+    topic: formation
+    en: { definition: "All things movable at the time of identification to the contract; Article 2 governs sales of goods, while services and land follow the common law." }
+    es: { term: "bienes muebles (mercaderías)", explanation: "El Artículo 2 del UCC rige la compraventa de bienes muebles; servicios e inmuebles siguen el common law y el Restatement. Primer paso de cualquier problema: ¿aplica el UCC?" }
+    examples: [{ en: "Chicken is goods; a consulting contract is not.", es: "Los pollos son goods; un contrato de consultoría no." }]
+    authority: "UCC §§ 2-102, 2-105"
+    related: [merchant]

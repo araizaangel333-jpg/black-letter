@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import Bi from '../components/Bi.astro';
+import ui from '../i18n/ui.json';
+
+const courses = await getCollection('courses');
+const syllabus = await getCollection('syllabus');
+const briefs = await getCollection('briefs');
+const briefById = Object.fromEntries(briefs.map(b => [b.id, b]));
+const courseById = Object.fromEntries(courses.map(c => [c.id, c.data]));
+const items = syllabus.map(s => s.data).sort((a, b) => a.date.localeCompare(b.date) || (a.time?.start || '00:00').localeCompare(b.time?.start || '00:00'));
+const dates = [...new Set(items.map(s => s.date))];
+const bookShort = (courseId, bookId) => courseById[courseId]?.books.find(b => b.id === bookId)?.short || bookId;
+---
+<Base title={ui['schedule.title'].en}>
+  <header class="sec">
+    <h1><T k="schedule.title" /></h1>
+    <p class="prose muted"><T k="schedule.intro" /></p>
+    <label class="check inline"><input type="checkbox" id="show-past" /><span class="box" aria-hidden="true"></span><span class="text"><T k="schedule.showPast" /></span></label>
+  </header>
+  {dates.map(date => (
+    <section class="sec dategroup" data-date={date}>
+      <div class="sec-head"><h2 class="num" data-date-label={date}>{date}</h2></div>
+      <ul class="agenda">
+        {items.filter(s => s.date === date).map(s => {
+          const c = courseById[s.course];
+          return (
+            <li>
+              <span class="code" data-size="sm" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+              <div class="what">
+                <span class="kind"><T k={`type.${s.type}`} />{s.time ? ` · ${s.time.start}–${s.time.end}` : ''}{s.due ? <> · <T k="today.due" /> <span class="num">{s.due}</span></> : ''}</span>
+                <span class="rtitle"><Bi v={s.title} /></span>
+                {s.pages.length > 0 && <span class="rpages">{s.pages.map((p, i) => (<span>{i > 0 ? '; ' : ''}<b>{bookShort(s.course, p.book)}</b> {p.pages ?? p.sections}</span>))}</span>}
+                {s.briefs.length > 0 && <span class="rpages">{s.briefs.map((id, i) => briefById[id] && (<span>{i > 0 ? ' · ' : ''}<a href={`/briefs/${id}/`}>{briefById[id].data.title}</a></span>))}</span>}
+                {!s.verified && <span class="tag"><T k="course.unverified" /></span>}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+  <script>
+    import { todayISO, formatDate } from '../lib/dates.js';
+    import { lang, onLangChange } from '../lib/i18n.js';
+    import { get, setPref, prefs } from '../lib/store.js';
+    const toggle = document.getElementById('show-past');
+    toggle.checked = Boolean(prefs().showPast);
+    function paint() {
+      const today = todayISO(); const L = lang();
+      document.querySelectorAll('.dategroup').forEach(g => {
+        const past = g.dataset.date < today;
+        g.hidden = past && !toggle.checked;
+        g.classList.toggle('is-today', g.dataset.date === today);
+        g.querySelector('[data-date-label]').textContent = formatDate(g.dataset.date, L, { weekday: 'long', month: 'long', day: 'numeric' });
+      });
+    }
+    toggle.addEventListener('change', () => { setPref('showPast', toggle.checked); paint(); });
+    paint(); onLangChange(paint);
+  </script>
+</Base>

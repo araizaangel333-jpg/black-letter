@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const glossary = await getCollection('glossary');
+  return glossary.map(g => ({ params: { id: g.id }, props: { entry: g } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const glossary = await getCollection('glossary');
+const byId = Object.fromEntries(glossary.map(g => [g.id, g.data]));
+const briefs = await getCollection('briefs');
+const using = briefs.filter(b => b.data.terms.includes(entry.id));
+---
+<Base title={d.term}>
+  <article class="term">
+    <header class="sec">
+      <div class="kicker" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+        <a class="chip ghost" href={`/glossary/#${d.subject}`}><T k={`subject.${d.subject}`} /></a>
+        <span class="tag"><T k={`register.${d.register}`} /></span>
+        {d.pos && <span class="tag">{d.pos}</span>}
+      </div>
+      <h1>{d.term}</h1>
+      <p class="prose lead">{d.en.definition}</p>
+      {d.en.usage && <p class="small muted"><strong class="ui"><T k="glossary.usage" />:</strong> {d.en.usage}</p>}
+    </header>
+    <section class="sec es-block">
+      <div class="sec-head"><h2><T k="glossary.inSpanish" /></h2></div>
+      {d.es.term && <p class="ges big">{d.es.term}</p>}
+      <p class="prose">{d.es.explanation}</p>
+      {d.es.falseFriend && <p class="ff-box"><strong class="ui"><T k="glossary.falseFriend" />.</strong> {d.es.falseFriend}</p>}
+    </section>
+    {d.examples.length > 0 && (
+      <section class="sec">
+        <div class="sec-head"><h2><T k="glossary.examples" /></h2></div>
+        <ul class="list">{d.examples.map(e => <li><span>{e.en}</span>{e.es && <span class="muted"> {e.es}</span>}</li>)}</ul>
+      </section>
+    )}
+    <section class="sec small">
+      {d.authority && <p><strong class="ui"><T k="glossary.authority" />:</strong> {d.authority}</p>}
+      {d.related.length > 0 && <p><strong class="ui"><T k="glossary.related" />:</strong> {d.related.map((r, i) => byId[r] && (<span>{i > 0 ? ', ' : ''}<a href={`/glossary/${r}/`}>{byId[r].term}</a></span>))}</p>}
+      {using.length > 0 && <p><strong class="ui">Cases:</strong> {using.map((b, i) => (<span>{i > 0 ? ', ' : ''}<a href={`/briefs/${b.id}/`}>{b.data.title}</a></span>))}</p>}
+      {d.autoCard && <p class="muted"><T k="glossary.inCards" /></p>}
+    </section>
+  </article>
+</Base>

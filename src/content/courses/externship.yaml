@@ -17,8 +17,9 @@ topics:
   - { id: outside-counsel, order: 4, title: { en: "Working with outside counsel", es: "Trabajar con abogados externos" } }
   - { id: risk, order: 5, title: { en: "Risk, compliance and investigations", es: "Riesgo, cumplimiento e investigaciones" } }
 assessment:
-  - { kind: participation, format: { en: "Seminar discussion and externship work", es: "Discusión en seminario y trabajo del externship" } }
-  - { kind: other, format: { en: "Written assignments to confirm", es: "Entregas escritas por confirmar" }, verified: false }
+  - { kind: participation, format: { en: "Seminar discussion, breakout labs and weekly \"Rapid Fire\" engagement prompts (200–300 words on Canvas, 2 points each)", es: "Discusión en seminario, laboratorios en grupo y prompts semanales \"Rapid Fire\" (200–300 palabras en Canvas, 2 puntos cada uno)" } }
+  - { kind: paper, format: { en: "Topic proposal (done: the in-house role in U.S.–Mexico supply chains during the USMCA review), abstract and final paper; confirm the final due date", es: "Propuesta de tema (entregada: el rol del abogado interno en cadenas de suministro México–EE. UU. durante la revisión del T-MEC), abstract y trabajo final; confirmar fecha de entrega" }, verified: false }
+  - { kind: other, format: { en: "Practical assignments such as the MSA redline exercise", es: "Ejercicios prácticos como el redline del MSA" } }
 materials:
   canvas: true
   note: { en: "Cases, ethics opinions and practice materials. The book is by the professor: nothing from it is reproduced on this site.", es: "Casos, opiniones éticas y materiales prácticos. El libro es del profesor: nada de su texto se reproduce en este sitio." }

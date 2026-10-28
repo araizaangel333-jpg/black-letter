@@ -26,8 +26,8 @@ topics:
   - { id: memo, order: 4, title: { en: "The office memo", es: "El memorándum" } }
   - { id: citation, order: 5, title: { en: "Bluebook citation", es: "Citas con el Bluebook" } }
 assessment:
-  - { kind: memo, format: { en: "Graded memos and shorter writing assignments", es: "Memos calificados y escritos cortos" } }
-  - { kind: citation-exercises, format: { en: "ICW citation exercises", es: "Ejercicios de citas en ICW" } }
+  - { kind: memo, format: { en: "Office memo on an IIED claim under Texas law (case chart, then discussion section), plus shorter IRAC/CREAC and counter-analysis exercises", es: "Memo sobre un reclamo de IIED bajo derecho de Texas (cuadro de casos y luego la sección Discussion), más ejercicios cortos de IRAC/CREAC y counter-analysis" } }
+  - { kind: citation-exercises, format: { en: "ICW citation exercises (Lexis)", es: "Ejercicios de citas en ICW (Lexis)" } }
 materials:
   canvas: true
   note: { en: "Weekly readings appear in Canvas under \"Week N Readings and Assignments\".", es: "Las lecturas semanales están en Canvas bajo \"Week N Readings and Assignments\"." }

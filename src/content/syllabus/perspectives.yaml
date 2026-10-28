@@ -1,0 +1,114 @@
+# Perspectives of the American Legal System (Garza). Fuente: Class Schedule, PALS, Fall 2026.
+course: perspectives
+items:
+  - id: pals-aug28
+    type: reading
+    date: "2026-08-28"
+    week: 1
+    topic: sources
+    title: { en: "Beauchene v. Mississippi College and the SMU Student Code of Professional Responsibility", es: "Beauchene v. Mississippi College y el Código de Responsabilidad Profesional de SMU" }
+    briefs: [perspectives/beauchene-v-mississippi-college]
+    tasks:
+      - { en: "Register with Westlaw and LexisNexis.", es: "Regístrate en Westlaw y LexisNexis." }
+      - { en: "Prepare to join at least two student organizations.", es: "Prepárate para unirte a al menos dos organizaciones estudiantiles." }
+  - id: pals-sep04
+    type: reading
+    date: "2026-09-04"
+    week: 2
+    topic: sources
+    title: { en: "Law in the United States, chapter 1", es: "Law in the United States, capítulo 1" }
+    pages: [{ book: abernathy-2, pages: "3–14" }]
+    tasks:
+      - { en: "Prepare to discuss the legal system of your country.", es: "Prepárate para discutir el sistema jurídico de tu país." }
+      - { en: "Start an outline for this class.", es: "Empieza el outline de la clase." }
+  - id: pals-sep11
+    type: reading
+    date: "2026-09-11"
+    week: 3
+    topic: powers
+    title: { en: "Separation of powers: Constitution art. I §§ 1–3 and art. II; Law in the United States, chapter 6", es: "División de poderes: Constitución art. I §§ 1–3 y art. II; Law in the United States, capítulo 6" }
+    pages:
+      - { book: us-constitution, sections: "art. I §§ 1–3; art. II (skip § 1 cls. 2–5)" }
+      - { book: abernathy-2, pages: "219–231, 235–244" }
+    tasks: [{ en: "Discussion: does your home country divide powers, and how?", es: "Discusión: ¿tu país divide los poderes y cómo?" }]
+  - id: pals-sep18
+    type: reading
+    date: "2026-09-18"
+    week: 4
+    topic: courts
+    title: { en: "Courts: Law in the United States, chapter 3; Constitution art. III §§ 1–2", es: "Tribunales: Law in the United States, capítulo 3; Constitución art. III §§ 1–2" }
+    pages:
+      - { book: abernathy-2, pages: "109–139" }
+      - { book: us-constitution, sections: "art. III §§ 1–2" }
+    tasks: [{ en: "Discussion: how do people become judges in your country?", es: "Discusión: ¿cómo se llega a juez en tu país?" }]
+  - id: pals-sep25
+    type: reading
+    date: "2026-09-25"
+    week: 5
+    topic: courts
+    title: { en: "Judges and the Supreme Court: Law in the United States, chapter 5", es: "Jueces y la Corte Suprema: Law in the United States, capítulo 5" }
+    pages: [{ book: abernathy-2, pages: "161–179, 187–191" }]
+    tasks:
+      - { en: "Research: who are the current nine Supreme Court justices and who nominated them?", es: "Investiga: ¿quiénes son los nueve justices actuales y quién los nominó?" }
+      - { en: "Discussion: the Supreme Court of your country.", es: "Discusión: la Corte Suprema de tu país." }
+  - id: pals-oct02
+    type: reading
+    date: "2026-10-02"
+    week: 6
+    topic: federalism
+    title: { en: "Federalism: the Commerce Clause, the Supremacy Clause, the Tenth Amendment; Law in the United States, chapter 8; Heart of Atlanta Motel", es: "Federalismo: Commerce Clause, Supremacy Clause, Décima Enmienda; Law in the United States, capítulo 8; Heart of Atlanta Motel" }
+    pages:
+      - { book: us-constitution, sections: "art. I § 8 cl. 3 (listed as art. III in the schedule); art. VI cl. 2; amend. X" }
+      - { book: abernathy-2, pages: "377–383" }
+    briefs: [perspectives/heart-of-atlanta-motel-v-united-states]
+    note: { en: "Heart of Atlanta Motel, Inc. v. United States came as a handout.", es: "Heart of Atlanta Motel, Inc. v. United States llegó como handout." }
+  - id: pals-oct09-midterm
+    type: exam
+    date: "2026-10-09"
+    week: 7
+    title: { en: "Midterm", es: "Examen parcial" }
+  - id: pals-oct16
+    type: reading
+    date: "2026-10-16"
+    week: 8
+    topic: citizenship
+    title: { en: "Amending the Constitution and citizenship: art. V; amendments I, II, VI, XIII–XV; Elk v. Wilkins; Chae Chan Ping v. United States", es: "Reformar la Constitución y ciudadanía: art. V; enmiendas I, II, VI, XIII–XV; Elk v. Wilkins; Chae Chan Ping v. United States" }
+    pages: [{ book: us-constitution, sections: "art. V; amends. I, II, VI, XIII, XIV, XV" }]
+    briefs: [perspectives/elk-v-wilkins, perspectives/chae-chan-ping-v-united-states]
+    tasks: [{ en: "Brief the assigned case.", es: "Haz el brief del caso asignado." }]
+  - id: pals-oct23
+    type: reading
+    date: "2026-10-23"
+    week: 9
+    topic: speech
+    title: { en: "Free speech: Law in the United States, chapter 12", es: "Libertad de expresión: Law in the United States, capítulo 12" }
+    pages: [{ book: abernathy-2, pages: "667–671, 680–682, 687–691" }]
+    tasks: [{ en: "Discussion: is flag burning a crime in your country?", es: "Discusión: ¿quemar la bandera es delito en tu país?" }]
+  - id: pals-oct30
+    type: reading
+    date: "2026-10-30"
+    week: 10
+    topic: equality
+    title: { en: "Equal protection and fundamental rights: Law in the United States pp. 558–577; Loving v. Virginia", es: "Igualdad y derechos fundamentales: Law in the United States pp. 558–577; Loving v. Virginia" }
+    pages: [{ book: abernathy-2, pages: "558–577" }]
+    briefs: [perspectives/loving-v-virginia]
+    tasks: [{ en: "Discussion: LGBT rights in your country.", es: "Discusión: derechos LGBT en tu país." }]
+  - id: pals-nov06
+    type: reading
+    date: "2026-11-06"
+    week: 11
+    topic: criminal
+    title: { en: "Criminal procedure: Law in the United States, chapter 11", es: "Procedimiento penal: Law in the United States, capítulo 11" }
+    pages: [{ book: abernathy-2, pages: "597–606, 612–614, 619–623" }]
+  - id: pals-nov13
+    type: reading
+    date: "2026-11-13"
+    week: 12
+    topic: criminal
+    title: { en: "Rights of the accused: Miranda v. Arizona, Duncan v. Louisiana, Roper v. Simmons", es: "Derechos del acusado: Miranda v. Arizona, Duncan v. Louisiana, Roper v. Simmons" }
+    briefs: [perspectives/miranda-v-arizona, perspectives/duncan-v-louisiana, perspectives/roper-v-simmons]
+  - id: pals-nov20-review
+    type: review
+    date: "2026-11-20"
+    week: 13
+    title: { en: "Review session", es: "Sesión de repaso" }

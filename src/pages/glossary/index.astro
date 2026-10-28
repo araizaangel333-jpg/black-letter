@@ -1,15 +1,57 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
 import ui from '../../i18n/ui.json';
+
+const glossary = await getCollection('glossary');
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'classroom', 'general'];
+const subjects = order.filter(s => glossary.some(g => g.data.subject === s));
+const sorted = [...glossary].sort((a, b) => a.data.term.localeCompare(b.data.term));
 ---
 <Base title={ui['glossary.title'].en}>
   <header class="sec">
     <h1><T k="glossary.title" /></h1>
     <p class="prose muted"><T k="glossary.intro" /></p>
+    <input class="search" type="search" id="gsearch" placeholder={ui['glossary.search'].en} aria-label={ui['glossary.search'].en} autocomplete="off" />
+    <div class="chips-row" id="gsubjects">
+      <button type="button" class="chip" data-subject="" aria-pressed="true"><T k="glossary.all" /></button>
+      {subjects.map(s => <button type="button" class="chip" data-subject={s} aria-pressed="false"><T k={`subject.${s}`} /></button>)}
+    </div>
+    <p class="muted small" id="gcount"></p>
   </header>
-  <div class="empty">
-    <h3><T k="glossary.soonTitle" /></h3>
-    <p><T k="glossary.soonBody" /></p>
-  </div>
+  <ul class="glist" id="glist">
+    {sorted.map(g => (
+      <li data-subject={g.data.subject} data-text={`${g.data.term} ${g.data.en.definition} ${g.data.es.term || ''} ${g.data.es.explanation}`.toLowerCase()}>
+        <a href={`/glossary/${g.id}/`}>
+          <span class="gterm">{g.data.term}</span>
+          {g.data.es.term && <span class="ges">{g.data.es.term}</span>}
+          <span class="gdef">{g.data.en.definition}</span>
+          {g.data.es.falseFriend && <span class="tag ff"><T k="glossary.falseFriend" /></span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="muted" id="gnone" hidden><T k="glossary.noResults" /></p>
+  <script>
+    import { t, onLangChange } from '../../lib/i18n.js';
+    const input = document.getElementById('gsearch');
+    const items = [...document.querySelectorAll('#glist > li')];
+    const chips = [...document.querySelectorAll('#gsubjects [data-subject]')];
+    let subject = '';
+    function norm(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+    function apply() {
+      const q = norm(input.value.trim());
+      let n = 0;
+      for (const li of items) {
+        const ok = (!subject || li.dataset.subject === subject) && (!q || norm(li.dataset.text).includes(q));
+        li.hidden = !ok; if (ok) n++;
+      }
+      document.getElementById('gcount').textContent = t('glossary.count', { n });
+      document.getElementById('gnone').hidden = n > 0;
+    }
+    input.addEventListener('input', apply);
+    chips.forEach(c => c.addEventListener('click', () => { subject = c.dataset.subject; chips.forEach(x => x.setAttribute('aria-pressed', String(x === c))); apply(); }));
+    apply(); onLangChange(apply);
+  </script>
 </Base>

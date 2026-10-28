@@ -1,0 +1,23 @@
+# Business Associations (Camp). Fuente: capítulos del casebook y entregas en Canvas; confirmar páginas.
+course: business-associations
+items:
+  - id: ba-ch3-scenario
+    type: assignment
+    date: "2026-10-06"
+    topic: owner-agreements
+    title: { en: "Chapter 3 scenario: the breakfast restaurant (partner-shareholder agreement provisions)", es: "Escenario del capítulo 3: el restaurante de desayunos (cláusulas del acuerdo de socios y accionistas)" }
+    pages: [{ book: business-law-and-policy, pages: "67–110 (ch. 3)" }]
+    verified: false
+  - id: ba-ch4-advocacy
+    type: assignment
+    date: "2026-10-15"
+    topic: veil-piercing
+    title: { en: "Chapter 4 scenario: advocacy and independent judgment (piercing the veil of Hyper-Thriller Titan)", es: "Escenario del capítulo 4: advocacy y criterio propio (levantar el velo de Hyper-Thriller Titan)" }
+    pages: [{ book: business-law-and-policy, pages: "ch. 4 (veil piercing, single business enterprise, corporate governance)" }]
+  - id: ba-oct29-ch5
+    type: reading
+    date: "2026-10-29"
+    topic: governance
+    title: { en: "Chapter 5: Corporate governance (pages to confirm)", es: "Capítulo 5: gobierno corporativo (páginas por confirmar)" }
+    pages: [{ book: business-law-and-policy, pages: "from p. 143 (ch. 5)" }]
+    verified: false

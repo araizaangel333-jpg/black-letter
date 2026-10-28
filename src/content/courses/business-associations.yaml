@@ -8,16 +8,16 @@ meetings:
   - { day: thu, start: "10:30", end: "11:55" }
 books:
   - id: business-law-and-policy
-    cite: "Business Organizations Law and Policy: Materials and Problems (Bauman, Stevenson & Rhee), edition to confirm from the cover"
-    short: "Business Law & Policy"
+    cite: "Business Law and Policy (casebook with chapter scenarios: Agency Principles, Types of Business Forms, Partner-Shareholder Agreements, Piercing the Veil and Governance); author and edition to confirm from the cover"
+    short: "Business Law and Policy"
     role: casebook
     verified: false
 topics:
-  - { id: agency, order: 1, title: { en: "Agency: authority and liability", es: "Agency: facultades y responsabilidad" }, barTested: true }
-  - { id: partnerships, order: 2, title: { en: "Partnerships and choice of entity", es: "Partnerships y elección de forma societaria" }, barTested: true }
-  - { id: corporate-form, order: 3, title: { en: "The corporation and limited liability", es: "La corporation y la responsabilidad limitada" }, barTested: true }
-  - { id: governance, order: 4, title: { en: "Governance and fiduciary duties", es: "Gobierno corporativo y deberes fiduciarios" }, barTested: true }
-  - { id: owner-agreements, order: 5, title: { en: "Partner and shareholder agreements", es: "Acuerdos entre socios y accionistas" } }
+  - { id: agency, order: 1, title: { en: "Agency principles (ch. 1): authority, ratification, liability", es: "Principios de agency (cap. 1): facultades, ratificación, responsabilidad" }, barTested: true }
+  - { id: business-forms, order: 2, title: { en: "Types of business forms (ch. 2): partnerships, LLCs, corporations", es: "Formas societarias (cap. 2): partnerships, LLC, corporations" }, barTested: true }
+  - { id: owner-agreements, order: 3, title: { en: "Partner and shareholder agreements (ch. 3)", es: "Acuerdos entre socios y accionistas (cap. 3)" } }
+  - { id: veil-piercing, order: 4, title: { en: "Piercing the corporate veil and single business enterprise (ch. 4)", es: "Levantamiento del velo corporativo y single business enterprise (cap. 4)" }, barTested: true }
+  - { id: governance, order: 5, title: { en: "Corporate governance and the board's duties (ch. 4–5)", es: "Gobierno corporativo y deberes del consejo (cap. 4–5)" }, barTested: true }
 assessment:
   - { kind: final-exam, format: { en: "Exam format to confirm with the syllabus", es: "Formato del examen por confirmar con el syllabus" }, verified: false }
   - { kind: participation, format: { en: "Class discussion of cases and book scenarios", es: "Discusión en clase de casos y escenarios del libro" } }

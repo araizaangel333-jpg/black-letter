@@ -1,23 +1,90 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
 import ui from '../../i18n/ui.json';
+
+const briefs = await getCollection('briefs');
+const courses = await getCollection('courses');
+const syllabus = await getCollection('syllabus');
+const courseById = Object.fromEntries(courses.map(c => [c.id, c.data]));
+// briefs asignados por fecha, para "casos de tus próximas clases"
+const assigned = [];
+for (const s of syllabus) for (const id of s.data.briefs) { const b = briefs.find(x => x.id === id); if (b) assigned.push({ date: s.data.date, course: s.data.course, b }); }
+assigned.sort((a, b) => a.date.localeCompare(b.date));
+const byCourse = courses.map(c => ({ c, list: briefs.filter(b => b.data.course === c.id).sort((a, b) => a.data.title.localeCompare(b.data.title)) })).filter(x => x.list.length);
 ---
 <Base title={ui['games.title'].en}>
   <header class="sec">
     <h1><T k="games.title" /></h1>
     <p class="prose muted"><T k="games.intro" /></p>
   </header>
-  <div class="empty">
-    <h3><T k="games.soonTitle" /></h3>
-    <p><T k="games.soonBody" /></p>
-  </div>
-  <section class="sec">
-    <div class="sec-head"><h2><T k="games.meanwhile" /></h2></div>
-    <a class="card" href="/map/#donde">
-      <span class="kicker">Perspectives of the American Legal System</span>
-      <h3><T k="today.mapTitle" /></h3>
-      <p><T k="today.mapDesc" /></p>
+  <div class="modes">
+    <a class="card mode" href="/games/flashcards/">
+      <h3><T k="games.flashcards" /></h3>
+      <p><T k="games.flashcardsDesc" /></p>
+      <span class="small muted" id="fc-stats"></span>
     </a>
+    <a class="card mode" href="#coldcall">
+      <h3><T k="games.coldcall" /></h3>
+      <p><T k="games.coldcallDesc" /></p>
+    </a>
+  </div>
+  <p class="muted small"><T k="games.soon" /></p>
+
+  <section class="sec" id="coldcall">
+    <div class="sec-head"><h2><T k="games.upcomingBriefs" /></h2></div>
+    <ul class="agenda" id="upcoming">
+      {assigned.map(({ date, course, b }) => {
+        const c = courseById[course];
+        return (
+          <li data-date={date} hidden>
+            <span class="code" data-size="sm" style={`--cc: var(--${c.color}); --cc-ink: var(--${c.color}-ink)`} aria-hidden="true">{c.code}</span>
+            <div class="what">
+              <span class="kind num" data-when={date}>{date}</span>
+              <a href={`/briefs/${b.id}/?drill=1`} class="rtitle">{b.data.title}</a>
+              <span class="small muted" data-cc={b.id}></span>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2><T k="games.allBriefs" /></h2></div>
+    {byCourse.map(({ c, list }) => (
+      <div class="sec">
+        <h3 style="display:flex; align-items:center; gap:8px;"><span class="code" data-size="sm" style={`--cc: var(--${c.data.color}); --cc-ink: var(--${c.data.color}-ink)`} aria-hidden="true">{c.data.code}</span>{c.data.title.en}</h3>
+        <ul class="list">
+          {list.map(b => <li><a href={`/briefs/${b.id}/?drill=1`}>{b.data.title}</a> <span class="small muted num" data-cc={b.id}></span></li>)}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <script>
+    import { todayISO, daysBetween, formatDate } from '../../lib/dates.js';
+    import { t, lang, onLangChange } from '../../lib/i18n.js';
+    import { get } from '../../lib/store.js';
+    import { buildQueue } from '../../lib/srs.js';
+    function paint() {
+      const today = todayISO(); const L = lang();
+      const cc = get('coldcall', {}) || {};
+      document.querySelectorAll('#upcoming > li').forEach(li => {
+        const n = daysBetween(today, li.dataset.date);
+        li.hidden = !(n >= 0 && n <= 10);
+        li.querySelector('[data-when]').textContent = n === 0 ? t('today.today') : n === 1 ? t('today.tomorrow') : formatDate(li.dataset.date, L);
+      });
+      document.querySelectorAll('[data-cc]').forEach(el => { const c = cc[el.dataset.cc]; el.textContent = c ? t('drill.lastRun', { when: c.last, n: c.confidence }) : ''; });
+    }
+    paint(); onLangChange(paint);
+    fetch('/data/items.json').then(r => r.json()).then(({ items }) => {
+      const srs = get('srs', {}) || {};
+      const ids = items.map(i => i.id);
+      const due = ids.filter(id => srs[id] && srs[id].due <= todayISO()).length;
+      const fresh = ids.filter(id => !srs[id]).length;
+      document.getElementById('fc-stats').textContent = `${due} ${t('games.due')} · ${fresh} ${t('games.new')} · ${t('games.cards', { n: ids.length })}`;
+    }).catch(() => {});
+  </script>
 </Base>

@@ -1,0 +1,144 @@
+# Glosario de Legal Research & Writing y del memo de IIED.
+subject: lrw
+items:
+  - id: iied
+    term: intentional infliction of emotional distress (IIED)
+    pos: noun
+    topic: memo
+    en: { definition: "A tort for intentional or reckless conduct so extreme and outrageous that it causes severe emotional distress; in Texas, four elements from Twyman." }
+    es: { term: "daño moral intencional (IIED)", explanation: "Tort intencional con cuatro elementos: conducta intencional o imprudente, extrema y ultrajante, que causa angustia emocional severa (Twyman). Es un gap-filler: no procede si otra acción cubre el núcleo de la queja.", falseFriend: "No equivale al daño moral mexicano (CCF art. 1916), que es mucho más amplio y no exige conducta ultrajante." }
+    examples: [{ en: "Marcus's IIED claim probably fails at the gap-filler threshold.", es: "El reclamo de IIED de Marcus probablemente falla en el umbral de gap-filler." }]
+    authority: "Twyman v. Twyman, 855 S.W.2d 619 (Tex. 1993)"
+    related: [gap-filler-tort, gravamen, elements]
+    difficulty: 2
+  - id: gap-filler-tort
+    term: gap-filler tort
+    pos: noun
+    topic: memo
+    en: { definition: "A claim available only when no other tort or statute covers the harm; IIED cannot be used to evade the limits of the claim that really fits." }
+    es: { term: "tort de relleno", explanation: "Acción subsidiaria: solo procede si ninguna otra cubre el daño. Si el núcleo es difamación o acoso, el IIED queda excluido aunque la otra acción fracase (Zeltwanger, Draker)." }
+    examples: [{ en: "Because the posts injure reputation, defamation is the fit and IIED is barred.", es: "Como las publicaciones dañan la reputación, la acción adecuada es difamación y el IIED queda excluido." }]
+    authority: "Hoffmann-La Roche Inc. v. Zeltwanger, 144 S.W.3d 438 (Tex. 2004)"
+    related: [iied, gravamen]
+  - id: gravamen
+    term: gravamen
+    pos: noun
+    topic: memo
+    en: { definition: "The core or essence of a complaint: what the plaintiff is really complaining about, regardless of the labels used." }
+    es: { term: "núcleo de la pretensión", explanation: "La esencia de la queja, más allá de las etiquetas. Los tribunales texanos miran el gravamen para decidir si el IIED es un sustituto prohibido de otra acción." }
+    examples: [{ en: "The gravamen of Draker's complaint was defamation.", es: "El gravamen de la queja de Draker era difamación." }]
+    related: [gap-filler-tort]
+  - id: elements
+    term: elements vs. factors
+    pos: noun
+    topic: rules
+    en: { definition: "Elements are required parts of a rule, all of which must be proved; factors are considerations a court weighs, none of which is decisive alone." }
+    es: { term: "elementos vs. factores", explanation: "Elementos: todos deben probarse (los cuatro de Twyman). Factores: se ponderan (los de veil piercing). Estructura el memo según cuál sea la regla." }
+    examples: [{ en: "IIED has four elements; outrageousness is judged with context factors.", es: "El IIED tiene cuatro elementos; la outrageousness se juzga con factores de contexto." }]
+    authority: "A Lawyer Writes ch. 4"
+    related: [iied, rule-explanation]
+  - id: creac
+    term: CREAC
+    pos: noun
+    topic: application
+    en: { definition: "The structure of one legal argument: Conclusion, Rule, Explanation of the rule with case illustrations, Application to your facts, Counter-analysis, Conclusion." }
+    es: { term: "CREAC", explanation: "Conclusión, Regla, Explicación (con ilustraciones de casos), Aplicación, Contraanálisis, Conclusión. La conclusión va primero, al revés de la sentencia mexicana.", falseFriend: "El esquema mexicano (antecedentes, considerandos, puntos resolutivos) deja la conclusión al final; aquí abre." }
+    examples: [{ en: "Each Twyman element gets its own CREAC in the Discussion.", es: "Cada elemento de Twyman lleva su propio CREAC en la Discussion." }]
+    authority: "A Lawyer Writes chs. 6–9"
+    related: [rule-explanation, case-illustration, counter-analysis]
+  - id: rule-explanation
+    term: rule explanation
+    pos: noun
+    topic: rules
+    en: { definition: "The part of an argument that shows how courts have applied the rule, through case illustrations, before applying it to the client's facts." }
+    es: { term: "explicación de la regla", explanation: "Muestra cómo los tribunales han aplicado la regla (hechos, holding y razonamiento de uno o dos casos) antes de aplicarla a tu cliente." }
+    examples: [{ en: "GTE illustrates what outrageous conduct looks like in employment.", es: "GTE ilustra cómo se ve la conducta ultrajante en el trabajo." }]
+    authority: "A Lawyer Writes ch. 7"
+    related: [case-illustration, creac]
+  - id: case-illustration
+    term: case illustration
+    pos: noun
+    topic: rules
+    en: { definition: "A short description of a precedent (hook, trigger facts, holding, reasoning) used to explain a rule." }
+    es: { term: "ilustración con un caso", explanation: "Descripción breve de un precedente: gancho (el principio), hechos detonantes, holding y razonamiento. Tres o cuatro frases." }
+    examples: [{ en: "A case illustration of Draker: fake profile, reputational harm, IIED barred.", es: "Ilustración de Draker: perfil falso, daño a la reputación, IIED excluido." }]
+    authority: "A Lawyer Writes § 7.2"
+    related: [rule-explanation]
+  - id: counter-analysis
+    term: counter-analysis
+    pos: noun
+    topic: application
+    en: { definition: "The best argument the other side would make, stated fairly and then answered, placed after your application." }
+    es: { term: "contraanálisis", explanation: "El mejor argumento de la contraparte, presentado con honestidad y luego respondido. Va después de la aplicación y antes de la conclusión." }
+    examples: [{ en: "Luther will argue his comments were opinions about Marcus's leadership.", es: "Luther argumentará que sus comentarios eran opiniones sobre el liderazgo de Marcus." }]
+    authority: "A Lawyer Writes § 8.4"
+    related: [creac]
+  - id: summary-judgment
+    term: summary judgment
+    pos: noun
+    topic: reading-cases
+    en: { definition: "A judgment without trial when there is no genuine dispute of material fact and one side is entitled to judgment as a matter of law." }
+    es: { term: "sentencia sumaria (sin equivalente)", explanation: "Decisión sin juicio cuando no hay hechos controvertidos relevantes. Muchos casos de IIED terminan así (Draker). No existe en el proceso civil mexicano." }
+    examples: [{ en: "The trial court granted summary judgment for the defendants.", es: "El tribunal concedió sentencia sumaria a los demandados." }]
+    related: [procedural-posture]
+  - id: procedural-posture
+    term: procedural posture
+    pos: noun
+    topic: reading-cases
+    en: { definition: "Where the case stood when the court decided it: what was filed, what the lower court did, who appealed; it bounds the holding." }
+    es: { term: "postura procesal", explanation: "En qué etapa estaba el caso cuando el tribunal decidió. Acota el holding: tras una moción de desestimación los hechos se presumen ciertos; tras un juicio, se revisan con deferencia." }
+    examples: [{ en: "Twyman came up after a bench trial on the wrong theory, so the court remanded.", es: "Twyman llegó tras un juicio bajo la teoría equivocada, por eso el tribunal devolvió el caso." }]
+    related: [summary-judgment]
+  - id: no-pet
+    term: no pet. / pet. denied (Texas subsequent history)
+    pos: phrase
+    topic: citation
+    en: { definition: "Texas citation parentheticals that tell the reader whether a petition for review was filed with the Supreme Court of Texas and what happened to it." }
+    es: { term: "historial posterior en citas de Texas", explanation: "Texas exige indicar en la cita del tribunal de apelaciones si hubo petición ante la Supreme Court of Texas: “no pet.” (no se pidió), “pet. denied” (negada)." }
+    examples: [{ en: "Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.—San Antonio 2008, no pet.).", es: "Draker v. Schreiber, 271 S.W.3d 318 (Tex. App.—San Antonio 2008, no pet.)." }]
+    authority: "Texas Rules of Form; Bluebook T1.3 (Texas)"
+    related: [pincite]
+  - id: pincite
+    term: pincite (pinpoint citation)
+    pos: noun
+    topic: citation
+    en: { definition: "The exact page of the source that supports your sentence, placed after the first page of the case." }
+    es: { term: "cita de página exacta", explanation: "La página concreta que sostiene tu frase, después de la primera página del caso. Toda afirmación jurídica del memo lleva pincite." }
+    examples: [{ en: "Twyman v. Twyman, 855 S.W.2d 619, 621 (Tex. 1993).", es: "Twyman v. Twyman, 855 S.W.2d 619, 621 (Tex. 1993)." }]
+    authority: "Bluebook R. 3.2; B10.1.2"
+    related: [no-pet]
+  - id: recklessness
+    term: intent and recklessness (IIED)
+    pos: noun
+    topic: memo
+    en: { definition: "The first IIED element: the defendant wanted to cause severe emotional distress, knew it was substantially certain, or consciously disregarded a high probability of it; distress that is a side effect of conduct aimed elsewhere does not count." }
+    es: { term: "intención e imprudencia (IIED)", explanation: "Primer elemento: querer causar la angustia severa, saber que era casi segura, o ignorar conscientemente un alto riesgo. Si la conducta apuntaba a otro daño (reputación, lesión física), no basta (Standard Fruit)." }
+    examples: [{ en: "Luther's knowledge of Marcus's anxiety is the key fact for recklessness.", es: "Que Luther conociera la ansiedad de Marcus es el hecho clave para la imprudencia." }]
+    authority: "Twyman, 855 S.W.2d at 623–24; Standard Fruit, 985 S.W.2d at 67–68"
+    related: [iied, outrageous-conduct]
+  - id: outrageous-conduct
+    term: extreme and outrageous conduct
+    pos: noun
+    topic: memo
+    en: { definition: "The second IIED element: conduct beyond all possible bounds of decency, atrocious and utterly intolerable in a civilized community; insults and indignities are not enough, and the course of conduct is judged as a whole in context." }
+    es: { term: "conducta extrema y ultrajante", explanation: "Segundo elemento. Más allá de todo límite de decencia; los insultos no bastan; se mira el patrón completo y la relación entre las partes (GTE). Es el elemento más difícil de probar." }
+    examples: [{ en: "Years of screaming and physical intimidation were outrageous in GTE.", es: "Años de gritos e intimidación física fueron ultrajantes en GTE." }]
+    authority: "Twyman, 855 S.W.2d at 621; GTE, 998 S.W.2d at 612–17"
+    related: [iied, severe-distress]
+  - id: severe-distress
+    term: severe emotional distress
+    pos: noun
+    topic: memo
+    en: { definition: "The fourth IIED element: distress so severe that no reasonable person could be expected to endure it, usually shown by symptoms, treatment and sometimes expert testimony." }
+    es: { term: "angustia emocional severa", explanation: "Cuarto elemento. Se prueba con síntomas, tratamiento y, a veces, peritos (GTE). Los registros del consejero de Marcus (ansiedad, insomnio, depresión) apuntan a este elemento." }
+    examples: [{ en: "Counseling records and changed behavior support severe distress.", es: "Los registros de terapia y el cambio de conducta sostienen la angustia severa." }]
+    authority: "GTE, 998 S.W.2d at 618–19"
+    related: [iied, outrageous-conduct]
+  - id: defamation
+    term: defamation (libel and slander)
+    pos: noun
+    topic: memo
+    en: { definition: "A false statement of fact about a person, published to others, that injures reputation; written is libel, spoken is slander." }
+    es: { term: "difamación", explanation: "Afirmación falsa de hecho sobre una persona, comunicada a terceros, que daña su reputación. Es la acción que cubre los posts sobre Marcus, y por eso desplaza al IIED (Draker).", falseFriend: "En México la difamación dejó de ser delito federal en 2007 y se litiga como daño moral (CCF art. 1916); aquí es un tort con reglas propias." }
+    examples: [{ en: "Calling Marcus a fraud in the group chat is a defamation theory, not IIED.", es: "Llamar fraude a Marcus en el chat grupal es una teoría de difamación, no de IIED." }]
+    related: [gap-filler-tort, gravamen]

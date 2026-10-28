@@ -1,10 +1,15 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { bundle } from './loaders/bundle.js';
 import { termSchema } from './schemas/term.js';
 import { courseSchema } from './schemas/course.js';
+import { syllabusItemSchema } from './schemas/syllabus.js';
+import { briefSchema } from './schemas/brief.js';
+import { noteSchema } from './schemas/note.js';
+import { glossaryItemSchema } from './schemas/glossary.js';
 
-// El id de cada entrada es su ruta sin extensión (contracts, fall-2026, ...).
+// El id de cada entrada es su ruta sin extensión (contracts, contracts/hurst-v-lake, ...).
 const generateId = ({ entry }: { entry: string }) => entry.replace(/\.(ya?ml|md|json)$/, '');
 
 const terms = defineCollection({
@@ -17,4 +22,26 @@ const courses = defineCollection({
   schema: courseSchema(z),
 });
 
-export const collections = { terms, courses };
+// Un archivo por curso con `items`; cada ítem hereda `course`.
+const syllabus = defineCollection({
+  loader: bundle({ base: './src/content/syllabus', inherit: ['course'] }),
+  schema: syllabusItemSchema(z),
+});
+
+const briefs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/briefs', generateId }),
+  schema: briefSchema(z),
+});
+
+const notes = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/notes', generateId }),
+  schema: noteSchema(z),
+});
+
+// Un archivo por materia con `items`; cada término hereda `subject`.
+const glossary = defineCollection({
+  loader: bundle({ base: './src/content/glossary', inherit: ['subject'] }),
+  schema: glossaryItemSchema(z),
+});
+
+export const collections = { terms, courses, syllabus, briefs, notes, glossary };

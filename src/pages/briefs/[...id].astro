@@ -1,0 +1,189 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+import ui from '../../i18n/ui.json';
+
+export async function getStaticPaths() {
+  const briefs = await getCollection('briefs');
+  return briefs.map(b => ({ params: { id: b.id }, props: { brief: b } }));
+}
+const { brief } = Astro.props;
+const d = brief.data;
+const { Content } = await render(brief);
+const courses = await getCollection('courses');
+const course = courses.find(c => c.id === d.course)?.data;
+const glossary = await getCollection('glossary');
+const termById = Object.fromEntries(glossary.map(g => [g.id, g.data]));
+const briefs = await getCollection('briefs');
+const briefById = Object.fromEntries(briefs.map(b => [b.id, b.data]));
+const syllabus = await getCollection('syllabus');
+const assigned = syllabus.map(s => s.data).filter(s => s.briefs.includes(brief.id)).sort((a, b) => a.date.localeCompare(b.date));
+const steps = d.depth === 'full' ? [] : [
+  { label: 'brief.hook', text: d.hook }, { label: 'brief.oneLiner', text: d.oneLiner.en }, { label: 'brief.rule', text: d.rule }, { label: 'brief.posture', text: d.posture },
+];
+---
+<Base title={d.title}>
+  <article class="brief" data-brief={brief.id}>
+    <header class="brief-head">
+      <div class="kicker" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        {course && <a class="code" data-size="sm" href={`/courses/${d.course}/`} style={`--cc: var(--${course.color}); --cc-ink: var(--${course.color}-ink); text-decoration:none`} aria-label={course.title.en}>{course.code}</a>}
+        <span>{d.court}, {d.year}</span>
+        <span class="tag"><T k={`brief.status.${d.status}`} /></span>
+        {!d.verified && <span class="tag"><T k="brief.unverified" /></span>}
+        {d.depth === 'skim' && <span class="tag"><T k="brief.skim" /></span>}
+      </div>
+      <h1>{d.title}</h1>
+      <p class="cite num">{d.citation}</p>
+      <p class="hook">{d.hook}</p>
+    </header>
+
+    <div class="brief-actions">
+      <button type="button" class="btn primary" id="drill-start"><T k="drill.start" /></button>
+      <span class="muted small" id="drill-last"></span>
+    </div>
+
+    <section class="sec brief-core" data-core>
+      <dl class="kv">
+        <dt><T k="brief.oneLiner" /></dt><dd><Bi v={d.oneLiner} /></dd>
+        <dt><T k="brief.rule" /></dt><dd>{d.rule}</dd>
+        <dt><T k="brief.whyHere" /></dt><dd>{d.whyHere}</dd>
+        <dt><T k="brief.posture" /></dt><dd>{d.posture}</dd>
+      </dl>
+    </section>
+
+    <div class="prose brief-body" data-body>
+      <Content />
+    </div>
+
+    {d.questions.length > 0 && (
+      <section class="sec" data-questions>
+        <div class="sec-head"><h2><T k="brief.questions" /></h2></div>
+        <div class="cases">
+          {d.questions.map(q => (
+            <details><summary>{q.q}</summary><div class="answer">{q.a}</div></details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="sec brief-meta" data-meta>
+      {d.terms.length > 0 && (
+        <div class="chips">
+          {d.terms.map(tid => termById[tid] ? <a class="chip ghost" href={`/glossary/${tid}/`}>{termById[tid].term}</a> : <span class="chip">{tid}</span>)}
+        </div>
+      )}
+      {d.relation.length > 0 && (
+        <p class="small"><strong class="ui"><T k="brief.related" />:</strong> {d.relation.map((r, i) => briefById[r.brief] && (<span>{i > 0 ? ', ' : ''}<a href={`/briefs/${r.brief}/`}>{briefById[r.brief].title}</a> ({r.how})</span>))}</p>
+      )}
+      {assigned.length > 0 && (
+        <p class="small"><strong class="ui"><T k="brief.assigned" />:</strong> {assigned.map((s, i) => (<span>{i > 0 ? ', ' : ''}<span class="num">{s.date}</span></span>))}</p>
+      )}
+      <p class="small muted">
+        {d.url && <><a href={d.url} target="_blank" rel="noopener"><T k="brief.opinion" /></a>. </>}
+        {d.source && <><T k="brief.source" />: {d.source}.</>}
+      </p>
+    </section>
+
+    <div class="drill" id="drill" hidden>
+      <div class="drill-top">
+        <span class="drill-count num" id="drill-count"></span>
+        <span class="drill-timer num" id="drill-timer">0:00</span>
+        <button type="button" class="btn" id="drill-exit"><T k="drill.exit" /></button>
+      </div>
+      <p class="small muted" id="drill-intro"><T k="drill.intro" /></p>
+      <p class="small panic"><T k="drill.panic" /></p>
+      <div class="drill-stage">
+        <h2 class="drill-label" id="drill-label"></h2>
+        <div class="drill-content prose" id="drill-content" hidden></div>
+      </div>
+      <div class="drill-controls">
+        <button type="button" class="btn primary" id="drill-reveal"><T k="drill.reveal" /></button>
+        <div class="rate" id="drill-rate" hidden>
+          <span class="small"><T k="drill.rate" /></span>
+          <div class="rate-buttons">
+            <button type="button" class="btn" data-rate="0"><T k="drill.missed" /></button>
+            <button type="button" class="btn" data-rate="1"><T k="drill.partial" /></button>
+            <button type="button" class="btn" data-rate="2"><T k="drill.solid" /></button>
+          </div>
+        </div>
+      </div>
+      <div class="drill-done" id="drill-done" hidden>
+        <h2><T k="drill.done" /></h2>
+        <p class="num" id="drill-score"></p>
+        <div class="rate-buttons"><button type="button" class="btn" id="drill-again"><T k="drill.again" /></button><a class="btn" href="/games/"><T k="nav.games" /></a></div>
+      </div>
+    </div>
+  </article>
+
+  <script type="application/json" id="skim-steps" set:html={JSON.stringify(steps)} />
+  <script>
+    import { t, onLangChange } from '../../lib/i18n.js';
+    import { get, update } from '../../lib/store.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const article = document.querySelector('[data-brief]');
+    const id = article.dataset.brief;
+    const skim = JSON.parse(document.getElementById('skim-steps').textContent);
+    const drill = document.getElementById('drill');
+    const label = document.getElementById('drill-label'), content = document.getElementById('drill-content');
+    const reveal = document.getElementById('drill-reveal'), rate = document.getElementById('drill-rate');
+    const count = document.getElementById('drill-count'), timer = document.getElementById('drill-timer');
+    const done = document.getElementById('drill-done');
+    const last = document.getElementById('drill-last');
+
+    function paintLast() {
+      const cc = (get('coldcall', {}) || {})[id];
+      last.textContent = cc ? t('drill.lastRun', { when: cc.last, n: cc.confidence }) : t('drill.never');
+    }
+    paintLast(); onLangChange(paintLast);
+
+    // pasos: cada h2 del cuerpo con su contenido; si es skim, los campos del frontmatter
+    function collectSteps() {
+      const body = document.querySelector('[data-body]');
+      const steps = [];
+      if (skim.length) return skim.map(s => ({ label: t(s.label), html: `<p>${s.text}</p>` }));
+      let cur = null;
+      body.querySelectorAll(':scope > *').forEach(el => {
+        if (el.tagName === 'H2') { cur = { label: el.textContent, html: '' }; steps.push(cur); }
+        else if (cur) cur.html += el.outerHTML;
+      });
+      const qs = [...document.querySelectorAll('[data-questions] details')].map(d => ({ label: d.querySelector('summary').textContent, html: `<p>${d.querySelector('.answer').textContent}</p>` }));
+      return steps.concat(qs);
+    }
+
+    let steps = [], i = 0, scores = [], tick = null, t0 = 0;
+    function fmt(s) { return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; }
+    function show() {
+      const s = steps[i];
+      count.textContent = t('drill.step', { i: i + 1, n: steps.length });
+      label.textContent = s.label;
+      content.innerHTML = s.html; content.hidden = true;
+      reveal.hidden = false; rate.hidden = true;
+    }
+    function start() {
+      steps = collectSteps(); i = 0; scores = [];
+      drill.hidden = false; done.hidden = true;
+      article.classList.add('drilling');
+      t0 = Date.now(); clearInterval(tick); tick = setInterval(() => { timer.textContent = fmt(Math.round((Date.now() - t0) / 1000)); }, 1000);
+      show();
+      drill.scrollIntoView({ block: 'start' });
+    }
+    function finish() {
+      clearInterval(tick);
+      const avg = scores.length ? +(scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1) : 0;
+      update('coldcall', c => ({ ...(c || {}), [id]: { last: todayISO(), confidence: avg, seconds: Math.round((Date.now() - t0) / 1000) } }), {});
+      update('activity', a => { const n = { ...(a || {}) }; const k = todayISO(); n[k] = { ...(n[k] || {}), coldcall: ((n[k] || {}).coldcall || 0) + 1 }; return n; }, {});
+      document.getElementById('drill-score').textContent = t('drill.score', { n: avg });
+      done.hidden = false; reveal.hidden = true; rate.hidden = true; label.textContent = ''; content.hidden = true;
+      paintLast();
+    }
+    reveal.addEventListener('click', () => { content.hidden = false; reveal.hidden = true; rate.hidden = false; });
+    rate.querySelectorAll('[data-rate]').forEach(b => b.addEventListener('click', () => { scores.push(Number(b.dataset.rate)); i++; if (i >= steps.length) finish(); else show(); }));
+    document.getElementById('drill-start').addEventListener('click', start);
+    document.getElementById('drill-again').addEventListener('click', start);
+    document.getElementById('drill-exit').addEventListener('click', () => { clearInterval(tick); drill.hidden = true; article.classList.remove('drilling'); window.scrollTo({ top: 0 }); });
+    if (new URLSearchParams(location.search).get('drill') === '1') start();
+  </script>
+</Base>

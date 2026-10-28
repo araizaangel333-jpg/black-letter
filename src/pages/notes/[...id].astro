@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import Bi from '../../components/Bi.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map(n => ({ params: { id: n.id }, props: { note: n } }));
+}
+const { note } = Astro.props;
+const d = note.data;
+const { Content } = await render(note);
+const courses = await getCollection('courses');
+const course = courses.find(c => c.id === d.course)?.data;
+---
+<Base title={d.title.en}>
+  <article class="note">
+    <header class="sec">
+      <div class="kicker" style="display:flex; align-items:center; gap:10px;">
+        {course && <a class="code" data-size="sm" href={`/courses/${d.course}/`} style={`--cc: var(--${course.color}); --cc-ink: var(--${course.color}-ink); text-decoration:none`}>{course.code}</a>}
+        <span class="tag">{d.kind}</span>
+        {!d.verified && <span class="tag"><T k="brief.unverified" /></span>}
+      </div>
+      <h1><Bi v={d.title} /></h1>
+      {d.summary && <p class="prose muted"><Bi v={d.summary} /></p>}
+    </header>
+    {d.elements.length > 0 && (
+      <section class="sec">
+        <ol class="list elements">
+          {d.elements.map(e => <li><strong><Bi v={e.label} /></strong>{e.test && <span>: {e.test}</span>}{e.authority && <span class="muted small"> ({e.authority})</span>}{e.pitfall && <span class="ff-box small">{e.pitfall}</span>}</li>)}
+        </ol>
+      </section>
+    )}
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

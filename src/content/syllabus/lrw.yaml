@@ -1,0 +1,28 @@
+# Legal Research & Writing (Fadel). Fuente: consignas de Canvas y correos; solo fechas y títulos.
+course: lrw
+items:
+  - id: lrw-iied-case-chart
+    type: assignment
+    date: "2026-10-08"
+    due: "2026-10-09"
+    topic: memo
+    title: { en: "IIED memo: case chart of 6 to 10 Texas cases (submitted)", es: "Memo de IIED: cuadro de 6 a 10 casos de Texas (entregado)" }
+    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber]
+    source: "IIED Memo Assignment and Case Chart templates (Canvas)"
+  - id: lrw-counter-analysis
+    type: assignment
+    date: "2026-10-09"
+    topic: application
+    title: { en: "Counter-analysis exercise (A Lawyer Writes § 8.4)", es: "Ejercicio de counter-analysis (A Lawyer Writes § 8.4)" }
+    pages: [{ book: a-lawyer-writes, pages: "182–188 (§ 8.4)" }]
+    verified: false
+  - id: lrw-iied-discussion
+    type: assignment
+    date: "2026-10-26"
+    topic: memo
+    title: { en: "IIED memo: Discussion section (Marcus Carter v. Luther Reynolds, Texas law)", es: "Memo de IIED: sección Discussion (Marcus Carter v. Luther Reynolds, derecho de Texas)" }
+    briefs: [lrw/twyman-v-twyman, lrw/gte-southwest-v-bruce, lrw/hoffmann-la-roche-v-zeltwanger, lrw/standard-fruit-v-johnson, lrw/draker-v-schreiber]
+    tasks:
+      - { en: "Confirm the due date in Canvas.", es: "Confirma la fecha de entrega en Canvas." }
+      - { en: "Structure: gap-filler threshold first, then the four Twyman elements, CREAC each.", es: "Estructura: primero el umbral de gap-filler, luego los cuatro elementos de Twyman, cada uno en CREAC." }
+    verified: false

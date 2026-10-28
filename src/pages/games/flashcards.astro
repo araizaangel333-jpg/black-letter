@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ui from '../../i18n/ui.json';
+const glossary = await getCollection('glossary');
+const briefs = await getCollection('briefs');
+const subjects = [...new Set([...glossary.map(g => g.data.subject), ...briefs.map(b => b.data.course)])];
+const order = ['contracts', 'business-associations', 'lrw', 'perspectives', 'externship', 'courts', 'classroom', 'general'];
+subjects.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+<Base title={ui['games.flashcards'].en}>
+  <header class="sec">
+    <h1><T k="games.flashcards" /></h1>
+    <p class="prose muted small"><T k="games.flashcardsDesc" /></p>
+  </header>
+
+  <section class="sec" id="fc-setup">
+    <label class="setting">
+      <span class="label"><T k="games.scope" /></span>
+      <select id="fc-scope">
+        <option value=""><T k="games.scopeAll" /></option>
+        {subjects.map(s => <option value={s}>{ui[`subject.${s}`]?.en || s}</option>)}
+      </select>
+    </label>
+    <p class="small muted num" id="fc-counts"></p>
+    <button type="button" class="btn primary" id="fc-start"><T k="games.start" /></button>
+    <p class="muted" id="fc-empty" hidden><T k="games.nothingDue" /></p>
+  </section>
+
+  <section class="flash" id="fc-session" hidden>
+    <div class="flash-top"><span class="num" id="fc-progress"></span><span class="tag" id="fc-type"></span></div>
+    <button type="button" class="flash-card" id="fc-card" aria-live="polite">
+      <span class="flash-front" id="fc-front"></span>
+      <span class="flash-back" id="fc-back" hidden></span>
+      <span class="flash-hint small muted" id="fc-hint"><T k="games.flip" /></span>
+    </button>
+    <div class="grade" id="fc-grade" hidden>
+      <button type="button" class="btn" data-grade="again"><T k="games.again" /></button>
+      <button type="button" class="btn" data-grade="hard"><T k="games.hard" /></button>
+      <button type="button" class="btn primary" data-grade="good"><T k="games.good" /></button>
+      <button type="button" class="btn" data-grade="easy"><T k="games.easy" /></button>
+    </div>
+  </section>
+
+  <section class="sec" id="fc-done" hidden>
+    <h2 id="fc-summary"></h2>
+    <p class="muted" id="fc-missed"></p>
+    <div class="rate-buttons"><button type="button" class="btn primary" id="fc-restart"><T k="games.start" /></button><a class="btn" href="/games/"><T k="games.finish" /></a></div>
+  </section>
+
+  <script>
+    import { t, lang, onLangChange } from '../../lib/i18n.js';
+    import { get, set, update, prefs } from '../../lib/store.js';
+    import { schedule, buildQueue, newCard } from '../../lib/srs.js';
+    import { todayISO } from '../../lib/dates.js';
+
+    const scope = document.getElementById('fc-scope');
+    const counts = document.getElementById('fc-counts');
+    const setup = document.getElementById('fc-setup'), session = document.getElementById('fc-session'), done = document.getElementById('fc-done');
+    const card = document.getElementById('fc-card'), front = document.getElementById('fc-front'), back = document.getElementById('fc-back'), hint = document.getElementById('fc-hint');
+    const grade = document.getElementById('fc-grade'), progress = document.getElementById('fc-progress'), type = document.getElementById('fc-type');
+    let items = [], byId = {}, queue = [], i = 0, reviewed = 0, missed = 0;
+
+    scope.value = prefs().fcScope || '';
+    fetch('/data/items.json').then(r => r.json()).then(j => { items = j.items; byId = Object.fromEntries(items.map(x => [x.id, x])); paintCounts(); });
+
+    function inScope() { const s = scope.value; return items.filter(x => !s || x.subject === s).map(x => x.id); }
+    function todayStats() { const a = get('activity', {}) || {}; return a[todayISO()] || {}; }
+    function paintCounts() {
+      const srs = get('srs', {}) || {}; const ids = inScope(); const today = todayISO();
+      const due = ids.filter(id => srs[id] && srs[id].due <= today).length;
+      const fresh = ids.filter(id => !srs[id]).length;
+      counts.textContent = `${due} ${t('games.due')} · ${fresh} ${t('games.new')} · ${t('games.cards', { n: ids.length })}`;
+    }
+    scope.addEventListener('change', () => { update('prefs', p => ({ ...(p || {}), fcScope: scope.value }), {}); paintCounts(); });
+
+    function start() {
+      const srs = get('srs', {}) || {};
+      const p = prefs();
+      queue = buildQueue(srs, inScope(), todayISO(), { newPerDay: p.newPerDay || 10, maxReviews: p.maxReviews || 30, seen: todayStats().newSeen || 0 });
+      if (!queue.length) { document.getElementById('fc-empty').hidden = false; return; }
+      i = 0; reviewed = 0; missed = 0;
+      setup.hidden = true; done.hidden = true; session.hidden = false;
+      show();
+    }
+    function show() {
+      const it = byId[queue[i]];
+      progress.textContent = `${i + 1} / ${queue.length}`;
+      type.textContent = it.type === 'case' ? 'case' : (it.register || 'term');
+      front.textContent = it.type === 'case' && it.hook ? `${it.front}\n${it.hook}` : it.front;
+      const L = lang();
+      const esLine = it.type === 'term' ? [it.esTerm, it.es].filter(Boolean).join(': ') : it.es;
+      back.innerHTML = `<span class="b-main">${escapeHtml(it.back)}</span>` + (it.rule && it.type === 'case' ? `<span class="b-rule">${escapeHtml(it.rule)}</span>` : '') + (esLine && L === 'es' ? `<span class="b-es">${escapeHtml(esLine)}</span>` : (esLine ? `<span class="b-es muted">${escapeHtml(esLine)}</span>` : '')) + (it.falseFriend ? `<span class="b-ff">${escapeHtml(it.falseFriend)}</span>` : '');
+      back.hidden = true; hint.hidden = false; grade.hidden = true; card.classList.remove('flipped');
+    }
+    function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch])); }
+    card.addEventListener('click', () => { if (back.hidden) { back.hidden = false; hint.hidden = true; grade.hidden = false; card.classList.add('flipped'); } });
+    grade.querySelectorAll('[data-grade]').forEach(b => b.addEventListener('click', () => {
+      const id = queue[i]; const g = b.dataset.grade; const today = todayISO();
+      const srs = get('srs', {}) || {};
+      const wasNew = !srs[id];
+      srs[id] = schedule(srs[id] || newCard(), g, today);
+      set('srs', srs);
+      update('activity', a => { const n = { ...(a || {}) }; const d = { ...(n[today] || {}) }; d.reviews = (d.reviews || 0) + 1; if (wasNew) d.newSeen = (d.newSeen || 0) + 1; n[today] = d; return n; }, {});
+      reviewed++;
+      if (g === 'again') { missed++; queue.push(id); }
+      i++;
+      if (i >= queue.length) finish(); else show();
+    }));
+    document.addEventListener('keydown', e => {
+      if (session.hidden) return;
+      if (e.key === ' ' && back.hidden) { e.preventDefault(); card.click(); }
+      const map = { '1': 'again', '2': 'hard', '3': 'good', '4': 'easy' };
+      if (map[e.key] && !grade.hidden) grade.querySelector(`[data-grade="${map[e.key]}"]`).click();
+    });
+    function finish() {
+      session.hidden = true; done.hidden = false;
+      document.getElementById('fc-summary').textContent = t('games.summary', { n: reviewed });
+      document.getElementById('fc-missed').textContent = missed ? t('games.summaryMissed', { n: missed }) : '';
+      paintCounts();
+    }
+    document.getElementById('fc-start').addEventListener('click', start);
+    document.getElementById('fc-restart').addEventListener('click', () => { done.hidden = true; setup.hidden = false; paintCounts(); });
+    onLangChange(() => { paintCounts(); if (!session.hidden) show(); });
+  </script>
+</Base>
